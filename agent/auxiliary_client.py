@@ -6304,9 +6304,14 @@ def _compression_fast_lane_controls(
     leak_guard_config: dict[str, Any], max_tokens: int | None, extra_body: dict[str, Any],
 ) -> tuple[int | None, dict[str, Any]]:
     """Apply the certified compression controls to one resolved route."""
-    if task != "compression" or max_tokens is not None:
+    if task != "compression":
         return max_tokens, extra_body
+    # #50132 pass-through: when the caller (now _call_summary_llm) supplies a dynamic max_tokens,
+    # strip any stale config extra_body max_tokens so the dynamic budget is the single source of
+    # truth on the wire (avoids a static 16384 cap overriding the computed budget, or vice-versa).
     body = dict(extra_body)
+    body.pop("max_tokens", None)
+    body.pop("max_completion_tokens", None)
     lane = resolve_compression_fast_lane(
         actual_provider, actual_model, requested_provider=requested_provider, requested_model=requested_model, route_config=route_config,
     )
@@ -6752,7 +6757,13 @@ def _build_call_kwargs(
         if not _forbids_sampling_params(model):
             kwargs["temperature"] = temperature
     provider_norm = str(provider or "").strip().lower()
-    if max_tokens is not None and _forwards_max_tokens(provider, provider_norm, model, effective_base, task):
+    # #50132: forward caller-provided max_tokens unconditionally instead of gating on
+    # _forwards_max_tokens. Providers that reject it (ZAI vision 1210, strict-schema gateways)
+    # are recovered by the parameter-retry rungs in _parameter_rungs (strip + retry, no
+    # regression risk). The gate previously dropped max_tokens for ALL OpenAI-compat routes
+    # (Nous Portal /v1/chat/completions included), so the compression summary never received
+    # a wire cap and the provider's default truncated it (#124077-class truncation aborts).
+    if max_tokens is not None:
         kwargs.update(auxiliary_max_tokens_param(max_tokens, model=model))  # picks max_completion_tokens where needed
     if tools:
         kwargs["tools"] = _dedupe_tool_names(tools, provider, model)

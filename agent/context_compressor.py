@@ -5,6 +5,7 @@ import contextlib
 import contextvars
 import copy
 import hashlib
+import itertools
 import json
 import logging
 import sqlite3
@@ -829,6 +830,11 @@ _MICRO_COMPACT_MAX_CONSECUTIVE_FAILURES = 3
 _SUMMARY_INPUT_MAX_CHARS = 160_000
 
 _PRUNED_TOOL_PLACEHOLDER = "[Old tool output cleared to save context space]"
+
+# Layer 2: Chunked-fold fallback (#84336) — split turns into chunks and summarize
+# each sequentially when the one-shot summary is truncated. Turn groups never split;
+# chunk count is capped at this value; the whole-window budget is split proportionally.
+_CHUNK_FOLD_MAX = 4
 
 
 def _is_summary_stub(content: str) -> bool:
@@ -3873,7 +3879,7 @@ Summary generation was unavailable, so this is a best-effort deterministic fallb
         self.summary_model = ""  # empty = use main model
         self._clear_compression_failure_cooldown()  # no cooldown — retry immediately
 
-    def _call_summary_llm(self, prompt: str, prompt_started_at: float) -> str:
+    def _call_summary_llm(self, prompt: str, prompt_started_at: float, max_tokens: Optional[int] = None) -> str:
         """Issue the single aux summary call; return validated content text.
         Raises RuntimeError for empty content or a length-truncated (PARTIAL) summary so the failure
         routes through main-model fallback + cooldown instead of wiping the compacted turns."""
@@ -3886,9 +3892,14 @@ Summary generation was unavailable, so this is a best-effort deterministic fallb
                 "api_mode": self.api_mode,
             },
             "messages": [{"role": "user", "content": prompt}], "route_info": _aux_route,
-            # NO max_tokens: Anthropic/NIM wires forward it and a hard cap truncates summaries
-            # (thinking models burn it on reasoning). Timeout comes from call_llm config.
+            # max_tokens: a dynamic budget derived from the content size (#50132 pass-through).
+            # The previous design omitted it so the provider's server-default cap applied —
+            # for a reasoning model that cap truncated the summary (#124077-class abort).
+            # With #50132, caller-provided max_tokens now reaches the wire on all routes;
+            # the param-retry rungs strip it for 400-rejectors (ZAI vision etc.).
         }
+        if max_tokens is not None:
+            call_kwargs["max_tokens"] = max_tokens
         # Pinned route (stall fallback) replaces task routing so the retry leaves the stalled backend.
         self._apply_summary_route(call_kwargs, _pinned_summary_call_kwargs())
         # Compression is atomic: protect the in-flight summary call from a mid-turn gateway interrupt.
@@ -3998,8 +4009,14 @@ Summary generation was unavailable, so this is a best-effort deterministic fallb
         if has_user_turn is None:
             has_user_turn = self._transcript_has_real_user_turn(turns_to_summarize)
         prompt = self._build_summary_prompt(content_to_summarize, summary_budget, focus_topic, memory_context, has_user_turn)
+        # #50132 pass-through: send the dynamic summary budget as a wire max_tokens with 30%
+        # headroom so the provider's cap is the budget (not its arbitrary server-default). For a
+        # reasoning model the headroom absorbs thinking-token burn that previously starved the
+        # summary output and triggered finish_reason=length truncation. The 1.3× multiplier is a
+        # safety margin, not a hard output target — the prompt guidance (summary_budget) still drives length.
+        summary_max_tokens = int(summary_budget * 1.3)
         try:
-            content = self._call_summary_llm(prompt, prompt_started_at)
+            content = self._call_summary_llm(prompt, prompt_started_at, max_tokens=summary_max_tokens)
             # Strip <think> blocks: they would be stored, injected, and compounded on every iterative update.
             from agent.agent_runtime_helpers import strip_think_blocks
             content = strip_think_blocks(None, content).strip() or content
@@ -4215,6 +4232,29 @@ Write only the summary body. Do not include any preamble or prefix."""
             # Retry immediately on the main model.
             return self._generate_summary(turns_to_summarize, focus_topic=focus_topic, memory_context=memory_context)
 
+        # Layer 2: Chunked-fold fallback (#84336) — when the one-shot summary is truncated past
+        # the main-model retry, split turns into chunks and summarize each sequentially.
+        # Turn groups never split; chunk count is capped at _CHUNK_FOLD_MAX.
+        if kind.truncated and not access_error and not getattr(self, "_chunk_fold_attempted", False):
+            self._chunk_fold_attempted = True
+            try:
+                fold_result = self._generate_chunked_fold_summary(
+                    turns_to_summarize, focus_topic, memory_context,
+                )
+            finally:
+                self._chunk_fold_attempted = False
+            if fold_result is not None:
+                self._clear_compression_failure_cooldown()
+                self._last_summary_error = None
+                self._summary_model_fallen_back = False
+                return fold_result
+
+        # Layer 3: Micro-compaction enablement — when truncation persists past the
+        # main-model retry and chunked fold, enable per-turn micro-compaction to reduce
+        # context pressure on future turns.
+        if kind.truncated and not access_error and not getattr(self, "_micro_compact_enabled", False):
+            self._micro_compact_enabled = True
+
         # Transient errors: short cooldown for JSON-decode/streaming-closed/empty-content. Timeouts escalate
         # 60s→300s→900s (structural repeat offenders) and take precedence over the short rung; truncation
         # escalates on its own counter (see _TIMEOUT_COOLDOWN_LADDER).
@@ -4258,6 +4298,66 @@ Write only the summary body. Do not include any preamble or prefix."""
             _transient_cooldown,
         )
         return None
+
+    def _generate_chunked_fold_summary(
+        self, turns_to_summarize: list[dict[str, Any]], focus_topic: Optional[str], memory_context: str,
+    ) -> Optional[str]:
+        """Chunked-fold fallback (#84336): when the one-shot summary is truncated, split the
+        turns into at most ``_CHUNK_FOLD_MAX`` chunks (at user-turn boundaries so turn groups
+        never split), summarize each sequentially with a proportional budget, and concatenate
+        the chunk summaries into a single checkpoint.  Returns None when any chunk fails so the
+        caller falls through to the cooldown + abort path."""
+        # Find user-turn boundaries (turn groups never split).
+        user_turn_indices = [
+            i for i, t in enumerate(turns_to_summarize) if t.get("role") == "user"
+        ]
+        n_chunks = min(_CHUNK_FOLD_MAX, len(user_turn_indices))
+        if n_chunks < 2:
+            return None  # Too few turns to chunk — fall back to cooldown.
+
+        # Evenly distribute user turns across chunks; each chunk starts at a user turn.
+        chunk_starts = [0]
+        _step = len(user_turn_indices) / n_chunks
+        for i in range(1, n_chunks):
+            idx = min(round(i * _step), len(user_turn_indices) - 1)
+            split_at = user_turn_indices[idx]
+            if split_at > chunk_starts[-1]:
+                chunk_starts.append(split_at)
+        chunk_starts.append(len(turns_to_summarize))
+
+        total_budget = self._compute_summary_budget(turns_to_summarize)
+        chunk_budget = max(_MIN_SUMMARY_TOKENS, total_budget // n_chunks)
+        chunk_max_tokens = int(chunk_budget * 1.3)
+
+        chunk_summaries: list[str] = []
+        _prompt_started_at = time.monotonic()
+        for start, end in itertools.pairwise(chunk_starts):
+            chunk = turns_to_summarize[start:end]
+            if not chunk:
+                continue
+            content = self._bound_summary_input(self._serialize_for_summary(chunk))
+            has_user_turn = self._transcript_has_real_user_turn(chunk)
+            prompt = self._build_summary_prompt(
+                content, chunk_budget, focus_topic, memory_context, has_user_turn,
+            )
+            try:
+                chunk_summary = self._call_summary_llm(
+                    prompt, _prompt_started_at, max_tokens=chunk_max_tokens,
+                )
+            except Exception as exc:
+                logger.warning(
+                    "Chunked fold: chunk %d/%d failed: %s", len(chunk_summaries) + 1, n_chunks, exc,
+                )
+                return None  # Any chunk failure aborts the fold → cooldown path.
+            from agent.agent_runtime_helpers import strip_think_blocks
+            chunk_summary = strip_think_blocks(None, chunk_summary).strip() or chunk_summary
+            chunk_summary = _redact_compaction_text(chunk_summary)
+            chunk_summary = self._ground_historical_task_snapshot(chunk_summary, chunk)
+            chunk_summary = self._augment_summary_lean(chunk_summary, chunk)
+            chunk_summaries.append(chunk_summary)
+
+        combined = "\n\n".join(chunk_summaries)
+        return self._with_summary_prefix(combined)
 
     @staticmethod
     def _strip_summary_prefix(summary: str) -> str:

@@ -85,14 +85,11 @@ class TestReasoningExcludedFromSummarizer:
 
 
 class TestSummaryBudgetEnvelope:
-    def test_no_max_tokens_wire_cap_on_summary_call(self):
-        """The summary budget is PROMPT GUIDANCE only ("Target ~N tokens").
-
-        A wire-level max_tokens cap truncates summaries mid-section on the
-        Anthropic Messages / NVIDIA NIM paths (which forward the param), and
-        thinking models burn the cap on reasoning before emitting the summary
-        body — producing truncated or thinking-only summaries and compaction
-        loops. The call must NOT carry max_tokens.
+    def test_summary_call_sends_dynamic_max_tokens_wire_cap(self):
+        """With #50132, the summary budget is sent as a wire max_tokens cap
+        (budget * 1.3 headroom) so the provider's cap is the budget — not its
+        arbitrary server-default that truncated summaries on a ~272K context.
+        The old test asserted max_tokens was absent; the fix flips it to present.
         """
         comp = _make(128_000)
         captured = {}
@@ -113,7 +110,11 @@ class TestSummaryBudgetEnvelope:
         with patch.object(cc, "call_llm", side_effect=fake_call_llm):
             out = comp._generate_summary([{"role": "user", "content": "hi"}])
         assert out is not None
-        assert "max_tokens" not in captured
+        # #50132 pass-through: the dynamic budget (int(summary_budget * 1.3))
+        # reaches call_llm as max_tokens. For tiny input, summary_budget floors
+        # at _MIN_SUMMARY_TOKENS (2000), so the wire cap is int(2000 * 1.3) = 2600.
+        assert captured.get("max_tokens") is not None
+        assert captured["max_tokens"] == 2600
 
 
 

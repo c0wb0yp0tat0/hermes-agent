@@ -178,14 +178,18 @@ class TestOpenRouterMaxTokensPreserved:
         )
         assert kwargs.get("max_tokens") == 2000 or kwargs.get("max_completion_tokens") == 2000
 
-    def test_generic_provider_still_omits_max_tokens(self):
+    def test_generic_provider_forwards_max_tokens(self):
+        """With #50132, a caller-provided max_tokens reaches the wire on ALL
+        routes (the provider-quirk handler picks max_completion_tokens for
+        OpenAI-family models). The 400-rejectors (ZAI vision etc.) are
+        recovered by the parameter-retry rungs, not by dropping the cap."""
         kwargs = _build_call_kwargs(
             provider="openai",
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": "test"}],
             max_tokens=2000,
         )
-        assert "max_tokens" not in kwargs and "max_completion_tokens" not in kwargs
+        assert kwargs.get("max_tokens") == 2000 or kwargs.get("max_completion_tokens") == 2000
 
     def test_none_max_tokens_never_included_for_openrouter(self):
         kwargs = _build_call_kwargs(

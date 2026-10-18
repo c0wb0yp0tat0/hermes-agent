@@ -407,11 +407,13 @@ class TestBuildCallKwargsMaxTokens:
 
 
     def test_moa_task_exact_match(self):
-        """Only task == "moa_reference" triggers the cap — not the aggregator,
-        not arbitrary 'moa_' prefixed tasks."""
+        """With #50132, max_tokens is forwarded unconditionally for ALL tasks —
+        the moa_reference-specific _forwards_max_tokens gate is subsumed. The
+        provider-quirk handler (auxiliary_max_tokens_param) still picks the
+        correct wire key per model, verified here for the ZAI/glm-5.2 route."""
         from agent.auxiliary_client import _build_call_kwargs
 
-        # 'moa_reference' → honored
+        # 'moa_reference' → forwarded (was the only honored task pre-#50132)
         kw = _build_call_kwargs(
             provider="zai", model="glm-5.2",
             messages=[{"role": "user", "content": "hi"}],
@@ -419,9 +421,9 @@ class TestBuildCallKwargsMaxTokens:
             base_url="https://api.z.ai/api/coding/paas/v4",
             task="moa_reference",
         )
-        assert kw["max_tokens"] == 500
+        assert kw.get("max_tokens") == 500
 
-        # 'moa_aggregator' → dropped (aggregator is the acting model, not an advisor)
+        # 'moa_aggregator' → now also forwarded (#50132 unconditional pass-through)
         kw2 = _build_call_kwargs(
             provider="zai", model="glm-5.2",
             messages=[{"role": "user", "content": "hi"}],
@@ -429,9 +431,9 @@ class TestBuildCallKwargsMaxTokens:
             base_url="https://api.z.ai/api/coding/paas/v4",
             task="moa_aggregator",
         )
-        assert "max_tokens" not in kw2
+        assert kw2.get("max_tokens") == 500
 
-        # 'moa_custom_future' → dropped (only moa_reference is whitelisted)
+        # 'moa_custom_future' → now also forwarded
         kw3 = _build_call_kwargs(
             provider="zai", model="glm-5.2",
             messages=[{"role": "user", "content": "hi"}],
@@ -439,7 +441,7 @@ class TestBuildCallKwargsMaxTokens:
             base_url="https://api.z.ai/api/coding/paas/v4",
             task="moa_custom_future",
         )
-        assert "max_tokens" not in kw3
+        assert kw3.get("max_tokens") == 500
 
 
 class TestNousTagsScoping:
