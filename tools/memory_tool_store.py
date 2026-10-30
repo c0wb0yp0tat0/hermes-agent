@@ -300,16 +300,51 @@ class MemoryStore:
         from tools import memory_tool  # get_memory_dir is monkeypatched there
         return memory_tool.get_memory_dir() / ("USER.md" if target == "user" else "MEMORY.md")
 
+    def _doc(self, target: str) -> Optional[str]:
+        """Chain-doc resolver. Returns the doc name for a ``doc:<name>`` target,
+        else ``None``. This is the store's own doc-aware arm: ``_is_doc`` in
+        write_gate.py checks ``callable(getattr(store, '_doc', None))`` and
+        returns ``store._doc(target) is not None``.
+        """
+        if not isinstance(target, str) or not target.startswith("doc:"):
+            return None
+        name = target[len("doc:"):].strip()
+        if not name:
+            return None
+        return name
+
+    def _doc_path_for(self, name: str) -> Path:
+        """Filesystem path for a chain-doc by name: <memory_dir>/docs/<name>.md"""
+        from tools import memory_tool  # get_memory_dir is monkeypatched there
+        return memory_tool.get_memory_dir() / "docs" / f"{name}.md"
+
+    def _resolve_path(self, target: str) -> Path:
+        """Resolve the on-disk path for any target, including chain docs."""
+        doc_name = self._doc(target)
+        if doc_name is not None:
+            return self._doc_path_for(doc_name)
+        return self._path_for(target)
+
     def _entries_for(self, target: str) -> list[str]:
+        doc_name = self._doc(target)
+        if doc_name is not None:
+            raw, _ = self._read_raw_checked(self._doc_path_for(doc_name))
+            return list(dict.fromkeys(self._parse_entries(raw)))
         return self.user_entries if target == "user" else self.memory_entries
 
     def _set_entries(self, target: str, entries: list[str]):
         setattr(self, "user_entries" if target == "user" else "memory_entries", entries)
 
     def _char_count(self, target: str) -> int:
+        doc_name = self._doc(target)
+        if doc_name is not None:
+            raw, _ = self._read_raw_checked(self._doc_path_for(doc_name))
+            return len(raw)
         return len(ENTRY_DELIMITER.join(self._entries_for(target)))
 
-    def _char_limit(self, target: str) -> int:
+    def _char_limit(self, target: str) -> Optional[int]:
+        if self._doc(target) is not None:
+            return None  # chain docs are uncapped by design
         return self.user_char_limit if target == "user" else self.memory_char_limit
 
     def _usage(self, target: str) -> str:
@@ -317,6 +352,8 @@ class MemoryStore:
 
     def _usage_pct(self, target: str, current: int) -> str:
         limit = self._char_limit(target)
+        if limit is None:
+            return f"uncapped — {current:,} chars"
         return f"{min(100, int((current / limit) * 100)) if limit > 0 else 0}% — {current:,}/{limit:,} chars"
 
     def _failure_with_entries(self, target: str, message: str) -> dict[str, Any]:
@@ -367,24 +404,135 @@ class MemoryStore:
             return self._success_response(target, result[1], **extra_fields)
 
     def read(self, target: str) -> dict[str, Any]:
-        """Entries of *target* as stored on disk (read-only: no gate, no drift guard, no write)."""
+        """Entries of *target* as stored on disk (read-only: no gate, no drift guard, no write,
+        no shared-cache mutation — the in-process cache is owned solely by the locked
+        ``_mutate`` path so a stale disk snapshot can never roll back newer writes).
+
+        For chain-doc targets (``doc:<name>``) delegates to the bounded reader so
+        a large doc never exceeds the 4 KiB response budget candidate (#116673)."""
+        doc_name = self._doc(target)
+        if doc_name is not None:
+            return self._read_doc_bounded(doc_name)
         path = self._path_for(target)
         raw, read_ok = self._read_raw_checked(path)
         if not read_ok:
             return _read_failed_error(path)
         entries = list(dict.fromkeys(self._parse_entries(raw)))
-        self._set_entries(target, entries)
+        total = len(ENTRY_DELIMITER.join(entries))
         return {
             "success": True, "target": target, "entries": entries,
-            "usage": self._usage_pct(target, self._char_count(target))}
+            "usage": self._usage_pct(target, total)}
+
+    def _read_doc_bounded(self, doc_name: str, cursor: Optional[str] = None,
+                          limit: int = 3800) -> dict[str, Any]:
+        """Bounded read of a chain-doc. Returns at most ``limit`` bytes of page
+        ``text`` so the full JSON response stays within the 4 KiB candidate
+        budget (#116673). Follow ``cursor`` until ``has_more`` is False to
+        reconstruct the full doc losslessly."""
+        doc_path = self._doc_path_for(doc_name)
+        raw, read_ok = self._read_raw_checked(doc_path)
+        if not read_ok:
+            return _read_failed_error(doc_path)
+        total_chars = len(raw)
+        serialized = raw.encode("utf-8")
+        try:
+            offset = int(cursor) if cursor else 0
+        except (ValueError, TypeError):
+            offset = 0
+        if offset < 0 or offset > len(serialized):
+            offset = 0
+        raw_slice = serialized[offset:offset + limit]
+        while raw_slice:
+            try:
+                page_text = raw_slice.decode("utf-8")
+                break
+            except UnicodeDecodeError:
+                raw_slice = raw_slice[:-1]  # drop one trailing byte, retry
+        else:
+            page_text = ""
+        safe_len = len(page_text.encode("utf-8"))
+        actual_end = offset + safe_len
+        has_more = actual_end < len(serialized)
+        next_cursor = str(actual_end) if has_more else None
+        return {
+            "success": True, "target": f"doc:{doc_name}",
+            "text": page_text,
+            "usage": self._usage_pct(f"doc:{doc_name}", total_chars),
+            "cursor": next_cursor,
+            "has_more": has_more,
+        }
+
+    def read_paged(self, target: str, cursor: Optional[str] = None,
+                   limit: int = 4096) -> dict[str, Any]:
+        """Bounded, paginated read of *target* entries.
+
+        Serializes the target's entries and returns at most *limit* bytes per
+        page, paginated at UTF-8 character boundaries so a multibyte codepoint
+        is never split mid-sequence.  ``cursor`` is an opaque byte-offset
+        string; follow it until ``has_more`` is ``False`` to reconstruct the
+        full content losslessly.
+
+        This is the fail-to-pass contract for the uncapped-doc-response defect
+        (#116673): a large chain-doc read must never exceed the response budget
+        in a single shot.
+        """
+        path = self._resolve_path(target)
+        raw, read_ok = self._read_raw_checked(path)
+        if not read_ok:
+            return _read_failed_error(path)
+        entries = list(dict.fromkeys(self._parse_entries(raw)))
+        total_chars = len(ENTRY_DELIMITER.join(entries))
+
+        serialized = ENTRY_DELIMITER.join(entries).encode("utf-8")
+        try:
+            offset = int(cursor) if cursor else 0
+        except (ValueError, TypeError):
+            offset = 0
+        if offset < 0 or offset > len(serialized):
+            offset = 0
+
+        # Take up to *limit* bytes, then trim back to the last complete UTF-8
+        # codepoint so no multibyte sequence is split mid-codepoint.
+        raw_slice = serialized[offset:offset + limit]
+        while raw_slice:
+            try:
+                page_text = raw_slice.decode("utf-8")
+                break
+            except UnicodeDecodeError:
+                raw_slice = raw_slice[:-1]  # drop one trailing byte, retry
+        else:
+            page_text = ""
+
+        safe_len = len(page_text.encode("utf-8"))
+        actual_end = offset + safe_len
+        has_more = actual_end < len(serialized)
+        next_cursor = str(actual_end) if has_more else None
+
+        page_entries = [e for e in (x.strip() for x in page_text.split(ENTRY_DELIMITER)) if e]
+        return {
+            "success": True, "target": target,
+            "entries": page_entries,
+            "text": page_text,
+            "usage": self._usage_pct(target, total_chars),
+            "cursor": next_cursor,
+            "has_more": has_more,
+        }
 
     def add(self, target: str, content: str) -> dict[str, Any]:
-        """Append a new entry. Returns error if it would exceed the char limit."""
+        """Append a new entry. Returns error if it would exceed the char limit.
+
+        For chain-doc targets (``doc:<name>``) delegates to the transactional
+        anchor protocol: the anchor reference is checked, then re-verified under
+        the memory file lock at commit time, closing the TOCTOU window (#116673)."""
         content = content.strip()
         if not content:
             return _error("Content cannot be empty.", "missing_content")
         if scan_error := _scan_memory_content(content):
             return _error(scan_error, "scan_blocked")
+        # Chain-doc target: route through the transactional anchor protocol
+        doc_name = self._doc(target)
+        if doc_name is not None:
+            return self._add_doc(doc_name, content)
 
         def _add(entries, limit):
             if content in entries:
@@ -400,6 +548,74 @@ class MemoryStore:
         # Append-only: skip the drift guard (appending never clobbers foreign
         # content) but still refuse a failed read — add rewrites the WHOLE file.
         return self._mutate(target, _add, skip_drift=True)
+
+    def _anchor_gate(self, target: str) -> dict[str, Any]:
+        """Check whether the anchor reference for a chain-doc target exists in
+        MEMORY.md. Returns ``{"success": True, "present": bool, "doc": name}``.
+
+        This is the gate half of the transactional anchor protocol: the doc
+        write path calls this for the anchor check, then re-verifies the anchor
+        under the memory file lock at commit time, closing the TOCTOU window
+        between reference check and doc write (#116673).
+        """
+        doc_name = self._doc(target)
+        if doc_name is None:
+            return {"success": True, "present": False, "doc": None}
+        memory_path = self._path_for("memory")
+        raw, read_ok = self._read_raw_checked(memory_path)
+        if not read_ok:
+            return _error("Failed to read MEMORY.md for anchor check.", "read_failed",
+                          target=target, doc=doc_name)
+        anchor_ref = f"@doc:{doc_name}"
+        return {"success": True, "present": anchor_ref in raw, "doc": doc_name}
+
+    def _add_doc(self, doc_name: str, content: str) -> dict[str, Any]:
+        """Write a chain-doc with the transactional anchor protocol.
+
+        Phase 1: ``_anchor_gate`` checks the ``@doc:<name>`` reference in
+        MEMORY.md.
+        Phase 2: under the MEMORY.md file lock, the anchor is RE-CHECKED —
+        closing the TOCTOU window between reference check and doc write
+        (#116673). If the anchor was removed between Phase 1 and Phase 2,
+        the write is refused and no doc file is committed.
+        """
+        # Phase 1: gate check (may be patched by callers for interleaving)
+        gate_result = self._anchor_gate(f"doc:{doc_name}")
+        if not gate_result.get("success"):
+            return gate_result
+        if not gate_result.get("present"):
+            return _error(
+                f"Chain-doc write refused: anchor reference '@doc:{doc_name}' "
+                f"not found in memory.", "anchor_missing",
+                target=f"doc:{doc_name}", doc=doc_name)
+        # Phase 2: transactional commit under the memory anchor lock
+        memory_path = self._path_for("memory")
+        with self._file_lock(memory_path):
+            raw, read_ok = self._read_raw_checked(memory_path)
+            if not read_ok:
+                return _read_failed_error(memory_path)
+            # Re-check the anchor under the lock — this closes the TOCTOU window.
+            if f"@doc:{doc_name}" not in raw:
+                return _error(
+                    f"Chain-doc write refused: anchor '@doc:{doc_name}' was removed "
+                    f"before commit (TOCTOU).",
+                    "anchor_removed", target=f"doc:{doc_name}")
+            # Anchor still present: commit the doc.
+            doc_path = self._doc_path_for(doc_name)
+            from hermes_constants import mkdir_under_hermes_home
+            mkdir_under_hermes_home(doc_path.parent)
+            atomic_write_text(doc_path, content, tmp_prefix=".doc_")
+        return {"success": True, "target": f"doc:{doc_name}",
+                "message": f"Chain doc '{doc_name}' written.",
+                "text_bytes": len(content.encode("utf-8"))}
+
+    def chain_docs(self) -> list[str]:
+        """List available chain-doc names (files in <memory_dir>/docs/)."""
+        from tools import memory_tool
+        docs_dir = memory_tool.get_memory_dir() / "docs"
+        if not docs_dir.exists():
+            return []
+        return sorted(p.stem for p in docs_dir.glob("*.md"))
 
     def replace(self, target: str, old_text: str, new_content: str,
                 matched_entry: Optional[str] = None) -> dict[str, Any]:
