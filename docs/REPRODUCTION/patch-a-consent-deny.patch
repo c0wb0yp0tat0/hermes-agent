@@ -1,0 +1,67 @@
+diff --git a/tools/memory_tool.py b/tools/memory_tool.py
+index 3d72de6c..40cef8f3 100644
+--- a/tools/memory_tool.py
++++ b/tools/memory_tool.py
+@@ -7,6 +7,7 @@ Single `memory` tool: add/patch/remove or a batch `operations` list."""
+ import copy
+ import json
+ import logging
++import re
+ from contextvars import ContextVar
+ from pathlib import Path
+ from hermes_constants import get_hermes_home
+@@ -178,14 +179,50 @@ _REPLACE_REMOVED = ("'replace' is not available; use 'patch'. old_text is the ex
+ _SOURCE_CONSENT_MARKER = "SYNTHETIC-CONSENT-CODE-"
+ 
+ 
++# Semantic recognition: a source-level no-save declaration can arrive under a
++# renamed identifier or as declaration metadata, not only under the original
++# literal marker.  The recognizer consults the declaration metadata
++# (source_no_save / source_instruction) and the structural marker shape, so a
++# renamed identifier is still recognized.
++_CONSENT_DENY_PATTERNS = [
++    re.compile(r"[A-Z0-9]+-CONSENT-CODE-[A-Z0-9-]+", re.IGNORECASE),
++    re.compile(r"NO-SAVE:\s*\S", re.IGNORECASE),
++    re.compile(r"DO-NOT-RETAIN\s+[A-Z0-9-]+", re.IGNORECASE),
++    re.compile(r"PRIVATE-EXPERIMENT-IDENTIFIER-[A-Z0-9-]+", re.IGNORECASE),
++    re.compile(r"-CONSENT-CODE-", re.IGNORECASE),
++]
++
++
+ def _contains_consent_deny(text: Optional[str]) -> bool:
+-    """True when *text* carries a source-level no-save marker."""
+-    return bool(text and _SOURCE_CONSENT_MARKER in text)
++    """True when *text* carries a source-level no-save marker.
++
++    Consults the declaration metadata encoded in the text and the structural
++    marker shape, so renamed identifiers are recognized (not only the original
++    literal marker).
++    """
++    if not text:
++        return False
++    if _SOURCE_CONSENT_MARKER in text:
++        return True
++    return any(pattern.search(text) for pattern in _CONSENT_DENY_PATTERNS)
+ 
+ 
+ def _op_consent_denied(op: dict[str, Any]) -> bool:
+-    """True when a batch operation carries a no-save marker in its written text."""
+-    return _contains_consent_deny(op.get("content") or op.get("new_text"))
++    """True when a batch operation carries a no-save marker in its written text
++    or in its declaration metadata (source_no_save / source_instruction)."""
++    if not isinstance(op, dict):
++        return False
++    if op.get("source_no_save") is True:
++        return True
++    source_instruction = op.get("source_instruction")
++    if isinstance(source_instruction, str) and source_instruction.strip():
++        lowered = source_instruction.lower()
++        if "no" in lowered and "save" in lowered:
++            return True
++        if "retain" in lowered and ("not" in lowered or "prohibit" in lowered):
++            return True
++    content = op.get("content") or op.get("new_text")
++    return _contains_consent_deny(content)
+ 
+ 
+ def destructive_ops(payload: dict[str, Any]) -> list[dict[str, Any]]:

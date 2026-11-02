@@ -1,0 +1,11 @@
+{
+  "env_qualification": {
+    "env_identity": "separately-provisioned-compatible-pm",
+    "tracked_source_dirty": false,
+    "lock_state": "checked",
+    "lock_check_exit": 0,
+    "canonical_lock_rejected": true,
+    "notes": ""
+  },
+  "recorded_at": "2026-11-01T15:48:27.191686Z"
+}

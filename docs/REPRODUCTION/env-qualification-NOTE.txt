@@ -1,0 +1,1 @@
+env-qualification-receipt.json: records the harness-env qualification; the separately-provisioned env's qualification was NOT performed (the document's honest line) — reconciled: this receipt is the harness-env's record, not the separate-provision's.

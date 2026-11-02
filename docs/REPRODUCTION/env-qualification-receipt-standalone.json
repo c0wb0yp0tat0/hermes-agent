@@ -1,0 +1,188 @@
+{
+  "receipt_type": "env-qualification-receipt-standalone",
+  "receipt_version": "1.0",
+  "recorded_at": "2026-11-02T21:10:05.182225Z",
+  "source_husk": "/root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101/env-qualification-receipt.json",
+  "source_husk_sha256": "a5d50d0f63911ed9a396dc6813b10cf8273d890b708dd683ff37b1dae9f35554",
+  "source_husk_bytes": 283,
+  "kit_dir": "/root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101/",
+  "kit_manifest": "KIT-MANIFEST.md (env-qual line: 'the harness-env record, not the separate-provision's')",
+  "candidate_branch": "c0wb0yp0tat0/hermes-agent round2-combined-substrate @ b84150e9be88911280f981467de9628fcfb0f60f (git ls-remote verified)",
+  "fields": {
+    "env_identity": {
+      "value": "harness-env: hermes-agent install @ bf0203a794a07aac3ff764972ab9087baa4e4f4e (detached HEAD on fork c0wb0yp0tat0/hermes-agent), Python 3.14.9 (hermes runtime) / 3.11.15 (repo venv), uv 0.12.2, uv lock --check exit 0",
+      "provenance": "MEASURED",
+      "command": "cd /usr/local/lib/hermes-agent && git rev-parse HEAD && /root/.hermes/tools/python-3.14.9+202****1021-linux-x64/bin/python3.14 --version && /usr/local/lib/hermes-agent/venv/bin/python3 --version && uv --version",
+      "exit_code": 0,
+      "output_lines": [
+        "bf0203a794a07aac3ff764972ab9087baa4e4f4e",
+        "Python 3.14.9",
+        "Python 3.11.15",
+        "uv 0.12.2 (x86_64-unknown-linux-gnu)"
+      ],
+      "note": "Honest harness-env identity (this machine's hermes install), NOT the husk's 'separately-provisioned-compatible-pm' label. The husk's label is DERIVED/UNVERIFIED (see husk_reconciliation.env_identity)."
+    },
+    "python_version": {
+      "value": "3.14.9",
+      "provenance": "MEASURED",
+      "command": "/root/.hermes/tools/python-3.14.9+202****1021-linux-x64/bin/python3.14 --version",
+      "exit_code": 0,
+      "output_line": "Python 3.14.9",
+      "also_measured": {
+        "system_python3": {
+          "command": "/usr/bin/python3 --version",
+          "exit_code": 0,
+          "output_line": "Python 3.13.5"
+        },
+        "repo_venv_python": {
+          "command": "/usr/local/lib/hermes-agent/venv/bin/python3 --version",
+          "exit_code": 0,
+          "output_line": "Python 3.11.15"
+        }
+      }
+    },
+    "hermes_cli_version": {
+      "value": "Hermes Agent v0.22.5 (2026.9.24) \u00b7 stable \u00b7 local bf0203a794a0",
+      "provenance": "MEASURED",
+      "command": "hermes --version",
+      "exit_code": 0,
+      "output_lines": [
+        "Hermes Agent v0.22.5 (2026.9.24) \u00b7 stable \u00b7 local bf0203a794a0",
+        "Install directory: /usr/local/lib/hermes-agent",
+        "Install method: git",
+        "Python: 3.14.9",
+        "OpenAI SDK: 2.24.0"
+      ]
+    },
+    "manifest_sha256": {
+      "value": "44ae6e303706ec7029b6d098f9ce72dc1cff68970b3a9f9290bad7c1f791e422",
+      "provenance": "MEASURED",
+      "manifest_path": "/root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101/KVNLOO654-297-BATTERY-MANIFEST-20261030.md",
+      "command": "sha256sum /root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101/KVNLOO654-297-BATTERY-MANIFEST-20261030.md",
+      "exit_code": 0,
+      "output_line": "44ae6e303706ec7029b6d098f9ce72dc1cff68970b3a9f9290bad7c1f791e422  KVNLOO654-297-BATTERY-MANIFEST-20261030.md",
+      "sidecar_path": "/root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101/KVNLOO654-297-BATTERY-MANIFEST-20261030.sha256",
+      "sidecar_verify_command": "cd /root/workspace/drop/deepdive-mission-flow/REPRODUCTION-ARTIFACTS-KIT-20261101 && sha256sum -c KVNLOO654-297-BATTERY-MANIFEST-20261030.sha256",
+      "sidecar_verify_exit_code": 0,
+      "sidecar_verify_output": "KVNLOO654-297-BATTERY-MANIFEST-20261030.md: OK",
+      "sidecar_matches_measurement": true
+    },
+    "lock_checks": {
+      "harness_combined_tree": {
+        "value": 0,
+        "provenance": "MEASURED",
+        "tree": "/tmp/kvnloo654-combined (worktree copy of round-two combined substrate, HEAD 995de91d... per manifest)",
+        "command": "cd /tmp/kvnloo654-combined && uv lock --check",
+        "exit_code": 0,
+        "output_lines": [
+          "Using CPython 3.14.7",
+          "Resolved 327 packages in 229ms"
+        ],
+        "packages_resolved": 327
+      },
+      "candidate_original_tree": {
+        "value": 0,
+        "provenance": "MEASURED",
+        "tree": "/tmp/scratchpad/round2-checkout (fresh checkout of fork/round2-combined-substrate @ b84150e9be, unmodified lock)",
+        "command": "cd /tmp/scratchpad/round2-checkout && uv lock --check",
+        "exit_code": 0,
+        "output_lines": [
+          "Using CPython 3.14.7",
+          "Resolved 327 packages in 205ms"
+        ],
+        "packages_resolved": 327,
+        "note": "Harness measurement contradicts husk's 'canonical_lock_rejected: true' claim (which is about the candidate's own CI PM env, not reproducible here). Recorded as measured fact; see canonical_lock_rejected reconciliation."
+      },
+      "uv_version": {
+        "value": "0.12.2",
+        "provenance": "MEASURED",
+        "command": "uv --version",
+        "exit_code": 0,
+        "output_line": "uv 0.12.2 (x86_64-unknown-linux-gnu)"
+      }
+    },
+    "tracked_source_dirty": {
+      "value": false,
+      "provenance": "MEASURED",
+      "command": "cd /usr/local/lib/hermes-agent && git diff --name-only && git status --porcelain | grep -E '^[ MADRCU][MADRCU]'",
+      "exit_code": 0,
+      "output": "0 tracked files modified (git diff --name-only empty); untracked files present (new, not tracked source)",
+      "note": "Re-derives husk's tracked_source_dirty=false. Untracked files exist but are not tracked source, so the flag holds."
+    }
+  },
+  "husk_reconciliation": {
+    "env_identity": {
+      "husk_value": "separately-provisioned-compatible-pm",
+      "standalone_value": "harness-env (see fields.env_identity)",
+      "provenance": "DERIVED (husk label) / UNMEASURABLE as 'separate provision'",
+      "would_measure_command": "Provision a distinct compatible-PM env (uv sync into a fresh venv from a separate provision source) and record its identity string; the husk's 'separately-provisioned-compatible-pm' is a label for an env this harness did not provision.",
+      "note": "The kit manifest states this receipt is 'the harness-env record, not the separate-provision's'. The husk's label is unverified here; replaced by measured harness identity."
+    },
+    "tracked_source_dirty": {
+      "husk_value": false,
+      "standalone_value": false,
+      "provenance": "MEASURED (re-derived)",
+      "command": "cd /usr/local/lib/hermes-agent && git diff --name-only",
+      "exit_code": 0
+    },
+    "lock_state": {
+      "husk_value": "checked",
+      "standalone_value": "checked",
+      "provenance": "MEASURED (re-derived via uv lock --check exit 0)"
+    },
+    "lock_check_exit": {
+      "husk_value": 0,
+      "standalone_value": 0,
+      "provenance": "MEASURED",
+      "command": "cd /tmp/scratchpad/round2-checkout && uv lock --check",
+      "exit_code": 0
+    },
+    "canonical_lock_rejected": {
+      "husk_value": true,
+      "standalone_value": null,
+      "provenance": "UNMEASURABLE (candidate-CI scenario) + harness measurement contradicts",
+      "would_measure_command": "cd <candidate-tree> && uv lock --check  (run in the candidate's canonical CI PM environment, not this harness)",
+      "harness_measurement": {
+        "command": "cd /tmp/scratchpad/round2-checkout && uv lock --check",
+        "exit_code": 0,
+        "output": "Resolved 327 packages in 205ms"
+      },
+      "note": "Husk claims the candidate's canonical setup rejected the stale uv.lock (exit != 0). In this harness env the same lock passes (exit 0). The claim is about a different env and is not reproducible here; recorded as UNMEASURABLE for the candidate-CI scenario, with the harness measurement noted as a discrepancy. Do not copy the husk's 'true' as verified."
+    },
+    "recorded_at": {
+      "husk_value": "2026-11-01T15:48:27.191686Z",
+      "standalone_value": "2026-11-02T21:10:05.182225Z",
+      "provenance": "DERIVED (husk's recorded_at) vs MEASURED (this run's date -u)"
+    },
+    "notes": {
+      "husk_value": "",
+      "standalone_value": "",
+      "provenance": "DERIVED (husk)"
+    }
+  },
+  "provenance_summary": {
+    "MEASURED": [
+      "env_identity (harness)",
+      "python_version",
+      "hermes_cli_version",
+      "manifest_sha256 (+ sidecar verify)",
+      "lock_checks.harness_combined_tree",
+      "lock_checks.candidate_original_tree",
+      "lock_checks.uv_version",
+      "tracked_source_dirty",
+      "husk_reconciliation.tracked_source_dirty",
+      "husk_reconciliation.lock_state",
+      "husk_reconciliation.lock_check_exit"
+    ],
+    "DERIVED (copied from husk, unverified)": [
+      "husk_reconciliation.recorded_at (husk value)",
+      "husk_reconciliation.notes (husk value)",
+      "husk env_identity label (separately-provisioned-compatible-pm) \u2014 unverified, replaced by measured harness identity"
+    ],
+    "UNMEASURABLE": [
+      "husk_reconciliation.canonical_lock_rejected (candidate-CI scenario) \u2014 would-measure: cd <candidate-tree> && uv lock --check in candidate's canonical PM env",
+      "husk_reconciliation.env_identity as a separate provision \u2014 would-measure: provision a distinct compatible-PM env and record its identity string"
+    ]
+  },
+  "integrity_note": "No field was copied from the husk without a provenance label. Fields that could not be measured in this harness env are named with the exact command that would measure them. The kit directory was not modified. No public writes were made."
+}

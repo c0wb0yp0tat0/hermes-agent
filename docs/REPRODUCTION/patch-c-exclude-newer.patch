@@ -1,0 +1,44 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 5145f275..2b9d0eb5 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -629,7 +629,7 @@ override-dependencies = [
+ # cutoff from what it generates (pm/workspace.py::_trust_core_lock), because many
+ # package mirrors publish no upload times and uv rejects a file it cannot date
+ # (#135589). Exact pins follow the same 3-day rule; there are no exemptions.
+-exclude-newer = "3 days"
++exclude-newer = "2026-10-09T00:00:00Z"
+ 
+ [tool.setuptools]
+ # Root single-file modules are derived by setup.py at build time from the
+diff --git a/tests/test_packaging_metadata.py b/tests/test_packaging_metadata.py
+index 3fd0fee7..5fd55e95 100644
+--- a/tests/test_packaging_metadata.py
++++ b/tests/test_packaging_metadata.py
+@@ -62,9 +62,10 @@ def test_every_dependency_is_held_to_one_three_day_release_age():
+     manifest = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+     uv = manifest["tool"]["uv"]
+     lock = tomllib.loads((REPO_ROOT / "uv.lock").read_text(encoding="utf-8"))
+-    assert uv["exclude-newer"] == "3 days"
++    assert uv["exclude-newer"] == "2026-10-09T00:00:00Z"
+     assert "exclude-newer-package" not in uv
+-    assert lock["options"].get("exclude-newer-span") == "P3D"
++    assert lock["options"].get("exclude-newer") == "2026-10-09T00:00:00Z"
++    assert "exclude-newer-span" not in lock["options"]
+     assert "exclude-newer-package" not in lock["options"]
+ 
+ 
+diff --git a/uv.lock b/uv.lock
+index 765bf23d..7835f19b 100644
+--- a/uv.lock
++++ b/uv.lock
+@@ -10,8 +10,7 @@ supported-markers = [
+ ]
+ 
+ [options]
+-exclude-newer = "0001-01-01T00:00:00Z" # This has no effect and is included for backwards compatibility when using relative exclude-newer values.
+-exclude-newer-span = "P3D"
++exclude-newer = "2026-10-09T00:00:00Z"
+ 
+ [manifest]
+ overrides = [

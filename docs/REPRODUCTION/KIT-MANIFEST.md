@@ -1,0 +1,24 @@
+REPRODUCTION KIT — the roster (cited-name → kit-name), REFRESHED
+- KVNLOO654-297-BATTERY-MANIFEST-20261030.md → KVNLOO654-297-BATTERY-MANIFEST-20261030.md (+ .sha256 sidecar)
+- NIGHT-654-LEG1-PARITY-RECEIPT-20261030.md → receipt-parity.md
+- NIGHT-654-R2-LEG1-RUNNER-PROBE-20261030.md → NIGHT-654-R2-LEG1-RUNNER-PROBE-20261030.md
+- NIGHTSHIFT-1030-REDO-FOLD-20261030.md → NIGHTSHIFT-1030-REDO-FOLD-20261030.md
+- NIGHTSHIFT-1030-LOOP2-FOLD-20261030.md → NIGHTSHIFT-1030-LOOP2-FOLD-20261030.md
+- LOOP5-THINKTANK-FOLD-20261101.md → LOOP5-THINKTANK-FOLD-20261101.md
+- MOONBEAM-EXECUTION-20261101.md → MOONBEAM-EXECUTION-20261101.md
+- VERIFICATION-RE-RUN-20261101.md → VERIFICATION-RE-RUN-20261101.md
+- HUMBLE-FOLD-20261101.md → HUMBLE-FOLD-20261101.md
+- FIVEWHY-STORM-20261101.md → FIVEWHY-STORM-20261101.md
+- B-TEST-RECOVERY-20261101.md → receipt-b-test.md
+- A-TEST-INDEPENDENT-20261101.md → receipt-a-test.md
+- CLOSECODE-RERUN-20261101.md → receipt-closecode-rerun.md
+- FOLLOWUP-SEAM-OPTION-BRIEFS-20261101.md → receipt-seam-options.md
+- NIGHT-654-LEG3-AUDIT-REPORT.md → NIGHT-654-LEG3-AUDIT-REPORT.md
+- NIGHT-654-LEG5-FOLD-20261030.md → NIGHT-654-LEG5-FOLD-20261030.md
+- NIGHT-654-R2-VERIFY-FOLD-20261030.md → NIGHT-654-R2-VERIFY-FOLD-20261030.md
+- NIGHT-1030-ENTRY-APPEND-DRAFT.md → NIGHT-1030-ENTRY-APPEND-DRAFT.md
+- patch-a-consent-deny.patch / patch-b-orphan-doc-names.patch / patch-c-exclude-newer.patch → (as named)
+- lock-refresh.patch → (as named; the retained artifact)
+- test_rfc_homework_ext.py → (as named)
+- env-qualification-receipt.json → (as named; the harness-env record, not the separate-provision's)
+- env-qualification-receipt-standalone.json (2026-11-02 — the husk's closure, measured via a goal-lane run: 11 MEASURED with command+exit, 3 DERIVED labeled, 2 UNMEASURABLE with would-measure commands; the husk itself stays as the historical record)
