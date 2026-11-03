@@ -1,0 +1,57 @@
+name: rig-hosted-verify
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the pinned target
+        uses: actions/checkout@v4
+        with:
+          repository: c0wb0yp0tat0/hermes-agent
+          ref: d1bdb4582cd5d16be6a6b486f696f8240c222b96
+          fetch-depth: 1
+      - name: Hosted runner identity
+        run: |
+          uname -a
+          nproc
+          free -h
+          python3 --version
+        id: identity
+      - name: Install (minimal, per repo standard)
+        run: |
+          python3 -m pip install --quiet --upgrade pip
+          python3 -m pip install --quiet -e ".[test]" 2>/dev/null || python3 -m pip install --quiet -e .
+      - name: Canonical write-gate suite
+        id: canonical
+        continue-on-error: true
+        run: |
+          set +e
+          (bash scripts/run_tests.sh 2>&1 || true) | tee canonical.log
+          python3 -m pytest tests/tools/test_write_gate.py tests/tools/test_memory_tool_schema.py tests/tools/test_memory_tool.py tests/tools/test_memory_patch_action.py tests/tools/test_memory_target_contract.py tests/agent/test_memory_write_bridge.py -q 2>&1 | tee gate-battery.log
+          echo "::set-output name=done::true"
+      - name: Compile the tally
+        run: |
+          {
+            echo "# Hosted verification tally — rig-hosted-verify"
+            echo
+            echo "Target SHA: d1bdb4582cd5d16be6a6b486f696f8240c222b96 (PR #139606 merge head)"
+            echo "Runner: $(uname -s) $(uname -m) — $(nproc) cores, $(free -h | awk '/Mem:/{print $2}') RAM"
+            echo "Python: $(python3 --version)"
+            echo
+            echo "## Scripts runner (canonical)"
+            tail -20 canonical.log 2>/dev/null || echo "(no canonical log)"
+            echo
+            echo "## Gate battery"
+            tail -30 gate-battery.log 2>/dev/null || echo "(no battery log)"
+          } > TALLY.md
+          cat TALLY.md
+      - name: Upload the tally artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rig-hosted-verify-d1bdb458
+          path: |
+            TALLY.md
+            canonical.log
+            gate-battery.log
