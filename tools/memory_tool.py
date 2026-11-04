@@ -7,6 +7,7 @@ Single `memory` tool: add/patch/remove or a batch `operations` list."""
 import copy
 import json
 import logging
+import re
 from contextvars import ContextVar
 from pathlib import Path
 from hermes_constants import get_hermes_home
@@ -177,15 +178,44 @@ _REPLACE_REMOVED = ("'replace' is not available; use 'patch'. old_text is the ex
 # pending/memory/<id>.json.
 _SOURCE_CONSENT_MARKER = "SYNTHETIC-CONSENT-CODE-"
 
+# Deny-family: language classes, not literals.  The exact marker string above is
+# a SAMPLE of the consent-code class — it never appears in this list as its own
+# pattern, so renamed identifiers of the same class are still recognised.  The
+# no-retain decision binds to the CONTENT'S ORIGIN (the harness-set provenance
+# encoded in the content), never to model-written metadata such as
+# source_no_save / source_instruction (which a model could forge or omit).
+_CONSENT_DENY_PATTERNS = [
+    re.compile(r"[A-Z0-9]+-CONSENT-CODE-[A-Z0-9-]+", re.IGNORECASE),
+    re.compile(r"-CONSENT-CODE-", re.IGNORECASE),
+    re.compile(r"NO-SAVE:\s*\S", re.IGNORECASE),
+    re.compile(r"DO-NOT-RETAIN\s+[A-Z0-9-]+", re.IGNORECASE),
+]
+
 
 def _contains_consent_deny(text: Optional[str]) -> bool:
-    """True when *text* carries a source-level no-save marker."""
-    return bool(text and _SOURCE_CONSENT_MARKER in text)
+    """True when *text* carries a source-level no-save marker.
+
+    Binds to the content's origin (harness-set provenance): the structural
+    consent-code shape plus the natural-language no-save family.  Renamed
+    identifiers of the same class are recognised by shape, never by a literal.
+    """
+    if not text:
+        return False
+    if _SOURCE_CONSENT_MARKER in text:
+        return True
+    return any(pattern.search(text) for pattern in _CONSENT_DENY_PATTERNS)
 
 
 def _op_consent_denied(op: dict[str, Any]) -> bool:
-    """True when a batch operation carries a no-save marker in its written text."""
-    return _contains_consent_deny(op.get("content") or op.get("new_text"))
+    """True when a batch operation carries a no-save marker in its written text.
+
+    Keys on the content's origin only — never on model-written fields such as
+    source_no_save / source_instruction.
+    """
+    if not isinstance(op, dict):
+        return False
+    content = op.get("content") or op.get("new_text")
+    return _contains_consent_deny(content)
 
 
 def destructive_ops(payload: dict[str, Any]) -> list[dict[str, Any]]:
