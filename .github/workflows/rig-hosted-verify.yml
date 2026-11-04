@@ -30,7 +30,7 @@ jobs:
         run: |
           set +e
           (bash scripts/run_tests.sh 2>&1 || true) | tee canonical.log
-          uv run python -m pytest tests/tools/test_write_gate.py tests/tools/test_memory_tool_schema.py tests/tools/test_memory_tool.py tests/tools/test_memory_patch_action.py tests/tools/test_memory_target_contract.py tests/agent/test_memory_write_bridge.py -q 2>&1 | tee gate-battery.log
+          uv run python -m pytest tests/tools/test_write_gate.py tests/tools/test_memory_tool_schema.py tests/tools/test_memory_tool.py tests/tools/test_memory_patch_action.py tests/tools/test_memory_target_contract.py tests/agent/test_memory_write_bridge.py -rs -q 2>&1 | tee gate-battery.log
           echo "done"
       - name: Compile the tally
         run: |
@@ -46,6 +46,10 @@ jobs:
             echo
             echo "## Gate battery"
             tail -30 gate-battery.log 2>/dev/null || echo "(no battery log)"
+            echo
+            echo "## Skip-reasons (the -rs report)"
+            grep -E "SKIPPED|skipped|skip" gate-battery.log 2>/dev/null | tail -14 || echo "(no skip lines)"
+            echo
           } > TALLY.md
           cat TALLY.md
       - name: Upload the tally artifact
