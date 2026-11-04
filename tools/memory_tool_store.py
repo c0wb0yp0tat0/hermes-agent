@@ -454,9 +454,17 @@ class MemoryStore:
         actual_end = offset + safe_len
         has_more = actual_end < len(serialized)
         next_cursor = str(actual_end) if has_more else None
+        # Entries shape for the orphan-recovery probe (and other callers) when
+        # the whole doc fits in a single page; omitted for paged reads to keep
+        # the response within the 4 KiB budget (#116673).
+        if not has_more:
+            entries = list(dict.fromkeys(self._parse_entries(raw)))
+        else:
+            entries = []
         return {
             "success": True, "target": f"doc:{doc_name}",
             "text": page_text,
+            "entries": entries,
             "usage": self._usage_pct(f"doc:{doc_name}", total_chars),
             "cursor": next_cursor,
             "has_more": has_more,
@@ -616,6 +624,34 @@ class MemoryStore:
         if not docs_dir.exists():
             return []
         return sorted(p.stem for p in docs_dir.glob("*.md"))
+
+    def orphan_doc_names(self) -> list[str]:
+        """Docs whose on-disk doc file exists but whose @doc anchor is absent
+        from MEMORY.md (anchor removed -> orphan). Returns doc *names*.
+
+        Match is a WHOLE-ANCHOR token match: ``@doc:{name}`` must appear as a
+        complete token, never as a substring of a longer anchor such as
+        ``@doc:{name}suffix`` (which would otherwise hide an orphan).
+        """
+        memory_path = self._path_for("memory")
+        raw = ""
+        if memory_path.exists():
+            r, read_ok = self._read_raw_checked(memory_path)
+            if read_ok:
+                raw = r
+        docs_dir = memory_path.parent / "docs"
+        orphans = []
+        if docs_dir.exists():
+            for p in sorted(docs_dir.glob("*.md")):
+                name = p.stem
+                # Whole-anchor token match: name must not be followed by
+                # identifier characters that would make it a longer anchor.
+                if not re.search(
+                    r"(?<![\w])@doc:" + re.escape(name) + r"(?![A-Za-z0-9_-])",
+                    raw,
+                ):
+                    orphans.append(name)
+        return sorted(orphans)
 
     def replace(self, target: str, old_text: str, new_content: str,
                 matched_entry: Optional[str] = None) -> dict[str, Any]:
