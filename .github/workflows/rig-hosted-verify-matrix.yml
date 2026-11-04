@@ -1,0 +1,68 @@
+name: rig-hosted-verify-matrix
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: "verify (${{ matrix.group }})"
+    strategy:
+      fail-fast: false
+      matrix:
+        group: ["write-gate", "memory-tool", "agent-bridge", "scripts"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the pinned target
+        uses: actions/checkout@v4
+        with:
+          repository: c0wb0yp0tat0/hermes-agent
+          ref: d1bdb4582cd5d16be6a6b486f696f8240c222b96
+          fetch-depth: 1
+      - name: Hosted runner identity
+        run: |
+          uname -a
+          nproc
+          free -h
+      - name: Setup uv (the repo's own pin, cached across the matrix)
+        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # 8.2.0
+        with:
+          enable-cache: true
+      - name: Install (the repo's own CI recipe — tests.yml, adopted verbatim)
+        run: |
+          uv python install 3.14
+          HERMES_DISABLE_LAZY_INSTALLS=1 uv sync --locked --python 3.14 --extra all --group dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona --extra parallel-web
+      - name: "Battery — the group's suite (skip reasons ride the tally)"
+        id: battery
+        continue-on-error: true
+        run: |
+          set +e
+          case "${{ matrix.group }}" in
+            write-gate)
+              uv run python -m pytest tests/tools/test_write_gate.py -rs -q 2>&1 | tee battery.log ;;
+            memory-tool)
+              uv run python -m pytest tests/tools/test_memory_tool_schema.py tests/tools/test_memory_tool.py tests/tools/test_memory_patch_action.py tests/tools/test_memory_target_contract.py -rs -q 2>&1 | tee battery.log ;;
+            agent-bridge)
+              uv run python -m pytest tests/agent/test_memory_write_bridge.py -rs -q 2>&1 | tee battery.log ;;
+            scripts)
+              (bash scripts/run_tests.sh 2>&1 || true) | tee battery.log ;;
+          esac
+          echo done
+      - name: Compile the group tally
+        run: |
+          {
+            echo "# Hosted matrix tally — ${{ matrix.group }} (iter-4)"
+            echo
+            echo "Target SHA: d1bdb4582cd5d16be6a6b486f696f8240c222b96 (PR #139606 merge head)"
+            echo "Runner: $(uname -s) $(uname -m) — $(nproc) cores, $(free -h | awk '/Mem:/{print $2}') RAM"
+            echo
+            echo "## The group's battery"
+            tail -25 battery.log 2>/dev/null || echo "(no battery log)"
+            echo
+            echo "## Skip-reasons (the -rs report)"
+            grep -E "SKIPPED|skipped|skip" battery.log 2>/dev/null | tail -14 || echo "(no skip lines)"
+          } > TALLY-${{ matrix.group }}.md
+          cat TALLY-${{ matrix.group }}.md
+      - name: Upload the group tally
+        uses: actions/upload-artifact@v4
+        with:
+          name: matrix-${{ matrix.group }}-d1bdb458
+          path: TALLY-${{ matrix.group }}.md
