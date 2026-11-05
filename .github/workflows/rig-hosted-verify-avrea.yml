@@ -72,6 +72,13 @@ jobs:
           # pinned head — include it only when present, so pins predating it
           # still get the write-gate + memory-tool battery (exit-4 class: a
           # missing path is a collection error, not an assertion failure).
-          BASE="tests/tools/test_write_gate.py tests/tools/test_memory_tool.py"
+          # Collect-only-what-exists: the composition heads predate the
+          # write-gate/memory-tool suites and the falsifier dir — a fixed path
+          # list dies at collection (exit 4) on any pin that lacks it. The
+          # battery is the INTERSECTION of the head's tree and the suite.
+          BASE=""
+          for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
+            [ -f "$f" ] && BASE="$BASE $f"
+          done
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           uv run pytest $BASE -rs -q 2>&1 | tail -40
