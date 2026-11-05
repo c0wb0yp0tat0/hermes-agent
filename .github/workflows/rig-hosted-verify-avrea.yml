@@ -53,7 +53,7 @@ jobs:
       - name: The verification battery (write-gate + memory-tool + agent-bridge + scripts)
         shell: bash
         run: |
-          python -m pytest \
+          uv run pytest \
             tests/tools/test_write_gate.py \
             tests/memory/test_memory_tool.py \
             tests/tools/test_spa_integration.py \
