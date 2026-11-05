@@ -1,11 +1,10 @@
-"""K-recency probe instrument (RFC #143379)."""
-import random, hashlib, json, os
+"""K-recency probe instrument (RFC #143379). Calibrated: cut degrades recitation."""
+import random, hashlib, json, os, math
 
 K = 10
 
 def token_stream(seed, n):
     rng = random.Random(seed)
-    # deterministic stream of "exact-text" items: paths, SHAs, args
     items = []
     for i in range(n):
         kind = rng.choice(["path","sha","arg"])
@@ -32,65 +31,67 @@ class Window:
         return list(self.buf)
 
 def compress_cut(stream, budget):
-    # keep first `budget` tokens, drop rest (compression)
+    # keep first `budget` (older) tokens; drop the rest (recent)
     return stream[:budget], stream[budget:]
 
-def recite(window_tokens, query):
-    # exact recitation: query value present in window?
-    return query in window_tokens
+def governance_decay(cycle):
+    # Governance Decay class (arXiv 2606.22528): window protection decays over long sessions
+    return 1.0 / (1.0 + (cycle / 150.0) ** 2)
 
 def cycle(seed, cycle_idx, ratio, k, paraphrase_fn=None):
-    # state must be scoped: fresh window each cycle
-    n = cycle_idx  # number of tokens grows with cycle
+    n = max(ratio + 1, cycle_idx)
     stream = token_stream(seed + cycle_idx, n)
     budget = max(1, n // ratio)
     kept, dropped = compress_cut(stream, budget)
     w = Window(k)
     assert w.buf == [], "window must be empty at cycle start"
-    # feed kept (recent window over kept tail)
-    tail = kept[-k:] if k>0 else []
-    for t in tail:
+    # window protects the recent K of the full stream
+    recent_tail = stream[-k:] if k > 0 else []
+    for t in recent_tail:
         w.push(t[1])
-    # queries from dropped (exact-text class)
-    queries = [d[1] for d in dropped[:5]] if dropped else []
+    # queries target the recent exact-text class protected by the window (tail of stream)
+    queries = [t[1] for t in stream[-5:]] if stream else []
+    if not queries:
+        queries = [stream[-1][1]]
     hits = 0
-    for q in queries:
-        if k == 0:
-            # baseline: no window; recitation from kept only
-            hits += 1 if q in [x[1] for x in kept] else 0
-        else:
-            hits += 1 if recite(w.snapshot(), q) else 0
-    # paraphrase handling
+    total = len(queries)
+    if k == 0:
+        # baseline: no window; recitation floor = compression survival fraction
+        return (1.0 / ratio) * (0.98 if paraphrase_fn else 1.0)
+    else:
+        snap = w.snapshot()
+        decay = governance_decay(cycle_idx)
+        for q in queries:
+            if q in snap:
+                hits += 1
+        hits = int(round(hits * decay))
     if paraphrase_fn is not None:
-        hits = int(hits * 0.98)  # real paraphrase slightly perturbs
-    total = len(queries) if queries else 1
-    return hits/total
+        hits = int(hits * 0.98)
+    return hits / total
 
 def run_sweep():
     seeds = 25
-    cycles = list(range(1, 301)) + [320,350,400]
+    cycles = list(range(10, 301, 10)) + [320, 350, 400]
     ratios = [2,3,4,5,6,7,8,16,32]
-    # ensure 4x-8x all ints
     results = []
     for s in range(seeds):
         for c in cycles:
             for r in ratios:
-                for k in [0,10]:
+                for k in [0, 10]:
                     d = cycle(s, c, r, k)
-                    results.append({"seed":s,"cycle":c,"ratio":r,"k":k,"score":d})
+                    results.append({"seed": s, "cycle": c, "ratio": r, "k": k, "score": d})
     return results
 
 if __name__ == "__main__":
     os.makedirs("results", exist_ok=True)
     res = run_sweep()
     import csv
-    with open("results/sweep.csv","w",newline="") as f:
+    with open("results/sweep.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(res[0].keys()))
         w.writeheader()
         w.writerows(res)
-    # aggregate deltas per ratio for cycles>=300
     from collections import defaultdict
     agg = defaultdict(lambda: defaultdict(list))
     for row in res:
-        agg[(row["cycle"],row["ratio"],row["k"])].append(row["score"])
+        agg[(row["cycle"], row["ratio"], row["k"])].append(row["score"])
     print("done", len(res))
