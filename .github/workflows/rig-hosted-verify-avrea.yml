@@ -26,6 +26,9 @@ jobs:
         uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
         with:
           persist-credentials: false
+          # A full clone: an arbitrary pinned SHA is not reachable from a
+          # shallow (depth-1) checkout, so "Checking out the ref" fails.
+          fetch-depth: 0
           ref: ${{ inputs.head_sha || '' }}
 
       - name: Pin verification to the executed tree
@@ -33,8 +36,11 @@ jobs:
         run: |
           set -euo pipefail
           actual="$(git rev-parse HEAD)"
-          printf 'requested_sha=%s\nexecuted_sha=%s\n' "${{ github.sha }}" "$actual"
-          test "$actual" = "${{ github.sha }}"
+          # The requested head is the dispatch input when given; github.sha is
+          # the branch head (main) and is NOT the pinned tree on a dispatch.
+          requested="${{ inputs.head_sha || github.sha }}"
+          printf 'requested_sha=%s\nexecuted_sha=%s\n' "$requested" "$actual"
+          test "$actual" = "$requested"
 
       - name: Install uv (the repo's own recipe)
         uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # 8.2.0
