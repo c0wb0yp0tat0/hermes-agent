@@ -21,3 +21,16 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 | 2026-11-05 | c39d8ce722d4c5d43a3aa2ea3e71f698f500d870 (round2-combined-substrate, the offering lineage) | 42074781407 | PASS — requested == executed == c39d8ce7… | **GREEN** | 70 passed in 5.24s — the write-gate + memory-tool battery at the lead |
 | 2026-11-05 | a996d4ad3039e280dc21e9b558f5a44c081dda42 (fixes/falsifier-battery-20261104, the whole-anchor head) | 42074793218 | PASS — requested == executed == a996d4ad… | **GREEN** | 98 passed, 1 xpassed in 5.85s — the full battery incl. the falsifier arms; the xpassed = the strengthened flip |
 | 2026-11-05 | 490527023765ffd901e72d85fc43e60560e5aabd (avrea-parallel, the runner-env head) | 42074804475 | PASS — requested == executed == 49052702… | **GREEN** | 89 passed, 1 xfailed in 5.74s — the improver-audit's runner-env figure now VERIFIED on the lead itself |
+
+
+## RECEIPTS 2026-11-05 (the apex day's rows)
+| When | What | Result | Evidence |
+|---|---|---|---|
+| 19:43Z | falsifier-battery @ the whole-anchor (a996d4ad30) - the first dedicated falsifier run | GREEN | run 42096454325 |
+| 19:43Z | union @ the arm-head (a3a9fb8ccd) | RED | run 42096273475 - the nugget-6 substrate-absent class (fixed: the guarded falsifier into the pin-trees, 76f95dd401) |
+| 19:44Z | sweep @ the study-head (35ed130686) | RED | run 42096589644 - the same class; the sweep re-runs carry the guard |
+| 19:50Z | union @ the arm-head (re-run) | RED | run 42098517565 - the pin-tree still unguarded at dispatch; the guard landed after (76f95dd401) |
+| in flight | union @ the study-head (76f95dd401, guarded) | pending | run 42103142238 |
+| - | the xngg-gaps verification (4 gaps at the pins) | 2 CONFIRMED / 1 not-reproduced / 1 partially-open | XNGG-GAPS-VERIFICATION-20261105.md (35ed130686) |
+| - | the alignment's hybrid README (the paid pod's product) | landed, fidelity-checked | eb57ddbe63 |
+| - | the fleet's first fold (the longcat divergence) | landed + byte-verified | 77a441dc92 + the wave-5 (6ded14715c) |
