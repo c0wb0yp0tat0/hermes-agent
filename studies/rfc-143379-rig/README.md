@@ -5,6 +5,7 @@
 ## Stage: PROBE — the verification receipts (LANDED, EVIDENCE)
 `RECEIPTS.md` — the Avrea leg's run ledger: five GREEN receipts at exact heads (requested == executed asserted in-run): #139606 `117/10` · the whole-anchor landing `28/1 xpassed` · #140008 `64` · #116673 `66` · **#141876 (the restore) `82`**. The GitHub-window side: **NOT RUN** (hosted queue class); the meter: 3 of 6 program dispatches used.
 
+`RECIPE.md` — the reproducibility recipe: instruments, sweeps, derivations, gate, honesty marks.
 ## Stage: PROBE — the instruments (the derived-vs-injected discipline)
 - `krecency/probe_age.py` + `sweep_age.py` + `RESULTS-AGE.md` — **the demand-age instrument: EVIDENCE** (derived, no injected term). Its mechanism: the recitation demand's age exceeds the window as cycles grow → the coverage erodes → the delta goes positive → sub-zero. Verdict: **FAIL per the RFC gate at 300+** — worst-case 4× −8.4pp (150c: 4× +3.6 / 8× +4.4; 300c: 4× −8.4 / 8× −3.6). The RFC's qualitative shape reproduced BY the mechanism, not imposed.
 - `krecency/probe_constraints.py` + `RESULTS-CONSTRAINTS.md` + `results/constraints.*` — **the constraint-survival arm: EVIDENCE** (the four strategies, the pinning restoration, the rig-mechanism mapping). The strategy table lands in its RESULTS; the sweep's code was folded into the probe file — the standalone `sweep_constraints.py` is the lane's named open item.
