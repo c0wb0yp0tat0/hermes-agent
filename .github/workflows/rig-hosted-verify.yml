@@ -51,15 +51,11 @@ jobs:
       - name: The verification battery (write-gate + memory-tool + consent/orphan + falsifier)
         shell: bash
         run: |
-          uv run pytest \
-            tests/tools/test_write_gate.py \
-            tests/tools/test_memory_tool_schema.py \
-            tests/tools/test_memory_tool.py \
-            tests/tools/test_memory_patch_action.py \
-            tests/tools/test_memory_target_contract.py \
-            tests/agent/test_memory_write_bridge.py \
-            tests/falsifier-battery/ \
-            -rs -q 2>&1 | tail -40
+          BASE="tests/tools/test_write_gate.py tests/tools/test_memory_tool_schema.py tests/tools/test_memory_tool.py tests/tools/test_memory_patch_action.py tests/tools/test_memory_target_contract.py tests/agent/test_memory_write_bridge.py"
+          # the falsifier-battery lives on the battery branch; the round2 lineage
+          # carries it only when merged — include it only when present
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          uv run pytest $BASE -rs -q 2>&1 | tail -40
 
       - name: Compile the tally
         shell: bash
