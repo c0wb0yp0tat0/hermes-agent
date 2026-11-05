@@ -32,6 +32,7 @@ concurrency:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   verify:
@@ -113,3 +114,19 @@ jobs:
           uv run --project ../../../ python sweep_alias.py && uv run --project ../../../ python sweep_age.py 2>&1 | tail -6
           ls -la results/ | tail -6
 
+      - name: The receipt's landing (every avrea runner lands its findings on PR #1 — the machine's own voice)
+        if: always()
+        shell: bash
+        run: |
+          RESULT="${{ job.status }}"
+          PIN="${{ inputs.head_sha }}"
+          BATTERY="${{ inputs.battery || 'union' }}"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          # the summary tail (the last meaningful numbers from the previous step's log)
+          if [ "$RESULT" = "success" ]; then
+            SUMMARY="GREEN — the $BATTERY arm at the pinned head completed."
+          else
+            SUMMARY="RED — the $BATTERY arm at the pinned head failed (the run's log carries the cause)."
+          fi
+          BODY="**[RUNNER-LANDING]** — run \`${{ github.run_id }}\` ($BATTERY @ \`${PIN:0:40}\`): $RESULT. $SUMMARY Run: $RUN_URL. Landed by the machine itself, per the standing rule — all avrea runners land their findings on PR #1."
+          gh api -X POST "repos/${{ github.repository }}/issues/1/comments"             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"             -f "body=$BODY" 2>&1 | tail -1 || echo "landing-post failed (recorded — the head's cadence will carry it)"
