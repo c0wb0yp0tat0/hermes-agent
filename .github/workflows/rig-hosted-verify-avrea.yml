@@ -13,6 +13,12 @@ on:
         required: false
         default: ""
 
+concurrency:
+  # kvnloo's pin-scoped shape: one active run per pinned head; a re-dispatch
+  # of the SAME pin cancels the stale one, different pins run in parallel.
+  group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
