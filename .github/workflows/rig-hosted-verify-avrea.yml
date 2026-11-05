@@ -129,4 +129,18 @@ jobs:
             SUMMARY="RED — the $BATTERY arm at the pinned head failed (the run's log carries the cause)."
           fi
           BODY="**[RUNNER-LANDING]** — run \`${{ github.run_id }}\` ($BATTERY @ \`${PIN:0:40}\`): $RESULT. $SUMMARY Run: $RUN_URL. Landed by the machine itself, per the standing rule — all avrea runners land their findings on PR #1."
-          gh api -X POST "repos/${{ github.repository }}/issues/1/comments"             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"             -f "body=$BODY" 2>&1 | tail -1 || echo "landing-post failed (recorded — the head's cadence will carry it)"
+                    python3 - <<'PYEOF'
+import json, os, urllib.request
+body = os.environ.get("BODY", "{{ inputs.head_sha }}")
+data = json.dumps({"body": body}).encode()
+req = urllib.request.Request(
+    "https://api.github.com/repos/${{ github.repository }}/issues/1/comments",
+    data=data,
+    headers={"Authorization": "token ${{ secrets.GITHUB_TOKEN }}", "Content-Type": "application/json", "Accept": "application/vnd.github+json"},
+    method="POST")
+try:
+    with urllib.request.urlopen(req, timeout=60) as r:
+        print("landed:", r.status, r.read()[:80])
+except Exception as e:
+    print("landing-post failed (recorded — the head's cadence will carry it):", e)
+PYEOF
