@@ -19,9 +19,9 @@ envelope:
 ```
 The pin is asserted BEFORE the suite; the receipt is written only from the run's actual conclusion — a committed workflow definition is NOT execution (the NOT-RUN marker is the honest state until the receipt exists).
 
-## The meter budget
-- 4-vCPU class = 1,500 min/mo on the free meter. Validation moments, never churn: one run per pin, no re-dispatch without a named reason.
-- The label IS the budget: prefer `avrea-ubuntu-latest` (2-vCPU, 3,000 min) for light pins; the 4-vCPU for the full-suite pins.
+## The meter budget (corrected 2026-11-05 — the self-hosted truth)
+- The rig's runner is SELF-HOSTED: GitHub's Actions are free for self-hosted runners (the platform's own billing docs), and the provider's free-meter classes (3,000/1,500 min/mo) apply to the provider's hosted VMs, never to our local host. The true constraints are the rig's own cpu/disk/energy - the stewardship, not a platform quota.
+- The governance frame (kept by choice, not necessity): validation moments, never churn - one run per pin, no re-dispatch without a named reason. The label classes remain as the workload-sizing guide (the light pins on the smaller class, the full suites on the bigger seat). The stewardship's the meter: the runner's receipts accrue at the rig's own pace, never the churn's.
 
 ## The battery
 - The repo's own uv recipe verbatim (uv python install 3.14 + HERMES_DISABLE_LAZY_INSTALLS=1 uv sync --locked --python 3.14 --extra all --group dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona --extra parallel-web).
