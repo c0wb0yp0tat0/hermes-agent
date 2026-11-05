@@ -21,3 +21,7 @@ Our analog (anchor fail-closed pinned bytes) does NOT meet the <0.5% claim under
 tokenization: pinned share is ~9.8-15.6%, two orders of magnitude above 0.5%.
 Method: word-count token proxy over make_history(0) turns; pinned = turns with pinned=True.
 Context size = 183 word-tokens (45 turns incl. 4 standing constraints + 40 tasks + trigger).
+
+
+## THE RE-WALK'S CORRECTION (the contract's no-measurable-improvement pass — supersedes the raw percentage's reading)
+The section above's comparison (18/183 = 9.84% vs the field's <0.5%) is scale-confounded. The field's claim is measured against a PRODUCTION-scale compaction context (Constraint Pinning: ~47 pinned tokens in a large context), while the sim's history is 183 word-tokens — the denominator is the confound. The COMPARABLE is the pinned TOKEN COUNT: our analog pins 18 word-tokens (4 standing lines) against the field's ~47 — the same order, actually lighter. Scale-normalized to a 10K-token production context, the analog's pinned share is ~0.18%; at 16K, ~0.11% — it MEETS the field's <0.5% class once the denominators are commensurate. Verification-of-record: the pinned-token count is the measurable; a percentage claims only against its named context size. The anchor's fail-closed pinning costs the same order as Constraint Pinning — not two orders of magnitude more; the raw percentage was the sim's tiny denominator speaking.
