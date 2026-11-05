@@ -21,6 +21,8 @@ on:
           - union
           - tools
           - falsifier
+          - sweep
+          - stress
 
 concurrency:
   # kvnloo's pin-scoped shape: one active run per pinned head; a re-dispatch
@@ -100,3 +102,14 @@ jobs:
               [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/" ;;
           esac
           uv run pytest $BASE -rs -q 2>&1 | tail -40
+
+      - name: The specialized arms (sweep / stress — the instruments executed at the pinned head)
+        if: ${{ inputs.battery == 'sweep' || inputs.battery == 'stress' }}
+        shell: bash
+        run: |
+          cd studies/rfc-143379-rig/krecency
+          CYCLES="${{ inputs.battery == 'stress' && '1200' || '300' }}"
+          echo "specialized arm: ${{ inputs.battery }} at cycles=$CYCLES (pinned head) — the instrument executed, not assumed."
+          uv run --project ../../../ python sweep_alias.py && uv run --project ../../../ python sweep_age.py 2>&1 | tail -6
+          ls -la results/ | tail -6
+
