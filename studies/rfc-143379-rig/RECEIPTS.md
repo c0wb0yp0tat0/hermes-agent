@@ -30,7 +30,7 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 | 19:43Z | union @ the arm-head (a3a9fb8ccd) | RED | run 42096273475 - the nugget-6 substrate-absent class (fixed: the guarded falsifier into the pin-trees, 76f95dd401) |
 | 19:44Z | sweep @ the study-head (35ed130686) | RED | run 42096589644 - the same class; the sweep re-runs carry the guard |
 | 19:50Z | union @ the arm-head (re-run) | RED | run 42098517565 - the pin-tree still unguarded at dispatch; the guard landed after (76f95dd401) |
-| in flight | union @ the study-head (76f95dd401, guarded) | pending | run 42103142238 |
+| 20:26Z | union @ the study-head (76f95dd401, first guarded attempt) | RED | run 42103142238 - the strengthened-nugget's missing guard + the landing's same-step env (both fixed: 537b069343 + b5e21403de) |
 | - | the xngg-gaps verification (4 gaps at the pins) | 2 CONFIRMED / 1 not-reproduced / 1 partially-open | XNGG-GAPS-VERIFICATION-20261105.md (35ed130686) |
 | - | the alignment's hybrid README (the paid pod's product) | landed, fidelity-checked | eb57ddbe63 |
 | - | the fleet's first fold (the longcat divergence) | landed + byte-verified | 77a441dc92 + the wave-5 (6ded14715c) |
