@@ -4,4 +4,4 @@ The rig's downstream-only verification record for RFC #143379 (no upstream posts
 
 - `RECEIPTS.md` — the ledger: every pin's run (requested == executed, conclusion), NOT-RUN markers where nothing ran.
 - `AVREA-LEG-CONTRACT.md` — the leg's operating contract: the envelope, the meter budget, the wall clause.
-- The K-recency probe instrument lives at `krecency/` (probe.py, scoping_test.py, sweep.py, RESULTS.md, results/).
+- The K-recency probe instrument lives at `krecency/` (probe.py, probe_age.py, scoping_test.py, sweep.py, sweep_age.py, RESULTS.md, RESULTS-AGE.md, results/).
