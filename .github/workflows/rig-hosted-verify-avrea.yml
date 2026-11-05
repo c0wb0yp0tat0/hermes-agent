@@ -61,8 +61,11 @@ jobs:
         run: |
           # uv run: the synced venv's interpreter, never the PATH's system
           # python (which has no pytest and none of the synced deps).
-          uv run pytest \
-            tests/tools/test_write_gate.py \
-            tests/tools/test_memory_tool.py \
-            tests/falsifier-battery/ \
-            -rs -q 2>&1 | tail -40
+          # Path-tolerance (earned 2026-11-05): the falsifier-battery lives on
+          # the battery lineage (fixes/falsifier-battery-20261104), NOT on every
+          # pinned head — include it only when present, so pins predating it
+          # still get the write-gate + memory-tool battery (exit-4 class: a
+          # missing path is a collection error, not an assertion failure).
+          BASE="tests/tools/test_write_gate.py tests/tools/test_memory_tool.py"
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          uv run pytest $BASE -rs -q 2>&1 | tail -40
