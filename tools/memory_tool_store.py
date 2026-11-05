@@ -99,9 +99,22 @@ def _find_unique_match(entries: list[str], old_text: str) -> tuple[Optional[int]
     matches are only considered when no entry equals *old_text*, so a short
     entry stays addressable even when its full text is contained inside a
     longer sibling entry (remove('test') vs '...tests pass...'). Exact-duplicate
-    matches are safe (first wins); distinct matches → ``(None, True)``."""
+    matches are safe (first wins); distinct matches → ``(None, True)``.
+
+    Manifest-index resolution (nugget 6): ``@doc:`` references are structural
+    anchors, not addressable entries. Substring lookup consults the entry
+    index (the manifest), never the raw content — an anchor whose text merely
+    contains *old_text* can never be matched against the index, so after the
+    orphan is removed, a substring remove can never silently erase the anchor
+    (``remove('foo')`` never erases ``'@doc:foobar'``)."""
     exact = [i for i, e in enumerate(entries) if e == old_text]
-    matches = exact or _substring_matches(entries, old_text)
+    # Anchors are structural; the addressable index (the manifest) excludes
+    # them, so substring lookup walks the manifest, never the raw content.
+    addr_idx = [i for i, e in enumerate(entries) if not e.startswith("@doc:")]
+    addr_entries = [entries[i] for i in addr_idx]
+    substring = _substring_matches(addr_entries, old_text)
+    substring_orig = [addr_idx[j] for j in substring]
+    matches = exact or substring_orig
     if len({entries[i] for i in matches}) > 1:
         return None, True
     return (matches[0] if matches else None), False
