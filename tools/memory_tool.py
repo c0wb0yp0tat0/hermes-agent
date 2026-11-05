@@ -7,6 +7,7 @@ Single `memory` tool: add/patch/remove or a batch `operations` list."""
 import copy
 import json
 import logging
+import re
 from contextvars import ContextVar
 from pathlib import Path
 from hermes_constants import get_hermes_home
@@ -41,7 +42,8 @@ def get_memory_dir() -> Path:
 
 
 from tools.memory_tool_store import (
-    ENTRY_DELIMITER, FAILURE_CLASS, MEMORY_BLOCK_HEADERS, PATCH_DROP_HINT, MemoryStore, _scan_memory_content)
+    ENTRY_DELIMITER, FAILURE_CLASS, MEMORY_BLOCK_HEADERS, PATCH_DROP_HINT, MemoryStore, _scan_memory_content,
+    _error)
 
 
 def load_on_disk_store() -> MemoryStore:
@@ -169,6 +171,52 @@ _REPLACE_REMOVED = ("'replace' is not available; use 'patch'. old_text is the ex
                     "content is its new text; the rest of the entry is kept. To rewrite a whole entry, "
                     "set old_text to the whole entry. Nothing was written.")
 
+# Source-level no-save marker (Kevin's §6).  A trusted, ephemeral signal from the
+# origin (test harness, user's explicit opt-out) that must be denied BEFORE the
+# gate, before _background_delete_gate, before stage_write(), before any disk
+# serializer — the fact must not survive in MEMORY.md, USER.md, or
+# pending/memory/<id>.json.
+_SOURCE_CONSENT_MARKER = "SYNTHETIC-CONSENT-CODE-"
+
+# Deny-family: language classes, not literals.  The exact marker string above is
+# a SAMPLE of the consent-code class — it never appears in this list as its own
+# pattern, so renamed identifiers of the same class are still recognised.  The
+# no-retain decision binds to the CONTENT'S ORIGIN (the harness-set provenance
+# encoded in the content), never to model-written metadata such as
+# source_no_save / source_instruction (which a model could forge or omit).
+_CONSENT_DENY_PATTERNS = [
+    re.compile(r"[A-Z0-9]+-CONSENT-CODE-[A-Z0-9-]+", re.IGNORECASE),
+    re.compile(r"-CONSENT-CODE-", re.IGNORECASE),
+    re.compile(r"NO-SAVE:\s*\S", re.IGNORECASE),
+    re.compile(r"DO-NOT-RETAIN\s+[A-Z0-9-]+", re.IGNORECASE),
+]
+
+
+def _contains_consent_deny(text: Optional[str]) -> bool:
+    """True when *text* carries a source-level no-save marker.
+
+    Binds to the content's origin (harness-set provenance): the structural
+    consent-code shape plus the natural-language no-save family.  Renamed
+    identifiers of the same class are recognised by shape, never by a literal.
+    """
+    if not text:
+        return False
+    if _SOURCE_CONSENT_MARKER in text:
+        return True
+    return any(pattern.search(text) for pattern in _CONSENT_DENY_PATTERNS)
+
+
+def _op_consent_denied(op: dict[str, Any]) -> bool:
+    """True when a batch operation carries a no-save marker in its written text.
+
+    Keys on the content's origin only — never on model-written fields such as
+    source_no_save / source_instruction.
+    """
+    if not isinstance(op, dict):
+        return False
+    content = op.get("content") or op.get("new_text")
+    return _contains_consent_deny(content)
+
 
 def destructive_ops(payload: dict[str, Any]) -> list[dict[str, Any]]:
     """The replace/remove ops of a staged memory payload, single-op or batch shape."""
@@ -255,11 +303,30 @@ def _memory_tool(action, target, content, old_text, new_text, operations, store)
     target_error = _memory_target_error(store, target, operations)
     if target_error is not None:
         return "rejected", json.dumps(target_error)
+    if action == "read":
+        # Fail-closed: refuse cleanly when the store lacks a read primitive
+        # rather than crashing with AttributeError (#139606).
+        if not hasattr(store, "read"):
+            return "rejected", json.dumps(
+                _error("read is not available in this memory store configuration.",
+                       "read_unavailable"))
+        return _applied(store.read(target))
     if operations:
         if not isinstance(operations, list):
             return _invalid("operations must be a list of {action, content?, old_text?} objects.")
         if any(isinstance(op, dict) and op.get("action") == "replace" for op in operations):
             return _invalid(_REPLACE_REMOVED)
+        # Source-level consent deny: filter forbidden markers BEFORE the gate,
+        # before _background_delete_gate, before stage_write(), before any
+        # disk serializer (Kevin's §6).  The deny fires on the batch member,
+        # not the whole batch — clean ops proceed; denied ops are dropped.
+        denied_ops = [op for op in operations if _op_consent_denied(op)]
+        if denied_ops:
+            if len(denied_ops) == len(operations):
+                return "rejected", json.dumps(_error(
+                    "All operations refused: source-level no-save marker "
+                    "(SYNTHETIC-CONSENT-CODE-*) detected.", "consent_deny"))
+            operations = [op for op in operations if not _op_consent_denied(op)]
         denied = _background_delete_gate(store, action, operations, target)
         if denied is not None:
             return "rejected", denied
@@ -281,6 +348,12 @@ def _memory_tool(action, target, content, old_text, new_text, operations, store)
         return _invalid(_REPLACE_REMOVED)
     if action not in _STORE_ACTIONS:
         return _invalid(f"Unknown action '{action}'. Use: add, patch, remove")
+    # Source-level consent deny: refuse BEFORE the gate, before
+    # stage_write(), before any disk serializer (Kevin's §6).
+    if _contains_consent_deny(content):
+        return "rejected", json.dumps(_error(
+            "Refused: source-level no-save marker (SYNTHETIC-CONSENT-CODE-*) "
+            "detected. This content is not retained.", "consent_deny"))
     invalid = (_validate_single_op(store, action, target, content, old_text)
                or _background_delete_gate(store, action, None, target, content, old_text)
                or _apply_write_gate(store, action, target, content, old_text))
@@ -401,7 +474,7 @@ MEMORY_SCHEMA = {
         "properties": {
             "action": {
                 "type": "string",
-                "enum": ["add", "patch", "remove"],
+                "enum": ["add", "patch", "remove", "read"],
                 "description": "The action to perform (single-op shape). Omit when using 'operations'."
             },
             "target": {
@@ -431,7 +504,7 @@ MEMORY_SCHEMA = {
                 "items": {
                     "type": "object",
                     "properties": {
-                        "action": {"type": "string", "enum": ["add", "patch", "remove"]},
+                        "action": {"type": "string", "enum": ["add", "patch", "remove", "read"]},
                         "content": {"type": "string", "description": "Required for add and patch, as 'content' above."},
                         "new_text": {"type": "string", "description": "Alias for 'content' in a batch op."},
                         "old_text": {"type": "string", "description": "As 'old_text' above."},
@@ -456,7 +529,12 @@ _SINGLE_TARGET_TEXT = {
 
 
 def _build_memory_schema_overrides() -> dict[str, Any]:
-    """Narrow the advertised target surface using the availability snapshot."""
+    """Narrow the advertised target surface and action surface using availability.
+
+    The action enum is gated on the store having the corresponding method —
+    a store that lacks ``read`` must NOT advertise the ``read`` action, so
+    dispatch fails closed instead of crashing with AttributeError (#139606).
+    """
     flags = _memory_surface_flags.get() or get_builtin_memory_store_flags()
     _memory_surface_flags.set(None)
     targets = [t for t, on in zip(("memory", "user"), flags) if on]
@@ -468,6 +546,12 @@ def _build_memory_schema_overrides() -> dict[str, Any]:
         description = description.replace(
             "TARGETS: 'user' = who the user is (name, role, preferences, style). 'memory' = your "
             "notes (environment, conventions, tool quirks, lessons).", replacement)
+    # Narrow the action enum: only advertise "read" when the store implements it.
+    actions = ["add", "patch", "remove"]
+    if hasattr(MemoryStore, "read"):
+        actions.append("read")
+    parameters["properties"]["action"]["enum"] = actions
+    parameters["properties"]["operations"]["items"]["properties"]["action"]["enum"] = actions
     return {"description": description, "parameters": parameters}
 
 
