@@ -43,3 +43,7 @@ The note is the record — the receipts' links, no claims beyond them.
 ---
 
 *Note kept in the real-notes register: dated, titled, receipt-bound, organized — the RFC #143379 study's stage-note.*
+
+
+## UPDATE (the arc's completion, same date)
+Blocks 3 and 4 landed after this note's writing: the governance arm's completion (sweep_constraints.py + the pinning-cost measurement — raw 9.84% at the sim's 183-token denominator, then normalized in the re-walk: ~18 pinned tokens vs the field's ~47; production-scale ~0.18% MEETS the field's <0.5% class) and the RECIPE (the study's full reproducibility document). The re-walk's second correction: the instruments' deep sub-zero excursions were relabeled from "noise floor" to the field's COMPETITION class (a rival literal multiplies the retrieval loss 9-110x — arXiv 2611.04169). The CTO-freedom webstorm's two waves + the five-why tree + the four questions' answers are appended to the study's SYNTHESIS.md (the field credited: LOHA/ACD, Governance Decay, Compaction Cliff, ARC, AttnCompress, the competition papers). The study's frontier: the competition arm + the archive arm, named for the next instruments. The study branch's head after the storm: the landings all pushed (latest SYNTHESIS append 655a76e329); this note is the hub's record of the stage.
