@@ -19,7 +19,7 @@ permissions:
 jobs:
   verify:
     name: Avrea full-suite (${{ github.ref_name }})
-    runs-on: avrea-ubuntu-latest-4-vcpu
+    runs-on: avrea-ubuntu-latest
     timeout-minutes: 45
     steps:
       - name: Checkout exact head
