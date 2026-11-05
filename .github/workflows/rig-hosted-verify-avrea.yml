@@ -12,6 +12,15 @@ on:
         description: "The exact SHA to pin and verify (default: the branch head)"
         required: false
         default: ""
+      battery:
+        description: "The battery to run: union (all present), tools (write-gate + memory-tool), falsifier (the falsifier dir)"
+        required: false
+        default: "union"
+        type: choice
+        options:
+          - union
+          - tools
+          - falsifier
 
 concurrency:
   # kvnloo's pin-scoped shape: one active run per pinned head; a re-dispatch
@@ -77,8 +86,17 @@ jobs:
           # list dies at collection (exit 4) on any pin that lacks it. The
           # battery is the INTERSECTION of the head's tree and the suite.
           BASE=""
-          for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
-            [ -f "$f" ] && BASE="$BASE $f"
-          done
-          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          case "${{ inputs.battery || 'union' }}" in
+            tools)
+              for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
+                [ -f "$f" ] && BASE="$BASE $f"
+              done ;;
+            falsifier)
+              [ -d tests/falsifier-battery ] && BASE="tests/falsifier-battery/" ;;
+            union|*)
+              for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
+                [ -f "$f" ] && BASE="$BASE $f"
+              done
+              [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/" ;;
+          esac
           uv run pytest $BASE -rs -q 2>&1 | tail -40
