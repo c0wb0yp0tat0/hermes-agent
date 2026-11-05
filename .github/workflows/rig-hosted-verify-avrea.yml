@@ -114,33 +114,36 @@ jobs:
           uv run --project ../../../ python sweep_alias.py && uv run --project ../../../ python sweep_age.py 2>&1 | tail -6
           ls -la results/ | tail -6
 
-      - name: The receipt's landing (every avrea runner lands its findings on PR #1 — the machine's own voice)
+      - name: The receipt's landing (every avrea runner lands its findings on PR #1 - the machine's own voice)
         if: always()
         shell: bash
+        env:
+          LAND_REPO: ${{ github.repository }}
+          LAND_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LAND_RUN_ID: ${{ github.run_id }}
+          LAND_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          LAND_PIN: ${{ inputs.head_sha }}
+          LAND_BATTERY: ${{ inputs.battery || 'union' }}
+          LAND_RESULT: ${{ job.status }}
         run: |
-          RESULT="${{ job.status }}"
-          PIN="${{ inputs.head_sha }}"
-          BATTERY="${{ inputs.battery || 'union' }}"
-          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          # the summary tail (the last meaningful numbers from the previous step's log)
-          if [ "$RESULT" = "success" ]; then
-            SUMMARY="GREEN — the $BATTERY arm at the pinned head completed."
+          if [ "$LAND_RESULT" = "success" ]; then
+            SUMMARY="GREEN - the $LAND_BATTERY arm at the pinned head completed."
           else
-            SUMMARY="RED — the $BATTERY arm at the pinned head failed (the run's log carries the cause)."
+            SUMMARY="RED - the $LAND_BATTERY arm at the pinned head failed (the run's log carries the cause)."
           fi
-          BODY="**[RUNNER-LANDING]** — run \`${{ github.run_id }}\` ($BATTERY @ \`${PIN:0:40}\`): $RESULT. $SUMMARY Run: $RUN_URL. Landed by the machine itself, per the standing rule — all avrea runners land their findings on PR #1."
-                    python3 - <<'PYEOF'
-import json, os, urllib.request
-body = os.environ.get("BODY", "{{ inputs.head_sha }}")
-data = json.dumps({"body": body}).encode()
-req = urllib.request.Request(
-    "https://api.github.com/repos/${{ github.repository }}/issues/1/comments",
-    data=data,
-    headers={"Authorization": "token ${{ secrets.GITHUB_TOKEN }}", "Content-Type": "application/json", "Accept": "application/vnd.github+json"},
-    method="POST")
-try:
-    with urllib.request.urlopen(req, timeout=60) as r:
-        print("landed:", r.status, r.read()[:80])
-except Exception as e:
-    print("landing-post failed (recorded — the head's cadence will carry it):", e)
-PYEOF
+          echo "LAND_BODY=**[RUNNER-LANDING]** - run $LAND_RUN_ID ($LAND_BATTERY @ ${LAND_PIN:0:40}): $LAND_RESULT. $SUMMARY Run: $LAND_RUN_URL. Landed by the machine itself, per the standing rule - all avrea runners land their findings on PR #1." >> "$GITHUB_ENV"
+          python3 - <<'PYEOF'
+          import json, os, urllib.request
+          body = os.environ["LAND_BODY"]
+          data = json.dumps({"body": body}).encode()
+          req = urllib.request.Request(
+              "https://api.github.com/repos/" + os.environ["LAND_REPO"] + "/issues/1/comments",
+              data=data,
+              headers={"Authorization": "token " + os.environ["LAND_TOKEN"], "Content-Type": "application/json", "Accept": "application/vnd.github+json"},
+              method="POST")
+          try:
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  print("landed:", r.status)
+          except Exception as e:
+              print("landing-post failed (recorded - the head's cadence will carry it):", e)
+          PYEOF
