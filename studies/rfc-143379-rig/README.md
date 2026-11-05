@@ -1,6 +1,8 @@
 # The RFC #143379 study — the think-tank run, every artifact distinct, every status on the record
 
-**What this is:** the independent verification study for [RFC #143379](https://github.com/NousResearch/hermes-agent/issues/143379) — run under the mechanism-of-mechanisms spine (classify → choose → probe → evaluate → adopt-or-park → standardize → verify). Every artifact below carries its status. Nothing here claims more than its receipt or curve shows; committed definitions are not execution.
+**Goal lock:** `c0wb0yp0tat0/hermes-agent` PR #1, branch `study/rfc-143379-rig-20261105`; RFC [NousResearch/hermes-agent#143379](https://github.com/NousResearch/hermes-agent/issues/143379). The Avrea verification leg: the envelope schema, the meter budget (4-vCPU, 1,500 min/mo), the wall clause. Downstream-only — no upstream posts, no upstream code changes; original upstream authors retain their ownership. Receipts here only where the runner landed them; every NOT-RUN marker stays until a receipt replaces it; committed definitions are not execution.
+
+**What this is:** the independent verification study for [RFC #143379](https://github.com/NousResearch/hermes-agent/issues/143379) — run under the mechanism-of-mechanisms spine (classify → choose → probe → evaluate → adopt-or-park → standardize → verify). Every artifact below carries its status. Nothing here claims more than its receipt or curve shows.
 
 ## Stage: PROBE — the verification receipts (LANDED, EVIDENCE)
 `RECEIPTS.md` — the Avrea leg's run ledger: five GREEN receipts at exact heads (requested == executed asserted in-run): #139606 `117/10` · the whole-anchor landing `28/1 xpassed` · #140008 `64` · #116673 `66` · **#141876 (the restore) `82`**. The GitHub-window side: **NOT RUN** (hosted queue class); the meter: 3 of 6 program dispatches used.
