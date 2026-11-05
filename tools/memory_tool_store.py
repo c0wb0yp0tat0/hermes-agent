@@ -93,6 +93,19 @@ def _substring_matches(entries: list[str], old_text: str) -> list[int]:
     return [i for i, e in enumerate(entries) if needle in _normalize_for_match(e)]
 
 
+def _is_doc_anchor(entry: str) -> bool:
+    """Whether *entry* is a whole-anchor doc reference (``@doc:<name>`` as its
+    own entry). Whole-anchor tokens resolve by structure (the manifest index),
+    never by raw substring, so they are excluded from substring matching in
+    ``_find_unique_match``. Entries that merely CONTAIN an ``@doc:`` reference
+    (e.g. 'Pointer @doc:rfc-notes') are literal content and stay matchable.
+    """
+    if not entry.startswith("@doc:"):
+        return False
+    name = entry[len("@doc:"):]
+    return bool(name) and not re.search(r"\s", name)
+
+
 def _find_unique_match(entries: list[str], old_text: str) -> tuple[Optional[int], bool]:
     """``(index, ambiguous)`` for entries matching *old_text*. A whole-entry
     EXACT match (``old_text == entry``) takes absolute priority — substring
@@ -108,13 +121,11 @@ def _find_unique_match(entries: list[str], old_text: str) -> tuple[Optional[int]
     orphan is removed, a substring remove can never silently erase the anchor
     (``remove('foo')`` never erases ``'@doc:foobar'``)."""
     exact = [i for i, e in enumerate(entries) if e == old_text]
-    # Anchors are structural; the addressable index (the manifest) excludes
-    # them, so substring lookup walks the manifest, never the raw content.
-    addr_idx = [i for i, e in enumerate(entries) if not e.startswith("@doc:")]
-    addr_entries = [entries[i] for i in addr_idx]
-    substring = _substring_matches(addr_entries, old_text)
-    substring_orig = [addr_idx[j] for j in substring]
-    matches = exact or substring_orig
+    matches = exact or _substring_matches(entries, old_text)
+    # The whole-anchor token / manifest-index resolution: document-anchor
+    # entries resolve by structure, never by raw substring, so they never
+    # silently match a name inside an anchor.
+    matches = [i for i in matches if not _is_doc_anchor(entries[i])]
     if len({entries[i] for i in matches}) > 1:
         return None, True
     return (matches[0] if matches else None), False
