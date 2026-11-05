@@ -28,4 +28,4 @@ The K-recency window's eviction is the recency-truncate class. The recitation fl
 - Path: `studies/rfc-143379-rig/krecency/SYNTHESIS.md`
 - Branch: `study/rfc-143379-rig-20261105`
 - Credit: LOHA/ACD (arXiv 2609.31430) and Governance Decay (arXiv 2606.22528) validated the mechanism shape; the rig's RFC-embedded design came first.
-- Commit SHA: 68857db165ebd97683258d84dc5e9756cac34988
+- Commit SHA: 2d1f64d0bc348c889632e60b189dcf93b99bcf5a
