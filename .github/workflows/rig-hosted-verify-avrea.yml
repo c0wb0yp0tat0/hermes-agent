@@ -56,12 +56,13 @@ jobs:
             --extra anthropic --extra mistral --extra fal --extra modal \
             --extra daytona --extra parallel-web
 
-      - name: The verification battery (write-gate + memory-tool + agent-bridge + scripts)
+      - name: The verification battery (write-gate + memory-tool + falsifier-battery)
         shell: bash
         run: |
-          python -m pytest \
+          # uv run: the synced venv's interpreter, never the PATH's system
+          # python (which has no pytest and none of the synced deps).
+          uv run pytest \
             tests/tools/test_write_gate.py \
-            tests/memory/test_memory_tool.py \
-            tests/tools/test_spa_integration.py \
-            tests/tools/test_dream_cycle.py \
+            tests/tools/test_memory_tool.py \
+            tests/falsifier-battery/ \
             -rs -q 2>&1 | tail -40
