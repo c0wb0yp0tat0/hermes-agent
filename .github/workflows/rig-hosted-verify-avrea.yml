@@ -131,7 +131,7 @@ jobs:
           else
             SUMMARY="RED - the $LAND_BATTERY arm at the pinned head failed (the run's log carries the cause)."
           fi
-          echo "LAND_BODY=**[RUNNER-LANDING]** - run $LAND_RUN_ID ($LAND_BATTERY @ ${LAND_PIN:0:40}): $LAND_RESULT. $SUMMARY Run: $LAND_RUN_URL. Landed by the machine itself, per the standing rule - all avrea runners land their findings on PR #1." >> "$GITHUB_ENV"
+          export LAND_BODY="**[RUNNER-LANDING]** - run $LAND_RUN_ID ($LAND_BATTERY @ ${LAND_PIN:0:40}): $LAND_RESULT. $SUMMARY Run: $LAND_RUN_URL. Landed by the machine itself, per the standing rule - all avrea runners land their findings on PR #1."
           python3 - <<'PYEOF'
           import json, os, urllib.request
           body = os.environ["LAND_BODY"]
