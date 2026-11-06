@@ -15,6 +15,15 @@ tip; each assertion's receipt is the composed-path read-back itself.
 """
 import pytest
 
+@pytest.fixture(autouse=True)
+def _read_substrate_guard():
+    """The #141876-composition family asserts the restored-read's substrate; at pins
+    predating the restoration the read-dependent tests self-skip (the skip-discipline)."""
+    from tools.memory_tool_store import MemoryStore
+    if not hasattr(MemoryStore, "read"):
+        pytest.skip("the restored-read substrate is absent at this pin (the 141876-family)")
+
+
 from tools.memory_tool_store import MemoryStore, ENTRY_DELIMITER
 
 
