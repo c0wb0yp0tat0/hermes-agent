@@ -17,6 +17,14 @@ lacked): the read-back contracts must hold through the composed store surface.
 import pytest
 
 @pytest.fixture(autouse=True)
+def _read_substrate_guard():
+    """The restored-read substrate guard."""
+    from tools.memory_tool_store import MemoryStore
+    if not hasattr(MemoryStore, "read"):
+        pytest.skip("the restored-read substrate is absent at this pin (the 141876-family)")
+
+
+@pytest.fixture(autouse=True)
 def _nugget6_substrate_guard():
     """The nugget-6 family's substrate lands at the whole-anchor; at pins without
     it (orphan_doc_names and/or the read action) the nuggets self-skip with the
