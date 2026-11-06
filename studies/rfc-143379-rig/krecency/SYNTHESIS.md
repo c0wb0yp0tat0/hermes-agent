@@ -186,3 +186,7 @@ NETWORK-EVIDENCE-STRONG (e4d64daad1): the anchor-chain's live-instance byte-proo
 
 ## WAVE 29 - THE WILDCARD-SEAT'S SEAMS (the RL cross-lens, 2026-11-06): the adoption-candidates + the honest thin-line
 SEAMS-NAMED (3c068c3ef1): (1) the CURRICULUM-SHAPED COMPACTION-LADDER - the fixtures' incremental-depth ladder as the composition-fix's graduated test-scale; (2) the RETENTION-REWARD-SCALAR - the retention-signals as the evaluator's scoring-incentive (the measured-survival weighted into the scores); (3) the COMPOSABLE-PROBE-ENV INTERFACE - the probe-suites' shared-env contract (the krecency + the compression-eval's composition). The honest note: SEAMS-THIN on the rewards-axis (the RL rewards capability-acquisition, not context-hygiene's retention - the divergence named, the borrow-scope's bounded to the three seams).
+
+
+## WAVE 30 - THE LADDER'S GAPS (the curriculum-arm, 2026-11-06): the axes mapped, the missing-rungs named
+LADDER-GAPS: the curriculum-ladder's design landed (the axes: session-length, compaction-depth, fact-density, context-crossings; the rung-positions; the calibration from the records) with TWO named missing-rungs - the fixture-families cannot yet test the ladder's full depth (the deep-compaction rung and the high-density rung unbuilt). The gaps ARE the next construction: the missing-rungs' fixture-build is the ladder's completion - the adoption's next step, armed.
