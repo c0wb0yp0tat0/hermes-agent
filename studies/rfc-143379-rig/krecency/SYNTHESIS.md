@@ -190,3 +190,7 @@ SEAMS-NAMED (3c068c3ef1): (1) the CURRICULUM-SHAPED COMPACTION-LADDER - the fixt
 
 ## WAVE 30 - THE LADDER'S GAPS (the curriculum-arm, 2026-11-06): the axes mapped, the missing-rungs named
 LADDER-GAPS: the curriculum-ladder's design landed (the axes: session-length, compaction-depth, fact-density, context-crossings; the rung-positions; the calibration from the records) with TWO named missing-rungs - the fixture-families cannot yet test the ladder's full depth (the deep-compaction rung and the high-density rung unbuilt). The gaps ARE the next construction: the missing-rungs' fixture-build is the ladder's completion - the adoption's next step, armed.
+
+
+## WAVE 31 - THE LADDER COMPLETE (the rungs-build, 2026-11-06): the two missing-rungs constructed
+RUNGS-BUILT (697cd49de7): the deep-compaction + the high-density fixtures exist in the eval's real schema under studies/rfc-143379-rig/rungs/ - the ladder's full depth now TESTABLE (the smoke-blocked by the provider-window honestly - the wall-clause). The composition-fix's graduated test-scale COMPLETE: the three native families + the two new rungs, the axes fully spanned (session-length, compaction-depth, fact-density, context-crossings) - the tests armed and waiting the provider-window's return.
