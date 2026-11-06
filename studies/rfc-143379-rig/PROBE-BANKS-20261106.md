@@ -43,7 +43,7 @@
 | B6 | source path — `/root/.hermes/sessions/request_dump_local-1c11cf0fe057f35a3b` | 1 | fixture |
 | B7 | model pin — `"poolside/laguna-xs-2.1:free"` | 5 | fixture |
 | B8 | truncated_to null — `"truncated_to": null` | 1 | fixture |
-| B9 | retry receipt IN fixture — `max_retries_exhausted` | 1 | source-anchored |
+| B9 | retry receipt — `max_retries_exhausted` (the fixture carries the description's mention ONLY; the receipt itself lives in the SOURCE dump's `reason`, verified live head-side) | 1 in-fixture (the description); 1 in-source (the reason) | source-anchored |
 | B10-earned | dense-turn token 'earned' — `earned` | 136 | fixture |
 | B10-binding | dense-turn token 'binding' — `binding` | 122 | fixture |
 | B10-artifact | dense-turn token 'artifact' — `artifact` | 125 | fixture |
