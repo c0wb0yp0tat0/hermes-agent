@@ -39,3 +39,5 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 | 01:50Z | union @ the pre-guard head (91e31669c7) - the HOSTED window (the NOT-RUN line's first fire) | RED | run 42146330495 - the write-class at its pin, the window now opened |
 
 | 02:05Z | union @ the fully-guarded head (c69b545833) | **GREEN** | run 42148028348 - 16 passed / 77 skipped / 0 failed (the guard-set's complete test) |
+
+| 02:33Z | sweep @ the current head (battery=sweep) | **GREEN** | run 42150952031 - the instruments executed at the pinned head, the CSVs re-produced (the arms' replication, runner-side) |
