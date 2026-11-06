@@ -27,10 +27,10 @@ on:
 concurrency:
   # kvnloo's pin-scoped shape: one active run per pinned head; a re-dispatch
   # of the SAME pin cancels the stale one, different pins run in parallel.
-  # The surface-suffix keeps the dual matrix legs (avrea vs hosted) from
-  # colliding on one group — dual-purpose means BOTH run, side by side.
-  group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}-${{ matrix.runner }}
-  cancel-in-progress: false
+  # NOTE: the matrix-context is NOT in scope at the workflow level, so the
+  # surface-suffixed group lives on the job (below) where the legs diverge.
+  group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -39,8 +39,15 @@ permissions:
 jobs:
   verify:
     name: Avrea full-suite (${{ github.ref_name }})
-    runs-on: avrea-ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [avrea-ubuntu-latest, ubuntu-latest]
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
+    concurrency:
+      group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}-${{ matrix.runner }}
+      cancel-in-progress: false
     steps:
       - name: Checkout exact head
         uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
