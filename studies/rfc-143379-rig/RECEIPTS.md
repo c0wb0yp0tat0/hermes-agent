@@ -41,3 +41,13 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 | 02:05Z | union @ the fully-guarded head (c69b545833) | **GREEN** | run 42148028348 - 16 passed / 77 skipped / 0 failed (the guard-set's complete test) |
 
 | 02:33Z | sweep @ the current head (battery=sweep) | **GREEN** | run 42150952031 - the instruments executed at the pinned head, the CSVs re-produced (the arms' replication, runner-side) |
+
+## RECEIPTS 2026-11-06 (the day's rows, one-to-one with the runs)
+| When (UTC) | What | Result | Evidence |
+|---|---|---|---|
+| 04:38Z | the dual-surface @ the pinned head (8d7d3a83) - BOTH legs (the avrea pve1-avrea-parallel + the GitHub-hosted) | **GREEN** | run 42163546699 - the same pinned head verifying on both surfaces, the divergence as data |
+| 05:08Z | union @ the current head (post-seam) | **GREEN** | run 42166609259 - the avrea's full-battery |
+| 05:27Z | union @ the post-seam head | **GREEN** | run 42168495752 - both matrix legs |
+| 05:57Z | union @ the head (8d7d3a83) | **GREEN** | run 42171479492 - both of the avrea surface's legs |
+| 09:11Z | union @ the head (8d7d3a83 - unchanged since the 02:00 green) | RED | run 42193148018 - 10 failed / 82 passed / 1 xfailed (the #141876-composition arms' substrate-absent + the nugget-6 pair); the same head read GREEN at 05:57Z (42171479492) - the flip classed as the runner/env-side divergence-between-runs (the stale-workspace vs fresh-checkout question); the reconciliation run dispatched at the full pin |
+| 11:49Z | union @ the guarded head | **GREEN** | run 42213016088 - the queue's clear, standing down clean |
