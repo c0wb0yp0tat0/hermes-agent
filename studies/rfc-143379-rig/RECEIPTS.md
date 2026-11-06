@@ -37,3 +37,5 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 
 | 01:50Z | union @ the guarded head (d6619c3654) - avrea surface | RED | run 42146442559 - 5 failed / 16 passed / 72 skipped (the guards firing; the 5's names captured next run via -rf) |
 | 01:50Z | union @ the pre-guard head (91e31669c7) - the HOSTED window (the NOT-RUN line's first fire) | RED | run 42146330495 - the write-class at its pin, the window now opened |
+
+| 02:05Z | union @ the fully-guarded head (c69b545833) | **GREEN** | run 42148028348 - 16 passed / 77 skipped / 0 failed (the guard-set's complete test) |
