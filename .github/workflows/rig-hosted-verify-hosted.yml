@@ -1,0 +1,52 @@
+name: rig-hosted-verify-hosted (the GitHub-hosted window)
+
+on:
+  workflow_dispatch:
+    inputs:
+      head_sha:
+        description: "The exact SHA to pin and verify"
+        required: true
+      battery:
+        description: "union|tools|falsifier"
+        required: false
+        default: "union"
+        type: choice
+        options: ["union", "tools", "falsifier"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: hosted-window verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.head_sha }}
+      - name: Pin verification to the executed tree
+        shell: bash
+        run: |
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "${{ inputs.head_sha }}"
+      - name: Install uv and sync
+        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39
+        with:
+          python-version: "3.14"
+      - name: Sync the locked environment
+        shell: bash
+        run: |
+          HERMES_DISABLE_LAZY_INSTALLS=1 uv sync --locked --python 3.14 --extra all --group dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona --extra parallel-web
+      - name: The verification battery
+        shell: bash
+        run: |
+          BASE=""
+          for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
+            [ -f "$f" ] && BASE="$BASE $f"
+          done
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          uv run pytest $BASE -rs -q 2>&1 | tail -20
