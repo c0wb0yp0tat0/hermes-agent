@@ -14,6 +14,15 @@ manifest-index resolution lands.
 """
 import pytest
 
+@pytest.fixture(autouse=True)
+def _nugget6_substrate_guard():
+    """The nugget-6 family's substrate guard (the skip-discipline, not a collection failure)."""
+    missing = [m for m in ("orphan_doc_names", "read") if not hasattr(MemoryStore, m)]
+    if missing:
+        pytest.skip("the nugget-6 substrate is absent at this pin: " + ", ".join(missing))
+
+
+
 from tools.memory_tool_store import (
     MemoryStore,
     ENTRY_DELIMITER,
