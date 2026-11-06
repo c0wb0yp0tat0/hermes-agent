@@ -109,3 +109,7 @@ THE MECHANISM-MAP, FINAL WITHIN THE TESTED CLASSES:
 - The counters, verdict-ed: the K-window FAIL, the scaled-window NO (one-scaling caveat), the competition wrong-probe (path-limited + equal-weights a*), the archive REFUTED (even repaired), the recitation NOT-CONFIRMED.
 - The adopted counter: recurrence-aware exact-literal pinning - PROTECTS (1.00 -> 0.15 at the worst cell), four independent lenses in agreement.
 - The landing-path's re-scope (per the refutation): archive-before-stub becomes lifecycle-correctness for pinned literals + calibrated abstention; the recall-based certification is not licensed by any tested construction.
+
+
+## WAVE 11 — THE MEMBERSHIP RING (the sprint's V1, 2026-11-06): the adopted mechanism's membership-side CONFIRMED
+The pinning-membership arm (7587c93c10, 200 rows): per-seed recurrence PREDICTS the per-seed onset (seed 0 = 68, seed 1 = 87 - the signal-vs-onset R2 high), and the recurrence-weighted pinning MEETS the PROTECTS-bar (weighted 0.15 vs uniform 1.00 at the pair-ON cell). The pinning now knows not just WHAT to pin but WHICH literals earn the stronger membership.
