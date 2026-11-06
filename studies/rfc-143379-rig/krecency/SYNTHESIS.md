@@ -113,3 +113,7 @@ THE MECHANISM-MAP, FINAL WITHIN THE TESTED CLASSES:
 
 ## WAVE 11 — THE MEMBERSHIP RING (the sprint's V1, 2026-11-06): the adopted mechanism's membership-side CONFIRMED
 The pinning-membership arm (7587c93c10, 200 rows): per-seed recurrence PREDICTS the per-seed onset (seed 0 = 68, seed 1 = 87 - the signal-vs-onset R2 high), and the recurrence-weighted pinning MEETS the PROTECTS-bar (weighted 0.15 vs uniform 1.00 at the pair-ON cell). The pinning now knows not just WHAT to pin but WHICH literals earn the stronger membership.
+
+
+## WAVE 12 — THE SPRINT'S RESOLUTION (2026-11-06): V1 CONFIRMED + V3 NOOP + V2 parked — the VOI-sort fully verdicted
+The format-adversary arm (V3): the triple at the alias+proximity-ON cell - no-pin 1.00, literal-pin 0.15, format-aware-pin 0.15 (the format-mask adds nothing, +6 tokens for zero gain) - verdict FORMAT-AWARE-NOOP: the exact-byte pinning already caps the residual. The convergence-map's vectors are now fully resolved: V1 (membership) CONFIRMED, V2 (competing-admission) parked on its refutation, V3 (format-aware) NOOP - three dashes, three receipted verdicts, the sprint's sequence complete. The adopted mechanism stands sharpened: exact-literal + recurrence-weighted membership, with the format-side correctly filed as unnecessary.
