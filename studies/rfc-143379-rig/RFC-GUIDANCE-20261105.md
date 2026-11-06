@@ -28,3 +28,9 @@ The GitHub-hosted window side of the verification: NOT RUN (marked). The recitat
 
 ## DELTA-2 (the re-apex's N4): the xngg seam-map's steering-completion
 The four gaps' verification (2 CONFIRMED, 1 not-reproduced at the pin, 1 open) now steers the landing-path explicitly: the CONFIRMED gaps (the batch-verify bypass, the ignored preserve-returns) are the review's actionable seams — their fixes' tests belong in the falsifier-battery's next arms (RED-on-gap probes); the not-reproduced gap's re-check rides the #139606-head's movement.
+
+
+## DELTA-3 (the ultimate steer's executable, 2026-11-05): the pinning's authority-complement + the verification-architecture's steer
+1. THE AUTHORITY RULE (per ClawMMU 2610.28093 / TMA-NM 2610.001o): the pin protects the WORDING, never the AUTHORITY. Authority never lifts itself: memory derived from untrusted inputs inherits the lowest authority; consequential elevation requires corroboration by at least two independent principals (or a fresh action-bound user authorization) — never the content vouching for itself.
+2. THE VERIFICATION LAYERS (per 2610.34577): the rotation's three voices are the L3-pattern (independent review, the best accuracy-cost tradeoff); early rechecking beats completion-time self-checking; the harness's write-window is the completion-gate analogue, and the independent-reviewer is its complement, not its replacement.
+3. THE TASK-STATE'S LEDGER (per LongHorizon 2608.01964 + Matrix 2608.12761): the state survives outside the execution, updated only with environment-verified facts; the executing agent's completion-statement is an input claim, never the evidence; a failed receipt stays in history; a retry creates a later receipt.
