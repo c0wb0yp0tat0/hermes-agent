@@ -1,6 +1,6 @@
 # EXP-SUMMARY-MOONBEAM-20261105 — the corrected end-to-end summary of PR #1 (RFC #143379 study)
 
-**Lane:** MOONBEAM (story-voice). **Register:** receipts, never claims — every line traces to a commit SHA, run id, or comment id on branch `study/rfc-143379-rig-20261105`. **Voice:** speechify — distinct phases and voices preserved, no blurring. **Two precision-marks applied** (see §7).
+**Lane:** MOONBEAM (story-voice). **Register:** receipts, never claims — every line traces to a commit SHA, run id, or comment id on branch `study/rfc-143379-rig-20261105`. **Voice:** distinct phases and voices preserved, no blurring. **Two precision-marks applied** (see §7).
 
 ---
 
