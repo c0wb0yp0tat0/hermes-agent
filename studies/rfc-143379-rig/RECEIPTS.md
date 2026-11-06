@@ -34,3 +34,6 @@ The falsifier battery at the whole-anchor head records **28 passed, 1 xpassed in
 | - | the xngg-gaps verification (4 gaps at the pins) | 2 CONFIRMED / 1 not-reproduced / 1 partially-open | XNGG-GAPS-VERIFICATION-20261105.md (35ed130686) |
 | - | the alignment's hybrid README (the paid pod's product) | landed, fidelity-checked | eb57ddbe63 |
 | - | the fleet's first fold (the longcat divergence) | landed + byte-verified | 77a441dc92 + the wave-5 (6ded14715c) |
+
+| 01:50Z | union @ the guarded head (d6619c3654) - avrea surface | RED | run 42146442559 - 5 failed / 16 passed / 72 skipped (the guards firing; the 5's names captured next run via -rf) |
+| 01:50Z | union @ the pre-guard head (91e31669c7) - the HOSTED window (the NOT-RUN line's first fire) | RED | run 42146330495 - the write-class at its pin, the window now opened |
