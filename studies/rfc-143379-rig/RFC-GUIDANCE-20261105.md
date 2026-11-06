@@ -24,3 +24,7 @@ The GitHub-hosted window side of the verification: NOT RUN (marked). The recitat
 3. **The xngg-gaps verification (the review's seam-map, at the exact pins)**: gap-1 CONFIRMED (the batch verify-bypass, `tools/memory_tool.py:343`); gap-3 CONFIRMED (the ignored preserve-returns, `tools/spa_integration.py:100-107`); gap-2 NOT REPRODUCED at d1bdb4582 (the guard IS present at `:280`); gap-4's adapter NOT REPRODUCED (the `.bank()` wired at `tools/dream_cycle.py:118-122`), the compressor-hook open. (XNGG-GAPS-VERIFICATION-20261105.md, `35ed130686`.)
 4. **The mechanism adopted to the wheel**: exact-literal pinning with per-seed occurrence/recurrence/recency — three independent lenses (the wave-4, the guidance, the longcat lane) converging on the same pinning-answer, now with the lane's falsifier (if per-seed occurrence carries the onset, the recency-pinned variant loses the protection).
 5. **The recitation-length class**: named, not yet measured — the wheel's third class's status stays explicit (the falsifier fires when it runs).
+
+
+## DELTA-2 (the re-apex's N4): the xngg seam-map's steering-completion
+The four gaps' verification (2 CONFIRMED, 1 not-reproduced at the pin, 1 open) now steers the landing-path explicitly: the CONFIRMED gaps (the batch-verify bypass, the ignored preserve-returns) are the review's actionable seams — their fixes' tests belong in the falsifier-battery's next arms (RED-on-gap probes); the not-reproduced gap's re-check rides the #139606-head's movement.
