@@ -32,13 +32,19 @@ paths = [
     'studies/rfc-143379-rig/krecency/RESULTS-COMPETE.md',
     'studies/rfc-143379-rig/krecency/RESULTS-ARCHIVE.md',
     'studies/rfc-143379-rig/krecency/RESULTS-CONSTRAINTS.md',
+    'studies/rfc-143379-rig/krecency/RESULTS-MEMBERSHIP.md',
+    'studies/rfc-143379-rig/krecency/RESULTS-FORMATPIN.md',
+    'studies/rfc-143379-rig/krecency/SYNTHESIS.md',
+    'studies/rfc-143379-rig/CONVERGENCE-VOI-SORT.md',
+    'studies/rfc-143379-rig/SELF-PERPETUATING-LOOP-ARCHITECTURE.md',
     'studies/rfc-143379-rig/krecency/SYNTHESIS.md',
     'studies/rfc-143379-rig/EXP-SUMMARY-MOONBEAM-20261105.md',
     'studies/rfc-143379-rig/EXP-AUDIT-SOLAR-20261105.md',
     'studies/rfc-143379-rig/EXP-AOA-20261105.md',
 ]
 for p in paths:
-    code = subprocess.run(['gh', 'api', f'repos/{repo}/contents/{p}?ref={branch}', '--jq', '.sha'],
+    # local git-tree existence (no API blob-cap; the local head IS the record head)
+    code = subprocess.run(['git', 'cat-file', '-e', f'HEAD:{p}'],
                           capture_output=True, text=True).returncode
     if code != 0:
         fails.append(f"MISSING at head: {p}")
