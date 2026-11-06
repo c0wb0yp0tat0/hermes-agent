@@ -1,0 +1,196 @@
+{
+  "rows": [
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "none",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "literal",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": true,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+recent",
+      "window_k": 16,
+      "demand_age": 1,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "none",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "literal",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+old",
+      "window_k": 2,
+      "demand_age": 8,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "large+old",
+      "window_k": 16,
+      "demand_age": 8,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "none",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "literal",
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "recurrence_rich": false,
+      "quadrant": "small+recent",
+      "window_k": 2,
+      "demand_age": 1,
+      "variant": "literal+membership",
+      "deep_minima_prevalence": 0.0
+    }
+  ]
+}

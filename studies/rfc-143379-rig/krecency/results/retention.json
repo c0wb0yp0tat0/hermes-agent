@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "r": 0.0,
+      "pin_on": false,
+      "variant": "retention-alone",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 0.0,
+      "pin_on": true,
+      "variant": "retention+literal-pin",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 0.25,
+      "pin_on": false,
+      "variant": "retention-alone",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 0.25,
+      "pin_on": true,
+      "variant": "retention+literal-pin",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 0.5,
+      "pin_on": false,
+      "variant": "retention-alone",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 0.5,
+      "pin_on": true,
+      "variant": "retention+literal-pin",
+      "deep_minima_prevalence": 1.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 1.0,
+      "pin_on": false,
+      "variant": "retention-alone",
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 3
+    },
+    {
+      "r": 1.0,
+      "pin_on": true,
+      "variant": "retention+literal-pin",
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 3
+    }
+  ]
+}

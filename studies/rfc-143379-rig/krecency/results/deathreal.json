@@ -1,0 +1,24 @@
+{
+  "stream_source": "request_dump_*.json (mined SHA/path/flag literals)",
+  "dumps_count": 147,
+  "stream_len": 15702,
+  "pinned_count": 293,
+  "reserved_set_size": 1,
+  "rows": [
+    {
+      "variant": "none",
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 1
+    },
+    {
+      "variant": "literal-pin",
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 1
+    },
+    {
+      "variant": "pin+retention-latch",
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 1
+    }
+  ]
+}
