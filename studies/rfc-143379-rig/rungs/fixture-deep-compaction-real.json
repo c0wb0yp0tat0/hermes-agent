@@ -1,0 +1,94 @@
+{
+  "name": "fixture-deep-compaction-real",
+  "description": "The rig's real turn-session transcript (2026-10-07, session 20261007_123305_f3465b, the control-class session): 8 messages, the alternating user/assistant/tool structure with tool_calls — the compaction-path's structural receipts (message_count 8, session_start 2026-10-07T12:33:05, platform cli). Distinct source from every other rung; the small+old class's real bytes.",
+  "model": "control-model",
+  "context_length": 200000,
+  "source": "/root/.hermes/sessions/session_20261007_123305_f3465b.json",
+  "truncated_to": null,
+  "scrubbed_at": "2026-11-06T11:28:03Z",
+  "scrubbing_passes": [
+    "redact_sensitive_text (agent.redact)",
+    "username paths replaced with /home/user",
+    "personal handles (all case variants of the maintainer name) replaced with 'user'",
+    "email addresses replaced with contributor@example.com",
+    "git 'Author: Name <addr>' header lines normalised",
+    "reasoning scratchpad blocks stripped from assistant content",
+    "think tag blocks stripped from assistant content",
+    "messaging-platform user mentions replaced with <@user>",
+    "first user message paraphrased to remove personal voice",
+    "subsequent user messages kept verbatim (after above redactions)",
+    "system prompt replaced with generic public-safe placeholder",
+    "orphan empty-assistant messages and trailing tool messages dropped",
+    "tool outputs preserved verbatim (truncation disabled so the compressor sees real load)"
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Control probe: CLI-path pattern with max_turns=3 should terminate at 3 calls."
+    },
+    {
+      "role": "assistant",
+      "content": "control turn 1",
+      "tool_calls": [
+        {
+          "id": "call_ctrl_1",
+          "call_id": "call_ctrl_1",
+          "response_item_id": "fc_ctrl_1",
+          "type": "function",
+          "function": {
+            "name": "execute_code",
+            "arguments": "{\"code\": \"print(\\\"control_probe\\\")\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "{\"status\": \"success\", \"output\": \"control_probe\\n\", \"tool_calls_made\": 0, \"duration_seconds\": 0.23}"
+    },
+    {
+      "role": "assistant",
+      "content": "control turn 2",
+      "tool_calls": [
+        {
+          "id": "call_ctrl_2",
+          "call_id": "call_ctrl_2",
+          "response_item_id": "fc_ctrl_2",
+          "type": "function",
+          "function": {
+            "name": "execute_code",
+            "arguments": "{\"code\": \"print(\\\"control_probe\\\")\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "{\"status\": \"success\", \"output\": \"control_probe\\n\", \"tool_calls_made\": 0, \"duration_seconds\": 0.21}"
+    },
+    {
+      "role": "assistant",
+      "content": "control turn 3",
+      "tool_calls": [
+        {
+          "id": "call_ctrl_3",
+          "call_id": "call_ctrl_3",
+          "response_item_id": "fc_ctrl_3",
+          "type": "function",
+          "function": {
+            "name": "execute_code",
+            "arguments": "{\"code\": \"print(\\\"control_probe\\\")\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "{\"status\": \"success\", \"output\": \"control_probe\\n\", \"tool_calls_made\": 0, \"duration_seconds\": 0.21}"
+    },
+    {
+      "role": "user",
+      "content": "You've reached the maximum number of tool-calling iterations allowed. Please provide a final response summarizing what you've found and accomplished so far, without calling any more tools."
+    }
+  ]
+}
