@@ -102,7 +102,7 @@ jobs:
               done
               [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/" ;;
           esac
-          uv run pytest $BASE -rs -q 2>&1 | tail -40
+          uv run pytest $BASE -rs -rf -q 2>&1 | tail -80
 
       - name: The specialized arms (sweep / stress — the instruments executed at the pinned head)
         if: ${{ inputs.battery == 'sweep' || inputs.battery == 'stress' }}
