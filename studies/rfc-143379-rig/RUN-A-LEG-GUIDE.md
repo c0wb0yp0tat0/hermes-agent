@@ -7,7 +7,7 @@ You run the same pinned-verification workflow the rig's own runner runs — on G
 
 ## Part 1 — the fork (once, ~2 minutes)
 1. Go to `github.com/c0wb0yp0tat0/hermes-agent` → **Fork** (your own copy).
-2. On YOUR fork: **Settings → Actions → General → Actions permissions → "Allow all actions"** (it's the default; just confirm it's enabled).
+2. On YOUR fork: **Settings → Actions → General → Actions permissions → select "Allow all actions and reusable workflows"** — Actions are DISABLED by default on a fork, so you must enable them: Settings → Actions → General → Actions permissions → select "Allow all actions and reusable workflows" → Save. (Or open the Actions tab and click "I understand my workflows, go ahead and enable them".)
 3. Open the **Actions** tab of your fork — the workflow list includes `rig-hosted-verify-avrea (the parallel verification surface)` among the fork's other workflows (the fork carries the full workflow set; ours is the one you run).
 
 ## Part 2 — the dispatch (each leg, ~1 minute)
