@@ -19,7 +19,11 @@ permissions:
 jobs:
   verify:
     name: Avrea full-suite (${{ github.ref_name }})
-    runs-on: avrea-ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [avrea-ubuntu-latest, ubuntu-latest]
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
     steps:
       - name: Checkout exact head
