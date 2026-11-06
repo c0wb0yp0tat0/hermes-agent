@@ -99,3 +99,13 @@ THE ALIASING x PROXIMITY ARM: the demand-age cycle gains (a) the position-aliasi
 
 ## WAVE 9 — THE FOURTH LENS (the re-apex's N3, 2026-11-05): the solar-lane's independent convergence
 The solar-lane's finding (1d70408531) independently arrived at the SAME adopted mechanism (exact-literal pinning with per-seed recurrence) — four independent lenses now agree (the wheel, the guidance, the longcat lane, the solar lane), with the falsifier's PROTECTS verdict (1.00->0.15) behind the agreement. The convergence's signal: cross-model, byte-verified (the content-check vs the sibling: own-bytes, zero echo), receipted.
+
+
+## WAVE 10 — THE MAP'S COMPLETION (the re-apex's N2, 2026-11-05): the archive class, finally refuted
+The competing-admission arm (9c3e89566d, 19,800 rows): fixing the toothless-knob + both inertias does not clear the gate - the deep-minima persist at every taxed budget (the demanded literal's miss persists via the latent floor; the rival's materialization spends without rescuing the worst-case min). VERDICT: ARCHIVE-REFUTED under the tested construction.
+
+THE MECHANISM-MAP, FINAL WITHIN THE TESTED CLASSES:
+- The diagnosis: the excursions = the ALIASING x PROXIMITY pair (CONFIRMED-BOTH).
+- The counters, verdict-ed: the K-window FAIL, the scaled-window NO (one-scaling caveat), the competition wrong-probe (path-limited + equal-weights a*), the archive REFUTED (even repaired), the recitation NOT-CONFIRMED.
+- The adopted counter: recurrence-aware exact-literal pinning - PROTECTS (1.00 -> 0.15 at the worst cell), four independent lenses in agreement.
+- The landing-path's re-scope (per the refutation): archive-before-stub becomes lifecycle-correctness for pinned literals + calibrated abstention; the recall-based certification is not licensed by any tested construction.
