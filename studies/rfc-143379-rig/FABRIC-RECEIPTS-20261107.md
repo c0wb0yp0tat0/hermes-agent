@@ -37,3 +37,34 @@
 | projectsend | main | deployed | 54395f9b4f0c | 42349177806 | queued |
 
 **The launch's findings (banked):** (1) the inputs-encoding class — the dispatch's `-f inputs='...'` double-escapes; the `--input -` object form is the way (receipted, 422→204); (2) the deployment's push to the fork's main FIRED the long-parked hosted trio (CI/Docker/Nix, pending at 06:53Z) — the platform-side window's alive; (3) the hermes-universal pin resolved in all 31 forks' histories — the checkout asserts will judge; (4) the failures were findings: the 31 runs' receipts = the amplifier's first breath.
+## FABRIC 2.0 — the per-fork-pin re-dispatch (the checkout-class finding, /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/FABRIC-RECEIPTS-20261107.md)
+| agent-governance-toolkit | main | refire-v2 | 2bc3ef1887b0 | 42349942414 | queued |
+| ANOLISA | main | refire-v2 | 9b313f9291b5 | 42349947617 | queued |
+| atropos | main | refire-v2 | 916c823618ff | 42349953348 | queued |
+| awesome-deepseek-agent | main | refire-v2 | 7a2a4eee6ea8 | 42349958621 | queued |
+| awesome-deepseek-integration | main | refire-v2 | ea9ec39654c0 | 42349963943 | queued |
+| craft-anything | main | refire-v2 | 49dc67e60fe3 | 42349969129 | queued |
+| csv-url-decoder | main | refire-v2 | 025daed90c1d | 42349974992 | queued |
+| DeepInfer | main | refire-v2 | 42d8469d6c87 | 42349980351 | queued |
+| deepseek-harness | master | refire-v2 | 9bfe116193fe | 42349985735 | queued |
+| deepseek-recipe | main | refire-v2 | 3f522b9539f5 | 42349990945 | queued |
+| drakvuf-sandbox | master | refire-v2 | 188a32789fc7 | 42349996438 | queued |
+| dsh-libreoffice-kit | master | refire-v2 | eabcad3737b3 | 42350001169 | queued |
+| dsh-node-addon-require-builtin | master | refire-v2 | 38f21caac112 | 42350006029 | queued |
+| dsh-superagent-prototype | main | refire-v2 | 421813266325 | 42350010560 | queued |
+| Gym | main | refire-v2 | 95403c6cbc82 | 42350016453 | queued |
+| hermes-agent-self-evolution | main | refire-v2 | 04368ce5d129 | 42350021316 | queued |
+| Hermes-Bot-Mode | main | refire-v2 | 797efe72b7a2 | 42350025927 | queued |
+| hermes-collective-wisdom | main | refire-v2 | 1811985b7f6e | 42350030631 | queued |
+| hermes-compression-eval | main | refire-v2 | af2d7f35c8c1 | 42350035430 | queued |
+| hermes-e2e-evidence | main | refire-v2 | 4c02d0820f02 | 42350040438 | queued |
+| Hermes-Function-Calling | main | refire-v2 | bf68b09faa3c | 42350045671 | queued |
+| hermes-labs-plugins | main | refire-v2 | c600525ca827 | 42350051043 | queued |
+| hermes-memory-wiki | main | refire-v2 | 215fd067f6cd | 42350057001 | queued |
+| hermes-official-plugins | main | refire-v2 | e0647c7f000d | 42350062110 | queued |
+| hermes-paperclip-adapter | main | refire-v2 | e73031e342da | 42350067553 | queued |
+| hermes-plugin-sprites | main | refire-v2 | f6af3e6bd0bf | 42350073007 | queued |
+| hermes-plugin-supermemory | main | refire-v2 | e8e9bbf377c7 | 42350078507 | queued |
+| hermes-toolperf-evals | main | refire-v2 | d7e0de2d98fb | 42350084118 | queued |
+| phone-harness | main | refire-v2 | 3df896880208 | 42350090044 | queued |
+| projectsend | main | refire-v2 | bddff760c9f1 | 42350095516 | queued |
