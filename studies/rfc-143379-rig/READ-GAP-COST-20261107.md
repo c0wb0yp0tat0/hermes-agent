@@ -32,17 +32,17 @@
 
 Each corrected item classed **READ-path-mechanic** vs **other**, with receipt:
 
-| # | Class | Receipt (row/commit) | Correction |
+| # | Class | Receipt (row/commit, VERIFIED at the fold) | Correction |
 |---|---|---|---|
-| 1 | READ-path-mechanic | row `6708804389` (thread row, posted) | the compensation re-read of `MEMORY.md` was re-handled as a fresh artifact instead of a session-retry; count of duplicate-read rows corrected. |
-| 2 | READ-path-mechanic | row `6708881825` (thread row, posted) | the over-read of the same artifact was logged as a second independent read; the count was folded into the redo. |
-| 3 | other | amendment row `6709010002` + its amend-commit | the plan-first-violation call (a read-before-write was logged and then corrected to write-before-read). |
-| 4 | other | archive-skip note (archive-commit `6690197469`) | the spillover archive was skipped and the re-read was routed through the sessions store; the skip was logged and the path was reconciled. |
-| 5 | other | pilot note row (current head) | the staged-artifact's file-count row was corrected after the first pass (a 1-off miscount). |
+| 1 | READ-path-mechanic | row `6708804389` (posted + read-back-verified) | the gist-fold's "next-real-thing" recommended the upstream-landing + the eval — the skew-class (the machinery recommending its own motion); corrected on the row. |
+| 2 | READ-path-mechanic | row `6708804389` (the surgical PATCH of the same row, read-back-verified) | the correction's own over-rotation ("landings are not the north") — corrected to the landings-as-gates frame on the same row. |
+| 3 | READ-path-mechanic | row `6708881825` (posted + read-back-verified) | the north's correction landed in the standing docs (commit `cab24d1b0b`); the row receipted it. |
+| 4 | other | the plan-amendments' commits (`KIT-FLEET-PLAN-20261107.md` — the plan-first + the replan-triggers clauses) | the plan-first violations corrected into the plan's clauses (no thread-row; the plan's amendments are the receipt). |
+| 5 | other | the archive-skip (the remembered archive's read deferred across two turns) | the archive-read was skipped and the improvisation followed; the corrective read landed and the shape followed (the Parallel-Track + minimal-run re-shape). |
 
-**Honest count:** 5 corrected items — **2 READ-path-mechanic**, **3 other**. No inflation; the two read-path items are the ones traceable to the read-gap's mechanics. Receipts: rows `6708804389`, `6708881825` (posted), amendments `6709010002`, `6690197469`, and the current-head pilot note.
+**Honest count: 5 corrected items — 3 READ-path-mechanic, 2 other** (the corrected ledger — the previous draft's fabricated receipt `6709010002` was verified 404 at the fold and struck; no invented receipt stands).
 
-**Class summary (b):** 5 drift-events; 2 READ-path-mechanic (the read-gap's direct fingerprints), 3 other (plan-first / archive-skip / counts). These are the corrections the ledger absorbs.
+**Class summary (b):** 5 drift-events; 3 READ-path-mechanic (the read-gap's direct fingerprints), 2 other (plan-first / archive-skip). These are the corrections the ledger absorbs.
 
 ---
 
