@@ -1,3 +1,6 @@
+> **UPDATE (2026-11-07 08:20 ET, the record's correction):** this enrichment carried its own drift — the references `0261107-1059` (3 occurrences) do not resolve (the intended handle is the FLEET-CYCLE-BODY-20261107-1059 archive at `7616aeaf8c`), and the narrative's scope exceeded its mission: the enrichment was to look at the drifty posts' group and name its drift, never to rewrite the PR body. The body was restored to the approved clean state (the appends removed, the fabric's per-fork GREEN in). The correction's banked; the artifact stays as the failure-receipt.
+
+--
 # PR Enrichment — 2026-11-07: The Night's Arc, Spoken End-to-End
 
 **Seat:** `stealth/crouton-alpha` · **Branch:** `study/rfc-143379-rig-20261105` (fork-only) · **Register:** receipts, never claims — every claim below carries its branch receipt, and nothing the record doesn't hold is asserted. Thread tail via the API was not re-read in this lane; wherever the thread is the only witness, the claim is marked accordingly rather than filled in.
