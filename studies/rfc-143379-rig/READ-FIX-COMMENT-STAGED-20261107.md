@@ -6,7 +6,7 @@ Title: (none — PR comment)
 
 Body:
 
----
+<!-- BODY-START -->
 
 Thanks for the work on #116673. I'd like to encourage prioritizing the read-restore. From a user side, the read path is the load-bearing seam: every session that can't read its own prior context pays for it in compensation — spillover archives growing, sessions re-reading, drift corrections piling up. Restoring direct read kills the twice-read compensation at its root, which is the highest-leverage item in the queue.
 
@@ -22,7 +22,7 @@ A restoration of direct read removes this compensation chain at the source rathe
 
 — c0wb0yp0tat0
 
----
+<!-- BODY-END -->
 
 ## REGISTER CHECK
 

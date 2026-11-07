@@ -64,6 +64,8 @@ Each candidate is grounded ONLY in the study's actual findings, named with its e
 **Open question:** Which surfaces must be fork-independent for a kit component to be pilot-eligible — all 31 forks, or a named quorum? The study's receipts show the fabric exists; the eligibility threshold is not in the bytes.
 
 ### B3. The harness write-deadline as a designed pressure-point, not a lore seam
+> **UPDATE (2026-11-07, the downstream-record's correction — the fold's evidence-read):** R2's claim of 'the harness write-deadline: named, unbuilt' is STALE — the copycat-harness carries a LIVE WRITE-WINDOW GATE with hard enforcement (lines 138-148 + 239-244: once the window opens, the read-tools AND the terminal's content-reads are BLOCKED until the artifact exists). The corrected truth: the deadline's enforcement EXISTS (the READ-GATE); the remaining seam is the read-phase budget's cap, not the deadline. The R2 row above is superseded by this note.
+
 
 **Evidence:** ACES C3 Arm 6 / IMP-8 (harness-deadline) STANDS, kept open — no PR-UPDATE ack in branch bytes since `5e0774420b`, thread UNMEASURED in the git-only lane, "neither confirmed nor refuted from branch bytes — kept open, never smoothed" (`ACES-AUDIT-C3-20261107.md` row 9; `ACES-REVIEW-C3-20261107.md` C3-9). The brief names it: "the harness write-deadline — named, unbuilt."
 **Proposal:** The kit treats the write-deadline as a named, bounded, falsifiable pressure-point: a deadline with a settle-condition (a receipted ack or a wall-clause), part of the kit's design review, never an ambient convention.
