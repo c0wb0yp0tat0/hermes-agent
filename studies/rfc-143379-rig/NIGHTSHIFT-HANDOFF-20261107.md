@@ -27,3 +27,5 @@ The study's four lines stayed STAGED (restore #141876 · network #116673 · gove
 
 ## The thread's register-reminders (for the successor)
 The rows carry the envelope-form (handles-only, no internal vocab); the drift never collects on the thread (the corrections bank in the LESSONS + the skills); every landing's same-pass fold asks *which friction did this landing reveal?*; the only standing bias is the bias for action. Gradatim ferociter.
+
+## THE SPLIT (the fan-out's convergent fix, executed): this doc's full text = PART1 + PART2 (each below the successor's read-cap) — read BOTH parts; the split's the form, the parts are the whole.
