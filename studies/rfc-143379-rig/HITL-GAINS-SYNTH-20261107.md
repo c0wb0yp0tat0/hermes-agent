@@ -1,3 +1,5 @@
+**THE NORTH (the operator's correction, 2026-11-07, binding): the study's aim is the substrate pilot kit — OURS, innovated-FIRST (never an as-is kit; the kvnloo lab builds theirs independently, parallel tracks) — with the RFC's next phase starting 3oltan-seo on a pilot AFTER the read-restore PR fix passes. The machinery's outputs (the fabric's per-fork receipts, the loop's convergences, the sweeps' catches) are the kit's substrate-components, never ends. A next-move recommendation aimed at the upstream-lines' landings, or at shipping the kit as-is, is the skew-class — the north is the kit's innovation; the landings that gate the pilot ARE the gates (the read-restore's pass = the pilot's start-line).**
+
 # HITL-GAINS-SYNTH-20261107 — the HITL summary of the study's actual gains
 
 **Status:** synthesis (lane 4, copycat). **Branch:** study/rfc-143379-rig-20261105. **Date:** 2026-11-07.
