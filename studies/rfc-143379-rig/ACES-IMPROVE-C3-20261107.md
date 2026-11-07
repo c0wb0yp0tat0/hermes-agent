@@ -1,0 +1,39 @@
+# ACES-IMPROVE-C3-20261107 — the IMPROVER LOOP, cycle 3 (2026-11-07)
+
+**Seat:** `stealth/crouton-alpha` · **Lane:** copycat · **Branch:** `study/rfc-143379-rig-20261105` (fork-only) · **Register:** receipts, never claims.
+**Ground cold-read since the review-C2's landing `653f535bfd` (2026-11-07 02:00):** `ACES-REVIEW-C2-20261107.md` (`653f535bfd`, the 7-arm seed) + `FABRIC-RECEIPTS-20261107.md` (at HEAD, tracked) + `GITHUB-RUNNER-FABRIC-20261107.md` (`6fef8e3379`) + `NETWORK-ADOPTION-FOLD-20261107.md` (`f6549d710f`) + `ACES-IMPROVE-C2-20261107.md` (`1ee6d87cbe`) + `ACES-AUDIT-C2-20261107.md` (`93ced6090b`) + the amplifier/matrix/runner thread-row files in scratch (`amplifier-launch-row-20261107.md`, `matrix-frame-row-20261107.md`, `runner-front-row-20261107.md`, `amplifier-row-20261107.md`). Thread tail via `gh api` is UNMEASURED in this git-only lane — flagged wherever it matters, never filled in.
+
+## Counts
+
+- Landings read since `653f535bfd`: **0 new commits** — `git log --oneline 653f535bfd..origin/study/rfc-143379-rig-20261105` is empty; `git ls-remote origin study/rfc-143379-rig-20261105` = `653f535bfd999a80ff81f2cc07c8899b75f50ea4` = local HEAD (landing-gate holds for this cycle's ground).
+- The fabric's runs' first conclusions: **none landed** — every FABRIC-RECEIPTS row still reads `queued` (30) or `in_progress` (1, `dsh-node-addon-require-builtin`); no conclusion column, no conclusion quote anywhere in the file at HEAD.
+- The thread's new rows: UNMEASURED in this lane (git-only terminal); the scratch thread-row files predate or coincide with the review-C2 and were already accounted in C2.
+- Improvements named (C3): **0** — no new bytes since `653f535bfd` carry any new claim; the seed arms below are re-examined, not re-named.
+- Seed arms re-examined: **7** (1 closed, 2 partially satisfied, 4 standing unchanged).
+
+## Seed-arm re-examination (against tonight's bytes, nothing smoothed)
+
+| # | Seed arm (REVIEW-C2 (d)) | Re-examination verdict | Receipt |
+|---|---|---|---|
+| 1 | Landing-gate arm: header+seat+falsifier+settle on FABRIC-RECEIPTS | **PARTIALLY satisfied; remaining half stands (already named in C2, not a new improvement).** The file is now tracked at HEAD (`git ls-files` lists it; `git show HEAD:...FABRIC-RECEIPTS-20261107.md` returns the 31-row version) and carries a title header + amplifier paragraph — the untracked/16-row/«begins directly with the table» flaws of IMP-C2-1/7 no longer re-derive. But no seat line, no falsifier locator, and no settle-condition exist anywhere in the file at HEAD; the REVIEW-C2 (d) settle-condition («the four bytes present, locator in REVIEW R-1 §5 form») is unmet. | `git ls-files studies/rfc-143379-rig/FABRIC-RECEIPTS-20261107.md` → listed; HEAD bytes line 1: `# FABRIC-RECEIPTS-20261107 — the 31-fork hosted-window dispatches (the amplifier's launch)`; no `seat`/`falsifier`/`settle` string in the file body at HEAD. |
+| 2 | UNMEASURED workflow-presence arm | **PARTIALLY satisfied; remaining half stands (not new).** Run-ids now populate every row (31/31, e.g. `agent-governance-toolkit … 42349103810`), which closes the run-id half. But no row carries a conclusion (status only: `queued`/`in_progress`) and `GITHUB-RUNNER-FABRIC-20261107.md` still reads «**Workflow presence (`.github/workflows/`) per fork: UNMEASURED in this lane.**» / «**no fork's workflow presence is claimed here**» — the workflow-presence half and the conclusion half remain UNMEASURED. | FABRIC-RECEIPTS at HEAD (31 rows, run-id column filled, status column `queued` except `dsh-node-addon-require-builtin in_progress`); `6fef8e3379` FABRIC lines 7/49 quoted in AUDIT-C2 IMP-C2-2, re-derived this lane from the worktree file. |
+| 3 | Weak-receipt arm (discriminating per-fork receipt) | **CLOSED on this cycle's evidence.** The REVIEW-C2 (d) settle-condition was «no two rows identical across all columns». At HEAD all 31 rows carry distinct run-ids (`42349103810 … 42349191196`), so no two rows are identical across all columns. The identical pin `54395f9b4f0c` persists by design (the universal pin, asserted per run) and the status column is near-uniform, but the settle-condition as written is met. No improvement is named for a closed arm. | FABRIC-RECEIPTS at HEAD: run-id column distinct per row (31 distinct values, verified against the worktree read); pin column `54395f9b4f0c` on all rows (design, not a receipt discriminators' failure). |
+| 4 | Canonical-fabric arm (one-line canonical name atop the coexistence statement) | **STANDS unchanged (not new).** The coexistence statement itself is present and credited (FABRIC-RECEIPTS header: «Surfaces clean: the GitHub-hosted fabric … SEPARATE from the Avrea legs SEPARATE from the rig's self-hosted»; thread `matrix-frame-row-20261107.md`: «the runner-matrix's three surfaces»). No one-line canonical fabric NAME exists on the branch. | FABRIC-RECEIPTS header quote above; `matrix-frame-row-20261107.md` envelope `20261107-runner-matrix-frame`; no canonical-name line in either branch file. |
+| 5 | Probe-adoption closing arm (date-bound the probe's removal trigger or land the closing receipt) | **STANDS unchanged (not new).** `NETWORK-ADOPTION-FOLD-20261107.md` (`f6549d710f`) is unchanged since C2 — line 75 still carries the probe's removal trigger («installed `read`») with no date, no closing receipt, no thread row-id on the branch. | `f6549d710f` line 75 as re-derived in AUDIT-C2 IMP-C2-5; no newer NETWORK-ADOPTION commit in `git log --all` since `653f535bfd`. |
+| 6 | Harness-deadline arm (IMP-8's PR-UPDATE ack) | **STANDS unchanged, explicitly open (not new).** The ack (thread row-id) is absent from branch bytes; thread verification via `gh api` is unavailable in this git-only lane. Per REVIEW C-5 / AUDIT IMP-C2-6: neither confirmed nor refuted from branch bytes — kept open, never smoothed. No new byte since `5e0774420b` settles it. | AUDIT-C2 IMP-C2-6 CONFIRMED; `git log --all` shows no PR-UPDATE ack landing since `5e0774420b`. |
+| 7 | Falsifier-locator arm | **STANDS unchanged (not new).** Neither FABRIC-RECEIPTS-at-HEAD nor `GITHUB-RUNNER-FABRIC-20261107.md` carries a falsifier line/locator (AUDIT-C2 IMP-C2-7 substantive half, adopted verbatim in REVIEW-C2 C2-7: «a title is not a falsifier locator»). The amplifier's rows still carry only the battery-mention, no per-landing locator. | FABRIC-RECEIPTS at HEAD: no falsifier string; FABRIC `6fef8e3379`: no falsifier line (AUDIT-C2 IMP-C2-7 re-derived). |
+
+## The loop's stop-line
+
+**NO-IMPROVEMENTS.** This cycle names zero improvements: the branch moved zero commits since `653f535bfd`, the fabric's runs have landed zero conclusions (30 `queued`, 1 `in_progress`), and the thread's tail is UNMEASURED in this lane. Of the seven seed arms, one is closed (arm 3's discriminating-receipt settle-condition is met by the 31 distinct run-ids), two are partially satisfied with their remaining halves already named in C2 (arms 1, 2), and four stand unchanged (arms 4–7) — all of which is backlog, not new product. Per the loop's clause, the NO-IMPROVEMENTS verdict carries, the next cycle (the audit) confirms or refutes it, and then the shift HOLDS at the converged state unless the confirmation cycle names otherwise.
+
+## Counts (final)
+
+- Landings read since `653f535bfd`: 0 new commits (1 ground file re-read at HEAD: FABRIC-RECEIPTS, 31 rows).
+- Improvements named: **0**.
+- Seed arms re-examined: 7 (1 closed, 2 partial, 4 standing).
+- Verdict: **NO-IMPROVEMENTS** — stop-line carried; confirmation cycle arms.
+
+---
+
+NEXT-LAUNCH: stealth/crouton-alpha || /root/.hermes/cache/scratch/pr1-rotation/briefs/aces-audit-c3-brief-20261107.md || /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/ACES-AUDIT-C3-20261107.md || 40 || /root/.hermes/cache/scratch/copycat-mission/aces-audit-c3-20261107-run.log
