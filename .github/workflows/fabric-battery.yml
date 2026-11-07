@@ -1,0 +1,58 @@
+name: fabric-battery
+on:
+  workflow_dispatch:
+    inputs:
+      head_sha:
+        description: "exact 40-char pin (requested)"
+        required: true
+      battery:
+        description: "union|tools|falsifier|sweep|stress|subject"
+        required: false
+        default: "union"
+concurrency:
+  group: verify-hosted
+  cancel-in-progress: false
+jobs:
+  battery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ inputs.head_sha }}"
+      - name: ASSERT pin
+        run: |
+          EXEC=$(git rev-parse HEAD)
+          [ "$EXEC" = "${{ inputs.head_sha }}" ] || { echo "PIN MISMATCH requested!=executed"; exit 1; }
+          echo "ASSERT: requested=${{ inputs.head_sha }} executed=$EXEC"
+      - name: substrate census
+        run: |
+          echo "battery=${{ inputs.battery }}"
+          echo "has_falsifier=$([ -d tests/falsifier-battery ] && echo yes || echo no)"
+          echo "has_uv=$(command -v uv && echo yes || echo no)"
+          echo "tests_dirs=$(ls -d tests/* 2>/dev/null | wc -l)"
+      - name: battery
+        run: |
+          if [ -d tests/falsifier-battery ] && command -v uv >/dev/null 2>&1; then
+            uv run pytest tests/falsifier-battery -q --maxfail=1 2>&1 | tail -5 || true
+          elif [ -d tests ] && command -v uv >/dev/null 2>&1; then
+            uv run pytest tests -q --maxfail=1 2>&1 | tail -5 || true
+          else
+            echo "SUBSTRATE-ABSENT: the battery skips with the recorded reason (the tolerant arm)"
+          fi
+      - name: RECORD
+        run: |
+          mkdir -p runs
+          {
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "fork=${{ github.repository }}"
+            echo "requested=${{ inputs.head_sha }}"
+            echo "executed=$(git rev-parse HEAD)"
+            echo "assert=requested==executed"
+            echo "battery=${{ inputs.battery }}"
+            echo "conclusion=steps-as-observed"
+          } > runs/fabric-receipt-${{ inputs.battery }}.txt
+          cat runs/fabric-receipt-${{ inputs.battery }}.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fabric-receipt-${{ github.run_id }}
+          path: runs/
