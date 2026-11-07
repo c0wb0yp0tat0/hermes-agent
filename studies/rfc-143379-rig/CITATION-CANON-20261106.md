@@ -56,3 +56,6 @@ The canon-skeleton is COMPLETE — adding rows is OUT of scope; a row's absence 
 - Run-id 42250764897 (union-GREEN): no RECEIPTS.md row, not an execution receipt — the union-GREEN claim is not receipted.
 - Run-id 42229976556 (reconciliation-run): no RECEIPTS.md row, not an execution receipt — the reconciliation-run is not receipted.
 Both gaps are enumerated so the record stays honest; the canon-table is complete and the verified handles are the current receipts.
+
+
+## POST-LANDING CLOSURE (the head-side, same day): the two ORPHANED run-ids' ledger-rows ADDED to RECEIPTS.md (42229976556 @ 13:59Z failure-8d7d3a837f; 42250764897 @ 16:16Z success-54395f9b4f) — the canon's GAPS-FOUND caught what the ledger's inventory missed; the gaps are now closed on the record. The canon's verdict updates: VERIFIED-31 + CLOSED-2.
