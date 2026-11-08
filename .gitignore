@@ -326,3 +326,5 @@ native/fts5_cjk/*.so
 
 apps/desktop/.dist-build*
 *.sentinel
+*.bak-C3
+studies/rfc-143379-rig/tmp-artifacts/creative/*.log
