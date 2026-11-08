@@ -143,7 +143,8 @@ def _apply_write_gate(store: MemoryStore, action: str, target: str, content: Opt
 def _validate_single_op(store, action, target, content, old_text) -> Optional[str]:
     """Validate BEFORE the gate so an invalid write is rejected now, not at approve time.
     Missing ``old_text`` is recoverable (it can't be schema-required — needs a combinator
-    the Codex backend rejects): return the inventory plus a retry instruction."""
+    the Codex backend rejects): point at ``read`` (the one inventory accessor) plus a retry
+    instruction, instead of echoing the store into the failure."""
     if action == "add" and not content:
         FAILURE_CLASS.set("missing_content")
         return tool_error("Content is required for 'add' action.", success=False)
@@ -152,9 +153,10 @@ def _validate_single_op(store, action, target, content, old_text) -> Optional[st
         return json.dumps({
             "success": False,
             "error": (f"'{action}' needs old_text -- a short unique substring of the entry "
-                      f"to {action}. None was provided. Reissue the {action} with old_text "
-                      f"set to part of one of the current_entries below."),
-            "current_entries": store._entries_for(target), "usage": store._usage(target)}, ensure_ascii=False)
+                      f"to {action}. None was provided. Call memory(action='read') for the "
+                      f"current entries, then reissue the {action} with old_text set to part "
+                      f"of the intended entry."),
+            "usage": store._usage(target)}, ensure_ascii=False)
     if action == "patch" and not content:
         FAILURE_CLASS.set("missing_content")
         return tool_error(f"content (the new text for the old_text span) is required for 'patch' action. "
@@ -255,6 +257,8 @@ def _memory_tool(action, target, content, old_text, new_text, operations, store)
     target_error = _memory_target_error(store, target, operations)
     if target_error is not None:
         return "rejected", json.dumps(target_error)
+    if action == "read":
+        return _applied(store.read(target))
     if operations:
         if not isinstance(operations, list):
             return _invalid("operations must be a list of {action, content?, old_text?} objects.")
@@ -268,14 +272,14 @@ def _memory_tool(action, target, content, old_text, new_text, operations, store)
         if gate_result is not None:
             return "rejected", gate_result
         return _applied(store.apply_batch(target, operations))
-    # Reject calls that provide neither action (single-op) nor operations
-    # (batch).  Without this guard the dispatch falls through to the generic
+    # Reject calls with neither operations[] nor the legacy top-level action.
+    # Without this guard the dispatch falls through to the generic
     # "Unknown action 'None'" error, which gives the model no signal about
     # *why* the call was malformed and can trigger repeated retries. (#64291)
     if not action and not operations:
         return _invalid(
-            "Missing required parameter: provide 'action' (add/patch/remove) "
-            "or 'operations' (batch list). Got neither."
+            "Missing required parameter: 'operations', a list of {action: add/patch/remove, "
+            "content?, old_text?} changes; a single change is a one-item list."
         )
     if action == "replace":
         return _invalid(_REPLACE_REMOVED)
@@ -380,61 +384,60 @@ MEMORY_SCHEMA = {
         "checked only on the FINAL result — so a single call can remove/patch stale entries "
         "to free room AND add new ones, even when an add alone would overflow. The response "
         "reports current/limit chars and confirms completion; one batch call finishes the "
-        "update, so don't repeat it. Use the bare action/content/old_text fields only for a "
-        "single lone change.\n\n"
+        "update, so don't repeat it.\n\n"
         "WHEN: only for facts that apply to EVERY session regardless of task: who the user "
         "is, stable environment facts, standing conventions with no task home. Anything "
         "learned while doing a task (procedures, pitfalls, and the user's preferences and "
         "corrections for that kind of work) belongs in the task's skill via skill_manage, "
         "where it loads only when relevant; memory is injected into every turn and must "
         "stay small.\n\n"
-        "IF FULL: an add is rejected with the current entries shown. Reissue as ONE batch that "
-        "removes or shortens enough stale entries and adds the new one together.\n\n"
+        "IF FULL: an add is rejected with the usage shown. Read the current entries with "
+        "action='read', then reissue as ONE batch that removes or shortens enough stale "
+        "entries and adds the new one together.\n\n"
         "TARGETS: 'user' = who the user is (name, role, preferences, style). 'memory' = your "
         "notes (environment, conventions, tool quirks, lessons).\n\n"
         "SKIP: trivial/obvious info, easily re-discovered facts, raw data dumps, task progress, "
         "completed-work logs, temporary TODO state (use session_search for those). Reusable "
         "procedures belong in a skill, not memory."
     ),
+    # `action` (read-only) + `target` are advertised at the top level; write fields are
+    # advertised once, inside operations[]. The handler still ACCEPTS the top-level single-op
+    # shape (action/content/old_text) and the new_text alias: models drift and older transcripts
+    # replay them.
     "parameters": {
         "type": "object",
         "properties": {
             "action": {
                 "type": "string",
-                "enum": ["add", "patch", "remove"],
-                "description": "The action to perform (single-op shape). Omit when using 'operations'."
+                "enum": ["read"],
+                "description": "The action to perform (single-op shape). Omit when using 'operations'.",
             },
             "target": {
                 "type": "string",
                 "enum": ["memory", "user"],
                 "description": "Which memory store: 'memory' for personal notes, 'user' for user profile."
             },
-            "content": {
-                "type": "string",
-                "description": "Required for 'add' and 'patch'. For 'add', the new entry. For 'patch', the text that replaces old_text; the rest of the entry is kept. Alias: 'new_text'."
-            },
-            "old_text": {
-                "type": "string",
-                "description": "REQUIRED for 'patch' and 'remove': text from one entry. 'patch' replaces exactly this span (it must occur once in the entry); 'remove' deletes the whole entry. Omit for 'add'."
-            },
-            "new_text": {
-                "type": "string",
-                "description": "Alias for 'content'. If both are set, 'content' wins."
-            },
             "operations": {
                 "type": "array",
                 "description": (
-                    "Batch shape: a list of operations applied atomically in one call "
-                    "against the final char budget. Preferred when making multiple changes "
-                    "or consolidating to make room. Each item is {action, content?, old_text?}."
+                    "Changes applied atomically in one call against the final char budget; "
+                    "a single change is a one-item list."
                 ),
                 "items": {
                     "type": "object",
                     "properties": {
                         "action": {"type": "string", "enum": ["add", "patch", "remove"]},
-                        "content": {"type": "string", "description": "Required for add and patch, as 'content' above."},
-                        "new_text": {"type": "string", "description": "Alias for 'content' in a batch op."},
-                        "old_text": {"type": "string", "description": "As 'old_text' above."},
+                        "content": {
+                            "type": "string",
+                            "description": ("Required for 'add' and 'patch'. For 'add', the new entry. For 'patch', "
+                                            "the text that replaces old_text; the rest of the entry is kept."),
+                        },
+                        "old_text": {
+                            "type": "string",
+                            "description": ("REQUIRED for 'patch' and 'remove': text from one entry. 'patch' replaces "
+                                            "exactly this span (it must occur once in the entry); 'remove' deletes the "
+                                            "whole entry. Omit for 'add'."),
+                        },
                     },
                     "required": ["action"],
                     "additionalProperties": False,
