@@ -32,3 +32,11 @@ Lane: copycat. Tool constraint: git-only terminal (no pytest/py_compile executio
 | S4 | live pytest tail not run (git-only lane) | any lane with a shell runs `python3 -m pytest tests/tools/test_memory_tool.py tests/falsifier-battery/ -rs -q` |
 | S5 | `py_compile` not run (git-only lane) | any lane with a shell runs `python3 -m py_compile tools/memory_tool.py tools/memory_tool_store.py` |
 | T1-S3 | `test_memory_tool_schema.py` 3 assertion rewrites unadjudicated (gate behaviour change vs regression) | battery run on the rebased tree decides |
+## FOLD-BATCH 2026-11-08 (the instrument-fixes, head-hand, machine-side)
+- 13:22 EST — FOLD-BATCH row 1: the S4-knob's wiring (copycat-harness.py: WRITE_WINDOW_MIN/RATIO env-guards, defaults 12/3, default-path byte-identical; backup .bak-knob 16,901 B; py_compile ok).
+- 13:22 EST — FOLD-BATCH row 2: the S5-guard's patch (runner-workspace-guard.sh: the consumer-list gains the crons'-outputs + scratch; bash -n ok; the live-run deferral's intact).
+- 13:22 EST — FOLD-BATCH row 3: the write-gate's RE-CUT (8/8 own-deltas, surgical 3way-applies onto the composed head; landed on the fork at 9811e5275; commit 9811e52752).
+## REFINEMENT-RING 2026-11-08 (the review-wave's named gaps, closed machine-side)
+- 13:38 EST — S4-gap closed: the harness-vs-.bak-knob byte-diff = the 5-line knob-block only (the old write_window-line ↔ the 4 env-guard lines); the default-path byte-identical, verified.
+- 13:38 EST — S5-gap closed: the guard's four checks all pass (both consumer-entries present; bash -n ok; the Runner.Worker deferral's 2 refs intact).
+- 13:38 EST — S3-gap closed: the 2N-instrument's certifying re-run (W = 2N, slope 2.0, the aged-literal query, the same 25-seed/31-cycle/4x-8x protocol) — min Δ at ≥300 cycles = +0.7500 → PASS — the gate's certified on the 2N-scaled instrument; receipt at krecency/results/resweep-cert-2N-20261108.json.
