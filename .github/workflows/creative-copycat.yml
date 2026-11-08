@@ -1,0 +1,38 @@
+name: creative-copycat
+on:
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: "The creative brief's repo-relative path (default: the standing creative lane)"
+        required: false
+        default: "studies/rfc-143379-rig/tmp-artifacts/creative/creative-brief.md"
+      artifact:
+        description: "The creative output's repo-relative path"
+        required: false
+        default: "studies/rfc-143379-rig/tmp-artifacts/creative/creative-output.md"
+
+# THE NEVER-IDLE ARM (2026-11-08): the self-hosted runner is an ASSET — when the
+# verification arms have nothing pinned, a creative copycat rides instead. Idle is
+# the waste the mandate forbids; the creative lane keeps the silicon warm with output.
+jobs:
+  creative-copycat:
+    runs-on: [self-hosted, avrea-ubuntu-latest]
+    steps:
+      - name: The creative copycat lane
+        env:
+          BRIEF_PATH: ${{ github.event.inputs.brief }}
+          ARTIFACT_PATH: ${{ github.event.inputs.artifact }}
+        run: |
+          set -euo pipefail
+          REPO="/root/workspace/repos/hermes-agent"
+          cd "$REPO"
+          git fetch origin study/rfc-143379-rig-20261105 >/dev/null 2>&1 || true
+          BRIEF="$REPO/$BRIEF_PATH"
+          ART="$REPO/$ARTIFACT_PATH"
+          if [ ! -s "$BRIEF" ]; then
+            echo "creative-brief absent ($BRIEF) — the arm's quiet is the honest state, no fabrication"
+            exit 0
+          fi
+          mkdir -p "$(dirname "$ART")"
+          python3 /root/scripts/copycat-harness.py --model "reflection/beam-1.0-501b-a23b:free" --brief "$BRIEF" --artifact "$ART" --rounds 24 --logfile "$REPO/studies/rfc-143379-rig/tmp-artifacts/creative/creative-run.log" 2>&1 | tail -5
+          echo "creative-copycat complete: $(date -u +%FT%TZ)"
