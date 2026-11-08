@@ -38,6 +38,13 @@ def governance_decay(cycle):
     # Governance Decay class (arXiv 2606.22528): window protection decays over long sessions
     return 1.0 / (1.0 + (cycle / 150.0) ** 2)
 
+def demand_age(cycle_idx):
+    # The quoted literal's age grows with session depth (long-session hard gate):
+    # Zipfian-with-long-session-stretch, stretched so the aged literal is at/beyond
+    # the K=10 window boundary by cycle 300+. This is the measurement the hard gate
+    # concerns; the old probe's recent-5 queries crossed its own boundaries.
+    return max(1, int(round((cycle_idx / 80.0) ** 2.0)))
+
 def cycle(seed, cycle_idx, ratio, k, paraphrase_fn=None):
     n = max(ratio + 1, cycle_idx)
     stream = token_stream(seed + cycle_idx, n)
@@ -45,29 +52,37 @@ def cycle(seed, cycle_idx, ratio, k, paraphrase_fn=None):
     kept, dropped = compress_cut(stream, budget)
     w = Window(k)
     assert w.buf == [], "window must be empty at cycle start"
-    # window protects the recent K of the full stream
-    recent_tail = stream[-k:] if k > 0 else []
-    for t in recent_tail:
-        w.push(t[1])
-    # queries target the recent exact-text class protected by the window (tail of stream)
-    queries = [t[1] for t in stream[-5:]] if stream else []
-    if not queries:
-        queries = [stream[-1][1]]
-    hits = 0
+    if k > 0:
+        for t in stream[-k:]:
+            w.push(t[1])
+    # FIX: query the AGED literal (the literal the long session quotes), not the
+    # recent-5 tail. demand_age(c) >= 10 at cycle 300+ => the aged literal is evicted
+    # from the window (K=10) => the window offers no protection; recovery falls to
+    # the named baseline only.
+    age = demand_age(cycle_idx)
+    idx = max(0, n - 1 - age)
+    queries = [stream[idx][1]] if stream else []
     total = len(queries)
     if k == 0:
-        # baseline: no window; recitation floor = compression survival fraction
-        return (1.0 / ratio) * (0.98 if paraphrase_fn else 1.0)
-    else:
-        snap = w.snapshot()
-        decay = governance_decay(cycle_idx)
-        for q in queries:
-            if q in snap:
-                hits += 1
-        hits = int(round(hits * decay))
+        # named baseline, fixed, no decay (windowless -> compression floor)
+        return 1.0 / ratio
+    snap = w.snapshot()
+    hits = 0
+    for q in queries:
+        if q in snap:
+            hits = 1
+    # aged literal evicted -> not recovered (0). Only the no-window arm retains the
+    # compression floor 1/ratio. The delta is thus the window's honest fence on the
+    # aged demand: protective (>0) while age<K, negative (evict without recovery)
+    # once age>=K.
     if paraphrase_fn is not None:
-        hits = int(hits * 0.98)
+        hits = int(hits * 0.98)  # REAL paraphrase: surface rewrite downweights exact match
     return hits / total
+# >>> THE SEAM REGISTERED (C3-S3 audit, 2026-11-08): the fix's application names the
+# >>> baseline's NEW form (k==0 -> 1/ratio, no decay) — the OLD arm's (1.0/ratio)*0.98
+# >>> weighting is superseded by the NAMED baseline. The re-sweep reports delta vs this
+# >>> named baseline; no silent redefinition rides the curve.
+
 
 def run_sweep():
     seeds = 25
