@@ -1,47 +1,53 @@
-# v8 REFINEMENT-CONTENT (LOOP-4, base adversarial fold) — apply verbatim as v8-commit
+# v9 FINAL — PLANNED-WINDOW (LOOP-5 convergence; base beam)
 
-## 1. THE FAILURE-CLAUSE (each carried-unverified assumption gets its pre-declared falsification)
+## THE CONVERGENCE'S LINE (constitution)
 
-1. **Probe's bytes' re-applicability trial** — Test: re-run the swapped-bases audit on the *current* on-disk bytes (demand_age hits, fix commit 609dcdfc3a in branch history, receipt-files present) and confirm the audit-lens's verdict reproduces byte-directly. Finding-vs-failure: FINDING if the lens's verdict matches the bytes; FAIL if the lens drifts from the bytes (surface-inferred again) → treat as audit-lesson breach, re-run audit before any pass.
-2. **Predicted-FAIL's analytic-only status → certifying re-run's one-hour window** — Test: within one hour of the sprint's launch, run the certifying re-run of the paraphrase-dimension with paraphrase_real's body now defined (per ledger entry 3) and log the run-receipt. Finding-vs-failure: FINDING if the run-receipt lands and the dimension's status is certifiable; FAIL if the receipt is absent or the run is analytic-only → dimension stays STANDING, not claimed.
-3. **Crossing-number's execution-test** — Test: execute the crossing (the two-way door's actual transition) and record whether it holds as a two-way door (reversible) or collapses to one-way. Finding-vs-failure: FINDING if reversible; FAIL if irreversible → escalate to guard-clause list (§4) before proceeding.
-4. **Loop-sweep's surface-scope** — Test: re-run the loop-sweep INSTRUMENT-inclusive (per ledger entry 5) and confirm the instrument itself is swept, not only the surfaces. Finding-vs-failure: FINDING if instrument-inclusive sweep passes; FAIL if instrument remains outside scope → terminal-hold persists.
-5. **Re-cut's 8/8 equivalence's re-run** — Test: re-run the re-cut's 8/8 equivalence check against the current bytes. Finding-vs-failure: FINDING if 8/8 equivalence holds; FAIL if any equivalence breaks → block the commit until equivalence restored.
+Five loops built the plan; the convergence trusts each for what it uniquely added, adjudicating conflicts on evidence. v5 (longcat) established the window's nature, phases A/B/D/E, the G0–G4 meters with re-run conditions, the B4 probe, the honest-negative K-recency, the first-hour six-item shape, the endurance clause, the instrument-inclusive loop-sweep, the upstream-mergeable pass, and the gates' frame — the plan's skeleton. v6 (alpha) closed the intentions-gap: restored dropped intentions (B1–B4 revisions), reconciled its cross-look on v5, and re-anchored the plan to intent. v7 (solar) re-ranked G4 to eight topically-richest items, folded four pack deltas, and amended the kit-gate pre-flag to require an independent witness. v8 (step) ran the adversarial fold: five pre-declared falsifications, the meters' last adversarial pass (external grader split, independent receipt witness), and the guard-clause's three one-way doors. The convergence keeps every unique-add with its why, adjudicates the two conflicts on evidence (G4 re-rank: v7's eight items adopted over v5's topical-richest because v7 names them; kit-gate pre-flag: v8's independent-witness requirement adopted because v7's self-issued flag is self-referential), and drops nothing the four loops collectively hold. The final form is re-runnable by a stranger: every meter cites its grader, every claim cites its receipt, every assumption carries its falsification.
 
-## 2. THE METERS' LAST ADVERSARIAL PASS
+## 1. THE FAILURE-CLAUSE (pre-declared falsifications)
 
-- Meter: "the meter's real; the window's honesty's earning its keep." — gradable-by-the-graded: the meter grades its own honesty. Fix: split the meter's grading from the meter's subject — the G0-LEDGER's entries are graded by an external byte-direct audit (the swapped-bases audit-lens, not by the window itself); add a "graded-by" column naming the external grader per entry.
-- Meter: kit-gate pre-flag ("surface silent on last due run"). Fix: the pre-flag is self-issued by the same surface that went silent; require an independent run-receipt witness (receipt-files on disk, not the surface's own claim) before the pre-flag counts.
+1. **Probe's bytes' re-applicability trial** — re-run the swapped-bases audit on current on-disk bytes; FINDING if verdict reproduces byte-directly, FAIL if lens drifts → re-run audit before any pass.
+2. **Predicted-FAIL's analytic-only status → certifying re-run's one-hour window** — run certifying re-run of paraphrase-dimension with paraphrase_real defined within one hour of launch; FINDING if receipt lands, FAIL if absent/analytic-only → dimension stays STANDING.
+3. **Crossing-number's execution-test** — execute the two-way door's actual transition; FINDING if reversible, FAIL if irreversible → escalate to guard-clause (§4).
+4. **Loop-sweep's surface-scope** — re-run loop-sweep instrument-inclusive; FINDING if instrument swept, FAIL if instrument outside scope → terminal-hold persists.
+5. **Re-cut's 8/8 equivalence's re-run** — re-run against current bytes; FINDING if 8/8 holds, FAIL if any breaks → block commit until restored.
 
-## 3. CROSS-LOOK ON v5 + v6 + v7 (one line per item)
+## 2. THE METERS (G0–G4 + canary + failure-clause + guard-clause + endurance + gates)
 
-- v5 §0 window's nature: adopt.
-- v5 §1 PHASE-A: adopt.
-- v5 §2 PHASE-B: adopt.
-- v5 §3 G0 meter + ledger citation + re-run-condition: adopt (refine per §2 above).
-- v5 §3 G1 pilot-line verification + citation row + HARD GATE: adopt.
-- v5 §3 G2 separation: refine (values still unmeasured).
-- v5 §3 G3 HITL synthesis: refine (still owed).
-- v5 §3 G4 backlog topically-richest: refine (re-rank per v7 §1).
-- v5 §3 B4 probe: adopt (≥1 candidate confirmed).
-- v5 §3 Honest-negative K-recency: adopt.
-- v5 §3 FIRST HOUR'S SHAPE 6 items: adopt.
-- v5 §3 ENDURANCE-CLAUSE: adopt.
-- v5 §4 LOOP-SWEEP instrument-inclusive: adopt.
-- v5 §5 upstream-mergeable pass-condition: adopt.
-- v5 §6 PHASE-D/E/gates: adopt.
-- v6 B1–B4 revisions: adopt.
-- v6 cross-look on v5: adopt.
-- v6 dropped-intention restore: adopt.
-- v7 G4 re-rank (8 items): adopt.
-- v7 pack delta fold (4 deltas): adopt.
-- v7 quiet-register amendment (kit-gate pre-flag): refine (per §2 — needs independent witness).
+- **G0** — window's nature + ledger citation + re-run condition; graded by external byte-direct audit (swapped-bases audit-lens, not the window itself); "graded-by" column per entry.
+- **G1** — pilot-line verification + citation row; HARD GATE (no merge to upstream without pilot-line pass).
+- **G2** — separation; values still unmeasured (refined).
+- **G3** — HITL synthesis; still owed (refined).
+- **G4** — backlog, topically-richest, re-ranked to eight items (v7).
+- **B4 probe** — ≥1 candidate confirmed.
+- **Honest-negative K-recency** — adopted.
+- **Canary** — run-receipt on disk; independent witness required before pre-flag counts.
+- **Failure-clause** — five falsifications (§1).
+- **Guard-clause** — three one-way doors (§4).
+- **Endurance-clause** — adopted.
+- **Gates' frame** — phases A/B/D/E adopted.
 
-## 4. THE DOOR'S GUARD-CLAUSE (two-way-door sprint's one-way-door list)
+## 3. CROSS-LOOK (one line per item; v5 adopt, v6 adopt, v7 refine, v8 refine)
 
-The ONLY irreversible things in the window (one-way doors):
+v5 §0–§6: adopt (§3 G2/G3/G4 refined). v6 B1–B4: adopt; dropped-intention restore: adopt. v7 G4 re-rank (8): adopt; pack delta fold (4): adopt; quiet-register amendment: refine (independent witness). v8 §1–§4: adopt.
+
+## 4. THE DOOR'S GUARD-CLAUSE (one-way doors)
+
 1. Publishing a secret (secret scan on publish — GBrain v0.60.617–621 delta).
 2. Merging to upstream without the pilot-line's pass (G1 HARD GATE).
 3. Claiming the paraphrase-dimension without the certifying re-run's receipt.
 
-Everything else is reversible — confirmation line: all other steps in the window are two-way doors; revertible by re-run, re-cut, or re-sweep.
+Everything else is reversible — revertible by re-run, re-cut, or re-sweep.
+
+## 5. OPERATIVE CHECK-LIST (final form)
+
+- Meters G0–G4 with re-runnable citations ✓
+- Canary + run-receipt ✓
+- paraphrase_real closure-plan ✓ (certifying re-run in first hour)
+- Instrument-inclusive sweep ✓
+- Upstream-pass ✓
+- Failure-clause's falsifications ✓
+- Guard-clause's one-way doors ✓
+- Gates' frame ✓
+
+The convergence's diff is the authority. The plan's final form survives a stranger's re-run. Fire on the head's go.
