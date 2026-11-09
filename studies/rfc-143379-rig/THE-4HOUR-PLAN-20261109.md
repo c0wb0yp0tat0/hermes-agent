@@ -1,3 +1,5 @@
+**PINNED-SHA (literal, binding): 567ec59464e3c7e3100bc35ed6ad19b736055b79** — the plan's frozen head; every byte-closure compares against this literal.
+
 # THE DEPLOYABLE END-TO-END PLAN — RFC-143379-RIG 4-HOUR SPRINT
 
 **Status:** DIRECT-APPLICABLE. Nothing public. **Mission name:** RFC-143379-rig ACES proper end-to-end, 4-hour sprint (staging-build).
