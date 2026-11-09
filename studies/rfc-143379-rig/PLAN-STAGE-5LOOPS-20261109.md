@@ -15,7 +15,7 @@ The think-tank's mechanism-spine (classify → choose → probe → evaluate →
 | 5 | beam (the flagship) | the CONVERGENCE-fold: the four loops' revisions reconciled into the plan's FINAL form — the convergence's diff's the authority (each loop's unique-add kept with its why, the conflicts adjudicated on the evidence) |
 
 ## 2. Each loop's contract
-- Reads: the PLANNED-WINDOW's current body + the audit's findings + the PR-current-state + the watchers'-backlog's delta (the recon's pack).
+- Reads: the PLANNED-WINDOW's current body + the audit's findings + the PR-current-state + the watchers'-backlog's delta (the recon's pack) + **ALL prior loops' refinements (the cross-look is binding: each loop reviews its predecessors' work and names what it adopts, refines, or refutes — the swap makes every base look at every other's work before anything fires)**.
 - Refines: the plan's body's VERSIONED revision (v5, v6, v7, v8, v9 — one commit per loop, the loop's base named in the commit).
 - Lands: the commit + the compose-check table WITH the LP-mapping row (which LP's the loop's refinement served) + the loop's one-line state (what it changed + why).
 - The loop's self-fire: the NEXT loop's base + the current body's pointer ride the landing, per the re-fire contract.
