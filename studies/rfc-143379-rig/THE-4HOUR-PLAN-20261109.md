@@ -61,3 +61,7 @@
 **Compose-check:** all 4 G-arcs present; phases gated; freeze-rule exact; dispatch-rules operative; retirement-rule present; fan-widths ≤3×B; fold ≤30m; leg-sequence fixed; base-swaps width 4; byte-preconditions close; terminal no-change; loop-credits receipt-gated; nothing public.
 
 **End-state:** envelope close at t≤240m with compose-check PASS and all rings holding receipts.
+## 6. REFINED-PASS-2 — the audit-II's three pins (cold-executability)
+- **Receipt-template's schema (pinned):** every ring's receipt carries exactly {ring-id, g-arc, receipt-path, artifact-sha256, land-timestamp} — the template's a five-field row; seeds land with the role-load checklist at t<=5m.
+- **Receipt-path's convention (pinned):** receipts live at `studies/rfc-143379-rig/receipts/<ring-id>-<HHMM>.md` — the path's deterministic, a claim without the path's a claim without evidence.
+- **Byte-closure's command (pinned):** the check executes `git rev-parse HEAD` (must equal the requested SHA) + `sha256sum <candidate-artifact>` vs the pinned head's artifact-hash + `git diff --stat` against the pinned head (must be empty for the untouched surfaces) — the triple's the closure's receipt.
