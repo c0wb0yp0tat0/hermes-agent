@@ -1,6 +1,6 @@
 **PINNED-SHA (literal, binding): 567ec59464e3c7e3100bc35ed6ad19b736055b79** — the plan's frozen head; every byte-closure compares against this literal.
 
-# THE DEPLOYABLE END-TO-END PLAN — RFC-143379-RIG 4-HOUR SPRINT
+# THE DEPLOYABLE END-TO-END PLAN — RFC-143379-RIG **8-HOUR** SHIFT (the re-scoped frame: the full nightshift's length, run as a new shift — the 4-hour frame superseded by the operator's steer, 2026-11-09)
 
 **Status:** DIRECT-APPLICABLE. Nothing public. **Mission name:** RFC-143379-rig ACES proper end-to-end, 4-hour sprint (staging-build).
 
@@ -10,10 +10,10 @@
 
 | G-arc | Loot-trigger | θ | Named driver | Dispatch target | Deadline | Fold-boundary |
 |---|---|---|---|---|---|---|
-| G1 | ACES loop mis-fired in prior run (improper re-entry) | ≥0.60 | sprint-lead | ACES-RUNNER | +90m | ≤30m |
-| G2 | windows with named-drivers/total-tracks below certified ratio froze | ≥0.75 | envelope-owner | GATE-KEEPER | +120m | ≤30m |
-| G3 | zero-dispatch meters retired | ≥0.50 | meter-owner | METER-BUS | +60m | ≤30m |
-| G4 | HANDOFF-FANOUT artifacts un-banked | ≥0.65 | fanout-owner | FANOUT-HANDLER | +150m | ≤30m |
+| G1 | ACES loop mis-fired in prior run (improper re-entry) | ≥0.60 | sprint-lead | ACES-RUNNER | +180m | ≤30m |
+| G2 | windows with named-drivers/total-tracks below certified ratio froze | ≥0.75 | envelope-owner | GATE-KEEPER | +240m | ≤30m |
+| G3 | zero-dispatch meters retired | ≥0.50 | meter-owner | METER-BUS | +120m | ≤30m |
+| G4 | HANDOFF-FANOUT artifacts un-banked | ≥0.65 | fanout-owner | FANOUT-HANDLER | +300m | ≤30m |
 
 **Driver-ratio gate (freeze-rule):** R = 0.5. ratio = named_drivers(W)/total_tracks(W). If ratio < R → W FREEZES (no dispatch, no phase advance; escalate to sprint-lead). Persists until ratio ≥ R via re-naming or track retirement. **Phase gate:** a phase advances only when all prior-phase goals meet θ-threshold AND their rings hold receipts.
 
@@ -62,7 +62,7 @@
 
 **Compose-check:** all 4 G-arcs present; phases gated; freeze-rule exact; dispatch-rules operative; retirement-rule present; fan-widths ≤3×B; fold ≤30m; leg-sequence fixed; base-swaps width 4; byte-preconditions close; terminal no-change; loop-credits receipt-gated; nothing public.
 
-**End-state:** envelope close at t≤240m with compose-check PASS and all rings holding receipts.
+**End-state:** envelope close at t≤480m (the full 8-hour mark) with compose-check PASS and all rings holding receipts.
 ## 6. REFINED-PASS-2 — the audit-II's three pins (cold-executability)
 - **Receipt-template's schema (pinned):** every ring's receipt carries exactly {ring-id, g-arc, receipt-path, artifact-sha256, land-timestamp} — the template's a five-field row; seeds land with the role-load checklist at t<=5m.
 - **Receipt-path's convention (pinned):** receipts live at `studies/rfc-143379-rig/receipts/<ring-id>-<HHMM>.md` — the path's deterministic, a claim without the path's a claim without evidence.
