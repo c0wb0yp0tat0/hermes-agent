@@ -1,42 +1,42 @@
-# PLANNED-WINDOW-20261108 — the deep-plan-phase's skeleton (the goal-driven 8-hour, apexed at 22:59:50 ET)
+# PLANNED-WINDOW-20261108 — v5 (audit-folded)
 
-*Draft for the operator's deep-look · 2026-11-08 · nothing here fires until the go/no-go together · the think-tank's mechanism-spine is the operational foundation (classify → choose → probe → evaluate → adopt/park → standardize → verify), the skill-kit's loaded, the launch's at 10-seconds-before-11PM Eastern unless the deep-look reschedules — never rushed.*
+## 0. The window's nature (unchanged)
+The next eight hours, goal-driven with /goal: every arc carries its meter; the window's end-state is measurable, not vibes.
 
-## 0. The window's nature
-The next eight hours, goal-driven with /goal: the operator's stated idea — let the goal-function DRIVE the window, honestly. A goal without a verifiable progress-signal is theater; every arc in this window carries its meter, and the window's end-state is measurable, not vibes.
+## 1. PHASE-A (unchanged)
 
-## 1. PHASE-A — the recon's fold (LANDED)
-The backlog's distillation (the watchers' weeks) — the delegate's map: the storm's six days of harvests (the generative stream — the mechanisms, the READY/NOT-READY pairs, internal-readiness only), the recon-surface's ten days (the reciprocal intel — the mission's recon-leg's feed), the arxiv's three weeks (143 seen, no new — honestly no-feed), the learning-lab's day (13 non-silent habit-leads), the motion-watch's 2 non-silent (verify-before-feed), the kit-gates' 12 non-silent (the readiness-check stream). The dominant state is absence-of-change — the quiet IS the signal; nothing of the accumulation was waste, and the generative streams feed the goals below.
+## 2. PHASE-B (unchanged)
 
-## 2. PHASE-B — the gap-fold (the state-vs-intentions)
-The PR-current-state vs the voiced-intentions' four lines:
-- B1: the pilot's start-line (the read-restore's pass — its upstream state still UNVERIFIED per the body's own fresh-read line: the verification is a named goal, not an assumption).
-- B2: the SEPARATION's measurement (the write-gate's eval-window's values — the honest line that says the re-run waits — the measurement's a goal with a meter).
-- B3: the synthesis the loop promised (the HITL long-form's gist — the boundary's still-owed deliverable — a concrete goal with a gist-URL handle).
-- B4: the kit's innovation-first (never an as-is kit; the pilot drives the innovations beyond 3oltan-seo — the forward-items' arcs).
-- The mined-backlog's candidate-feed (the recon's list) enriches B1-B4 with anything the watching converged on that the mission hasn't touched.
+## 3. PHASE-C — the goals' definition (v5 edits)
 
-## 3. PHASE-C — the goals' definition (the /goal arcs)
-The window's arcs, each with its meter — THE METER-CUSTODIAN'S ROLE IS SPLIT (the recording function: ANY runner appends the evidence-rows; the validation function: the named validator confirms — a row lands only after both; no single role is load-bearing):
-- **G0 — the honest-findings' meter** (the HARD-GATE sibling of G1-G4): the count of recorded honest-findings (parked gaps, exclusion-reasons, refuted claims, watcher-failures) — the drive rewards discovery, not just delivery; a window reporting success with empty findings is a failed window per the doctrine.
-- G1 — the pilot-line's verification: the read-restore's upstream state verified + recorded (meter: the citation's row with the checked-state, not the claim; HARD GATE: no goal-progress credit before the row lands; the honest-fail pre-declared: an unverifiable state records as a named gap and G1 parks — a finding, never a failure).
-- G2 — the separation's measurement: the eval-window's values measured + receipted (meter: the numbers' row + the re-run-wait timestamp — a number, not prose).
-- G3 — the HITL synthesis: the long-form's gist delivered to the operator (meter: the gist-URL + the speakable-read check).
-- G4 — the backlog's topically-richest threads: up to three adopted with their end-states (meter: the adopted-and-LANDED count against the cap + each excluded item's exclusion-reason recorded — the "richest" is ranked by the recon's candidate-feed, never self-selected).
-- EVERY METER'S ROW cites an independently re-derivable artifact (file path + hash, gist URL, content-hash) — a stranger with no context can re-verify; the recorder's a scribe, never a grader.
-- B4's probe (the hidden assumption): enumerate the pilot's forward-items arcs — confirm ≥1 non-empty innovation candidate with a verifiable end-state (the probe's row first, the arc's credit after).
-- The honest-negative's standing: the K-recency's gate circuitry is certified (the 2N-PASS); the window does NOT re-litigate the closed — it builds the forward-items only.
-- THE FIRST HOUR'S SHAPE: the CANARY-CLAUSE first (the watchers'-quiet's falsification: the recency-evidence at the launch-instant + the injection-test's design — one known change injected into a watched surface + the within-cadence fire-confirmation; the canary-FAIL = the quiet's a watcher-failure → the named finding + the window's re-calibration, never a silent fire) → gap-read (B1-B4) → contract-probe on the pilot start-line → G1's verification → G2's meter's arm — verify-before-measure, the runner never-idle, the honest meter before any arc claims progress.
-- THE ENDURANCE-CLAUSE: the first-hour's contract-probe is RE-PROBED at hours 4 and 7, and a later probe may invalidate earlier credit — endurance is measured, never assumed.
+G0 — the honest-findings' meter (HARD-GATE sibling): count of recorded honest-findings. Meter row cites: /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/G0-LEDGER-20261109.md (append-only ledger) + its git blob hash; re-run-condition: re-open the ledger, re-count entries, re-verify each against its named artifact; a stranger with no context can re-verify.
 
-## 4. PHASE-D — the launch-shape (22:59:50 ET, the apex-ceremony)
-Everything apexed at the 10-seconds-to-midnight mark: the goals' arcs armed (the cadence's architecture ported from this night's earned lessons: the seed-classes, the realm-paths, the landing-set's discipline, the contract-probe at every fold), the /goal engagement driving, the fleet's rotation standing, the runner's never-idle cadence armed. The launch-moment's a ceremony, the window's a machine.
+G1 — pilot-line's verification: read-restore's upstream state verified + recorded. Meter row cites: the citation's row (file path + commit SHA + checked-state byte-hash) in the pilot's verification log; re-run-condition: re-read the upstream ref, re-hash, compare to recorded row; HARD GATE: no goal-progress credit before the row lands; unverifiable state records as named gap → G1 parks (finding, not failure).
 
-## 5. PHASE-E — the deep-look + the go/no-go
-This skeleton, completed by the recon's fold + the goals' final definition, is the deep-look's material: the operator and the head read it together, the go/no-go's given, and the fire follows the word — the exception honored: as soon as it's properly done, never before, never rushed to the mark.
+G2 — separation's measurement: eval-window's values measured + receipted. Meter row cites: the numbers' row + the re-run-wait timestamp (numbers, not prose); re-run-condition: re-execute the eval-window with the instrument-state byte-citation (the instrument's bytes at the measurement commit, hash recorded) and compare; G2's meter gains the instrument-state's byte-citation (G0 entry 2's lesson).
 
-## 6. The gates (unchanged, binding)
-Fork-only; nothing public without the operator's word; the upstream quiet; the chair holds the doors. The night's earned doctrine rides: the failures are findings, the only bias the bias for action, Faciamus — Semper — Simul — Iterum.
+G3 — HITL synthesis: long-form's gist delivered. Meter row cites: gist-URL + content-hash + speakable-read check's boolean; re-run-condition: fetch gist, re-hash, re-run speakable-read.
 
----
-*DRAFT-SKELETON v0 · for the deep-look · the recon's distillation + the goals' meters follow at its landing*
+G4 — backlog's topically-richest: up to three adopted with end-states. Meter row cites: adopted-and-LANDED count vs cap + each excluded item's exclusion-reason row; re-run-condition: re-walk candidate-feed, re-rank, re-verify landing artifacts.
+
+B4's probe: enumerate forward-items; confirm ≥1 non-empty innovation candidate with verifiable end-state; probe's row first, arc's credit after.
+
+Honest-negative: K-recency's 2N-PASS certified; window builds forward-items only.
+
+FIRST HOUR'S SHAPE (v5):
+1. CANARY-CLAUSE first — recency-evidence at launch-instant + injection-test's design (one known change injected into a watched surface + within-cadence fire-confirmation); the canary's meter gains the within-cadence RUN-RECEIPT requirement: the canary's pass-condition is the run-receipt (the surface's actual execution receipt, byte-stamped within cadence), NOT recency-evidence alone (G0 entry 4). Canary-FAIL → named finding + re-calibration, never silent fire.
+2. paraphrase_real's gap closure-plan (G0 entry 3): the paraphrase's definition + the certifying re-run named as a pre-fire item in the sprint's first hour — definition authored, then certifying re-run executed, both before any paraphrase-dimension claim.
+3. gap-read (B1-B4).
+4. contract-probe on pilot start-line.
+5. G1's verification.
+6. G2's meter's arm.
+
+ENDURANCE-CLAUSE (unchanged): re-probe at hours 4 and 7.
+
+## 4. LOOP-SWEEP'S SCOPE AMENDMENT (v5)
+The sprint's sweep is INSTRUMENT-inclusive (G0 entry 5): the probe's bytes, the paraphrase's body, and the baseline's seam all fall inside the sweep's scope — the next loop's sweep re-probes the instrument itself, not only the surfaces.
+
+## 5. UPSTREAM-MERGEABLE'S PASS-CONDITION (v5 sharpening)
+The pilot-line's gate states exactly what unblocks it (G0 entry 1): #141876's mergeability computed (mergeable-state byte-fetched + recorded) → recorded row; until computed, G1 parks with the named gap. Unblocks when: (a) upstream merge-state retrieved, (b) recorded with commit-SHA + timestamp, (c) re-derivable by a stranger. No progress credit before (a)-(c).
+
+## 6. PHASE-D, PHASE-E, gates (unchanged)
