@@ -5,8 +5,8 @@
 ## 0. The window's nature
 The next eight hours, goal-driven with /goal: the operator's stated idea — let the goal-function DRIVE the window, honestly. A goal without a verifiable progress-signal is theater; every arc in this window carries its meter, and the window's end-state is measurable, not vibes.
 
-## 1. PHASE-A — the recon's fold (in flight)
-The backlog's distillation (the watchers' weeks: the storm's six days, the recon-surface's ten, the arxiv's three weeks, the learning-lab's day, the motion/kit watches) — the delegate's distillation-map lands; the head folds it into this plan's gaps-section. Nothing of the accumulation was waste; its fold is the plan's ground.
+## 1. PHASE-A — the recon's fold (LANDED)
+The backlog's distillation (the watchers' weeks) — the delegate's map: the storm's six days of harvests (the generative stream — the mechanisms, the READY/NOT-READY pairs, internal-readiness only), the recon-surface's ten days (the reciprocal intel — the mission's recon-leg's feed), the arxiv's three weeks (143 seen, no new — honestly no-feed), the learning-lab's day (13 non-silent habit-leads), the motion-watch's 2 non-silent (verify-before-feed), the kit-gates' 12 non-silent (the readiness-check stream). The dominant state is absence-of-change — the quiet IS the signal; nothing of the accumulation was waste, and the generative streams feed the goals below.
 
 ## 2. PHASE-B — the gap-fold (the state-vs-intentions)
 The PR-current-state vs the voiced-intentions' four lines:
@@ -21,7 +21,7 @@ The window's arcs, each with its meter:
 - G1 — the pilot-line's verification: the read-restore's upstream state verified + recorded (meter: the citation's row with the checked-state, not the claim).
 - G2 — the separation's measurement: the eval-window's values measured + receipted (meter: the numbers' row).
 - G3 — the HITL synthesis: the long-form's gist delivered to the operator (meter: the gist-URL + the speakable-read check).
-- G4 — the backlog's topically-richest threads: up to three distilled items adopted as goals with their meters (from the recon's candidate-feed — each named with its file + why-it-fits + its verifiable end-state).
+- G4 — the backlog's topically-richest threads: up to three distilled items adopted as goals with their meters (the recon's candidate-feed: the storm's harvests as the research-substrate, the recon-surface's intel as the recon-leg's feed, the kit-gates' readiness-check stream, the learning-habits' leads — each with its file + why-it-fits + its verifiable end-state; the arxiv's no-new and the motion-watch's silence honestly excluded).
 - The honest-negative's standing: the K-recency's gate circuitry is certified (the 2N-PASS); the window does NOT re-litigate the closed — it builds the forward-items only.
 
 ## 4. PHASE-D — the launch-shape (22:59:50 ET, the apex-ceremony)
