@@ -17,12 +17,14 @@ The PR-current-state vs the voiced-intentions' four lines:
 - The mined-backlog's candidate-feed (the recon's list) enriches B1-B4 with anything the watching converged on that the mission hasn't touched.
 
 ## 3. PHASE-C — the goals' definition (the /goal arcs)
-The window's arcs, each with its meter:
-- G1 — the pilot-line's verification: the read-restore's upstream state verified + recorded (meter: the citation's row with the checked-state, not the claim).
-- G2 — the separation's measurement: the eval-window's values measured + receipted (meter: the numbers' row).
+The window's arcs, each with its meter — THE METER-CUSTODIAN'S ROLE IS NAMED (no arc self-grades: the receipts' rows — the checked-state citations, the numbers, the gist-URLs — are populated by the named custodian only):
+- G1 — the pilot-line's verification: the read-restore's upstream state verified + recorded (meter: the citation's row with the checked-state, not the claim; HARD GATE: no goal-progress credit before the row lands; the honest-fail pre-declared: an unverifiable state records as a named gap and G1 parks — a finding, never a failure).
+- G2 — the separation's measurement: the eval-window's values measured + receipted (meter: the numbers' row + the re-run-wait timestamp — a number, not prose).
 - G3 — the HITL synthesis: the long-form's gist delivered to the operator (meter: the gist-URL + the speakable-read check).
-- G4 — the backlog's topically-richest threads: up to three distilled items adopted as goals with their meters (the recon's candidate-feed: the storm's harvests as the research-substrate, the recon-surface's intel as the recon-leg's feed, the kit-gates' readiness-check stream, the learning-habits' leads — each with its file + why-it-fits + its verifiable end-state; the arxiv's no-new and the motion-watch's silence honestly excluded).
+- G4 — the backlog's topically-richest threads: up to three adopted with their end-states (meter: the adopted-and-LANDED count against the cap + each excluded item's exclusion-reason recorded — the "richest" is ranked by the recon's candidate-feed, never self-selected).
+- B4's probe (the hidden assumption): enumerate the pilot's forward-items arcs — confirm ≥1 non-empty innovation candidate with a verifiable end-state (the probe's row first, the arc's credit after).
 - The honest-negative's standing: the K-recency's gate circuitry is certified (the 2N-PASS); the window does NOT re-litigate the closed — it builds the forward-items only.
+- THE FIRST HOUR'S SHAPE: gap-read (B1-B4) → contract-probe on the pilot start-line → G1's verification → G2's meter's arm — verify-before-measure, the runner never-idle, the honest meter before any arc claims progress.
 
 ## 4. PHASE-D — the launch-shape (22:59:50 ET, the apex-ceremony)
 Everything apexed at the 10-seconds-to-midnight mark: the goals' arcs armed (the cadence's architecture ported from this night's earned lessons: the seed-classes, the realm-paths, the landing-set's discipline, the contract-probe at every fold), the /goal engagement driving, the fleet's rotation standing, the runner's never-idle cadence armed. The launch-moment's a ceremony, the window's a machine.
