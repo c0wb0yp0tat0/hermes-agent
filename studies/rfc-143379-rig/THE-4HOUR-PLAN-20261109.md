@@ -23,10 +23,10 @@
 
 **Phases (ascending, gated):**
 - Phase 0 (t=0): loot triage + goal seeding (G1–G4 seeded, drivers named). Fan-out 1 (no fan).
-- Phase 1 (t≤60m): G3 meters live; G1 loop run initiated. Fan-out 3 (METER-BUS ×3), density 1×.
-- Phase 2 (t≤120m): G2 ratio gate certified; freeze-rule armed. Fan-out 6 (GATE-KEEPER ×2 sub ×3), density 2×.
-- Phase 3 (t≤150m): G4 fan-scale + fold-banking complete. Fan-out 9 (FANOUT-HANDLER ×3 sub ×3), density 3×.
-- Phase 4 (t≤240m): compose-check + envelope close. Fan-out 1 (close), density 1×.
+- Phase 1 (t≤120m): G3 meters live; G1 loop run initiated. Fan-out 3 (METER-BUS ×3), density 1×.
+- Phase 2 (t≤240m): G2 ratio gate certified; freeze-rule armed. Fan-out 6 (GATE-KEEPER ×2 sub ×3), density 2×.
+- Phase 3 (t≤300m): G4 fan-scale + fold-banking complete. Fan-out 9 (FANOUT-HANDLER ×3 sub ×3), density 3×.
+- Phase 4 (t≤480m): compose-check + envelope close. Fan-out 1 (close), density 1×.
 
 **Bandwidth rule (hard):** total concurrent fan-outputs in any 30m window ≤ 3 × (named drivers in that window). Named drivers per window: G1 sprint-lead, G2 envelope-owner, G3 meter-owner, G4 fanout-owner. Freeze-threshold: ratio of named_drivers(W)/total_tracks(W) < 0.5 → window freezes. Excess freezes until sub-mission split.
 
