@@ -344,3 +344,27 @@ class TestPatchReplaceWrongRegionRejected:
         assert result.error is None, f"legitimate edit rejected: {result.error}"
         assert "return 0" in target.read_text()
         assert "audit_log" not in target.read_text()  # not this file's content
+
+    @pytest.mark.parametrize(
+        "extra_middle", [False, True], ids=["context_aware", "block_anchor"]
+    )
+    def test_blank_old_line_preserves_existing_content(self, ops, tmp_path, extra_middle):
+        """A missing blank line must not erase a real statement."""
+        start = "def handler(request, account, audit, metadata, version, settings, context):"
+        end = "    return dispatch_request(request, account, audit, metadata, version, settings, context)"
+        config = "    settings = configure(request, account, audit, metadata, version, context, transaction)"
+        real_lines = [start, "    audit_log(request.user_id)"]
+        old_lines = [start, ""]
+        if extra_middle:
+            real_lines.append(config)
+            old_lines.append(config)
+        original = "\n".join([*real_lines, end]) + "\n"
+        old_string = "\n".join([*old_lines, end])
+        target = tmp_path / "handler.py"
+        target.write_text(original)
+
+        result = ops.patch_replace(str(target), old_string, "replaced")
+
+        assert result.error is not None, "blank old line erased a real statement"
+        assert target.read_text() == original
+

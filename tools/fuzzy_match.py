@@ -445,6 +445,14 @@ def fuzzy_find_and_replace(content: str, old_string: str, new_string: str,
             matches = [
                 (start, end) for (start, end) in matches
                 if _normalized_similarity(content[start:end], old_string) >= _FUZZY_CONTENT_FLOOR
+                # A blank old_string line must not consume a real source line.
+                # Surrounding context may otherwise clear the 0.90 floor.
+                and all(
+                    wanted.strip() or not found.strip()
+                    for wanted, found in zip(
+                        old_string.split('\n'), content[start:end].split('\n')
+                    )
+                )
             ]
             if not matches:
                 continue
