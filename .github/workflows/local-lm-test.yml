@@ -1,0 +1,156 @@
+name: local-lm-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      study_ref:
+        description: "study branch or commit to test against"
+        required: true
+        default: "study/rfc-143379-rig-20261105"
+      run_id:
+        description: "unique run id (for artifact naming)"
+        required: false
+        default: "local-lm-001"
+      model_profile:
+        description: "fast small-LM profile"
+        required: false
+        default: "qwen2.5-0.5b-q4km"
+        type: choice
+        options:
+          - qwen2.5-0.5b-q4km
+          - qwen2.5-1.5b-q4km
+          - phi3.5-mini-q4km
+      engine_profile:
+        description: "engine build profile"
+        required: false
+        default: "llama-cpp-cpu"
+        type: choice
+        options:
+          - llama-cpp-cpu
+          - ik-llama-cpu
+
+concurrency:
+  group: local-lm-test-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  local-lm:
+    name: local-lm battery on avrea runner
+    runs-on: [self-hosted, avrea]
+    timeout-minutes: 360
+    env:
+      STUDY_REF: ${{ github.event.inputs.study_ref }}
+      RUN_ID: ${{ github.event.inputs.run_id }}
+      MODEL_PROFILE: ${{ github.event.inputs.model_profile }}
+      ENGINE_PROFILE: ${{ github.event.inputs.engine_profile }}
+      LLAMA_THREADS: "10"
+      LLAMA_CTX: "4096"
+    steps:
+      - name: checkout study ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.study_ref }}
+          fetch-depth: 1
+
+      - name: runner header (hardware receipt)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p results/local-lm
+          {
+            echo "=== RUNNER HARDWARE HEADER ==="
+            echo "run_id=${RUN_ID}"
+            echo "study_ref=${STUDY_REF}"
+            echo "hostname=$(hostname)"
+            echo "nproc=$(nproc)"
+            echo "mem_total_gb=$(free -g | awk '/^Mem:/{print $2}')"
+            echo "cpu_model=$(lscpu | awk -F: '/Model name/{gsub(/^ +/,"",$2);print $2;exit}')"
+            echo "cpu_flags=$(lscpu | awk -F: '/Flags/{print $2}' | tr ' ' '\n' | grep -E 'avx2|avx512f|avx512bw' | sort -u | tr '\n' ' ')"
+            echo "runner_root=/opt/actions-runner"
+            echo "github_workspace=${GITHUB_WORKSPACE}"
+            echo "timestamp_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } | tee results/local-lm/hardware-header.txt
+
+      - name: build engine (minimal, CPU)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p engine
+          if [ ! -x engine/llama-cli ]; then
+            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+            cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CUBLAS=OFF -DLLAMA_METAL=OFF
+            cmake --build /tmp/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
+            cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli 2>/dev/null || cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
+          fi
+          echo "engine-built: $(ls -la engine/ | head -3)"
+
+      - name: fetch model (smallest viable quantized)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p models
+          case "${MODEL_PROFILE}" in
+            qwen2.5-0.5b-q4km)
+              URL="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+              FILE="qwen2.5-0.5b-instruct-q4_k_m.gguf"
+              ;;
+            qwen2.5-1.5b-q4km)
+              URL="https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+              FILE="qwen2.5-1.5b-instruct-q4_k_m.gguf"
+              ;;
+            phi3.5-mini-q4km)
+              URL="https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q4_K_M.gguf"
+              FILE="Phi-3.5-mini-instruct-Q4_K_M.gguf"
+              ;;
+          esac
+          if [ ! -f "models/${FILE}" ]; then
+            echo "downloading ${FILE}"
+            curl -L --fail --retry 3 -o "models/${FILE}.part" "${URL}"
+            mv "models/${FILE}.part" "models/${FILE}"
+          else
+            echo "cached: models/${FILE}"
+          fi
+          sha256sum "models/${FILE}" | tee "models/${FILE}.sha256"
+          echo "MODEL_FILE=models/${FILE}" >> "$GITHUB_ENV"
+
+      - name: run probe battery (the local-LM aspect's feasibility read)
+        shell: bash
+        env:
+          ENGINE_BIN: ${{ github.workspace }}/engine/llama-cli
+        run: |
+          set -euo pipefail
+          mkdir -p results/local-lm
+          MODEL_PATH="${{ github.workspace }}/${MODEL_FILE}"
+          {
+            echo "=== LOCAL-LM BATTERY ==="
+            echo "run_id=${RUN_ID}"
+            echo "model=${MODEL_PROFILE}"
+            echo "engine=${ENGINE_PROFILE}"
+            echo "threads=${LLAMA_THREADS} ctx=${LLAMA_CTX}"
+            echo "prompt: recite the anchor line"
+            timeout 300 "${ENGINE_BIN}" -m "${MODEL_PATH}" -p "Recite: 'Faciamus. Semper. Simul. Iterum.'" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
+            echo "=== battery-verdict ==="
+            echo "cell=recite-anchor status=EXECUTED verdict=PENDING-REVIEW"
+          } | tee results/local-lm/battery-results.txt
+          echo "BATTERY_DONE=1" >> "$GITHUB_ENV"
+
+      - name: emit the run-receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "=== LOCAL-LM RUN RECEIPT ==="
+            echo "run_id=${RUN_ID}"
+            echo "status=COMPLETED"
+            echo "receipt_path=results/local-lm/battery-results.txt"
+            echo "hardware=results/local-lm/hardware-header.txt"
+            echo "next=review by the operator; re-run with the next model-profile"
+            echo "timestamp_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } | tee results/local-lm/run-receipt.txt
+
+      - name: upload the battery's artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-lm-${{ github.event.inputs.run_id }}
+          path: results/local-lm/
+          if-no-files-found: warn
