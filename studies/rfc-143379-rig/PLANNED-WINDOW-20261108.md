@@ -1,36 +1,28 @@
-# v7 REFINEMENT-CONTENT (LOOP-3, base solar) — apply verbatim as v7-commit
+# v8 REFINEMENT-CONTENT (LOOP-4, base adversarial fold) — apply verbatim as v8-commit
 
-## 1. G4 SUBSTRATE RE-RANK (fresh pack)
+## 1. THE FAILURE-CLAUSE (each carried-unverified assumption gets its pre-declared falsification)
 
-Top items (ranked with why):
+1. **Probe's bytes' re-applicability trial** — Test: re-run the swapped-bases audit on the *current* on-disk bytes (demand_age hits, fix commit 609dcdfc3a in branch history, receipt-files present) and confirm the audit-lens's verdict reproduces byte-directly. Finding-vs-failure: FINDING if the lens's verdict matches the bytes; FAIL if the lens drifts from the bytes (surface-inferred again) → treat as audit-lesson breach, re-run audit before any pass.
+2. **Predicted-FAIL's analytic-only status → certifying re-run's one-hour window** — Test: within one hour of the sprint's launch, run the certifying re-run of the paraphrase-dimension with paraphrase_real's body now defined (per ledger entry 3) and log the run-receipt. Finding-vs-failure: FINDING if the run-receipt lands and the dimension's status is certifiable; FAIL if the receipt is absent or the run is analytic-only → dimension stays STANDING, not claimed.
+3. **Crossing-number's execution-test** — Test: execute the crossing (the two-way door's actual transition) and record whether it holds as a two-way door (reversible) or collapses to one-way. Finding-vs-failure: FINDING if reversible; FAIL if irreversible → escalate to guard-clause list (§4) before proceeding.
+4. **Loop-sweep's surface-scope** — Test: re-run the loop-sweep INSTRUMENT-inclusive (per ledger entry 5) and confirm the instrument itself is swept, not only the surfaces. Finding-vs-failure: FINDING if instrument-inclusive sweep passes; FAIL if instrument remains outside scope → terminal-hold persists.
+5. **Re-cut's 8/8 equivalence's re-run** — Test: re-run the re-cut's 8/8 equivalence check against the current bytes. Finding-vs-failure: FINDING if 8/8 equivalence holds; FAIL if any equivalence breaks → block the commit until equivalence restored.
 
-1. **Compaction laundering (arxiv 2610.29869) — storm 2026-11-09 06:02** — 87–100% laundering on flattening harnesses, 0% on role-typed. Defense: code-level provenance check (77% catch / 2% FPR). Maps to write-gate L0. End-state: provenance is structural, not prompt-level; rig's doc-chain stays role-typed. **Why ranked #1**: directly corroborates L0 scope boundary already claimed in PR #116673; READY enrichment candidate exists.
-2. **Authority collapse + non-amplification (2608.01679, 2607.29167)** — 48/49 configs collapse; washed memory 50.3% unauthorized; 0.0% with authority labels; PPMF 1.000 ASR→0 with intact provenance. End-state: persist authority labels at consolidation. **Why #2**: same L0 boundary; same READY candidate.
-3. **GBrain v0.60.617–621 cluster (recon 2026-11-09 04:00)** — frontmatter install-hook scoping, replanOnOwnCommits, managed commit-push unpublished count, diverged-checkout publish + secret scan, PR #8903 secret gate on page-write. End-state: adopt hardening deltas (secret scan on publish, lease on scanned tip). **Why #3**: fresh, actionable, low-risk adoption seam.
-4. **Rate-limited filtering (2611.02361)** — explicit state outlasts long context beyond reader-dependent horizon (~1024 events gpt-oss-120b); selection by dependencies at write time. Corroborates doc-chain anchor + lean-head-window. End-state: measure rig's own reader horizon. **Why #4**: corroborates existing design; NOT-READY pending rig measurement.
-5. **Sidecar scheduling (2611.00779, MemSidecar)** — Hooks (event-triggered bound memory) + Foresight (predictive prefetch). Maps to orchestration proxy; Foresight = predictive prefetch for watchdog. **Why #5**: design input, not yet landed.
-6. **Masked erosion (2610.38392)** — acceptance gates lose redundant safeguards; remedies: freeze safety text + one-layer ablation audits. Steers ACES gate design. **Why #6**: design input for ACES gates.
-7. **OpenClaw merged PRs (recon)** — #195472 active-memory circuit breaker perf.now(); #195176 compaction notices; #164993 sessions_history transcripts; #195583 cron queue conformance; #195484 worktree recovery expiry. End-state: watch for copycat convergence. **Why #7**: candidates, low direct relevance except compaction notices → G2.
-8. **Learning-lab kvnloo (2026-11-09 07:10)** — OPEN-PR Open3D #36 (4-byte GLTF alignment), newton #78 (USD import warning). End-state: track collaborator motion. **Why #8**: lead, not substrate.
+## 2. THE METERS' LAST ADVERSARIAL PASS
 
-## 2. PACK DELTA FOLD (NEW since pack assembly)
+- Meter: "the meter's real; the window's honesty's earning its keep." — gradable-by-the-graded: the meter grades its own honesty. Fix: split the meter's grading from the meter's subject — the G0-LEDGER's entries are graded by an external byte-direct audit (the swapped-bases audit-lens, not by the window itself); add a "graded-by" column naming the external grader per entry.
+- Meter: kit-gate pre-flag ("surface silent on last due run"). Fix: the pre-flag is self-issued by the same surface that went silent; require an independent run-receipt witness (receipt-files on disk, not the surface's own claim) before the pre-flag counts.
 
-- **Storm 2026-11-09 06:02 harvest** (post-pack 21:03) — 5 mechanisms above; win line + roadmap line appended; kanban steer posted on t_9978c1e7. NEW: compaction laundering + authority collapse READY enrichment candidate for PR #116673.
-- **Recon 2026-11-09 04:00 scan** — GBrain v0.60.617–621 cluster NEW; trail COLD (no material interaction on tracked surfaces); no new intel-bot handles among 11 watchers/5 forkers.
-- **Learning-lab 2026-11-09 07:10** — kvnloo 2 OPEN-PRs (collaborator motion; non-silent).
-- **Kit-gate 2026-11-09 07:18** — silent (empty output). Cadence due-but-quiet → G0 pre-flag (see §4).
-- **Arxiv (e1174065cc99)** — no-new holds (143 seen); honestly marked no-feed.
-
-## 3. CROSS-LOOK ON v5 + v6 (one line per item)
+## 3. CROSS-LOOK ON v5 + v6 + v7 (one line per item)
 
 - v5 §0 window's nature: adopt.
 - v5 §1 PHASE-A: adopt.
 - v5 §2 PHASE-B: adopt.
-- v5 §3 G0 meter + ledger citation + re-run-condition: adopt.
-- v5 §3 G1 pilot-line verification + citation row + HARD GATE: adopt (refine per B1).
-- v5 §3 G2 separation: refine (B2 — values unmeasured).
-- v5 §3 G3 HITL synthesis: refine (B3 — still owed).
-- v5 §3 G4 backlog topically-richest: refine (re-rank per §1 above).
+- v5 §3 G0 meter + ledger citation + re-run-condition: adopt (refine per §2 above).
+- v5 §3 G1 pilot-line verification + citation row + HARD GATE: adopt.
+- v5 §3 G2 separation: refine (values still unmeasured).
+- v5 §3 G3 HITL synthesis: refine (still owed).
+- v5 §3 G4 backlog topically-richest: refine (re-rank per v7 §1).
 - v5 §3 B4 probe: adopt (≥1 candidate confirmed).
 - v5 §3 Honest-negative K-recency: adopt.
 - v5 §3 FIRST HOUR'S SHAPE 6 items: adopt.
@@ -40,14 +32,16 @@ Top items (ranked with why):
 - v5 §6 PHASE-D/E/gates: adopt.
 - v6 B1–B4 revisions: adopt.
 - v6 cross-look on v5: adopt.
-- v6 dropped-intention restore (kit innovation-first + two-way door; operator review + synthesis): adopt.
+- v6 dropped-intention restore: adopt.
+- v7 G4 re-rank (8 items): adopt.
+- v7 pack delta fold (4 deltas): adopt.
+- v7 quiet-register amendment (kit-gate pre-flag): refine (per §2 — needs independent witness).
 
-## 4. WATCHERS' QUIET HONEST-REGISTER AMENDMENT
+## 4. THE DOOR'S GUARD-CLAUSE (two-way-door sprint's one-way-door list)
 
-- **Kit-gate (67703e081c7a) 2026-11-09 07:18 run: silent (empty output).** Cadence due-but-quiet → G0 pre-flag: "kit-gate surface silent on last due run (2026-11-09 07:18); run-receipt present (mode no_agent, status silent); not a free pass — next due run must produce non-empty or be marked cadence-broken." Add to G0 honest-findings meter.
-- Arxiv no-new (143 seen): honestly marked no-feed; no amendment needed beyond existing mark.
-- Trail COLD on tracked surfaces: honestly marked no material reaction; not a gap, a status. No pre-flag (receipt present).
+The ONLY irreversible things in the window (one-way doors):
+1. Publishing a secret (secret scan on publish — GBrain v0.60.617–621 delta).
+2. Merging to upstream without the pilot-line's pass (G1 HARD GATE).
+3. Claiming the paraphrase-dimension without the certifying re-run's receipt.
 
-## VERBATIM APPLY NOTE
-
-Head applies sections 1–4 above verbatim as the v7-commit's edits: G4 re-rank (8 ranked items with why + end-states), pack delta fold (4 dated+file-cited deltas), cross-look (18 lines adopt/refine), quiet-register amendment (kit-gate pre-flag). No other changes.
+Everything else is reversible — confirmation line: all other steps in the window are two-way doors; revertible by re-run, re-cut, or re-sweep.
