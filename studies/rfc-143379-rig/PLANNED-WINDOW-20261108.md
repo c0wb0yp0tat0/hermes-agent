@@ -17,14 +17,17 @@ The PR-current-state vs the voiced-intentions' four lines:
 - The mined-backlog's candidate-feed (the recon's list) enriches B1-B4 with anything the watching converged on that the mission hasn't touched.
 
 ## 3. PHASE-C — the goals' definition (the /goal arcs)
-The window's arcs, each with its meter — THE METER-CUSTODIAN'S ROLE IS NAMED (no arc self-grades: the receipts' rows — the checked-state citations, the numbers, the gist-URLs — are populated by the named custodian only):
+The window's arcs, each with its meter — THE METER-CUSTODIAN'S ROLE IS SPLIT (the recording function: ANY runner appends the evidence-rows; the validation function: the named validator confirms — a row lands only after both; no single role is load-bearing):
+- **G0 — the honest-findings' meter** (the HARD-GATE sibling of G1-G4): the count of recorded honest-findings (parked gaps, exclusion-reasons, refuted claims, watcher-failures) — the drive rewards discovery, not just delivery; a window reporting success with empty findings is a failed window per the doctrine.
 - G1 — the pilot-line's verification: the read-restore's upstream state verified + recorded (meter: the citation's row with the checked-state, not the claim; HARD GATE: no goal-progress credit before the row lands; the honest-fail pre-declared: an unverifiable state records as a named gap and G1 parks — a finding, never a failure).
 - G2 — the separation's measurement: the eval-window's values measured + receipted (meter: the numbers' row + the re-run-wait timestamp — a number, not prose).
 - G3 — the HITL synthesis: the long-form's gist delivered to the operator (meter: the gist-URL + the speakable-read check).
 - G4 — the backlog's topically-richest threads: up to three adopted with their end-states (meter: the adopted-and-LANDED count against the cap + each excluded item's exclusion-reason recorded — the "richest" is ranked by the recon's candidate-feed, never self-selected).
+- EVERY METER'S ROW cites an independently re-derivable artifact (file path + hash, gist URL, content-hash) — a stranger with no context can re-verify; the recorder's a scribe, never a grader.
 - B4's probe (the hidden assumption): enumerate the pilot's forward-items arcs — confirm ≥1 non-empty innovation candidate with a verifiable end-state (the probe's row first, the arc's credit after).
 - The honest-negative's standing: the K-recency's gate circuitry is certified (the 2N-PASS); the window does NOT re-litigate the closed — it builds the forward-items only.
-- THE FIRST HOUR'S SHAPE: gap-read (B1-B4) → contract-probe on the pilot start-line → G1's verification → G2's meter's arm — verify-before-measure, the runner never-idle, the honest meter before any arc claims progress.
+- THE FIRST HOUR'S SHAPE: the CANARY-CLAUSE first (the watchers'-quiet's falsification: the recency-evidence at the launch-instant + the injection-test's design — one known change injected into a watched surface + the within-cadence fire-confirmation; the canary-FAIL = the quiet's a watcher-failure → the named finding + the window's re-calibration, never a silent fire) → gap-read (B1-B4) → contract-probe on the pilot start-line → G1's verification → G2's meter's arm — verify-before-measure, the runner never-idle, the honest meter before any arc claims progress.
+- THE ENDURANCE-CLAUSE: the first-hour's contract-probe is RE-PROBED at hours 4 and 7, and a later probe may invalidate earlier credit — endurance is measured, never assumed.
 
 ## 4. PHASE-D — the launch-shape (22:59:50 ET, the apex-ceremony)
 Everything apexed at the 10-seconds-to-midnight mark: the goals' arcs armed (the cadence's architecture ported from this night's earned lessons: the seed-classes, the realm-paths, the landing-set's discipline, the contract-probe at every fold), the /goal engagement driving, the fleet's rotation standing, the runner's never-idle cadence armed. The launch-moment's a ceremony, the window's a machine.
