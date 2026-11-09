@@ -15,6 +15,8 @@
 
 **Driver-ratio gate (freeze-rule):** R = 0.5. ratio = named_drivers(W)/total_tracks(W). If ratio < R → W FREEZES (no dispatch, no phase advance; escalate to sprint-lead). Persists until ratio ≥ R via re-naming or track retirement. **Phase gate:** a phase advances only when all prior-phase goals meet θ-threshold AND their rings hold receipts.
 
+**Role-load checklist (t≤5m):** each window must load METER-BUS / GATE-KEEPER / FANOUT-HANDLER roles and seed receipt-templates; verify all three roles present before any dispatch. Missing role → freeze + escalate.
+
 ## 2. OPERATIVE SEQUENCE
 
 **Phases (ascending, gated):**
@@ -24,9 +26,9 @@
 - Phase 3 (t≤150m): G4 fan-scale + fold-banking complete. Fan-out 9 (FANOUT-HANDLER ×3 sub ×3), density 3×.
 - Phase 4 (t≤240m): compose-check + envelope close. Fan-out 1 (close), density 1×.
 
-**Bandwidth rule (hard):** total concurrent fan-outputs in any 30m window ≤ 3 × (named drivers in that window). Excess freezes until sub-mission split.
+**Bandwidth rule (hard):** total concurrent fan-outputs in any 30m window ≤ 3 × (named drivers in that window). Named drivers per window: G1 sprint-lead, G2 envelope-owner, G3 meter-owner, G4 fanout-owner. Freeze-threshold: ratio of named_drivers(W)/total_tracks(W) < 0.5 → window freezes. Excess freezes until sub-mission split.
 
-**Fold-banking:** fold every ≤30m per dispatch (hard cap). Each fold writes `HANDOFF-FANOUT-<mechanism>-<YYYYMMDD-HHMM>.md` in `studies/rfc-143379-rig/`. Compounding per mechanism (not per window); mechanism closes only when HANDOFF-FANOUT holds (a) fan-width used, (b) cross-check verdicts, (c) standing gaps, (d) next-dispatch pointer.
+**Fold-banking:** fold every ≤30m per dispatch (hard cap). Each fold writes `HANDOFF-FANOUT-<mechanism>-<YYYYMMDD-HHMM>.md` in `studies/rfc-143379-rig/`. Compounding per mechanism (not per window); mechanism closes only when HANDOFF-FANOUT holds (a) fan-width used, (b) cross-check verdicts, (c) standing gaps, (d) next-dispatch pointer. Each phase-gate receipt path must be named in the HANDOFF-FANOUT fold.
 
 **Dispatch-rules (operative):** 1. θ declared up-front. 2. meter_tick: value crosses θ → emit DISPATCH {driver, trigger, target, owner, deadline +30m, fold-boundary ≤30m}; ELSE log-only. 3. Every DISPATCH carries driver + target + deadline. 4. Fold-boundary ≤30m; 8 folds max per dispatch. 5. Telegram = operator-override, never counts as DISPATCH emit. 6. Meters with zero DISPATCH emits across their window are retired (re-arm only via fresh θ + new template + new owner).
 
@@ -34,10 +36,10 @@
 
 ## 3. LAUNCH SEQUENCE (first hour, exact)
 
-1. t=0: byte-closures check — requested SHA == executed SHA (hard); prior ring's receipt exists; byte-equality verified on candidate diff vs pinned head. No new work until closed.
-2. t≤5m: seed G1–G4, name drivers. Verify driver-ratio ≥ 0.5; else freeze + escalate.
+1. t=0: byte-closures check — requested SHA == git rev-parse HEAD (hard); prior ring's receipt path exists; byte-equality verified on candidate diff vs pinned head. No new work until closed.
+2. t≤5m: seed G1–G4, name drivers. Verify driver-ratio ≥ 0.5; else freeze + escalate. Role-load checklist complete (METER-BUS/GATE-KEEPER/FANOUT-HANDLER + receipt-templates seeded).
 3. t≤10m: arm METER-BUS (G3, θ≥0.50) — first threshold-watch begins.
-4. t≤30m: first fold (HANDOFF-FANOUT-METER-<ts>.md) banks Phase 1 fan output + cross-check verdict + gaps + next-dispatch pointer.
+4. t≤30m: first fold (HANDOFF-FANOUT-METER-<ts>.md) banks Phase 1 fan output + cross-check verdict + gaps + next-dispatch pointer + phase-gate receipt paths.
 5. t≤60m: G3 meters live verified (≥1 DISPATCH emit or retired with reason); G1 loop run initiated. Evidence-cadence at artifact-completion.
 
 ## 4. FAIL-MODES PRE-DECLARATION
@@ -46,6 +48,8 @@
 - **Retirement-rule:** meter with zero DISPATCH emits → retired; re-arm only via fresh θ + new template + new owner.
 - **Canary run-receipt:** a ring's landing earns dispatch-credit ONLY with its receipt. No receipt → no credit → no advance. Claims only what the run's log shows.
 - **Operator-override:** `override: <dispatch-id> <action>`; actions hold/skip/reroute/pause-sprint; at fold boundaries only; append-only audit; operator precedence; head acknowledges via CHANGED: override applied.
+- **Partial-fold rollback:** if a fold writes partially (missing any of fan-width/cross-check/gaps/next-dispatch/receipt-paths), roll back the entire fold, re-run from last clean fold; no partial credit.
+- **SHA-mismatch halt:** if requested SHA != git rev-parse HEAD at byte-closures check, halt all work; escalate to sprint-lead; no dispatch until SHA aligned.
 
 ## 5. METRICS
 
