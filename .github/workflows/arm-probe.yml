@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   probe:
-    if: contains(github.event.pull_request.labels.*.name, 'probe')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.labels.*.name, 'probe')
     runs-on: [self-hosted, avrea-ubuntu-latest]
     steps:
       - name: the runner's echo (the minimal-proof)
