@@ -24,4 +24,4 @@ jobs:
             const fs = require('fs');
             const row = fs.readFileSync('arm-proof.json', 'utf8');
             const body = `<!-- receipt:${JSON.parse(row).run_id} -->\n**ARM-PROOF**: the runner executed hosted code end-to-end.\n\`\`\`json\n${row}\n\`\`\``;
-            await github.rest.issues.createComment({ issue_number: context.issue.number, owner: context.repo.owner, repo: context.repo.repo, body });
+            await github.rest.issues.createComment({ issue_number: (context.issue && context.issue.number) || 1, owner: context.repo.owner, repo: context.repo.repo, body });
