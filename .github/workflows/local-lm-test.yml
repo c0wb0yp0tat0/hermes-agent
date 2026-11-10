@@ -36,7 +36,7 @@ concurrency:
 jobs:
   local-lm:
     name: local-lm battery on avrea runner
-    runs-on: [self-hosted, avrea]
+    runs-on: [self-hosted, avrea-ubuntu-latest]
     timeout-minutes: 360
     env:
       STUDY_REF: ${{ github.event.inputs.study_ref }}
@@ -78,7 +78,7 @@ jobs:
           mkdir -p engine
           if [ ! -x engine/llama-cli ]; then
             git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
-            cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CUBLAS=OFF -DLLAMA_METAL=OFF
+            cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
             cmake --build /tmp/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
             cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli 2>/dev/null || cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
           fi
