@@ -1,7 +1,11 @@
 name: arm-probe
 on:
+  workflow_dispatch:
   pull_request:
     types: [labeled]
+permissions:
+  issues: write
+  contents: read
 jobs:
   probe:
     if: contains(github.event.pull_request.labels.*.name, 'probe')
