@@ -1,0 +1,23 @@
+name: arm-probe
+on:
+  pull_request:
+    types: [labeled]
+jobs:
+  probe:
+    if: contains(github.event.pull_request.labels.*.name, 'probe')
+    runs-on: [self-hosted, avrea-ubuntu-latest]
+    steps:
+      - name: the runner's echo (the minimal-proof)
+        run: |
+          echo "loop-ok"
+          echo "run_id=${GITHUB_RUN_ID} sha=${GITHUB_SHA} exit=0"
+          printf '{ "run_id": "%s", "sha": "%s", "exit_code": 0, "status": "loop-ok" }\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" > arm-proof.json
+          cat arm-proof.json
+      - name: the receipt-comment (idempotent by marker)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const row = fs.readFileSync('arm-proof.json', 'utf8');
+            const body = `<!-- receipt:${JSON.parse(row).run_id} -->\n**ARM-PROOF**: the runner executed hosted code end-to-end.\n\`\`\`json\n${row}\n\`\`\``;
+            await github.rest.issues.createComment({ issue_number: context.issue.number, owner: context.repo.owner, repo: context.repo.repo, body });
