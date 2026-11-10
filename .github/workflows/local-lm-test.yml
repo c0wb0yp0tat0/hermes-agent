@@ -36,7 +36,7 @@ concurrency:
 jobs:
   local-lm:
     name: local-lm battery on avrea runner
-    runs-on: [self-hosted, avrea]
+    runs-on: [self-hosted, avrea-ubuntu-latest]
     timeout-minutes: 360
     env:
       STUDY_REF: ${{ github.event.inputs.study_ref }}
