@@ -102,13 +102,15 @@ jobs:
             tools)
               for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
                 [ -f "$f" ] && BASE="$BASE $f"
-              done ;;
+              done
+              [ -f tests/tools/test_file_tools_live.py ] && grep -q 'TestPatchReplaceWrongRegionRejected' tests/tools/test_file_tools_live.py && BASE="$BASE tests/tools/test_file_tools_live.py::TestPatchReplaceWrongRegionRejected" ;;
             falsifier)
               [ -d tests/falsifier-battery ] && BASE="tests/falsifier-battery/" ;;
             union|*)
               for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
                 [ -f "$f" ] && BASE="$BASE $f"
               done
+              [ -f tests/tools/test_file_tools_live.py ] && grep -q 'TestPatchReplaceWrongRegionRejected' tests/tools/test_file_tools_live.py && BASE="$BASE tests/tools/test_file_tools_live.py::TestPatchReplaceWrongRegionRejected"
               [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/" ;;
           esac
           uv run pytest $BASE -rs -rf -q 2>&1 | tail -80
