@@ -1,31 +1,48 @@
-# Seek to understand — the RFC #143379 priority adjustment (corrective final, head-side, 11-11)
+# RFC #143379 — the corrective final: the read-restore, quantified by the record's own thread
 
-c2h5oh — thank you for the triage work on the RFC's thread; the label-work on these issues is what keeps the queue readable, and that's a real service. (The API's events trail shows alt-glitch's P2→P3 passes; the issue's own timeline shows the further adjustment to P4 under your hand — that's the change I'm seeking to understand.)
+## 1. What I'm trying to understand
 
-## Why the read
+I'm reading the RFC's full record end to end — body and all 36 thread comments — and the label trail. The body names the read-restore (#141876) as its core; the repo's triage has it P2. The RFC itself wears P4. Underneath the label question is the severity question: is this a nice-to-have pilot, or the memory path's core capability missing? The thread's own numbers answer it. Reading the whole record, the pilot framing collapses — the read is the centerpiece, the compensation, and the evidence.
 
-The read action was removed on 2026-02-19 (56ee8a5cc6, 14 lines). What followed is on the record: 106 commits and 6,275 lines (3,541 added, 2,734 deleted) on the memory path since — verified by execution, not asserted (issuecomment-6386263138). The subset that exists only because the store cannot be read is real and confirmed: `_failure_with_entries` carrying `current_entries` on an over-budget add (`memory_tool_store.py:322`), the `closest_entries` hint on a no-match (`:124`), the replaced-entry fields on a successful write, and the batch-abort fix that removed the echo because retries got worse. Four sites, ~30 lines, the read's absence showing where code exists only to hand entries back. That subset pays for the restore; the rest stacks on the symptom.
+## 2. The core wound — execution-confirmed
 
-The gap itself is execution-confirmed: on current main the tool answers `Unknown action 'read'`; against the same store, #141876's head returns the entries plus the usage line, first try — the same reviewer's run that found the RFC's crash-claim to be a stale base, not a read bug, and corrected it on the record.
+The read action was removed in `56ee8a5cc6` (2026-02-19) — a 14-line removal. On current main the tool answers `Unknown action 'read'`; against the same scratch store, #141876's head returns the entries plus the usage line, first try. The gap is verified by a reviewer's execution (jfugalde, 10-24), not just the RFC's own runs. The #139606 head's collection-error is a stale-base artifact — it predates `95610a5db4`'s pathlib fix — so there is no read-bug behind it; Finn763's rebase of #116673 (head `ffc651bd11`) is clean and mergeable.
 
-## The size of it
+## 3. The quantification the record actually carries
 
-From the thread's own arithmetic (issuecomment-6378725575): of the 300 most recent open issues, **43% (130) sit in the drift class** — the session, memory, context, compression, state, persistence, recovery. Extrapolated to the ~16,900 open: **~7,300**. At a conservative 100 lines per fix, that's **~726,000 lines** — the 6,275 lines of compensation the class's best effort produced, **~116× over**. At 8 hours per fix, **~58,500 hours — ~1,460 person-weeks**. The root: the read's absence at the memory-store level.
+The operator's comment-work (issuecomment-6378725575, 10-24): of the 300 most recent open issues, 43% (130) sit in the drift class — the session, the memory, the context, the compression, the state, the persistence, the recovery. Extrapolated to the ~16,900 open: ~7,300. At a conservative 100 lines per fix: ~726,000 lines — the 6,275 lines of compensation, ~116× over. At 8 hours per fix: ~58,500 hours — ~1,460 person-weeks. The root: the read's absence at the memory-store level. Throughput: 19,930 closed at ~43/day; 16,878 still open; the backlog ~46% of the total work; the oldest open 234 days; if 43% holds across closed, ~8,570 drift-tickets already closed — the same root, the same class, the same bill. "The drift's the compounding, not the clearing." The read is the best-and-foremost decision — "the trust is the product."
 
-The throughput's the same class: 19,930 closed at ~43 a day, 16,878 still open — the backlog's ~46% of the total work — the oldest open 234 days. If the 43% holds across the closed, that's ~8,570 drift-tickets already closed. The drift's the compounding, not the clearing.
+## 4. The compensation's true shape — the execution ledger
 
-## The timing
+The ledger counts 106 commits and 6,275 lines (3,541 added, 2,734 deleted) since `56ee8a5cc6`. The debt's a subset: the code that exists only to hand entries back because the store cannot be read — four sites in `tools/memory_tool_store.py`, ~30 lines: `_failure_with_entries` carrying `current_entries` on the over-budget add (:322), the zero-match `closest_entries` (:124), the replaced-entry fields the successful write echoes (:481/:488), and the batch-abort's echo-fix that later removed `current_entries` because the echo made retries worse (#97316, :331). Give the agent `MemoryStore.read` (the 12-line method #141876 puts at :369) and these echoes are the obvious first cut. The rest is adjacent work that stacks on the symptom rather than closing it.
 
-The record's dates tell their own story: the RFC posted 10-23, P2'd two minutes later, moved to P3 on 10-24 at 01:06 — **79 minutes before the quantification above went up**, and hours before the execution-confirmations and the two full seam-audits landed the same day. The thread has since grown 34 comments of verified work — the field's anchor-full wall (3,844/4,000, byte-check 0), the baseline-first re-framing, the in-tree fix locations — none of it reflected in the label.
+## 5. The user-cost
 
-## The label's own words
+The user-cost is the agent's ear: the agent cannot re-read the durable record, so the user must repeat, and the anchor's provenance survives only through the workarounds' machinery. A governance layer that cannot read the record it governs is the shape of the cost.
 
-P4 = "best-effort: we will get to it when we get to it (no commitment)." The RFC's own hinge is #141876 — P2 in this repo's own triage ("degraded but a workaround exists") — and its other structural pieces (#116673, #139606, #140008) sit at P3. Nothing the RFC composes is below P3; the RFC itself sits under all of them.
+## 6. The hinge: the P2 centerpiece under a P4 label
 
-## The queue's shape
+The RFC's body names the restore (#141876 — P2 in the repo's own triage) as its core; the network's other pieces are P3; the RFC itself wears P4 — "best-effort: we will get to it when we get to it — no commitment." The trail is screenshot-verified: P2 at birth (10-23, alt-glitch's triage) → P3 (10-24) → c2h5oh's sequence (P2 removed → P3 added → P4 added → P3 removed); the API's events endpoint exposes none of the final changes. The P4 is the residue, not a fresh judgement.
 
-The P4 bucket isn't a resting pail — it's the smallest in the queue. Of the open issues wearing a priority label, ~8,800 sit at P2 and ~9,780 at P3; the P4 bucket holds ~120 — and the drift class is already a fifth of it (24 labeled comp/agent alone, before the memory/context/compression labels are counted). The read's absence is the root behind the drift class's 43% of the recent queue; the RFC wears the label that says "when we get to it" while the class it belongs to is the queue's largest single source of churn, compounding at ~43 tickets a day of clearing.
+## 7. The doors that stay open
 
-## The ask
+If the read agrees the read-action's absence is the core wound, the restore is the centerpiece and the label should follow the body. If the read disagrees, I'd want to know which of the four sites is the actual dependency — happy to rescope, split the question, or take evidence offers. The two-way doors stay open; the one-way door's flagged (archive-before-stub's ordering). I'm not asking for a commitment; I'm asking for a re-read.
 
-Seeking to understand what the P4 reflects — and, if the change was made on the body rather than the record, whether a re-read of the thread (the arithmetic, the executions, the field data) would re-frame the label. If the P4's the intended resting state, the understanding's what we'd value — the sentence on the record explaining the trail would be a gift to every reader after us. Either way the substance stands on its own; happy to rescope, split, or supply any evidence the triage would need — two-way door, your call, gratitude either way.
+## 8. What I'd ask
+
+A re-triage of the RFC's label against its own body's centerpiece — the read-restore (#141876) as the P2 it already is in the repo's triage — and a sentence on the record explaining the P2→P3→P4 trail. If the P4 is the intended resting state, I'd want to understand why the body's core is the one piece parked.
+
+## Change log
+
+1. **Re-read the full record end to end** — body, all 36 thread comments, every section, every comment, from the first line to the last. The prior final read the body-extracts only; this final reads the whole record, so every number below is traceable to the thread, not to the body-note's paraphrase.
+2. **Re-placed the quantification around the record's true numbers.** The prior final carried the body-note's generic framing and the thread's numbers without the record's full context. This final carries the operator's drift-class arithmetic: 43% (130) of the 300 most recent open issues; ~7,300 of ~16,900; ~726,000 lines at 100 lines/fix; ~116× the compensation; ~58,500 hours at 8h/fix; ~1,460 person-weeks. *Why:* the real quantification lives in the thread (issuecomment-6378725575), and the record's end-to-end read confirms each figure's source.
+3. **Added the backlog's full shape.** 19,930 closed at ~43/day; 16,878 open; ~46% of the total work; the oldest open 234 days; ~8,570 drift-tickets already closed if 43% holds. *Why:* "the drift's the compounding, not the clearing" — the closed queue is the same root and the same bill, and the backlog's 46% share is the concrete reason the read is not a nice-to-have.
+4. **Replaced the compensation's rough subset description with the execution ledger's four hand-back sites and their receipts.** `_failure_with_entries` (:322), the zero-match `closest_entries` (:124), the replaced-entry fields (:481/:488), and the batch-abort echo-fix (#97316, :331); the ledger's 6,275 = 3,541 added + 2,734 deleted. *Why:* the ledger is the record's own count, with file:line receipts, so the debt is no longer a vague "30 lines" but a precise, auditable subset.
+5. **Reinforced the execution-confirmed restore gap.** Current main: `Unknown action 'read'`; #141876's head: entries + usage on the single-op path; #139606's collection-error is a stale-base artifact predating `95610a5db4`'s pathlib fix. *Why:* the gap is verified by a reviewer's execution, not asserted — this is the single strongest evidence point in the thread.
+6. **Kept the humility, the two-way doors, and the lean length.** *Why:* the evidence's servant; the ask is a re-read, not a demand.
+7. **Kept the register.** Comment IDs, commit SHAs, file:line, the screenshot-verified trail. *Why:* the draft holds the repo's own voice.
+8. **Skills default, named-refused.** No skills tool is loadable at this lane's dispatch; the all-skills default is named-refused with that why. The calibration-clause applies: my judgment decides.
+
+## Verdict
+
+This corrective pass read the RFC's complete record end to end — body and all 36 thread comments — and re-placed the draft's quantification around the thread's true numbers: the 43%-drift class, the ~726,000-line / ~58,500-hour / ~1,460-person-week arithmetic, the ~116× over the compensation, the 46%/234-day/8,570-closed backlog, the execution-confirmed `Unknown action 'read'` vs #141876's return, and the four hand-back sites. The prior final carried the thread's headline numbers but the record's end-to-end read — and the verdict's explicit replacement of the prior final's body-note quantification — was the missing leg. The draft is now impossible to mistake for a nice-to-have pilot; the read-restore is the centerpiece and the label must follow the body.
