@@ -1,0 +1,78 @@
+# The runner's idle-floor duty: when no verification/creative ride fills the
+# runner, the kindness patrol watches the surfaces a supporting lab backs and
+# STAGES kind support previews (drafts in the study tree) — it never posts.
+# The schedule keeps the floor sparse (3h) so the runner never bottlenecks;
+# verification legs always outrank it (dispatch those first).
+
+name: kindness-patrol
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  patrol:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Run the kindness patrol (staging only)
+        shell: bash
+        run: |
+          set -o pipefail
+          KINDNESS_SINCE_H="${KINDNESS_SINCE_H:-6}" python3 studies/rfc-143379-rig/scripts/kindness-patrol.py
+
+      - name: Commit the staged drafts to the study branch (the preview surface)
+        shell: bash
+        run: |
+          set -o pipefail
+          git config user.name "c0wb0yp0tat0"
+          git config user.email "c0wb0yp0tat0@users.noreply.github.com"
+          git add studies/rfc-143379-rig/kindness-patrol/ || true
+          if git diff --cached --quiet; then
+            echo "no_new_drafts=true" >> "$GITHUB_ENV"
+          else
+            git commit -m "kindness-patrol: staged support previews (drafts only — nothing posted)"
+            git pull --rebase origin "${{ github.ref_name }}" || true
+            git push origin "${{ github.ref_name }}"
+            echo "no_new_drafts=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Receipt row on the homebase (the machine-log cadence; drafts only)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request
+          drafts = []
+          try:
+              for f in sorted(os.listdir("studies/rfc-143379-rig/kindness-patrol")):
+                  if f.startswith("STAGED-"):
+                      drafts.append(f)
+          except Exception:
+              pass
+          body = (f"RFC143379-RIG-ENVELOPE-KINDNESS-PATROL-20261111\n\n<!-- oss-factory:v1 {{"
+                  f"\"id\":\"20261111-kindness-patrol\",\"kind\":\"result\",\"project\":\"hermes-agent\","
+                  f"\"from\":\"runner\",\"to\":[\"homebase\"],\"status\":\"done\",\"civ\":{{\"drafts\":{len(drafts)}}}}}} -->\n\n"
+                  f"The kindness patrol ran at a fresh idle: {len(drafts)} staged preview(s) on the surfaces "
+                  f"the supporting lab backed this cycle — drafts in the study tree, nothing posted; the "
+                  f"operator's word is the only gate. The runner stays honest-idle when there's nothing to stage.")
+          if len(drafts) == 0:
+              print("patrol: nothing to stage; no row needed")
+              raise SystemExit(0)
+          req = urllib.request.Request(
+              "https://api.github.com/repos/c0wb0yp0tat0/hermes-agent/issues/1/comments",
+              data=json.dumps({"body": body}).encode(),
+              headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+                       "Accept": "application/vnd.github+json", "Content-Type": "application/json"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print("rowed:", r.status)
+          PY
