@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run the kindness patrol (staging only)
+      - name: Run the idle-floor duty (staging only)
         shell: bash
         run: |
           set -o pipefail
