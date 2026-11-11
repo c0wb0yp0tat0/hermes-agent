@@ -1,0 +1,34 @@
+# DEATH-METRICS-20261110 — the failure-class ledger, measured
+
+**Instrument:** the rig's death-class metrics, started 2026-11-10 ET · **Branch:** study/rfc-143379-rig-20261105 · **Sources:** /root/.hermes/cron/executions.db (cron_incidents + executions), the harness lane-logs (fleet-20261110, backwards-audit), session receipts. **Gate:** nothing public without the user's word.
+**Doctrine:** every failure is a finding; every finding gets a class, a measured timing, and a strategic answer. The ledger is additive — new deaths append, never delete.
+
+## The classes (measured where possible; unknowns marked)
+
+| # | Class | Death-time (measured) | Erosion shape (measured) | Fix (landed) | Status |
+|---|---|---|---|---|---|
+| 1 | missing-logs-dir at launch (FileNotFoundError @ open logfile) | instant (t=0) | whole-wave: 6 + 2 lanes dead at once, invisible until ps-grep | mkdir pre-fire + the pre-fire checklist (logs + artifact paths ls-verified) | FIXED 2026-11-10 |
+| 2 | dead-pin cron (beam/crouton 404, agent runs) | 1–13s per execution (12s median: start→delegate→404) | the STREAK: pr-body incident ran 2026-11-09T18:55→11-10T16:02 (21h, 17 executions × 2-4s); web-storm 12:00→18:00 (6h, ×12s); openclaw 12:00→16:00 (×12-13s); headroom single 12s | the 18:26 re-pin pass + roster-probe doctrine extended to crons (PIN-SWEEP arm: probe every pinned agent-cron's model, re-pin on 404 — OWED next) | FIXED (pins) / OWED (the arm) |
+| 3 | corrupt shared state (json.load crash, daily readers) | 0–2s (arxiv 06:00:16 dur=0s; storm-cue 08:00:16 dur=2s) | one partial write → BOTH daily readers blind for a full day-tick (the next 24h window); incident state=detected/alerted | atomic write (tmp+os.replace) landed in the writer | FIXED 2026-11-10 (self-heal check at startup OWED — cap blindness to one tick) |
+| 4 | kenari free_quota_daily (50/day) | the 429 arrives once the pool's spent (18:2x ET on 11-10) | K-fleet silent for the rest of the UTC day; F5 died at round 1 | window play: burn K's EARLY in the UTC day (reset EXACTLY 00:00 UTC, measured 23:27Z 429 → 00:03Z OK); Rp 10k → 1,000/day | ACTIVE-BY-DESIGN (the meter is the design; schedule around it) |
+| 5 | kenari Cloudflare 1010 (python-urllib fingerprint) | first call of a batch | all K-lane calls 403 until UA/pace fix | browser UA + HARNESS_CALL_DELAY + retry-set | FIXED 2026-11-10 |
+| 6 | kenari 404 not_found (base-URL vs full-URL endpoint) | first call | six lane-deaths in the first K-batch | HARNESS_ENDPOINT = full https://kenari.id/v1/chat/completions | FIXED 2026-11-10 |
+| 7 | Nous fair-share 429 (seat hot) | ~N rounds into a hot seat (step ×3 on 11-10, ARC lens ~16-17:xx ET) | rest ~6 min (measured: re-fire succeeded after the window) | the rest rule + rebalance; one lens per seat at fan time | FIXED-BY-DOCTRINE (rest is the design) |
+| 8 | silent round-4 death (B08-B first fire) | ~10-13 min into the lane (round 4, read-heavy) — exact wall-time UNMEASURED (pre-capture era) | one undiagnosable death; the crash text unreachable (stderr swallowed) | stderr capture (.err per lane) + HARNESS crash-to-logfile guarantee (smoke-tested) | FIXED 2026-11-10 (structurally impossible now) |
+| 9 | BrokenPipe at landing (stdout pipe closes at process end) | the process's final print, AFTER the artifact+commit+push | landing intact; the row-post cadence lagged ~20 min; crash noise undiagnosable pre-guard | the harness BrokenPipe guard (landed 20:13 ET) + the crash-wrap | FIXED 2026-11-10 |
+| 10 | free-period-ended model (Nous roster drift) | date-boundary class; first hint = a 404 with "switch to" body | fan-wide if on the delegation pin (4-lens fan died on beam in seconds) | probe-before-pin at fan time; PARK never retry; roster itself probed | FIXED-BY-DOCTRINE (probe roster at every fan) |
+| 11 | empty-choices probe (reasoning seats, max_tokens < 64) | first probe call | a live seat reads dead; a phantom re-seat burns a flight | probes carry max_tokens ≥ 64 for reasoning-family seats | FIXED 2026-11-10 |
+| 12 | alert-by-contract exit-1s (runner-guard disk, learning-watch habits) | 3-4s per tick, content-bearing | NOT a death — the sensor working; streaks on 11-07 (learning-watch ~15 incident rows at 16-min cadence) pre-retrofit | stateful-watcher retrofit (baseline + diff-emit) — the screaming-script class | RESOLVED (contract rows, not deaths; column kept honest) |
+
+## The strategic plays (the schedule, from the numbers)
+
+1. **The streak, not the strike, is the erosion.** Every dead-pin death is ≤13s; the cost is the hours-long incident. The highest-leverage instrument: the PIN-SWEEP arm (a cheap no-agent cron that probes each pinned agent-cron's model and re-pins on a 404 before the next scheduled tick) — OWED.
+2. **The UTC day is a real resource window.** K-burns live in the first hours after 00:00 UTC (measured reset). Night-shift scheduling should front-load K-heavy waves right after the reset, and reserve the Nous trio for the day's second half.
+3. **The launch checklist kills whole-wave deaths.** The missing-dirs class killed 8 lanes across two waves at t=0. Pre-fire: mkdir logs + ls the brief AND the artifact's parents. Already doctrine; now receipted with the wave-cost.
+4. **Daily readers need self-heal, not just atomic writes.** A corrupt state costs a full day even with the writer fixed. Startup check: json.load fails → reseed empty + alert; blindness caps at one tick.
+
+## The open study line: TIME-AS-MECHANISM (hypothesis, options open)
+
+The timed missions (the 8H/12H runs, the wall-clock ceremonies) carried their own erosion: the loops ran ON a clock, and the clock itself interacted with the loop (fair-share arrivals at predictable offsets, quota walls mid-run, extension decisions at the edge). **Hypothesis (UNPROVEN):** a timed loop accumulates entropy differently from an untimed one — the wall-clock is a mechanism, not just a frame. The operator's openness is registered verbatim: the observation that "we were fighting the time aspect" may not be completely correct — **options are open, the audits read the evidence, the thesis is not locked.** The backwards audit's own material (11-07's MISSION-8H-V4/V5 + NEXT-SHIFT-PLAN, 11-06's timed ceremonies) is the natural first evidence; future users who must run timed aspects are the beneficiaries. In a way this rig is the pilot of the pilot — a framing held to sharpen the study, never to skew it.
+
+*Append-only. New deaths append with their measurements. Sources: executions.db (cron_incidents/failed executions, 5-day), lane logs under /root/workspace/drop/, session receipts.*
