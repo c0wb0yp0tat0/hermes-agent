@@ -44,6 +44,16 @@ The storm crossed the field's own priority-ladders (11-11, cited): Beam's P4 is 
 
 The storm surfaced a controlled run in the same class as this thread's own hold (the Pond paper, #81892): a model asked to summarize content it had **no means to read**. Without a permission-sentence, it produced 0 refusals in 12 trials and **156 fabricated citations to real identifiers**. With one sentence of explicit, non-punitive abstention, it produced 12 clean refusals in 12 trials and zero fabrication. "A system that cannot read should say so, never guess" is not a posture here; it's a measured mechanism. The read's absence is the fabrication-pump: when the store cannot be read and no refusal-channel exists, the confident wrong answer is the only exit the loop accepts. That's the "you're not listening" the users report — and it's the mechanism the RFC's restore closes.
 
+
+
+## The field's measurements — the academic corpus (arXiv, queried 11-11)
+
+The fundamentality isn't the RFC's alone — the field now measures these mechanisms as classes:
+
+- **"When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents"** (arXiv, 2026): long-term memory today is evaluated by conversational-recall benchmarks (LoCoMo, LongMemEval) — question-answer over dialogue history — *not* by whether the remembered facts change what a tool-using agent does. The RFC's cost-shape is the measured class: the anchor-full profile where the read's absence costs the *action* (the 90%+ refusal, the "cannot add new entry" lever), not the answer.
+- **The Lost-in-the-Middle family** (the field's measured base): information near a long context's center is retrieved less reliably than the tails — reproduced across the family, including clinical 100K-token contexts. The read's absence forces the agent to live on the tail — the one zone the measurements say stays retrievable — while the durable record's real content sits unread in the middle. The K-recency window's entire measured premise is this bias; the read is the only mechanism that makes the middle reachable.
+- **AbstentionBench** ("reasoning LLMs fail on unanswerable questions", measured) and "When Not to Answer" (the effective-abstention prompts, evaluated on GPT-class models): the cannot-read → answer-anyway is a benchmarked failure-class. The thread's hold — "a system that cannot read should say so, never guess" — is the exact mechanism the field now benchmarks as first-class, and the Pond run (0/12 → 12/12 with one permission-sentence) is its controlled measurement.
+
 ## The 5 whys — why the RFC is not a P4
 
 1. **Why isn't it a P4?** Because the P4 bucket's field-meaning is uniform: the cosmetic-small-trivial class, the "when we get to it" of issues it's cheaper to fix than to file.
