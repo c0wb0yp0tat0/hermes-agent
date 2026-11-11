@@ -59,12 +59,12 @@ jobs:
                       drafts.append(f)
           except Exception:
               pass
-          body = (f"RFC143379-RIG-ENVELOPE-KINDNESS-PATROL-20261111\n\n<!-- oss-factory:v1 {{"
-                  f"\"id\":\"20261111-kindness-patrol\",\"kind\":\"result\",\"project\":\"hermes-agent\","
-                  f"\"from\":\"runner\",\"to\":[\"homebase\"],\"status\":\"done\",\"civ\":{{\"drafts\":{len(drafts)}}}}}} -->\n\n"
-                  f"The kindness patrol ran at a fresh idle: {len(drafts)} staged preview(s) on the surfaces "
-                  f"the supporting lab backed this cycle — drafts in the study tree, nothing posted; the "
-                  f"operator's word is the only gate. The runner stays honest-idle when there's nothing to stage.")
+          meta = '{"id":"20261111-kindness-patrol","kind":"result","project":"hermes-agent","from":"runner","to":["homebase"],"status":"done","civ":{"drafts":%d}}' % len(drafts)
+          body = ("RFC143379-RIG-ENVELOPE-KINDNESS-PATROL-20261111\n\n<!-- oss-factory:v1 "
+                  + meta + " -->\n\nThe kindness patrol ran at a fresh idle: " + str(len(drafts))
+                  + " staged preview(s) on the surfaces the supporting lab backed this cycle — drafts in the "
+                  "study tree, nothing posted; the operator's word is the only gate. The runner stays "
+                  "honest-idle when there's nothing to stage.")
           if len(drafts) == 0:
               print("patrol: nothing to stage; no row needed")
               raise SystemExit(0)
