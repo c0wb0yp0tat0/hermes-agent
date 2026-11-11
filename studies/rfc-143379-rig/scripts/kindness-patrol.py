@@ -59,6 +59,7 @@ def main():
         return 0
     drafts = []
     for i, (created, url, rel, repo) in enumerate(threads, 1):
+        substance = ""
         # fetch the thread + the supporting comment's body-head (public reads)
         try:
             if "/pull/" in rel:
