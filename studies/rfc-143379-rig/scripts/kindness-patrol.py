@@ -89,13 +89,19 @@ def main():
             + (f"**The thread's substance (deep-read):** {substance}…\n" if substance else "")
             + f"**Supporting comment:** {created[:16]}Z on the thread — the lab's verdict/review motion.\n\n"
             f"---\n\n"
+            f"**Wording one — the fuller letter (the generous register).**\n\n"
             f"@kvnloo — genuinely, thank you for the eyes on this one. The thread's catching real things,\n"
             f"and the support doesn't go unnoticed.\n\n"
             f"Standing offer, on the record: our lab's verification battery is unmetered and warm — if any\n"
             f"claim in this thread would benefit from an independent run (a failing case, a predicted\n"
             f"result, a guard's behavior), name it and it's a dispatch away. One word on the thread, and\n"
             f"the receipt lands back here.\n\n"
-            f"*— staged by the rigor's kindness-patrol; posting gated on the operator's word.*\n"
+            f"---\n\n"
+            f"**Wording two — the shorter note (the understated register).**\n\n"
+            f"@kvnloo — thanks for the careful read here; it doesn't go unnoticed.\n"
+            f"Standing offer: any claim in this thread worth an independent run, say the word —\n"
+            f"the battery's unmetered and warm, the receipt comes back the same hour.\n\n"
+            f"*— two-way-door wordings; drafts only, posted gated on the operator's word; either wording, or a blend, stands.*\n"
         )
         fpath = f"{DRAFTS_DIR}/STAGED-{ts}-{i}.md"
         with open(fpath, "w") as f:
