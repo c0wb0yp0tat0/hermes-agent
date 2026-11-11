@@ -10,7 +10,14 @@ word. The posting gate is absolute: drafts are drafts.
 import json, os, time, urllib.request, urllib.error, sys
 
 API = "https://api.github.com"
-TARGET_REPO = "NousResearch/hermes-agent"
+TARGET_REPOS = [
+    "NousResearch/hermes-agent",   # the upstream he supports with verdicts
+    "kvnloo/hermes-agent",         # his own fork (lab-habit watch's scope)
+    "kvnloo/fleet-runner",         # his active projects (the watch's map)
+    "kvnloo/glide",
+    "kvnloo/autokernel",
+    "kvnloo/newton",
+]
 HOME_REPO = "c0wb0yp0tat0/hermes-agent"
 DRAFTS_DIR = "studies/rfc-143379-rig/kindness-patrol"
 MAX_THREADS = 5           # drafts per run — bounded, never spammy
@@ -36,10 +43,10 @@ def main():
         if e.get("type") != "IssueCommentEvent":
             continue
         repo = e.get("repo", {}).get("name", "")
-        if repo != TARGET_REPO:
+        if repo not in TARGET_REPOS:
             continue
         url = (e.get("payload", {}).get("comment", {}) or {}).get("html_url", "")
-        rel = url.replace(f"https://github.com/{TARGET_REPO}/", "")
+        rel = url.replace(f"https://github.com/{repo}/", "")
         if not url or rel in seen:
             continue
         seen.add(rel)
