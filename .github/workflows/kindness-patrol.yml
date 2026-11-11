@@ -47,8 +47,6 @@ jobs:
 
       - name: Receipt row on the homebase (the machine-log cadence; drafts only)
         shell: bash
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 - <<'PY'
           import os, json, time, urllib.request
@@ -68,21 +66,9 @@ jobs:
           if len(drafts) == 0:
               print("patrol: nothing to stage; no row needed")
               raise SystemExit(0)
-          req = urllib.request.Request(
-              "https://api.github.com/repos/c0wb0yp0tat0/hermes-agent/issues/1/comments",
-              data=json.dumps({"body": body}).encode(),
-              headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}",
-                       "Accept": "application/vnd.github+json", "Content-Type": "application/json"})
-          last = None
-          for _attempt in range(3):
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as r:
-                      print("rowed:", r.status)
-                  raise SystemExit(0)
-              except Exception as e:
-                  last = e
-                  print("patrol: receipt row failed (%s); retry %d/3" % (e, _attempt + 1))
-                  time.sleep(5 * (_attempt + 1))
-          print("patrol: RECEIPT ROW FAILED LOUDLY — %s" % last)
-          raise SystemExit(1)
+          json.dump({"body": body}, open("/tmp/patrol-row.json", "w"))
+          print("patrol: row payload staged (%d chars)" % len(body))
           PY
+          if [ -f /tmp/patrol-row.json ]; then
+            gh api -X POST repos/c0wb0yp0tat0/hermes-agent/issues/1/comments --input /tmp/patrol-row.json
+          fi
