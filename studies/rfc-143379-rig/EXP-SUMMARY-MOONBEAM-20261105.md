@@ -6,11 +6,11 @@
 
 ## Phase 0 — What PR #1 is
 
-PR #1 of fork `c0wb0yp0tat0/hermes-agent`: branch `study/rfc-143379-rig-20261105`, an **independent verification study** of RFC NousResearch/hermes-agent#143379 (memory compaction / K-recency). Downstream-only: no upstream posts, no upstream code changes; original authors retain ownership. Goal-lock (binding): `studies/rfc-143379-rig/` on the study branch; Avrea verification leg (envelope schema, meter budget 4-vCPU/1,500 min/mo, wall clause). Nothing public beyond the fork; no model credentials.
+PR #1 of fork `c0wb0yp0tat0/hermes-agent`: branch `study/rfc-143379-rig-20261105`, an **independent verification study** of RFC NousResearch/hermes-agent#143379 (memory compaction / K-recency). Downstream-only: no upstream posts, no upstream code changes; original authors retain ownership. Goal-lock (binding): `studies/rfc-143379-rig/` on the study branch; Avrea verification leg (envelope schema, UNMETERED — the 4-vCPU/1,500-min meter classes apply to the provider's hosted VMs only, never the rig's own runner; the runner's true constraints are hardware health, wall clause). Nothing public beyond the fork; no model credentials.
 
 ## Phase 1 — The contract (Avrea leg)
 
-`AVREA-LEG-CONTRACT.md` (commit `52c13025bc`): envelope `id/run/pin/requested/executed/assert/battery/summary/conclusion/receipt_url`; pin asserted BEFORE the suite (`requested == executed`); meter budget 4-vCPU/1,500 min/mo, one run per pin; wall clause: a non-reproduction is a QUESTION, never a stop — minimal experiment required before any "unreproducible" verdict. Committed definitions are NOT execution; NOT-RUN stays until a receipt exists.
+`AVREA-LEG-CONTRACT.md` (commit `52c13025bc`): envelope `id/run/pin/requested/executed/assert/battery/summary/conclusion/receipt_url`; pin asserted BEFORE the suite (`requested == executed`); the self-hosted runner is UNMETERED (the 4-vCPU/1,500-min free-meter classes apply to the provider's hosted VMs only, never this rig's runner; governance: one run per pin); wall clause: a non-reproduction is a QUESTION, never a stop — minimal experiment required before any "unreproducible" verdict. Committed definitions are NOT execution; NOT-RUN stays until a receipt exists.
 
 ## Phase 2 — The receipts (run ledger)
 
@@ -119,7 +119,7 @@ RFC guidance (`RFC-GUIDANCE-20261105.md`, commit `bbf10e8efd`, delta `06a2e8b59c
 - Divergence between Avrea side and GitHub-window side is data, recorded, never smoothed.
 - The GitHub-window side: NOT RUN (hosted queue class).
 - The recitation-length class (wheel's third): named, not yet measured.
-- The meter's spend: 3 of 6 program dispatches used.
+- The program-dispatches' spend: 3 of 6 used (the runner itself: unmetered).
 - Nothing upstream was written by this study; original authors retain ownership; guidance offered, never imposed.
 
 ---
