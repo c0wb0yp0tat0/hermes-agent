@@ -66,7 +66,7 @@ jobs:
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           uv run pytest $BASE -rs -q 2>&1 | tail -25
 
-      - name: The gap-checks (the xngg legs, at the flagged pins)
+      - name: The pin-level guard-checks at the flagged pins
         if: always()
         shell: bash
         run: |
@@ -74,15 +74,15 @@ jobs:
           PIN="${{ steps.pin.outputs.pin_selected }}"
           case "$PIN" in
             d1bdb4582cd5d16be6a6b486f696f8240c222b96)
-              echo "GAP-2 re-check (the doc_name guard):"
+              echo "guard-check @memory_tool:~280 (the flagged pin):"
               git show HEAD:tools/memory_tool.py 2>/dev/null | sed -n '275,285p' | grep -n "doc_name\|None\|guard" | head -4 || echo "guard lines not found at this pin"
               ;;
             ffb85c2c5880672237e1a48bea383f634df70985)
-              echo "GAP-4 re-probe (the .bank call + the compressor-hook locus):"
+              echo "hook-locus probe @dream_cycle:~118 (the flagged pin):"
               git show HEAD:tools/dream_cycle.py 2>/dev/null | sed -n '115,125p' | head -6 || echo "dream_cycle lines not found at this pin"
               ;;
           esac
-          echo "gap-checks done for $PIN"
+          echo "guard-checks done for $PIN"
 
       - name: The fill's receipt row (the machine-log cadence, the study's surface)
         if: always()
