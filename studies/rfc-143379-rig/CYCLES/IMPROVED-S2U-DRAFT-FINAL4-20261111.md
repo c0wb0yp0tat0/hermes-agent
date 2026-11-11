@@ -12,7 +12,7 @@ The P4 has a legitimate seat, and it should be stated before anything else. The 
 
 ## 2. The core wound — execution-confirmed
 
-The read action was removed in `56ee8a5cc6` (2026-02-19) — a 14-line removal. On current main the tool answers `Unknown action 'read'`; against the same scratch store, #141876's head returns the entries plus the usage line, first try. The gap is verified by a reviewer's execution (jfugalde, 10-24), not just the RFC's own runs. The #139606 head's collection-error is a stale-base artifact — it predates `95610a5db4`'s pathlib fix — so there is no read-bug behind it; Finn763's rebase of #116673 (head `ffc651bd11`) is clean and mergeable.
+The read action was removed in `56ee8a5cc6` (2026-02-19) — a 14-line removal. On current main the tool answers `Unknown action 'read'`; against the same scratch store, #141876's head returns the entries plus the usage line, first try. The gap is verified by a reviewer's execution (jfugalde, 10-24), not just the RFC's own runs. The rig's own runner re-verified the load-bearing claims at the exact pin (run 43106314124, GREEN, 11-11): the read's absence, the dispatch's unknown-action answer, the hand-back sites, the restore-head's counterfactual. The #139606 head's collection-error is a stale-base artifact — it predates `95610a5db4`'s pathlib fix — so there is no read-bug behind it; Finn763's rebase of #116673 (head `ffc651bd11`) is clean and mergeable.
 
 ## 3. The quantification the record actually carries
 
@@ -20,7 +20,7 @@ The operator's comment-work (issuecomment-6378725575, 10-24): of the 300 most re
 
 ## 4. The queue's P-shape — where the RFC sits
 
-Measured 11-11: P0: 1 · P1: 123 · P2: ~8,800 · P3: ~9,780 · P4: ~120 · unlabeled: 173. The P4 bucket's the smallest in the queue — and the drift class's already a fifth of it (24 labeled comp/agent alone, before memory/context/compression labels are counted). The RFC's issue sits two bands below where the queue actually works (the P2/P3 range holds ~18,580). The label's not just an inversion of the body's centerpiece; it's a departure from the queue's own shape.
+Measured 11-11: P0: 1 · P1: 123 · P2: ~8,800 · P3: ~9,780 · P4: ~120 · unlabeled: 173. The P4 bucket's the smallest in the queue — and the drift class's already a fifth of it (24 labeled comp/agent alone, before memory/context/compression labels are counted). The RFC's issue sits two bands below where the queue actually works (the P2/P3 range holds ~18,580). The repo's own surfaces corroborate: 685 open tickets wear `tool/memory`, 609 wear `area/compression`, and 1,739 carry "session" in their titles — the drift-class's labeled spread, measured on the hub 11-11, beside the ~120-issue pail the RFC occupies. The label's not just an inversion of the body's centerpiece; it's a departure from the queue's own shape.
 
 ## 5. The compensation's true shape — the execution ledger
 
@@ -43,7 +43,7 @@ The fundamentality isn't the RFC's alone — the field now measures these mechan
 
 - **"When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents"** (arXiv, 2026): long-term memory today is evaluated by conversational-recall benchmarks (LoCoMo, LongMemEval) — question-answer over dialogue history — *not* by whether the remembered facts change what a tool-using agent does. The RFC's cost-shape is the measured class: the anchor-full profile where the read's absence costs the *action* (the 90%+ refusal, the "cannot add new entry" lever), not the answer.
 - **The Lost-in-the-Middle family** (the field's measured base): information near a long context's center is retrieved less reliably than the tails — reproduced across the family, including clinical 100K-token contexts. The read's absence forces the agent to live on the tail — the one zone the measurements say stays retrievable — while the durable record's real content sits unread in the middle. The K-recency window's entire measured premise is this bias; the read is the only mechanism that makes the middle reachable.
-- **AbstentionBench** ("reasoning LLMs fail on unanswerable questions", measured) and "When Not to Answer" (the effective-abstention prompts, evaluated on GPT-class models): the cannot-read → answer-anyway is a benchmarked failure-class. The thread's hold — "a system that cannot read should say so, never guess" — is the exact mechanism the field now benchmarks as first-class, and the Pond run (0/12 → 12/12 with one permission-sentence) is its controlled measurement.
+- **AbstentionBench** ("reasoning LLMs fail on unanswerable questions", measured) and "When Not to Answer" (the effective-abstention prompts, evaluated on GPT-class models): the cannot-read → answer-anyway is a benchmarked failure-class. The thread's hold — "a system that cannot read should say so, never guess" — is the exact mechanism the field now benchmarks as first-class, and the Pond run (0/12 → 12/12 with one permission-sentence) is its controlled measurement. And first-hand: the rig's own controlled reproduction on a fresh route (11-11) landed 6/6 fabricated under the no-permission condition — the mechanism measured on our own substrate, its shelf-gate acknowledged, its B-condition pending that gate's quiet.
 
 ## 6. The user-cost
 
