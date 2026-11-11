@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [avrea-ubuntu-latest-2-vcpu, avrea-ubuntu-latest]
+        runner: [avrea-ubuntu-latest-2-vcpu, avrea-ubuntu-latest, ubuntu-latest]
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 120
     steps:
