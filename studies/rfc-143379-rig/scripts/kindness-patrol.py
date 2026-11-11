@@ -10,10 +10,11 @@ word. The posting gate is absolute: drafts are drafts.
 import json, os, time, urllib.request, urllib.error, sys
 
 API = "https://api.github.com"
+DEEP_KNOWN = {"NousResearch/hermes-agent"}  # our known ground — always stage
 TARGET_REPOS = [
-    "NousResearch/hermes-agent",   # the upstream he supports with verdicts
-    "kvnloo/hermes-agent",         # his own fork (lab-habit watch's scope)
-    "kvnloo/fleet-runner",         # his active projects (the watch's map)
+    "NousResearch/hermes-agent",   # the upstream he supports with verdicts (tier 1: what we know)
+    "kvnloo/hermes-agent",         # tier 2: research deeply before drafting
+    "kvnloo/fleet-runner",         # tier 2: research deeply before drafting
     "kvnloo/glide",
     "kvnloo/autokernel",
     "kvnloo/newton",
@@ -66,13 +67,26 @@ def main():
             else:
                 t = get(f"{API}/repos/{repo}/issues/{rel.split('/')[1]}")
                 title, typ = t.get("title", rel), "issue"
+            substance = ""
+            if repo not in DEEP_KNOWN:
+                # TIER-2 GATE (operator steer): outside our known ground, draft
+                # only on a deep read — the thread's real substance quoted, or skip.
+                body = t.get("body") or ""
+                substance = " ".join(body.split())[:160]
+                if not substance:
+                    print(f"KINDNESS-PATROL: skipping {rel} — no readable substance on an unknown surface")
+                    continue
         except Exception:
+            if repo not in DEEP_KNOWN:
+                print(f"KINDNESS-PATROL: skipping {rel} — could not research the unknown surface")
+                continue
             title, typ = rel, "thread"
         body = (
             f"# STAGED SUPPORT PREVIEW (kindness-patrol) — {typ} #{rel.split('/')[1] if '/' in rel else rel}\n\n"
             f"**Thread:** [{rel}](https://github.com/{repo}/{rel})\n"
             f"**Title:** {title}\n"
-            f"**Supporting comment:** {created[:16]}Z on the thread — the lab's verdict/review motion.\n\n"
+            + (f"**The thread's substance (deep-read):** {substance}…\n" if substance else "")
+            + f"**Supporting comment:** {created[:16]}Z on the thread — the lab's verdict/review motion.\n\n"
             f"---\n\n"
             f"@kvnloo — genuinely, thank you for the eyes on this one. The thread's catching real things,\n"
             f"and the support doesn't go unnoticed.\n\n"
