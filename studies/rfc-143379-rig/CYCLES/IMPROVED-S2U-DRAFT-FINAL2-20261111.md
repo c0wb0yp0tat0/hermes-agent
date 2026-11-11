@@ -22,6 +22,10 @@ The record's dates tell their own story: the RFC posted 10-23, P2'd two minutes 
 
 P4 = "best-effort: we will get to it when we get to it (no commitment)." The RFC's own hinge is #141876 — P2 in this repo's own triage ("degraded but a workaround exists") — and its other structural pieces (#116673, #139606, #140008) sit at P3. Nothing the RFC composes is below P3; the RFC itself sits under all of them.
 
+## The queue's shape
+
+The P4 bucket isn't a resting pail — it's the smallest in the queue. Of the open issues wearing a priority label, ~8,800 sit at P2 and ~9,780 at P3; the P4 bucket holds ~120 — and the drift class is already a fifth of it (24 labeled comp/agent alone, before the memory/context/compression labels are counted). The read's absence is the root behind the drift class's 43% of the recent queue; the RFC wears the label that says "when we get to it" while the class it belongs to is the queue's largest single source of churn, compounding at ~43 tickets a day of clearing.
+
 ## The ask
 
 Seeking to understand what the P4 reflects — and, if the change was made on the body rather than the record, whether a re-read of the thread (the arithmetic, the executions, the field data) would re-frame the label. If the P4's the intended resting state, the understanding's what we'd value — the sentence on the record explaining the trail would be a gift to every reader after us. Either way the substance stands on its own; happy to rescope, split, or supply any evidence the triage would need — two-way door, your call, gratitude either way.
