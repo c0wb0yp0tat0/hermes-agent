@@ -70,6 +70,7 @@ jobs:
           # pinned head — include it only when present, so pins predating it
           # still get the write-gate + memory-tool battery (exit-4 class: a
           # missing path is a collection error, not an assertion failure).
-          BASE="tests/tools/test_write_gate.py tests/tools/test_memory_tool.py"
+          BASE="tests/tools/test_memory_tool.py"
+          [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           uv run pytest $BASE -rs -q 2>&1 | tail -40
