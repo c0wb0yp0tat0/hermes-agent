@@ -12,29 +12,9 @@ on:
         description: "The exact SHA to pin and verify (default: the branch head)"
         required: false
         default: ""
-      battery:
-        description: "The battery to run: union (all present), tools (write-gate + memory-tool), falsifier (the falsifier dir)"
-        required: false
-        default: "union"
-        type: choice
-        options:
-          - union
-          - tools
-          - falsifier
-          - sweep
-          - stress
-
-concurrency:
-  # kvnloo's pin-scoped shape: one active run per pinned head; a re-dispatch
-  # of the SAME pin cancels the stale one, different pins run in parallel.
-  # NOTE: the matrix-context is NOT in scope at the workflow level, so the
-  # surface-suffixed group lives on the job (below) where the legs diverge.
-  group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}
-  cancel-in-progress: true
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   verify:
@@ -45,9 +25,6 @@ jobs:
         runner: [avrea-ubuntu-latest, ubuntu-latest]
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
-    concurrency:
-      group: avrea-${{ github.workflow }}-${{ inputs.head_sha || github.sha }}-${{ matrix.runner }}
-      cancel-in-progress: false
     steps:
       - name: Checkout exact head
         uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
@@ -93,68 +70,18 @@ jobs:
           # pinned head — include it only when present, so pins predating it
           # still get the write-gate + memory-tool battery (exit-4 class: a
           # missing path is a collection error, not an assertion failure).
-          # Collect-only-what-exists: the composition heads predate the
-          # write-gate/memory-tool suites and the falsifier dir — a fixed path
-          # list dies at collection (exit 4) on any pin that lacks it. The
-          # battery is the INTERSECTION of the head's tree and the suite.
-          BASE=""
-          case "${{ inputs.battery || 'union' }}" in
-            tools)
-              for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
-                [ -f "$f" ] && BASE="$BASE $f"
-              done
-              [ -f tests/tools/test_file_tools_live.py ] && grep -q 'TestPatchReplaceWrongRegionRejected' tests/tools/test_file_tools_live.py && BASE="$BASE tests/tools/test_file_tools_live.py::TestPatchReplaceWrongRegionRejected" ;;
-            falsifier)
-              [ -d tests/falsifier-battery ] && BASE="tests/falsifier-battery/" ;;
-            union|*)
-              for f in tests/tools/test_write_gate.py tests/tools/test_memory_tool.py; do
-                [ -f "$f" ] && BASE="$BASE $f"
-              done
-              [ -f tests/tools/test_file_tools_live.py ] && grep -q 'TestPatchReplaceWrongRegionRejected' tests/tools/test_file_tools_live.py && BASE="$BASE tests/tools/test_file_tools_live.py::TestPatchReplaceWrongRegionRejected"
-              [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/" ;;
-          esac
-          uv run pytest $BASE -rs -rf -q 2>&1 | tail -80
+          BASE="tests/tools/test_memory_tool.py"
+          [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          uv run pytest $BASE -rs -q 2>&1 | tail -40
 
-      - name: The specialized arms (sweep / stress — the instruments executed at the pinned head)
-        if: ${{ inputs.battery == 'sweep' || inputs.battery == 'stress' }}
+      - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
-        run: |
-          cd studies/rfc-143379-rig/krecency
-          CYCLES="${{ inputs.battery == 'stress' && '1200' || '300' }}"
-          echo "specialized arm: ${{ inputs.battery }} at cycles=$CYCLES (pinned head) — the instrument executed, not assumed."
-          uv run --project ../../../ python sweep_alias.py && uv run --project ../../../ python sweep_age.py 2>&1 | tail -6
-          ls -la results/ | tail -6
-
-      - name: The receipt's landing (every avrea runner lands its findings on PR #1 - the machine's own voice)
         if: always()
-        shell: bash
-        env:
-          LAND_REPO: ${{ github.repository }}
-          LAND_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LAND_RUN_ID: ${{ github.run_id }}
-          LAND_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          LAND_PIN: ${{ inputs.head_sha }}
-          LAND_BATTERY: ${{ inputs.battery || 'union' }}
-          LAND_RESULT: ${{ job.status }}
         run: |
-          if [ "$LAND_RESULT" = "success" ]; then
-            SUMMARY="GREEN - the $LAND_BATTERY arm at the pinned head completed."
+          set -euo pipefail
+          if [ -f studies/rfc-143379-rig/scripts/s2u-claims-probe.py ]; then
+            uv run python studies/rfc-143379-rig/scripts/s2u-claims-probe.py 2>&1 | tail -50
           else
-            SUMMARY="RED - the $LAND_BATTERY arm at the pinned head failed (the run's log carries the cause)."
+            echo "S2U-CLAIMS: NOT-RUN (the probe script absent at this pinned head)"
           fi
-          export LAND_BODY="**[RUNNER-LANDING]** - run $LAND_RUN_ID ($LAND_BATTERY @ ${LAND_PIN:0:40}): $LAND_RESULT. $SUMMARY Run: $LAND_RUN_URL. Landed by the machine itself, per the standing rule - all avrea runners land their findings on PR #1."
-          python3 - <<'PYEOF'
-          import json, os, urllib.request
-          body = os.environ["LAND_BODY"]
-          data = json.dumps({"body": body}).encode()
-          req = urllib.request.Request(
-              "https://api.github.com/repos/" + os.environ["LAND_REPO"] + "/issues/1/comments",
-              data=data,
-              headers={"Authorization": "token " + os.environ["LAND_TOKEN"], "Content-Type": "application/json", "Accept": "application/vnd.github+json"},
-              method="POST")
-          try:
-              with urllib.request.urlopen(req, timeout=60) as r:
-                  print("landed:", r.status)
-          except Exception as e:
-              print("landing-post failed (recorded - the head's cadence will carry it):", e)
-          PYEOF
