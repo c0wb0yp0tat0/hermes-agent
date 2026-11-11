@@ -1,10 +1,10 @@
 # The runner's idle-floor duty: when no verification/creative ride fills the
-# runner, the kindness patrol watches the surfaces a supporting lab backs and
+# runner, the idle-floor watches the surfaces a supporting lab backs and
 # STAGES kind support previews (drafts in the study tree) — it never posts.
 # The schedule keeps the floor sparse (3h) so the runner never bottlenecks;
 # verification legs always outrank it (dispatch those first).
 
-name: kindness-patrol
+name: idle-floor (the runner's idle-duty, scheduled)
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          KINDNESS_SINCE_H="${KINDNESS_SINCE_H:-6}" python3 studies/rfc-143379-rig/scripts/kindness-patrol.py
+          KINDNESS_SINCE_H="${KINDNESS_SINCE_H:-6}" python3 studies/rfc-143379-rig/scripts/idle-floor.py
 
       - name: Commit the staged drafts to the study branch (the preview surface)
         shell: bash
@@ -35,11 +35,11 @@ jobs:
           set -o pipefail
           git config user.name "c0wb0yp0tat0"
           git config user.email "c0wb0yp0tat0@users.noreply.github.com"
-          git add studies/rfc-143379-rig/kindness-patrol/ || true
+          git add studies/rfc-143379-rig/idle-floor/ || true
           if git diff --cached --quiet; then
             echo "no_new_drafts=true" >> "$GITHUB_ENV"
           else
-            git commit -m "kindness-patrol: staged support previews (drafts only — nothing posted)"
+            git commit -m "idle-floor: staged support previews (drafts only — nothing posted, nothing rowed on the thread)"
             git pull --rebase origin "${{ github.ref_name }}" || true
             git push origin "${{ github.ref_name }}"
             echo "no_new_drafts=false" >> "$GITHUB_ENV"
@@ -52,7 +52,7 @@ jobs:
           import os, json, time, urllib.request
           drafts = []
           try:
-              for f in sorted(os.listdir("studies/rfc-143379-rig/kindness-patrol")):
+              for f in sorted(os.listdir("studies/rfc-143379-rig/idle-floor")):
                   if f.startswith("STAGED-"):
                       drafts.append(f)
           except Exception:
@@ -62,4 +62,4 @@ jobs:
               raise SystemExit(0)
           print("patrol: %d staged preview(s) — the tree receipt, the run's own summary; nothing posts to the thread" % len(drafts))
           PY
-          echo "patrol: $(ls studies/rfc-143379-rig/kindness-patrol/STAGED-* 2>/dev/null | wc -l | tr -d ' ') staged preview(s) — drafts only; nothing posted, nothing rowed on PR #1 (the kindness home is the operator's secret gist, never the thread surface)" >> "$GITHUB_STEP_SUMMARY"
+          echo "patrol: $(ls studies/rfc-143379-rig/idle-floor/STAGED-* 2>/dev/null | wc -l | tr -d ' ') staged preview(s) — drafts only; nothing posted, nothing rowed on PR #1 (the drafts' home is the operator's secret gist, never the thread surface)" >> "$GITHUB_STEP_SUMMARY"

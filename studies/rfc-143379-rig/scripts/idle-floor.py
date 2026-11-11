@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""kindness-patrol — the runner's idle-floor duty.
+"""idle-floor — the runner's idle-floor duty.
 
 When no verification/creative ride fills the runner, this patrol watches the
 surfaces a supporting lab is backing and STAGES kind support previews — never
@@ -20,11 +20,11 @@ TARGET_REPOS = [
     "kvnloo/newton",
 ]
 HOME_REPO = "c0wb0yp0tat0/hermes-agent"
-DRAFTS_DIR = "studies/rfc-143379-rig/kindness-patrol"
+DRAFTS_DIR = "studies/rfc-143379-rig/idle-floor"
 MAX_THREADS = 5           # drafts per run — bounded, never spammy
 SINCE_H = float(os.environ.get("KINDNESS_SINCE_H", "6"))
 
-UA = {"User-Agent": "kindness-patrol (rig)", "Accept": "application/vnd.github+json"}
+UA = {"User-Agent": "idle-floor (rig)", "Accept": "application/vnd.github+json"}
 
 def get(url):
     req = urllib.request.Request(url, headers=UA)
@@ -83,7 +83,7 @@ def main():
                 continue
             title, typ = rel, "thread"
         body = (
-            f"# STAGED SUPPORT PREVIEW (kindness-patrol) — {typ} #{rel.split('/')[1] if '/' in rel else rel}\n\n"
+            f"# STAGED SUPPORT PREVIEW (idle-floor) — {typ} #{rel.split('/')[1] if '/' in rel else rel}\n\n"
             f"**Thread:** [{rel}](https://github.com/{repo}/{rel})\n"
             f"**Title:** {title}\n"
             + (f"**The thread's substance (deep-read):** {substance}…\n" if substance else "")
