@@ -34,5 +34,5 @@ jobs:
             exit 0
           fi
           mkdir -p "$(dirname "$ART")"
-          python3 /root/scripts/copycat-harness.py --model "reflection/beam-1.0-501b-a23b:free" --brief "$BRIEF" --artifact "$ART" --rounds 24 --logfile "$REPO/studies/rfc-143379-rig/tmp-artifacts/creative/creative-run.log" 2>&1 | tail -5
+          python3 /root/scripts/copycat-harness.py --model "reflection/beam-1.0-501b-a23b" --brief "$BRIEF" --artifact "$ART" --rounds 24 --logfile "$REPO/studies/rfc-143379-rig/tmp-artifacts/creative/creative-run.log" 2>&1 | tail -5
           echo "creative-copycat complete: $(date -u +%FT%TZ)"
