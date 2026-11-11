@@ -1,0 +1,94 @@
+name: fill-queue (the runner's idle-fill, scheduled)
+
+# The never-idle contract's engine: the runner fires its own next leg every two
+# hours, rotating the RECEIPTS ledger's certified green pins (the fill-queue).
+# It never touches the study branch's working tree (its own checkout, pinned);
+# it never posts anything but its own receipt rows; the wave's verify legs
+# preempt it at the dispatch layer (the runner's queue serves the study first).
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fill:
+    name: Fill leg (${{ github.ref_name }})
+    runs-on: [self-hosted]
+    timeout-minutes: 45
+    steps:
+      - name: Select the next green pin (the queue's rotation)
+        id: pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          PIN=$(python3 /root/scripts/fill-queue-pins.py next)
+          echo "pin_selected=$PIN" >> "$GITHUB_OUTPUT"
+          echo "fill: next pin = $PIN"
+
+      - name: Checkout the exact pin
+        uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.pin.outputs.pin_selected }}
+
+      - name: Pin verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git rev-parse HEAD)"
+          requested="${{ steps.pin.outputs.pin_selected }}"
+          printf 'requested_sha=%s\nexecuted_sha=%s\n' "$requested" "$actual"
+          test "$actual" = "$requested"
+
+      - name: Install uv (the repo's own recipe)
+        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # 8.2.0
+        with:
+          python-version: "3.14"
+
+      - name: Sync the locked environment
+        shell: bash
+        run: |
+          uv python install 3.14
+          HERMES_DISABLE_LAZY_INSTALLS=1 uv sync --locked --python 3.14 \
+            --extra all --group dev \
+            --extra anthropic --extra mistral --extra fal --extra modal || true
+
+      - name: The battery (the same pinned suite)
+        shell: bash
+        run: |
+          set -o pipefail
+          BASE="tests/tools/test_memory_tool.py"
+          [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          uv run pytest $BASE -rs -q 2>&1 | tail -25
+
+      - name: The fill's receipt row (the machine-log cadence, the study's surface)
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          PIN="${{ steps.pin.outputs.pin_selected }}"
+          RUN="${{ github.run_id }}"
+          python3 - <<'PY'
+          import json, subprocess
+          pin = "$PIN"
+          run = "$RUN"
+          body = ("RFC143379-RIG-ENVELOPE-FILL-LEG-" + run + "\n\n"
+                  "<!-- oss-factory:v1 " + json.dumps({"id": "20261111-fill-leg-" + run,
+                  "kind": "result", "project": "hermes-agent", "from": "runner",
+                  "to": ["homebase"], "status": "done",
+                  "civ": {"run": run, "pin": pin}}) + " -->\n\n"
+                  "The fill-queue's automaton leg: pin " + pin[:12]
+                  + " run on the self-hosted runner (run " + run + ") — the battery's "
+                  "verdict is the run's conclusion; the queue's next pin rotates on the "
+                  "state file. The wave's legs keep priority; this is the idle-fill's row.")
+          payload = json.dumps({"body": body}).encode()
+          subprocess.run(["gh", "api", "-X", "POST",
+              "repos/c0wb0yp0tat0/hermes-agent/issues/1/comments",
+              "--input", "-"], input=payload, check=True)
+          print("rowed:", run)
+          PY
