@@ -74,3 +74,14 @@ jobs:
           [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           uv run pytest $BASE -rs -q 2>&1 | tail -40
+
+      - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
+        shell: bash
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ -f studies/rfc-143379-rig/scripts/s2u-claims-probe.py ]; then
+            uv run python studies/rfc-143379-rig/scripts/s2u-claims-probe.py 2>&1 | tail -50
+          else
+            echo "S2U-CLAIMS: NOT-RUN (the probe script absent at this pinned head)"
+          fi
