@@ -73,6 +73,7 @@ jobs:
           BASE="tests/tools/test_memory_tool.py"
           [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          [ -d studies/rfc-143379-rig/tests/s2u_arms ] && BASE="$BASE studies/rfc-143379-rig/tests/s2u_arms/"
           uv run pytest $BASE -rs -q 2>&1 | tail -40
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
