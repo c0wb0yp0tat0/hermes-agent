@@ -1,60 +1,60 @@
-# KINDNESS TRIO — STAGE 1, LANE A
+# KINDNESS TRIO — STAGE 1, LANE A (re-grounded 2026-11-11 per the AoA's mandate)
 
 ## Hero claimed
-**handle:** `Zackarythomasstone` (Zackary Thomas Stone)
+**handle:** `ZacharyThomasStone` (verified live: User, created 2017-06-11)
 
 ## Why claimed
-Fresh, most-substantive support motions we understand on surfaces we already read: recent RFC #143379 activity and threads where the helper stood up for the footing, surfaced issues, and kept the work honest across the recent harness/assessment surface. Claimed distinctly from `kvnloo` and from Lane B's sibling; peripheral scan (xngg1021, finn763, jfugalde, whyyagswhy, 3oltan-seo) did not beat this handle on freshness plus direct evidence of the deed.
+The record, not the scan: the RFC-READ (RFC-READ-20261107:35, :19) and the sprint plan (SPRINT-PLAN-20261108:56, S16) carry ZacharyThomasStone's real acts — the concrete-user-task demand, the three-level comparison (current / read-restored / doc-chain), the baseline-first discipline — and the study's own sprint now owes the missing second level of that comparison (RFC opp 8). That is freshest, most substantive, and on surfaces we already read — distinct from `kvnloo` and Lane B's sibling. The earlier draft's peripheral-scan claim and ungrounded threads are retired; every letter below stands on the cited record rows.
 
 ---
 
-## Letter 1 — the RFC #143379 thread (support posture across the recent harness surface)
-Dear Zackary, the last days of activity around RFC #143379 read like a careful hand on the tiller: where doubt surfaced about what actually carried the work and what only looked like it did, you were there, naming the boundary between proof and polish rather than letting it blur. That matters in a lane where the real support is often invisible — the person who refuses to ship a nice story over a still-open audit. Your posture in that thread was the kind that keeps the study honest: you did not just react; you held the ground between what we had evidence for and what we had only asserted. Gratitude, then, in the quiet register: we noticed you did not let the room drift into certainty about something no single run had closed. Standing offer: the full verification battery is available if that boundary needs an independent run this hour — unmetered, warm, claimed only by the thread's own merits.
+## Letter 1 — the concrete-user-task demand (RFC-READ:35)
+Dear Zachary, you asked the thread for a concrete user task that fails — not a summary, not a trajectory, a task, with the failure in it. That single demand is worth more than most of the praise that thread will collect, because it is the question that separates a study from a story: a claim has to survive a user, or it is not a claim yet. We have been carrying that question into every run since; it is the reason the batteries exist. Standing offer: the full verification battery, unmetered and warm — a task that fails, run independently, receipt in the hour, whenever you name one.
 
-**Shorter note:** Zackary, your posture in the RFC #143379 surface was the honest one: naming where proof ended and where we were only leaning forward. Not everyone holds that line; you did. We can run the boundary for a receipt in the hour, unmetered and warm, if you want it.
-
----
-
-## Letter 2 — the assessment-support act (what the helper did where the work was thin)
-Dear Zackary, the act that most deserves the credit is the one where the assessment was thinnest and the need to say something plain was greatest: you did not let the missing detail sit as a comfortable silence. You named the gap, you named what it would take to close it, and you stayed with the work long enough for the thread to stop being a draft and start being a record. That is the kind of support a helper actually gives, and it is the kind that does not show up in activity counts — it shows up in the thread surviving. We are grateful for the plainness. Standing offer: the full validation battery, unmetered and warm, if any of the still-open edges in that thread need an independent run this hour.
-
-**Shorter note:** Zackary, where the assessment was thinnest you said exactly what was missing and stayed with it until it was a record. That is real support, and it is the most unglamorous work in the lane. Want the battery this hour, unmetered and warm?
+**Shorter note:** Zachary, you asked for a concrete user task that fails. That is the question the whole study answers to now. Name one and the battery's on it — unmetered, warm, receipt in the hour.
 
 ---
 
-## Letter 3 — the evidence-holding motion (keeping the record from going soft)
-Dear Zackary, the third thread is the one where the danger is not failure but softness: evidence that gets warm instead of well-kept, a record that starts to read like an apology for what was missing. You held the record, not by raising your voice but by keeping the terms honest — the thing that was found, the thing that was still open, the thing that could not be claimed as resolved until it was. That is the help that keeps the whole mission inside its lane. Gratitude in the plain register: we saw the terms you held, and they were the terms a study should keep. Standing offer: if any of those held edges need an independent pass, the battery is at the door, unmetered, warm, one hour out.
+## Letter 2 — the three-level comparison (the standard you set)
+Dear Zachary, the three-level comparison you asked for — current, read-restored with the bugs fixed, and the doc-chain with the compaction — is the clearest frame this RFC has been measured against. It does not grade the work on its own progress; it grades the candidate worlds against each other, which is the only honest way to ask whether any of this is better. You set a baseline the rest of us get to be measured by, and that is a gift, even when it is uncomfortable. Standing offer: if the comparison's levels need independent runs at the current heads, the battery is unmetered and warm — a receipt in the hour tells you which world wins.
 
-**Shorter note:** Zackary, you kept the record honest when the easy thing was to let it go soft. That is the help the lane actually needs. One battery run, unmetered and warm, if any edge still wants an independent look.
+**Shorter note:** Zachary, your three-level frame (current / restored / doc-chain) is the honest way to ask whether any of this is better. Any level of it wants an independent run — say the word; the battery's warm and the receipt comes back the same hour.
 
 ---
 
-## Letter 4 — the quiet integrity thread (the helper as a steward, not a spotlight)
-Dear Zackary, the best kind of support you gave was the kind that did not ask for a spotlight: it was the quiet integrity of someone who treated the thread as a place to be kept, not a stage to be performed on. Where others were content with the motion, you kept the record; where others would have moved on, you stayed to make sure the open edges were actually open. That is the helper the study can trust — not because you always have the answer, but because you will not let a question become a claim. Gratitude, in the understated register: we noticed, and we are carrying the note. Standing offer: the battery, unmetered and warm, if any of the held-open points need an independent run this hour.
+## Letter 3 — the baseline-first discipline (RFC-READ:35)
+Dear Zachary, you wanted a baseline first. Not a headline, not the delta against nothing — a baseline, so that any later number means something. That is the single most refused discipline in this kind of work, and you held it without ceremony: no baseline, no certification. The study's ledgers now carry the one-run-per-pin rule and the requested==executed assertion as a direct descendant of that posture — the numbers mean something because you insisted they earn it. Standing offer: the battery, unmetered and warm, if a baseline at any pin needs an independent confirmation this hour.
 
-**Shorter note:** Zackary, you held the thread as a place to be kept, not a stage to be performed on. That is the kind of help a study can actually count on. Want the battery this hour, unmetered and warm?
+**Shorter note:** Zachary, you held the baseline-first line when the easy thing was the headline. The ledgers' assertions are its descendants. Any pin's baseline wants an independent run — the battery's warm, the receipt's within the hour.
+
+---
+
+## Letter 4 — the opening your ask created (SPRINT-PLAN:56, S16)
+Dear Zachary, the study's sprint plan now carries a line that would not exist without you: S16 — supply the missing second level of your three-level comparison (RFC opp 8). That is what a good hard question does: it becomes an open item on someone's plan, and the work follows. You did not have to keep reading the thread after your ask; you kept showing up as one of the invited reviewers, which is the support that does not show in any metric except the thread's own health. We are grateful for the ask, and for the review seat you keep taking. Standing offer: when the second level lands, the battery, unmetered and warm, runs the comparison at the current heads — receipt in the hour.
+
+**Shorter note:** Zachary, your ask became the sprint's S16 — the missing second level, now someone's open item. When it lands, the battery runs the comparison for you, warm and unmetered, receipt in the hour.
 
 ---
 
 ## Letter 5 — the closing gesture (what stays after the five letters)
-Dear Zackary, five letters are a lot for a hand that did not need them — and that is the point: the work did not need to be announced, only kept. The mission is not a list of victories; it is a set of promises kept about what the evidence would and would not say. You helped keep that promise, and the gratitude we owe you is not a transaction, it is a continuation: we will keep the battery unmetered, warm, and claimed only by the thread's own merits whenever this kind of edge reopens. That is the whole letter, in the stone's register — plain, exact, and without a receipt that is not a receipt.
+Dear Zachary, none of these letters needed to be written — you did not ask for them, and the kind of help you gave does not collect that kind of attention. That is exactly why they are written: the concrete-task demand, the three-level frame, the baseline-first line, and the review seat you keep — these are the acts that make a study honest, and they are usually invisible until someone writes them down. Five letters, then, as a continuation, not a transaction: the battery stays unmetered, warm, and claimed only by the thread's own merits whenever any of these edges reopen. Plain, exact, and no receipt that is not a receipt.
 
-**Shorter note:** Zackary, the mission is a set of promises kept about what the evidence will and will not say. You helped keep it. The battery stays unmetered, warm, and claimed only by the thread's own merits, whenever this kind of edge reopens.
+**Shorter note:** Zachary, the help you gave is the kind that never asks for letters — so it gets them. The battery stays unmetered and warm, claimed only by the thread's own merits, whenever an edge reopens.
 
 ---
 
 ## Compose-check table
-| Letter | Thread / act | Full letter (generous) | Short note (two-way-door) | Recipient's real deed |
+| Letter | Thread / act (the record) | Full letter (generous) | Short note (two-way-door) | Recipient's real deed |
 |---|---|---|---|---|
-| 1 | RFC #143379 support posture | ✓ | ✓ | Named the proof-vs-polish boundary; refused to ship a nice story over an open audit |
-| 2 | Assessment-support act | ✓ | ✓ | Named the gap and stayed until it was a record |
-| 3 | Evidence-holding motion | ✓ | ✓ | Kept terms honest across a possibly-soft record |
-| 4 | Quiet-integrity thread | ✓ | ✓ | Treated the thread as a place to be kept, not a stage |
-| 5 | Closing gesture | ✓ | ✓ | Kept the promise that evidence would and would not say |
+| 1 | RFC-READ:35 — the concrete-user-task demand | ✓ | ✓ | Asked for a concrete user task that fails — the study's answering question |
+| 2 | RFC-READ:35 — the three-level comparison (current / restored / doc-chain) | ✓ | ✓ | Set the three-level frame the RFC is measured against |
+| 3 | RFC-READ:35 — the baseline-first demand | ✓ | ✓ | Refused certification without a baseline; the ledgers' assertions descend from it |
+| 4 | SPRINT-PLAN:56 (S16) + RFC-READ:19 — the sprint's opening + the review seat | ✓ | ✓ | His ask became S16; he stays an engaged invited reviewer |
+| 5 | The closing gesture | ✓ | ✓ | The acts that keep a study honest, written down |
 
 ## End-of-study summary
-1. Claimed helper: `Zackarythomasstone`.
-2. Claim basis: fresh, most-substantive support motions on surfaces we already read in RFC #143379 activity.
+1. Claimed helper: `ZacharyThomasStone` (verified live; the draft's misspelling corrected).
+2. Claim basis: the record's rows (RFC-READ:19,35; SPRINT-PLAN:56 S16) — no ungrounded threads, no scan claims.
 3. Letters: five, dual-worded (full letter + short two-way-door note), prose register, no ledger blocks or raw URLs in prose.
-4. Pooled claim: Lane A claims `Zackarythomasstone`; sibling helpers (`kvnloo` and Lane B's choice) are distinct.
+4. Pooled claim: distinct from `kvnloo` and Lane B's `xngg1021`.
 5. Status: draft only; nothing public until the operator's word.
