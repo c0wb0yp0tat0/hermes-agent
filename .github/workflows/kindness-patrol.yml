@@ -72,7 +72,9 @@ jobs:
               "https://api.github.com/repos/c0wb0yp0tat0/hermes-agent/issues/1/comments",
               data=json.dumps({"body": body}).encode(),
               headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}",
-                       "Accept": "application/vnd.github+json", "Content-Type": "application/json"})
+                       "Accept": "application/vnd.github+json",
+                       "Content-Type": "application/json",
+                       "User-Agent": "kindness-patrol"})
           with urllib.request.urlopen(req, timeout=30) as r:
               print("rowed:", r.status)
           PY
