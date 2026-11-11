@@ -50,27 +50,27 @@ def main():
         if not url or rel in seen:
             continue
         seen.add(rel)
-        threads.append((e.get("created_at", ""), url, rel))
+        threads.append((e.get("created_at", ""), url, rel, repo))
     threads.sort(reverse=True)
     threads = threads[:MAX_THREADS]
     if not threads:
         print("KINDNESS-PATROL: no fresh supported surfaces in window — nothing staged, runner stays honest-idle")
         return 0
     drafts = []
-    for i, (created, url, rel) in enumerate(threads, 1):
+    for i, (created, url, rel, repo) in enumerate(threads, 1):
         # fetch the thread + the supporting comment's body-head (public reads)
         try:
             if "/pull/" in rel:
-                t = get(f"{API}/repos/{TARGET_REPO}/pulls/{rel.split('/')[2]}")
+                t = get(f"{API}/repos/{repo}/pulls/{rel.split('/')[2]}")
                 title, typ = t.get("title", rel), "PR"
             else:
-                t = get(f"{API}/repos/{TARGET_REPO}/issues/{rel.split('/')[1]}")
+                t = get(f"{API}/repos/{repo}/issues/{rel.split('/')[1]}")
                 title, typ = t.get("title", rel), "issue"
         except Exception:
             title, typ = rel, "thread"
         body = (
             f"# STAGED SUPPORT PREVIEW (kindness-patrol) — {typ} #{rel.split('/')[1] if '/' in rel else rel}\n\n"
-            f"**Thread:** [{rel}](https://github.com/{TARGET_REPO}/{rel})\n"
+            f"**Thread:** [{rel}](https://github.com/{repo}/{rel})\n"
             f"**Title:** {title}\n"
             f"**Supporting comment:** {created[:16]}Z on the thread — the lab's verdict/review motion.\n\n"
             f"---\n\n"
