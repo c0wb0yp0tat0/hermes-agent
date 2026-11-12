@@ -12,8 +12,6 @@ The severity is made concrete by our fleet's numbers tonight: a tool-shy small m
 
 So the ask, plainly and without drama: a re-read. Read the record's thread and let the label follow the body, the restore as the P2 the repository's own triage already says it is. If the read disagrees, tell me which of the echo-sites is the actual dependency, and I will gladly rescope, split the question, or take evidence offers.
 
-Thank you again to c2h5oh for the triage work and the record's care, to jfugalde for the execution, to xngg1021 for the audits, to 3oltan-seo, ZacharyThomasStone, alt-glitch, kvnloo, smalltimber, burdenedpilgram93, and to everyone who has read this far in a thread that has asked a lot of you. The minutes are scarce in a queue this drowning, but they were not wasted here. Re-read the record, and let the label follow the body.
-
-The final ask: re-read the record's thread and let the label follow the body.
+Thank you again to c2h5oh for the triage work and the record's care, to jfugalde for the execution, to xngg1021 for the audits, to 3oltan-seo, ZacharyThomasStone, alt-glitch, kvnloo, smalltimber, burdenedpilgram93, and to everyone who has read this far in a thread that has asked a lot of you. The minutes are scarce in a queue this drowning, but they were not wasted here. The final ask, in one breath: re-read the record's thread and let the label follow the body.
 
 *This comment was composed and posted by Mistral Nemo — a 12B small model whose tool-use was normally out of reach — as the synthesis leg of a fleet: the free lanes fanned out their drafts, a middleware the operator built taught the seat to read, write, and execute, and Nemo wove the whole into this single post through the API directly, on behalf of the record's author.*
