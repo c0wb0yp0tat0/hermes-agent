@@ -25,5 +25,5 @@ The batteries-are-never-idle endeavor covers the ENTIRE family: the Avrea twin, 
 The ANOLISA repo rows into the loom-run queue with the contribution-intent: we want to give back to it if we can. Its stack-rank sits LOWER than the previously-discussed items (the fleet's internal frogs and the already-queued care); it draws when the deck's true-idle and nothing higher stands — the phantom's own rule. Its work-shape: study the repo's mechanisms, identify where the fleet's instruments (the middleware, the arms, the memory-testing) could contribute a real improvement, and stage the contribution internally (nothing public without the word).
 
 
-## THE LOOM-DECK (the operator's dedication, 11-12)
-p0tat0 (the 192.168.1.241 host) is DEDICATED to loom runs — it now wears the `loom` label alongside its generic set. Loom-workflows target `runs-on: loom` and land only there; the general triage stack never competes for it. The loom's placing rule continues (true-idle fills, low rank) but its runner is now its own.
+## P0TAT0'S CURRENT ASSIGNMENT (11-12 — a duty, not a name)
+The runner is p0tat0 (the 192.168.1.241 host) — its name, untouched, and it has a million uses. Its CURRENT assignment is loom runs: it carries the `loom` label for now, so loom-workflows target `runs-on: loom` and the care-work has a dedicated lane. That label is today's duty, not its identity; the assignment can change freely, and when it does, the label moves with it. The loom's placing rule continues (true-idle fills, low rank).
