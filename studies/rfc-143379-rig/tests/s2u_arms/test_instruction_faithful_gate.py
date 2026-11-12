@@ -35,7 +35,7 @@ def _receipts_mechanical(declarer_assertion):
     missing = [n for n, p in ARTIFACTS.items() if not os.path.exists(p)]
     if missing:
         return False, f"missing receipts: {missing}"
-    age = (time.time() - os.path.getmtime(ARTIFACTS["audit"])) / 60
+    age = (time.time() - os.path.getmtime(ARTIFACTS["final"])) / 60
     if age > MAX_ARTIFACT_AGE_MIN:
         return False, f"stale receipt: the design's landing is {age:.0f} min old"
     battery_rows = 0
