@@ -56,6 +56,11 @@ SelfImprove-Bench and the criteria-exposure studies (2611.08318) show the same c
 
 P0: 1 · P1: 119 · P2: 8,799 · P3: 9,787 · P4: 120 · unlabeled: 173 (exact-label counts, 11-11, sample-verified against the substring-collision class). The P4 bucket is the queue's smallest; the drift class already fills a fifth of it; the RFC sits two bands below where the queue works (~18,586 in P2/P3). The label's departure from the queue's own shape is measured, not asserted.
 
+
+## 14. The middleware's proof — why this is not a P4, in the fleet's own numbers
+
+The night's own instrument makes the severity argument concrete: a 12B-class seat's tool-gap — the same absent-base-capability shape as the read-gap — was bridged with roughly 100 lines of middleware (the permission-sentence, the honest tool-documentation, the in-context demonstration, the prose-call recovery), and the bridge turned a seat that would have been excluded for tool-use into a working lane in a few hours. The read-gap's compensation runs 6,275 lines, four-plus known hand-back sites, and a decade-magnitude drift bill. The class's cost is the workaround's weight; the base capability's presence is the priority. The workarounds work is the P4's logic; the workarounds' bill is the refutation.
+
 ## Change log
 
 1. **Folded the queue's measured P-shape into the draft.** P0:1 · P1:123 · P2:~8,800 · P3:~9,780 · P4:~120 · unlabeled:173; the P4 bucket's the smallest and the drift class's already a fifth of it; the RFC sits two bands below where the queue works (~18,580 in P2/P3). *Why:* the brief's purpose is "never a nice-to-have pilot" — the P-shape is the queue's own evidence that the label's a departure, not a resting state.
