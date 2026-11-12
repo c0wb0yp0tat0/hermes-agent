@@ -20,3 +20,6 @@ Loom-runs queue only when BOTH hold: (1) the self-hosted battery is idle, and (2
 
 ## THE NEVER-IDLE DOCTRINE'S FULL WIDTH (the operator's seal, 11-12)
 The batteries-are-never-idle endeavor covers the ENTIRE family: the Avrea twin, the non-Avrea surface, AND the fork-field's cells (each fork a little battery with its own arms and its own draws on the non-Avrea lane). When the main stack compresses, the fork-cells cycle their own work — the little-batteries' rounds, the loom's fills, the per-fork arms — so no cell in the family idles while work exists. The loom's placing rule applies family-wide: fills come only when the cell above is compressed; the never-idle's the whole organism's law, not the main deck's alone.
+
+## THE ANOLISA LOOM-CELL (the operator's queue-add, 11-12)
+The ANOLISA repo rows into the loom-run queue with the contribution-intent: we want to give back to it if we can. Its stack-rank sits LOWER than the previously-discussed items (the fleet's internal frogs and the already-queued care); it draws when the deck's true-idle and nothing higher stands — the phantom's own rule. Its work-shape: study the repo's mechanisms, identify where the fleet's instruments (the middleware, the arms, the memory-testing) could contribute a real improvement, and stage the contribution internally (nothing public without the word).
