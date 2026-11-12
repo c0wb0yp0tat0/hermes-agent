@@ -22,7 +22,7 @@ ARTIFACTS = {
     # REPO-RELATIVE (the matrix's divergence-gift, 11-11): the cloud runner's workspace is not
     # /root/workspace — the absolute paths measured the seam; the relative root closes it for
     # every surface at once (the self-hosted AND the cloud).
-    "final": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL5-20261111.md"),
+    "final": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL8-20261111.md"),
     "record": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/RFC-143379-RECORD-20261111.md"),
 }
 LEDGER = os.environ.get("S2U_LEDGER", "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl")  # the CI seam (11-11): the battery-run itself writes the receipt-row its arm demands
