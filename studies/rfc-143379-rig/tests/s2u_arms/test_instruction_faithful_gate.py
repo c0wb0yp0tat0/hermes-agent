@@ -14,7 +14,7 @@ mechanical gate's in place.
 """
 import json, os, time
 
-_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # the repo root (the study/tests/s2u_arms/… -> the repo root)
+_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))  # the repo root (s2u_arms -> tests -> rfc-143379-rig -> studies -> repo — five up)
 ARTIFACTS = {
     # the loop's landed receipts (hash-verified at the gate's read) — refreshed 11-11 to the
     # TEAMS' actual landings (the apex-moment's finding: the arm pinned a stale design-doc and
