@@ -21,3 +21,8 @@ The middleware’s proof makes the severity argument concrete. A 12B-class seat�
 To the person who did the category change, c2h5oh: your triage work and the record’s care are deeply appreciated. The ask is simple: a re-triage of the RFC’s label against its own body’s centerpiece—the read-restore (#141876) as the P2 it already is in the repo’s own triage—and a sentence on the record explaining the P2→P3→P4 trail. If the P4 is the intended resting state, I’d want to understand why the body’s core is the one piece parked. This is not a demand, but a request for a re-read of the record’s thread, so the label may follow the body.
 
 Thank you for the record’s reviewers, the executions, and the thread’s labor. The ask is minimized to seconds: re-read the record and let the label follow the body.
+
+
+## The close — an invitation, not a demand
+
+The read's question is open, and its answer belongs to the thread's whole table: Sultan, and the participants whose executions and audits built this record — jfugalde's run, xngg1021's seam-audits, 3oltan-seo's touch-bases, ZacharyThomasStone's engagement — and anyone else on or watching this thread, whether they've commented or not. If the read agrees the read-action's absence is the core wound, the restore is the centerpiece and the label follows the body; if it disagrees, I'd want to know which of the echo-sites is the actual dependency, and I'd rescope, split, or take evidence offers gladly. The two-way doors stay open, and the gratitude — for the triage-work, the record's care, and the minutes this thread has cost — is real. The one-line ask, final: re-read the record's thread and let the label follow the body.
