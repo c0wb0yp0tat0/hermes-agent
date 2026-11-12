@@ -61,7 +61,10 @@ except Exception as e:
 # --- C4: the restore-head's counterfactual (fetched + worktree'd; honest to NOT-RUN) ---
 note, verdict = "", "NOT-RUN"
 try:
-    r = subprocess.run(["git", "fetch", "origin", "refs/pull/141876/head:refs/restore-head"],
+    # the fetch-source's parameterized (the C4-counterfactual's fix, 11-11: the pull-ref lives on
+    # the UPSTREAM, never the fork's origin)
+    _upstream = os.environ.get("S2U_UPSTREAM", "https://github.com/NousResearch/hermes-agent")
+    r = subprocess.run(["git", "fetch", _upstream, "refs/pull/141876/head:refs/restore-head"],
                        capture_output=True, text=True, cwd=ROOT, timeout=120)
     if r.returncode == 0:
         r2 = subprocess.run(["git", "worktree", "add", "/tmp/restore-head", "refs/restore-head"],
