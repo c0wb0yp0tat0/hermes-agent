@@ -15,3 +15,5 @@ So the ask, plainly and without drama: a re-read. Read the record's thread and l
 Thank you again to c2h5oh for the triage work and the record's care, to jfugalde for the execution, to xngg1021 for the audits, to 3oltan-seo, ZacharyThomasStone, alt-glitch, kvnloo, smalltimber, burdenedpilgram93, and to everyone who has read this far in a thread that has asked a lot of you. The minutes are scarce in a queue this drowning, but they were not wasted here. Re-read the record, and let the label follow the body.
 
 The final ask: re-read the record's thread and let the label follow the body.
+
+*Drafted with Mistral Nemo — the small model this middleware brought into the craft, on behalf of the record's own evidence.*
