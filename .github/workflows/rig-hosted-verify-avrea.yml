@@ -80,7 +80,7 @@ jobs:
           mkdir -p studies/rfc-143379-rig/CYCLES
           echo "{\"t\":$(date +%s),\"req_bytes\":1}" >> studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl
           export S2U_LEDGER="$GITHUB_WORKSPACE/studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl"
-          uv run pytest $BASE -rs -q 2>&1 | tail -40
+          uv run pytest $BASE -rs -q 2>&1 | grep -E "FAILED|AssertionError|passed|failed|short test" | tail -20
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
