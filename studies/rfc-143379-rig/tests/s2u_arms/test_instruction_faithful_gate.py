@@ -15,9 +15,11 @@ mechanical gate's in place.
 import json, os, time
 
 ARTIFACTS = {
-    # the loop's landed receipts (hash-verified at the gate's read)
-    "design": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/TRIAD-DESIGN-20261111.md",
-    "synthesis": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL3-20261111.md",
+    # the loop's landed receipts (hash-verified at the gate's read) — refreshed 11-11 to the
+    # TEAMS' actual landings (the apex-moment's finding: the arm pinned a stale design-doc and
+    # refused the loop for hours — the gate must measure the loop's fresh receipts, not the past)
+    "audit": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/TEAM-AUDIT-FINAL4-20261111.md",
+    "synthesis": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL4-20261111.md",
     "record": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/RFC-143379-RECORD-20261111.md",
 }
 LEDGER = "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl"
@@ -30,7 +32,7 @@ def _receipts_mechanical(declarer_assertion):
     missing = [n for n, p in ARTIFACTS.items() if not os.path.exists(p)]
     if missing:
         return False, f"missing receipts: {missing}"
-    age = (time.time() - os.path.getmtime(ARTIFACTS["design"])) / 60
+    age = (time.time() - os.path.getmtime(ARTIFACTS["audit"])) / 60
     if age > MAX_ARTIFACT_AGE_MIN:
         return False, f"stale receipt: the design's landing is {age:.0f} min old"
     battery_rows = 0
