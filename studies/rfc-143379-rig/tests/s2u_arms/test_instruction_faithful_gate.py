@@ -14,13 +14,17 @@ mechanical gate's in place.
 """
 import json, os, time
 
+_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # the repo root (the study/tests/s2u_arms/… -> the repo root)
 ARTIFACTS = {
     # the loop's landed receipts (hash-verified at the gate's read) — refreshed 11-11 to the
     # TEAMS' actual landings (the apex-moment's finding: the arm pinned a stale design-doc and
-    # refused the loop for hours — the gate must measure the loop's fresh receipts, not the past)
-    "audit": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/TEAM-AUDIT-FINAL4-20261111.md",
-    "synthesis": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL4-20261111.md",
-    "record": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/RFC-143379-RECORD-20261111.md",
+    # refused the loop for hours — the gate must measure the loop's fresh receipts, not the past).
+    # REPO-RELATIVE (the matrix's divergence-gift, 11-11): the cloud runner's workspace is not
+    # /root/workspace — the absolute paths measured the seam; the relative root closes it for
+    # every surface at once (the self-hosted AND the cloud).
+    "audit": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/TEAM-AUDIT-FINAL4-20261111.md"),
+    "synthesis": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL4-20261111.md"),
+    "record": os.path.join(_REPO, "studies/rfc-143379-rig/CYCLES/RFC-143379-RECORD-20261111.md"),
 }
 LEDGER = os.environ.get("S2U_LEDGER", "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl")  # the CI seam (11-11): the battery-run itself writes the receipt-row its arm demands
 MAX_ARTIFACT_AGE_MIN = 30  # the receipts must be FRESH — stale evidence is no evidence
