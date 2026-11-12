@@ -8,7 +8,7 @@ The label trail reads like the field now describes this mechanism. The category 
 
 We reproduced the wound first-hand: without the read-path, an agent fabricates responses six out of six, twice, and the same prompts with one non-punitive sentence of abstention restored refuse cleanly, twelve out of twelve. The read's absence is a fabrication pump, and I think that is what the users' "you're not listening" has been hearing.
 
-The severity is made concrete by our fleet's numbers tonight: a tool-capable small model, mistral-nemo — a 12B seat whose long-horizon tool-use the night's middleware steadied — was carried with roughly a hundred lines of middleware, turning its deep tool-use into a working lane within hours. The compensation for the read-gap runs 6,275 lines across five known echo-sites, and the class's cost is the workaround's weight—a hundred and sixteen times that bill, already paid, is the argument for the fix.
+The severity is made concrete by our fleet's numbers tonight: a tool-capable small model, mistral-nemo — a 12B seat whose deep tool-use a thin, custom-built middleware layer finally made reliable — was carried into a working lane within hours. The compensation for the read-gap runs 6,275 lines across five known echo-sites, and the class's cost is the workaround's weight—a hundred and sixteen times that bill, already paid, is the argument for the fix.
 
 So the ask, plainly and without drama: a re-read. Read the record's thread and let the label follow the body, the restore as the P2 the repository's own triage already says it is. If the read disagrees, tell me which of the echo-sites is the actual dependency, and I will gladly rescope, split the question, or take evidence offers.
 
