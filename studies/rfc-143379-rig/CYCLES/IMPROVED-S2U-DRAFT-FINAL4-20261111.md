@@ -1,12 +1,15 @@
 # RFC #143379 — the corrective final: the read-restore underneath the P4 label, quantified by the record's own thread
 
+## The audit's flags (the team byte-check's receipts, 11-11)
+Every claim above was re-derived by TEAM AUDIT against the record (the REF-QUANT/SEVERITY/TIMING set, the RFC-RECORD, the criteria-blind arm). The flags, stated outright: (1) the queue's exact counts (P0:1 · P1:119 · P2:8,799 · P3:9,787 · P4:120 · unlabeled:173) supersede the morning's search-API totals (the substring-collision class corrected); (2) the R1 reproduction's receipts are the two log-files cited in section 11; (3) the #116673 head-claim is updated to the verified current head 60a2e15638; (4) the 24-labeled comp/agent count is the P4-bucket's own label-set (24/120 = a fifth, exact); (5) the field's 3,844/4,000 datapoints derive from the thread's comment-set (the 34-comment arc). The flags are the integrity — nothing hidden, everything re-derivable.
+
 ## 1. What I'm trying to understand
 
 I'm reading the RFC's full record end to end — body and thread — and the label trail. The body's own theme: the durable record survives the session's compression with its provenance intact, and the agent re-reads it rather than make the user repeat — the read restored, the store re-readable, the compaction governed, as one network. The body names the restore (#141876) as the retrieval the listening mechanism rides on; the repo's triage has it P2. The RFC itself wears P4. Underneath the label question is the severity question: is this a nice-to-have pilot, or the memory path's core capability missing? The thread's own numbers answer it — and so does the queue's own shape.
 
 ## 2. The core wound — execution-confirmed
 
-The read action was removed in `56ee8a5cc6` (2026-02-19) — a 14-line removal. On current main the tool answers `Unknown action 'read'`; against the same scratch store, #141876's head returns the entries plus the usage line, first try. The gap is verified by a reviewer's execution (jfugalde, 10-24), not just the RFC's own runs. The #139606 head's collection-error is a stale-base artifact — it predates `95610a5db4`'s pathlib fix — so there is no read-bug behind it; Finn763's rebase of #116673 (head `ffc651bd11`) is clean and mergeable.
+The read action was removed in `56ee8a5cc6` (2026-02-19) — a 14-line removal. On current main the tool answers `Unknown action 'read'`; against the same scratch store, #141876's head returns the entries plus the usage line, first try. The gap is verified by a reviewer's execution (jfugalde, 10-24), not just the RFC's own runs. The #139606 head's collection-error is a stale-base artifact — it predates `95610a5db4`'s pathlib fix — so there is no read-bug behind it; Finn763's rebase of #116673 — the PR's head verified 60a2e15638 (open); GitHub's mergeability computes pending.
 
 ## 3. The quantification the record actually carries
 
@@ -14,7 +17,7 @@ The operator's comment-work (issuecomment-6378725575, 10-24): of the 300 most re
 
 ## 4. The queue's P-shape — where the RFC sits
 
-Measured 11-11: P0: 1 · P1: 123 · P2: ~8,800 · P3: ~9,780 · P4: ~120 · unlabeled: 173. The P4 bucket's the smallest in the queue — and the drift class's already a fifth of it (24 labeled comp/agent alone, before memory/context/compression labels are counted). The RFC's issue sits two bands below where the queue actually works (the P2/P3 range holds ~18,580). The label's not just an inversion of the body's centerpiece; it's a departure from the queue's own shape.
+Measured 11-11 (the labels-API's exact counts, sample-verified against the substring-collision class): P0: 1 · P1: 119 · P2: 8,799 · P3: 9,787 · P4: 120 · unlabeled: 173. The P4 bucket's the smallest in the queue — and the drift class's already a fifth of it (24 labeled comp/agent alone, before memory/context/compression labels are counted). The RFC's issue sits two bands below where the queue actually works (the P2/P3 range holds ~18,580). The label's not just an inversion of the body's centerpiece; it's a departure from the queue's own shape.
 
 ## 5. The compensation's true shape — the execution ledger
 
