@@ -64,7 +64,7 @@ The night's own instrument makes the severity argument concrete: a 12B-class sea
 
 ## 15. The quantified frame — the queue's drowning, measured
 
-The maintainers' reality, taken seriously: ~190 issues arrive every day against ~43 closing — the backlog is NET-GROWING, and 897 issues were touched in the last two days alone (~450 touches/day). Every thread gets minutes, not reads. This RFC's thread carries 37 comments of verified work — only 16 issues newer carry 10+ — top-percentile visibility in that crush, still wearing P4. Not ignored: outnumbered. The label's volatility is the crush's handwriting: the read-lightest zone (170 issues) is where categories move with the skim.
+The maintainers' reality, taken seriously — and the class's full shadow measured: the repo's complete issue history is ~40,094, and the drift-class at that total scale is ~17,240 (2.36x the open-only estimate) — yet the class is INVISIBLE to the label-census (no bare memory/context/session labels exist; the fingerprint rides keyword-words), so the queue cannot even count its own largest wound. The maintainers' reality, taken seriously: ~190 issues arrive every day against ~43 closing — the backlog is NET-GROWING, and 897 issues were touched in the last two days alone (~450 touches/day). Every thread gets minutes, not reads. This RFC's thread carries 37 comments of verified work — only 16 issues newer carry 10+ — top-percentile visibility in that crush, still wearing P4. Not ignored: outnumbered. The label's volatility is the crush's handwriting: the read-lightest zone (170 issues) is where categories move with the skim.
 
 ## 16. The self-reinforcing root (the Kettering's cut)
 
