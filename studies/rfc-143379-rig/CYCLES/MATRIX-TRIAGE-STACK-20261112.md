@@ -17,3 +17,6 @@ The operator's "once it's free" governs the timing: the deck's current legs land
 
 ## THE LOOM'S PLACING RULE (the operator's refinement, 11-12)
 Loom-runs queue only when BOTH hold: (1) the self-hosted battery is idle, and (2) nothing triaged above it sits queued. The loom is the deck's true-idle absorber — the bottom-of-stack filler that makes a genuinely idle queue easy to fill, never a jumper of the triage order. When the stack's compressed and the deck's quiet, the loom rows in and the never-idle doctrine holds without disturbing a single triaged cell.
+
+## THE NEVER-IDLE DOCTRINE'S FULL WIDTH (the operator's seal, 11-12)
+The batteries-are-never-idle endeavor covers the ENTIRE family: the Avrea twin, the non-Avrea surface, AND the fork-field's cells (each fork a little battery with its own arms and its own draws on the non-Avrea lane). When the main stack compresses, the fork-cells cycle their own work — the little-batteries' rounds, the loom's fills, the per-fork arms — so no cell in the family idles while work exists. The loom's placing rule applies family-wide: fills come only when the cell above is compressed; the never-idle's the whole organism's law, not the main deck's alone.
