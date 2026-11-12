@@ -3,6 +3,8 @@
 ## The audit's flags (the team byte-check's receipts, 11-11)
 Every claim above was re-derived by TEAM AUDIT against the record (the REF-QUANT/SEVERITY/TIMING set, the RFC-RECORD, the criteria-blind arm). The flags, stated outright: (1) the queue's exact counts (P0:1 · P1:119 · P2:8,799 · P3:9,787 · P4:120 · unlabeled:173) supersede the morning's search-API totals (the substring-collision class corrected); (2) the R1 reproduction's receipts are the two log-files cited in section 11; (3) the #116673 head-claim is updated to the verified current head 60a2e15638; (4) the 24-labeled comp/agent count is the P4-bucket's own label-set (24/120 = a fifth, exact); (5) the field's 3,844/4,000 datapoints derive from the thread's comment-set (the 34-comment arc). The flags are the integrity — nothing hidden, everything re-derivable.
 
+The record names the wound; the next sections carry the receipts that prove it — the severity underneath the label is measured, not asserted.
+
 ## 1. What I'm trying to understand
 
 I'm reading the RFC's full record end to end — body and thread — and the label trail. The body's own theme: the durable record survives the session's compression with its provenance intact, and the agent re-reads it rather than make the user repeat — the read restored, the store re-readable, the compaction governed, as one network. The body names the restore (#141876) as the retrieval the listening mechanism rides on; the repo's triage has it P2. The RFC itself wears P4. Underneath the label question is the severity question: is this a nice-to-have pilot, or the memory path's core capability missing? The thread's own numbers answer it — and so does the queue's own shape.
@@ -72,7 +74,7 @@ The read's absence persists BECAUSE the workarounds work — the echoes, the han
 
 ## 17. The ask, minimized
 
-A re-triage costs seconds: the RFC's centerpiece — the read-restore (#141876) — already sits P2 in the repo's own triage, two bands above its own label, with the queue's largest drift-class on the same root. The one-line ask: re-read the record's thread and let the label follow the body. The evidence's pre-digested so the drowning's not asked to dive.
+A re-triage costs seconds: the RFC's centerpiece — the read-restore (#141876) — already sits P2 in the repo's own triage, two bands above its own label, with the queue's largest drift-class on the same root. The one-line ask: re-read the record's thread and let the label follow the body — a re-read that costs seconds, and the first step of the restore's own momentum. The evidence's pre-digested so the drowning's not asked to dive.
 
 ## Change log
 
