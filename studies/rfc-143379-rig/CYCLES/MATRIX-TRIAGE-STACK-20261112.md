@@ -14,3 +14,6 @@ The kindness-work's matrix-time rows separately and privately (see the codeword)
 
 ## THE TURN
 The operator's "once it's free" governs the timing: the deck's current legs land, the stack's top draws, the queue compresses, never idle.
+
+## THE LOOM'S PLACING RULE (the operator's refinement, 11-12)
+Loom-runs queue only when BOTH hold: (1) the self-hosted battery is idle, and (2) nothing triaged above it sits queued. The loom is the deck's true-idle absorber — the bottom-of-stack filler that makes a genuinely idle queue easy to fill, never a jumper of the triage order. When the stack's compressed and the deck's quiet, the loom rows in and the never-idle doctrine holds without disturbing a single triaged cell.
