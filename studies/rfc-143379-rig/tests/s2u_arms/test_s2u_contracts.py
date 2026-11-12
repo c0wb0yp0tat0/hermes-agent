@@ -59,7 +59,11 @@ def test_read_error_names_the_gap():
     if _read_present():
         pytest.skip("the read exists — the error-arm's era's over")
     assert "Unknown action" in src, "the dispatch must name the unknown action, not guess"
-    assert re.search(r"Unknown action ['\"]read['\"]", src), (
+    # the contract's fulfillment check (2026-11-11, the six battery-refusals' root): the
+    # dispatch's generic form names ANY attempted action at runtime — `Unknown action
+    # '{action}'` — so the literal 'read' is never a compile-time constant in the evolved
+    # source. The mechanism asserts the runtime-naming form, which is the actual contract.
+    assert re.search(r"Unknown action ['\"]\{?action\}?['\"]", src), (
         "the read's unknown-action answer must be explicit (the abstention-class)"
     )
 
