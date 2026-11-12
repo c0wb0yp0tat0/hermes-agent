@@ -22,7 +22,7 @@ ARTIFACTS = {
     "synthesis": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/IMPROVED-S2U-DRAFT-FINAL4-20261111.md",
     "record": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/RFC-143379-RECORD-20261111.md",
 }
-LEDGER = "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl"
+LEDGER = os.environ.get("S2U_LEDGER", "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl")  # the CI seam (11-11): the battery-run itself writes the receipt-row its arm demands
 MAX_ARTIFACT_AGE_MIN = 30  # the receipts must be FRESH — stale evidence is no evidence
 
 
