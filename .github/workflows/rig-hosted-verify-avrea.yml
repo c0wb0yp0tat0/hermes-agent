@@ -63,6 +63,11 @@ jobs:
       - name: The verification battery (write-gate + memory-tool + falsifier-battery)
         shell: bash
         run: |
+          # THE ENVIRONMENTAL CONTEXT (earned 11-11, the envdiff-lesson): the local-green/CI-red
+          # class is environmental divergence — the runner's context gets uploaded with the run,
+          # so the wound always names itself; pwd/git-root/python/uid are the snapshot's core.
+          echo "ENV-SNAPSHOT: pwd=$(pwd) | git-root=$(git rev-parse --show-toplevel 2>/dev/null || echo none) | python=$(python3 --version 2>&1) | uid=$(id -u) | CI=${CI:-unset}"
+          echo "ENV-SNAPSHOT: workspace=$GITHUB_WORKSPACE | repo=$(basename "${GITHUB_WORKSPACE:-.}") | ref=$GITHUB_REF_NAME"
           # uv run: the synced venv's interpreter, never the PATH's system
           # python (which has no pytest and none of the synced deps).
           # Path-tolerance (earned 2026-11-05): the falsifier-battery lives on
