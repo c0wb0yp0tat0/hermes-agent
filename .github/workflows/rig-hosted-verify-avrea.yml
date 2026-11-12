@@ -74,6 +74,12 @@ jobs:
           [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           [ -d studies/rfc-143379-rig/tests/s2u_arms ] && BASE="$BASE studies/rfc-143379-rig/tests/s2u_arms/"
+          # the CI receipt-row (earned 11-11): this run IS the fresh-test the criteria-arm
+          # measures — its own existence writes the row the gate reads (the host-drop's
+          # absent in CI). The ledger-path's env-seam lives in the arm (S2U_LEDGER).
+          mkdir -p studies/rfc-143379-rig/CYCLES
+          echo "{\"t\":$(date +%s),\"req_bytes\":1}" >> studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl
+          export S2U_LEDGER="$GITHUB_WORKSPACE/studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl"
           uv run pytest $BASE -rs -q 2>&1 | tail -40
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
