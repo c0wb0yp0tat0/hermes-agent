@@ -1,44 +1,29 @@
-# NEMO SANITY-CHECK — IMPROVED-S2U-DRAFT-FINAL5-20261111
+# NEMO SANITY-CHECK — FINAL5 (improved-S2U-draft)
+## Verdict: SANE-WITH-NOTES
+*artifact path:* /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/SOLAR-SANITY-FINAL5-20261111.md
 
-**Date:** 2026-11-11
-**Verifier:** Nemo (cheapest seat, fleet middleware)
-**Artifact under review:** `IMPROVED-S2U-DRAFT-FINAL5-20261111.md` (CYCLES/)
-**Verdict: SANE-WITH-NOTES**
+---
 
-## Integrated sanity summary
+## (a) End-to-end coherence
+Overall the draft coheres well: it reads as a single narrated argument — the read-action's absence is the core wound, the restore (#141876) is the centerpiece sitting P2 in the repo's triage, the label P4 is the residue of a reading-driven category trail, and the ask is to let the label follow the body. Section 1 frames it, section 2 establishes the wound as execution-confirmed, sections 3–4 quantify and place it in the queue, section 5 details the compensation shape, sections 6–7 carry the user-cost and the hinge, sections 8–9 state the ask with open doors, and sections 10–17 supply the category-fluctuation exhibit, the first-hand reproduction, field corroboration, the exact queue shape (measured twice, corrected), the middleware proof, the quantified frame, the self-reinforcing root, and the minimized ask. The architecture is sound and the register holds throughout.
 
-As an independent reader, I read the draft end to end. The piece coheres structurally: an executive ask is stated up front, a definition of the S2U datum is given, the pipeline anatomy is described, the flagged edge cases are enumerated, and a verification checklist closes the loop. The register is consistent (issue-report / protocol log), and the ask is concrete. However, three notes must be fixed before the artifact can be read as a clean, uncorrupted record: (1) the numeric constraints and the timing table disagree; (2) the hardening list contradicts the earlier claim of full automation; (3) the checklist headline uses the wrong metric word. All three are localized and renames-only. Nothing here is fatal to the intent, but the contradiction window should be closed before the file leaves the study folder.
+## (b) Internal contradictions — top issues
+1. **Section 4 vs. section 13 — identical claims, conflicting totals.** Section 4 says "the P2/P3 range holds ~18,580" while section 13 says "~18,586 in P2/P3". These are the same reported quantity, stated both as 18,580 and 18,586 (a 6-issue discrepancy that is unexplainable and breaks the register). Both sections otherwise repeat the same exact queue counts (P0:1 · P1:119 · P2:8,799 · P3:9,787 · P4:120 · unlabeled:173), so the two versions of the same number stand in direct conflict.
+2. **Section 3's "the 6,275 lines of compensation, ~116× over" vs. section 5's "6,275 lines (3,541 added, 2,734 deleted)."** 3,541 + 2,734 = 6,275, so the totals reconcile — but section 3 introduces the 6,275 figure as "*the* compensation" while section 5 is careful to call it "The ledger counts" and frames 6,275 as the total across 106 commits. Section 3's phrasing ("the 6,275 lines of compensation, ~116× over") works as a ratio against the ~726,000 extrapolated drift lines, but the draft never states that the 6,275 is the *ledger total*, not the compensation itself — section 5 explicitly says "The debt's a subset," implying the 6,275 is larger than the debt. This is a framing ambiguity rather than a clean arithmetic contradiction.
+3. **Section 10 repeats section 7 almost verbatim** (the P2→P3→P4 trail is stated identically in both), and section 15 claims "This RFC's thread carries 37 comments of verified work" while the audit's flag says the field datapoints derive from "the 34-comment arc" and section 7 says "the thread grew 34 comments." 37 comments vs. 34 comments is a 3-issue discrepancy in the very thread the draft is measuring. Similarly, section 15 says "the read-lightest zone (170 issues)" while section 4 says "unlabeled: 173." 170 vs. 173.
+4. **Section 15's "~40,094" complete-issue-history vs. section 3's "~16,900 open" / "~19,930 closed"** — 16,900 + 19,930 = 36,830, which does not equal 40,094, and 40,094 is not 16,900+19,930. These three figures are mutually inconsistent (open + closed ≠ total history). Also section 15's "190 issues arrive every day against ~43 closing" gives a net growth of 147/day; over ~234 days (oldest open) that yields ~34,300 net, which exceeds the claimed 40,094 history and dwarfs the "17,240 drift at total scale" figure. The scale arithmetic is loose and the draft does not reconcile its own totals.
 
-## Note 1 — Numbers conflict between the Timing table and the Automation summary (SECTION 2 / SECTION 3)
+## (c) Sections that read flat / break the register
+- **Section 17 is truncated mid-sentence** ("a re-read that costs seconds, and th") — the ask, minimized, does not complete. This is the single most material register-break because it leaves the deliverable of the whole document unfinished.
+- **Section 12's citation "(2611.08318)"** reads as a garbled/imprecise arXiv-style identifier and does not clearly resolve; it sits in a supporting footnote of the ask without further context. Not a contradiction, but a completeness gap.
+- **Sections 7 and 10** are near-duplicates; section 10's "The executions and confirmations landed hours later" adds a vague temporal claim with no anchor, but this is a minor redundancy rather than a break.
 
-- **Section:** Section 2 (Timing) vs. Section 3 (Automation summary)
-- **Exact issue:** Section 3, bullet 1 states that the legacy stack "automatically regenerates the S2U artifact on every reference event" and that the current draft "adds no new merge path," while Section 2's Timing table lists a 24–48 hour manual verification window and a 3–5 day production cutover. Those two claims cannot both be true: if generation is automatic on every event, there is no 24–48h manual window to verify and no 3–5 day cutover to sequence. Either the automation bullet overstates the pipeline status, or the timing table describes a different (pre-automation) state that the draft has already superseded.
-- **Fix:** Align the two. Choose one ground truth: if the hardening work makes the pipeline automatic (as Section 4/5 imply), restate the timing table in terms of the new automatic regeneration cadence and drop the manual-window language; or, if the 24–48h window is the real verification step, clarify that the automation bullet refers only to regeneration of derived artifacts, not to the hand-off of the S2U record itself.
+## (d) Does the ask land?
+Yes, with the note above. The ask (sections 9, 17) is concrete and single: re-triage the RFC's label against its own body's centerpiece (#141876 read-restore as P2) and put a sentence on the record explaining the P2→P3→P4 trail. It is actionable, it is proportionate (a re-triage "costs seconds"), and it is the correct target for this document. The truncated ending of section 17 and the uncited "(2611.08318)" are the only deltas.
 
-## Note 2 — Hardening list contradicts the earlier "full automation" claim (SECTION 3 / SECTION 4)
+---
 
-- **Section:** Section 3 (Automation summary) vs. Section 4 (Hardening checklist)
-- **Exact issue:** Section 3 explicitly claims the pipeline is already fully automated, with zero human-in-the-loop steps. Section 4's hardening checklist, however, includes items that are fundamentally manual and human-dependent (e.g., "reconcile the reference-event log against the event source", "verify checksums of the regenerated S2U file by hand", "confirm the rollback trigger fires only on a deliberate operator command"). A "fully automated" pipeline cannot simultaneously require manual reconciliation, manual checksum verification, and operator-issued rollback triggers. One of these descriptions is wrong.
-- **Fix:** Reclassify Section 4's items. Mark any item that does not require a human operator as "structural/automation" and any genuinely manual item as "operational guardrails". Then adjust Section 3 to state precisely which steps are automated and which remain human-gated, so the summary no longer overclaims.
-
-## Note 3 — Checklist headline misuses the metric name (SECTION 5)
-
-- **Section:** Section 5 (verification checklist), headline
-- **Exact issue:** The Section 5 checklist headline reads "Verify the S2U metric against the reference frame." "Metric" is the wrong word here: the S2U datum is a pointer/reference datum (the target for the S2U hop), not a scalar metric with units. "Metric" understates the nature of the object and would cause a reader to search for units and tolerances that do not exist. The correct word is "datum," "pointer," or "S2U record."
-- **Fix:** Change the headline to "Verify the S2U datum against the reference frame" (or "Verify the S2U pointer ...). The body of the checklist is otherwise consistent.
-
-## Verdict call and what the notes mean for the deliverable
-
-- **SANITY:** The artifact is internally coherent, the register is right, and the ask (a 24–48h nightly S2U sweep with 3–5 day cutover, per Section 2) is concrete and lands. The structure is sound.
-- **WITNESS TO THE NOTES:** All three notes are renames/comparisons, not content overhauls. The substantive claims (the 24–48h window, the 3–5 day cutover, the need for operator-issued rollback, the reference-frame check itself) do not contradict each other once Note 1 and Note 2 are aligned; the metric-word error in Note 3 is cosmetic.
-- **Recommendation:** This is a good draft that should be re-run through the composer before it is committed anywhere, but it is not a broken artifact. No re-read is required.
-
-## Checklist summary
-
-| # | Section | Issue | Severity |
-|---|---------|-------|----------|
-| 1 | 2 vs 3 | Timing table vs. automation bullet disagree on manual-vs-automatic generation | Medium |
-| 2 | 3 vs 4 | "Fully automated" claim vs. manual hardening items | Medium |
-| 3 | 5 | Headline uses "metric" instead of "datum/pointer" | Low |
-
-**Nothing here is a showstopper; three small consistency windows, all localized, all renames-only.**
+## Top 3 notes
+1. **Section 4–13 conflict:** "the P2/P3 range holds ~18,580" (§4) vs. "~18,586 in P2/P3" (§13) — same quantity stated with a 6-issue discrepancy and never reconciled.
+2. **Section 15 comment-count and label-count drift:** 37 comments in §15 vs. 34 in §7; "unlabeled: 170" in §15 vs. "unlabeled: 173" in §4. Two small inconsistencies that settle on one figure if the draft re-reads the thread.
+3. **Section 17 truncation:** the document's ask, minimized, is cut off mid-sentence at the end ("a re-read that costs seconds, and th"). The artifact must be completed before it can close. (Soft issue; not a soundness failure.)
