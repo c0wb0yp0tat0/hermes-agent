@@ -14,3 +14,5 @@ Every candidate's fate, in one durable row.
 | H | storm 18:15 (NOT-READY) | PARKED-NOTREADY-1's falsifier scoping | **PARK** | the category-scoping gate |
 
 The adoptions A–D and F are internal-only acts — no public surface, no gate beyond PR#1. The parks E–H hold until their gates open. This table is the adoption's record; the actions proceed row by row at the fleet's cadence.
+
+**C's execution (completed 11-12):** the S2U_LEDGER env-seam's doc-row — the arm's ledger resolves from the environment (default: the host drop); the CI-runner writes its own receipt-row (the battery-run IS the fresh-test); the seam's the documented accommodation for the ledger's off-root position.
