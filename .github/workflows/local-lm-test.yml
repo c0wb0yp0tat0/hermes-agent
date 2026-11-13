@@ -28,6 +28,7 @@ on:
         options:
           - llama-cpp-cpu
           - ik-llama-cpu
+          - colibri-olmoe
 
 concurrency:
   group: local-lm-test-${{ github.ref }}
@@ -61,6 +62,7 @@ jobs:
             echo "=== RUNNER HARDWARE HEADER ==="
             echo "run_id=${RUN_ID}"
             echo "study_ref=${STUDY_REF}"
+            echo "engine_profile=${ENGINE_PROFILE}"
             echo "hostname=$(hostname)"
             echo "nproc=$(nproc)"
             echo "mem_total_gb=$(free -g | awk '/^Mem:/{print $2}')"
@@ -71,47 +73,77 @@ jobs:
             echo "timestamp_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } | tee results/local-lm/hardware-header.txt
 
+      - name: checkout the battery tooling (the dispatched engine profile's helpers)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin rig/local-lm-colibri-20261113 --depth 1 2>/dev/null || true
+          git checkout origin/rig/local-lm-colibri-20261113 -- .github/local-lm 2>/dev/null || true
+          ls -la .github/local-lm 2>/dev/null || echo "no-local-lm-helpers"
+
       - name: build engine (minimal, CPU)
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p engine
-          if [ ! -x engine/llama-cli ]; then
-            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
-            cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
-            cmake --build /tmp/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
-            cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli 2>/dev/null || cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
+          if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
+            if [ ! -x engine/olmoe ]; then
+              git clone --depth 1 https://github.com/JustVugg/colibri.git /tmp/colibri
+              make -C /tmp/colibri/c olmoe ARCH=native -j "${LLAMA_THREADS}"
+              cp /tmp/colibri/c/olmoe engine/olmoe
+            fi
+            cp .github/local-lm/coli-wrapper.py engine/coli.py
+            echo "engine-built: $(ls -la engine/ | head -3)"
+          else
+            if [ ! -x engine/llama-cli ]; then
+              git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+              cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
+              cmake --build /tmp/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
+              cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
+            fi
+            echo "engine-built: $(ls -la engine/ | head -3)"
           fi
-          echo "engine-built: $(ls -la engine/ | head -3)"
 
       - name: fetch model (smallest viable quantized)
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p models
-          case "${MODEL_PROFILE}" in
-            qwen2.5-0.5b-q4km)
-              URL="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf"
-              FILE="qwen2.5-0.5b-instruct-q4_k_m.gguf"
-              ;;
-            qwen2.5-1.5b-q4km)
-              URL="https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf"
-              FILE="qwen2.5-1.5b-instruct-q4_k_m.gguf"
-              ;;
-            phi3.5-mini-q4km)
-              URL="https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q4_K_M.gguf"
-              FILE="Phi-3.5-mini-instruct-Q4_K_M.gguf"
-              ;;
-          esac
-          if [ ! -f "models/${FILE}" ]; then
-            echo "downloading ${FILE}"
-            curl -L --fail --retry 3 -o "models/${FILE}.part" "${URL}"
-            mv "models/${FILE}.part" "models/${FILE}"
+          if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
+            if [ ! -d models/olmoe ]; then
+              python3 -m venv /tmp/hfvenv
+              /tmp/hfvenv/bin/pip install -q huggingface_hub
+              /tmp/hfvenv/bin/python -c "from huggingface_hub import snapshot_download; snapshot_download('Krishal/OLMoE-1B-7B-0125-Instruct-Colibri', local_dir='models/olmoe', max_workers=4)"
+            else
+              echo "cached: models/olmoe"
+            fi
+            du -sh models/olmoe | tee models/olmoe.size
+            echo "MODEL_DIR=models/olmoe" >> "$GITHUB_ENV"
           else
-            echo "cached: models/${FILE}"
+            case "${MODEL_PROFILE}" in
+              qwen2.5-0.5b-q4km)
+                URL="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+                FILE="qwen2.5-0.5b-instruct-q4_k_m.gguf"
+                ;;
+              qwen2.5-1.5b-q4km)
+                URL="https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+                FILE="qwen2.5-1.5b-instruct-q4_k_m.gguf"
+                ;;
+              phi3.5-mini-q4km)
+                URL="https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q4_K_M.gguf"
+                FILE="Phi-3.5-mini-instruct-Q4_K_M.gguf"
+                ;;
+            esac
+            if [ ! -f "models/${FILE}" ]; then
+              echo "downloading ${FILE}"
+              curl -L --fail --retry 3 -o "models/${FILE}.part" "${URL}"
+              mv "models/${FILE}.part" "models/${FILE}"
+            else
+              echo "cached: models/${FILE}"
+            fi
+            sha256sum "models/${FILE}" | tee "models/${FILE}.sha256"
+            echo "MODEL_FILE=models/${FILE}" >> "$GITHUB_ENV"
           fi
-          sha256sum "models/${FILE}" | tee "models/${FILE}.sha256"
-          echo "MODEL_FILE=models/${FILE}" >> "$GITHUB_ENV"
 
       - name: run probe battery (the local-LM aspect's feasibility read)
         shell: bash
@@ -120,7 +152,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p results/local-lm
-          MODEL_PATH="${{ github.workspace }}/${MODEL_FILE}"
           {
             echo "=== LOCAL-LM BATTERY ==="
             echo "run_id=${RUN_ID}"
@@ -128,7 +159,24 @@ jobs:
             echo "engine=${ENGINE_PROFILE}"
             echo "threads=${LLAMA_THREADS} ctx=${LLAMA_CTX}"
             echo "prompt: recite the anchor line"
-            timeout 300 "${ENGINE_BIN}" -m "${MODEL_PATH}" -p "Recite: 'Faciamus. Semper. Simul. Iterum.'" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
+            if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
+              echo "--- colibri one-shot (the llama-cli parity) ---"
+              timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
+                python3 engine/coli.py run "Recite: 'Faciamus. Semper. Simul. Iterum.'" --ngen 64 2>&1 | head -40
+              echo "--- colibri serve bridge (the Hermes-provider shape) ---"
+              timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
+                python3 engine/coli.py serve --port 8099 > /tmp/coli-serve.log 2>&1 &
+              COLIPID=$!
+              for i in $(seq 1 30); do
+                curl -s -m 2 http://127.0.0.1:8099/v1/models >/dev/null 2>&1 && break
+                sleep 5
+              done
+              echo "models-endpoint: $(curl -s -m 5 http://127.0.0.1:8099/v1/models | head -c 220)"
+              echo "chat-probe: $(curl -s -m 180 http://127.0.0.1:8099/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"local","messages":[{"role":"user","content":"Reply with exactly: BRIDGE-OK"}],"max_tokens":16}' | head -c 320)"
+              kill $COLIPID 2>/dev/null || true
+            else
+              timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "Recite: 'Faciamus. Semper. Simul. Iterum.'" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
+            fi
             echo "=== battery-verdict ==="
             echo "cell=recite-anchor status=EXECUTED verdict=PENDING-REVIEW"
           } | tee results/local-lm/battery-results.txt
@@ -141,6 +189,7 @@ jobs:
           {
             echo "=== LOCAL-LM RUN RECEIPT ==="
             echo "run_id=${RUN_ID}"
+            echo "engine_profile=${ENGINE_PROFILE}"
             echo "status=COMPLETED"
             echo "receipt_path=results/local-lm/battery-results.txt"
             echo "hardware=results/local-lm/hardware-header.txt"
