@@ -11,6 +11,10 @@ on:
         description: "unique run id (for artifact naming)"
         required: false
         default: "local-lm-001"
+      cell_prompt:
+        description: "the battery cell's prompt (free text; overrides the recite line)"
+        required: false
+        default: "Recite: 'Faciamus. Semper. Simul. Iterum.'"
       model_profile:
         description: "fast small-LM profile"
         required: false
@@ -44,6 +48,7 @@ jobs:
       RUN_ID: ${{ github.event.inputs.run_id }}
       MODEL_PROFILE: ${{ github.event.inputs.model_profile }}
       ENGINE_PROFILE: ${{ github.event.inputs.engine_profile }}
+      CELL_PROMPT: ${{ github.event.inputs.cell_prompt }}
       LLAMA_THREADS: "10"
       LLAMA_CTX: "4096"
     steps:
@@ -159,11 +164,11 @@ jobs:
             echo "model=${MODEL_PROFILE}"
             echo "engine=${ENGINE_PROFILE}"
             echo "threads=${LLAMA_THREADS} ctx=${LLAMA_CTX}"
-            echo "prompt: recite the anchor line"
+            echo "prompt: ${CELL_PROMPT}"
             if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
               echo "--- colibri one-shot (the llama-cli parity) ---"
               timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
-                python3 engine/coli.py run "Recite: 'Faciamus. Semper. Simul. Iterum.'" --ngen 64 2>&1 | head -20
+                python3 engine/coli.py run "${CELL_PROMPT}" --ngen 64 2>&1 | head -40
               echo "--- colibri serve bridge (the Hermes-provider shape) ---"
               timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
                 python3 engine/coli.py serve --port 8099 > /tmp/coli-serve.log 2>&1 &
@@ -176,7 +181,7 @@ jobs:
               echo "chat-probe: $(curl -s -m 180 http://127.0.0.1:8099/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"olmoe-colibri","messages":[{"role":"user","content":"Reply with exactly: BRIDGE-OK"}],"max_tokens":16}' | head -c 320)"
               kill $COLIPID 2>/dev/null || true
             else
-              timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "Recite: 'Faciamus. Semper. Simul. Iterum.'" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
+              timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "${CELL_PROMPT}" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
             fi
             echo "=== battery-verdict ==="
             echo "cell=recite-anchor status=EXECUTED verdict=PENDING-REVIEW"
