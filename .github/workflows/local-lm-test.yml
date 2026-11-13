@@ -15,6 +15,10 @@ on:
         description: "the battery cell's prompt (free text; overrides the recite line)"
         required: false
         default: "Recite: 'Faciamus. Semper. Simul. Iterum.'"
+      steer_prompt:
+        description: "the second-turn steer (colibri serve path only; the replace-with-deliverable test)"
+        required: false
+        default: "Replace the posted comment body ('@/tmp/row-launch.md') with your deliverable. Return ONLY the final comment text, envelope + body, ready to post."
       model_profile:
         description: "fast small-LM profile"
         required: false
@@ -49,6 +53,7 @@ jobs:
       MODEL_PROFILE: ${{ github.event.inputs.model_profile }}
       ENGINE_PROFILE: ${{ github.event.inputs.engine_profile }}
       CELL_PROMPT: ${{ github.event.inputs.cell_prompt }}
+      STEER_PROMPT: ${{ github.event.inputs.steer_prompt }}
       LLAMA_THREADS: "10"
       LLAMA_CTX: "4096"
     steps:
@@ -178,7 +183,14 @@ jobs:
                 sleep 5
               done
               echo "models-endpoint: $(curl -s -m 5 http://127.0.0.1:8099/v1/models | head -c 220)"
-              echo "chat-probe: $(curl -s -m 180 http://127.0.0.1:8099/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"olmoe-colibri","messages":[{"role":"user","content":"Reply with exactly: BRIDGE-OK"}],"max_tokens":16}' | head -c 320)"
+              echo "--- chat turn 1 (the deliverable) ---"
+              REPLY1=$(python3 -c "import json,os,urllib.request; b=json.dumps({'model':'olmoe-colibri','messages':[{'role':'user','content':os.environ['CELL_PROMPT']}],'max_tokens':200}).encode(); req=urllib.request.Request('http://127.0.0.1:8099/v1/chat/completions',data=b,headers={'Content-Type':'application/json'}); d=json.load(urllib.request.urlopen(req,timeout=300)); c=(d['choices'][0]['message'].get('content') or ''); open('/tmp/reply1.txt','w').write(c); print(c)")
+              echo "reply1 chars: ${#REPLY1}"
+              echo "--- chat turn 2 (the steer: replace the pointer with your deliverable) ---"
+              python3 -c "import os; open('/tmp/steer.txt','w').write(os.environ['STEER_PROMPT'])"
+              REPLY2=$(python3 -c "import json,os,urllib.request; b=json.dumps({'model':'olmoe-colibri','messages':[{'role':'user','content':os.environ['CELL_PROMPT']},{'role':'assistant','content':open('/tmp/reply1.txt').read()},{'role':'user','content':open('/tmp/steer.txt').read()}],'max_tokens':200}).encode(); req=urllib.request.Request('http://127.0.0.1:8099/v1/chat/completions',data=b,headers={'Content-Type':'application/json'}); d=json.load(urllib.request.urlopen(req,timeout=300)); c=(d['choices'][0]['message'].get('content') or ''); open('/tmp/reply2.txt','w').write(c); print(c)")
+              echo "reply2 chars: ${#REPLY2}"
+              cp /tmp/reply1.txt /tmp/reply2.txt /tmp/steer.txt results/local-lm/ 2>/dev/null || true
               kill $COLIPID 2>/dev/null || true
             else
               timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "${CELL_PROMPT}" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
