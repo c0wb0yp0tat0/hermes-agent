@@ -1,0 +1,45 @@
+name: windows-smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "smoke-run id for the c0wb0y Windows seat job-path probe"
+        required: true
+        default: "c0wb0y-smoke-001"
+
+jobs:
+  windows-smoke:
+    name: c0wb0y smoke leg — checkout + hardware header only
+    # c0wb0y is a self-hosted WINDOWS seat; its labels (self-hosted, X64, Windows)
+    # do not match the LM workflow's runs-on [self-hosted, avrea-ubuntu-latest],
+    # so this leg runs on the c0wb0y seat directly, bash-on-Windows, no engine build.
+    runs-on: [self-hosted, X64, Windows]
+    timeout-minutes: 15
+    env:
+      RUN_ID: ${{ github.event.inputs.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: runner header (hardware receipt — the c0wb0y job-path probe)
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "=== C0WB0Y SMOKE HEADER ==="
+          echo "run_id=${RUN_ID}"
+          echo "hostname=$(hostname)"
+          echo "cpu_model=$(wmic cpu get name 2^>^/dev/null | tail -1)"
+          echo "mem_total_gb=$(powershell -NoProfile -Command \"(Get-WmiObject Win32_ComputerSystem).TotalPhysicalMemory/1GB -replace '\\.[0-9]'\" 2^>^/dev/null || free -g 2>/dev/null | awk '/^Mem:/{print $2}')"
+          echo "cpu_flags=$(wmic cpu get NumberOfCores 2^>^/dev/null | tail -1)"
+          echo "shell: ${BASH_VERSION:-win32}"
+          echo "=== c0wb0y smoke probe DONE ==="
+
+      - name: bash-on-Windows job-path gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          # the gate: git-bash or wsl present = the c0wb0y seat can run bash-on-Windows
+          if command -v bash >/dev/null 2>&1; then echo "bash: $(command -v bash)"; else echo "WARN bash not on PATH (still a Windows seat)"; fi
+          echo "C0WB0Y-JOB-PATH-OK"
