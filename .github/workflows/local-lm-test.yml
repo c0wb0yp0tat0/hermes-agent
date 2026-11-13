@@ -196,7 +196,11 @@ jobs:
               timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "${CELL_PROMPT}" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
             fi
             echo "=== battery-verdict ==="
-            echo "cell=recite-anchor status=EXECUTED verdict=PENDING-REVIEW"
+            if [ "${#REPLY1}" -eq 0 ] && [ "${#REPLY2}" -eq 0 ]; then
+              echo "cell=recite-anchor status=EXECUTED verdict=NULL-CONTENT"
+            else
+              echo "cell=recite-anchor status=EXECUTED verdict=PENDING-REVIEW"
+            fi
           } | tee results/local-lm/battery-results.txt
           echo "BATTERY_DONE=1" >> "$GITHUB_ENV"
 
