@@ -163,7 +163,7 @@ jobs:
             if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
               echo "--- colibri one-shot (the llama-cli parity) ---"
               timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
-                python3 engine/coli.py run "Recite: 'Faciamus. Semper. Simul. Iterum.'" --ngen 64 2>&1 | head -40
+                python3 engine/coli.py run "Recite: 'Faciamus. Semper. Simul. Iterum.'" --ngen 64 2>&1 | head -20
               echo "--- colibri serve bridge (the Hermes-provider shape) ---"
               timeout 600 env COLI_MODEL="${{ github.workspace }}/models/olmoe" \
                 python3 engine/coli.py serve --port 8099 > /tmp/coli-serve.log 2>&1 &
@@ -173,7 +173,7 @@ jobs:
                 sleep 5
               done
               echo "models-endpoint: $(curl -s -m 5 http://127.0.0.1:8099/v1/models | head -c 220)"
-              echo "chat-probe: $(curl -s -m 180 http://127.0.0.1:8099/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"local","messages":[{"role":"user","content":"Reply with exactly: BRIDGE-OK"}],"max_tokens":16}' | head -c 320)"
+              echo "chat-probe: $(curl -s -m 180 http://127.0.0.1:8099/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"olmoe-colibri","messages":[{"role":"user","content":"Reply with exactly: BRIDGE-OK"}],"max_tokens":16}' | head -c 320)"
               kill $COLIPID 2>/dev/null || true
             else
               timeout 300 "${ENGINE_BIN}" -m "${{ github.workspace }}/${MODEL_FILE}" -p "Recite: 'Faciamus. Semper. Simul. Iterum.'" -n 64 -t "${LLAMA_THREADS}" -c "${LLAMA_CTX}" 2>&1 | head -20
