@@ -88,9 +88,10 @@ jobs:
           mkdir -p engine
           if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
             if [ ! -x engine/olmoe ]; then
-              git clone --depth 1 https://github.com/JustVugg/colibri.git /tmp/colibri
-              make -C /tmp/colibri/c olmoe ARCH=native -j "${LLAMA_THREADS}"
-              cp /tmp/colibri/c/olmoe engine/olmoe
+              mkdir -p .build
+              git clone --depth 1 https://github.com/JustVugg/colibri.git .build/colibri
+              make -C .build/colibri/c olmoe ARCH=native -j "${LLAMA_THREADS}"
+              cp .build/colibri/c/olmoe engine/olmoe
             fi
             cp .github/local-lm/coli-wrapper.py engine/coli.py
             echo "engine-built: $(ls -la engine/ | head -3)"

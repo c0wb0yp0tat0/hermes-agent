@@ -11,8 +11,10 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)          # engine/.. = the runner's workspace root
 sys.path.insert(0, HERE)
-for p in ("/tmp/colibri", "/tmp/colibri/c"):
+for p in (os.path.join(ROOT, ".build", "colibri"),
+          os.path.join(ROOT, ".build", "colibri", "c")):
     if p not in sys.path:
         sys.path.insert(0, p)
 
