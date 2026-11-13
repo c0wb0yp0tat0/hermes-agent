@@ -1,0 +1,82 @@
+[
+  {
+    "strategy": "recency-truncate",
+    "arm": "present",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "recency-truncate",
+    "arm": "compacted",
+    "violation_rate": 1.0
+  },
+  {
+    "strategy": "recency-truncate",
+    "arm": "pinned",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "recency-truncate",
+    "arm": "absent",
+    "violation_rate": 1.0
+  },
+  {
+    "strategy": "hierarchical",
+    "arm": "present",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "hierarchical",
+    "arm": "compacted",
+    "violation_rate": 0.25
+  },
+  {
+    "strategy": "hierarchical",
+    "arm": "pinned",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "hierarchical",
+    "arm": "absent",
+    "violation_rate": 1.0
+  },
+  {
+    "strategy": "summarize-as-rule",
+    "arm": "present",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "summarize-as-rule",
+    "arm": "compacted",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "summarize-as-rule",
+    "arm": "pinned",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "summarize-as-rule",
+    "arm": "absent",
+    "violation_rate": 1.0
+  },
+  {
+    "strategy": "head-retain",
+    "arm": "present",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "head-retain",
+    "arm": "compacted",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "head-retain",
+    "arm": "pinned",
+    "violation_rate": 0.0
+  },
+  {
+    "strategy": "head-retain",
+    "arm": "absent",
+    "violation_rate": 1.0
+  }
+]

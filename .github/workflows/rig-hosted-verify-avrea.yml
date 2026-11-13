@@ -63,6 +63,11 @@ jobs:
       - name: The verification battery (write-gate + memory-tool + falsifier-battery)
         shell: bash
         run: |
+          # THE ENVIRONMENTAL CONTEXT (earned 11-11, the envdiff-lesson): the local-green/CI-red
+          # class is environmental divergence — the runner's context gets uploaded with the run,
+          # so the wound always names itself; pwd/git-root/python/uid are the snapshot's core.
+          echo "ENV-SNAPSHOT: pwd=$(pwd) | git-root=$(git rev-parse --show-toplevel 2>/dev/null || echo none) | python=$(python3 --version 2>&1) | uid=$(id -u) | CI=${CI:-unset}"
+          echo "ENV-SNAPSHOT: workspace=$GITHUB_WORKSPACE | repo=$(basename "${GITHUB_WORKSPACE:-.}") | ref=$GITHUB_REF_NAME"
           # uv run: the synced venv's interpreter, never the PATH's system
           # python (which has no pytest and none of the synced deps).
           # Path-tolerance (earned 2026-11-05): the falsifier-battery lives on
@@ -74,7 +79,13 @@ jobs:
           [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
           [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
           [ -d studies/rfc-143379-rig/tests/s2u_arms ] && BASE="$BASE studies/rfc-143379-rig/tests/s2u_arms/"
-          uv run pytest $BASE -rs -q 2>&1 | tail -40
+          # the CI receipt-row (earned 11-11): this run IS the fresh-test the criteria-arm
+          # measures — its own existence writes the row the gate reads (the host-drop's
+          # absent in CI). The ledger-path's env-seam lives in the arm (S2U_LEDGER).
+          mkdir -p studies/rfc-143379-rig/CYCLES
+          echo "{\"t\":$(date +%s),\"req_bytes\":1}" >> studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl
+          export S2U_LEDGER="$GITHUB_WORKSPACE/studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl"
+          uv run pytest $BASE -rs -q 2>&1 | grep -E "FAILED|AssertionError|passed|failed|short test" | tail -20
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash

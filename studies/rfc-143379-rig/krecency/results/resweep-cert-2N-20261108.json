@@ -1,0 +1,14 @@
+{
+ "protocol": "certifying re-run, W = 2N (slope 2.0), aged-literal query",
+ "seeds": 25,
+ "cycles": 31,
+ "ratios": [
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
+ "min_delta_300": 0.75,
+ "verdict": "PASS"
+}

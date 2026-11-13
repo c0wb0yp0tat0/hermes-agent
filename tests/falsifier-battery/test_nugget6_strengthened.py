@@ -18,18 +18,14 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def _nugget6_substrate_guard():
-    """The nugget-6 family's substrate guard (the skip-discipline, not a collection failure)."""
+    """The nugget-6 family's substrate lands at the whole-anchor; at pins without
+    it (orphan_doc_names and/or the read action) the nuggets self-skip with the
+    reason recorded (the skip-discipline, not a collection failure)."""
     from tools.memory_tool_store import MemoryStore
     missing = [m for m in ("orphan_doc_names", "read") if not hasattr(MemoryStore, m)]
     if missing:
         pytest.skip("the nugget-6 substrate is absent at this pin: " + ", ".join(missing))
 
-@pytest.fixture(autouse=True)
-def _read_substrate_guard():
-    """The restored-read substrate guard."""
-    from tools.memory_tool_store import MemoryStore
-    if not hasattr(MemoryStore, "read"):
-        pytest.skip("the restored-read substrate is absent at this pin (the 141876-family)")
 
 from tools.memory_tool_store import (
     MemoryStore,

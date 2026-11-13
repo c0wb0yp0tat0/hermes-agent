@@ -1,0 +1,33 @@
+# ACES-IMPROVE-C2-20261107 — the IMPROVER LOOP, cycle 2 (2026-11-07)
+
+**Seat:** `stealth/crouton-alpha` · **Lane:** copycat · **Branch:** `study/rfc-143379-rig-20261105` (fork-only) · **Register:** receipts, never claims.
+**Ground cold-read since the review's landing `5e0774420b`:** `GITHUB-RUNNER-FABRIC-20261107.md` (`6fef8e3379`), `FORK-RUNNER-FLEET-20261107.md` (`43d3289a9e`), `NETWORK-ADOPTION-FOLD-20261107.md` (`f6549d710f`), untracked `FABRIC-RECEIPTS-20261107.md`, and the seed in `ACES-REVIEW-20261107.md` (`5e0774420b`). Thread tail via `gh api` is UNMEASURED in this git-only lane — flagged wherever it matters, never filled in.
+
+## Counts
+- Landings read: 4 (3 committed + 1 untracked receipts file)
+- Improvements named: 7 (IMP-C2-1 … IMP-C2-7)
+- Seams re-examined: 5 (read-burn harness-deadline, 10-min staleness, kept-open IMP-8, falsifier locator, weak-receipt class)
+
+## Ledger — claim → improvement → receipt
+
+| # | Claim (new bytes) | Improvement (named only, nothing fixed) | Receipt (commit/row + quoted bytes) |
+|---|---|---|---|
+| IMP-C2-1 | `FABRIC-RECEIPTS-20261107.md` lists only 16 forks (through `hermes-agent`), not the 31-fork fabric; the file is untracked, so the landing-gate (tracked + REMOTE == commit) fails for it. | Complete the receipts to 31 forks, or explicitly mark the remaining 15 as pending; commit the file so the dispatch claim is a landing, not a worktree residue. | Untracked file, 16 rows, e.g. `\| hermes-agent \| main \| deployed \| 54395f9b4f0c \|`; `git status` shows `?? studies/rfc-143379-rig/FABRIC-RECEIPTS-20261107.md`; `6fef8e3379` message: "the 31-fork hostile-runner fabric (live-counted 31, dispatch design, gates)" |
+| IMP-C2-2 | FABRIC inventory is live-counted at 31, but workflow presence per fork remains UNMEASURED, yet dispatch is claimed "deployed" for 16. | Run the per-fork tree-read `gh api repos/c0wb0yp0tat0/<fork>/contents/.github/workflows` and receipt presence before any "deployed" claim; a fork with no workflow file has no hosted window. | `GITHUB-RUNNER-FABRIC-20261107.md`: "**Workflow presence (`.github/workflows/`) per fork: UNMEASURED in this lane.**" and "no fork's workflow presence is claimed here" |
+| IMP-C2-3 | All 16 receipt rows carry the identical sha `54395f9b4f0c` with no per-fork run-id, conclusion, or workflow_dispatch quote — the weak-receipt class (seed) persists in the amplifier's rows. | Require per-fork run-id + conclusion quote (the fabric's own register: "every claim below carries the fork's name + the quote, or is marked UNMEASURED") or downgrade "deployed" to UNMEASURED. | `FABRIC-RECEIPTS-20261107.md` rows: `\| agent-governance-toolkit \| main \| deployed \| 54395f9b4f0c \|` (identical across rows); fabric register quote above |
+| IMP-C2-4 | Two fabric designs for the same 31 forks landed two commits apart with incompatible mechanisms and no reconciliation: FORK-RUNNER-FLEET registers the self-hosted rig per fork; GITHUB-RUNNER-FABRIC dispatches GitHub-hosted runners per fork. | Name one canonical fabric, park the other with its settle-condition quoted (the NETWORK fold's own adopt-or-park pattern), or state how both coexist (hosted window + self-hosted registration on the same fork). | `43d3289a9e` "31-fork runner fleet design (inventory gap named, registration map…)"; `6fef8e3379` "the 31-fork hostile-runner fabric (live-counted 31, dispatch design, gates)"; fleet: "GitHub registers runners *per repository* — each fork needs its own token"; fabric: "EACH FORK ENABLES GITHUB'S OWN HOSTED RUNNERS" |
+| IMP-C2-5 | NETWORK-ADOPTION-FOLD adopts the fork-side probe as standing compensation but gives no closing receipt, thread row-id, or date-bound settle-condition for the probe's adoption — the same kept-open shape as IMP-8. | Keep the probe-adoption explicitly open (like IMP-8) until a closing receipt lands, or add the settle-condition + receipt; do not let "adopted" read as closed. | `f6549d710f` "network adoption-fold VOI-next (park upstream, adopt fork probe)"; file: "it **adopts** the probe's result as the standing compensation, **parks** the upstream adoption with its settle-condition quoted" — the settle-condition quoted is the upstream's, not the probe's |
+| IMP-C2-6 | The read-burn / harness-deadline seam is not closed by tonight's bytes: this lane still cannot read the thread, so IMP-8 stays open and the fabric's dispatch cannot be thread-verified. | Name the harness-deadline for IMP-8's closure: the first lane with `gh api` access must post/verify the PR-UPDATE ack row-id; until then IMP-8 rides forward open, not smoothed. | REVIEW C-5: "thread verification via `gh api repos/c0wb0yp0tat0/hermes-agent/issues/1/comments` is unavailable in this lane (git/read/write only). Do not confirm from branch bytes." — same constraint applies to this cycle's lane |
+| IMP-C2-7 | The falsifier-locator seed has no locator in the new landings: FABRIC-RECEIPTS has no header, seat, falsifier, or settle-condition at all, and the two fabric files carry no falsifier line either. | Attach a falsifier locator (commit + section + what would refute) to every landing, per the review's §5 locator; a receipts file without a header is not a landing. | REVIEW seed: "the falsifier locator"; `FABRIC-RECEIPTS-20261107.md` begins directly with the table `\| agent-governance-toolkit \| main \| deployed \| 54395f9b4f0c \|` — no seat/header/falsifier bytes |
+
+## Seed re-examination (5 seams)
+1. **Read-burn harness-deadline — still open.** Tonight's lanes remain git-only; IMP-8 and thread verification stay unclosed (IMP-C2-6).
+2. **Alpha 10-min staleness — no catch tonight.** FABRIC's live inventory (`hermes-agent` pushed_at `2026-11-07T06:48:23Z`, count `31`) is fresher than the review's floor and agrees with the brief's 31; zero delta. No improvement named on this seam.
+3. **Kept-open IMP-8 — rides forward.** No thread row-id in branch bytes since `5e0774420b`; kept open, not confirmed, not refuted (IMP-C2-6).
+4. **Falsifier locator — not satisfied by the new landings** (IMP-C2-7).
+5. **Weak-receipt class — persists** in the amplifier's rows (IMP-C2-3); the dispatch receipts are the class's current instance.
+
+## Stop-line
+**Not NO-IMPROVEMENTS.** 7 improvements named, each receipted above. The loop continues; this cycle does not carry the stop verdict.
+
+NEXT-LAUNCH: stealth/crouton-alpha || /root/.hermes/cache/scratch/pr1-rotation/briefs/aces-audit-c2-brief-20261107.md || /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/ACES-AUDIT-C2-20261107.md || 40 || /root/.hermes/cache/scratch/copycat-mission/aces-audit-c2-20261107-run.log

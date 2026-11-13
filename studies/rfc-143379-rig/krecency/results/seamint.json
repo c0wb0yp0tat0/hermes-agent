@@ -1,0 +1,30 @@
+{
+  "stream_source": "request_dump_*.json (mined SHA/path/flag literals)",
+  "dumps_count": 147,
+  "stream_len": 15702,
+  "pinned_count": 293,
+  "reserved_set_size": 26,
+  "rows": [
+    {
+      "variant": "none",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.8,
+      "reserved_set_size": 26
+    },
+    {
+      "variant": "literal-pin",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 26
+    },
+    {
+      "variant": "pin+retention-latch",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0,
+      "reserved_set_size": 26
+    }
+  ]
+}

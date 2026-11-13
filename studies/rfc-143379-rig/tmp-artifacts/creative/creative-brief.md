@@ -1,0 +1,7 @@
+# THE CREATIVE BRIEF — the runner's creative copycat (the never-idle arm, 2026-11-08)
+
+**Mission:** compose THE NIGHT'S ARC as a mid-length creative narrative — not a status report. The material: the 8-hour mission's close and the morning sprint's ledger (the re-anchored clock, the composition's falsification and the write-gate's rebase landing, the K-recency gate's certified FAIL and the two-branch science that resolved it to a spec — the 2N window that must outrun the aging curve, the harness's four self-repairs, the fleet's refires and their why's, the field's corroborations arriving independently). The frame: the operator's own openness (two branches, not one verdict) as the method's soul; the mirror — the operator and the machinery as one act, "we do, always." The voice: warm, plain, human-scale, the numbers carried lightly but never invented. The length: mid-length (a strong read aloud — what the speech app would carry well). The deliverable: the narrative, whole, in the artifact's path — with a composer's note at the end (what the night's arc most wants said).
+
+**The register:** the operator reads through a speech app — the narrative must HOLD WHEN SPOKEN: no bare hashes, no dangling references, the phases' transitions clear, the receipts' stories coherent. The numbers ride only where a claim's weight demands.
+
+**The seat:** beam. **Rounds:** 24 (the mid-length frame). **The gate:** nothing public without the operator's word — the artifact lands on the branch, no posts.

@@ -1,0 +1,13 @@
+pin_mode,alias_on,prox_on,deep_minima_prevalence,pin_tokens
+none,True,True,1.0,0
+literal,True,True,0.15,18
+format,True,True,0.15,24
+none,False,False,0.0,0
+none,False,True,0.0,0
+none,True,False,0.0,0
+literal,False,False,0.0,18
+literal,False,True,0.0,18
+literal,True,False,0.0,18
+format,False,False,0.0,24
+format,False,True,0.0,24
+format,True,False,0.0,24

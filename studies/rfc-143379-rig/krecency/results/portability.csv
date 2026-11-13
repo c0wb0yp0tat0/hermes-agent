@@ -1,0 +1,4 @@
+variant,alias_on,prox_on,deep_minima_prevalence
+none,True,True,0.8
+literal,True,True,0.8
+literal+membership,True,True,0.8

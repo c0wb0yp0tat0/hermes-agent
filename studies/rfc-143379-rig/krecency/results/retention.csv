@@ -1,0 +1,9 @@
+r,pin_on,variant,deep_minima_prevalence,reserved_set_size
+0.0,False,retention-alone,1.0,3
+0.0,True,retention+literal-pin,1.0,3
+0.25,False,retention-alone,1.0,3
+0.25,True,retention+literal-pin,1.0,3
+0.5,False,retention-alone,1.0,3
+0.5,True,retention+literal-pin,1.0,3
+1.0,False,retention-alone,0.0,3
+1.0,True,retention+literal-pin,0.0,3

@@ -1,0 +1,56 @@
+{
+  "onset": {
+    "0": 68,
+    "1": 87
+  },
+  "rows": [
+    {
+      "mode": "recency",
+      "alias_on": false,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recency",
+      "alias_on": false,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recency",
+      "alias_on": true,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recency",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 1.0
+    },
+    {
+      "mode": "recurrence",
+      "alias_on": false,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recurrence",
+      "alias_on": false,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recurrence",
+      "alias_on": true,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "mode": "recurrence",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.15
+    }
+  ]
+}

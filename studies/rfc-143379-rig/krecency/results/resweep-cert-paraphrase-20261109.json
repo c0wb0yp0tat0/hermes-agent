@@ -1,0 +1,7 @@
+{
+ "protocol": "paraphrase-dimension certifying re-run (paraphrase_real defined: surface-variance + synonym-tails; W=2N; aged-literal query)",
+ "seeds": 25,
+ "cycles": 31,
+ "min_delta_300": 0.75,
+ "verdict": "PASS"
+}
