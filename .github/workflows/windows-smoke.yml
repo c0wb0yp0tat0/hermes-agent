@@ -30,9 +30,9 @@ jobs:
           echo "=== C0WB0Y SMOKE HEADER ==="
           echo "run_id=${RUN_ID}"
           echo "hostname=$(hostname)"
-          echo "cpu_model=$(wmic cpu get name 2^>^/dev/null | tail -1)"
+          echo "cpu_model=$(wmic cpu get name 2^>^/dev/null | tail -1 || true)"
           echo "mem_total_gb=$(powershell -NoProfile -Command \"(Get-WmiObject Win32_ComputerSystem).TotalPhysicalMemory/1GB -replace '\\.[0-9]'\" 2^>^/dev/null || free -g 2>/dev/null | awk '/^Mem:/{print $2}')"
-          echo "cpu_flags=$(wmic cpu get NumberOfCores 2^>^/dev/null | tail -1)"
+          echo "cpu_flags=$(wmic cpu get NumberOfCores 2^>^/dev/null | tail -1 || true)"
           echo "shell: ${BASH_VERSION:-win32}"
           echo "=== c0wb0y smoke probe DONE ==="
 
