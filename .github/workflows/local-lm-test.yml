@@ -76,11 +76,12 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p engine
+          mkdir -p .build
           if [ ! -x engine/llama-cli ]; then
-            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
-            cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
-            cmake --build /tmp/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
-            cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli 2>/dev/null || cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
+            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git .build/llama.cpp
+            cmake -S .build/llama.cpp -B .build/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
+            cmake --build .build/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
+            cp .build/llama.cpp/build/bin/llama-cli engine/llama-cli
           fi
           echo "engine-built: $(ls -la engine/ | head -3)"
 
