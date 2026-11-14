@@ -96,6 +96,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p engine
+<<<<<<< HEAD
           if [ "${ENGINE_PROFILE}" = "colibri-olmoe" ]; then
             if [ ! -x engine/olmoe ]; then
               mkdir -p .build
@@ -113,6 +114,14 @@ jobs:
               cp /tmp/llama.cpp/build/bin/llama-cli engine/llama-cli
             fi
             echo "engine-built: $(ls -la engine/ | head -3)"
+=======
+          mkdir -p .build
+          if [ ! -x engine/llama-cli ]; then
+            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git .build/llama.cpp
+            cmake -S .build/llama.cpp -B .build/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_METAL=OFF -DGGML_CUDA=OFF
+            cmake --build .build/llama.cpp/build --config Release -j "${LLAMA_THREADS}"
+            cp .build/llama.cpp/build/bin/llama-cli engine/llama-cli
+>>>>>>> 69e620e979 (rig: local-lm battery — llama path also workspace-relative (.build; same /tmp staleness class as the colibri fix))
           fi
 
       - name: fetch model (smallest viable quantized)
