@@ -9,8 +9,13 @@ The adoption records live scattered across the rig's arcs. The fold must aggrega
 1. This brief, twice.
 2. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/` — the head-staged refs: ADOPTIONS-20261112.md (the primary record — read first), NEMO-CONVERGENCE-PLAN-20261114.md (the plan's adoption rows + platform-drift table), CROWN-SLICE.md (drop/ is OUTSIDE your read roots — the REFS copies are the only reachable way in).
 3. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/` — also there: NIGHT-OPS-APEX-REPLAN-20261113.md (M1–M8 rows), BRIEF-CROSSING-{DOWNSTREAM,UPSTREAM,COMPARE,SYNTHESIS}.md (drop/ is OUTSIDE your read roots — never attempt a drop/ path; the REFS copies are the only reachable way in).
-4. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/CYCLES/` + the rig root — B05/B06/B07/B08 arc artifacts, IMPROVEMENTS-W1-20261107.md, LENS-OUTCOME-20261108.md, ACES-* audit/review files, the ADOPTIONS mirror if present.
-5. The NEMO-DAY-PLAN-20261114.md corrected plan's C4 (the platform-drift rows — they are UNGROUNDED until a docs citation lands; the page-pull list is OWED to the head, so those rows aggregate as UNGROUNDED-PENDING-CITATION, never as adopted).
+4. **THE ADOPTION CORPUS IS EXACTLY THIS** (do NOT hunt for B05/B06/B07/B08 arc files — the arcs' adoption rows are already aggregated in the REFS records; if a row names an arc you cannot find, list it in the OWED register, never search for it):
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/ADOPTIONS-20261112.md` — the primary record (418 bytes; read it first)
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/NEMO-CONVERGENCE-PLAN-20261114.md` — the plan's adoption rows + the platform-drift ADOPT/PARK/REFUSE table
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/NIGHT-OPS-APEX-REPLAN-20261113.md` — the M1–M8 rows
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/REFS/BRIEF-CROSSING-*.md` — the crossing series
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/NEMO-DAY-PLAN-20261114.md` — the corrected plan (C4 platform-drift rows: UNGROUNDED until a docs citation lands — aggregate them as UNGROUNDED-PENDING-CITATION, never as adopted)
+   - The rig root files IMPROVEMENTS-W1-20261107.md, LENS-OUTCOME-20261108.md, ACES-* (read only the ones named in the REFS records; each read ONCE; no directory archaeology).
 
 ## Deliverable (the artifact — write incrementally, skeleton by round 5, ≤6,000 chars/write)
 `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/ADOPTIONS-AGGREGATE-20261114.md` containing:
