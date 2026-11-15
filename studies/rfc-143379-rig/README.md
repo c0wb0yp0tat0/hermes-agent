@@ -1,48 +1,243 @@
-# README — RFC #143379 study — the think-tank run, every artifact distinct, every status on the record
+<p align="center">
+  <img src="assets/banner.png" alt="Hermes Agent" width="100%">
+</p>
 
-## THE GOAL LOCK (binding, unchanged)
-`c0wb0yp0tat0/hermes-agent` PR #1, branch `study/rfc-143379-rig-20261105`; RFC [NousResearch/hermes-agent#143379](https://github.com/NousResearch/hermes-agent/issues/143379). The Avrea verification leg: the envelope schema, the meter's self-hosted truth (the rig's runner is SELF-HOSTED — GitHub's Actions are free for self-hosted runners; the provider's free-meter classes apply to its hosted VMs, never the rig; the governance frame — one run per pin — kept BY CHOICE), the wall clause. Downstream-only — no upstream posts, no upstream code changes; original upstream authors retain their ownership. Receipts here only where the runner landed them; every NOT-RUN marker stays until a receipt replaces it; committed definitions are not execution.
+# Hermes Agent ☤
+<p align="center">
+  <a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a> | <a href="https://hermes-agent.nousresearch.com/">Hermes Desktop</a>
+</p>
+<p align="center">
+  <a href="https://hermes-agent.nousresearch.com/docs/"><img src="https://img.shields.io/badge/Docs-hermes--agent.nousresearch.com-FFD700?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://discord.gg/NousResearch"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+  <a href="https://nousresearch.com"><img src="https://img.shields.io/badge/Built%20by-Nous%20Research-blueviolet?style=for-the-badge" alt="Built by Nous Research"></a>
+  <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="中文"></a>
+  <a href="README.ur-pk.md"><img src="https://img.shields.io/badge/Lang-اردو-green?style=for-the-badge" alt="اردو"></a>
+  <a href="README.es.md"><img src="https://img.shields.io/badge/Lang-Español-orange?style=for-the-badge" alt="Español"></a>
+</p>
 
-## THE GREASE (the go-faster concept, standing — 2026-11-06)
-The machine goes faster by REMOVING per-loop friction, never by pushing harder. The grease standing (each a decision made ONCE so the loop never re-decides it): the lanes' dispatch shape automatic (backgrounded ALWAYS, the four-tick challenge-do-verify launch-checklist, the landing-gate — the run wrote, it's tracked, the remote holds it); the ground pre-staged (briefs pre-shaped on the five-section spine, the seats' roster fixed — the fleet is FREE-ONLY (no paid models, banked 2026-11-06 after the credit hiccup): the free flagship `reflection/beam-1.0-501b-a23b:free` carries the deep/adjudication/synthesis layers — **THE RE-APEX (2026-11-06): every potential apex re-designates to the flagship — the rotations' apex-legs, the oneshots, the audits, the folds, the adjudications, the matrix-build — ALL apex-eligible roles carry the flagship's designation unless the brief says otherwise;** the volume rides the free QUARTET (`upstage/solar-mini4:free`, `meituan/longcat-2.5:free`, `stepfun/step-3.7-flash:free` — rostered 2026-11-06, probed LIVE), and the head's reasoning rides the session's own driver; the paid seats are retired; **the hunt is standing — every catalog-scan probes for NEW :free additions and pins them into the roster (the free list's shortness is the trigger, never the norm);** the register standing (the schema-envelope rows, handles-only, the thread-ban — lanes read the branch's substance never the thread's prose); the rules live where they're used (the harness encodes the gates, the skills the doctrine, this README the receipts). The metric: the time from an arm's naming to its landing's row. Every landing's same-pass fold asks: *which friction did this landing reveal?* — the answer's the next grease.
+**The self-improving AI agent built by [Nous Research](https://nousresearch.com).** It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It's not tied to your laptop — talk to it from Telegram while it works on a cloud VM.
 
-## [Executive Summary]
-The independent verification study for [RFC #143379](https://github.com/NousResearch/hermes-agent/issues/143379) — run under the mechanism-of-mechanisms spine (classify → choose → probe → evaluate → adopt-or-park → standardize → verify). One breath: the derived demand-age instrument fails the RFC's own gate at 300+ cycles per the letter's worst-case (min -20.40pp at 4x on the derived table; the reconciliations -8.4/-3.6pp superseded), and the gate's failure is now a measured class, not a noise floor; the constraint arm's recency-truncate is the K-recency window's eviction class (1.00 violation, pinned restores 0.00); the scaled-window arm answers the RFC's scaling question NO; the K-recency hard window as proposed is replaced, on this record, by the measured shape and the pinning complement. Every artifact below carries its status. Nothing here claims more than its receipt or curve shows.
+Use any model you want — [Nous Portal](https://portal.nousresearch.com), OpenRouter, OpenAI, your own endpoint, and [many others](https://hermes-agent.nousresearch.com/docs/integrations/providers). Switch with `hermes model` — no code changes, no lock-in.
 
-## The discipline layer — the receipts' inventory (machine-checkable)
-| Marker | Status | Where |
-|---|---|---|
-| requested == executed asserted in-run | **EVIDENCE** (asserted before each suite, written from the run's actual conclusion) | `RECEIPTS.md` |
-| NOT-RUN | **NOT RUN** (the GitHub-window side, the hosted queue class — stays until a receipt replaces it) | `RECEIPTS.md` |
-| the meter's truth | the rig's runner is SELF-HOSTED — GitHub Actions are free for self-hosted runners; the provider's free-meter classes apply to its hosted VMs, never the rig; the governance frame (one run per pin, no re-dispatch without a named reason) kept by CHOICE | `AVREA-LEG-CONTRACT.md` |
-| committed definitions are not execution | **NOTED** (a commit is a promise, a receipt is a fact) | the goal lock + `RECEIPTS.md` |
+<table>
+<tr><td><b>A real terminal interface</b></td><td>Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.</td></tr>
+<tr><td><b>Lives where you do</b></td><td>Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.</td></tr>
+<tr><td><b>A closed learning loop</b></td><td>Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall. <a href="https://github.com/plastic-labs/honcho">Honcho</a> dialectic user modeling. Compatible with the <a href="https://agentskills.io">agentskills.io</a> open standard.</td></tr>
+<tr><td><b>Scheduled automations</b></td><td>Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.</td></tr>
+<tr><td><b>Delegates and parallelizes</b></td><td>Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.</td></tr>
+<tr><td><b>Runs anywhere, not just your laptop</b></td><td>Seven terminal backends — local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox. Daytona and Modal offer serverless persistence — your agent's environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.</td></tr>
+<tr><td><b>Research-ready</b></td><td>Batch trajectory generation, trajectory compression for training the next generation of tool-calling models.</td></tr>
+</table>
 
-## [Analysis Brief]
-**The verification receipts — LANDED, EVIDENCE.** `RECEIPTS.md` — the Avrea leg's run ledger: the ledger's GREEN rows at exact heads (the RECEIPTS.md is the canonical count; the day's apex-era rows accrued past the original five) (requested == executed asserted in-run): #139606 `117/10` · the whole-anchor landing `28/1 xpassed` · #140008 `64` · #116673 `66` · **#141876 (the restore) `82`**. The GitHub-window side: **NOT RUN** (hosted queue class — opened 01:50Z, its first fire receipted, RED at its pre-guard pin); the meter: the self-hosted truth (free for self-hosted runners; the stewardship frame kept by choice).
+---
 
-**The instruments — the derived-vs-injected discipline, each status explicit.**
-- `krecency/probe_age.py` + `sweep_age.py` + `RESULTS-AGE.md` — **the demand-age instrument: EVIDENCE** (derived, no injected term). Its mechanism: the recitation demand's age exceeds the window as cycles grow → the coverage erodes → the delta goes positive → sub-zero. Verdict: **FAIL per the RFC gate at 300+** — worst-case 4× −8.4pp (150c: 4× +3.6 / 8× +4.4; 300c: 4× −8.4 / 8× −3.6). The RFC's qualitative shape reproduced BY the mechanism, not imposed. The derived table of record (supersedes): 150c 4× mean +23.87pp (min −20.40) / 8× +25.47pp (min −15.60); 300c+ 2× mean −3.00 (min −30.00) / 4× +0.60 (min −20.40) / 8× +2.40 (min −15.60) / 16× +2.90 (min −15.10) / 32× +3.00 (min −14.00); the sub-zero class holds ALL 25 seeds at 4x/300c+, both horizons — the letter fails on the floor's excursions, the reversal's face is the means' erosion, ratio-dependent; the K-scaling arm's answer: NO (scaled-K underperforms fixed-K10 — 4x +0.27 vs +0.60, 8x −0.11 vs +2.40 — and fails the band's letter at 7x/8x).
-- `krecency/probe_constraints.py` + `RESULTS-CONSTRAINTS.md` + `results/constraints.*` — **the constraint-survival arm: EVIDENCE** (the four strategies, the pinning restoration, the rig-mechanism mapping). Ranking on the compacted arm, worst first: recency-truncate (1.00) > hierarchical (0.25) > summarize-as-rule = head-retain (0.00); pinned restores 0% for all; recency-truncate is the K-recency window's eviction class. The strategy table lands in its RESULTS; the sweep's code was folded into the probe file — the standalone `sweep_constraints.py` is the lane's named open item. The pinning-cost table landed with its re-walk: the comparable is the pinned-token count (18 tokens vs the field's ~47 — the same order, lighter); scale-normalized ~0.18% MEETS the <0.5% class once the denominator is production-scale; the 9.84% raw was the sim's 183-token denominator speaking.
-- `krecency/probe.py` + `RESULTS.md` — **PARKED, NOT EVIDENCE**: the calibration leg injected `governance_decay(cycle)` (probe.py:37-67 multiplies the arm's hits by the hand-written curve). Marked on the record; its sweep's numbers carry no verdict. `scoping_test.py` — the scope-fix proof — valid in both instruments. The aliasing × proximity arm (`probe_alias.py` + `RESULTS-ALIASING.md`): **EVIDENCE — CONFIRMED-BOTH** (aliasing keeps the deep minima high with M OFF; M raises prevalence with aliasing OFF; the evidence-mass a*-proxy R² = 0.6548 ≥ bar 0.35). The competition arm (`probe_compete.py` + `RESULTS-COMPETE.md`): **EVIDENCE — NOT-CONFIRMED** (the rival-collision re-label failed its falsifier: at rival-rate 0% the deep-low prevalence does not vanish, 0.447; the a*-proxy R² ≈ 0) — the storm's adjudication stands on the record: the NOT-CONFIRMED was the wrong probe (format-copies, which the field bounds at ≤0.3% variance); the aliasing class needs no rival at all. The archive arm (`probe_archive.py` + `RESULTS-ARCHIVE.md`): **EVIDENCE — the optimistic-bound test**: under ID-known recall the gate fails at every budget at cycles ≥ 300 (worst-case mins sub-zero); write-time worthiness is query-blind (field AUC 0.63–0.66); the recovery lies in lifecycle control + query-time recall, not bigger budgets.
+## Quick Install
 
-**The synthesis — LANDED.** `krecency/SYNTHESIS.md` — the integration thesis: **the recitation floor and the governance decay are one mechanism wearing two hats** — the K-recency window's eviction IS the recency-truncate class (the worst compaction strategy in the field's table, DSGC: prerequisite chains retained in only 0.07 of runs). The synthesis's envelope stacks the five-why tree, the four questions' answers (the archive primitive as the counter to the hard window; focus-shift as the demand's driver; the pin's generalization into ONE pinning/archive primitive; the competition class as the measured driver of the universal excursions), the wave-4 storm, and the three untested classes with the next arm's falsifier and its advance-set bars. What the RFC's proposal pieces survive and need is in the synthesis's verdicts.
+### Linux, macOS, WSL2
 
-**The RFC's guidance, folded — LANDED.** `RFC-GUIDANCE-20261105.md` — the study's verdicts as the RFC's guidance: the measured gate (hard window FAILS at every horizon; scaled window NO; constraint-pinning works; the archive's ID-known recall is the optimistic bound) and the landing-path (the read restore #141876 stays first — the 14-line reversal is the network's foundation; the hardness as proposed becomes the measured shape; the memory-side's honest guarantee is lifecycle correctness + calibrated abstention; the ruler keeps its bar, the probe takes the fix).
+```bash
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+```
 
-## [Recommendation/Action Plan] — one reversible next action
-Keep the read restore (#141876) as the landing-order first piece — the 14-line reversal is the network's foundation; nothing above it can be certified without it. Owner: the study (this branch). Dates: the pilot contour (next leg) adds field data on the 300+ band; the gate's remaining named open items ride the same loop (the standalone `sweep_constraints.py`; the recitation-length class — the wheel's third — named, not yet measured; the GitHub-hosted window side, NOT RUN until a receipt replaces it). This move is reversible: the restore is a roll-back-able 14-line reversal, and the gate's adverse verdict does not change its priority — it changes what the memory-side must guarantee.
+### Windows (native, PowerShell)
 
-## [Next Steps]
-- Pilot's contour as field data: validate the −3.5pp field claim against the instrument's honest curve; reconcile or scope.
-- Fold the open items by the receipt-rule: no claim before its receipt; NOT RUN stays until a receipt replaces it.
-- The fleet's independent adjudications: landing in this thread as they complete.
+> **Heads up:** Native Windows runs Hermes without WSL — CLI, gateway, TUI, and tools all work natively. If you'd rather use WSL2, the Linux/macOS one-liner above works there too. Found a bug? Please [file issues](https://github.com/NousResearch/hermes-agent/issues).
 
-## [Artifact]
-- Path: `studies/rfc-143379-rig/README.md` — the envelope's order, the discipline layer's spine statuses (LANDED / EVIDENCE / PARKED / NOT-EVIDENCE), the receipts' inventory with the machine-checkable markers.
-- Receipts: `RECEIPTS.md` · Recipe: `RECIPE.md` · Instruments + results + synthesis: `krecency/` · Leg contract: `AVREA-LEG-CONTRACT.md` · Guidance: `RFC-GUIDANCE-20261105.md`.
-- Branch: `study/rfc-143379-rig-20261105` · PR #1 · the goal lock above governs. The register: receipts, never claims.
+Run this in PowerShell:
 
-## Stage: VERIFY/STANDARDIZE — the state and the fold
-- The RFC's long-session hard gate: **not cleared** — the derived instrument's worst-case verdict is sub-zero at 300+; the instrument is now honest enough to hold that verdict.
-- The pilot's contour remains the gate's field data (the user's to shape).
-- The nous surface: no public byte without the user's exact word. No upstream posts, no upstream code changes; original upstream authors retain their ownership.
+```powershell
+iex (irm https://hermes-agent.nousresearch.com/install.ps1)
+```
+
+The source installer delegates Python 3.14, Node.js, npm, ripgrep, FFmpeg,
+and Python dependencies to PM. If Git is absent, it stages the verified Git
+for Windows archive in Hermes' tool store. It does not replace your system Git.
+See [installation methods](https://hermes-agent.nousresearch.com/docs/getting-started/installation)
+for the separate MSIX/App Installer package and its update ownership.
+
+> **Android / Termux:** A signed APT repository is available for aarch64 devices, with a `stable` channel (tagged releases) and a prerelease `canary` channel. The package includes Python, Node.js, and the TUI. Use the [Termux guide](https://hermes-agent.nousresearch.com/docs/getting-started/termux), not the desktop/server installer script.
+>
+> **Windows:** Native Windows is fully supported — the PowerShell one-liner above installs everything. If you'd rather use WSL2, the Linux command works there too. Native Windows install lives under `%LOCALAPPDATA%\hermes`; WSL2 installs under `~/.hermes` as on Linux.
+
+After installation:
+
+```bash
+source ~/.bashrc    # reload shell (or: source ~/.zshrc)
+hermes              # start chatting!
+```
+
+### Troubleshooting
+
+#### Windows Defender or antivirus flags `uv.exe` as malware
+
+If your antivirus (Bitdefender, Windows Defender, etc.) quarantines `uv.exe` from the Hermes `bin` folder (`%LOCALAPPDATA%\hermes\bin\uv.exe`), this is a **false positive**. The file is Astral's `uv` — the Rust Python package manager Hermes bundles to manage its Python environment. ML-based antivirus engines commonly flag unsigned Rust binaries that download and install packages.
+
+**To verify your copy is authentic:**
+
+```powershell
+# Install GitHub CLI if needed
+winget install --id GitHub.cli
+
+# Login to GitHub
+gh auth login
+
+# Run verification
+$uv = "$env:LOCALAPPDATA\hermes\bin\uv.exe"
+$ver = (& $uv --version).Split(' ')[1]
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$zip = "$env:TEMP\uv.zip"
+Invoke-WebRequest "https://github.com/astral-sh/uv/releases/download/$ver/uv-x86_64-pc-windows-msvc.zip" -OutFile $zip -UseBasicParsing
+gh attestation verify $zip --repo astral-sh/uv
+Expand-Archive $zip "$env:TEMP\uv_x" -Force
+(Get-FileHash "$env:TEMP\uv_x\uv.exe").Hash -eq (Get-FileHash $uv).Hash
+```
+
+If attestation says "Verification succeeded" and the last line prints `True`, you're good.
+
+**To whitelist Hermes:**
+- **Windows Defender:** Run PowerShell as Admin → `Add-MpPreference -ExclusionPath "$env:LOCALAPPDATA\hermes\bin"`
+- **Bitdefender:** Add an exception in the Bitdefender console (Protection > Antivirus > Settings > Manage Exceptions)
+- Whitelist the **folder**, not the file hash — Hermes updates `uv` and the hash changes every version
+
+For more context, see the upstream Astral reports: [astral-sh/uv#13553](https://github.com/astral-sh/uv/issues/13553), [astral-sh/uv#15011](https://github.com/astral-sh/uv/issues/15011), [astral-sh/uv#10079](https://github.com/astral-sh/uv/issues/10079).
+
+---
+
+## Getting Started
+
+```bash
+hermes              # Interactive CLI — start a conversation
+hermes model        # Choose your LLM provider and model
+hermes tools        # Configure which tools are enabled
+hermes config set   # Set individual config values
+hermes config get   # Print individual config values
+hermes gateway      # Start the messaging gateway (Telegram, Discord, etc.)
+hermes setup        # Run the full setup wizard (configures everything at once)
+hermes claw migrate # Migrate from OpenClaw (if coming from OpenClaw)
+hermes update       # Update to the latest version
+hermes doctor       # Diagnose any issues
+```
+
+📖 **[Full documentation →](https://hermes-agent.nousresearch.com/docs/)**
+
+---
+
+## Skip the API-key collection — Nous Portal
+
+Hermes works with whatever provider you want — that's not changing. But if you'd rather not collect five separate API keys for the model, web search, image generation, TTS, and a cloud browser, **[Nous Portal](https://portal.nousresearch.com)** covers all of them under one subscription:
+
+- **300+ models** — pick any of them with `/model <name>`
+- **Tool Gateway** — web search, image generation (FAL), text-to-speech (OpenAI), cloud browser (Browser Use), all routed through your sub. No extra accounts.
+
+One command from a fresh install:
+
+```bash
+hermes setup --portal
+```
+
+That logs you in via OAuth, sets Nous as your provider, and turns on the Tool Gateway. Check what's wired up any time with `hermes portal info`. Full details on the [Tool Gateway docs page](https://hermes-agent.nousresearch.com/docs/user-guide/features/tool-gateway).
+
+You can still bring your own keys per-tool whenever you want — the gateway is per-backend, not all-or-nothing.
+
+---
+
+## CLI vs Messaging Quick Reference
+
+Hermes has two entry points: start the terminal UI with `hermes`, or run the gateway and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or Email. Once you're in a conversation, many slash commands are shared across both interfaces.
+
+| Action                         | CLI                                           | Messaging platforms                                                              |
+| ------------------------------ | --------------------------------------------- | -------------------------------------------------------------------------------- |
+| Start chatting                 | `hermes`                                      | Run `hermes gateway setup` + `hermes gateway start`, then send the bot a message |
+| Start fresh conversation       | `/new` or `/reset`                            | `/new` or `/reset`                                                               |
+| Change model                   | `/model [provider:model]`                     | `/model [provider:model]`                                                        |
+| Set a personality              | `/personality [name]`                         | `/personality [name]`                                                            |
+| Retry or undo the last turn    | `/retry`, `/undo`                             | `/retry`, `/undo`                                                                |
+| Compress context / check usage | `/compress`, `/usage`, `/insights [--days N]` | `/compress`, `/usage`, `/insights [days]`                                        |
+| Browse skills                  | `/skills` or `/<skill-name>`                  | `/<skill-name>`                                                                  |
+| Interrupt current work         | `Ctrl+C` or send a new message                | `/stop` or send a new message                                                    |
+| Platform-specific status       | `/platforms`                                  | `/status`, `/sethome`                                                            |
+
+For the full command lists, see the [CLI guide](https://hermes-agent.nousresearch.com/docs/user-guide/cli) and the [Messaging Gateway guide](https://hermes-agent.nousresearch.com/docs/user-guide/messaging).
+
+---
+
+## Documentation
+
+All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**:
+
+| Section                                                                                             | What's Covered                                             |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart)                 | Install → setup → first conversation in 2 minutes          |
+| [CLI Usage](https://hermes-agent.nousresearch.com/docs/user-guide/cli)                              | Commands, keybindings, personalities, sessions             |
+| [Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration)                | Config file, providers, models, all options                |
+| [Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging)                | Telegram, Discord, Slack, WhatsApp, Signal, Home Assistant |
+| [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security)                          | Command approval, DM pairing, container isolation          |
+| [Tools & Toolsets](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)            | 40+ tools, toolset system, terminal backends               |
+| [Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)              | Procedural memory, Skills Hub, creating skills             |
+| [Memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)                     | Persistent memory, user profiles, best practices           |
+| [MCP Integration](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp)               | Connect any MCP server for extended capabilities           |
+| [Cron Scheduling](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron)              | Scheduled tasks with platform delivery                     |
+| [Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files)       | Project context that shapes every conversation             |
+| [Architecture](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture)             | Project structure, agent loop, key classes                 |
+| [Contributing](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing)             | Development setup, PR process, code style                  |
+| [CLI Reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands)                  | All commands and flags                                     |
+| [Environment Variables](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | Complete env var reference                                 |
+
+---
+
+## Migrating from OpenClaw
+
+If you're coming from OpenClaw, Hermes can automatically import your settings, memories, skills, and API keys.
+
+**During first-time setup:** The setup wizard (`hermes setup`) automatically detects `~/.openclaw` and offers to migrate before configuration begins.
+
+**Anytime after install:**
+
+```bash
+hermes claw migrate              # Interactive migration (full preset)
+hermes claw migrate --dry-run    # Preview what would be migrated
+hermes claw migrate --preset user-data   # Migrate without secrets
+hermes claw migrate --overwrite  # Overwrite existing conflicts
+```
+
+What gets imported:
+
+- **SOUL.md** — persona file
+- **Memories** — MEMORY.md and USER.md entries
+- **Skills** — user-created skills → `~/.hermes/skills/openclaw-imports/`
+- **Command allowlist** — approval patterns
+- **Messaging settings** — platform configs, allowed users, working directory
+- **API keys** — allowlisted secrets (Telegram, OpenRouter, OpenAI, Anthropic, ElevenLabs)
+- **TTS assets** — workspace audio files
+- **Workspace instructions** — AGENTS.md (with `--workspace-target`)
+
+See `hermes claw migrate --help` for all options, or use the `openclaw-migration` skill for an interactive agent-guided migration with dry-run previews.
+
+---
+
+## Contributing
+
+We welcome contributions! See the [Contributing Guide](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) for development setup, code style, and PR process.
+
+Start with the [PM developer workflow](website/docs/reference/package-management.md#developer-workflow)
+for activation, daily use, dependency changes, and leaving the environment.
+[Development Setup](CONTRIBUTING.md#development-setup) covers the separate test environment and verification commands.
+
+---
+
+## Community
+
+- 💬 [Discord](https://discord.gg/NousResearch)
+- 📚 [Skills Hub](https://agentskills.io)
+- 🐛 [Issues](https://github.com/NousResearch/hermes-agent/issues)
+- 🔌 [computer-use-linux](https://github.com/avifenesh/computer-use-linux) — Linux desktop-control MCP server for Hermes and other MCP hosts, with AT-SPI accessibility trees, Wayland/X11 input, screenshots, and compositor window targeting.
+- 🔌 [HermesClaw](https://github.com/AaronWong1999/hermesclaw) — Community WeChat bridge: Run Hermes Agent and OpenClaw on the same WeChat account.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+Built by [Nous Research](https://nousresearch.com).

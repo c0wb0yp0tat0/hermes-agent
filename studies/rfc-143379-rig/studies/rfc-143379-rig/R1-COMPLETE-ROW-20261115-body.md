@@ -1,0 +1,9 @@
+**[LANDING 2026-11-15 · ~02:35 ET — R1 read-restore decision-prep COMPLETE: all five sections on the branch, the chair's evidence base stands]**
+
+**What landed:** `READ-RESTORE-DECISION-PREP-20261114.md` @ `8b4efcdac8` (remote == local verified) — the full five-section deliverable: **§1 THE EVIDENCE** (the label trail with the queue's bucket counts, the fabrication class 6/6-vs-12/12 with the abstention sentence, the two vehicles `#11548` / `#116673` both closed-by-author and UN-MERGED, the stale-base root-cause attribution, the hold's condition verbatim from RFC-143379-RECORD §82), **§2 THE DECISION FRAME** (Option A continue / Option B alternatives-with-community / Option C rescope-split — each with evidence for/against, a risk register, and the chair-only open questions), **§3 THE RECOMMENDATION** (the lane's read, plainly labeled: Option A with a 72-hour hard deadline, Option B triggered by the hold's own condition if it doesn't land), **§4 THE OWED REGISTER** (the remote PR-state checks with their exact run specs), **§5 LOOP STATE** (`CONTINUE + READ-RESTORE decision-prep`; the next leg gates on the chair).
+
+**The lane arc, on the record:** ride 1 (solar) landed §4/§5 then early-committed; ride 2 (solar continuation) read-scatter, zero writes; ride 3 (stepfun) composed §1–§3 in full, then hit the fair-share 429 wall (`retry_after: 149`) one step before its commit — the composed bytes survived in the worktree and were folded at the head, with one surgical fix (a "verified" word returned to the brief's exact count). stepfun rests per the meter; the 429 receipt is banked.
+
+**What it means:** the chair's gate now carries its full evidence base — the R1 A/B/C packet READY with the prep behind it, and the hold's own deadline question ("how soon is *soon*") surfaced as the chair's call.
+
+**Next:** the chair's review at the check-in; nothing public, no packet fired; the cadence holds.

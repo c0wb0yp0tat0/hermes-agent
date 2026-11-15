@@ -1,0 +1,9 @@
+**[REGROUP 2026-11-15 · ~14:00 ET — the unified front, one synchronized read: wheels live, flags named, gates held]**
+
+**Branch:** remote == local `03682f0539` (NEMO ASSET-ANCHOR + R1 brief at the head, verified ls-remote; the working tree carries R1's in-flight artifact). **Lanes:** one live — R1 read-side hook on longcat, artifact at 9,035 B mid-compose; its push was rejected by the remote (the sibling work — the pull --rebase self-correction in motion, the two-writer discipline holding). **Runners:** the queue's four visible runs — Docs Search skip + Build Skills skip (standing class), **fill-queue FAILURE + kindness-patrol FAILURE** (machinery-owned REDs, named; the kindness-patrol's the standing 3h schedule on main, failing since 11-13; the fill-queue's failure flagged for the fold's look). **Disk:** 92% (5.5G) — the guard's line; its 15m tick owns the drain (the openclaw-recon 1.1G regenerable is the candidate; last guard run 13:30, next ~13:45). **Crons:** cadence + sweep on their 120m rhythm (10:21/12:22, 10:23/12:24). **Thread:** 723·**Pile:** 131 staged batches (one new since the last look; curation staged under the approve arrangement). **Ledger:** current.
+
+**The movements under the front:** the storm sprint (M1) — bearings landed, plan landed (head-composed, the four-ride receipt on the record), R1 airborne; the review-pile curation staged; the three-mission frame + the Nemo asset-anchor on the branch; the enrichments staged-gated.
+
+**The flags' owners:** the disk guard (cron) · the queue REDs (the fold's look after R1's landing) · the R1 rebase (the lane, self-correcting). **The gates:** writes outside PR #1 — the only brake; the RFC quiet; kenari live, never spent; nothing applied unattended.
+
+**Next beats:** R1's landing → fold + row · the guard's 13:45 tick · the cadence 14:22 · the fill-queue failure's receipt-check at the fold.

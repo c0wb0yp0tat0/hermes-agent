@@ -1,0 +1,3 @@
+condition,below_3_count,median,exec_time,decision_core,next_action,scope,recall
+baseline,5/5,0.67,0.17,0.00,0.67,1.00,2.00
+three-block (derivations+anchors+intents),0/5,3.33,3.33,3.00,3.00,3.00,3.33

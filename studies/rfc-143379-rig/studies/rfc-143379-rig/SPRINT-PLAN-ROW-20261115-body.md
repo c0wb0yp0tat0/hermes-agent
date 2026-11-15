@@ -1,0 +1,9 @@
+**[LANDING 2026-11-15 · ~13:50 ET — THE SPRINT PLAN STANDS (head-composed after four lane failures; the whole rig inline); R1's fire armed]**
+
+**What landed:** `SPRINT-PLAN-20261115.md` @ `acd68a1b26` — the storm sprint's plan, composed AT THE HEAD after four lane rides failed the compose (stepfun read-scatter → killed; solar read-scatter ×2 → exit 1; solar write-overwrite fragments → exit 1 — receipts on the record, the ride-2 draft preserved as `SPRINT-PLAN-DRAFT-v1-20261115.md`). The FAILED-REDEEMED class: the work survives, the head-side fallback runs, the receipts never smoothed.
+
+**The plan's shape (the whole rig inline):** §1 the goal string · §2 framework grounding (the method cards each ring executes; the dispatch-envelope; the pilot's doors adopted; the write-gate read-side hook named as the sprint's CREATOR-GAP invention target) · §3 the wheel — R1 read-side hook (longcat + falsifier battery) · R2 L2 selection/missingness (p0tat0 runner + substrate battery) · R3 bank-arbitration (kenari's first measured ride + avrea battery) · R4 RSI gate (stepfun + Nemo's judge slot) · R5 AIMD envelope (Avrea runner + delivery battery) · R6 SPA-DREAM path (solar + c0wb0y edge) · R7 design-space (falsifier battery + Avrea deep) · R8 serving + the misc (Harbor + longcat) · §4 the two-way-door grid (the only NEEDS-THE-CHAIR: the two enrichment packets + R5's adoption) · §5 the meters · §6 the fire order + the kaizen/ACES apex loop (no-change + confirmation cycle → HOLD) · §7 the enrichment staging (2 READY gated, 1 NOT-READY).
+
+**What it means:** Mission 1's plan is on the record — all fleet assets engaged (seats incl. kenari's first ride, runners ≥4, batteries per ring); the fire follows immediately; the loop peaks at no more measurable change; the material is preserved for Mission 2's apex.
+
+**Next:** R1's ring brief (write-only contract, the catheter inline), probe-at-fire on longcat, then the rings cascade per the wheel.

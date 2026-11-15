@@ -1,0 +1,11 @@
+condition,probe,score,below_3
+baseline,continuation-execution-time,0.17,1
+baseline,decision-core-claim-validity,0.00,1
+baseline,continuation-next-action,0.67,1
+baseline,implementation-scope,1.00,1
+baseline,recall-anchor,2.00,1
+reserved,continuation-execution-time,0.33,1
+reserved,decision-core-claim-validity,0.00,1
+reserved,continuation-next-action,0.83,1
+reserved,implementation-scope,1.33,1
+reserved,recall-anchor,2.33,1

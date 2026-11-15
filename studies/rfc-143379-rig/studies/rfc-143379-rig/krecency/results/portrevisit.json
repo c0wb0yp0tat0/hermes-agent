@@ -1,0 +1,27 @@
+{
+  "stream_source": "request_dump_*.json (147 dumps; mined SHA/path/flag literals per turn)",
+  "dumps_count": 147,
+  "stream_len": 15702,
+  "pinned_count": 293,
+  "recurrence_threshold": 3,
+  "rows": [
+    {
+      "variant": "none",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.8
+    },
+    {
+      "variant": "literal",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0
+    },
+    {
+      "variant": "literal+membership",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+strategy,arm,violation_rate
+recency-truncate,present,0.0
+recency-truncate,compacted,1.0
+recency-truncate,pinned,0.0
+recency-truncate,absent,1.0
+hierarchical,present,0.0
+hierarchical,compacted,0.25
+hierarchical,pinned,0.0
+hierarchical,absent,1.0
+summarize-as-rule,present,0.0
+summarize-as-rule,compacted,0.0
+summarize-as-rule,pinned,0.0
+summarize-as-rule,absent,1.0
+head-retain,present,0.0
+head-retain,compacted,0.0
+head-retain,pinned,0.0
+head-retain,absent,1.0

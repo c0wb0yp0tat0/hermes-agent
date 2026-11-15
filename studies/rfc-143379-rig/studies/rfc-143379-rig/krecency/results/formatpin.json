@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "pin_mode": "none",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 1.0,
+      "pin_tokens": 0
+    },
+    {
+      "pin_mode": "literal",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.15,
+      "pin_tokens": 18
+    },
+    {
+      "pin_mode": "format",
+      "alias_on": true,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.15,
+      "pin_tokens": 24
+    },
+    {
+      "pin_mode": "none",
+      "alias_on": false,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 0
+    },
+    {
+      "pin_mode": "none",
+      "alias_on": false,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 0
+    },
+    {
+      "pin_mode": "none",
+      "alias_on": true,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 0
+    },
+    {
+      "pin_mode": "literal",
+      "alias_on": false,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 18
+    },
+    {
+      "pin_mode": "literal",
+      "alias_on": false,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 18
+    },
+    {
+      "pin_mode": "literal",
+      "alias_on": true,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 18
+    },
+    {
+      "pin_mode": "format",
+      "alias_on": false,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 24
+    },
+    {
+      "pin_mode": "format",
+      "alias_on": false,
+      "prox_on": true,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 24
+    },
+    {
+      "pin_mode": "format",
+      "alias_on": true,
+      "prox_on": false,
+      "deep_minima_prevalence": 0.0,
+      "pin_tokens": 24
+    }
+  ]
+}

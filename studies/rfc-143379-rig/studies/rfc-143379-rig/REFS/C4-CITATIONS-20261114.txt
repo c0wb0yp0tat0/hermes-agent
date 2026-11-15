@@ -1,0 +1,20 @@
+- [Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration): Configure Hermes Agent — config.yaml, providers, models, API keys, and more
+- [Configuring Models](https://hermes-agent.nousresearch.com/docs/user-guide/configuring-models)
+- [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security): Security model, dangerous command approval, user authorization, container isolation, and production deployment best practices
+- [Bot Mode](https://hermes-agent.nousresearch.com/docs/user-guide/bot-mode): Turn your Hermes profiles into a roster of named Bots — each with its own chat, role, model, memory, skills, and avatar. Bots run routines, share group chats, and message each other.
+- [Hermes Desktop](https://hermes-agent.nousresearch.com/docs/user-guide/desktop): The native Hermes desktop app — a polished experience for chatting with Hermes, with streaming tool output, side-by-side previews, a file browser, voice, cron, profiles, skills, and settings. macOS, Windows, and Linux.
+- [Egress proxy](https://hermes-agent.nousresearch.com/docs/user-guide/egress)
+- [Egress credential-injection proxy (iron-proxy)](https://hermes-agent.nousresearch.com/docs/user-guide/egress/iron-proxy)
+- [Local Models](https://hermes-agent.nousresearch.com/docs/user-guide/local-models): Run models entirely on your own machine — no account, no API key, nothing leaves your computer.
+- [Google Workspace — Gmail, Calendar, Drive, Sheets & Docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/google-workspace): Send email, manage calendar events, search Drive, read/write Sheets, and access Docs — all through OAuth2-authenticated Google APIs
+- [Windows (Native) Guide](https://hermes-agent.nousresearch.com/docs/user-guide/windows-native): Run Hermes Agent natively on Windows 10 / 11 — install, feature matrix, UTF-8 console, Git Bash, gateway as a Scheduled Task, editor handling, PATH, uninstall, and common pitfalls
+- [Memory Providers](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory-providers): External memory provider plugins — Honcho, OpenViking, Mem0, Hindsight, Holographic, RetainDB, ByteRover, Supermemory
+- [Mixture of Agents](https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents): Create named MoA presets that appear as selectable models under the Mixture of Agents provider
+- [Subscription Proxy](https://hermes-agent.nousresearch.com/docs/user-guide/features/subscription-proxy): Use your Nous Portal subscription (or other OAuth provider) as an OpenAI-compatible endpoint for external apps
+- [Hermes Web Dashboard](https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard): Browser-based administration panel for managing configuration, API keys, MCP servers, messaging pairing, webhooks, the gateway, memory, credentials, sessions, logs, analytics, cron jobs, and skills
+- [Web Search & Extract](https://hermes-agent.nousresearch.com/docs/user-guide/features/web-search): Search the web and extract page content with multiple backend providers — including free self-hosted SearXNG.
+- [X (Twitter) Search](https://hermes-agent.nousresearch.com/docs/user-guide/features/x-search): Search X (Twitter) posts and threads from within the agent using xAI's built-in x_search Responses tool — works with either a SuperGrok OAuth login or an XAI_API_KEY.
+- [Cron Jobs](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron): Schedule automated tasks with natural language, manage them with one cron tool, and attach one or more skills
+- [Image Generation](https://hermes-agent.nousresearch.com/docs/user-guide/features/image-generation): Generate images via FAL.ai — 11 models including FLUX 2, GPT Image (1.5 & 2), Nano Banana Pro, Ideogram, Recraft V4 Pro, Krea 2, and more, selectable via `hermes tools`.
+- [Providers](https://hermes-agent.nousresearch.com/docs/integrations/providers)
+- [MCP (Model Context Protocol)](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp): Connect Hermes Agent to external tool servers via MCP — and control exactly which MCP tools Hermes loads

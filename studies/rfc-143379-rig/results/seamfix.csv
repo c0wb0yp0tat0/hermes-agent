@@ -1,0 +1,7 @@
+condition,fixture,below_3_count,median
+baseline,feature-impl-context-priority,2,4.00
+baseline,debug-session-feishu-id-model,3,4.33
+baseline,build-competitive-scouts,3,4.67
+modified,feature-impl-context-priority,2,4.00
+modified,debug-session-feishu-id-model,3,4.33
+modified,build-competitive-scouts,3,4.67

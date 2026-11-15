@@ -1,0 +1,4 @@
+variant,alias_on,prox_on,deep_minima_prevalence,reserved_set_size
+none,True,True,0.8,26
+literal-pin,True,True,0.0,26
+pin+retention-latch,True,True,0.0,26
