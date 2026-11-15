@@ -1,10 +1,9 @@
-# NEMO-PR-STEER-20261115
-
-## THE PR #1 THREAD UPDATE
+### **§1 THE PR #1 THREAD UPDATE**
 **Envelope:** `NEMO-PR-STEER-20261115.md` (artifact path: `studies/rfc-143379-rig/NEMO-PR-STEER-20261115.md`)
 
-**\[LANDING: MISSION 1.5 STAGE-3 VERIFIER\]
-The seam restored: **M1’s fan now in flight** (R5/R7/R8) with **M1.5’s verifier** (Serena’s write-path leg) firing in parallel. **Storm harvest steers tacked** into the mission docs:
+**Landing:** **Mission 1.5 Stage-3 Verifier**
+
+**The seam restored: M1’s fan now in flight** (R5/R7/R8) with **M1.5’s verifier** (Serena’s write-path leg) firing in parallel. **Storm harvest steers tacked** into the mission docs:
 - **M1**: Write-gate L0 audit (authority-attribution fields), L2 refusal-alignment probe (SELD), verifier isolation (criteria exposure).
 - **M1.5**: Serena’s authority-attribution fields (`authority` + `source_attribution`) appended as dated steers.
 - **M2**: Acceptance-gate margin lens (masked erosion) and consolidation-trigger (cortex consolidation).
@@ -19,23 +18,23 @@ The seam restored: **M1’s fan now in flight** (R5/R7/R8) with **M1.5’s verif
 
 ---
 
-## §2 THE MISSION-DOC TACK-ONS
+### **§2 THE MISSION-DOC TACK-ONS**
 
-### M1: Authority-Attribution Fields
+**M1**: Authority-attribution fields (`authority` + `source_attribution`) appended to R1/R2/R3/R4/R5/R6/R7/R8 rings as dated steers:
 > **2026-11-15 STEER**: Write-gate L0 audit: **authority collapse** (2608.01679) → gold metadata cuts unauthorized action 16.9%→0.0%. **False authority forms at 50.2%** → executors act on it 98.6%. **Fields**: `authority` + `source_attribution` (fail-closed on missing authority for privileged scopes).
 
-### M1.5: Serena’s Write-Path Leg
+**M1.5**: Serena’s authority-attribution fields appended:
 > **2026-11-15 STEER**: **Serena’s write-path leg**: Authority-attribution fields (`authority` + `source_attribution`) appended to harness plan. **Honest markers**: MCP route unconfirmed; tools inventory unread.
 
-### M2: Acceptance-Gate Margin Lens
+**M2**: Acceptance-gate margin lens and consolidation-trigger appended:
 > **2026-11-15 STEER**: **Masked erosion** (2610.38392) → acceptance gates optimizing task-success alone mask redundant-safeguard loss. **Consolidation-trigger**: Prospective-query parametric consolidation (2610.20399) → 88.9% gain / 99.8% non-target retention.
 
-### M3: Rate-Limited Filtering
+**M3**: Rate-limited filtering and parametric consolidation appended:
 > **2026-11-15 STEER**: **Rate-limited filtering** (2611.02361) → explicit state outlasts long context. **Parametric consolidation**: 88.9% gain / 99.8% non-target retention.
 
 ---
 
-## §3 THE STEER BLOCK
+### **§3 THE STEER BLOCK**
 
 **Live cards/lanes for storm steers**:
 - **READY**: M1’s R5/R7/R8 (AIMD, design-space, serving), M1.5’s verifier stage-3 (Serena’s write-path leg).
@@ -45,19 +44,11 @@ The seam restored: **M1’s fan now in flight** (R5/R7/R8) with **M1.5’s verif
   - **NOT-READY**: M2’s consolidation-trigger, M3’s parametric consolidation.
 
 ---
-
-## §4 COMPOSE-CHECK + RECEIPT STAMPS
+### **§4 THE COMPOSE-CHECK + RECEIPT STAMPS**
 - **IN-LANE**: PR #1 thread update, storm harvest steers, mission-doc append-only discipline.
 - **BORROWED**: `<NEMO-ACHIEVEMENT-20261115.md>`, `<SERENA-BEARINGS-20261115.md>`, `<SERENA-HARNESS-PLAN-20261115.md>`.
 - **HEAD-RECON**: Mission sequence (M1→M1.5→M2→M3), gates (public writes + gists only), RFC QUIET.
 
 ---
-
-## §5 THE LOOP-STATE LINE
-**CONTINUE + R5’s fire (AIMD adaptive-envelope reward path, Avrea runner).
-
----
-
-**ACKNOWLEDGEMENTS**:
-- STEER-8(a): Riding order (Nemo as CTO assistant, head as CTO).
-- STEER-9: Storm harvest steers tacked into mission docs.
+### **THE LOOP-STATE LINE**
+**CONTINUE + R5’s fire (AIMD adaptive-envelope reward path, Avrea runner).**
