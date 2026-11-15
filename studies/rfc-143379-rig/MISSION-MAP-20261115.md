@@ -10,7 +10,7 @@
 
 ## The standing rails (unchanged)
 - **THE FREE-ECOSYSTEM PULL-IN (the operator's standing, 2026-11-15):** for the sake of the people we help, the fleet pulls in EVERY surface that can align to the framework — the Nous free trio (the core: solar-mini4 / step-3.7-flash / longcat-2.5, 3 live at the portal) + kenari (its own key/pool, laguna/muse/nemotron) + the kilo keyless bench + the opencode keyless ids + OpenRouter's :free variants + the local Harbor seat — each ridden with its own meter and contract, aligned to the mechanism spine (classify → choose → probe → evaluate → adopt/park → standardize → verify). Nothing free that can carry framework work is left off the roster.
-- The only gate: writes outside PR #1 (upstream/RFC/public — the enrichment register stays staged until the chair's word).
+- The only gates (the operator's exact, 2026-11-15): **public writes beyond PR #1, and gists.** NOTHING else is gated — the branch, the thread, the chain, the ledger, the drop URLs, the HITL docs, the harness, the executor orbit (Serena + the 1.5 sprint) all fire freely; the opportunities to improve and test are the point.
 - The fleet wheel: seats (solar/stepfun/longcat LIVE; kenari live, never held; nemo fleet asset; Harbor ticker) + runners (≥4, never-idle law) + matrix batteries (every probe names its battery home).
 - Meters: quota headers at every fire · zero idle at folds · fair-share rest · batch honesty = zero.
 - Anchor + chain doctrine, receipts-not-claims, ABSENT stays ABSENT + named.
