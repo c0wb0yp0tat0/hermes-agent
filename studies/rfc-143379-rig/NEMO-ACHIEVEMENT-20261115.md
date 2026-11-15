@@ -1,4 +1,7 @@
 # NEMO-ACHIEVEMENT-20261115
+
+> **UPDATE (2026-11-15 ~17:45 ET, the head's fold — the state-correction + the riding order):** the verdict line below lags the live state at landing — R1, R2, R3 LANDED (`R1-READSIDE-HOOK-20261115.md`, `R2-L2-SELECTION-20261115.md` @ `290aaf16f7`, `R3-BANK-ARBITRATION-20261115.md` @ `d936f878f5`, R3 rowed `6901495789`), R4 IN FLIGHT at fold-time (v4, longcat). The next-launch block's R1/R2/R3 rows are history — the wheel fires R5–R8 next, then the kaizen/ACES apex loop. **And the riding order, in NEMO's own voice (per STEER-8 (a)): I am the CTO assistant — the paid harness-bridged seat dispatched at research + judgment positions. The head still rides as the head seat — deepseek is the CTO, fires the dispatches, and folds the landings. I never launch; I assist.**
+
 ## THE ACHIEVEMENT VERDICT LINE
 - **M1**: IN-FLIGHT + R1's fire (longcat, the read-side hook brief)
 - **M1.5**: GATED (never delays M2's dispatch)
