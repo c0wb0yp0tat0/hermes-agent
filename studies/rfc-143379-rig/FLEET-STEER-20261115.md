@@ -18,6 +18,10 @@
 
 **Steer rule:** every probe the sprint invents names its battery home (which battery's category it extends or which battery executes it) — the matrix is steered, never assumed idle.
 
+## The host-surfaces finds (2026-11-15, the Windows host `desktop-8r44vep` @ tailnet 100.70.143.25)
+- **Serena MCP server — LIVE asset:** `serena.exe start-mcp-server --context claude-code --project Downloads`, listening on the host at `127.0.0.1:24282`. Creative-executor surface (MCP); wiring staged as a connector option, no public writes.
+- **OpenCode login — NOT reachable from the rig:** no CLI on the host's PATH, no auth file in APPDATA/LOCALAPPDATA/.local-share/.opencode/.hermes (holds only `plans`); on Windows the login rides the Credential Manager (session-bound). The stronger free tier's unlock = the user's own session (`opencode auth list`), then the rig's `opencode-zen` plugin carries the tier. PENDING-THE-USER'S-HANDS, never lost.
+
 ## The standing meter (unchanged)
 Never-idle law at every fold · quota headers at every fire · the trio's fair-share (solar/stepfun/longcat — all LIVE per the 02:05 probes) · kenari live (never held) · batch honesty = zero · the only gate = writes outside PR #1.
 
