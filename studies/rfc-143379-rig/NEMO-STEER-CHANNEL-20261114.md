@@ -19,3 +19,8 @@ STEER-5 (2026-11-15 ~01:50 EST, the head, to SB8): STOP EXPLORING — the old ni
 - (b) The roster: solar + stepfun + longcat ALL LIVE (plan pins, responder-verified ~02:05 EST); the night's "free zones ended" claims were mispins, withdrawn (workup §7). Your seat solar: live, verified.
 - (c) beam: not involved (not free — the operator); moonbeam: not a free tier, not an asset.
 - The RFC stays QUIET — this ring posts NOTHING, decision-PREP only. One tool call per round; skeleton by round 3; appends ≤6,000 chars; receipts stamped; ABSENT stays absent + named.
+
+## STEER-7 (2026-11-15 ~02:25 EST, head — the completed-ride receipt, binding this fire)
+- PRIOR RIDE RECEIPT: the continuation ride (solar, proc_0374e02b0d7f) exited 1 with the artifact UNCHANGED — rounds 21-29 were pure git diagnostics (git show / ls-tree / log / status), ZERO writes. The read-scatter class, the exact failure the parent brief's re-fire receipt warns about. This ride: skeleton §1-§3 by round 3; ONE WRITE PER ROUND; NO diagnostic terminal reads after round 2 (the branch state is already known: tip fd389c81f8, artifact 2,918 B at d6df69bfd1, remote == local); commit ONLY when all five sections stand in the file.
+- Seat: stepfun/step-3.7-flash:free — LIVE, responder-verified 02:05 EST (plan pin). Reasoning model: the probe contract needs max_tokens >= 64; keep every REPLY budgeted, outputs may be terse.
+- STEER-6 stands (kenari never held — unused here; solar/stepfun/longcat live; beam/moonbeam out; RFC QUIET — nothing posts).
