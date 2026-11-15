@@ -1,57 +1,52 @@
 # NEMO-KENARI-WATCH-20261115
 
 ## THE VERDICT LINE
-**BLOCKED** — The seat requires **launch seam fixes** and **pacing enforcement** before proceeding.
+**BLOCKED** — The seat requires explicit tuning to adhere to the mission's constraints.
 
-## §1 THE LOG READ — The Seat's Behavior on This Ride
-The live log (`apex-loop-v2.log`) reveals the following key observations about the **kenari/dots-3-note-preview:free** seat:
+## §1 THE LOG READ — the seat's behavior on this ride
+The **dots-3-note-preview:free** seat's behavior in the current ride (`apex-loop-v2.log`) is as follows:
 
-1. **Write-First Tendency**: The assistant begins each round by reading grounding files and narrates reasoning before executing calls, adhering to the **write-first** contract. However, the transport enforces a **single-call discipline** during the write-window, which may limit efficiency.
+- **Round 0**: The assistant begins by reading the grounding files sequentially due to transport restrictions (G7 class).
+- **Rounds 1-14**: The assistant repeatedly attempts to verify artifacts and grounding files, violating the "ONE tool call per round" discipline and the "no hunting" rule by repeatedly checking the same files.
 
-2. **Launch Seam Issues**: The log confirms prior **F6-class failures** (missing logdir) and **404 base-endpoint failures**, resolved in this ride. The current ride (`LOOP-V2`) is live on the correct endpoint (`HARNESS_ENDPOINT=https://kenari.id/v1/chat/completions`), but stability across multiple rounds remains unconfirmed.
+**Strengths**:
+- Correctly identifies the need to read grounding files and verify artifacts.
 
-3. **Strengths**: The seat adheres to the **write-first discipline** and narrates reasoning clearly, ensuring transparency.
-
-4. **Sticking Points**:
-   - **Multi-call trimming** limits parallelism.
-   - **No explicit pacing** (5-RPM/50-daily constraints) or reserve-rate limits are enforced.
-   - **No confirmation of fine-tuning** across multiple rounds.
+**Sticking Points**:
+- **Transport Restrictions**: Unable to execute multi-calls, leading to inefficient sequential reads.
+- **Tool Discipline Violation**: Repeated use of `terminal` for non-git tasks, violating mission constraints.
+- **Redundancy**: Repeatedly checks the same files without progress.
 
 ## §2 THE SEAT-TUNING CONTRACT
-To recalibrate the seat, the following tuning contract is proposed:
+To recalibrate the seat for the next kenari fire, the following adjustments are required:
 
 1. **Brief-Shape Deltas**:
-   - Add explicit **pacing instructions** (e.g., `PACE: Enforce 5 requests per minute and 50 daily; log violations`).
-   - Clarify the **write-window knob** (e.g., `WRITE-WINDOW: 3 rounds max per write cycle`).
-   - Confirm the **narrate-first** behavior aligns with the **write-first** contract.
+   - Explicitly state that the assistant must adhere to the "ONE tool call per round" rule.
+   - Emphasize the "write-first" discipline for concise, single-write finding files.
 
-2. **Launch Seam Fixes**:
-   - Enforce the **FULL endpoint** (`HARNESS_ENDPOINT=https://kenari.id/v1/chat/completions`).
-   - Ensure the **logdir precondition** exists before firing.
+2. **Write-Window Knob**:
+   - Strictly limit calls to one per round, avoiding multi-calls or redundant checks.
 
-3. **Verification**:
-   - Run **2 consecutive rounds** without launch errors to confirm stability.
-   - Ensure reasoning is narrated before every call.
+3. **Pacing**:
+   - Respect the 5-RPM/50-daily rate limits and avoid unnecessary calls.
 
-**VERDICT**: The seat is **not yet FIT** for sustained rides. It requires **named tweaks** for pacing and launch seam, followed by **2 stable rounds** to confirm fine-tuning.
+4. **Launch Seam**:
+   - Use `read_file` and `list_dir` for file operations, avoiding `terminal` for non-git tasks.
+
+**Verdict**: The seat is **not yet FIT** for independent operation. It requires explicit tuning.
 
 ## §3 THE WATCH'S CONTINUATION CONTRACT
-The next Nemo-watch fire will adhere to:
+- **Checklist Before Dispatch**:
+  1. Verify adherence to the "ONE tool call per round" rule.
+  2. Ensure no violation of the "no hunting" rule.
+  3. Confirm correct tool usage for file operations.
 
-- **Rules**:
-  1. **Launch seam fixes** (FULL endpoint + logdir).
-  2. **Pacing compliance** (5-RPM/50-daily enforced).
-  3. **Stability** (2 consecutive rounds without errors).
-
-- **EXIT condition**: The seat is **fine-tuned** after **N=2 consecutive rides** without contract violations.
+- **EXIT Condition**: The seat is fine-tuned after **3 consecutive rides** without violating the above rules.
 
 ## §4 THE COMPOSE-CHECK + RECEIPT STAMPS
-- **IN-LANE**: All observations and tuning proposals are derived from the **live log** and **briefs** (`APEX-LOOP-20261115-brief.md`, `SPRINT-PLAN-20261115.md`).
+- **IN-LANE**: All observations derived from the current ride's log and the brief.
 - **BORROWED**: None.
 - **HEAD-RECON**: None.
 
 ## THE LOOP-STATE LINE
-**BLOCKED** — The seat requires **launch seam fixes** and **pacing enforcement** before proceeding. The next kenari dispatch must include:
-```
-CONTINUE + kenari/dots-3-note-preview:free (with FULL endpoint + logdir + pacing contract)
-```
+**BLOCKED** — The next kenari dispatch must include a revised brief emphasizing the "ONE tool call per round" rule and avoiding redundant calls.
