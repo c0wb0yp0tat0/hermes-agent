@@ -16,6 +16,7 @@
 5. **The stage-3 verifier's crate:** the harness's `execute()` + `write_file` handling (the integration points to read: the tool dispatch at ~line 450-480, the parse_args + the fold-step) — verified against this steer.
 
 ## The record
+- **THE POC SCOPE (the operator's framing, 2026-11-15):** borrow Serena AS-IS for the proof of concept — try it literally as installed, with at most SLIGHT tweaks per Nemo's findings; the own-build (a melra-style guarded local executor) is the FUTURE line the PoC's lessons feed, never the PoC's path. The THREE two-way-door sprint missions stay first; the PoC rides alongside, never ahead. The PoC's deliverable shape: one write-only compose brief through the leg on a live seat — the artifact lands with the re-read receipt, or the door closes.
 - Chain bank: 002-lessons appended (the local-executor write-path doctrine, 2026-11-15).
 - The probes' receipts: the tunnel live (rig → host 24282), the dashboard 302s, the 404 matrix, the host process state (serena.exe stdio + the dashboard).
 - Design stays ours: the harness is ours; the executor leg is a two-way-door option; nothing adopted wholesale.
