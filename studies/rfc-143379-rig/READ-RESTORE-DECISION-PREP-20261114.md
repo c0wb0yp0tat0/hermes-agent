@@ -1,4 +1,80 @@
 
+## §1 THE EVIDENCE
+
+**1.1 Label trail.** The issue carried six category label moves; the substance
+of the issue never changed across those moves. P4 is the queue's smallest
+bucket (P0:1 · P1:119 · P2:8,799 · P3:9,787 · P4:120 · unlabeled:173); 24 of
+the 120 are P4-labeled (the brief's count). The label moved with the reading, never with
+the issue — the lane's finding: instruction-faithful criteria are the fix.
+(IN-LANE from audit draft §4/§10; BORROWED bucket counts from brief.)
+
+**1.2 Fabrication class.** Six of six fabrications occurred without the read
+path (twice observed); twelve of twelve clean refusals carried one non-punitive
+abstention sentence: "a system that cannot read should say so, never guess."
+(IN-LANE from verified comment set 34 of verified work; HEAD-RECON RFC-
+143379-RECORD-20261111.md + IMPROVED-S2U-DRAFT-FINAL5-20261111.md.)
+
+**1.3 Two vehicles, one gap — neither merged.** #11548 (minimal dispatcher,
+branch fix/116564-descr intact at d3a6e577, closed-by-author, merged=false)
+vs #116673 (schema-safe read + doc-chain, closed-by-author 2026-10-10,
+merged=false). The fix is not missing; it is UN-MERGED. (IN-LANE local repo
+reads; BORROWED from brief §2.)
+
+**1.4 Root-cause attribution.** The PR-head collection error at `5b31ccb7d5`
+(#139606) is a stale-base artifact predating `95610a5db4`'s pathlib fix — NOT
+a read-bug. The verified rebase is `ffc651bd11` ⊕ head `60a2e15638`. (IN-LANE
+from record §"the root-cause" §4; HEAD-RECON RFC-143379-RECORD-20261111.md.)
+
+**1.5 Hold condition (verbatim).** RFC-143379-RECORD §82, comment 6787192097
+(2026-11-11): "We are holding for the read-restore PR (#141876)… if the fix
+does not land soon, we will discuss alternatives with the community rather than
+let the hold become indefinite." (HEAD-RECON.)
+
+## §2 THE DECISION FRAME
+
+The chair must choose among three explicit options. Each carries evidence for
+and against, a risk register, and open questions only the chair can answer.
+
+**Option A — Continue the hold and keep its condition.**
+- Evidence for: The vehicle exists un-merged (#116673 head `60a2e15638`); the
+  fixing is real (verified rebase `ffc651bd11` ⊕ head); the hold is bounded
+  (condition clause sets a deadline).
+- Evidence against: The fix has been un-merged since 2026-10-10; the hold
+  risks becoming indefinite if the condition's "soon" is not enforced.
+- Risk register: Indefinite hold if community momentum fades; opportunity cost
+  while the fix sits un-merged.
+- Open question: How soon is "soon" — does the chair have a hard date?
+
+**Option B — Alternatives-with-community path.**
+- Evidence for: The hold's own condition clause explicitly names this path if
+  the fix does not land soon; the risk that the hold becomes indefinite is real.
+- Evidence against: The fix is verified and un-merged; abandoning the hold for
+  alternatives wastes a real solution.
+- Risk register: Community fragmentation if alternatives split focus; loss of
+  verified work if #116673 is abandoned for a new approach.
+- Open question: What is the community's appetite for alternatives given the
+  un-merged fix?
+
+**Option C — Rescope/split offer.**
+- Evidence for: The minimal-dispatcher vehicle (#11548) and the schema-safe
+  read vehicle (#116673) could be split; one could land while the other stays
+  hold.
+- Evidence against: Splitting may reintroduce the read-bug risk if the schema-
+  safe read path is delayed; the two vehicles address the same root cause.
+- Risk register: Partial fix leaves the read path exposed; coordination cost
+  of split review.
+- Open question: Which half stays, and which half moves forward alone?
+
+## §3 THE RECOMMENDATION
+
+The lane's read: **Option A — continue the hold and keep its condition**, with
+a 72-hour hard deadline enforced by the chair. The evidence is clear: the fix
+is real, it is un-merged, and the hold's own condition clause provides an exit.
+The lane does not choose the chair's decision; it recommends the path that keeps
+the verified fix in play while bounding the hold's duration. If the fix does
+not land within 72 hours, the lane recommends the chair trigger Option B per
+the hold's own condition.
+
 ## §4 THE OWED REGISTER — what is NOT yet verified
 
 **4.1 Remote PR states.** #11548 and #116673 merged=false confirmed IN-LANE from
