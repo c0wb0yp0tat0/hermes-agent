@@ -103,3 +103,14 @@
 - **The ledger row for this landing carries the reconciled state.**
 
 **Fold-line after reconciliation:** `RINGS-COMPLETE · launch gate OPEN per the operator's green light · the only gate = writes outside PR #1 · packets READY, un-fired · next arms: R1 decision-prep, Door D backlog, the 02:10 cadence.`
+
+---
+
+## 7. THE ROSTER CORRECTION (2026-11-15 ~02:05 EST — the night's mispin corrected on the operator's word)
+
+- **The live trio, responder-verified on the PLAN's pins (direct endpoint, model field == requested pin, content received):** `upstage/solar-mini4:free` **LIVE** · `stepfun/step-3.7-flash:free` **LIVE** (+ bare form) · `meituan/longcat-2.5:free` **LIVE**. The night's "free zones ENDED (404)" claims were probed against DIFFERENT pins (`stepfun-5-preview` / `longcat-2.5-preview`) — a pin mismatch, not a zone end. The plan's own deck (012: "nous free = exactly 3 (solar/longcat/stepfun — verified 11-14)") had the trio right the entire time; the mispin was banked over it. That reversal is the failure this §7 corrects.
+- **beam: NOT involved** — the operator: "it's not free anymore"; no probe, no pin, no claim rides it.
+- **moonbeam: NOT a free tier, NOT a fleet asset** — withdrawn (memory corrected 11-15).
+- **kenari: NEVER held** (the operator's word, 2026-11-15) — the wired surface (kn- key, 5 RPM / 50 daily pool, laguna/muse/nemotron probed alive 11-10) is a LIVE fleet surface; every "HELD READ-ONLY / never spent" line in this workup (§1/§2/§3/§5) is **superseded** by this correction.
+- **The consequence:** the solar-constrained receipts (SB8; this workup's earlier sections) stand as HISTORY — honest at their moment, on the mispin's read — but the CURRENT roster is the plan's full trio + kenari live: the next rings fan solar / stepfun / longcat with fair-share rest, and kenari may be staged per the operator's word. No single-seat constraint binds the next window.
+- **Probe receipts for this correction:** direct endpoint, plan pins, responder-verified, ~2026-11-15 02:05 EST.
