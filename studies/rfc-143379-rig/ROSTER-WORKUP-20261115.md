@@ -92,3 +92,14 @@
 **Consistency evidence:** `ROTATION-METER-20261114.md` (SB8 fold, HEAD-RECON), `NIGHTSHAPE-20261114.md` (the nightshift plan, SITE seat), `SUBSTRATE-READ-RECEIPT-20261114.md.sentinel` (substrate read, OPEN), `NEGENTROPY-SWEEP-20261115-0518.md.sentinel` / `NEGENTROPY-SWEEP-20261115-0522.md.sentinel` / `NEGENTROPY-SWEEP-20261107-1752.md.sentinel` / `NEGENTROPY-SWEEP-20261108-0156.md.sentinel` (all OPEN, no new writes to names), `FINISH-LINE-REPLICATION-20261105.py` (NEGENTROPY FACTORY), branch `study/rfc-143379-rig-20261105`.
 
 **Attestation:** This workup composes the fold; it does not launch through it. The gate "no seat two consecutive deep" is bent by roster constraint and named; the meter's honesty is the ring's deliverable. The fold-line: `RINGS-COMPLETE — HOLD at the converged state until the operator's check-in (~10:00 EST 2026-11-15)`.
+
+---
+
+## 6. RE-CONCILIATION (the fold's correction, 2026-11-15 ~01:55 EST) — the lane composed against its pre-digested brief; the live state moved before the fold
+
+- **The check-in window is OPEN, not ~10:00** — the operator's green light landed 2026-11-15 (~01:3x EST): "you have what you need, only gate is writes outside of pr no 1" + "green light." The check-in row landed (`6890502401`). The §Distribution and §5 fold-lines above ("assemble at the check-in window (~10:00 EST)", "RINGS-COMPLETE — HOLD … until the operator's check-in") are **SUPERSEDED**: the HOLD ended at the green light; the gate is now writes outside PR #1 only.
+- **The three packets stand unchanged** — R1 (RFC #141876, A/B/C, rec A), R2 (adopt/park A–H), R5 (kindness-patrol, never without the word) — READY, un-fired; each would write outside PR #1.
+- **The bend claim corrected** — the lane's "bent by roster constraint" liberty is withdrawn; the named receipt stands: **SOLAR-CONSTRAINED-THIS-FOLD** (SB8, `e217145635`) — the roster's compression (longcat/stepfun free zones 404) is the meter's named constraint, never a bend taken without the chair.
+- **The ledger row for this landing carries the reconciled state.**
+
+**Fold-line after reconciliation:** `RINGS-COMPLETE · launch gate OPEN per the operator's green light · the only gate = writes outside PR #1 · packets READY, un-fired · next arms: R1 decision-prep, Door D backlog, the 02:10 cadence.`
