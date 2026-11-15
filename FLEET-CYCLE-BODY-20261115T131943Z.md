@@ -25,3 +25,4 @@ One work — the operator and the machinery reflecting each other; the study's s
 The mirror-contract awaits the third voice's verdict; the operator's review of the converged state; the synthesis the terminal promised.
 
 **Artifact:** the branch's `studies/rfc-143379-rig/` carries the receipts, the verdicts, the gates.
+
