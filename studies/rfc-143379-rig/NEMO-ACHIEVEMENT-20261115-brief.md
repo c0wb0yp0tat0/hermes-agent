@@ -4,9 +4,10 @@
 
 ## Grounding (each ONCE; no hunting; ABSENT stays ABSENT + named; a clipped file is never re-read)
 1. This brief, twice.
-2. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/MISSION-MAP-20261115.md` — the three-mission frame + M1.5 (the sequence: M1 peaks → M1.5 gated between M1 and M2 → M2 fires after M1's apex → M3 after both; Nemo's strategic placement binding).
-3. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/SPRINT-PLAN-20261115.md` — M1's wheel (R1–R8), the fire order, the kaizen/ACES apex loop contract.
-4. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/STORM-BEARINGS-20261115.md` — the load-bearing findings map, once.
+2. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/NEMO-STEER-CHANNEL-20261114.md` — the steer channel: the head writes `STEER-<id>: <instruction>` lines here; **read this file BEFORE EVERY COMPOSE ROUND** and act on the newest unacknowledged `STEER-<id>:` that round, acknowledging it in the artifact. STEER-8 is this ride's framing (the riding order: the head still rides as the head seat — deepseek is the CTO; NEMO is the ASSISTANT — never the decider; write-first discipline; the achievement goal; the gates).
+3. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/MISSION-MAP-20261115.md` — the three-mission frame + M1.5 (the sequence: M1 peaks → M1.5 gated between M1 and M2 → M2 fires after M1's apex → M3 after both; Nemo's strategic placement binding).
+4. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/SPRINT-PLAN-20261115.md` — M1's wheel (R1–R8), the fire order, the kaizen/ACES apex loop contract.
+5. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/STORM-BEARINGS-20261115.md` — the load-bearing findings map, once.
 
 ## The live state (the head's fresh receipts — trust these, verify only what you need)
 - **M1:** R1 ✓ `R1-READSIDE-HOOK-20261115.md` · R2 ✓ `R2-L2-SELECTION-20261115.md` @ `290aaf16f7` · R3 ✓ `R3-BANK-ARBITRATION-20261115.md` @ `d936f878f5` (kenari's first measured ride, rowed `6901495789`) · R4–R8 STAGED, seats probed live 16:15 ET (solar/stepfun/longcat) · the kaizen/ACES apex loop has NOT run yet.
