@@ -2,7 +2,7 @@
 
 > **Gate:** kenari READ-ONLY (held reserve, never spent, canary); RFC QUIET; no service changes; no `/root/.hermes` writes; git-only terminal — all runs register OWED; receipts stamped `IN-LANE / BORROWED <source> / HEAD-RECON`; absence only from a stamped read.
 > **STEER-1 acknowledged:** `drop/` is OUTSIDE read roots — no `drop/` read is claimed; refs staged in `REFS/`; the mismatch is named in §7 OWED. Nothing launches until the operator's word.
-> **Loop-state:** `CONTINUE + NEMO-COPYCAT-READ` (the window map is corrected: R1–R5 completed → SB1–SB8 substrate-build); the enrichment is real, so the loop continues to the copycat read.
+> **Loop-state:** `CONTINUE + THE LAUNCH (the operator's confirm) — awaiting the chair's word; the plan is composed, folded, and staged; nothing fires without the confirm.`
 > **NO NEXT-LAUNCH:** the reload is the head's dispatch — the head holds the chain. This artifact hands off for confirmation.
 
 ---
