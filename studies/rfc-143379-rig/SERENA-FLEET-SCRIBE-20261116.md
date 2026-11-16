@@ -22,9 +22,9 @@ Serena as the rig's **scribe seat**: a second, independent receipt surface — t
 ## THE HONEST MARKERS
 - The scribe surface is VERIFIED (the three probes + the live write's ledger entry).
 - The executor/editor line is DESIGNED-but-UNWIRED ([ABSENT]: the mcp SDK rig-side, the host's transport flag, the leg's integration run).
-- The adoption is the chair's: the offer stands, the wire is one arm, the re-read is the proof. Nothing posts; the RFC stays QUIET.
+- The adoption fires by the standing law: the offer stands, the wire is one arm, the re-read is the proof. Nothing posts; the RFC stays QUIET.
 
 ## UPDATE (2026-11-16 ~01:10 UTC, the operator's riff — the pilot-kit framing, banked)
 **"Potentially end up in the pilot kit or something built later with Serena as prior art — and for these two-way door sprint missions we're doing, it's perfect."** THE SHAPE: the two-way-door sprint missions (1 / 1.5 / 2 / 3 — each with its improver loop, its byte-verified receipts, its held door) ARE the pilot kit's proving ground — every mechanism in them is a worked specimen, proven under live fire, never designed in a vacuum. SERENA is the kit's prior-art anchor: the scribe cells (the third receipt surface), the live write-executor proof, the JS-as-contract-source seam — all banked as the specimen the pilot builds around. The missions' architecture (the improver loop's termination contract, the amplifier's carry-in, the two-way-door verdict) is itself the kit's spine. Nothing new needs building for the pilot to exist — the pilot IS this arc, collected.
 
-**Loop-state line: OFFER-STAGED + the scribe arm's wire ready on the word — the receipt surface is live, the rest is the chair's.**
+**Loop-state line: OFFER-STAGED + the scribe arm's wire ready on the word — the receipt surface is live, the rest fires by the standing law.**

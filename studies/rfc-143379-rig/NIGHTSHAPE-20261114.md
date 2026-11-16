@@ -88,7 +88,7 @@ The merged plan (LENS-1 + LENS-2 + converge) lands for the operator's confirmati
 - **the chair's absent window must not stall anything** — every item is pre-dispositioned;
 - **only true holds are pre-written decision packets** — (1) R1's decision options on RFC #141876, (2) R2's adopt/park decisions, (3) R5's named pending items (kindness-patrol main-branch fix named pending, never fired without the user's word);
 - **no public surface is released without the user's word** — R1's brief release and R2's aggregated rows are gated;
-- **kenari release** is the chair's single hold on the held door (canary rule; READ-ONLY by design, never spent);
+- **kenari release** fires by the standing law single hold on the held door (canary rule; READ-ONLY by design, never spent);
 - **pilot's start** — the run that lands the read-restore decision brief — is the pilot's start, held until the chair says go.
 
 Everything else auto-continues: the folds, the re-probes, the cron re-fires, the Harbor tiles, the fan arms, the hold-safe items at the chair's name. This artifact closes with the loop-state line and the NO NEXT-LAUNCH block; the converge lane is the head's dispatch — the head holds the chain. Nothing launches from this lane until the operator's confirm gate says the merged plan is good.

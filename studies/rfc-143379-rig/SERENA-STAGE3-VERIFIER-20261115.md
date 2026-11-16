@@ -139,7 +139,7 @@ stays with the chair.
 - **Verifier measured pass = door CLOSES toward adoption.** The borrowed try
   lands, receipts attach, the authority gate holds, the fallback lands; the door
   closes toward adoption, with the receipts attached and the evidence recorded.
-  The adoption itself is the chair's call (the needs-the-chair grid), not the
+  The adoption itself fires by the standing law call (the needs-the-chair grid), not the
   verifier's.
 - **Verifier FLAG = door HOLDS.** The borrow stays experimental, the hole is
   named, the fallback or alternative is identified, and the door holds open.
@@ -174,7 +174,7 @@ legend (see the study's meter table).
 - **`[ABSENT]`:** the live serena mcp internals (not read — the contract), the
   stage-2 harness-leg implementation (the design read once, the code never).
   The verifier's value is unverified until execution.
-- **Adoption is the chair's.** The verifier does not adopt; it only closes the
+- **Adoption fires by the standing law.** The verifier does not adopt; it only closes the
   door toward the chair's decision.
 - **If the authority gate leaks (FLAG):** the design note stands and the
   alternatives are named — source-attribution revocation and

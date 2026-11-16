@@ -31,7 +31,7 @@
 
 **Sequence (safest-first):** (1) battery first — A/B/C green before anything retires; red stays 6/6 at the wound; (2) freeze baseline E; (3) land the read, keep all compensation as-is (matches #141876's scope + the caveat); (4) owning-work dive per site, delete-or-defensive-UX, individually justified; (5) re-probe A after any deletion — evidence gap → HOLD-SAFE.
 
-**Two-way doors:** the read is a 12-line revertible addition, battery its probe; each deletion reversible from receipted history, ships only after E-green; guards/sentence retention reversible at the owning work's word. Nothing public at any step — the chair's word gates every crossing.
+**Two-way doors:** the read is a 12-line revertible addition, battery its probe; each deletion reversible from receipted history, ships only after E-green; guards/sentence retention reversible at the owning work's word. Nothing public at any step — the standing law (nothing internal is gated) gates every crossing.
 
 **Seam register (owning work decides; named, never decided here):** (1) the four-site question (+ fifth echo): delete or defensive UX — #141876 does not settle it; (2) guards' retirement trigger + owner; (3) abstention sentence's standing + owner; (4) collapse shape — cleanup folded into #141876 vs separate post-battery PR; (5) the ~6,245-line remainder catalogue (read-gap rows vs unrelated drift); (6) boundary — the seven dropped-value tickets are not read-gap rows; #116673 rides the battery (D); #135039/#69264 stay outside the restore's scope.
 

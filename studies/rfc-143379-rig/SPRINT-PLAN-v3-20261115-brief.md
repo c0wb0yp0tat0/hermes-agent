@@ -28,6 +28,6 @@ M1 = this sprint (bearings → successor plan → FIRE → kaizen/gemba/ACES-imp
 4. **THE TWO-WAY-DOOR GRID** — AUTO-CONTINUE / HOLD-SAFE / NEEDS-THE-CHAIR (the only NEEDS-THE-CHAIR = the enrichments + anything outside PR #1).
 5. **THE METERS** — landings per window, seats alive, runner-idle-zero, quota headers, batch honesty = zero.
 6. **THE FIRE ORDER + THE APEX LOOP** — exact dispatch sequence (first ring, seat, brief path), fold cadence (every landing rows), re-anchor lines, and the kaizen loop's shape (measure → improve → re-measure → stop when no change).
-7. **THE ENRICHMENT STAGING + PRESERVATION** — the two READY packets pre-composed (their exact edits, queued for the chair's word), NOT-READY named, and the preservation line (material rides into M2's apex).
+7. **THE ENRICHMENT STAGING + PRESERVATION** — the two READY packets pre-composed (their exact edits, queued for the standing law (nothing internal is gated)), NOT-READY named, and the preservation line (material rides into M2's apex).
 
 **End condition:** the file > 15,000 chars with all seven sections carrying content — verify with one `wc -c` at the end. Then stop. No git.

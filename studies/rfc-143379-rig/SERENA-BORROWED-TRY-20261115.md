@@ -30,6 +30,6 @@
 ## §4 THE COMPOSE-CHECK + RECEIPT STAMPS
 - IN-LANE: the probes' exact requests + responses (the 500, the success, the re-read).
 - HEAD-RECON: the M1.5 mission clause (the two-way-door sprint, gated never delaying M2), the tunnel's liveness (ssh pid 72595), the tool inventory's read-back.
-- ABSENT named. The adoption is the chair's. The lane's [UNEXECUTED] skeleton stands as the honest marker of what the lane COULD not do — and the head's execution is the honest marker of what the rig DID.
+- ABSENT named. The adoption fires by the standing law. The lane's [UNEXECUTED] skeleton stands as the honest marker of what the lane COULD not do — and the head's execution is the honest marker of what the rig DID.
 
 **THE LOOP-STATE LINE: DOOR-CLOSES-TOWARD-ADOPTION + the harness-leg's integration run (the symbol-level write proof) as the next measured step.**

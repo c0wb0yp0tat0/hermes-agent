@@ -100,7 +100,7 @@ No leak and no over-block → FLAG condition is binary and absent → the design
 
 - `[ABSENT]`: the live compose step's code (never read, both cycles). The stub is a simulation of the spec's checks; it does not claim the real gate exists.
 - `[ABSENT]`: probe's value until execution — now executed; the run record `[EXECUTED]` lives.
-- The stub's verdicts preview the real gate's behavior; the real gate's construction is the chair's + the head's decision, never this lane's.
+- The stub's verdicts preview the real gate's behavior; the real gate's construction fires by the standing law + the head's decision, never this lane's.
 - The FLAG (leak/no-over-block) is binary and absent; the named alternatives stand only if the head chooses to tighten:
   - Byte-verify at dispatch (already implied by HASH);
   - Branch-head check tightening (already implied by CURRENCY);
@@ -113,5 +113,5 @@ No leak and no over-block → FLAG condition is binary and absent → the design
 
 - **Inlined:** cycle-2 spec §1–§4 (four checks, two seeds, four meters, refuse shape) → `CYCLE2-COMPOSE-GATE-20261115.md`; cycle-3 named execution gap → `CYCLE3-20261115.md` (all four meters designed but unmeasured; run record `[ABSENT]`).
 - **Design note stands:** compose-gate integrity gate, checks + seeds + meters per spec §1–§4.
-- **ABSENT:** live compose step's code (never read); the real gate's construction is the chair's + the head's.
+- **ABSENT:** live compose step's code (never read); the real gate's construction fires by the standing law + the head's.
 - **Receipt status:** `[EXECUTED]` run record landed 2026-11-15; meters first measured; design verdict PASS; no FLAG.

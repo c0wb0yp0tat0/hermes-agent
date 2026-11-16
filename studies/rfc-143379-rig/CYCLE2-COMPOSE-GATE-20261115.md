@@ -40,7 +40,7 @@ Refusal payload = coordinates only: artifact path, expected vs actual hash, dang
 
 ## 5. THE HONEST MARKERS + TWO-WAY DOOR
 
-- `[ABSENT]`: the live compose step's code (not read — the contract); the probe's value unverified until execution; the adoption is the chair's.
+- `[ABSENT]`: the live compose step's code (not read — the contract); the probe's value unverified until execution; the adoption fires freely — the only gates are public writes beyond PR #1 + gists.
 - If the gate leaks or over-blocks: the design note stands and the alternatives are named — byte-verify at dispatch, branch-head check tightening — never forced.
 
 *One tool call per round; skeleton by round 3; ≤6,000 chars/write; commit+push ONCE at the END.*

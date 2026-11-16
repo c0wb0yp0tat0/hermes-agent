@@ -24,7 +24,7 @@
 2. **The fair-share batch math** — the fan rules applied to the current roster: what a 5-lens fan costs on one seat (meters, walls), the honest "solar-constrained" verdict, the levers that widen the roster.
 3. **The next rides' assignments** — the next rings the plan calls for (the read-restore decision prep, the confirm-register upkeep, the cadence) mapped to seats, with the gate lines (kenari read-only, nemo ban, upstream quiet).
 4. **The meter budget** — the pool-shaped fan for the next window: one reliable lane per pool, burns inside the reset window.
-5. **Honest markers** — what's unmeasured, what's parked, what awaits the chair's word.
+5. **Honest markers** — what's unmeasured, what's parked, what awaits the standing law (nothing internal is gated).
 
 ## Row contract
 On landing: verify bytes (artifact + sentinel + `git ls-remote` == local), commit, push, then row the landing on the thread (the home standard: titled, dated, kinded, speakable, receipts, what-it-means, next beat). The row is the landing's receipt — never row a landing that hasn't committed.

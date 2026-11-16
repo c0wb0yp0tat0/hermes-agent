@@ -14,7 +14,7 @@
 
 **Card J · JS-as-contract-source.** `[INLINE-crate]` The client's payload shape is the contract; a 500 names the seam — review the dashboard's JS first, never a blind retry. *Source: R2 — `studies/rfc-143379-rig/SERENA-BORROWED-TRY-20261115.md` @ `ae468b13bf`.* Markers: the 500's seam (`memory_name` + `content`), received as data, not frustrated past.
 
-**Card D · two-way-door verdict.** `[INLINE-crate]` The verdict rides the measured landing (CONTINUE + next / DONE / BLOCKED); the adoption is the chair's; the door is reversible by construction. *Source: R4 (+ R3's door) — `studies/rfc-143379-rig/SERENA-BORROWED-TRY-20261115.md` @ `ae468b13bf`.* Markers: the symbol-level write proof is the leg's integration run (next).
+**Card D · two-way-door verdict.** `[INLINE-crate]` The verdict rides the measured landing (CONTINUE + next / DONE / BLOCKED); the adoption fires freely — the only gates are public writes beyond PR #1 + gists; the door is reversible by construction. *Source: R4 (+ R3's door) — `studies/rfc-143379-rig/SERENA-BORROWED-TRY-20261115.md` @ `ae468b13bf`.* Markers: the symbol-level write proof is the leg's integration run (next).
 
 ## 2 · THE ADOPTION-GATE STAMP
 
@@ -33,13 +33,13 @@
 `[DESIGN-NOTE]`
 - capture-yield 4/4 · source-fidelity 4/4 · invention-rate 0/4 · fold-readiness 1/1 (the adoption gate named).
 - Format matched (the capture's card shape; the home's live format `[ABSENT]` — reconciled at review) · sources tagged · reversible shape held.
-- **Landing:** `[PENDING — the head's review + the chair's word]`.
+- **Landing:** `[PENDING — the head's review + the standing law (nothing internal is gated)]`.
 
 ## 5 · THE HONEST MARKERS + TWO-WAY DOOR
 
 - `[ABSENT]` — the mechanism repo's method-cards current content (never read — the contract).
-- `[NOT LANDED]` — the draft is place-ready, not committed at the home; the landing is the chair's.
+- `[NOT LANDED]` — the draft is place-ready, not committed at the home; the landing fires by the standing law.
 - If the review finds a card's flaw, the alternatives are named — the card's re-distill, the receipt re-read — never forced.
 - Corroboration of class, never adoption: Card B ↔ SELD's read-side evidence-plane verifier; the adoption gate ↔ AskALCF's evidence-gated commit gate; the invention-rate ↔ MAPE's inventions-live probe; Card D's three-state ↔ three-state delegation.
 
-**Loop-state: FOLD-DRAFT'D + place-ready — the landing the head's review + the chair's word; the M2 gate untouched.**
+**Loop-state: FOLD-DRAFT'D + place-ready — the landing the head's review + the standing law (nothing internal is gated); the M2 gate untouched.**

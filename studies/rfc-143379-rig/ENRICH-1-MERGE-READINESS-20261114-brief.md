@@ -22,7 +22,7 @@
 3. **THE CHAIR PACKAGE** — the ONE page the chair reads to decide: the wound (3 lines), the evidence (the label trail + fabrication numbers, cited to R1), the options (R1's A/B/C condensed), the acceptance battery's size (estimated runs/cost), the word-gate note (this package crosses to the public ONLY on the operator's word — the move is: restate the hold with the battery attached, or ship the split).
 4. **THE RISK REGISTER** — what a stalled merge costs (the ~17K-issue drift extrapolation, R1's numbers), what a rushed merge costs (regression on the memory path), the two-vehicle churn risk, the label-lottery risk on a rescope.
 5. **THE OWED REGISTER** — machine-side specs: running the battery's red/green commands, fetching #141876's mergeability/checks, the final merge dispatch (chair-gated).
-6. **Loop-state line**: `CONTINUE + <what's next after the chair's word>` or `HOLD + CHAIR-GATE` + a NEXT-LAUNCH block naming the next in-realm leg ONLY if it needs no chair word.
+6. **Loop-state line**: `CONTINUE + <what's next after the standing law (nothing internal is gated)>` or `HOLD + CHAIR-GATE` + a NEXT-LAUNCH block naming the next in-realm leg ONLY if it needs no chair word.
 
 ## Boundaries (binding)
 - kenari READ-ONLY; RFC QUIET; **nothing public — this package is staged for the chair; the crossing is the operator's word alone**; no service changes; no `/root/.hermes` writes; git-only terminal — runs register OWED with exact command strings, never faked.

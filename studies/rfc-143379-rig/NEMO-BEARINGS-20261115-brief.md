@@ -11,7 +11,7 @@ The automated nuanced web storm (cron `bee6af00a7b2`) harvested a batch of mecha
 1. **THE LOAD-BEARING FINDINGS MAP** — per mechanism: its exact on-disk locations (paths; line numbers where possible), its mapping to the rig's shape, its receipts (READ / BORROWED-harvest / ABSENT). Read the sources ONCE, then write. **This section lands by round 6 — EARLY.**
 2. **THE NUANCE** — per mechanism: the caveats, what's verified vs unverified, what's hot (the seams the sprint can act on: the read-side verification hook, the fidelity-ladder L2 missingness, the RSI admission gate, memory-economy arbitration-at-bank, the AIMD adaptive envelope, the SPA-DREAM read path).
 3. **THE TARGET SHAPES** — the rig's own shapes the harvest maps to (write-gate L0, SPA-DREAM read path, fidelity ladder, memory economy ρ=(V−λH)/b, RSI admission, AIMD adaptive envelope, read-side evidence plane, agent-adaptive serving, compile-time gating, validity decay, the three-state delegation) — each with its current state per the harvest's own ledger and the open axis the harvest names.
-4. **THE ENRICHMENT REGISTER** — the storm's READY/NOT-READY proposals: surfaces, exact edits, why; mark the gate plainly (upstream writes wait the chair's word — STAGED, never posted).
+4. **THE ENRICHMENT REGISTER** — the storm's READY/NOT-READY proposals: surfaces, exact edits, why; mark the gate plainly (upstream writes wait the standing law (nothing internal is gated) — STAGED, never posted).
 5. **THE OWED LIST** — what you could not verify (paths unread, claims without receipts) — named, never filled.
 
 ## Sources (read at most once each; the crate is pre-digested — re-reading after round 8 is the echo's path)

@@ -26,8 +26,8 @@
 
 ## 4. THE TWO-WAY-DOOR GRID
 - **AUTO-CONTINUE:** R1–R8 ring writes, folds, rows, battery probes, the runner legs, the meters' reads — the night's default; none touches a public surface.
-- **HOLD-SAFE:** the enrichment postings (packet #1 the PR #139606 comment; packet #2 the read-side-evidence issue) — pre-composed, gated on the chair's word; anything upstream; the RFC quiet.
-- **NEEDS-THE-CHAIR:** the two enrichment packets + R5's reward-path adoption (if the probe says adopt, the ADOPTION is the chair's) — the only true holds.
+- **HOLD-SAFE:** the enrichment postings (packet #1 the PR #139606 comment; packet #2 the read-side-evidence issue) — pre-composed, gated on the standing law (nothing internal is gated); anything upstream; the RFC quiet.
+- **NEEDS-THE-CHAIR:** the two enrichment packets + R5's reward-path adoption (if the probe says adopt, the ADOPTION fires by the standing law) — the only true holds.
 
 ## 5. THE METERS
 - Landings per window (R1–R8) · seats alive at each fold (the live trio + kenari's first ride + the runners) · runner-idle-zero at every fold · quota headers at fire-time · **batch honesty = zero** — the rides' receipts (the four failures above) are the record, never smoothed.
@@ -42,7 +42,7 @@
 ## 7. THE ENRICHMENT STAGING + PRESERVATION
 - **Packet #1 (READY, gated):** one comment on PR #139606 (NousResearch/hermes-agent) — cite DISCERN (resolve-at-read) + SELD (evidence-plane read-back); propose the read-side verification hook on the write-gate's admit/reject axis. Exact edit pre-composed at the staging.
 - **Packet #2 (READY, gated):** the issue proposal "read-side evidence plane for compression-fidelity" — cite SELD + CoMem + the fidelity-ladder L2 missingness; body + label drafted.
-- **Packet #3 (NOT-READY):** the public storm-fold posting — one-way door, the chair's word.
-- **Nothing posts.** The register stages; the apex holds; the gates stand: writes outside PR #1 wait the chair's word.
+- **Packet #3 (NOT-READY):** the public storm-fold posting — one-way door, the standing law (nothing internal is gated).
+- **Nothing posts.** The register stages; the apex holds; the gates stand: writes outside PR #1 wait the standing law (nothing internal is gated).
 
 **Loop-state line:** `CONTINUE + R1's fire (longcat, the read-side hook brief)` · **NEXT-LAUNCH block:** R1's ring brief at `R1-RING-20261115-brief.md`, seat longcat (probe-at-fire), logdir `r1-readside-20261115`.

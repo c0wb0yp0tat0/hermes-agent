@@ -34,7 +34,7 @@ Nemo, fleet asset. Same mission as ride 1: produce the STORM BEARINGS map — wh
 - **Inventions-live probes** — OPEN: design-space search (MAPE) + F_used/held-out probes (Agent Plasticity, prior fold).
 - **Agent-adaptive serving** — OPEN: PD split + KV manager (Evolving Infra).
 
-### The enrichment register (storm's proposals — STAGED, NEVER POSTED; upstream writes wait the chair's word):
+### The enrichment register (storm's proposals — STAGED, NEVER POSTED; upstream writes wait the standing law (nothing internal is gated)):
 1. READY — comment on PR #139606 (NousResearch/hermes-agent): cite DISCERN + SELD, propose a read-side verification hook on the write-gate's admit/reject axis.
 2. READY — issue proposal "read-side evidence plane for compression-fidelity" (NousResearch/hermes-agent): cite SELD + CoMem + the L2 missingness.
 3. NOT-READY — public storm-fold posting (one-way door, needs approval).

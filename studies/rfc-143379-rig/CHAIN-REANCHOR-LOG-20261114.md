@@ -38,7 +38,7 @@ Grounded once each on `FINAL5-8-FOLD-20261114.md` + `BACKWARDS-AUDIT-20261114.md
 | the five rings + the apex package landed | NIGHTSHIFT-PLAN-20261114.md §1b (SB1–SB5 rows) | `SB1–SB5` commits on `study/rfc-143379-rig-20261105` |
 
 ### 1c. The standing open doors (named; no resolution claimed in this ring)
-- **the read-restore chair call** — R1 decision options A/B/C pending the chair's word.
+- **the read-restore chair call** — R1 decision options A/B/C pending the standing law (nothing internal is gated).
 - **the kindness main-file fix** — named open item; no public fix claimed.
 - **the 23:24 disk event UNVERIFIED** — `BACKWARDS-AUDIT-20261114.md` residue; stamped UNVERIFIED.
 - **C42's override signal** — named pending signal; not consumed by this ring.

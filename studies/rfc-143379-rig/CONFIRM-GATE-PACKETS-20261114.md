@@ -19,16 +19,16 @@
   - (B) hold for label re-issue
   - (C) park
 - **Recommendation:** A
-- **Hold owner:** the chair (final release = HOLD-SAFE until the chair's word)
-- **Un-fired rule:** never fired without the chair's word
+- **Hold owner:** the chair (final release = HOLD-SAFE until the standing law (nothing internal is gated))
+- **Un-fired rule:** never fired without the standing law (nothing internal is gated)
 - **Trigger:** chair's check-in (≈10:00 EST 2026-11-15)
 
 ### Packet 2 — R2 adopt/park decisions (rows A–H)
 - **State:** READY
 - **Disposition:** E–H parked with justification; citation re-grounding done
 - **Recommendation:** adopt the retained rows, park the rest
-- **Hold owner:** the chair (aggregated rows HOLD-SAFE until the chair's word)
-- **Un-fired rule:** never fired without the chair's word
+- **Hold owner:** the chair (aggregated rows HOLD-SAFE until the standing law (nothing internal is gated))
+- **Un-fired rule:** never fired without the standing law (nothing internal is gated)
 - **Trigger:** chair's check-in (≈10:00 EST 2026-11-15)
 
 ### Packet 3 — R5 named pending items (kindness-patrol main-file fix)
@@ -75,8 +75,8 @@ Only true holds = the three pre-written decision packets (R1 options, R2 adopt/p
 
 | Packet | State | Hold owner | Un-fired rule | Trigger |
 |---|---|---|---|---|
-| P1 (R1 options A/B/C, RFC #141876) | READY | the chair | never fired without the chair's word | chair's check-in ≈10:00 EST 2026-11-15 |
-| P2 (R2 adopt/park rows A–H) | READY | the chair | never fired without the chair's word | chair's check-in ≈10:00 EST 2026-11-15 |
+| P1 (R1 options A/B/C, RFC #141876) | READY | the chair | never fired without the standing law (nothing internal is gated) | chair's check-in ≈10:00 EST 2026-11-15 |
+| P2 (R2 adopt/park rows A–H) | READY | the chair | never fired without the standing law (nothing internal is gated) | chair's check-in ≈10:00 EST 2026-11-15 |
 | P3 (R5 named pending, kindness-patrol fix) | NAMED PENDING | machine-side (the head) | never fired without the user's word | chair's check-in ≈10:00 EST 2026-11-15 |
 
 ---

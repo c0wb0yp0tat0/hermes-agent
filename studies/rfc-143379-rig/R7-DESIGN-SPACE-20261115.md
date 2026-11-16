@@ -58,4 +58,4 @@ A composition-module transplant crosses designs only with its receipts: the modu
 
 ## 5. THE HONEST MARKERS + TWO-WAY DOOR
 
-`[ABSENT]`: the live falsifier battery's F_used implementation (not read — the contract), the inventions catalog (not built — the probe's seed is the spec's). The probe's value is unverified until execution; adoption is the chair's. If the taxonomy fails to discriminate (no discovery signal): the design note stands and the alternatives are named — the deeper held-out partition, the cross-codebase transplant. Never forced.
+`[ABSENT]`: the live falsifier battery's F_used implementation (not read — the contract), the inventions catalog (not built — the probe's seed is the spec's). The probe's value is unverified until execution; adoption fires by the standing law. If the taxonomy fails to discriminate (no discovery signal): the design note stands and the alternatives are named — the deeper held-out partition, the cross-codebase transplant. Never forced.

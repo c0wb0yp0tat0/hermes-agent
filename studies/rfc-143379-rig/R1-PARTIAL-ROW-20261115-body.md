@@ -1,6 +1,6 @@
 **[LANDING (PARTIAL) + RE-FIRE 2026-11-15 · ~02:15 ET — R1 decision-prep landed two of five sections; the continuation ring is airborne to complete §1–§3]**
 
-**What landed:** `READ-RESTORE-DECISION-PREP-20261114.md` @ `d6df69bfd1` (remote == local verified) — §4 THE OWED REGISTER (the remote PR states with their run specs, the thread-pagination note, the stale-base root-cause attribution — the #139606 collection error traced to a stale base predating the pathlib fix, not a read-bug) and §5 LOOP STATE (`CONTINUE + READ-RESTORE decision-prep`; the next leg gates on the chair's word).
+**What landed:** `READ-RESTORE-DECISION-PREP-20261114.md` @ `d6df69bfd1` (remote == local verified) — §4 THE OWED REGISTER (the remote PR states with their run specs, the thread-pagination note, the stale-base root-cause attribution — the #139606 collection error traced to a stale base predating the pathlib fix, not a read-bug) and §5 LOOP STATE (`CONTINUE + READ-RESTORE decision-prep`; the next leg gates on the standing law (nothing internal is gated)).
 
 **Honest marker:** the brief demanded five sections — §1 THE EVIDENCE, §2 THE DECISION FRAME, §3 THE RECOMMENDATION were NOT composed before the lane's exit-0 commit. The early commit is exactly the failure class the re-fire receipt warns about ("the first commit is NOT the finish line"). Rowd as partial, never padded.
 

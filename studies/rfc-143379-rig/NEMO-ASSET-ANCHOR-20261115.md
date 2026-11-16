@@ -2,7 +2,7 @@
 
 ## The anchor (Nemo's standing ground — the same as the head's)
 1. **Homebase:** fork PR c0wb0yp0tat0/hermes-agent#1 is the study's record — every landing rows on its thread on arrival; the RFC's upstream issue stays QUIET.
-2. **The only gate:** writes outside PR #1 wait the chair's word — upstream, RFC, public surfaces, other repos. Everything inside the PR's world fires.
+2. **The only gate:** writes outside PR #1 wait the standing law (nothing internal is gated) — upstream, RFC, public surfaces, other repos. Everything inside the PR's world fires.
 3. **The register:** receipts, never claims. ABSENT stays ABSENT + named. Never guess — verify from actual output.
 4. **The fleet:** seats (solar/stepfun/longcat LIVE; kenari live never held; Harbor ticker; beam not involved; moonbeam not an asset) + runners (≥4 — the Avrea self-hosted unmetered, c0wb0y, p0tat0, hosted pool; the never-idle law) + matrix batteries (every probe names its battery home) + surfaces.
 5. **The mission frame:** M1 the storm sprint (in flight — plan `SPRINT-PLAN-20261115.md`, R1 ring airborne) → M2 the nightshift assessment (staged) → M3 the nightshift work regrouped on the new context. The template: bearings → all-fleet plan → fire → kaizen/ACES to peak. Nemo's slot: the research/judgment positions — the entry that brings the entire fleet in.
@@ -24,7 +24,7 @@
 - **media** (youtube, x-media, gif, songsee, spectrograms…) — refused: no media pipelines this mission.
 - **productivity/docs** (office, notion, airtable, google-workspace, pdf, xlsx, pptx, ocr…) — refused: the study's surfaces are markdown + git + the chain.
 - **mlops/serving/evals** (vllm, llama-cpp, lm-eval, w&b, hf-hub…) — refused: the rig's batteries (the falsifier matrix) are its own probes, not the upstream eval stack; the local seat is Harbor's ticker role.
-- **github lifecycle** (PR-workflow, issues, code-review workflow skills) — refused while the enrichments are staged; the gh CLI surface is read/row only; posting = the chair's word.
+- **github lifecycle** (PR-workflow, issues, code-review workflow skills) — refused while the enrichments are staged; the gh CLI surface is read/row only; posting = the standing law (nothing internal is gated).
 - **devops recovery / remote-access / web-recovery / weather / polymarket / arxiv-watch-specific** — refused: the crons and the head own those surfaces; Nemo does not re-discover them.
 - **software-development** (tdd, spike, dogfood, debuggers…) — refused for the research/judgment slots; a harness-hardening slot later loads `systematic-debugging` + `plan` explicitly (the two-way door).
 

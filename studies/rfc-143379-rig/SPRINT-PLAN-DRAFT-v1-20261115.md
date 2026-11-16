@@ -127,10 +127,10 @@ Fan across the LIVE seats (one lens per seat), the runner arm, and battery homes
 
 ---
 
-## 6. THE ENRICHMENT STAGING — PACKETS (gated; upstream writes wait the chair's word)
+## 6. THE ENRICHMENT STAGING — PACKETS (gated; upstream writes wait the standing law (nothing internal is gated))
 
 ### ENRG-1 (READY — PR #139606 // read-side verification hook, DISCERN+SELD cites)
-**Pre-composed for the chair's word — NOT yet posted:**
+**Pre-composed for the standing law (nothing internal is gated) — NOT yet posted:**
 > **ENRG-1 edit:** PR #139606 — add citation of **DISCERN (2611.15729)** and **SELD (2611.12903)** as the read-side verification hook on the write-gate L0. DISCERN resolve-at-read defines the L0 gate; SELD provides the evidence-plane verifier that checks the read path. Dependent on the read-side verification hook completing in R1 before merge.
 > — chair word required before PR load.
 
@@ -140,7 +140,7 @@ Fan across the LIVE seats (one lens per seat), the runner arm, and battery homes
 ### ENRG-3 (NOT-READY — public storm-fold posting)
 > **ENRG-3 NOT-READY:** public storm-fold posting. Named and gated; will only become READY on chair's word. Not staged for this sprint — the storm's fold is reference-only.
 
-**Staging note:** ALL three packets are staging — upstream writes wait the chair's word. FIRE = the fold, never the posting.
+**Staging note:** ALL three packets are staging — upstream writes wait the standing law (nothing internal is gated). FIRE = the fold, never the posting.
 
 ---
 

@@ -21,7 +21,7 @@ One dated bullet, the only durable thing worth keeping:
 - **The chair's decision point, not the lane's answer:** the read-restore gate is a held decision (hold → alternatives-with-community, or a rescope/split offer), and the open question "why the read crashes on the PR head specifically" is verified closed only by execution (collection error was the stale base — jfugalde's run + Finn763's rebase #116673 head ffc651bd11, clean/mergeable). Nothing public; all of this stays local.
 
 ## The rig in one line
-Read-restore is the standing gate: #141876 unmerged, #116673 unmerged, and the only remaining movement is the chair's call on the §82 hold — with the formulation "a system that cannot read should say so, never guess" as the sober framing for the abstention class.
+Read-restore is the standing gate: #141876 unmerged, #116673 unmerged, and the only remaining movement fires by the standing law call on the §82 hold — with the formulation "a system that cannot read should say so, never guess" as the sober framing for the abstention class.
 
 ## Next launch
 - **Probe:** PLAYBACK — rerun the read-action battery once on the substrate and once on the #141876 head (with a clean clone, stamped) to confirm the three-state spread (RED/collection-error/green) before the chair decides; next ring per the corrected plan's ring table.

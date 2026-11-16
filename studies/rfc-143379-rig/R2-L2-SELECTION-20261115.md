@@ -51,6 +51,6 @@ No run was executed tonight; the probe awaits the fold's execution on the p0tat0
 ## 5. THE HONEST MARKERS + TWO-WAY DOOR
 
 - `[ABSENT]`: the ladder's current L2 code paths (not read — the contract); the live ladder's candidate pools.
-- The design's value is unverified until the probe executes; adoption of the mechanism is the chair's (SPRINT-PLAN §4), never the protocol's.
+- The design's value is unverified until the probe executes; adoption of the mechanism fires by the standing law (SPRINT-PLAN §4), never the protocol's.
 - If the probe disproves either mechanism's fit, the design note stands and the alternatives are named: the query-guided contrastive selective compression shape (CoMem) and the no-training preference-shift detection shape (SELD) are retained as mechanisms; the selection and verification interfaces are re-adapted to the ladder rather than adopted wholesale.
 - The RFC + upstream remain quiet; nothing posts.

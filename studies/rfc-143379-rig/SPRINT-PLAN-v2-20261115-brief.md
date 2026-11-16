@@ -23,7 +23,7 @@ The storm harvest (cron `bee6af00a7b2`, 2026-11-15): DISCERN → write-gate L0 +
 4. **THE TWO-WAY-DOOR GRID** — AUTO-CONTINUE / HOLD-SAFE / NEEDS-THE-CHAIR (the only NEEDS-THE-CHAIR = the enrichment postings + anything writing outside PR #1).
 5. **THE METERS** — landings per window, seats alive, runner-idle-zero, quota headers at fire, batch honesty = zero.
 6. **THE FIRE ORDER** — the exact dispatch sequence (ring 1 first, seat, brief), the fold cadence (every landing rows), the re-anchor lines, and the kaizen/gemba/ACES loop shape (each pass ends when no further change measures — the apex contract).
-7. **THE ENRICHMENT STAGING + PRESERVATION** — the two READY packets (PR #139606 comment + the read-side-evidence issue — pre-composed for the chair's word), the NOT-READY named, and the preservation line (the material rides into Mission 2's apex).
+7. **THE ENRICHMENT STAGING + PRESERVATION** — the two READY packets (PR #139606 comment + the read-side-evidence issue — pre-composed for the standing law (nothing internal is gated)), the NOT-READY named, and the preservation line (the material rides into Mission 2's apex).
 
 ## Binding rules
 1. EVERY ROUND ENDS IN A TOOL CALL. ONE TOOL CALL PER ROUND. Never batch.

@@ -86,6 +86,6 @@ git clone <#141876 remote @ af16e3ab16> repro-read-restore && cd repro-read-rest
 
 ## 6. LOOP-STATE LINE
 
-`CONTINUE + <what's next after the chair's word>`: after the chair's A/B/C word, the head runs OWED-1/2 (battery + mergeability), then OWED-3 only in the chosen shape — if A, the package restates the hold with the battery attached (no merge, no label change); if B, the single PR (#141876) lands on its battery with the P4→P2 change, #116673 rides the battery, #11548 stays bootstrap; if C, the four-site dependency question opens with evidence offers. Next in-realm leg: the chosen option's verification pass (battery results → chair re-read), then the label-change PR as decided. The package is staged for the chair and posts nowhere.
+`CONTINUE + <what's next after the standing law (nothing internal is gated)>`: after the chair's A/B/C word, the head runs OWED-1/2 (battery + mergeability), then OWED-3 only in the chosen shape — if A, the package restates the hold with the battery attached (no merge, no label change); if B, the single PR (#141876) lands on its battery with the P4→P2 change, #116673 rides the battery, #11548 stays bootstrap; if C, the four-site dependency question opens with evidence offers. Next in-realm leg: the chosen option's verification pass (battery results → chair re-read), then the label-change PR as decided. The package is staged for the chair and posts nowhere.
 
 **NEXT-LAUNCH:** CHAIR-GATE — the operator's word on A/B/C (with this package attached), nothing more.

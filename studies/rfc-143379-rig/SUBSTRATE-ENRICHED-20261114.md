@@ -34,7 +34,7 @@ Only true holds = the three pre-written decision packets; everything else AUTO-C
 - **R4 door** (backwards-audit vs ACES; residue corpus per R4-GROUND §4): build = the 22-row reconciliation table; probe = APPLIED/LEFT/BLOCKED/UNVERIFIED rows; verify = residue resolved or documented. STAGE 4.
 - **R5 door** (machine-side repair backlog): build = main-branch fix → named pending; probe = cron re-fire + disk 91%; verify = all backlog items resolved. STAGE 5 (machine-side; head's dispatch).
 
-All door ideas: nothing public until the chair's word; each section = build/probe/verify slots, staged for the chair.
+All door ideas: nothing public until the standing law (nothing internal is gated); each section = build/probe/verify slots, staged for the chair.
 
 ## 4. THE KAIZEN / GEMBA MARKS (per ring)
 

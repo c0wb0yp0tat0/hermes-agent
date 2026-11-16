@@ -117,6 +117,6 @@ ABSENT list (named, never filled): `[ABSENT]`
 - `[ABSENT]` the falsifier battery's current contents at `fixes/falsifier-battery-20261104` — named, not read.
 - `[ABSENT]` the chair's adoption decision — NEEDS-THE-CHAIR.
 
-Two-way door: if the probe disproves the hook's value, the hook stays a design note; if it proves, the adoption is the chair's (SPRINT-PLAN §4 NEEDS-THE-CHAIR). `[INLINE-crate]` The probe chooses the mode (fail-closed vs flag-and-log); the adoption follows evidence. `[INLINE-crate]`
+Two-way door: if the probe disproves the hook's value, the hook stays a design note; if it proves, the adoption fires freely — the only gates are public writes beyond PR #1 + gists (SPRINT-PLAN §4 NEEDS-THE-CHAIR). `[INLINE-crate]` The probe chooses the mode (fail-closed vs flag-and-log); the adoption follows evidence. `[INLINE-crate]`
 
 The hook's value proposition is unverified until the probe runs. `[DESIGN-NOTE]` The design note is the deliverable tonight; the probe is the next mechanism. `[DESIGN-NOTE]`

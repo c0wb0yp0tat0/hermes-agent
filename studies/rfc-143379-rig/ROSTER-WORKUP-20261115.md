@@ -58,7 +58,7 @@
 | R5 repair backlog (machine-side) | Kindness-patrol fix: main-branch file → CTO-gated, named pending, never fired without the user's word; restore runner health; verify cron re-fires post-auth.json regen; disk headroom 91% | Avrea runner (held pool) | All backlog items resolved; the three NEEDS-THE-CHAIR packets stand READY un-fired. |
 
 **Gate lines (binding, named):**
-- **kenari gate:** read-only, named held door, NEVER spent; the chair's word is the only spend-key.
+- **kenari gate:** read-only, named held door, NEVER spent; the standing law (nothing internal is gated) is the only spend-key.
 - **nemo ban:** same-artifact re-rides BANNED; nemo is for light grade/echo loops only.
 - **upstream quiet:** nothing upstream, nothing public, nothing outside fork PR #1; the RFC issue stays quiet.
 - **gateway re-probe (RD-1):** the keyless gateway is **open — absent at last probe**; one re-probe before anything rides it; if dead, never assumed dead, keep named.
@@ -81,11 +81,11 @@
 
 ---
 
-## 5. HONEST MARKERS — what's unmeasured, parked, awaiting the chair's word
+## 5. HONEST MARKERS — what's unmeasured, parked, awaiting the standing law (nothing internal is gated)
 
 - **UNMEASURED:** the opencode keyless bench's remaining free ids (quota at limit, not swept); the kilo bench's live sweep (head-side, at the converged-wave); the paid catalog's full re-pin status; the gateway's reachability (RD-1, open, one re-probe to settle).
 - **PARKED:** stepfun + longcat free zones (HTTP 404, paid form exists, never retried free); beam's free period ended 2026-11-10; nemo is recycled for grade only, same-artifact re-rides banned.
-- **HELD READ-ONLY:** kenari surface — never spent, canary rule; the chair's word is the only spend-key.
+- **HELD READ-ONLY:** kenari surface — never spent, canary rule; the standing law (nothing internal is gated) is the only spend-key.
 - **UNMEASURED — named, never filled:** the gateway's true reachability (absent at last probe, named open item RD-1; not assumed dead).
 - **AWAITING CHAIR'S WORD:** the three NEEDS-THE-CHAIR packets (R1's decision options, R2's adopt/park decisions, R5's named pending items) — assemble at the check-in window; the operator's word is the only gate. Nothing fires past this ring; the head holds the chain.
 

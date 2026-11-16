@@ -2,7 +2,7 @@
 
 > **Gate:** kenari READ-ONLY (held reserve, never spent, canary); RFC QUIET; no service changes; no `/root/.hermes` writes; git-only terminal — all runs register OWED; receipts stamped `IN-LANE / BORROWED <source> / HEAD-RECON`; absence only from a stamped read.
 > **STEER-1 acknowledged:** `drop/` is OUTSIDE read roots — no `drop/` read is claimed; refs staged in `REFS/`; the mismatch is named in §7 OWED. Nothing launches until the operator's word.
-> **Loop-state:** `CONTINUE + THE LAUNCH (the operator's confirm) — awaiting the chair's word; the plan is composed, folded, and staged; nothing fires without the confirm.`
+> **Loop-state:** `CONTINUE + THE LAUNCH (the operator's confirm) — awaiting the standing law (nothing internal is gated); the plan is composed, folded, and staged; nothing fires without the confirm.`
 > **NO NEXT-LAUNCH:** the reload is the head's dispatch — the head holds the chain. This artifact hands off for confirmation.
 
 ---
@@ -109,15 +109,15 @@ The kit = the staged-ring discipline that makes the substrate real:
 - **Door B (FINAL5-8 chain, R3):** build = chain fold; probe = read FINAL8 before citing; verify = chain completeness; **STAGE 2, gated**.
 - **Door C (backwards-audit vs ACES, R4):** build = 22-row table; probe = APPLIED/LEFT/BLOCKED/UNVERIFIED rows; verify = residue resolved or documented; **STAGE 3, gated**.
 - **Door D (machine-side repair backlog, R5):** build = main-branch fix → named pending; probe = cron re-fire + disk 91%; verify = all backlog items resolved; **STAGE 4 (machine-side; head's dispatch)**.
-- **All doors:** nothing public until the chair's word; each section = build/probe/verify slots, staged for the chair.
+- **All doors:** nothing public until the standing law (nothing internal is gated); each section = build/probe/verify slots, staged for the chair.
 
 ---
 
 ## 4. THE CONFIRM-GATE DECK (the plan's last section)
 
 ### 4a. NEEDS-THE-CHAIR rows as decision packets (the chair's hold — pre-written, ready)
-1. **R1 decision options A/B/C on RFC #141876** — state: READY; options: (A) proceed with restored read-path label, (B) hold for label re-issue, (C) park; recommendation: A. → the brief's final release is HOLD-SAFE until the chair's word.
-2. **R2 adopt/park decisions (rows A–H)** — state: READY; E–H parked with justification; citation re-grounding done; recommendation: adopt the retained rows, park the rest. → aggregated rows are HOLD-SAFE until the chair's word.
+1. **R1 decision options A/B/C on RFC #141876** — state: READY; options: (A) proceed with restored read-path label, (B) hold for label re-issue, (C) park; recommendation: A. → the brief's final release is HOLD-SAFE until the standing law (nothing internal is gated).
+2. **R2 adopt/park decisions (rows A–H)** — state: READY; E–H parked with justification; citation re-grounding done; recommendation: adopt the retained rows, park the rest. → aggregated rows are HOLD-SAFE until the standing law (nothing internal is gated).
 3. **R5 named pending items (kindness-patrol main-file fix)** — state: NAMED PENDING, NEVER FIRED WITHOUT THE USER'S WORD; CTO-gated; owner = machine-side (head), not the lane; recommendation: confirm dispatch, then the head fires.
 
 ### 4b. AUTO-CONTINUE rows (listed so the operator knows what fires without them)
