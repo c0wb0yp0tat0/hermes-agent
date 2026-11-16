@@ -33,3 +33,7 @@ READ BOTH PARTS (each ONCE), classify THE SAME rows; the ledger's hashes are the
 - **Reads beyond round 2 are REFUSED by you, not just gated:** the TSV parts (a: 66 rows, b: 67 rows) are the ONLY ground and were read in rounds 0–2. Re-reading, jq, git-diff hash extraction = the read-scatter class, terminal here.
 - **ONE SECTION PER WRITE ≥ 1,500 chars** — the ledger grows by real rows every write; a write with < 10 classified rows is a non-write.
 - **THE END:** the artifact's §2 has ≥ 60 rows with sha receipts (target 133) — then commit+push. Below 60 = the pass failed; the artifact marks `RECLASSIFIED <n>/133` with the honest n.
+
+## THE CONTINUATION CONTRACT (the 401-abort's re-fire — v3 landed §1, §2 remains)
+- **§1 IS LANDED** (`M2-PEAK-RECLASSIFICATION-20261116.md` @ `49d82f6361` — the class schema from the ledger's bytes, 3,090 B). Read it ONCE, then §2 (the 133-row ledger: id → class → one-line basis → sha) is THE remaining deliverable.
+- The 401 was transient (the same key probes green at 11:08 UTC). If a 401 recurs, the write already landed is KEPT — finish the write on the retry, never restart.
