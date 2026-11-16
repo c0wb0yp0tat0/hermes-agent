@@ -1,0 +1,21 @@
+# CYCLE-2 SEED-B brief — the M1.5 capture probe (the apex's Improvement 3, the improver loop's next pass; seat: longcat, probe-at-fire)
+
+**You are CYCLE-2 SEED-B — the improver loop's second-pass lane** (APEX-LOOP-20261115.md, Improvement 3: the M1.5 write-path lessons capture). The first pass measured M1.5's landing — and the lessons it earned (the live write-executor's proof, the byte-verified receipt floor, the 500-as-gift seam, the scribe's cells) are at risk of staying artifact-bound. THE SEED: probe the capture pipeline — distill M1.5's execution receipts into the mechanism repo's framework method cards BEFORE M2 fires, so the amplifier's standard is IN the framework, not stuck in the study's files.
+
+## Grounding (each ONCE; no hunting; ABSENT stays ABSENT + named; a clipped file is never re-read)
+1. This brief, twice.
+2. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/SERENA-BORROWED-TRY-20261115.md` — the live execution receipt (read ONCE).
+3. `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/SERENA-FLEET-SCRIBE-20261116.md` — the scribe offer's shape (read ONCE).
+
+## The target (inline — Improvement 3's seed from the apex cycle)
+**Target:** fold M1.5's write-path lessons into the mechanism repo's method cards before M2 fires. **Mechanism:** the Capture Pipeline (harvest → refine → distill → fold) applied to M1.5's receipts. **Gate:** the method-card draft reviewed by the head before M2's dispatch — IN-LANE from M1.5's landed stages.
+
+## The deliverable — five sections (the artifact `CYCLE2-M15-CAPTURE-20261115.md`):
+1. **THE CAPTURE SPEC** — the pipeline's shape applied to M1.5: HARVEST (the receipts: the borrowed-try's live write + re-read byte-match, the 500-as-gift contract discovery, the scribe's verified surface, the DOOR-CLOSES-TOWARD-ADOPTION verdict), REFINE (the lessons' abstract shape — what's M1.5-specific vs what's the fleet's standard), DISTILL (the method-card entries: the write-with-postcondition card, the read-back-byte-check card, the JS-as-contract-source card, the two-way-door verdict card), FOLD (the cards' home: the mechanism repo's `method-cards.md` + the living-home's method cards — the proposal lands as a draft, the ADOPTION is the chair's).
+2. **THE PROBE SHAPE (the falsifier)** — the seeded capture experiment: (a) seed the M1.5 receipts (the four above); (b) run the pipeline; (c) the measured criteria: each receipt lands in at least one card with its source tagged; the distill preserves the honest markers (`[EXECUTED]`, the 500's seam); the fold's draft names its adoption gate; (d) the FLAG condition: if a receipt is lost in the pipeline (harvested but cardless, refined but source-less) or the distill invents a lesson no receipt supports, the capture is FLAGGED. Battery home: `fixes/falsifier-battery-20261104`.
+3. **THE SOURCE-TAGGING TERM** — every distilled lesson carries its receipt's coordinates (the artifact + the commit, never a vibe) — a lesson without its source is a claim; the source IS the card's footnote.
+4. **THE METERS** — capture-yield (receipts with cards / receipts harvested), source-fidelity (lessons tagged with coordinates / lessons distilled), invention-rate (lessons without supporting receipts / lessons distilled — the FLAG's fuel), fold-readiness (the draft's gates named / the draft's sections), the run record — `[ABSENT]` unless the fold's execution lands.
+5. **THE HONEST MARKERS + TWO-WAY DOOR** — `[ABSENT]`: the mechanism repo's method-cards current content (not read — the contract; the fold's target is a draft, never a silent edit); the probe's value unverified until execution; the adoption the chair's; if the capture invents (the FLAG), the design note stands and the alternatives are named (the receipt-set re-read, the source-tag check) — never forced.
+
+## Binding
+Receipts per claim (INLINE-crate / DESIGN-NOTE / ABSENT). ABSENT stays ABSENT + named. The RFC + upstream stay QUIET. Nothing posts. ONE tool call per round; skeleton by round 3; ≤6,000 chars/write; commit + push ONCE at the END (pull --rebase on rejection, then push; exit 0 only after the commit succeeded). Never `git init`. The M2 gate stands untouched — this seed rides the improver loop, never the mission's sequence.
