@@ -26,3 +26,10 @@ The full ledger exceeds the read-file cap (12K). The ground is staged as TWO com
 - `/root/.hermes/cache/scratch/m2-peak-20261116/ledger-part-a.tsv` — rows 1–66 (9,041 B)
 - `/root/.hermes/cache/scratch/m2-peak-20261116/ledger-part-b.tsv` — rows 67–133 (9,178 B)
 READ BOTH PARTS (each ONCE), classify THE SAME rows; the ledger's hashes are the receipts (each row's sha, from the tsv — never the memory). The parts are the ground; the classification is yours.
+
+
+## THE MECHANICAL WRITE-FIRST CONTRACT (the re-fire's hardening — the skeleton-fail refused)
+- **ROUND 3 = THE FIRST LEDGER WRITE.** Round 3's tool call is `write_file` with §2's FIRST BLOCK (rows 1–45: id → class → one-line basis → sha). Not a skeleton header — the actual rows.
+- **Reads beyond round 2 are REFUSED by you, not just gated:** the TSV parts (a: 66 rows, b: 67 rows) are the ONLY ground and were read in rounds 0–2. Re-reading, jq, git-diff hash extraction = the read-scatter class, terminal here.
+- **ONE SECTION PER WRITE ≥ 1,500 chars** — the ledger grows by real rows every write; a write with < 10 classified rows is a non-write.
+- **THE END:** the artifact's §2 has ≥ 60 rows with sha receipts (target 133) — then commit+push. Below 60 = the pass failed; the artifact marks `RECLASSIFIED <n>/133` with the honest n.
