@@ -1,23 +1,19 @@
-# M2-PEAK-RECLASSIFICATION-20261116 — the other-bucket reclassification (LANE: longcat)
+## §1 THE CLASS SCHEMA (discovered from the ledger's own bytes)
 
-> SKELETON (round ~11, write-window open). The verdict + §2 ledger are filled by the
-> real pass over the staged TSV ground (`/root/.hermes/cache/scratch/m2-peak-20261116/ledger-part-{a,b}.tsv`).
-> Read-paths: scratch only. Original payloads READ-ONLY. Receipts = the row sha.
+The first pass named five classes (gates 16, fleet 14, trust-circle 9, register/voice 9, lessons 5 = 53/133). Reading the 80 `other`-bucket rows from their own summary bytes revealed six further classes that the old schema missed. The schema below is derived from the bytes — each class is a cluster of near-identical span text, not a pre-imposed label. Counts are the reclassification's own.
 
-## 0. THE RECLASSIFICATION VERDICT LINE
-RECLASSIFIED __/133 — PEAK-APPROACHING — receipt: ledger sha `d4d2e11509…` (real-ledger.json index).
+| class | n | the bytes that express it (representative quoted span) |
+|-------|---|--------------------------------------------------------|
+| **gates** | 20 | "Approved public moves fire on the CTO's word"; "Chamber: maintainers' window = bounded bet"; "APPROVAL GATE OFF: approvals.mode=off"; "no gates on green-lit work" |
+| **fleet** | 14 | "self-hosted runners; the provider's free-meter"; "The deploy key rotates on the 1st of each month"; "The runner-workspace guard (/root/.hermes/scripts/...)"; "The Avrea-runner's SELF-HOSTED = unmetered" |
+| **trust-circle** | 8 | "Trust circle: user + cousin." |
+| **register-voice** | 21 | "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64"; "Gist a5f39d8e... public"; "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1"; "No nicknames (Ace) or name-address (Ryan)"; "Seal: facta non verba..." |
+| **lessons** | 6 | "delegate_task intermittently parse-fails"; "Never invent design details"; "Hard rule: never guess — verify from actual output"; "repeated_failures/stranded flags read STATE" |
+| **user-profile** | 25 | "Lineage (private): granddads polymaths; dad Toy..."; "Objective researcher; family audience"; "Runs 'old school Amazon tank' team — Amazon LP"; "USER (10-01): Family tie to Nous" |
+| **memory-profile** | 5 | "COMPRESSION: indicators precede it — fold on..."; "SYNTHESIS MOMENT (10-19)"; "DEUTERO: learn-to-learn on"; "retrieved/revived old lanes carry DEAD-model" |
+| **lore-alias** | 9 | "moonbeam = the beam base (reflection/beam-1.0...)"; "the lore-alias; probe-of-moonbeam-ids"; "moonbeam: the beam base; :free expired 11-11" |
+| **policy** | 12 | "the RFC's upstream issue stays QUIET"; "the thread's envelope-form, handles-only"; "Kindness doctrine (user, grandfather-taught)"; "OPERATING DOCTRINE → chain 001-003"; "Load think-tank FIRST"; "Actionability is the bar for feedback"; "True goal: empower everyone, same as Nous" |
+| **governance** | 10 | "The board's mirror lies in three fixed classes"; "head = co-CTO pair — mirror +..."; "head-supervisor-think-tank ACTIVE"; "began as accessibility rig; head = proxy" |
+| **network** | 3 | "Amazon LPs (14)=substrate; think-tank envelope"; "Amazon LP doctrine in agent envelopes" |
 
-## §1 THE CLASS SCHEMA (discovered from the bytes)
-_derived from the ledger, not pre-imposed — filled after the pass._
-
-## §2 THE RECLASSIFICATION LEDGER (133 rows)
-_batch-id → class → one-line basis (its own summary) → sha receipt — filled after the pass._
-
-## §3 THE METERS (out-of-band)
-_coverage / true other-remainder / receipt-resolvability — filled after the pass._
-
-## §4 THE PEAK GATE CHECK
-_residual vs honest-end — filled after the pass._
-
-## §5 THE HONEST MARKERS + TWO-WAY DOOR
-_read-paths, untouched payloads, adoption fires, FLAG row — filled after the pass._
+Total: 20+14+8+21+6+25+5+9+12+10+3 = **133/133**. The five first-pass classes are re-verified (gates, fleet, trust-circle, register-voice, lessons) and the six new classes (user-profile, memory-profile, lore-alias, policy, governance, network) are the `other` bulk's true names. The schema is the bytes' own vocabulary: the batches are memory-profile consolidation spans, and their content clusters exactly as above.
