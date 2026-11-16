@@ -110,7 +110,7 @@ jobs:
           # rides the register, never hides a red — the log names it.
           exit $(( RC1 != 0 || RC2 != 0 ? 1 : 0 ))
 
-- name: The S2U claims probe (the fresh-test-in-response, independent convergence)
+      - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
         if: always()
         run: |
