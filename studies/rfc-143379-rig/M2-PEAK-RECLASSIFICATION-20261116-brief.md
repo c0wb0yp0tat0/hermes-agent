@@ -20,3 +20,9 @@ M2's apex requires its improver loop's REAL work done: the **80 `other`-bucket b
 
 ## Binding
 Receipts per claim (INLINE-crate / DESIGN-NOTE / ABSENT). ABSENT named. RFC + upstream QUIET; nothing posts. ONE tool call per round; skeleton by round 3; ≤6,000 chars/write; commit + push ONCE at the END (pull --rebase on rejection, then push; exit 0 only after the commit succeeded). The ledger is READ-ONLY for you. No service changes; no drop/ paths.
+
+## THE READ-GROUND (the head's staging — the ledger's compact form, under the harness read cap)
+The full ledger exceeds the read-file cap (12K). The ground is staged as TWO compact TSV parts in scratch (each under the cap, one line per row: `id | action | hash | summary[:110]`):
+- `/root/.hermes/cache/scratch/m2-peak-20261116/ledger-part-a.tsv` — rows 1–66 (9,041 B)
+- `/root/.hermes/cache/scratch/m2-peak-20261116/ledger-part-b.tsv` — rows 67–133 (9,178 B)
+READ BOTH PARTS (each ONCE), classify THE SAME rows; the ledger's hashes are the receipts (each row's sha, from the tsv — never the memory). The parts are the ground; the classification is yours.
