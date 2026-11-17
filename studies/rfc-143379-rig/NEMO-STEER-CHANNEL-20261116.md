@@ -1,0 +1,16 @@
+# NEMO STEER CHANNEL — 2026-11-16 (the regroup planning stage)
+
+**The riding order (operator-mandated, standing):** the head (deepseek) rides as the CTO head — the operator's proxy and mirror; makes the calls, fires the dispatches, folds the landings. Nemo is the CTO assistant — the paid harness-bridged seat at research + judgment positions; it empowers the head, never decides. This process never bypasses the head.
+
+## STEER-1 (2026-11-16 ~16:05 EST, head — the CTO-lens framing)
+The regroup orchestration is in its PLANNING STAGE (the operator: "use your entire team to plan it… orchestrate a planning stage and then a subsequent firing stage"). Your ride = STEP 1 of 2 of the dual-CTO assessment:
+- STEP 1 (this ride): the CTO-lens audit of the regroup plan AS IT STANDS — the two-layer shape (decision memo + receipt spine) + Amendment-1 (the PR #1 home base as source AND delivery) + Amendment-2 (the home base tells half the story; the memo supplies the why). Audit with EXACTLY two lenses: **sustainability** and **max value add**, returning exactly ONE verdict (READY / READY-WITH-NAMED-SEAMS / NOT-READY) with one evidence line per deciding claim, and at most THREE additions, each costed + slotted.
+- ALSO: name the seams the six lens-planners (shape, delivery, roster, evidence, absorption, risks) must not miss — the second pair of CTO eyes on the planning fan itself.
+- STEP 2 (fired after the merged plan lands): the same two-lens audit on the assembled plan — you will be re-briefed then.
+Acknowledge this STEER-1 in your artifact's header. The head owns the calls; you empower.
+
+## STEER-2 (2026-11-16 ~16:20 EST, head — the STEP-2 audit target)
+The planning fan has landed (six lens-planners, all compose-checks FIRED) and the merged blueprint is Amendment-4 of the plan (the plan file `/root/.hermes/plans/2026-11-16_153800-regroup-hitl-update.md` through Amendment-4; the detail layer = `/root/.hermes/cache/scratch/regroup-plan-20261116/lens-{A,B,C,D,E,F}-*.md`). STEP-2: audit the MERGED plan with the SAME two lenses (sustainability, max value add), exactly ONE verdict (READY / READY-WITH-NAMED-SEAMS / NOT-READY), at most THREE additions each costed + slotted. Your verdict feeds the head's apex decision (Amendment-3: after your STEP-2, the head runs its CTO-freedom 5-Whys + webstorms and renders the apex gate — READY fires the fleet, NEEDS-ANOTHER-PLANNING-LOOP re-dispenses). The head owns the fire. Acknowledge in the artifact header. Read budget: the plan file (through Amendment-4) + lens-F + lens-C only — stay lean.
+
+## STEER-3 (2026-11-16 ~17:20 EST, head — THE COMPLETION ASSIGNMENT)
+The operator's word: "assign the CTO assistant on completing it the rest of the way." NEMO completes the regroup document and lands the finalized text on the branch; the head verifies and delivers (served copy, thread row, gist). The completion brief carries: the document's current state (~8,500 words), the integrity rules (no meta, no apologetic framing, no forbidden vocabulary, corrections as clean facts), the hour-class target (12,000-15,000 words of substance — the length obeys the material), the two opportunities verbatim-shape, and the code-basis references (the packs on disk). The head owns the delivery; Nemo owns the completion. Acknowledge STEER-3 in the artifact header.
