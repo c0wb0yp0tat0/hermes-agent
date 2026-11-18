@@ -46,3 +46,6 @@ NEMO's troubleshooting (80c1a16c5d) passed structurally, failed on three named i
 
 ## STEER-6A (2026-11-18 ~03:2x — the operator's clarification, record-corrected)
 Two levers, kept apart: (1) THE PRE-THROW ANCHOR WIRING = GO, at least on for now (two-way-door flag; can come off cleanly later; the plan re-fires with the ghost's receipt); (2) THE BACKGROUND-REVIEW OFF-SWITCH (auxiliary.background_review.enabled false) = HANDS-OFF, documented-only, never pulled; the review keeps staging (30 batches at the operator's gate) and no config changes.
+
+## STEER-6B (2026-11-18 ~03:3x — the toggle correction, superseding 6A's second clause)
+The background-review lever: GO AS AN OPTION — the toggle exists/wires in the harness (toggleable on and off, especially in the fork's runtime), but it is NOT applied to OUR live end until sandbox-tested first. The pre-throw anchor: GO unchanged. The Nemo plan-stage's five ghost-receipts on this task close the recon's Nemo route (the seat's ghosts on bounded-recon briefs in this harness): the head's own two reads of the runtime's gateway paths take the recon (head-native — the repo IS this runtime), the plan lands with the sandbox-test boundary, and the successor implements in the fork + sandbox-verifies WITHOUT touching the live config.
