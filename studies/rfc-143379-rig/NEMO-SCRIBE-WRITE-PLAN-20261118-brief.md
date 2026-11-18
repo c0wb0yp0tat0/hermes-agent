@@ -1,0 +1,18 @@
+# NEMO-SCRIBE-WRITE-PLAN brief — PLAN stage: lanes write as the scribe writes (seat: mistralai/mistral-nemo, paid)
+
+**You are NEMO, on the PLAN stage of a two-stage dispatch (this ride plans; a successor implements). The operator's insight (2026-11-18, "Serena can be tweaked to maybe write as the lanes write to avoid this — part of the envisioning of the scribe's perks"): the lane write path and the scribe's write contract should be ONE — so the stub class (the placeholder folds) and the truncation-starvation class (the read boundary) are caught at WRITE time, not discovered at the fold.**
+
+## The context (the night's receipts)
+- The scribe's write contract: the tunnel store at `http://127.0.0.1:24282` — `save_memory` + `get_memory`, `memory_name` + `content`, byte-verified re-reads (the bridge in `/root/scripts/copycat-harness.py` already saves every fold's artifact into a named cell + byte-verifies: the `[scribe] cell ... byte-identical=True` lines).
+- The lanes' write path: `write_file` to the artifact path, then the fold-step commits + the scribe bridge saves + the placeholder-scan flags stubs. The write path is NOT scribe-checked until the fold.
+- The classes tonight: beam's 288-byte placeholder fold (the placeholder-scan now flags it at the fold — a fix, but post-hoc); the read-boundary class (truncated reads → lanes choose between incomplete evidence and no artifact).
+- The two-way-door frame binds everything: flag + off value + rollback, append-only, named failures.
+
+## Your job — plan only, short artifact
+1. READ the harness's write/fold path in `/root/scripts/copycat-harness.py` (the write_file tool definition, the fold-step, the scribe bridge, the placeholder-scan) and the scribe's contract as the bridge uses it. Bounded recon: the harness file only, one or two targeted reads (the tool definitions and the fold region are the targets).
+2. DESIGN the unification: what changes so a lane's WRITES are scribe-contracted AS THEY LAND — candidates to evaluate, keep or discard with reasons: (a) the lane's `write_file` asserts the artifact's bytes into the scribe's cell at write time (per write, not per fold) and reports the mismatch back into the round (a write whose bytes the cell does not hold is NAMED to the lane immediately); (b) the placeholder-scan runs at EVERY write, not just the fold (a stub marker written mid-run is flagged the round it appears); (c) the read side: the lanes read FROM the scribe's cells when the file read truncates (the cell holds the full bytes — a lane that cannot read the file's tail reads the cell). Each candidate gets: what changes, where, the acceptance test.
+3. VERDICT FIRST: is the unification clean (the scribe tunnel is reachable from the harness's write tool), or gated on something? Name the evidence.
+4. PLAN artifact: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/NEMO-SCRIBE-WRITE-PLAN-20261118.md` — `## THE VERDICT` · `## The design` (per candidate: keep/park + the acceptance test) · `## The patch spec` (exact minimal changes, ready for the successor) · `## The two-way door` (the flag name, off value, rollback) · `## The risks` (each with its counter) · `## THE LOOP-STATE LINE`.
+
+## Disciplines (binding — the ghost-class receipt rides this ride)
+(1) Read a source ONCE and close it; (2) your artifact is YOURS — never echo text you read; (3) skeleton by round 3; (4) a round with no tool call is forbidden — the next round MUST be a write; (5) one tool call per round; ≤6,000 chars per write; claims trace to what you read ("not confirmed" where unclear); no git verbs beyond the fold; commit + push when the plan is complete, then stop. The successor fires from your plan's landing, checked at the two-way door. RFC quiet.
