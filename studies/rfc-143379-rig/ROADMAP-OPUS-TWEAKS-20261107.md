@@ -49,3 +49,9 @@ Suggestions only — the head and the operator apply after review. No durable do
 ## Counts
 tweak_count: 7
 docs: CLASS-FIXES-ROADMAP-20261017.md, CTO-RESUME-20261016.md
+
+## UPDATE-20261118 (applied from NEMO's PROJECT-OPUS-UPDATE-20261118, verified at the door)
+**The night's landings, folded:** the ACES loop delivered the night report (the gist package cff7a95b, byte-verified); the harness gained three own-inventions (read-paging, the write-time scribe assert, the placeholder-scan with its size-heuristic); the kit's read-solution seed landed in the bearings (the scribe's cells ARE the read substrate when the provider never restores); the negentropy cadence restored; the nightshift mission greenlit (MISSION-MAP-20261118 + STEER-8; full-opus runner doctrine; the seam wiring).
+**The roadmap's next state — NOW:** stage 2 of the nightshift (the all-fleet think-tank planning on the never-restoring-reads scenario). **NEXT:** build the read-solution (the scribe-cell read fallback + the provider-absence battery) and prove it in the fire. **FOLLOWING:** the loops to the apex (six measured fronts, no-improvement-twice each), then the kit's readiness.
+**The terminal contract (operator, binding):** no stop until no measured improvement on all fronts.
+**The north, unchanged and quoted:** the pilot kit is OURS, innovated-first, never as-is; 3oltan is not the only end game; the as-is is a two-way door; the machinery is one layer, never the end; the operator holds the north.
