@@ -43,3 +43,6 @@ NEMO's troubleshooting (80c1a16c5d) passed structurally, failed on three named i
 1. critic lands → verify bytes (two-way door) → fire the revision (Hy4, cell rig-night-run-revision) → audit brief (queued) → blind re-check → fold → update gist cff7a95b with the final report → deliver the URL.
 2. negentropy successor (queued for the runners) → check bytes at fold → fold verdict into the next sweep row.
 3. Nothing else fires without the operator's word; RFC quiet; no self-gates.
+
+## STEER-6A (2026-11-18 ~03:2x — the operator's clarification, record-corrected)
+Two levers, kept apart: (1) THE PRE-THROW ANCHOR WIRING = GO, at least on for now (two-way-door flag; can come off cleanly later; the plan re-fires with the ghost's receipt); (2) THE BACKGROUND-REVIEW OFF-SWITCH (auxiliary.background_review.enabled false) = HANDS-OFF, documented-only, never pulled; the review keeps staging (30 batches at the operator's gate) and no config changes.
