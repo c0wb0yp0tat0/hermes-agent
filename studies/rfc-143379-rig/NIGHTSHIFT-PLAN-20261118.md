@@ -74,3 +74,10 @@ PLAN-LANDED - STAGE 3 ARMED - the watcher fires the build.
 | 6 | Stage-advance watcher wired | FIRED | Live cron, job id in head's record, reads this plan's loop-state line. |
 | 7 | Fire sequence + six fronts + full-opus | FIRED | B1–B4 seat/artifact/gate/action; L1–L5; F1–F6 terminal; all runners + Avrea + 31 forks. |
 | 8 | Executed battery / apex hold | ABSENT (fire target) | Battery is the plan's first deliverable; L3/L5 terminal pending the build. |
+
+## APPENDIX-A (2026-11-18, the CTO-lens's additions, accepted — no-lens pass rendered READY-WITH-NAMED-SEAMS; the fire proceeds)
+1. DISK-HEADROOM GUARD AT LOOP-TOP (STAGE 4, each confirmation cycle's top): a beam-audit leg checks df; with ~1 point of headroom + B1/B2 writing, the cycle defers when the 92% guard is within reach. Costed 1 round, slotted L1-loop-top.
+2. HANDOFF-RECEIPT ARTIFACT (STAGE 4, the next-mission gate): a one-page receipt (state held, seams open, chair packets unused) closes the fail-safe table's one GAP and gives the apex its payload.
+3. FAIR-SHARE TELEMETRY INTO F3 (STAGE 3, B4): wall hits + rotation switches logged into the F3 gauge — tonight's three eaten 429s become a measured signal, not an anecdote.
+## LOOP-STATE LINE (updated)
+`STAGE-3-IN-FLIGHT - B1 WIRED + PROBED (the read-side scribe-cell fallback, cells-gated, byte-verified) - B2-B4 ARMED - the lens's verdict: READY-WITH-NAMED-SEAMS, the fire proceeds under the only gate (public posts).`
