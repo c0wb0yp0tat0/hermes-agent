@@ -1,0 +1,9 @@
+The cold reading of this report
+
+When this report was finished, two people read it cold, each on his own, neither having seen how it was made. One came to it from the solar side of the work, one from the beam side. Each was asked to judge the page against six checks and to say plainly where it held and where it did not.
+
+The first reader cleared it on all six. He went back through the numbers rather than take them on trust. He found the twenty-four lines in the day-by-day record, each with its mark; the thirty-two comments at the landing, kept apart from the twenty-four and named as talk rather than entries; the ten versions of the description saved over about thirty hours; the twenty-eight batches held in the waiting line and never applied; and the three refusals, counted by their kind. Each number, he said, says what it counts, and none is asked to stand in for another. The two counts that look like a disagreement stayed apart in his reading, just as the page meant them to.
+
+The second reader cleared it too, with notes. The notes were about reach, not about the work. The page he was given stopped partway through the cold look at the machinery, in the middle of a sentence, so the tail was not in his view. He did not guess at what he could not see. He marked the two checks that needed either the record or that unseen tail as not confirmed, and said why: the facts could not be traced without the record, and the closing questions could not be read past the cut. What he could see, he read closely, and it held. His honesty about the gap was the same honesty this report asks of itself.
+
+What both readers leave where they found it is the pair of questions at the end of the report. They belong to the operator, not to this page, and this page does not answer them. It asks only to be checked.
