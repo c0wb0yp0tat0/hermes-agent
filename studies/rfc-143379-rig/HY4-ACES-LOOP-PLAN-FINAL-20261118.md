@@ -11,7 +11,7 @@ Six stages with reconciled seats, inputs, outputs, and gates:
 - **Scribe**: `rig-hy4-loop-spine`
 
 ### S2: Draft
-- **Seat**: `upstage/solar-mini4:free`
+- **Seat**: `tencent/hy4-flash:free` (HEAD'S ADJUDICATION 2026-11-18: conflict #2 re-resolved — leg B's table mislabeled Hy4 as "solar-mini4"; the mission's shape is Hy4 producing the deliverable, and the rotation rule requires the verifier to differ from the drafter — see Conflicts Resolved)
 - **Input**: S1 spine + regroup-memo bar
 - **Output**: `HY4-REGROUP-MEMO-20261118.md` (verdict line, risks, next-launch block, carry-in, receipt stamps, loop-state line)
 - **Gate**: All five shapes present, <=120 lines, zero emojis, receipt density 1.0, register slips 0.
@@ -89,7 +89,7 @@ The firing map is sequential, with one harness command per stage:
 
 1. **Seat Assignment for S1**: Leg A assigned `tencent/hy4-flash:free` to S1, while Leg B assigned it to the planner lane (Kenari beam). **Resolved**: S1 is assigned to `tencent/hy4-flash:free` as per Leg A, with the planner lane role clarified as a separate rotation.
 
-2. **Seat Assignment for S2**: Leg A assigned `tencent/hy4-flash:free` to S2, while Leg B assigned it to `upstage/solar-mini4`. **Resolved**: S2 is assigned to `upstage/solar-mini4` as per Leg B.
+2. **Seat Assignment for S2**: Leg A assigned `tencent/hy4-flash:free` to S2, while Leg B assigned it to `upstage/solar-mini4`. **Initially resolved as solar (a mislabel's echo) — RE-SOLVED BY THE HEAD (2026-11-18)**: leg B's board table wrote "Hy4 (solar-mini4)", conflating the seat with an unrelated runner; the mission's shape (Hy4 takes on the loop and produces the deliverable) and the plan's own rotation rule (drafter may not verify; solar is S5's primary verifier) both require the drafter to be `tencent/hy4-flash:free`. S2 = Hy4. S5's verifier seats (solar, beam) now differ from the drafter by construction.
 
 3. **Verification Seat**: Leg A assigned `upstage/solar-mini4` (primary) and `beam-1-0:free` (Kenari beam-vs-dots A/B) to S5. **Resolved**: Confirmed as per Leg A and B.
 
