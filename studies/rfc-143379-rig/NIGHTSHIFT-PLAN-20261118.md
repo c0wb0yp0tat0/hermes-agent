@@ -80,4 +80,4 @@ PLAN-LANDED - STAGE 3 ARMED - the watcher fires the build.
 2. HANDOFF-RECEIPT ARTIFACT (STAGE 4, the next-mission gate): a one-page receipt (state held, seams open, chair packets unused) closes the fail-safe table's one GAP and gives the apex its payload.
 3. FAIR-SHARE TELEMETRY INTO F3 (STAGE 3, B4): wall hits + rotation switches logged into the F3 gauge — tonight's three eaten 429s become a measured signal, not an anecdote.
 ## LOOP-STATE LINE (updated)
-`CYCLE-4-ARMED (the fourth measurement; F1/F3 plateaued, F2/F4 one-flat, F5/F6 moved — the all-six terminal awaits the remaining counters) - the loops run until all six fronts read no-improvement twice; the watcher's next tick sees the exact cycle command.`
+`CONFIRMATION-ARMED (the terminal's condition met: F1-F4 plateaued, F5/F6 at their ceilings — the confirmation cycle checks no regression, then the apex hold) - the loops' last token; the next-mission gate awaits the pair's fire.`
