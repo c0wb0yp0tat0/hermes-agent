@@ -33,3 +33,6 @@ This map + the steer channel + the branch carry the mission. A thrown session re
 
 ## LOOP-STATE LINE
 `NIGHTSHIFT-GREENLIT - STAGE 1 (BEARINGS) FIRES NOW - the only gate is public posts beyond gists and PRs - the fleet's night begins.`
+
+## AMENDMENT-1 (2026-11-18 ~04:4x, the operator's steer — the ground widens)
+(1) THE PRIVATE REPO IS THE RIG'S HARD-DRIVE EXTENSION (not only the framework's home): durable state, staged material, archives, and the rig's own files page through it; the lanes and the head may stage/archive work there; the framework and the rig's storage are ONE surface. (2) THE RIG MINES THE HOMEBASE: PR #1 (the thread: bodies + the 800+ rows), the gists (the account's whole series), the crons (the 18 jobs + their outputs), the RFC #143379, the logs (the harness logs, the cron incidents, the state) — ALL of it is planning material; the mining feeds the bearings and the all-fleet planning. The mining needs the surfaces the lanes cannot reach (gh, the cron outputs, the state) — the head (or a runner leg) mines, stages the material into the study dir for the lanes' reachability, and the bearings carry the mined map.
