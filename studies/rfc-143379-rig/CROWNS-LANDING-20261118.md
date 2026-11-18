@@ -18,3 +18,6 @@ Executed 2026-11-18 15:25Z · every claimed landing's bytes + recency verified a
 | MISSION-MAP-APPENDICES | 1 appendix/addendum sections | presence-verified | map |
 
 The AUDIT's province (next leg): re-verify this ledger against the branch + the newest outputs; replan/re-dispatch on any absent or stale row.
+
+## AUDIT CORRECTION (2026-11-18 ~10:26 ET — the record corrects itself out loud)
+The first audit read a "five-hour silence" in the cron outputs — a MEASUREMENT ERROR, not a finding: the outputs' timestamps are LOCAL (ET), and the head compared them against UTC as if they were UTC. The ticker's own heartbeat (`ticker_last_success`, mtime 10:26:15 ET, seconds old) and every job's last/next stamps (stall-alarm last 10:15, next 10:30 — 15-minute faces, current) prove the scheduler healthy and the crowns current. THE AUDIT'S REVISED VERDICT: all seven crown families LANDED and current; no gaps → NO replan/re-dispatch. The lesson rides with it: timezone alignment before recency claims — the same class as the count-surface discipline.
