@@ -49,3 +49,8 @@ Two levers, kept apart: (1) THE PRE-THROW ANCHOR WIRING = GO, at least on for no
 
 ## STEER-6B (2026-11-18 ~03:3x — the toggle correction, superseding 6A's second clause)
 The background-review lever: GO AS AN OPTION — the toggle exists/wires in the harness (toggleable on and off, especially in the fork's runtime), but it is NOT applied to OUR live end until sandbox-tested first. The pre-throw anchor: GO unchanged. The Nemo plan-stage's five ghost-receipts on this task close the recon's Nemo route (the seat's ghosts on bounded-recon briefs in this harness): the head's own two reads of the runtime's gateway paths take the recon (head-native — the repo IS this runtime), the plan lands with the sandbox-test boundary, and the successor implements in the fork + sandbox-verifies WITHOUT touching the live config.
+
+## STEER-7 (2026-11-18 ~03:5x, hour 31 — THE GIST SEQUENCE, operator-shaped)
+1. The gist lands when the report's ready (revision lands -> runners' full-orchestra audit -> blind re-check -> fold -> update gist cff7a95b with the final report + receipts).
+2. THEN, when the runner results land and anything else lands after, HY4 folds them INTO the gist ("try to make it fit"): a small Hy4 ride reads the audit/run verdicts and composes the fit — the runners' audit findings appended to the gist package as their own receipt (memo-voice, byte-verified). The gist is the living final package, never closed until the operator's read.
+3. This chain is the substrate's hour-31 test: window cap, scribe bridge + cell directives, two-way door, full-opus runners, stepped Nemo — all exercised in the close.
