@@ -12,3 +12,7 @@ Execution surface: head-side mechanical probes (the legs a git-only lane cannot 
 **F1 = 2/4 GREEN** (first measurement, 2026-11-18 2026-11-18 13:17:04Z). The runner legs re-run on the self-hosted fleet per the cadence; the two-flat rule governs the terminal.
 
 **Fabric note:** the fork fleet's abstract experiment dispatched 28/31 (three forks platform-disabled: agent-governance-toolkit, craft-anything, hermes-official-plugins).
+
+## UPDATE (2026-11-18 ~13:2xZ, the record corrects itself out loud)
+FIRST RUN'S TRUTH: F1 = 2/4 GREEN — LEG-1 RED exposed THE STALE-CELL CLASS: the plan gained APPENDIX-A after its cell was last saved; the write-time assert is lane-side only, so the head's own edit left the cell stale (the battery caught it on the FIRST measurement — the falsifier's job).
+THE FIX + SECOND RUN: the head-side write assert re-saved the plan's current bytes into the cell; LEG-1 re-run after the assert: GREEN. SECOND MEASUREMENT: F1 = 4/4 GREEN (the two-flat terminal measures from here; the stale-cell class is named and the head-side assert is the follow-up wiring).
