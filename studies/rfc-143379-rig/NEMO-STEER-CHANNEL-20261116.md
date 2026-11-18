@@ -38,3 +38,8 @@ NEMO's kaizen (e641be0302) passed structurally with named discrepancies: the 8-c
 
 ## STEER-5-GATE-2 (2026-11-18, head — NEMO'S TROUBLESHOOT, GATE READ + THE RUN FIRES)
 NEMO's troubleshooting (80c1a16c5d) passed structurally, failed on three named items: (1) its diagnosis concluded the FINAL document "successfully aligns with the exemplar", directly contradicting the operator's verdict ("This still isn't what I asked for") — the rubric items are structural (opening-hook presence) rather than experiential (does a stranger understand every sentence, does it read aloud like a person briefing a person); (2) the run spec's commands are pseudocode, not executable; (3) its stage-1 leans on the humanizer's profile file as load-bearing, which the operator rejected (profile = reference data only). The gate's corrections are applied in the run briefs themselves: the exemplar's actual sentences are INLINED as the temperature sample (the brief is the lane's controlling exemplar, so the brief itself now models the register), the rubric is sharpened to reader-experience checks, and each stage's command is real. THE RUN FIRES NOW — stages: draft -> rubric critique -> revision -> blind re-check -> fold. No further gates; the record carries the corrections.
+
+## STEER-6 (2026-11-18 ~03:18Z — THE CONTINUATION CONTRACT, banked for the seam)
+1. critic lands → verify bytes (two-way door) → fire the revision (Hy4, cell rig-night-run-revision) → audit brief (queued) → blind re-check → fold → update gist cff7a95b with the final report → deliver the URL.
+2. negentropy successor (queued for the runners) → check bytes at fold → fold verdict into the next sweep row.
+3. Nothing else fires without the operator's word; RFC quiet; no self-gates.
