@@ -80,4 +80,4 @@ PLAN-LANDED - STAGE 3 ARMED - the watcher fires the build.
 2. HANDOFF-RECEIPT ARTIFACT (STAGE 4, the next-mission gate): a one-page receipt (state held, seams open, chair packets unused) closes the fail-safe table's one GAP and gives the apex its payload.
 3. FAIR-SHARE TELEMETRY INTO F3 (STAGE 3, B4): wall hits + rotation switches logged into the F3 gauge — tonight's three eaten 429s become a measured signal, not an anecdote.
 ## LOOP-STATE LINE (updated)
-`STAGE-3-IN-FLIGHT - B1 WIRED + PROBED (the read-side scribe-cell fallback, cells-gated, byte-verified) - B2-B4 ARMED - the lens's verdict: READY-WITH-NAMED-SEAMS, the fire proceeds under the only gate (public posts).`
+`STAGE-4-BEGUN - L1-ARMED (the first ensemble cycle's brief cut; CYCLE-2-NN the artifact) - the loops run until all six fronts read no-improvement twice; the watcher's next tick sees the exact L-leg command.`
