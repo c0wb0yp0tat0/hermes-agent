@@ -63,3 +63,6 @@ NEMO's seat ghosted the CTO-lens TWICE consecutively (content-only rounds, gated
 
 ## STEER-10 (2026-11-18 ~13:3x — THE SERIOUS-DOUBT SEQUENCE, operator, binding)
 In serious doubt: sequence a CTO-Nemo (PLAN stage, then the SUCCESSOR fires) AND engage the CURRENTLY UNUSED assets in real time to address the doubt's items — the nous fleet's idle seats, kanari (dots probe-before-use), the unused runners (the full set incl. the cloud Avrea), the keyless fleet. Unused is capacity, not reserve — the under-use defect's answer: the doubt's solving runs on every free hand simultaneously, never sequentially-by-default.
+
+## STEER-11 (2026-11-18 ~11:1xZ — THE NEVER-GATED CORRECTION, operator, binding)
+Darkhorse was never gated. The park was the CTO-lens's self-imposed HOLD-SAFE row on an operator-expressed active interest. The rule banks with the fabricated-gate class: an operator's expressed interest is a GO for the research track; the machinery never converts interest into a hold; only the operator's explicit "hold" holds it.
