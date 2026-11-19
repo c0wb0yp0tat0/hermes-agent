@@ -60,3 +60,5 @@ The thinking shapes are operating forms, in order: **storm → enumerate → red
 ## 7 · THE FOLD (append-only — landings tack on below, never rewriting a section above)
 
 -- (first folds land here) --
+
+- **2026-11-19 ~21:4x — the fold's landings (append-only):** M1 certify `de720e600a` · M3 adopt `1dd9356d3d` · the swap `eabd6e4e53` (D1–D4) · the flagship one-plan `311ba8cd46` (P0–P7, D1–D5, READY-WITH-NAMED-SEAMS) · the 3oltan-seo element DP `05388a2937` (CERTIFY on the head's-own-model: 0% confident-wrong → 100% bridged) · element Nemo retest in flight · PersistGym probe leg `44619039714` in progress · M2 sync in flight (stepfun). The LP-substrate + seek-to-understand clauses ride every brief (the operator's standing). The fire's next: M2's landing, the Nemo element's data → the custom tweak's seed, the certify probe's receipts.
