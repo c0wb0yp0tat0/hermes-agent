@@ -1,0 +1,48 @@
+{
+  "pilot": false,
+  "refreeze": "deterministic exact-match judge (v1's model-judge NULLed at 0.15 on the echo control \u2014 receipted)",
+  "responders": "LOCAL-LM-FLOOR (Harbor DeepSeek-V4-Pro-Qwen3.5-9B)",
+  "n": 5,
+  "ts": "2026-11-19T06:33:50Z",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 30,
+      "cache_hit_rate": 0.0,
+      "reader_calls": 5
+    },
+    "B": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 35,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 5
+    },
+    "C": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 5,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 5
+    }
+  },
+  "decision_rule": {
+    "B_minus_A": 0.0,
+    "B_over_0.85C": true,
+    "note": "small-N (5/arm) real-path receipt, not the 200/arm verdict \u2014 the pre-committed rule's full run follows on the wider seats"
+  },
+  "judge_control": {
+    "ok": true,
+    "accuracy": 1.0,
+    "null": false,
+    "judge_fingerprint": "ab9e6b5c868b6c30",
+    "control_n": 20,
+    "ts": "2026-11-19T06:33:50Z"
+  },
+  "judge_pipeline_direct": {
+    "ok": true,
+    "correct": 20,
+    "n": 20
+  }
+}
