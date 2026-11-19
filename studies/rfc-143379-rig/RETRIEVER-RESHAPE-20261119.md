@@ -62,3 +62,7 @@ Applied to the pilot's arms; the pilot's verdict is the reshape's gate. Numbers 
 **Storm-context corroboration (class, not adoption):** the reshape is a read-path presentation change (DISCERN's SPA-DREAM read path; write-gate L0 stays); the note is a read-side evidence card with a substring verifier (SELD's read-side evidence-plane verifier class); the extraction is a memory-economy distillation (MemCredit's arbitration class); the guard is evidence-gated admission + compile-time gating (AskALCF / the misc); the pilot is a design-space probe with an adaptive scale envelope (MAPE / Reward-Driven Collider); the note's verbatim-substring fidelity is an L2 selection (CoMem). Design stays ours.
 
 **Loop-state:** `HOLD-AT-APEX → RETRIEVER-RESHAPE designed (copycat lane); the head wires N1/P1/F1 behind the flag and writes the run.`
+---
+
+## VERDICT (2026-11-19, the pilot's re-run — append-only)
+**NO GAIN — the reshape joins the dead-end registry with its receipt.** Same seeds 0–19, paired: B′ correct 8/20 vs the banked R1 10/20, R2 9/20; B′ answered 10/20 vs R1 15/20, R2 12/20. The extracted-note presentation (N1/P1/F1) did not move the seat toward the oracle (B′ 0.4 vs 0.85×C = 0.68); mean F3b 0.85 (3 harness misses — the route's flakiness at ~15%) fired the pre-committed INCONCLUSIVE trigger again. The finding, named: the barrier is the seat's record-USE, not the record's presentation — the retriever reshape class is falsified at this scale; the store-class reshape (never re-explored) stays closed. Receipt: `BATTERY-LUNA-PILOT-RESHAPE-20261119-R2.json`.
