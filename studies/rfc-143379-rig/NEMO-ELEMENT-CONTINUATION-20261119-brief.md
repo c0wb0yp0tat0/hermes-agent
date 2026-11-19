@@ -10,12 +10,16 @@ write-window: 12
 3. The same-family receipt: the Hermes adapter for Qwen3.8-27B (SWE-Bench Pro 29.4→43.1%, +6 with xhigh — the production mechanism for the silent flagship's family; the master §7's folded bullet).
 4. `ELEMENT-TWEAK-20261119-brief.md` (the tweak's design brief, already cut — the silent tiers' bridge, the suppression-prior hypothesis, the adapter-style scaffold).
 
-## YOUR PLAN (the deliverable: `NEMO-ELEMENT-CONTINUATION-20261119.md`)
-1. **THE BUDGET TRUTH FIRST:** the operator's billing telemetry is the only spend class — if constraints bind, YOUR plan minimizes: the smallest probe that moves the seam (the silent tiers' tweaked arm at the minimal n), never a run the budget can't absorb, never shadow arithmetic. Name the constraint's line explicitly (the actual-billed class; the day's proven tiny actuals).
-2. **THE PLAN's SHAPE:** the silent-tiers' bridge probe (the tweak's arm on hy4/qwen4/stepfun), the same-family receipt's adoption seam (the adapter's scaffold as the primary variant), the success criterion (the silence breaks: B′ above the raw's E), the two-way doors, the verdict vocabulary.
-3. **THE SUCCESSOR'S BRIEF STUB (verbatim at the tail):** the successor's exact brief line (what Stage 2 executes, its seat, its artifact, its rounds) — cut so the head's dispatch is mechanical.
-4. **THE SECOND SUCCESSOR'S BRIEF STUB (verbatim at the tail):** the second successor's line (what Stage 3 verifies/continues — the probe's receipts' audit or the next seam).
-5. **The compose-check table** (the eight steps, FIRED/ABSENT, one evidence line each) + the fold line for the master's §7.
+## YOUR PLAN (the deliverable: `NEMO-ELEMENT-CONTINUATION-20261119.md`) — THE LANDED-TEMPLATE CARRIER (reproduce THIS section-shape verbatim — the shape Nemo has landed today on the ARM-PLAN; fill each section with THE ELEMENT's content)
+1. `# NEMO-ELEMENT-CONTINUATION-20261119` (the title, exactly this)
+2. `## STEER ACKNOWLEDGED` — STEER-5 acknowledged (the element's budget-aware continuation, two-part + twin successors).
+3. `## THE PLAN VERDICT LINE` — the continuation plan's one-line verdict (the silent tiers' bridge, costed at the actual-billed minimum; the same-family receipt's adoption seam).
+4. `## THE CLASS, NAMED` — the fleet curve's classes: the ANSWERING tier (longcat/solar/deepseek/Nemo: raw fabrications → bridged recovery, CERTIFY ×4) + the SILENT tier (hy4/qwen4/stepfun: E 20/20 even on the oracle — the suppression at its deepest; qwen4's answers all-wrong when it answers); the same-family receipt (the Hermes adapter for Qwen3.8-27B — 29.4→43.1%, +6 with xhigh — the silent flagship's own lineage).
+5. `## THE RULES TO STANDARDIZE` — the budget truth (the operator's telemetry the only spend class; the shadow retired) · the two-way doors · the gate verbatim · the verdict vocabulary.
+6. `## THE FAILURE MODES + AUTO-PATHS` — the silent-bridge probe's failure modes (the E persists → the suppression is weight-level → the adapter's scaffold is the next rung; the probe's spend bounds) each with its auto-path.
+7. `## THE SUCCESSOR BRIEF` — the SUCCESSOR's exact brief stub (Stage 2 executes: the silent tiers' tweaked probe — seat, artifact, rounds) AND the SECOND SUCCESSOR's exact brief stub (Stage 3 verifies/continues — seat, artifact, rounds) — both cut so the head's dispatch is mechanical.
+8. `## THE LOOP-STATE LINE` — the plan's state line, receipted.
+Each section ≤ the write budget; the compose-check table closes the artifact.
 
 ## THE CONTRACT (binding)
 The gate verbatim · the steer channel read before EVERY compose round (STEER-5 supersedes) · record-first · the two-way door · the wall clause · the review-loop (draft → stranger re-read → refine → 3–4 adversarial pushbacks → termination: no-change twice) · ≤6,000 chars per write · one tool call per round · commit before exit (add → commit → push; pull --rebase on rejection — NEVER a stash of others' files; do not exit until the commit succeeded).
