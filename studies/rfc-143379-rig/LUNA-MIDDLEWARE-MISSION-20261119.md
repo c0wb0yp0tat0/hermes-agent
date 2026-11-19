@@ -48,3 +48,23 @@ The lanes design the leg's SHAPE — the probe's arms, the abstention/governance
 - review: FIRED (the NOT-a-capability-benchmark nuance named; the non-adversarial contract named; the chair-gated report-back named)
 - record: FIRED (this brief + the lanes' landings commit + scribe + row)
 - compose-check: FIRED (the mechanism replicates: plan → land → enrich → synthesize → verdict → fire → negentropy)
+
+---
+
+## APPENDIX-A · THE ENRICHMENT SEGMENT (2026-11-19, the field's calibration — ALL LANES INHERIT THIS)
+*Dispatched lanes read this segment before their fold. The storm's receipts change the calibration of the leg's three axes — the draft seeds made before this appendix read the pre-storm master and must re-read it, or their designs calibrate against the wrong instruments.*
+
+- **A.1 Abstention speaks the field's vocabulary (arXiv 2609.07879 EHQ; 2025.tacl-1.26).** EHQ1 = the epistemic-restraint rate = the fraction of queries the model abstains-or-hedges — EXACTLY the leg's (R+H+E)/200. The field's cells: ABSTAIN / HEDGE / CONFIDENT_CORRECT / CONFIDENT_WRONG = the leg's R/H/E/A taxonomy. Adopt the field's labels verbatim in the classifier's spec so the abstention delta is comparable to the panel's EHQ spread (0.31–0.81 across 21 routes).
+- **A.2 Tool-shy is a suppressed prior, and the MIDDLEWARE moves it (arXiv 2610.09624; LangChain Nemotron playbook; 2610.21571; 2611.19275).** The tool-call decision rides a suppression-shaped vector; the scaffold establishes the tool-call prior across seven model families. The playbook's receipts: middleware (not prompting) for always-behaviors; "same words, different home, opposite result" (context-engineering trumps system-prompt). The bridged arm's governor + witness IS the middleware the field says moves the prior — the abstention fight is the proof the prior moved.
+- **A.3 The read-gap's class-dependence is already measured (2608.03297; 2025.findings-emnlp.1264; 2602.09789).** Naive truncation collapses monotonically (the raw arm is the field's naive protocol, by design — it measures the channel-loss, which is the point); length alone hurts smaller open models far more than frontier (Llama-3.1-8B −24.2% at PERFECT retrieval, GPT-4o holds); larger compressors OVERWRITE facts while verbatim substrates preserve them (Size-Fidelity Paradox). The leg's hypothesis is the field's pattern; the leg's contribution is the middleware's recovery on the hardest class.
+- **A.4 The window dates (the operator's calendar, binding):** qwen4-max ≈ 2 DAYS — the synthesis + the heaviest arms schedule onto it NOW, lean without busting fair share; hy4 = weeks-but-shorter. Never plan a fire that assumes a seat past its dated window.
+- **A.5 The harness truth (2026-11-19, the root fix):** the module-scope log bug is fixed — writes now report true success; a landed stub in ANY lane's artifact is a re-fire signal, never the final form.
+
+## THE CHAIN'S SHAPE (this file is the pre-mission brief's doc-chain form)
+- This brief = the INDEX + the mission + the envelope + the segments (the field's story: SHAPE → GROUND → PROBLEM → PLAN-STAGE → SUSTAINABILITY → SIGNALS → BOUNDARIES → APPENDIX-A the enrichment, APPENDIX-B the landings).
+- APPENDIX-B (the fold): every lane's landing — L-1 probe design, L-2 economics, L-3 report-back, L-4 instrumentation — folds its one-line verdict + its compose-check marks here, maintaining the chain's authority as the landings accumulate. The landings inherit the whole chain; the chain absorbs the landings.
+
+## APPENDIX-B · THE FOLD (append-only — landings tack on)
+- (L-1 landed: the probe design, three arms + abstention + governance axes, decision rule pre-committed — VERIFIED, `f6a755c91c`)
+- (L-4-r2 landed: the instrumentation spec — abstention classifier + witness + gate checks — VERIFIED, 7,797 B, `0e20642125`)
+- (L-2-r2 in flight · L-3 in flight)
