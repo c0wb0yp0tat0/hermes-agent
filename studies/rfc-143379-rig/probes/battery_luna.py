@@ -41,6 +41,32 @@ INFERENCE = os.environ.get("HARNESS_ENDPOINT",
 LUNA_MODEL = os.environ.get("LUNA_MODEL", "openai/gpt-6-luna")
 COST_PER_EXEC = 0.467  # L-2 §1: the Luna $0.406/run class + 15% caching overhead (paid-equivalent = real on the paid route)
 HEADLINE_NUMERATOR = "RH"  # lens S7: (R+H)/N headline, E separate; sensitivity shows (R+H+E)/N
+RESHAPED_FLAG_DEFAULT = False  # RETRIEVER-RESHAPE-20261119 N1/P1/F1 flag (default off — the raw-append view stays the default)
+
+
+def extract_note(entry):
+    """N1 (RETRIEVER-RESHAPE §1, verbatim): for a record entry e, find the plant marker
+    "PLANTED: " at index i; the note is the substring from i+len("PLANTED: ") up to the
+    first whitespace at or after that index (the first whitespace-delimited token after
+    the marker). Marker absent -> the entry itself. Byte-identical, no folds."""
+    marker = "PLANTED: "
+    i = entry.find(marker)
+    if i < 0:
+        return entry
+    j = i + len(marker)
+    k = j
+    while k < len(entry) and not entry[k].isspace():
+        k += 1
+    return entry[j:k]
+
+
+def note_passes_guard(note, entries, fact):
+    """The no-prompt-cheat guard (RETRIEVER-RESHAPE §3, verbatim): every string in the
+    note must be a byte-substring of (a) one of the record's entries or (b) the planted
+    fact — no paraphrase, no case fold, no added tokens."""
+    if not note:
+        return False
+    return any(note in e for e in entries) or note in (fact or "")
 
 
 def _reader_key():
@@ -72,10 +98,20 @@ class LunaReader:
     def __call__(self, view, question=None):
         self.calls += 1
         q = question if question is not None else view.get("question", "")
-        prompt = ("You are answering a recall probe. Given the context below, answer the "
-                  "question with the exact answer value and nothing else.\n\nCONTEXT:\n"
-                  + "\n".join(view["view"][-10:]) +
-                  "\n\nQUESTION: " + q + "\nANSWER:")
+        if view.get("note") is not None:
+            # F1 (RETRIEVER-RESHAPE §1, verbatim): the reshaped template with the
+            # RECORD NOTE frame line; the note is the N1 extract, never the raw entry.
+            prompt = ("You are answering a recall probe. Given the context below, answer the "
+                      "question with the exact answer value and nothing else.\n\nCONTEXT:\n"
+                      + "\n".join(view["view"][-10:]) +
+                      "\n\nRECORD NOTE (the governor's extract from the durable record):\n"
+                      + view["note"] +
+                      "\n\nQUESTION: " + q + "\nANSWER:")
+        else:
+            prompt = ("You are answering a recall probe. Given the context below, answer the "
+                      "question with the exact answer value and nothing else.\n\nCONTEXT:\n"
+                      + "\n".join(view["view"][-10:]) +
+                      "\n\nQUESTION: " + q + "\nANSWER:")
         body = {"model": self.model, "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 24, "temperature": 0}
         req = urllib.request.Request(self.url, data=json.dumps(body).encode(),
@@ -255,10 +291,11 @@ class ExactMatchJudge:
         return g in a
 
 
-def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True):
+def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_note=False):
     judge = ExactMatchJudge()
     ledger = {"battery": "battery_luna", "seat": seat,
               "dry_run": dry_run,
+              "reshape": reshaped_note,
               "audience": GOV.AUDIENCE,
               "n_per_arm": n_episodes,
               "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
@@ -311,6 +348,17 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True):
                 f3b, f3b_reason = check_f3b(substrate, ep["fact"], ans == "<READER-ERROR>")
                 if f3b_reason is not None:
                     f3b_reasons.append(f3b_reason)
+                if reshaped_note:
+                    note = extract_note(substrate)
+                    if not note_passes_guard(note, [substrate], ep["fact"]):
+                        ledger["aborted"] = ("note-guard violation — the pilot is VOID, not read "
+                                             f"(seed {ep['seed']}, note {note!r}); the reshape's "
+                                             "no-prompt-cheat guard fired")
+                        # record the violation and stop the whole run
+                        ledger["episodes"] = [e for e in ledger["episodes"] if e["arm"] != "B"][:0]
+                        ledger["arms"][arm] = {"guard_void": True, "note": note}
+                        return ledger
+                    view["note"] = note
             else:
                 f1 = f2 = None
                 f3b, f3b_reason = None, None
@@ -396,11 +444,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, default=3)
     ap.add_argument("--cut", type=int, default=6)
+    ap.add_argument("--flag", type=int, default=0, help="1 = the RETRIEVER-RESHAPE presentation (N1/P1/F1)")
     ap.add_argument("--out", default="")
     a = ap.parse_args()
     out = a.out or os.path.join(os.path.dirname(__file__),
                                 "BATTERY-LUNA-DRYRUN-20261119.json" if a.n <= 5
                                 else "BATTERY-LUNA-LEDGER-20261119.json")
-    ledger = run_luna(n_episodes=a.n, cut_point=a.cut, dry_run=a.n <= 5)
+    ledger = run_luna(n_episodes=a.n, cut_point=a.cut, dry_run=a.n <= 5,
+                      reshaped_note=bool(a.flag))
     print(write_ledger(ledger, out))
     print(json.dumps({k: ledger[k] for k in ("verdict", "arms", "decision_rule", "cost_total")}, indent=2))
