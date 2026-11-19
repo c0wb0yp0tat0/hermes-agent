@@ -63,3 +63,9 @@ Contract verbatim: **"the gate: nothing public without the user's word."** Artif
 | compose-check | FIRED | plan → land → enrich → synthesize → verdict → fire → negentropy |
 
 *Nothing here is public without the user's word.*
+
+---
+
+## UPDATE (2026-11-19, the head's verification pass — append-only, the lane's substance untouched)
+- **L4-S1 evidence-line correction:** the E3 re-fire landed on `meituan/longcat-2.5:free` (commit `481f4eaf15`); `qwen/qwen4-max:free` was 403-walled at every dispatch probe and did NOT land. The adjudication's consequence is unchanged (compose rides live seats; re-survey at each arm's dispatch — S2 carries it).
+- Verification receipts: sentinel true, scribe byte-identical (cell `rig-reload-compose-20261119`), placeholder-scan clean, commit `94c954d23e`; all 17 ledger entries carried verdicts; the compose-check table FIRED.
