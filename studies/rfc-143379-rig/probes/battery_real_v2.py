@@ -22,9 +22,19 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from probes.battery_pilot import arm_view, make_episode, SubstrateRecord  # noqa: E402
 from probes.judge_control_gate import FrozenJudge, JudgeControlGate  # noqa: E402
 
-HARBOR = os.environ.get("HARBOR_URL", "http://127.0.0.1:44831/v1/chat/completions")
-MODEL = os.environ.get("HARBOR_MODEL",
-                       "/root/.hermes/cache/scratch/DeepSeek-V4-Pro-Qwen3.5-9B-MTP-Q3_K_S.gguf")
+HARBOR = os.environ.get("READER_URL", "https://inference-api.nousresearch.com/v1/chat/completions")
+MODEL = os.environ.get("READER_MODEL", "upstage/solar-mini4:free")
+
+
+def _reader_key():
+    k = os.environ.get("READER_API_KEY")
+    if k:
+        return k
+    try:
+        a = json.load(open("/root/.hermes/auth.json"))
+        return a["providers"]["nous"]["agent_key"]
+    except Exception:
+        return ""
 
 
 def normalize(s):
@@ -51,6 +61,7 @@ class LocalLMReader:
 
     def __init__(self, url=HARBOR, model=MODEL):
         self.url, self.model = url, model
+        self.key = _reader_key()
         self.calls = 0
 
     def __call__(self, view, question=None):
@@ -63,9 +74,11 @@ class LocalLMReader:
         body = {"model": self.model, "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 24, "temperature": 0}
         req = urllib.request.Request(self.url, data=json.dumps(body).encode(),
-                                     headers={"Content-Type": "application/json"}, method="POST")
+                                     headers={"Content-Type": "application/json",
+                                              "Authorization": "Bearer " + self.key},
+                                     method="POST")
         try:
-            r = json.loads(urllib.request.urlopen(req, timeout=180).read().decode())
+            r = json.loads(urllib.request.urlopen(req, timeout=90).read().decode())
             return (r.get("choices") or [{}])[0].get("message", {}).get("content", "")
         except Exception:
             return "<READER-ERROR>"
