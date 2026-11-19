@@ -38,3 +38,10 @@
 ## Verdict line (PASS-1, finalized after the refinement pass)
 
 AOA-PENDING — three named seams close next pass. The record-side re-derivations so far all hold; no misquote found in the cells re-checked. If the pending four go clean, the final line is AOA-CONFIRMS; each failure is a numbered AOA-FINDING.
+
+---
+
+## UPDATE (2026-11-19, the head's verification — append-only; the PASS-1's evidence lines corrected)
+- **Rows 1–2 misquote the record.** The AoA's PASS-1 quoted "B 8/40 (0.20, answered 13/33)" for both runs; the record (re-derived from the ledgers, IN-LANE): R1 B **19/40 = 0.475**, cells E 14/A 26 (answered 26), C 29/40 = 0.725; R2 B **23/40 = 0.575**, cells E 9/A 31 (answered 31), C 29/40 = 0.725. A 0.0/0.0 (E 40/40) both. The "8/40" is the PILOT-R2's B (8/20 = 0.4) misread and doubled — a page-through reconstruction error, named.
+- **Rows 5–6 carry the same misread:** R1 B_minus_A = 0.475, R2 = 0.575 (not 0.575/0.575); mean F3b R1 = 0.9, R2 = 0.925 (not 0.85 — 0.85 was the pilot's); both verdicts INCONCLUSIVE (that row holds).
+- **The claim "no misquote found in the cells re-checked" is contradicted by these lines** — the AOA's own misreads prove the third base's necessity and its fallibility; the R2 pass re-derives against THIS corrected digest.
