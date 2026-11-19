@@ -41,3 +41,11 @@ Drafted here; the posting of this row is the cadence. STAY OFF: RFC #143379 upst
 | record-first | FIRED | every claim traced to df320b70c2 / `4f66010a0d` / named files; E/C/beam marked not confirmed, not filled. |
 | name-and-refuse | FIRED | conflicts named, none silently picked; gaps named; humanizer/web-lead refused; no unread face adopted. |
 | two-way door | FIRED | `READ_SUBSTRATE_MODE` canonical/cells/chains + rollback; canary gated before commitment. |
+
+## HEAD-SIDE RECONCILIATION (2026-11-19 ~00:2xZ — the merge's read-gate closed over E/C; the head read them directly and appends the fold, append-only)
+
+- **E·VERIFY (ADJUST, now read):** F1/F3/F4/F5 re-derive cleanly from raw artifacts (VERIFIED); two named gaps block full trust — F2's metric bridge (GAUGES "5/5 lenses" vs CONFIRMATION "3/3 crown rides + 1 ghost") undocumented, and F6 mark 8's apex-hold half self-referential. CYCLE-4-NN + KAISEN-F6 unreadable in E's window. Reconciliation: NONE-REGRESSED floor holds (F1/F3/F4/F5 verified); F2's bridge and F6's witness split become receipted NM-2 items — payload ADJUST, not floor regression.
+- **C·FLEET (ADJUST, now read):** three named gaps — F3's runner spread carried-not-measured; kenari's fresh 00:00Z pool unslotted; AMENDMENT-3's all-runner/all-fork fire unreceipted. Reconciliation: the fleet's apex plateau (28/31, 3 platform-disabled named) is a disposition, not a failure; the three gaps slot into NM-2 (receipts) + the day's rotation (kenari pool → the merge's successor work).
+- **Beam's PR1-FACE-CORRECTION (read at the merge's surface):** corrected face staged + byte-verified (f570bf9721), operator-present truthfully, posts on the operator's word — carried per the beam's own posting discipline; the merge rows without double-claiming it.
+
+**THE RECONCILED VERDICT (all six in):** APEX-HELD on the confirmation floor (six fronts NONE-REGRESSED, df320b70c2, F1/F3/F4/F5 independently re-derived) with a named, receipted ADJUST payload — NM-1 (substrate default canonical→cells + battery re-run), NM-2 (F2 bridge, F6 witness split, handoff-receipt, Nemo-swap receipt, token measure, timezone anchor), NM-3 (gated v4-mini-300M canary), NM-4 (verifier-cell pair). No conflict silently picked; every seam named.
