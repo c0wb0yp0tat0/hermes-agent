@@ -18,4 +18,21 @@ write-window: 12
 5. **The compose-check table** (the eight steps, FIRED/ABSENT, one evidence line each) + the fold line for the master's §7.
 
 ## THE CONTRACT (binding)
-The gate verbatim · the steer channel read before EVERY compose round (STEER-12 supersedes) · record-first · the two-way door · the wall clause · the review-loop (draft → stranger re-read → refine → 3–4 adversarial pushbacks → termination: no-change twice) · ≤6,000 chars per write · one tool call per round · commit before exit (add → commit → push; pull --rebase on rejection — NEVER a stash of others' files; do not exit until the commit succeeded).
+The gate verbatim · the steer channel read before EVERY compose round (STEER-5 supersedes) · record-first · the two-way door · the wall clause · the review-loop (draft → stranger re-read → refine → 3–4 adversarial pushbacks → termination: no-change twice) · ≤6,000 chars per write · one tool call per round · commit before exit (add → commit → push; pull --rebase on rejection — NEVER a stash of others' files; do not exit until the commit succeeded).
+
+## THE WRITE-FIRST RHYTHM (STEER-4's correction, re-applied for THIS ride — binding)
+1. **Round 1: write the artifact's skeleton FIRST** (the heading, the plan's sections, the compose-check table — stubbed, never empty).
+2. **Rounds 2–5: read the ground ON DEMAND between writes** (the read-gate opens between writes).
+3. **Even rounds touch the artifact; odd rounds read.** The gate rewards writers.
+4. **The read set is EXACT (never a brace-glob, never a list-in-literals):**
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/MISSION-BRIEF-MASTER-20261119.md`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-FLEET-LONGCAT-20261119.json`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-FLEET-SOLAR-20261119.json`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-FLEET-HY4-20261119.json`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-FLEET-QWEN4-20261119.json`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-FLEET-STEPFUN-20261119.json`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-ELEMENT-3OLTAN-DP-20261119.json` and the `-NEMO-` ledger
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/ELEMENT-TWEAK-20261119-brief.md`
+   - `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/NEMO-STEER-CHANNEL-20261119.md`
+5. **End: the compose-check FIRED, the artifact present (`NEMO-ELEMENT-CONTINUATION-20261119.md`), BOTH successor stubs inside** — then the head verifies and STAGE-2 arms.
+Acknowledge STEER-5 in the artifact header. The head verifies; you empower; inertia drives.
