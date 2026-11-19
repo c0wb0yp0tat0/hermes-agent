@@ -4,6 +4,11 @@
 
 write-window: 14
 
+## THE TWO-PART PUBLIC FORM (the operator's account — NON-PREMIUM X, binding)
+The poster's X account is non-premium: a post is **≤280 characters** (the gist URL counts as 23). The report-back's public surface is TWO pieces, composed together:
+1. **`X-POST-20261119.txt` — the short post (≤280 chars including `[GIST-URL]`):** warm gratitude one-liner naming the builders who trusted the seat · the one-line measured finding (the seat answered 26–31 of 40 where it had answered nothing) · the honest boundary in four care-entitled words at most ("caveats in the writeup") · the gist link. No hashtags, no thread-spam, no bullet-chars; it reads as one person's post, not a headline.
+2. **`REPORTBACK-NULL-PROSE-20261119.md` — the gist (the full statement):** the register below in full. Because the post is short, the GIST's opening must stand alone — it names what it answers (the public dismissal of the model) in its first two sentences, carries the exact-quote slot, then the substance, then the invitation. The reader arrives from the link with only the post's words; the gist must not assume them.
+
 ## THE REGISTER (binding, verbatim from the field's rules)
 - **NO title line, NO headers, NO bullets, NO bold, NO tables, NO markdown beyond blank-line paragraphs.** Plain prose that talks WITH the reader. A draft that looks like a report is the failure shape.
 - **The gratitude opens and closes.** The people who trusted the seat — the hardworking engineers and researchers who built on it — are addressed warmly and specifically; the gratitude is real, never a formula.
@@ -12,7 +17,7 @@ write-window: 14
 - **The evidence lands assertive but never loud.** Reported vs verified is said in prose, once, naturally ("our runs, on our machines; the independent rerun is next and nothing is a result until it holds").
 - **No process-confession.** The machine's internal history stays home.
 - **The ask arrives in one breath near the close** — the invitation to check, rerun, or engage — **and the two-way door stays open**: the next step is their call, gratitude either way.
-- **The honest boundary is complete.** The certification bar was not reached; the honest-negative path is whole ("if the record had not broken the silence, the honest sentence would have the same shape"). No overclaim: the seat's silence→answering move is the measured claim; "agnostic" as an unqualified word is not used.
+- **The honest boundary is complete.** The certification bar was not reached; the honest-negative path is whole ("if the record had not broken the silence, the honest sentence would have the same shape"). No overclaim: the seat's silence→answering move is the measured claim; "agnostic" as an unqualified word is not used. The boundary's three named facts go IN the prose, never hidden: (a) the bridged arm never matched the shown-fact arm (B 47.5–57.5% vs C 72.5% — the model does not fully use its restored record); (b) the shown-fact arm itself still emptied 7–10 of 40 — the seat's abstention is not fully fought even with the answer in view; (c) the strict bar was deliberately not reached, and the report-back says so in its own voice — the finding is an opening question, not a closing argument.
 - **The quote-slot:** paragraph one engages the dismissal with ITS OWN WORDS, quoted exactly. YOU DO NOT HAVE THE POST — the operator supplies the exact quote at the merge. Your draft's opening paragraph is written so the quote drops in cleanly (a single lead-in sentence + the blockquote slot marked `[THE DISMISSAL'S WORDS, QUOTED EXACTLY — SUPPLIED BY THE OPERATOR]`).
 
 ## YOUR SUBSTANCE (the measured exacts from the two ledgers — read `BATTERY-LUNA-LEDGER-20261119.json` and `-R2.json` if you need the rows; the summary below is binding)
@@ -27,7 +32,7 @@ write-window: 14
 1. The middleware's measurement (the bridged arm's three quantities) · 2. The seat-neutral framing (the measurement is of the system, not the model's worth; no vindication, no denouncement) · 3. The read-gap class finding (the general contribution, for the conversation the RFC is seeded for) · 4. The counterpoint to alienation (the people who trusted the seat were not wrong to expect it to do things; the engineering that carries context is real, named, credited).
 
 ## YOUR OUTPUT
-`REPORTBACK-NULL-PROSE-20261119.md` — the complete plain-prose draft (DRAFT-NOT-POSTABLE), ending with a two-line tail: `DRAFT-NOT-POSTABLE — the operator's word is the only key.` and the sentence `[THE DISMISSAL'S WORDS — SUPPLIED BY THE OPERATOR — land in paragraph one's slot at the merge.]` Nothing else about the machinery.
+`REPORTBACK-NULL-PROSE-20261119.md` — ONE file, TWO blocks: the first block is the ≤280-char X post (started by a line `=== X POST (≤280 chars, `[GIST-URL]` = the link) ===`, then the post text alone on the next lines), then a blank line, then the complete plain-prose gist draft (DRAFT-NOT-POSTABLE), ending with the two-line tail: `DRAFT-NOT-POSTABLE — the operator's word is the only key.` and `[THE DISMISSAL'S WORDS — SUPPLIED BY THE OPERATOR — land in the gist's opening slot at the merge.]`. The register's "no headers" rule applies to the GIST PROSE ONLY (the X-post block marker is internal). Write and commit the file before exit; the merge extracts the two pieces.
 
 ## THE CONTRACT
 Gate verbatim · the register above is the acceptance test (a header or a bullet fails it) · two-way door: the numbers' exacts trace to the two ledgers — never round a figure the ledger holds exactly ("26 of 40" not "about two-thirds") · one tool call per round · commit before exit (add → commit → push; pull --rebase on rejection; do not exit until the commit succeeds).
