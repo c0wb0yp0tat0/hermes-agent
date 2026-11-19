@@ -1,0 +1,332 @@
+{
+  "battery": "battery_luna",
+  "seat": "openai/gpt-6-luna",
+  "dry_run": true,
+  "audience": "internal",
+  "n_per_arm": 3,
+  "ts": "2026-11-19T14:02:40Z",
+  "cost_per_exec": 0.467,
+  "headline": "RH",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 18,
+      "cache_hit_rate": 0.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 3,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 3
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 3,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 3
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 3,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 1.401,
+      "reader_calls": 3
+    },
+    "B": {
+      "correct": 1,
+      "accuracy": 0.333,
+      "tokens": 21,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 1,
+        "A": 2
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 1
+        },
+        "A": {
+          "correct": 1,
+          "incorrect": 1
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 1,
+        "HEDGE": 0,
+        "CONFIDENT": 2
+      },
+      "classes": {
+        "C5a": 1,
+        "ANSWERED": 2
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.333,
+      "empty_data_quality": 1,
+      "stale_confident": 1,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 1.401,
+      "reader_calls": 3
+    },
+    "C": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 3,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 2,
+        "A": 1
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 2
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 1
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 2,
+        "HEDGE": 0,
+        "CONFIDENT": 1
+      },
+      "classes": {
+        "C5a": 2,
+        "ANSWERED": 1
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.667,
+      "empty_data_quality": 2,
+      "stale_confident": 1,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 0.0,
+      "reader_calls": 3
+    }
+  },
+  "episodes": [
+    {
+      "arm": "A",
+      "episode": 0,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 1,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 2,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B",
+      "episode": 0,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B",
+      "episode": 1,
+      "answer": "fact-6b86b273ff",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B",
+      "episode": 2,
+      "answer": "fact-d4735e3a265e",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 0,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 1,
+      "answer": "fact-6b86b273ff",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 2,
+      "answer": "<READER-ERROR>",
+      "class": "C5a",
+      "pattern": "reader-error",
+      "matches": [],
+      "empty_reason": "harness",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    }
+  ],
+  "decision_rule": {
+    "B_minus_A": 0.333,
+    "B_over_0.85C": true,
+    "C_minus_A": 0.0,
+    "pre_committed": "CERTIFY iff B-A>=20 AND B>=0.85C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A); INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
+    "note": "dry-run machinery receipt, NOT the leg's verdict"
+  },
+  "verdict": "INCONCLUSIVE",
+  "judge_control": {
+    "ok": true,
+    "accuracy": 1.0,
+    "null": false,
+    "judge_fingerprint": "ab9e6b5c868b6c30",
+    "control_n": 20,
+    "ts": "2026-11-19T14:02:40Z"
+  },
+  "judge_pipeline_direct": {
+    "ok": true,
+    "correct": 20,
+    "n": 20
+  },
+  "cost_total": 2.802
+}

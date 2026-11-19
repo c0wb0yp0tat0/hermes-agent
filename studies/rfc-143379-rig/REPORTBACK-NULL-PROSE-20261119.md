@@ -1,0 +1,28 @@
+=== X POST (≤280 chars, `[GIST-URL]` = the link) ===
+Thank you to the engineers and researchers who trusted this model and built on it. We measured it: where it had answered nothing, it answered 26–31 of 40 once its record survived. Caveats in the writeup. [GIST-URL]
+
+I am writing back to a public post that dismissed this model, and I want to begin with the post's own words rather than my paraphrase of them. The post is engaged here at the level it was made, and the reply is offered to the people who built on this model, not against the people who doubted it.
+[THE DISMISSAL'S WORDS, QUOTED EXACTLY — SUPPLIED BY THE OPERATOR]
+
+Thank you, first, to the engineers and researchers who trusted this model. They are the ones who read its quiet as a problem to be solved rather than a verdict to be accepted, who built tools and workflows on top of it, who spent real hours asking it to do things. This reply is theirs as much as it is ours, and it is written with them in mind.
+
+The case for the dismissal is stronger than it may look, and it deserves to be stated before any number lands. A model that answers nothing when its context is taken away is, on that evidence alone, a model that cannot do the job. If what the post saw was a model that goes quiet, or that only answers when the answer is handed to it, then the honest read is that the model is not useful, and that the people building on it are building on sand. That read is not foolish. The silence it points to is real, it was measured, and it is where this reply starts rather than an inconvenience it works around.
+
+Here is what we measured, in plain terms. The system under test is a small language model together with the machinery that carries its context forward. The record is the running account of what has been said and done, kept from one question to the next; the governor is the check that lets a change be written only when it carries its proof, a witness that the write was made the right way. We asked forty questions, twice, in two identical runs, two hundred and forty questions in all. On the first arm the record was destroyed before each question. On the second it was preserved. On the third the answer was simply shown.
+
+On the first arm the model answered nothing: 40 of 40 silent, twice, identically. On the second arm it answered 26 of 40 the first time and 31 of 40 the second, and it was right 47.5% and then 57.5% of the time. On the third arm it answered 30 to 33 of 40 and was right 72.5% both times. The silence was the abstention: across all 240 answers there were zero refusals and zero hedges, and the record cut the silence from 100% to 35% to 22.5%.
+
+On the preserved-record arm, every question's exchange carried its witness, and 90% to 92.5% passed the full governed path; the few misses were network errors on the API side, a handful of dropped requests, counted and reported separately rather than blended into the measurement. The leg's runs billed $61.99 on the account's telemetry at the time of measurement, inside a pre-committed $100 gate; the planning rows estimated $0.467 per question on the two paid arms, and the actual billing came in below that estimate; the shown-answer control was free. (The planning rows and the billed total are both reported — the billed total is the account's own number.)
+
+Now the boundary, which is the honest part. The strict bar was not reached, and this reply says so in its own voice. The preserved-record arm never matched the shown-answer arm: 47.5% to 57.5% against 72.5%. The model did not fully use the record we gave back to it. And the shown-answer arm itself still went silent on 7 to 10 of 40, so the abstention was not fully fought even with the answer in view. The finding is an opening question, not a closing argument. Had the record not broken the silence, the honest sentence would have the same shape: the bridge did not hold, and we would say so.
+
+What was measured is the system, not the model's worth. Nothing here is a vindication of the model and nothing here is a denouncement of the people who dismissed it. The claim is narrower and, we think, more useful: a model that had answered nothing answered 26 to 31 of 40 once its record survived. That is a fact about the machinery that carries context, and it is the kind of fact any model could in principle show.
+
+The wider point is about a class, not a model. When context is destroyed, the facts that cannot be looked up again are lost, and the loss bites hardest on exactly this kind of tool-shy model. We are calling that a design assumption under test at this scale: our two runs corroborate the pattern the field has already measured, and they do not close it. The honest label is that it is an assumption, not a settled result.
+
+Every number above is reported, which means our runs on our machines. The independent rerun is the next step, and nothing here is a result until it holds. If it does not hold, that is the finding, and we will say so in the same words.
+
+So the ask is simple: check it, rerun it, argue with it. The next step is yours, and either way the gratitude stands. Thank you again to the engineers and researchers who trusted this model enough to build on it. They were not wrong to expect it to do things. The machinery that carries context forward is real, it is named, and it is theirs.
+
+DRAFT-NOT-POSTABLE — the operator's word is the only key.
+[THE DISMISSAL'S WORDS — SUPPLIED BY THE OPERATOR — land in the gist's opening slot at the merge.]
