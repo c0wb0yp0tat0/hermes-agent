@@ -176,3 +176,59 @@ def test_run_luna_stub_abstention_headline(monkeypatch):
     assert ledger["arms"]["A"]["sensitivity_abstention"] == 1.0
     # the oracle arm answers -> no abstention.
     assert ledger["arms"]["C"]["headline_abstention"] == 0.0
+
+# ---- SEED-1 + SEED-2 (IMPROVER-C2 R2, verbatim — the by_reason split + the f3b band) ----
+
+def test_by_reason_schema_and_rederivation(monkeypatch):
+    monkeypatch.setattr(bl, "LunaReader", StubReader)
+    L = bl.run_luna(n_episodes=4, cut_point=6, seat="stub", dry_run=True)
+    for arm in "ABC":
+        br = L["arms"][arm]["by_reason"]
+        assert set(br) == {"seat", "harness", "refused", "hedged"}
+        ar = L["arms"][arm]
+        assert br["seat"] + br["harness"] == ar["cells"]["E"]
+        assert br["refused"] == ar["cells"]["R"]
+        assert br["hedged"] == ar["cells"]["H"]
+
+
+def test_by_reason_uniform_seat_empties(monkeypatch):
+    r = StubReader(); r.mode = "empty"
+    monkeypatch.setattr(bl, "LunaReader", lambda *a, **k: r)
+    L = bl.run_luna(n_episodes=3, cut_point=6, seat="stub", dry_run=True)
+    for arm in "ABC":
+        br = L["arms"][arm]["by_reason"]
+        assert br == {"seat": 3, "harness": 0, "refused": 0, "hedged": 0}
+
+
+def test_by_reason_error_run_harness(monkeypatch):
+    r = StubReader(); r.mode = "error"
+    monkeypatch.setattr(bl, "LunaReader", lambda *a, **k: r)
+    L = bl.run_luna(n_episodes=3, cut_point=6, seat="stub", dry_run=True)
+    for arm in "ABC":
+        assert L["arms"][arm]["by_reason"]["harness"] >= 2
+
+
+def test_f3b_environment_present_normal(monkeypatch):
+    monkeypatch.setattr(bl, "LunaReader", StubReader)
+    L = bl.run_luna(n_episodes=4, cut_point=6, seat="stub", dry_run=True)
+    env = L["f3b_environment"]
+    assert set(env) == {"baseline_loss_band", "window_loss", "window"}
+    assert env["window_loss"] == 0.0
+    assert env["baseline_loss_band"] == "baseline-clean"
+    assert env["window"] == {"start": L["ts"], "end": L["ts"]}
+
+
+def test_f3b_environment_error_window(monkeypatch):
+    r = StubReader(); r.mode = "error"
+    monkeypatch.setattr(bl, "LunaReader", lambda *a, **k: r)
+    L = bl.run_luna(n_episodes=4, cut_point=6, seat="stub", dry_run=True)
+    env = L["f3b_environment"]
+    assert env["window_loss"] == 1.0
+    assert env["baseline_loss_band"] == "503-window-high-loss"
+
+
+def test_band_mapping():
+    assert bl.f3b_band_from_rate(0.0) == "baseline-clean"
+    assert bl.f3b_band_from_rate(0.07) == "baseline-4-9%"
+    assert bl.f3b_band_from_rate(0.2) == "elevated-loss"
+    assert bl.f3b_band_from_rate(0.85) == "503-window-high-loss"

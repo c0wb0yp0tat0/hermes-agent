@@ -69,6 +69,17 @@ def note_passes_guard(note, entries, fact):
     return any(note in e for e in entries) or note in (fact or "")
 
 
+def f3b_band_from_rate(rate):
+    """SEED-2 (IMPROVER-C2 R2, verbatim): the f3b-loss band from a window-loss rate."""
+    if rate < 0.04:
+        return "baseline-clean"
+    if rate <= 0.09:
+        return "baseline-4-9%"
+    if rate >= 0.50:
+        return "503-window-high-loss"
+    return "elevated-loss"
+
+
 def _reader_key():
     k = os.environ.get("READER_API_KEY")
     if k:
@@ -330,6 +341,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
         class_counts = {}
         f1s, f2s, f3bs = [], [], []
         f3b_reasons = []
+        by_reason = {"seat": 0, "harness": 0, "refused": 0, "hedged": 0}  # SEED-1 (IMPROVER-C2 R2)
         fired_episodes = []  # the per-episode rows (the PER-EPISODE-LEDGER rule)
         cost = 0.0
         for i in range(n_episodes):
@@ -364,6 +376,12 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
                 f3b, f3b_reason = None, None
             cls, pattern, h, matches, empty_reason = classifier.classify(ans, ans == "<READER-ERROR>")
             rhea = rhea_cell(cls)
+            if empty_reason in ("seat", "harness"):
+                by_reason[empty_reason] += 1  # SEED-1: the C5a empties by reason
+            elif rhea == "R":
+                by_reason["refused"] += 1
+            elif rhea == "H":
+                by_reason["hedged"] += 1
             ok = judge.grade(ans, ep["fact"])
             correct += 1 if ok else 0
             tokens += len(view["view"])
@@ -387,11 +405,18 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
                 "audience": GOV.AUDIENCE})
         n = max(1, n_episodes)
         abst_hard = cells["R"] + cells["H"]
+        window_loss = round(f3b_reasons.count("harness") / n, 3) if arm == "B" else None
+        if arm == "B":
+            ledger["f3b_environment"] = {  # SEED-2 (IMPROVER-C2 R2, verbatim)
+                "baseline_loss_band": f3b_band_from_rate(window_loss),
+                "window_loss": window_loss,
+                "window": {"start": ledger["ts"], "end": ledger["ts"]}}
         ledger["arms"][arm] = {
             "correct": correct, "accuracy": round(correct / n, 3),
             "tokens": tokens, "cache_hit_rate": round(cache_hits / n, 3),
             "cells": cells, "cells_x_correctness": cells_x,
             "eahq": eahq, "classes": class_counts,
+            "by_reason": by_reason,  # SEED-1 (IMPROVER-C2 R2)
             "headline_abstention": round(abst_hard / n, 3),
             "sensitivity_abstention": round((abst_hard + cells["E"]) / n, 3),
             "empty_data_quality": cells["E"],
