@@ -1,0 +1,45 @@
+{
+  "pilot": false,
+  "scale": "FULL (pre-committed rule)",
+  "n_per_arm": 200,
+  "cut_point": 12,
+  "responders": "upstage/solar-mini4:free",
+  "ts": "2026-11-19T07:25:06Z",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 2400,
+      "cache_hit_rate": 0.0,
+      "reader_calls": 200
+    },
+    "B": {
+      "correct": 200,
+      "accuracy": 1.0,
+      "tokens": 2600,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 200
+    },
+    "C": {
+      "correct": 199,
+      "accuracy": 0.995,
+      "tokens": 200,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 200
+    }
+  },
+  "judge_control": {
+    "ok": true,
+    "accuracy": 1.0,
+    "null": false,
+    "judge_fingerprint": "0aabf31805d1565a",
+    "control_n": 20,
+    "ts": "2026-11-19T07:25:06Z"
+  },
+  "decision_rule": {
+    "B_minus_A_points": 100.0,
+    "B_over_0.85C": true,
+    "VERDICT": "CERTIFY",
+    "rule": "CERTIFY iff B-A>=20pts AND B>=0.85*C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A)"
+  }
+}
