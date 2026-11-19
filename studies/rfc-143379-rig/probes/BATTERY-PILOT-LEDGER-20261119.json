@@ -1,0 +1,31 @@
+{
+  "pilot": true,
+  "responders": "STUB-PILOT",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 60,
+      "cache_hit_rate": 0.0
+    },
+    "B": {
+      "correct": 10,
+      "accuracy": 1.0,
+      "tokens": 70,
+      "cache_hit_rate": 1.0
+    },
+    "C": {
+      "correct": 10,
+      "accuracy": 1.0,
+      "tokens": 10,
+      "cache_hit_rate": 1.0
+    }
+  },
+  "n": 10,
+  "ts": "2026-11-19T05:05:37Z",
+  "decision_rule": {
+    "B_minus_A": 1.0,
+    "B_over_0.85C": true,
+    "rule": "machinery-only \u2014 STUB responders; a real verdict needs the frozen reader + judge gate"
+  }
+}
