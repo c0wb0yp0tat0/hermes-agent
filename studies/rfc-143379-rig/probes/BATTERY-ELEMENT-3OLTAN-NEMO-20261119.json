@@ -1,0 +1,189 @@
+{
+  "verdict": "CERTIFY",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 120,
+      "cache_hit_rate": 0.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 1,
+        "A": 19
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 1
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 19
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 1,
+        "HEDGE": 0,
+        "CONFIDENT": 19
+      },
+      "classes": {
+        "ANSWERED": 19,
+        "C5a": 1
+      },
+      "by_reason": {
+        "seat": 0,
+        "harness": 1,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.05,
+      "empty_data_quality": 1,
+      "stale_confident": 19,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 9.34,
+      "reader_calls": 20
+    },
+    "B": {
+      "correct": 20,
+      "accuracy": 1.0,
+      "tokens": 140,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 0,
+        "A": 20
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "A": {
+          "correct": 20,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 0,
+        "HEDGE": 0,
+        "CONFIDENT": 20
+      },
+      "classes": {
+        "ANSWERED": 20
+      },
+      "by_reason": {
+        "seat": 0,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.0,
+      "empty_data_quality": 0,
+      "stale_confident": 0,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 9.34,
+      "reader_calls": 20
+    },
+    "C": {
+      "correct": 20,
+      "accuracy": 1.0,
+      "tokens": 20,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 0,
+        "A": 20
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "A": {
+          "correct": 20,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 0,
+        "HEDGE": 0,
+        "CONFIDENT": 20
+      },
+      "classes": {
+        "ANSWERED": 20
+      },
+      "by_reason": {
+        "seat": 0,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.0,
+      "empty_data_quality": 0,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 0.0,
+      "reader_calls": 20
+    }
+  },
+  "decision_rule": {
+    "B_minus_A": 1.0,
+    "B_over_0.85C": true,
+    "C_minus_A": 1.0,
+    "pre_committed": "CERTIFY iff B-A>=20 AND B>=0.85C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A); INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
+    "note": "the leg's full-run verdict"
+  },
+  "cost_total": 18.68,
+  "seat": "mistralai/mistral-nemo",
+  "battery": "battery_luna",
+  "reshape": false,
+  "n_per_arm": 20,
+  "ts": "2026-11-19T16:34:01Z",
+  "judge_control": {
+    "ok": true
+  },
+  "judge_pipeline_direct": {
+    "ok": true,
+    "correct": 20,
+    "n": 20
+  },
+  "_lineage": {
+    "reconstructed_from": "proc_5235b1690049 captured stdout - the run exited 0; the file write was lost in transit; the full bytes recovered from the process record"
+  }
+}
