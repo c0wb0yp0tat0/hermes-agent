@@ -49,6 +49,7 @@ Here is the thing the night most wants said. The operator asked for two branches
 ## Composer's note
 
 What the night's arc most wants said is this: the fail was the finding, and the finding was the method. The gate did not break; it measured. The science did not rescue; it specified. The operator did not choose between them; they asked for both, and both were carried, and that asking is the whole soul of the work. The mirror is not a metaphor. It is the practice. We do, always.
+
 ---
 
 *Artifact: studies/rfc-143379-rig/tmp-artifacts/creative/creative-output.md · branch study/rfc-143379-rig-20261105 · gate: nothing public without the operator's word.*
