@@ -41,5 +41,65 @@
     "B_over_0.85C": true,
     "VERDICT": "CERTIFY",
     "rule": "CERTIFY iff B-A>=20pts AND B>=0.85*C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A)"
+  },
+  "luna_leg_20261119": {
+    "class": "LUNA-LEG cost rows (fold-in; leg ledgers stay primary)",
+    "planning_estimate_usd_per_exec": 0.467,
+    "shadow_rows": [
+      {
+        "run": "R1",
+        "file": "BATTERY-LUNA-LEDGER-20261119.json",
+        "ts": "2026-11-19T14:04:30Z",
+        "n_per_arm": 40,
+        "paid_arms": [
+          "A",
+          "B"
+        ],
+        "usd": 37.36
+      },
+      {
+        "run": "R2",
+        "file": "BATTERY-LUNA-LEDGER-20261119-R2.json",
+        "ts": "2026-11-19T14:09:50Z",
+        "n_per_arm": 40,
+        "paid_arms": [
+          "A",
+          "B"
+        ],
+        "usd": 37.36
+      },
+      {
+        "run": "PILOT-RESHAPE",
+        "file": "BATTERY-LUNA-PILOT-RESHAPE-20261119.json",
+        "n_per_arm": 20,
+        "paid_arms": [
+          "A",
+          "Bp"
+        ],
+        "usd": 18.68
+      },
+      {
+        "run": "PILOT-RESHAPE-R2",
+        "file": "BATTERY-LUNA-PILOT-RESHAPE-20261119-R2.json",
+        "n_per_arm": 20,
+        "paid_arms": [
+          "A",
+          "Bp"
+        ],
+        "usd": 18.68
+      }
+    ],
+    "shadow_total_usd": 112.08,
+    "account_actual": {
+      "source": "operator billing telemetry at measurement",
+      "usd": 61.99,
+      "label": "ACTUAL \u2014 the planning estimate billed below itself; classes labeled, never merged"
+    },
+    "receipts": [
+      "[1]",
+      "[2]",
+      "[4]",
+      "[5]"
+    ]
   }
 }
