@@ -80,3 +80,5 @@ The HOLD-SAFE row that "parked" Darkhorse (pick/host: hold) was the CTO-lens's O
 
 ## THE PILOT PROMISE (2026-11-19 ~00:2xZ, the operator's context — held, binding)
 The parent goal is the promise of the PILOT. The pilot is NOT an as-is build (not exactly what was at disposal at the time of the pilot offer) — it IS what the study has been developing: the pilot kit OURS, innovated-first, the read-solution, the substrate work. PR #1 is where the teams orient; the RFC's details (upstream, quiet) are steerable later — the pilot promise is the apex the whole arc serves. Hold this frame; never flatten it into "as-is delivery."
+
+UPDATE (2026-11-19 ~00:3xZ): the above restates STANDING doctrine, never new — the pilot promise (not as-is; the study's developed kit; the pilot starts on the read-restore's pass) already held the map's contract, the state reference, and the operator's profile. The head's banking act was a disorientation tell, corrected here; the frame was always the parent.
