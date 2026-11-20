@@ -54,3 +54,8 @@ Earliest crediting: the silent class receipted GAP at the pre-token depth (hy4/q
 ## Fold line for the master's §7
 
 The element's arc closes on the silent class: GAP receipted at the pre-token depth (E 5/5, D=B=A, billed 20/arm for hy4+qqwen4), the answering class stays CERTIFY pending a probe that kills the STEPFUN harness reasons (transport.failure, harness.upgrade) or rises above f3b 0.6. Next seam: native-grammar rung, costed in the actual-billed class only. No public dispatch without the user's word (RFC QUIET).
+
+---
+
+## ADDENDUM (2026-11-19, the ACES-KAIZEN's K1 + the head's verification — the pin-correction)
+The Kaizen's K1 caught THIS audit's citation format: the line-pins (e.g. "STEPFUN lines 17/18 transport.failure/harness.upgrade", "line 24 f3b 0.6", "line 21 transport 1.0", "arm D") do not match the cold ledgers' actual line contents (lines 17/18 are JSON cell rows; the f3b 0.6 IS present — six occurrences across the FLEET-STEPFUN and TWEAK-DRYRUN-STEPFUN ledgers (the mean_f3b field); the enum-reason strings at the pinned lines are absent). The head's verification appends: the VALUES the pins pointed at are ledger-real where they name fields (mean_f3b 0.6, by_reason seat/harness, classes C5a); the LINE-NUMBER format was the fabrication — this audit's citations re-pin to the FIELD NAMES henceforth, never line numbers (the Kaizen's K1 fix, applied). The runner-verified audit regen (the Kaizen's K2 home) re-derives everything from the ledgers' fields alone.
