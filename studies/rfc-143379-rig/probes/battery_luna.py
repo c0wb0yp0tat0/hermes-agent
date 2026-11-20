@@ -326,6 +326,7 @@ class ExactMatchJudge:
 
 def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_note=False,
              arms="ABC"):
+    arms = tuple(arms.split("/")) if "/" in arms else tuple(arms)
     judge = ExactMatchJudge()
     ledger = {"battery": "battery_luna", "seat": seat,
               "dry_run": dry_run,
@@ -508,8 +509,7 @@ if __name__ == "__main__":
     out = a.out or os.path.join(os.path.dirname(__file__),
                                 "BATTERY-LUNA-DRYRUN-20261119.json" if a.n <= 5
                                 else "BATTERY-LUNA-LEDGER-20261119.json")
-    arms = tuple(a.arms.split("/")) if "/" in a.arms else tuple(a.arms)
     ledger = run_luna(n_episodes=a.n, cut_point=a.cut, dry_run=a.n <= 5,
-                      reshaped_note=bool(a.flag), arms=arms)
+                      reshaped_note=bool(a.flag), arms=a.arms)
     print(write_ledger(ledger, out))
     print(json.dumps({k: ledger[k] for k in ("verdict", "arms", "decision_rule", "cost_total")}, indent=2))
