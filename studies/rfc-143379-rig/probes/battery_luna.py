@@ -30,7 +30,9 @@ import os
 import sys
 import time
 import unicodedata
+import urllib.error
 import urllib.request
+import urllib.parse
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from probes.battery_pilot import arm_view, make_episode, SubstrateRecord  # noqa: E402
@@ -115,6 +117,7 @@ class LunaReader:
         self.errors = 0
         self.bias = bias          # A3/weights-rung: the JitRL beta*A logit-bias vector (B1 arm)
         self.applied_deltas = []  # the per-call applied-bias record (the anti-fabrication log)
+        self.last_error = None    # K2 seam fix (2026-11-20): the HTTP code lands in the ledger, never vanishes
 
     def __call__(self, view, question=None):
         self.calls += 1
@@ -155,8 +158,14 @@ class LunaReader:
         try:
             r = json.loads(urllib.request.urlopen(req, timeout=90).read().decode())
             return (r.get("choices") or [{}])[0].get("message", {}).get("content", "")
-        except Exception:
+        except urllib.error.HTTPError as exc:
+            # the K2 evidence-void seam fix (2026-11-20): the code must land, never vanish
             self.errors += 1
+            self.last_error = f"HTTP {exc.code}: {exc.read().decode()[:120] if hasattr(exc, 'read') else str(exc)}"
+            return "<READER-ERROR>"
+        except Exception as exc:
+            self.errors += 1
+            self.last_error = f"{type(exc).__name__}: {str(exc)[:150]}"
             return "<READER-ERROR>"
 
 
@@ -358,6 +367,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
     classifier = AbstentionClassifier()
     for arm in arms:
         reader.applied_deltas = []
+        reader.last_error = None
         if arm == "B1":
             reader.bias = BIAS_V1  # A3: the beta*A modulation on the bridged arm
         else:
@@ -456,6 +466,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
             "f3b_reasons": f3b_reasons if arm in ("B", "B0", "B1") else [],
             "cost": round(cost, 3),
             "reader_calls": reader.calls,
+            "reader_last_error": reader.last_error,
             "applied_delta_log": reader.applied_deltas if arm == "B1" else []}
         reader.calls = 0
         ledger["episodes"] += fired_episodes
