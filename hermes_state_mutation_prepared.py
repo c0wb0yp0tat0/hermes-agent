@@ -14,7 +14,11 @@ def local_snapshot(db, conn, session_id):
     target = validate_local_lineage(conn, saved)
     require_target_advanceable(db, conn, list({session_id, target}))
     revision = conn.execute('SELECT runtime_revision FROM sessions WHERE id=?', (target,)).fetchone()[0]
-    return {'receipt': saved, 'target': target, 'target_revision': revision}
+    snapshot = {'receipt': saved, 'target': target, 'target_revision': revision}
+    cited = saved.get('release_event_id')
+    if isinstance(cited, str) and cited:
+        snapshot['release_event_id'] = cited
+    return snapshot
 
 
 def validate_prepared(db, conn, session_id, prepared):

@@ -19,3 +19,12 @@ F3: **PASS**. F2's arm-A baseline: reproduced at the battery's full size (33+1 w
 
 ## Cost
 $0 — fake-provider battery (the unmetered class), nothing billed.
+
+## UPDATE (2026-11-20 — THE CITATION ARM APPLIED + THE FIELD ROWS)
+The lane's spec (F2-CITATION-ARM-20261120.md, commit 7d3a2b7161) applied machine-side per the lane's own code:
+- the seam line (local_snapshot surfaces the receipt's `release_event_id`) + the test file `tests/e2e/core/compaction/test_citation_arm.py` (the spec verbatim).
+- **Arm's unit battery: 4/4 PASSED** (4.25s): A archives all 30 (gate OFF) · B holds exactly the 15 uncited + releases the 15 cited · precision 1.000, FP 0, completeness 100% · every decision row honored per check_f2.
+- **F3 judge gate: 5/5 PASS** (the control ran before the results were read).
+- **F2-A (OFF, the full suite incl. the arm): 37 passed, 1 failed** — the ONE named flaky (test_provider_overflow_terminates[good], receipted in P3 §6 + both prior rows).
+- **F2-B (ON): 37 passed, 1 failed** — the same named flaky; the gate-ON run now DIFFERS from the gate-OFF run exactly by the arm's designed behavior (15 holds / 15 releases), closing the INCONCLUSIVE-named seam with the real experiment.
+Runs: $0 fake-provider, the pve floor, unmetered.
