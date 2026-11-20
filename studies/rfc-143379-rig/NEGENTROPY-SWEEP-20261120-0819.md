@@ -19,7 +19,7 @@ Receipts, never claims. **[1st]** = re-derived by this lane this pass (committed
 |---|---|---|
 | **read-burn harness-deadline** | **FELT LIVE.** Two content-reads refused mid-analysis (`READ-GATED … write-window is open`). The transport gates reads once the artifact is near-due; analysis must be front-loaded. | [1st] `git grep` + `git cat-file` refusals this fire |
 | **fold checks** (scribe cell → `get_memory` byte-compare; served `?raw=1` grep) | DESIGNED, not runnable in-lane (byte-compare needs `get_memory`, machine-side). **Named defect:** the tracked nested dup `studies/rfc-143379-rig/studies/**` double-counts any `?raw=1` grep → fold verification must de-dup its roots. | [1st] `git ls-files` nested-dup listing |
-| **token watcher's single-source line** | **NOT CONVERGED + UNFED.** Origin `982e1eaaeab` ≠ local HEAD `a152708eb7`; and the line the arming declared the single source (`NEGENTROPY-ARM-EXECUTE-20261119.md`) still reads the placeholder `~21:xx` — never written. | [1st] `ls-remote`, `rev-parse`, `read_file` |
+| **token watcher's single-source line** | **NOT CONVERGED + UNFED.** Origin `982e1eaaeab` ≠ local HEAD `a152708eb7` at fire start; and the line the arming declared the single source (`NEGENTROPY-ARM-EXECUTE-20261119.md`) still reads the placeholder `~21:xx` — never written. | [1st] `ls-remote`, `rev-parse`, `read_file` |
 | **machine-layer wire-checks** (scribe tunnel, runners, Harbor/local-LM) | ARMED-NOT-VERIFIED. In-lane runs are forbidden; these stay head-executed rows. | [2nd] BORROWED arm-execute §4 |
 | **dispositions** | Three classes held: AUTO-CONTINUE / HOLD-SAFE / NEEDS-THE-CHAIR (+ chair-packets). Membership detail not re-readable this fire (read-gate) — carried at class level only. | [2nd] BORROWED arm-execute §5–§6 |
 
@@ -46,8 +46,8 @@ Receipts, never claims. **[1st]** = re-derived by this lane this pass (committed
 5. Ordered next-moves, each with gate + seat — six rows.
 6. Compose-check + stamps — this section.
 7. Loop-state line — §6 below.
-8. Commit + push receipt — post-push, appended inline.
+8. Commit + push receipt — landed `f825303314` on `origin/study/rfc-143379-rig` (fast-forward `982e1eaaea..f825303314`) [1st]; `ls-remote` re-read confirms `f825303314`.
 
 ## 6. THE LOOP-STATE LINE
 **CONTINUE + head feeds the arm-execute loop-state line (kills the armed-but-unfed sentinel) and converges `982e1eaaeab` with local `-20261105`.**
-Receipts: HEAD `a152708eb7`, origin `982e1eaaeab`, registry `M SCRIBE-WITNESS-REGISTRY.log` [1st]; W2 `SEPARATION-UNMEASURED`, k-term flat, budget 3.00/2.83/2.33/2.00 [2nd].
+Receipts: HEAD `a152708eb7`→pushed `f825303314`, origin pre-push `982e1eaaeab`, registry `M SCRIBE-WITNESS-REGISTRY.log` [1st]; W2 `SEPARATION-UNMEASURED`, k-term flat, budget 3.00/2.83/2.33/2.00 [2nd].
