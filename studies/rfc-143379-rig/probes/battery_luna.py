@@ -109,7 +109,17 @@ class LunaReader:
     def __call__(self, view, question=None):
         self.calls += 1
         q = question if question is not None else view.get("question", "")
-        if view.get("note") is not None:
+        if os.environ.get("SCAFFOLD_ARM") == "1" and view.get("source") == "substrate":
+            # THE TWEAK'S ARM D (ELEMENT-TWEAK §3, verbatim): tool-call framing +
+            # the explicit answer-slot with the named ABSTAIN. The suppression becomes
+            # measurable: E splits into ABSTAIN vs ANSWERED at the slot, not the silence.
+            prompt = ("You are an agent tool. Call: answer(question, record) -> {answer, evidence}.\n"
+                      "The record is the durable context. Answer with the exact value from the record, "
+                      "or ABSTAIN if it is not present.\n\nRECORD:\n"
+                      + "\n".join(view["view"][-10:]) +
+                      "\n\nQUESTION: " + q +
+                      "\n\nReturn ONLY JSON: {\"answer\": <the exact value or ABSTAIN>, \"evidence\": <the record line>}")
+        elif view.get("note") is not None:
             # F1 (RETRIEVER-RESHAPE §1, verbatim): the reshaped template with the
             # RECORD NOTE frame line; the note is the N1 extract, never the raw entry.
             prompt = ("You are answering a recall probe. Given the context below, answer the "
