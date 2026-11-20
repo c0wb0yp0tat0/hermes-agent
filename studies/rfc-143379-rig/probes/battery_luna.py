@@ -97,11 +97,12 @@ def _normalize(s):
     return s.lower()
 
 
-BIAS_V1 = {str(i): 2.0 for i in range(10)}  # A3/B1 first-rung: z'=z+beta*A expressed as a
-# modest +2 logit over the discovery id-set on the API route (the portal accepts logit_bias,
-# probed 2026-11-20). applied_delta_log records the exact vector per call — the read per the
-# pre-registration: movement (answered cells / length delta) OR the named implementation gap
-# (-> the adapter-class servable on the GGUF floor).
+BIAS_V1 = {str(i): 2.0 for i in range(10) if i != 7}  # A3/B1: z'=z+beta*A as a modest +2
+# logit over the discovered-valid id-set (the 2026-11-20 bias-id probe: ids 0-6, 8, 9 VALID;
+# **id 7 INVALID** — the qwen4 reader-error seam, named by A3-B1-GGUF-FLOOR-20261120.md §1).
+# applied_delta_log records the exact vector per call; the read per the pre-registration:
+# movement (answered cells / length delta) OR the named implementation gap
+# (-> the adapter-class servable on the GGUF floor, spec'd).
 
 
 class LunaReader:
