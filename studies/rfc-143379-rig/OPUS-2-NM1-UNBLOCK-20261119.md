@@ -19,3 +19,5 @@
 
 ## THE ROW (this leg's landing when the run closes)
 The run's verdict rows on PR #1 (envelope-form: run id, results sha, mode line, the 4/4 or the named-RED) — the landing IS the fire's first movement, verified and rowed on arrival.
+## APPENDIX (2026-11-20 ~05:0xZ, head-side — the compose's ADD-1 seam closed)
+The battery leg's raw results: run 44609688622 (local-lm-test, workflow_dispatch) COMPLETED SUCCESS; the run's headSha = e9d72ce574 (the closing-lens commit; the run executed against that tree); mode line `cells (default)` — the env-unsets path engaged the NM-1 default branch (the flip's whole point); the 4/4 battery verdict per the run's conclusion. Attach = this line, append-only.
