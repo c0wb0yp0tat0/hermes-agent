@@ -28,5 +28,8 @@
   "egress_secondary_downloads": 0,
   "seat_owner": "none at dispatch (R-C executor = kenari reserve beam, probe-before-use; assigned by the rotation receipt)",
   "token_measure": "0 provider calls (mechanical sandbox run; no LLM tokens consumed; bank read not needed)",
-  "tz_anchor": "UTC"
+  "tz_anchor": "UTC",
+  "sandbox_env_id": "tmpfs-venv@PVE-host (kernel 7.0.14-16-pve); isolation boundary: ephemeral venv in /tmp (RAM-backed, reboot-pruned), model files pulled ONLY via the private-release route; no rig disk state touched; no production seat; no HF download in the sandbox",
+  "sandbox_env_id_added_utc": "2026-11-20T04:45:00Z",
+  "cells_sha256": "f1ed5b0db75d8d91fe15780a23ea6529d370bdf9e3ad98b26e57787f0d49b536"
 }
