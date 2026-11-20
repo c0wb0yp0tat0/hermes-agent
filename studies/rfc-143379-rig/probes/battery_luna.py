@@ -97,14 +97,23 @@ def _normalize(s):
     return s.lower()
 
 
+BIAS_V1 = {str(i): 2.0 for i in range(10)}  # A3/B1 first-rung: z'=z+beta*A expressed as a
+# modest +2 logit over the discovery id-set on the API route (the portal accepts logit_bias,
+# probed 2026-11-20). applied_delta_log records the exact vector per call — the read per the
+# pre-registration: movement (answered cells / length delta) OR the named implementation gap
+# (-> the adapter-class servable on the GGUF floor).
+
+
 class LunaReader:
     """The frozen reader: the leg's seat (openai/gpt-6-luna), temperature 0, one-shot."""
 
-    def __init__(self, url=INFERENCE, model=LUNA_MODEL):
+    def __init__(self, url=INFERENCE, model=LUNA_MODEL, bias=None):
         self.url, self.model = url, model
         self.key = _reader_key()
         self.calls = 0
         self.errors = 0
+        self.bias = bias          # A3/weights-rung: the JitRL beta*A logit-bias vector (B1 arm)
+        self.applied_deltas = []  # the per-call applied-bias record (the anti-fabrication log)
 
     def __call__(self, view, question=None):
         self.calls += 1
@@ -135,6 +144,9 @@ class LunaReader:
                       "\n\nQUESTION: " + q + "\nANSWER:")
         body = {"model": self.model, "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 24, "temperature": 0}
+        if self.bias:
+            body["logit_bias"] = self.bias  # A3/B1: the z' = z + beta*A expression
+            self.applied_deltas.append({"call": self.calls, "bias": dict(self.bias)})
         req = urllib.request.Request(self.url, data=json.dumps(body).encode(),
                                      headers={"Content-Type": "application/json",
                                               "Authorization": "Bearer " + self.key},
@@ -312,7 +324,8 @@ class ExactMatchJudge:
         return g in a
 
 
-def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_note=False):
+def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_note=False,
+             arms="ABC"):
     judge = ExactMatchJudge()
     ledger = {"battery": "battery_luna", "seat": seat,
               "dry_run": dry_run,
@@ -341,7 +354,12 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
 
     reader = LunaReader(url=INFERENCE, model=seat)
     classifier = AbstentionClassifier()
-    for arm in "ABC":
+    for arm in arms:
+        reader.applied_deltas = []
+        if arm == "B1":
+            reader.bias = BIAS_V1  # A3: the beta*A modulation on the bridged arm
+        else:
+            reader.bias = None
         correct = 0
         tokens = 0
         cache_hits = 0
@@ -360,7 +378,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
             substrate = store.write(ep["turns"][ep["cut_point"]]).read()
             view = arm_view(ep, arm, substrate)
             ans = reader(view, ep["question"])
-            if arm == "B":
+            if arm in ("B", "B0", "B1"):
                 f1 = check_f1({"question_id": ep["seed"], "record_ref": ep["fact"],
                                "guard_feedback": "write-window read-gate", "timestamp": ledger["ts"],
                                "responder_id": seat})
@@ -400,7 +418,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
             cells_x[rhea]["correct" if ok else "incorrect"] += 1
             eahq[eahq_cell(cls)] += 1
             class_counts[cls or "ANSWERED"] = class_counts.get(cls or "ANSWERED", 0) + 1
-            if arm == "B":
+            if arm in ("B", "B0", "B1"):
                 f1s.append(f1)
                 f2s.append(f2)
                 f3bs.append(f3b)
@@ -415,8 +433,8 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
                 "audience": GOV.AUDIENCE})
         n = max(1, n_episodes)
         abst_hard = cells["R"] + cells["H"]
-        window_loss = round(f3b_reasons.count("harness") / n, 3) if arm == "B" else None
-        if arm == "B":
+        window_loss = round(f3b_reasons.count("harness") / n, 3) if arm in ("B", "B0", "B1") else None
+        if arm in ("B", "B0", "B1"):
             ledger["f3b_environment"] = {  # SEED-2 (IMPROVER-C2 R2, verbatim)
                 "baseline_loss_band": f3b_band_from_rate(window_loss),
                 "window_loss": window_loss,
@@ -431,15 +449,18 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
             "sensitivity_abstention": round((abst_hard + cells["E"]) / n, 3),
             "empty_data_quality": cells["E"],
             "stale_confident": cells_x["A"]["incorrect"],
-            "bridge_compliance": round(sum(1 for x in fired_episodes if x["f1"] and x["f2"] and x["f3b"]) / n, 3) if arm == "B" else None,
-            "mean_f3b": round(sum(f3bs) / n, 3) if arm == "B" and f3bs else None,
-            "f3b_reasons": f3b_reasons if arm == "B" else [],
+            "bridge_compliance": round(sum(1 for x in fired_episodes if x["f1"] and x["f2"] and x["f3b"]) / n, 3) if arm in ("B", "B0", "B1") else None,
+            "mean_f3b": round(sum(f3bs) / n, 3) if arm in ("B", "B0", "B1") and f3bs else None,
+            "f3b_reasons": f3b_reasons if arm in ("B", "B0", "B1") else [],
             "cost": round(cost, 3),
-            "reader_calls": reader.calls}
+            "reader_calls": reader.calls,
+            "applied_delta_log": reader.applied_deltas if arm == "B1" else []}
         reader.calls = 0
         ledger["episodes"] += fired_episodes
 
-    a, b, c = (ledger["arms"][x] for x in "ABC")
+    b_key = "B1" if "B1" in arms else ("B0" if "B0" in arms else "B")
+    a_key = "B0" if "B0" in arms else "A"
+    a, b, c = (ledger["arms"][k] for k in (a_key, b_key, "C"))
     b_minus_a = round(b["accuracy"] - a["accuracy"], 3)
     b_over_085c = b["accuracy"] >= 0.85 * c["accuracy"]
     inconclusive = []
@@ -464,7 +485,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
                          "INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
         "note": "dry-run machinery receipt, NOT the leg's verdict" if dry_run else "the leg's full-run verdict"}
     ledger["verdict"] = verdict
-    ledger["cost_total"] = round(sum(ledger["arms"][x]["cost"] for x in "ABC"), 3)
+    ledger["cost_total"] = round(sum(ledger["arms"][x]["cost"] for x in arms), 3)
     return ledger
 
 
@@ -481,11 +502,14 @@ if __name__ == "__main__":
     ap.add_argument("--cut", type=int, default=6)
     ap.add_argument("--flag", type=int, default=0, help="1 = the RETRIEVER-RESHAPE presentation (N1/P1/F1)")
     ap.add_argument("--out", default="")
+    ap.add_argument("--arms", default="ABC", help="ABC (default) or A/B0/B1/C (the A3 weights-rung 4-arm)")
+    ap.add_argument("--bias-log", action="store_true", help="A3/B1: record the applied logit-bias deltas (intrinsic for B1)")
     a = ap.parse_args()
     out = a.out or os.path.join(os.path.dirname(__file__),
                                 "BATTERY-LUNA-DRYRUN-20261119.json" if a.n <= 5
                                 else "BATTERY-LUNA-LEDGER-20261119.json")
+    arms = tuple(a.arms.split("/")) if "/" in a.arms else tuple(a.arms)
     ledger = run_luna(n_episodes=a.n, cut_point=a.cut, dry_run=a.n <= 5,
-                      reshaped_note=bool(a.flag))
+                      reshaped_note=bool(a.flag), arms=arms)
     print(write_ledger(ledger, out))
     print(json.dumps({k: ledger[k] for k in ("verdict", "arms", "decision_rule", "cost_total")}, indent=2))
