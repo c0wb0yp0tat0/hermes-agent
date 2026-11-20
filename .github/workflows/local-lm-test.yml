@@ -155,14 +155,19 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p results/element-verify
-          # The self-hosted floor (p0tat0 = the host) carries the host's own key for the
-          # inference API — the runner-verified pass re-runs the element's mirrors here.
-          KEY_FILE="$HOME/.hermes/auth.json"
-          if [ -f "$KEY_FILE" ]; then
-            export READER_API_KEY=$(python3 -c "import json,os;d=json.load(open(os.path.expanduser('$KEY_FILE')));p=(d.get('providers') or {}).get('nous',{});print(p.get('agent_key') or p.get('access_token') or '')")
+          # key-carrier: -u-safe + home-agnostic — a systemd runner's job-env can lack HOME
+          # (measured 2026-11-20: run 44742897319 on pve1-avrea-parallel died "HOME: unbound").
+          KEY_FILE=""
+          for kf in "${HOME:-}/.hermes/auth.json" "$(getent passwd "$(id -un 2>/dev/null || true)" 2>/dev/null | cut -d: -f6)/.hermes/auth.json"; do
+            if [ -n "$kf" ] && [ -f "$kf" ]; then KEY_FILE="$kf"; break; fi
+          done
+          if [ -n "$KEY_FILE" ]; then
+            export READER_API_KEY=$(python3 -c "import json,os;d=json.load(open('$KEY_FILE'));p=(d.get('providers') or {}).get('nous',{});print(p.get('agent_key') or p.get('access_token') or '')")
             if [ -z "$READER_API_KEY" ]; then
               echo "ELEMENT-VERIFY-KEY-ABSENT: no agent_key/access_token in $KEY_FILE — the mirrors will 401 honestly, never silently"
             fi
+          else
+            echo "ELEMENT-VERIFY-KEY-FILE-MISSING: no auth.json under \${HOME:-} or the runner user's home — the mirrors will 401 honestly, never silently"
           fi
           for SEAT in deepseek/deepseek-v4-flash-0731 mistralai/mistral-nemo; do
             SAFE=$(echo "$SEAT" | tr '/:' '__')
