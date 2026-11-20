@@ -159,7 +159,10 @@ jobs:
           # inference API — the runner-verified pass re-runs the element's mirrors here.
           KEY_FILE="$HOME/.hermes/auth.json"
           if [ -f "$KEY_FILE" ]; then
-            export READER_API_KEY=$(python3 -c "import json;print(json.load(open('$KEY_FILE'))['providers']['nous']['agent_key'])")
+            export READER_API_KEY=$(python3 -c "import json,os;d=json.load(open(os.path.expanduser('$KEY_FILE')));p=(d.get('providers') or {}).get('nous',{});print(p.get('agent_key') or p.get('access_token') or '')")
+            if [ -z "$READER_API_KEY" ]; then
+              echo "ELEMENT-VERIFY-KEY-ABSENT: no agent_key/access_token in $KEY_FILE — the mirrors will 401 honestly, never silently"
+            fi
           fi
           for SEAT in deepseek/deepseek-v4-flash-0731 mistralai/mistral-nemo; do
             SAFE=$(echo "$SEAT" | tr '/:' '__')
@@ -171,5 +174,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: local-lm-${{ github.event.inputs.run_id }}
-          path: results/local-lm/
+          path: |
+            results/local-lm/
+            results/element-verify/
           if-no-files-found: warn
