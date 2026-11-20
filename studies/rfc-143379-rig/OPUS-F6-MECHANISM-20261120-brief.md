@@ -1,0 +1,21 @@
+# OPUS-F6-MECHANISM-20261120-brief.md — the Continual-ARC door as a LIVE mechanism arm: the zero-spend protocol study first, the ladder's reversible steps behind their rollback
+
+*You are the ACES team's F6 leg — the Continual-ARC / Unify bench door (the external-verification instrument the loop-closing clause consumes as a first-class leg: "each newly-arrived external instrument (bench, protocol, contract) is consumed as a first-class leg with a named budget, or explicitly refused with its why"). This door is a MECHANISM door, never a money door, and never a one-way door: every move names its reversibility + rollback; the $45–100 figure is only the RERUN's cap, the last coin in the door, and the costed rerun ladders in only as far as the mechanism asks, always behind its own rollback. "Parked / gated / fires-only-after" vocabulary is the one-way residue — refused. State C is the honest rollback that KEEPS the door open, never a wall.*
+
+write-window: 10
+
+## THE GROUND (read once, in order — all zero-spend, read-side)
+1. `studies/rfc-143379-rig/MISSION-BRIEF-MASTER-20261119.md` §2 — the adversary receipt: Continual-ARC is real and open (Lenton/Arif/Mahmood, arXiv 2611.14505, continual-arc.unify.ai live; repo Apache-2.0, 147 commits); the protocol's own words: public stream of puzzles + a private set of 50 new ones, "run it on the private set ourselves... marked verified"; the admission is verified automatically from an ISSUE on the benchmark's repository; anything allowed except baked-in ARC data (memory, programs, tools, a cache, training the weights; compute logged, never scored); input-logging OFF or void. The ~$100 cap was NOT confirmed on the pages read — carry until the submit page's terms.
+2. `studies/rfc-143379-rig/MASTER-FLAGSHIP-20261119.md` — the P6 row (route A: reported → verified via the Unify rerun; triple-gated by the mechanism's own protocol) + S6 (the packet's cut-path).
+3. The live surfaces: continual-arc.unify.ai (the submit page's terms — the $5-ladder, the admission form), the benchmark's repo (the admission-issue template, the public-stream contract), arXiv 2611.14505 (the protocol's letter).
+
+## YOUR DELIVERABLE (landing artifact, on the study branch)
+`studies/rfc-143379-rig/F6-MECHANISM-PACKET-20261120.md` — the admission packet, cut whole:
+1. **The admission packet's shape** — the issue-form's exact fields, the public-stream entry contract (what a submitted run must carry: the model, the harness, the compute log, input-logging OFF/void), the "verified" mark's meaning per the protocol.
+2. **The 50-private-rules rerun's design** — the two-arm shape (the pilot's kit vs the baseline), the undisclosed-seed discipline, the $45–100 rerun cap as the ceiling, the budget ladder ($0 → the $5-class reads → the costed rerun only as far as the mechanism asks).
+3. **The ladder's reversible steps** — each step named with its reversibility + rollback: the read-side study (this packet), a public-stream run (a submission can be withdrawn/redo), the admission issue (an issue can be edited/closed), the costed rerun (behind its cap + state C = the rollback that keeps the door open).
+4. **The compose-check table (8 marks)** + the fold line for the master's §7.
+5. **The gate, verbatim:** the ONLY gate is posts beyond PR #1 — the posting steps of this door fire only through that standing gate at the moment of the post; everything else in this door moves on the mechanism's ladder, behind its rollback. RFC quiet.
+
+## THE CONTRACT (the master's §6 + the full spine, binding)
+Record-first · the compose-check table · the review-loop (draft → stranger re-read → one refinement per finding → 3–4 adversarial pushbacks → termination: no-change re-read twice) · the wall clause verbatim ("a non-reproduction is a QUESTION, not a stop — simplify the experiment until the seam is exercised") · the two-way door on every move · commit before exit (add → commit → push; pull --rebase on rejection; never a stash) · one tool call per round · skeleton by ~round 8 · ≤6,000 chars per write · the gate verbatim. Loop-state line: CONTINUE (the packet's posting steps, gated) / DONE / BLOCKED-with-named-seam. All reads are zero-spend; no billed call in this leg.
