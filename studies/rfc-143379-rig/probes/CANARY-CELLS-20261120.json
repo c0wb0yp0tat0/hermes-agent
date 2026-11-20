@@ -1,0 +1,32 @@
+{
+  "rung": 1,
+  "candidate": "kshitijthakkar/deepseek-v4-mini-300M-from-flash",
+  "pinned_repo_sha": "fc8b9934bfdc04adaa7ff7f3f10f48349c72bf64",
+  "egress_route": "private repo release nm3-canary-r1-20261120 (sole route)",
+  "start_utc": "2026-11-20T04:41:38Z",
+  "model_safetensors_sha256": "5747a90ecef9ecc349b78247992c59e72d1eb4c2dded6b84a77d473774f35a1c",
+  "model_bytes": 641262336,
+  "transformers_version": "5.23.0",
+  "torch_version": "2.15.0+cpu",
+  "load_path": "repo-own code package (code/deepseek_v4) \u2014 native transformers deepseek_v4 config rejected compress_ratios=48 (wall receipt)",
+  "load_seconds": 0.95,
+  "param_count": 319028736,
+  "deterministic_max_abs_diff": 0.0,
+  "determinism_tolerance": 1e-06,
+  "deterministic_within_tolerance": true,
+  "logits_shape": [
+    1,
+    4,
+    129280
+  ],
+  "argmax_next_token": 49969,
+  "finish_utc": "2026-11-20T04:41:43Z",
+  "license": "MIT (verified live from the HF model card: \"license: mit\"; tags include license:mit; the model is a transformers/safetensors text-generation MoE with base deepseek-ai/DeepSeek-V4-Flash)",
+  "license_compatible_private_repo": true,
+  "egress_route_confirmed": true,
+  "egress_bytes": 647716330,
+  "egress_secondary_downloads": 0,
+  "seat_owner": "none at dispatch (R-C executor = kenari reserve beam, probe-before-use; assigned by the rotation receipt)",
+  "token_measure": "0 provider calls (mechanical sandbox run; no LLM tokens consumed; bank read not needed)",
+  "tz_anchor": "UTC"
+}
