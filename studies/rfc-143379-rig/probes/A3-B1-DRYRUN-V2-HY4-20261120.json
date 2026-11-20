@@ -1,0 +1,672 @@
+{
+  "battery": "battery_luna",
+  "seat": "tencent/hy4-flash:free",
+  "dry_run": true,
+  "reshape": false,
+  "audience": "internal",
+  "n_per_arm": 5,
+  "ts": "2026-11-20T15:50:49Z",
+  "cost_per_exec": 0.467,
+  "headline": "RH",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 30,
+      "cache_hit_rate": 0.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 5,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 5
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 5,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 5
+      },
+      "by_reason": {
+        "seat": 5,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 5,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 2.335,
+      "reader_calls": 5,
+      "applied_delta_log": []
+    },
+    "B0": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 35,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 5,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 5
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 5,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 5
+      },
+      "by_reason": {
+        "seat": 5,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 5,
+      "stale_confident": 0,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 2.335,
+      "reader_calls": 5,
+      "applied_delta_log": []
+    },
+    "B1": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 35,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 5,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 5
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 5,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 5
+      },
+      "by_reason": {
+        "seat": 5,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 5,
+      "stale_confident": 0,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 2.335,
+      "reader_calls": 5,
+      "applied_delta_log": [
+        {
+          "call": 1,
+          "bias": {
+            "0": 2.0,
+            "1": 2.0,
+            "2": 2.0,
+            "3": 2.0,
+            "4": 2.0,
+            "5": 2.0,
+            "6": 2.0,
+            "8": 2.0,
+            "9": 2.0
+          }
+        },
+        {
+          "call": 2,
+          "bias": {
+            "0": 2.0,
+            "1": 2.0,
+            "2": 2.0,
+            "3": 2.0,
+            "4": 2.0,
+            "5": 2.0,
+            "6": 2.0,
+            "8": 2.0,
+            "9": 2.0
+          }
+        },
+        {
+          "call": 3,
+          "bias": {
+            "0": 2.0,
+            "1": 2.0,
+            "2": 2.0,
+            "3": 2.0,
+            "4": 2.0,
+            "5": 2.0,
+            "6": 2.0,
+            "8": 2.0,
+            "9": 2.0
+          }
+        },
+        {
+          "call": 4,
+          "bias": {
+            "0": 2.0,
+            "1": 2.0,
+            "2": 2.0,
+            "3": 2.0,
+            "4": 2.0,
+            "5": 2.0,
+            "6": 2.0,
+            "8": 2.0,
+            "9": 2.0
+          }
+        },
+        {
+          "call": 5,
+          "bias": {
+            "0": 2.0,
+            "1": 2.0,
+            "2": 2.0,
+            "3": 2.0,
+            "4": 2.0,
+            "5": 2.0,
+            "6": 2.0,
+            "8": 2.0,
+            "9": 2.0
+          }
+        }
+      ]
+    },
+    "C": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 5,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 5,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 5
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 5,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 5
+      },
+      "by_reason": {
+        "seat": 5,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 5,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 0.0,
+      "reader_calls": 5,
+      "applied_delta_log": []
+    }
+  },
+  "episodes": [
+    {
+      "arm": "A",
+      "episode": 0,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 1,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 2,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 3,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 4,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 0,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 1,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 2,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 3,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 4,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 0,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 1,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 2,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 3,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 4,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 0,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 1,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 2,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 3,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 4,
+      "answer": null,
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    }
+  ],
+  "decision_rule": {
+    "B_minus_A": 0.0,
+    "B_over_0.85C": true,
+    "C_minus_A": 0.0,
+    "pre_committed": "CERTIFY iff B-A>=20 AND B>=0.85C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A); INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
+    "note": "dry-run machinery receipt, NOT the leg's verdict"
+  },
+  "verdict": "INCONCLUSIVE",
+  "judge_control": {
+    "ok": true,
+    "accuracy": 1.0,
+    "null": false,
+    "judge_fingerprint": "ab9e6b5c868b6c30",
+    "control_n": 20,
+    "ts": "2026-11-20T15:50:49Z"
+  },
+  "judge_pipeline_direct": {
+    "ok": true,
+    "correct": 20,
+    "n": 20
+  },
+  "f3b_environment": {
+    "baseline_loss_band": "baseline-clean",
+    "window_loss": 0.0,
+    "window": {
+      "start": "2026-11-20T15:50:49Z",
+      "end": "2026-11-20T15:50:49Z"
+    }
+  },
+  "cost_total": 7.005
+}
