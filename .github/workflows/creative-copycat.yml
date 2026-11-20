@@ -22,9 +22,14 @@ jobs:
         env:
           BRIEF_PATH: ${{ github.event.inputs.brief }}
           ARTIFACT_PATH: ${{ github.event.inputs.artifact }}
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
+      - name: The creative copycat lane
+        env:
+          BRIEF_PATH: ${{ github.event.inputs.brief }}
+          ARTIFACT_PATH: ${{ github.event.inputs.artifact }}
         run: |
           set -euo pipefail
-          REPO="/root/workspace/repos/hermes-agent"
+          REPO="${GITHUB_WORKSPACE}"
           cd "$REPO"
           git fetch origin study/rfc-143379-rig-20261105 >/dev/null 2>&1 || true
           BRIEF="$REPO/$BRIEF_PATH"
