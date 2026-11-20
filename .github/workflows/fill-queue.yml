@@ -91,10 +91,10 @@ jobs:
           set -euo pipefail
           PIN="${{ steps.pin.outputs.pin_selected }}"
           RUN="${{ github.run_id }}"
-          python3 - <<'PY'
-          import json, subprocess
-          pin = "$PIN"
-          run = "$RUN"
+          PIN="$PIN" RUN="$RUN" python3 - <<'PY'
+          import json, os, subprocess
+          pin = os.environ.get("PIN", "")
+          run = os.environ.get("RUN", "")
           body = ("RFC143379-RIG-ENVELOPE-FILL-LEG-" + run + "\n\n"
                   "<!-- oss-factory:v1 " + json.dumps({"id": "20261111-fill-leg-" + run,
                   "kind": "result", "project": "hermes-agent", "from": "runner",
