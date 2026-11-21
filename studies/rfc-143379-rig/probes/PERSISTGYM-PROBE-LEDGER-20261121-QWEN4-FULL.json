@@ -1,0 +1,45 @@
+{
+  "pilot": false,
+  "scale": "FULL (pre-committed rule)",
+  "n_per_arm": 100,
+  "cut_point": 12,
+  "responders": "qwen/qwen4-max:free",
+  "ts": "2026-11-21T01:43:50Z",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 1200,
+      "cache_hit_rate": 0.0,
+      "reader_calls": 107
+    },
+    "B": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 1300,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 102
+    },
+    "C": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 100,
+      "cache_hit_rate": 1.0,
+      "reader_calls": 104
+    }
+  },
+  "judge_control": {
+    "ok": true,
+    "accuracy": 1.0,
+    "null": false,
+    "judge_fingerprint": "0aabf31805d1565a",
+    "control_n": 20,
+    "ts": "2026-11-21T01:43:50Z"
+  },
+  "decision_rule": {
+    "B_minus_A_points": 0.0,
+    "B_over_0.85C": true,
+    "VERDICT": "FALSIFY",
+    "rule": "CERTIFY iff B-A>=20pts AND B>=0.85*C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A)"
+  }
+}
