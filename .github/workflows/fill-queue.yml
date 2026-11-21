@@ -17,7 +17,7 @@ permissions:
 jobs:
   fill:
     name: Fill leg (${{ github.ref_name }})
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, Linux]
     timeout-minutes: 45
     steps:
       - name: Select the next green pin (the queue's rotation)
