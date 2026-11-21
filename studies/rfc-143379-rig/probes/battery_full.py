@@ -110,7 +110,9 @@ def run_full(n=N, cut=CUT):
 
 
 if __name__ == "__main__":
-    out = os.path.join(os.path.dirname(__file__), "BATTERY-FULL-LEDGER-20261119.json")
+    out = os.environ.get("OUTPUT_LEDGER") or os.path.join(
+        os.path.dirname(__file__),
+        f"BATTERY-FULL-LEDGER-{time.strftime('%Y%m%d-%H%M%SZ', time.gmtime())}.json")
     l = run_full()
     with open(out, "w") as f:
         json.dump(l, f, indent=2)
