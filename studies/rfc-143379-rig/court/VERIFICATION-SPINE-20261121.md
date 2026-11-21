@@ -1,0 +1,88 @@
+# VERIFICATION-SPINE-20261121 — ARM C court-verification spine
+
+Seat: meituan/longcat-2.5:free · Lane: copycat · RFC #143379
+Artifact class: reproduction ledger (requested == executed, sha-pinned)
+Doors: read-only against the family's repos; nothing posted; nothing public; the drafts stay staged.
+Register: receipts; no expected values; never smooth.
+
+> STATUS: PROVISIONAL — the write-window opened while the analysis was still running (the read-gate
+> flipped mid-turn). This revision records the checkouts, the requested command lines verbatim, and
+> the rows that are pinned so far. Rows that could not be executed are named UNVERIFIED and carried
+> as QUESTIONs per the wall clause. A final revision follows if the read-gate lifts.
+
+## 0. Method and wall
+
+- Lane tool-surface: read_file (study roots only), git (clone/show/log/ls-tree/diff/cat-file), write_file.
+- The lane is **git-only at the terminal**: `python3`, `gh`, and every non-git executable are refused
+  (`terminal is git-only for lanes`). The brief's mechanics ("run the issues' OWN command lines")
+  therefore cannot be executed inside this lane. The wall is real and is named, not smoothed.
+- The write-window then gated content-reads (`READ-GATED: the write-window is open`), so even the
+  git-side inspection stopped mid-turn.
+- Consequence: the two reproductions below are **not executed**. What is first-hand here is (a) the
+  existence and sha-pinning of the requested artifacts, (b) the branch/commit topology that the
+  issues' claims hang on, (c) the verbatim requested command lines. The runs themselves are QUESTIONs.
+
+## 1. Checkout ledger (requested vs executed)
+
+| item | requested (from record) | executed checkout | sha-pinned |
+|---|---|---|---|
+| kvnloo/hermes-rlm | base 8ec5d15 (issue #62); PR #65 branch | `/root/workspace/scratch/hermes-rlm` | HEAD `09aad0574d2d2eaddd60918c38fb22d513bdfb58` (main, merge PR #65 from `a0263/ab-eval`); first parent `8ec5d15f5764ebf68f46e99131060581841188a2` |
+| hermes-rlm protocol branch | issue #62 "PR #65 diff" | `origin/dot/evals-r3-protocol-adherence` | `286e75a756fbabd03bd6162deb91517243d042d6` ("Report protocol failure observations and correct RLM final examples", 2026-11-20 00:05:46 -0600) |
+| hermes-rlm scaling branch | issue #61 sweep generator | `origin/dot/evals-r2-length-scaling` | `c458dd0` (not yet inspected) |
+| kvnloo/z0evals | summary at `19f53a37` | `/root/workspace/scratch/z0evals` | HEAD `279b08b7473f19056110e02a31f4cd8dcce7f94e`; `19f53a37` presence NOT yet confirmed |
+
+Clone provenance: `git clone https://github.com/kvnloo/hermes-rlm.git` and
+`git clone https://github.com/kvnloo/z0evals.git` into `/root/workspace/scratch` (network: github only).
+
+## 2. R2 — hermes-rlm #61 (frozen study summary + 48-task / 8-length sweep inputs)
+
+Requested artifacts:
+- `z0evals:studies/rlm-paper-replication-v1/data/summary.json` @ `19f53a37` — "renders the claimed
+  score points" (32 primary score points across five panels, 1300×2405 PNG).
+- tokenizer JSON + sweep generator in `kvnloo/hermes-rlm` `bench/` — "48 tasks across eight exact
+  lengths" (2^13..2^20).
+
+| row | requested | executed | receipt |
+|---|---|---|---|
+| R2.1 | `summary.json` @ `19f53a37` present | NOT EXECUTED (read-gated) | UNVERIFIED — QUESTION |
+| R2.2 | count 32 primary score points / five panels | NOT EXECUTED (read-gated) | UNVERIFIED — QUESTION |
+| R2.3 | tokenizer JSON present in `bench/` | NOT EXECUTED (read-gated) | UNVERIFIED — QUESTION |
+| R2.4 | sweep generator present in `bench/` | PARTIAL — branch `origin/dot/evals-r2-length-scaling` @ `c458dd0` exists; tree not yet read | UNVERIFIED — QUESTION |
+| R2.5 | generator emits 48 tasks × 8 lengths | NOT EXECUTED (no interpreter) | UNVERIFIED — QUESTION |
+
+## 3. R3 — hermes-rlm #62 (prompt/validator contradiction)
+
+Claim: the registered REPL tool advertises an uncited FINAL example that the host rejects for loaded
+context; exact main + prompt regression = 1 fail; candidate = 1 pass; full bench 94 pass; runtime-side
+tests 42 pass; frozen summary -> 300/177/28 and null for all four historical cause counts.
+
+Requested command lines (verbatim from the record):
+
+```
+python -B -X pycache_prefix="$(mktemp -d)" -m unittest discover -s bench -p test_protocol_adherence.py
+python -B -X pycache_prefix="$(mktemp -d)" -m unittest discover -s tests -p test_final_prompt_contract.py
+BENCH_REQUIRE_DEPS=1 python -B -X pycache_prefix="$(mktemp -d)" -m unittest discover -s bench
+python -B -X pycache_prefix="$(mktemp -d)" -m unittest discover -s tests
+python -B bench/protocol_adherence.py --summary "$STUDY_SUMMARY"
+```
+
+| row | requested | executed | receipt |
+|---|---|---|---|
+| R3.1 | `bench/test_protocol_adherence.py` exists | PARTIAL — present on `286e75a`; absent from HEAD tree `09aad05` | UNVERIFIED — QUESTION |
+| R3.2 | `tests/test_final_prompt_contract.py` exists | PARTIAL — present on `286e75a`; absent from HEAD tree `09aad05` | UNVERIFIED — QUESTION |
+| R3.3 | `bench/protocol_adherence.py` exists | PARTIAL — present on `286e75a`; absent from HEAD tree `09aad05` | UNVERIFIED — QUESTION |
+| R3.4 | `diff 8ec5d15..286e75a` | EXECUTED (git) | 12 files, +391/-179; adds the three files above; touches `rlm/prompts.py`, `rlm/__init__.py`, `rlm/kernel.py`; deletes 4 test files |
+| R3.5 | prompt advertises uncited FINAL; host rejects | NOT EXECUTED (read-gated) | UNVERIFIED — QUESTION |
+| R3.6 | unittest discover bench `-p test_protocol_adherence.py` | NOT EXECUTED (git-only lane) | UNVERIFIED — QUESTION |
+| R3.7 | unittest discover tests `-p test_final_prompt_contract.py` | NOT EXECUTED (git-only lane) | UNVERIFIED — QUESTION |
+| R3.8 | full bench (94) | NOT EXECUTED (git-only lane) | UNVERIFIED — QUESTION |
+| R3.9 | runtime-side tests (42) | NOT EXECUTED (git-only lane) | UNVERIFIED — QUESTION |
+| R3.10 | `bench/protocol_adherence.py --summary` -> 300/177/28 + 4 nulls | NOT EXECUTED (git-only lane) | UNVERIFIED — QUESTION |
+
+## 4. Wall clause
+
+A non-reproduction is a QUESTION. Rows R2.1–R2.5 and R3.5–R3.10 are QUESTIONs: the lane could not run
+the issues' own command lines, so the drafts' load-bearing claims (32 score points; 48×8 sweep; the
+1-fail prompt/validator contradiction; 300/177/28) are **not** first-hand confirmed here. They must
+not ride the tower as verified. The only first-hand results in this revision are the checkout sha-pins
+and the `8ec5d15..286e75a` diffstat.
