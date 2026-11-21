@@ -12,6 +12,7 @@ Route: study/rfc-143379-rig-20261105 · RFC quiet · write-window 7 · ledger = 
 | 4 | KIT-AUDIT-20261107.md | (verified) | verification layer = per-fork independent receipts · improver-loop honest termination · innovation-candidate verdicts | landed | governance (the audit) |
 | 5 | KIT-SKEPTIC-20261107.md | (verified) | adversarial pass · kept-open arms honestly marked OPEN · known-gaps named | landed | governance (the sceptic) |
 | 6 | WEIGHTS-RUNG-PRE-REG-20261121.md | (draft/staged) | weights-rung pre-registration — the next instrument | staged | (next instrument) |
+| 7 | substrate/ (the experimental substrate) | (landed — see the manifest) | the machinery's definition: the transport's scribe + witness registry + write-gates · the seat-probe battery · the dispatch family · the monitors · the home machinery · the instruments — portable by construction, env-contract wiring | landed | substrate inheritance (never "vanilla" Hermes on any host) |
 
 ## FINAL SECTION — THE KIT'S GAP LIST
 
