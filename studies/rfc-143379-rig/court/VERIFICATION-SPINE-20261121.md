@@ -97,3 +97,11 @@ and the `8ec5d15..286e75a` diffstat.
 - The executions that remain: the sweep's live generation + the tiktoken parity run (runner-side, named), the R3 REPL repro (runner-side, named). The lane's runs are QUESTIONS per the wall clause — the pins above are the machine-side answers.
 
 Fold line: ARM-C court-verification spine LANDED (the lane's checkouts + wall + the code-arithmetic receipts; the executions named QUESTIONs, the pins machine-completed). The drafts stay staged; nothing posted.
+
+## 5. EXECUTION LEDGER (head-side, 2026-11-21 — the QUESTION rows answered)
+
+- R3 CONTRACT: on the candidate's branch dot/evals-r3-protocol-adherence @ 286e75a — `test_final_prompt_contract` **1/1 ok** (test_advertised_final_repairs_uncited_rejection_and_names_followup — the "1 pass" claim's first-hand receipt).
+- R3 PROTOCOL: same branch — `test_protocol_adherence` **5/5 ok** (child-error-not-masked · missing≠unknown · uncited-from-linked-receipt — matched to the issue's own "offline classification 5 pass" claims).
+- R2 SWEEP: on dot/evals-r2-length-scaling @ c458dd0, with the vendored `tokenizers` in a scratch venv — `test_scaling_sweep` **3/3 ok** (full-context boundary · measured manifest + exact context tokens — the exact-token machinery's receipt) + plot 6/6 (1 skipped) on the earlier pass.
+- Attempt trace (honest): pass 1 = my module-form invocation (0 tests) — the record's discover-forms used from pass 2; pass 2 = the skips' 'tokenizers is required' env seam (the PEP-668 system env refused pip) — the venv from pass 3. The code's claims pass; the seams were mine and the env's.
+- STILL QUESTION (runner-side, named): the 48-task live generation + the independent tiktoken parity (the issue's own deep run) and the summary PNG render — not executed, never claimed.
