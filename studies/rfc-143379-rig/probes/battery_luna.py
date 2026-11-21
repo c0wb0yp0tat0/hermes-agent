@@ -105,6 +105,11 @@ BIAS_V1 = {str(i): 2.0 for i in range(10) if i != 7}  # A3/B1: z'=z+beta*A as a 
 # applied_delta_log records the exact vector per call; the read per the pre-registration:
 # movement (answered cells / length delta) OR the named implementation gap
 # (-> the adapter-class servable on the GGUF floor, spec'd).
+BIAS_V3 = {str(i): -2.0 for i in range(10) if i != 7}  # A3/B1-V3: the SAME tokenizer-validated set,
+# sign flipped — down-bias the empty/early-stop pattern per the B1 intent
+# (ELEMENT-IMPROVER-NATIVE-RUNG-20261120-QWEN4.md §3; V2's +2 masked record-use:
+# qwen4 B0 1/5 vs B1 0/5, the first measured delta, direction wrong). Runtime vector;
+# zero = exact rollback.
 
 
 class LunaReader:
@@ -369,7 +374,7 @@ def run_luna(n_episodes=3, cut_point=6, seat=LUNA_MODEL, dry_run=True, reshaped_
         reader.applied_deltas = []
         reader.last_error = None
         if arm == "B1":
-            reader.bias = BIAS_V1  # A3: the beta*A modulation on the bridged arm
+            reader.bias = BIAS_V3  # A3/B1-V3: the beta*A modulation, down-bias direction
         else:
             reader.bias = None
         correct = 0
