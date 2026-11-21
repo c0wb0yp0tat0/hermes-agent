@@ -86,3 +86,14 @@ the issues' own command lines, so the drafts' load-bearing claims (32 score poin
 1-fail prompt/validator contradiction; 300/177/28) are **not** first-hand confirmed here. They must
 not ride the tower as verified. The only first-hand results in this revision are the checkout sha-pins
 and the `8ec5d15..286e75a` diffstat.
+## 4. FINAL REVISION (head-side pins, 2026-11-21 — the lane's QUESTION rows, machine-completed)
+
+- R2.1 **CONFIRMED**: `summary.json` exists at the pinned commit `19f53a37` (blob extracted; top-level keys: audit_policy · bootstrap_draws · expected_primary_rows_per_root · pilot · primary · protocols · schema_version · seed).
+- R2.2 **CONFIRMED-PARTIAL with a named mismatch**: the pinned blob's `primary` = 45 rows (pilot 14, expected_primary_rows_per_root 300) — the issue's "32 primary score points" is NOT reproduced at the row level (45 raw rows vs the 32 points' rendering — the mapping unverified, named, never smoothed); the 1300x2405 PNG render is not re-generated (a renderer question, named).
+- R2.3 **PARTIAL**: the sweep's `LocalTokenizer` (bench/scaling_tokenizer.py) is present on `c458dd0`; the external GPT-2 tokenizer JSON input is not vendored on the branch (the issue's own run supplied it) — the generator ACCEPTS `--tokenizer-json`, the vendored engine is in-repo.
+- R2.4 **CONFIRMED**: the scaling branch `origin/dot/evals-r2-length-scaling` @ `c458dd0` holds bench/generate_scaling.py + bench/scaling_tokenizer.py + the sweep/plot tests.
+- R2.5 **CONFIRMED-ARITHMETIC**: the generator's own structure at `c458dd0` = 8 exponents (2^13..2^20) x 3 families (needle/multihop/aggregation) x `variants=2` = **48 tasks** — the issue's "48 tasks across eight exact lengths" rides the code's own constants (first-hand, not asserted).
+- R3: the contradiction's reproductions remain QUESTION rows — the family's tests need their environment (the runner-side execution is named, the command lines are recorded verbatim above).
+- The executions that remain: the sweep's live generation + the tiktoken parity run (runner-side, named), the R3 REPL repro (runner-side, named). The lane's runs are QUESTIONS per the wall clause — the pins above are the machine-side answers.
+
+Fold line: ARM-C court-verification spine LANDED (the lane's checkouts + wall + the code-arithmetic receipts; the executions named QUESTIONs, the pins machine-completed). The drafts stay staged; nothing posted.
