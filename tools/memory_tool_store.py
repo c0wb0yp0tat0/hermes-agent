@@ -438,6 +438,27 @@ class MemoryStore:
                 "patched_entry_before": before, "patched_entry_after": after}
         return self._mutate(target, _apply)
 
+    def read(self, target: str, doc: Optional[str], verb: str, matched_entry: Optional[str] = None) -> dict[str, Any]:
+        """Read the named document (or the target's default doc when doc is None) and
+        return its entries from disk.
+
+        ``doc`` is the document reload marker: when present, the memory read reloads the
+        named document instead of relying on the in-memory cache. Added for GAP-2 so the
+        memory read honors ``doc=`` in the same shape the skill read already honors."""
+        path = self._path_for(target)
+        raw, read_ok = self._read_raw_checked(path)
+        if not read_ok:
+            return _read_failed_error(path)
+        entries = [e for e in raw.split(ENTRY_DELIMITER) if e.strip()]
+        return self._success_response(
+            target,
+            message=f"Read {path.name} ({len(entries)} entries).",
+            doc=doc or path.name,
+            read_entries=entries,
+            verb=verb,
+        )
+
+
     def remove(self, target: str, old_text: str, matched_entry: Optional[str] = None) -> dict[str, Any]:
         """Remove the entry containing old_text substring."""
         if not old_text.strip():

@@ -105,17 +105,19 @@ def _gate_or_stage(store: MemoryStore, summary: str, detail: str, payload: dict[
 # action -> (store call, gate (summary, detail) text) for the live tool path and staged replay
 # ('replace' only replays writes staged before it was removed from the tool).
 _STORE_ACTIONS = {
-    "add": (lambda store, target, content, old_text, entry=None: store.add(target, content),
+    "add": (lambda store, target, content, old_text, entry=None, doc=None: store.add(target, content),
             lambda label, content, old_text: (f"add to {label}", content or "")),
-    "replace": (lambda store, target, content, old_text, entry=None: store.replace(target, old_text, content, entry),
+    "replace": (lambda store, target, content, old_text, entry=None, doc=None: store.replace(target, old_text, content, entry),
                 lambda label, content, old_text: (f"replace in {label}",
                                                   f"entry matching: {old_text}\nwhole entry becomes: {content}")),
-    "remove": (lambda store, target, content, old_text, entry=None: store.remove(target, old_text, entry),
+    "remove": (lambda store, target, content, old_text, entry=None, doc=None: store.remove(target, old_text, entry),
                lambda label, content, old_text: (f"remove from {label}", old_text or "")),
-    "patch": (lambda store, target, content, old_text, entry=None: store.patch(target, old_text, content, entry),
+    "patch": (lambda store, target, content, old_text, entry=None, doc=None: store.patch(target, old_text, content, entry),
               lambda label, content, old_text: (f"patch in {label}",
                                                 f"entry matching: {old_text}\nspan '{old_text}' becomes: {content} "
-                                                "(rest of the entry is kept)"))}
+                                                "(rest of the entry is kept)")),
+    "read": (lambda store, target, content, old_text, entry=None, doc=None: store.read(target, old_text or doc, verb="read", matched_entry=None),
+             lambda label, content, old_text: (f"read from {label}", content or old_text or "")),}
 
 
 def _batch_op_line(op: dict[str, Any]) -> str:
@@ -140,7 +142,7 @@ def _apply_write_gate(store: MemoryStore, action: str, target: str, content: Opt
                           {"action": action, "target": target, "content": content, "old_text": old_text})
 
 
-def _validate_single_op(store, action, target, content, old_text) -> Optional[str]:
+def _validate_single_op(store, action, target, content, old_text, doc=None) -> Optional[str]:
     """Validate BEFORE the gate so an invalid write is rejected now, not at approve time.
     Missing ``old_text`` is recoverable (it can't be schema-required — needs a combinator
     the Codex backend rejects): return the inventory plus a retry instruction."""
@@ -221,10 +223,16 @@ def _background_delete_gate(store, action, operations, target="memory", content=
 
 def memory_tool(action: str | None = None, target: str = "memory", content: str | None = None, old_text: str | None = None,
                 new_text: str | None = None, operations: Optional[list[dict[str, Any]]] = None,
-                store: Optional[MemoryStore] = None) -> str:
+                doc: str | None = None, store: Optional[MemoryStore] = None) -> str:
     """Tool entry point; returns a JSON string. Single op (action + content/old_text)
     or batch (``operations``, atomic against the final budget). ``new_text``
-    aliases ``content``."""
+    aliases ``content``.
+
+    ``doc`` is the document reload marker. When a read carries ``doc=<name|path>`` the
+    memory read reloads the named document instead of re-reading the in-memory cache;
+    omit it to read the default ``target`` doc (MEMORY.md for target='memory', USER.md
+    for target='user'). The memory read honors ``doc=`` in the same shape the skill
+    read already honors (handling carried on the fork; see GAP-2 / #141876)."""
     if store is None:
         return tool_error("Memory is not available. It may be disabled in config or this environment.", success=False)
     token = FAILURE_CLASS.set("other")
@@ -247,7 +255,7 @@ def _invalid(message: str) -> tuple[str, str]:
     return "rejected", tool_error(message, success=False)
 
 
-def _memory_tool(action, target, content, old_text, new_text, operations, store) -> tuple[str, str]:
+def _memory_tool(action, target, content, old_text, new_text, operations, store, doc=None) -> tuple[str, str]:
     """``(outcome, result_json)``: ``rejected`` when refused or held before touching the store."""
     # An omitted optional string can arrive as "" (#90468): let the new_text alias fill it.
     if not content and new_text:
@@ -280,13 +288,13 @@ def _memory_tool(action, target, content, old_text, new_text, operations, store)
     if action == "replace":
         return _invalid(_REPLACE_REMOVED)
     if action not in _STORE_ACTIONS:
-        return _invalid(f"Unknown action '{action}'. Use: add, patch, remove")
-    invalid = (_validate_single_op(store, action, target, content, old_text)
+        return _invalid(f"Unknown action '{action}'. Use: add, read, patch, remove")
+    invalid = (_validate_single_op(store, action, target, content, old_text, doc)
                or _background_delete_gate(store, action, None, target, content, old_text)
                or _apply_write_gate(store, action, target, content, old_text))
     if invalid is not None:
         return "rejected", invalid
-    return _applied(_STORE_ACTIONS[action][0](store, target, content, old_text))
+    return _applied(_STORE_ACTIONS[action][0](store, target, content, old_text, doc=doc))
 
 
 def get_builtin_memory_config(config: Optional[dict[str, Any]] = None) -> dict[str, Any]:
@@ -401,7 +409,7 @@ MEMORY_SCHEMA = {
         "properties": {
             "action": {
                 "type": "string",
-                "enum": ["add", "patch", "remove"],
+                "enum": ["add", "read", "patch", "remove"],
                 "description": "The action to perform (single-op shape). Omit when using 'operations'."
             },
             "target": {
@@ -421,6 +429,10 @@ MEMORY_SCHEMA = {
                 "type": "string",
                 "description": "Alias for 'content'. If both are set, 'content' wins."
             },
+            "doc": {
+                "type": "string",
+                "description": "Document reload marker for reads. When present on a read, the memory read reloads the named document from disk (same shape the skill read already honors; GAP-2). Omit to read the default target doc ('memory' = MEMORY.md, 'user' = USER.md)."
+            },
             "operations": {
                 "type": "array",
                 "description": (
@@ -431,7 +443,7 @@ MEMORY_SCHEMA = {
                 "items": {
                     "type": "object",
                     "properties": {
-                        "action": {"type": "string", "enum": ["add", "patch", "remove"]},
+                        "action": {"type": "string", "enum": ["add", "read", "patch", "remove"]},
                         "content": {"type": "string", "description": "Required for add and patch, as 'content' above."},
                         "new_text": {"type": "string", "description": "Alias for 'content' in a batch op."},
                         "old_text": {"type": "string", "description": "As 'old_text' above."},
@@ -479,7 +491,7 @@ registry.register(
     schema=MEMORY_SCHEMA,
     handler=lambda args, **kw: memory_tool(
         action=args.get("action", ""), target=args.get("target"), store=kw.get("store"),
-        **{k: args.get(k) for k in ("content", "old_text", "new_text", "operations")}),
+        **{k: args.get(k) for k in ("content", "old_text", "new_text", "operations", "doc")}),
     check_fn=check_memory_requirements,
     emoji="🧠",
     dynamic_schema_overrides=_build_memory_schema_overrides)
