@@ -18,7 +18,7 @@
   "window_total_chars": 2082,
   "compression_pass": "outermost-depth-fraction retained; middle compacted (mirrors ContextCompressor head/tail+summary)",
   "grader": "ExactMatchJudge (normalised substring)",
-  "ts": "2026-11-21T17:57:07Z",
+  "ts": "2026-11-21T18:06:42Z",
   "cost_total": 0.0,
   "matrix": {
     "user-stated": {
