@@ -140,11 +140,16 @@ class LunaReader:
         elif view.get("note") is not None:
             # F1 (RETRIEVER-RESHAPE §1, verbatim): the reshaped template with the
             # RECORD NOTE frame line; the note is the N1 extract, never the raw entry.
+            # B' (A3 pre-reg §2, 2026-11-21): HARNESS_SIGMA_NOTE=1 prepends the pre-registered
+            # one-string invitation to the note — the sigma-notes control, env-gated, zero = rollback.
+            _note = view["note"]
+            if os.environ.get("HARNESS_SIGMA_NOTE") == "1":
+                _note = ("Memory - if this answers the question, answer from it: " + _note)
             prompt = ("You are answering a recall probe. Given the context below, answer the "
                       "question with the exact answer value and nothing else.\n\nCONTEXT:\n"
                       + "\n".join(view["view"][-10:]) +
                       "\n\nRECORD NOTE (the governor's extract from the durable record):\n"
-                      + view["note"] +
+                      + _note +
                       "\n\nQUESTION: " + q + "\nANSWER:")
         else:
             prompt = ("You are answering a recall probe. Given the context below, answer the "
