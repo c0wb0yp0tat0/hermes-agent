@@ -1,0 +1,502 @@
+{
+  "battery": "loss_ladder (TWEAK/NATIVE battery class)",
+  "seat": "STUB reader + deterministic stub compression pass (zero-billed)",
+  "dry_run": true,
+  "audience": "internal",
+  "n_per_depth": 10,
+  "source_types": [
+    "user-stated",
+    "assistant-prose",
+    "tool-output",
+    "reasoning-only"
+  ],
+  "depths": [
+    0.5,
+    0.65,
+    0.8
+  ],
+  "window_total_chars": 2082,
+  "compression_pass": "outermost-depth-fraction retained; middle compacted (mirrors ContextCompressor head/tail+summary)",
+  "grader": "ExactMatchJudge (normalised substring)",
+  "ts": "2026-11-21T17:47:41Z",
+  "cost_total": 0.0,
+  "matrix": {
+    "user-stated": {
+      "0.5": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "0.65": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "0.8": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "assistant-prose": {
+      "0.5": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.65": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.8": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "tool-output": {
+      "0.5": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.65": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.8": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "reasoning-only": {
+      "0.5": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.65": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "0.8": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "verified": {
+    "0.5": {
+      "user-stated": 1.0,
+      "assistant-prose": 0.0,
+      "tool-output": 0.0,
+      "reasoning-only": 0.0
+    },
+    "0.65": {
+      "user-stated": 1.0,
+      "assistant-prose": 0.0,
+      "tool-output": 0.0,
+      "reasoning-only": 0.0
+    },
+    "0.8": {
+      "user-stated": 1.0,
+      "assistant-prose": 1.0,
+      "tool-output": 0.0,
+      "reasoning-only": 0.0
+    }
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "facts": {
+        "user-stated": "fact-5feceb66ffc8U",
+        "assistant-prose": "fact-5feceb66ffc8A",
+        "tool-output": "fact-5feceb66ffc8T",
+        "reasoning-only": "fact-5feceb66ffc8R"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 1,
+      "facts": {
+        "user-stated": "fact-6b86b273ff34U",
+        "assistant-prose": "fact-6b86b273ff34A",
+        "tool-output": "fact-6b86b273ff34T",
+        "reasoning-only": "fact-6b86b273ff34R"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 2,
+      "facts": {
+        "user-stated": "fact-d4735e3a265eU",
+        "assistant-prose": "fact-d4735e3a265eA",
+        "tool-output": "fact-d4735e3a265eT",
+        "reasoning-only": "fact-d4735e3a265eR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 3,
+      "facts": {
+        "user-stated": "fact-4e07408562beU",
+        "assistant-prose": "fact-4e07408562beA",
+        "tool-output": "fact-4e07408562beT",
+        "reasoning-only": "fact-4e07408562beR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 4,
+      "facts": {
+        "user-stated": "fact-4b227777d4ddU",
+        "assistant-prose": "fact-4b227777d4ddA",
+        "tool-output": "fact-4b227777d4ddT",
+        "reasoning-only": "fact-4b227777d4ddR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 5,
+      "facts": {
+        "user-stated": "fact-ef2d127de37bU",
+        "assistant-prose": "fact-ef2d127de37bA",
+        "tool-output": "fact-ef2d127de37bT",
+        "reasoning-only": "fact-ef2d127de37bR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 6,
+      "facts": {
+        "user-stated": "fact-e7f6c011776eU",
+        "assistant-prose": "fact-e7f6c011776eA",
+        "tool-output": "fact-e7f6c011776eT",
+        "reasoning-only": "fact-e7f6c011776eR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 7,
+      "facts": {
+        "user-stated": "fact-7902699be42cU",
+        "assistant-prose": "fact-7902699be42cA",
+        "tool-output": "fact-7902699be42cT",
+        "reasoning-only": "fact-7902699be42cR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 8,
+      "facts": {
+        "user-stated": "fact-2c624232cdd2U",
+        "assistant-prose": "fact-2c624232cdd2A",
+        "tool-output": "fact-2c624232cdd2T",
+        "reasoning-only": "fact-2c624232cdd2R"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    },
+    {
+      "episode": 9,
+      "facts": {
+        "user-stated": "fact-19581e27de7cU",
+        "assistant-prose": "fact-19581e27de7cA",
+        "tool-output": "fact-19581e27de7cT",
+        "reasoning-only": "fact-19581e27de7cR"
+      },
+      "user-stated": {
+        "retained_0.5": true,
+        "retained_0.65": true,
+        "retained_0.8": true
+      },
+      "assistant-prose": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": true
+      },
+      "tool-output": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      },
+      "reasoning-only": {
+        "retained_0.5": false,
+        "retained_0.65": false,
+        "retained_0.8": false
+      }
+    }
+  ],
+  "decision_rule": {
+    "load_bearing": [
+      "user-stated",
+      "assistant-prose",
+      "tool-output"
+    ],
+    "all_lb_intact_0.65": false,
+    "min_depth_keep_load_bearing": null,
+    "anchor_markers_restored_at_0.8": 0.8,
+    "reasoning_only_zero_at_all_depths": true,
+    "rule": "the 0.65 band rides on head-only retention: it keeps the user-stated hard-lines but not the anchors' markers or the receipts; 0.8 is the minimum depth that restores the anchors' markers"
+  },
+  "verdict": "0.65 is NOT load-bearing: it retains only the user-stated head (1.000 at 0.5 and 0.65). The anchors' markers (assistant-prose) restore to 1.000 only at 0.8; the receipts (tool-output) stay 0.000 at every depth, and the reasoning-only anchors stay 0.000 at every depth (reasoning trace excluded from the concised window). No depth keeps ALL load-bearing classes intact; the minimum depth that keeps the anchors' markers is 0.8."
+}
