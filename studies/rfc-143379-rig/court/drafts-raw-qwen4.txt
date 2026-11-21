@@ -1,0 +1,23 @@
+DRAFT 1 — reply on #59 (R1)
+
+@kvnloo, thank you for writing the unverified/verified split into the issue itself — "This is author reference code, not proven to be the paper-table runner," and "no full corpora, Parquet path, live inference, or end-to-end reproduction claimed." Most bench claims arrive without those clauses; yours arrives with them, and that is a quiet gift to every reader who has to decide what a green bench actually means.
+
+The strongest case for keeping R1 exactly as scoped is bandwidth: four families, one offline materializer, nothing shipped, and a stranger's offer of runs lands as review load on you — new artifacts to read, new claims to check, at the moment your velocity matters most. An offer that costs you attention isn't help.
+
+What you have already pinned down is precise: 6 passed in 0.110s, the full exact bench 95 run in 7.486s, four synthetic manifest types accepted (28 full, 4 smoke, 20 Pairs, 5 CodeQA), eight fixed examples checked under the MIT-noticed scoring slice — and real source download probes from your computer returning curl 28 / HTTP 000 / 0 bytes.
+
+So here is the one thing I would offer, @kvnloo: take a single family, the fixed 1,000-unique-document BrowseComp-Plus manifest with evidence inclusion, and let us run live-inference probes against it; we run exact-match grading and per-call accounting on free-tier models, and you would get the raw rows to trust or discard, with no claim about the paper table attached; if that does not serve your R1 plan at all, that is completely understandable.
+
+It is yours to take whole, split down to one manifest type, refuse, or ask for more detail on.
+
+Thank you either way, @kvnloo — for the materializer, and for the honesty about what it does not yet prove.
+
+DRAFT 2 — reply on #61 (R2)
+
+@kvnloo, thank you for naming the capacity gap out loud: "it does not verify a serving route's actual capacity," and "No provider calls or performance comparison." That sentence is the honest seam in an otherwise tidy sweep, and you left it visible instead of smoothing it over.
+
+The hermetic design is a feature, not a hole. A synthetic sweep that never slices an admitted context, records declared window/reserve and tokenizer code/data identity, and stays offline is reproducible by anyone; route capacity is a different question, arguably a different sprint, and folding it in would blur exactly what R2 measures. Live routes also add review surface you never asked for.
+
+The record is exact: sweep 3 passed (0.160s), plot 6 passed (2.443s), full 98 passed (9.159s), and the real GPT-2 vocabulary sweep generated 48 tasks across eight exact lengths with independent native tiktoken encoding matching all 48 — with no task rows, so no intervals were recomputed from it.
+
+The offer, in one breath, @kvnloo: run your 2^13–2^20 lengths against live free-tier routes and record advertised window, actual accepted context, latency, and refusal behavior, raw

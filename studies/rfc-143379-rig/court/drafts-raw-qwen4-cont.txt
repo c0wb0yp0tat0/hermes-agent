@@ -1,0 +1,19 @@
+DRAFT 2 — continuation
+
+rows in your hands to trust or discard, with the sweep itself staying entirely yours — its families, its order, its stopping point, none of it ours to move. The route measurements are the half the issue names as missing; we would only be filling that half, and only if filling it saves you time instead of spending it.
+
+Take it whole, take the one route you actually care about and leave the rest, refuse it outright, or ask for more detail before you decide — any of those is a good answer and none of them needs a justification attached. If it lands as review load rather than relief, that is the wrong trade and we would rather hear so plainly.
+
+Thank you, @kvnloo, for putting the advertised-versus-accepted distinction in writing where a reader will meet it before they meet a number. That distinction is the kind of thing people usually learn the hard way, late, from a run that silently truncated. You saved them that, and it costs you nothing to have done it, which is somehow the best part.
+
+DRAFT 3 — reply on #62 (R3)
+
+@kvnloo, thank you for reporting the absence as absence — "300/177/28 and null (not zero) for all four historical cause counts." Writing null instead of zero is the whole difference between a number you measured and a number you never had, and most write-ups quietly round that difference away. Yours doesn't, and a reader can build on it because of that.
+
+The strongest case for keeping R3 as scoped is that cause-level replay may be impossible from a frozen public aggregate by design: the aggregate keeps the counts and drops the traces, so no care downstream recovers which cause fired. Meanwhile the fix you named is narrow and already concrete — the registered REPL tool advertises an uncited FINAL example that the host rejects. Live adherence is a different measurement, and it can wait its turn.
+
+What is pinned down: 177/300 strict-invalid, 28/180 Hermes protocol-adherent, no cause-level replay evidence, offline classification 5 pass in 0.005s, the full 94 bench in 7.547s, 42 runtime-side tests in 0.222s.
+
+So one offer: let us reproduce the prompt/validator contradiction first-hand — run the registered REPL tool against the host's context-loading path, capture the rejection verbatim, show the corrected submission that passes — and hand it back as a runnable test you can keep or delete; and if wanted, an independent re-score of a slice of the frozen aggregate, exact-match grading and per-call accounting on free-tier models, raw rows yours to trust or discard.
+
+Whole, split, refused, or more detail first — your call, @kvnloo, with no explanation owed. Thank you for leaving the null visible; that is the part that makes the rest worth reading.
