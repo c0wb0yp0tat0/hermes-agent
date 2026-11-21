@@ -57,7 +57,7 @@ release-condition verdict (GAP-4 shape) — F2 citation arm, arm B (gate ON)
 horizon:     the arm's 30 prepared in-place compressions (SEEDS 11/23/37 x N_TURNS 10, cut_point 12)
 T1 CITABLE:  15 cited blocks released · 15 uncited held (F2-HOLD, the wired gate verbatim)
 T2 ARCHIVED: the release is an archive; the prepared snapshots stay byte-intact (the hold = deferral, not loss)
-T3 RESERVED: the planted non-re-observable fact is the episode's retained unit (the arm's payload_hash row)
+T3 RESERVED: not receipted by the arm — the arm's payload_hash row names the episode's planted fact, but no retention read-back runs; T3 rides the substrate's read-restore suite (42/42)
 witnesses:   per decision, the check_f2 row (compaction_event_id, guard_outcome=honored, release_hold, rerun_flag, payload_hash)
 bars:        precision 1.000 (>= 0.95) · FP 0 (= 0) · completeness 100% (= 100%)  ->  PASS
 ```
