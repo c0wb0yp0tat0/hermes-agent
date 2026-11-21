@@ -9,7 +9,7 @@ The RFC #143379 verification surface is the rig's downstream record: an independ
 One work — the operator and the machinery reflecting each other; the study's story is told here in one voice because it is one act.
 
 **Current state — plainly:**
-- The live branch tip is 5154faf4 on `study/rfc-143379-rig-20261105`: the L3 citation/provenance arms are verified by fresh fire, the L2 champion-row's court drafts are staged, and the L1 A3 B1-V3 qwen4 arm is down-biasing — the GGUF-floor adapter spec is the armed next rung. NEGENTROPY-SWEEP carries window 3/3 (W2 HOLD-SAFE, k-term kept) and reports 9 entropy findings; seam read-burn open, fold not re-run, token single-source CONTRADICTED.
+- The live branch tip is dcd608332c on `study/rfc-143379-rig-20261105`: the L3 citation/provenance arms are verified by fresh fire, the L2 champion-row's court drafts are staged, and the L1 A3 B1-V3 qwen4 arm is down-biasing — the GGUF-floor adapter spec is the armed next rung. NEGENTROPY-SWEEP carries window 3/3 (W2 HOLD-SAFE, k-term kept) and reports 9 entropy findings; seam read-burn open, fold not re-run, token single-source CONTRADICTED.
 - The certify battery is finished (M1 STAMP): both ledgers on disk, placeholder-scan 0, battery process complete; three cards' landings still outstanding, no stage armed, no harness command named, no dispatch.
 - Thread tail: the PR's issue-thread freshest row is the 2026-11-05 end-to-end moonbeam summary (id 6670761196); the pull-review thread has no active rows, and no rig-side landings have been posted since.
 - Disk: 89% used, 7.6G free (fresh df) — under the 92-guard.
