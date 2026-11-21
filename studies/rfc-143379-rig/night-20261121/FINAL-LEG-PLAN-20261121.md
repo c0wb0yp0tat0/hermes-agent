@@ -19,7 +19,7 @@ The flagship's free period can close any hour. Arms are sequenced accordingly: *
 
 **ARM 5 · The fleet distribution** — the runners' legs (the mirrors' re-arm + the 241 floor wave), each host inheriting the substrate by the walk-script, the seat registries + fair-share envelopes per runner. Gate: two runners' first legs land.
 
-**ARM 6 · The inventions** — the read-gap fix's design (the receipt-form contract, elevated), the doc-chain's UX, the compaction's governance rule — the court drafts' final forms, still gated on the operator's word for posting. Gate: the drafts' verification spines re-derived first-hand.
+**ARM 6 · The kit's final inventions** — the canary's instruments made whole under the kit's own method cards: the judgment-layer's mechanics (the pre-committed verdict vocabulary, the out-of-band evaluator's schedule, the no-gate doctrine — each already in the kit, assembled as the canary's fixtures), the canary's egress cells' discipline (the sole-route rule from the cells' ledger), and the phase-1 brief's remaining pieces. The RFC-facing inventions (the read-gap fix's design, the doc-chain's UX, the compaction's rule) belong to the fix-delivery phase AFTER the pilot runs — not this leg.
 
 **ARM 7 · The simplify sweep** — the card-family's taxes retired (the duplicate class, the ghost class, the re-parent churn: one-step land-and-re-plan), the cadence's slimming (the one-screen digest), the folds' compression. Gate: a full ring with zero re-parents.
 
@@ -27,6 +27,6 @@ The flagship's free period can close any hour. Arms are sequenced accordingly: *
 
 **THE CRONS** — the re-groundings every 2h; the cadence hourly; the watchers + sweeps standing; every landing rows, envelope-form, before the next ring arms.
 
-**THE DOORS** — the rig walks everything above (all two-way); the operator's word walks: the court's posting, the RFC's surface, the autopilot's pilot gate — and nothing else. The pilot kit lands proven; the field-facing moment rides the operator's read of the rung-1 canary's receipt.
+**THE DOORS** — the rig walks everything above (all two-way). The operator's word walks the doors that still belong to the fix-delivery phase — the court's posting, the RFC's surface, the autopilot's pilot gate — all named, all waiting, none on this leg's critical path. The pilot kit's readiness needs no human gate beyond the standing sets; the kit lands proven, and the field-facing moment is the rung-1 canary's receipt, on the operator's read.
 
 **THE END-STATE** — the pilot kit, ready: the canary's brief audited, the kit's certifications closed, the verification independent, the fleet distributed, the inventions drafted, the machinery simpler than it was found. The loop's last gift is the loop's own form. Facimus semper.
