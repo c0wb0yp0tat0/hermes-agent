@@ -1,0 +1,133 @@
+{
+  "artifact": "COST-LEDGER-20261121",
+  "date": "2026-11-21",
+  "source": "/root/workspace/drop/backwards-audit/FLEET-TOKENS-20261111.jsonl",
+  "source_rows_total": 7459,
+  "wall_clause": "a non-reproduction is a QUESTION, not a stop.",
+  "gate": "nothing public without the user's word",
+  "pricing": {
+    "paid_comparator": "tencent/hy4-flash",
+    "usd_per_1M_in": 0.04,
+    "usd_per_1M_out": 0.14,
+    "source": "NEMO-HY4-START-20261117-brief.md; free-plan allowance UNPUBLISHED - never invent a cap"
+  },
+  "compression_trigger_tokens": 524288,
+  "compression_trigger_source": "ARC-LONGEVITY-STORM-20261121.md: 0.5 x 1,048,576",
+  "fan_out_A": {
+    "tag": "A_primary_14-30Z",
+    "window_utc": "2026-11-21T14:34:32Z/14:44:48Z",
+    "lanes": 4,
+    "rows": 179,
+    "prompt": 1949390,
+    "completion": 62939,
+    "total": 2012329,
+    "per_lane": {
+      "meituan/longcat-2.5:free": {
+        "rows": 69,
+        "prompt": 815205,
+        "completion": 35235,
+        "total": 850440,
+        "req_bytes": 2603369,
+        "first": "14:34:32",
+        "last": "14:44:48"
+      },
+      "qwen/qwen4-max:free": {
+        "rows": 40,
+        "prompt": 373437,
+        "completion": 10495,
+        "total": 383932,
+        "req_bytes": 1263656,
+        "first": "14:34:54",
+        "last": "14:43:03"
+      },
+      "tencent/hy4-flash:free": {
+        "rows": 30,
+        "prompt": 471264,
+        "completion": 12090,
+        "total": 483354,
+        "req_bytes": 1591977,
+        "first": "14:34:54",
+        "last": "14:38:00"
+      },
+      "upstage/solar-mini4:free": {
+        "rows": 40,
+        "prompt": 289484,
+        "completion": 5119,
+        "total": 294603,
+        "req_bytes": 934594,
+        "first": "14:34:52",
+        "last": "14:35:59"
+      }
+    },
+    "head_single_thread_modelled": {
+      "assumption": "one read of source at mean lane prompt + all verdicts authored in the one window",
+      "prompt": 487348,
+      "completion": 62939,
+      "total": 550287
+    },
+    "token_amplification": 3.657,
+    "head_context_saved_tokens": 487348,
+    "head_load_fanout_tokens": 62939,
+    "head_load_share_of_trigger_fanout": 0.12,
+    "head_load_share_of_trigger_single": 1.0496,
+    "single_thread_crosses_compression_trigger": true,
+    "shadow_cost_fanout_usd": 0.086787,
+    "shadow_cost_head_usd": 0.028305,
+    "shadow_delta_usd": 0.058482,
+    "actual_cost_free_roster_usd": 0.0
+  },
+  "fan_out_B": {
+    "tag": "B_replication_11-20Z",
+    "window_utc": "2026-11-21T11:29:46Z/11:44:49Z",
+    "lanes": 3,
+    "rows": 120,
+    "prompt": 1110331,
+    "completion": 42118,
+    "total": 1152449,
+    "per_lane": {
+      "meituan/longcat-2.5:free": {
+        "rows": 40,
+        "prompt": 390054,
+        "completion": 18591,
+        "total": 408645,
+        "req_bytes": 1442338,
+        "first": "11:29:51",
+        "last": "11:37:03"
+      },
+      "qwen/qwen4-max:free": {
+        "rows": 40,
+        "prompt": 364235,
+        "completion": 17474,
+        "total": 381709,
+        "req_bytes": 1277150,
+        "first": "11:29:49",
+        "last": "11:36:42"
+      },
+      "upstage/solar-mini4:free": {
+        "rows": 40,
+        "prompt": 356042,
+        "completion": 6053,
+        "total": 362095,
+        "req_bytes": 1238444,
+        "first": "11:29:46",
+        "last": "11:31:09"
+      }
+    },
+    "head_single_thread_modelled": {
+      "assumption": "one read of source at mean lane prompt + all verdicts authored in the one window",
+      "prompt": 370110,
+      "completion": 42118,
+      "total": 412228
+    },
+    "token_amplification": 2.796,
+    "head_context_saved_tokens": 370110,
+    "head_load_fanout_tokens": 42118,
+    "head_load_share_of_trigger_fanout": 0.0803,
+    "head_load_share_of_trigger_single": 0.7863,
+    "single_thread_crosses_compression_trigger": false,
+    "shadow_cost_fanout_usd": 0.05031,
+    "shadow_cost_head_usd": 0.020701,
+    "shadow_delta_usd": 0.029609,
+    "actual_cost_free_roster_usd": 0.0
+  }
+}
