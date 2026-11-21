@@ -1,12 +1,12 @@
 # MASTER HITL GIST — the study to you, on your return (2026-11-21)
 
-*For the operator, on the morning after a fever and a sleepless night. The record lives in the thread + the chain; this memo is the tell of what happened while you were out, written so it can be read in one sitting. Every number and name traces to a fold line, a ledger, a commit, or a thread row — nothing recalled from memory. Where a figure is a model rather than a measurement, it is labelled as one. Where something failed, it is named as a finding. The doors are presented at the end, each with its reversibility and who walks it.*
+*For the operator's return: the record of the stretch that ran while the human was away, written so it can be read in one sitting. Every number and name traces to a fold line, a ledger, a commit, or a thread row — nothing recalled from memory. Where a figure is a model rather than a measurement, it is labelled as one. Where something failed, it is named as a finding. The doors are presented at the end, each with its reversibility and who walks it.*
 
 ---
 
 ## 1 · THE RETURN
 
-You went down on the evening of 2026-11-20 with a fever and a sleep that would not come. The mission ran on without you: the storms kept firing, the seats kept weaving, the audits kept landing, and the deck kept its own cadence — slots, rows, receipts — so that when you opened your eyes on the morning of the 21st the whole study had already written itself into the record. This memo is the back page of that book.
+The stretch that ran in the human's absence: the mission kept firing — the storms, the seats, the audits, the deck's own cadence — and the whole study wrote itself into the record, lane by lane, row by row, so that the human's return meets a book already written. This memo is the back page of that book.
 
 **The one-line state.** The study's arc is closed, the close was adversary-reviewed rather than self-celebrated, the goal-audit's compose is served on the wire, and one door in front of the gist still rides on your word. Everything else you need is in the record; everything else you can look at is hanging on a named card, not a hope.
 
