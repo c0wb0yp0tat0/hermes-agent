@@ -55,3 +55,31 @@ Both are two-way doors; both are armed.
 The rig walks: the fires, the batteries, the canary's design, the verification's repair, the fleet's distribution, the seams' schedule. The operator's word walks: the court's posting, the RFC's surface, the autopilot's pilot gate, and the voice-check's shape. All named; none implied.
 
 *Facimus semper — the plan is a gate state, revisable by evidence; its receipts are the record's.*
+
+---
+
+## 8 · THE END-ALL-BE-ALL MISSION — the final two-way-door think-tank sprint (the invent and simplify leg)
+
+**The mission's one breath.** The terminal sprint of this arc: the fleet's full force, every two-way door open, bound by the flagship's window — to INVENT what the fix needs and SIMPLIFY what the arc proved bloated — and to land the RFC's three movements' evidence plus the platform's memory-tool read-gap fix as the arc's final deliverable: a verified, simple, quantified change upstream, and a rig left simpler than it was found.
+
+**THE INVENT LEG — what doesn't exist yet and must:** (i) the read-gap fix's design — the memory read's contract, the receipt-form (measured count + the command that produced it + the evaluator's independent row) as the invention's core, the READ-UX-SHAPE card's form elevated to the upstream's language; (ii) the doc-chain's presentation — the capture draft's ride on the receipt shape, the bounded-read's UX made concrete; (iii) the compaction's governance rule — the release condition pre-committed, the gate's pair complete; (iv) the canary's full design — the cells' ledger + the fragments assembled into one audited phase-1 brief; (v) the asks' final form — the court drafts, elevated to the RFC's own register.
+
+**THE SIMPLIFY LEG — what the arc proved bloated and must shed:** (i) the spawn path's wedding — the wedge's root diagnosed and fixed ONCE, retiring the workarounds (the delegation route stays a route, never the default); (ii) the delegation's base-pin — one configuration line restores the audit's independence (the flip-flop, honored); (iii) the card-family's taxes — the duplicate class, the ghost class, the re-parent churn: the land-and-re-plan doctrine made one-step; (iv) the cadence's slimming — the digest discipline, the one-screen landing, the row's envelope as the whole ceremony; (v) the substrate's walk — every runner inherits the machinery by one script; never-vanilla everywhere.
+
+**THE SPRINT'S BOUNDS.** The clock: the flagship's window (the operator's register: days, not months). The fleet: all four runners, each with its seat registry and fair-share envelope. The seats: the full palette, flagships first, support carrying the mechanical. The gates: pre-committed bars only. The doors: the operator's word gates the posting surfaces — the court, the RFC, the autopilot's pilot, the voice-check's shape. Everything else self-fires.
+
+**THE END-STATE.** The RFC's surface one hop from launch — evidence standardized, the asks invented, the maintainers handed a verified and simple change; and the rig itself: simpler, faster, quieter than the day it started — the loop's last gift being the loop's own form.
+
+---
+
+## 9 · THE FULL ASSET BASE, COUNTED (the enormous set, named and routed)
+
+The plan's earlier inventory underweighted the base. The hard look, corrected:
+
+- **Nemo — the local powerhouse, LIVE**: the DeepSeek-V4-Pro-Qwen3.5-9B-MTP GGUF on the restored floor at :44831 (sha-verified today, afa0567d == the LFS oid) — unmetered, unlimited, private: the sprint's backbone. The flagship window does not bind it; the 429s do not touch it; the fair-share envelope does not cap it.
+- **Luna — the middleware leg**: openai/gpt-6-luna's battery (BATTERY-LUNA-*: dryrun, ledger, pilot-reshape — INCONCLUSIVE dryruns, the reshape staged) — the experimental middle layer, one rung from its own certification.
+- **The element matrix**: the five-seat battery elements (fleet seats + Nemo + 3oltan) — each seat's measured element on the record — the palette's empirical map, ready to ride.
+- **The cannons**: the pre-registered weights rung (battery_luna — Luna's own harness), the judge gate, the release-point gate, the retriever-reshape — the kit's instruments, each with its ledger.
+- **The runners, full set**: four hosts (this one · p0tat0 · c0wb0y · cloud) — most standing idle; each can inherit the substrate by the walk-script and carry the sprint's parallel legs with its own seat registry + fair-share envelope. The final sprint's distribution: the heavy volume on Nemo, the precision on the flagships, the parallel on the runners.
+- **The records, mineable**: the Telegram chat logs (this conversation — the operator's register's full evolution: every correction, every regret, every ask) and the real logs (the delegation transcripts under /root/.hermes/cache/delegation/live/, the kanban worker logs, the 235 request dumps in the session store, the watchers' rows, the thread's 1,1xx rows). The sprint's FIRST pass is a mining leg: the lanes extract the operator's intent-signals (including the regrets the system failed to hear), the failure classes with their receipts, and the cadence's shapes — before a single invention lands.
+- **The night-plan's merger**: NIGHTSHIFT-PLAN-20261121.md's arms A–F (the B′ control, the weights-rung brief, the court-verification spine, the canary's first phase, the runner layer, the cadence) are the day-plan's own continuation — this plan's stages inherit them; the armed arcs' states (A–C ready, D–E armed) are the sprint's standing start line.
