@@ -20,10 +20,6 @@ jobs:
   creative-copycat:
     runs-on: [self-hosted, avrea-ubuntu-latest, rig]
     steps:
-      - name: The creative copycat lane
-        env:
-          BRIEF_PATH: ${{ github.event.inputs.brief }}
-          ARTIFACT_PATH: ${{ github.event.inputs.artifact }}
       - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7.0.1
       - name: The creative copycat lane
         env:
@@ -31,6 +27,11 @@ jobs:
           ARTIFACT_PATH: ${{ github.event.inputs.artifact }}
         run: |
           set -euo pipefail
+          # the lane's push: actions token via process-scoped askpass (no host git-config mutation)
+          printf '#!/bin/sh\necho "${GITHUB_TOKEN}"\n' > /tmp/gh-askpass.sh
+          chmod +x /tmp/gh-askpass.sh
+          export GIT_ASKPASS=/tmp/gh-askpass.sh
+          export GIT_TERMINAL_PROMPT=0
           REPO="${GITHUB_WORKSPACE}"
           cd "$REPO"
           git fetch origin study/rfc-143379-rig-20261105 >/dev/null 2>&1 || true
