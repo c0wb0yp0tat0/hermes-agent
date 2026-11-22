@@ -182,3 +182,30 @@ Close the eight settle-conditions as gate rows, in the AoA's numbering; each is 
 - **Hygiene:** the face passes the voice-check grep gate — no reserve-name token, no private operator detail, no invented field; SW-2 divergence handled by reading from DISK, never the index.
 
 *Facimus semper — the kit renders on the evidence; the evidence is on the record; the record corrects itself out loud. A non-reproduction is a QUESTION, never a defect.*
+
+---
+
+## IMPROVER-LOOP-20261122 — receipt-availability ledger (append-only; 2026-11-22)
+
+*APPENDS only; the seal above is not rewritten — history is never rewritten. Two-way door: delete this section. Wall clause: a citation not reproducible at its cited path under the mandated `read_file` method is a QUESTION with receipts — not a defect in the artifact, not a guess, and not silently carried.*
+
+The seal above cites 12 receipt paths. Re-read at this loop's tree state (HEAD `6c49affd…`) via local `read_file` only:
+
+| # | Seal-ref | Cited path | Resolution at cited path | Disposition |
+|---|---|---|---|---|
+| 1 | cells | `master-page/study-archive-20261120/CANARY-CELLS-20261120.json` | PRESENT | grounded ✓ |
+| 2 | OPUS-NM3 | `master-page/study-archive-20261120/OPUS-NM3-CANARY-20261120.md` | PRESENT | grounded ✓ |
+| 3 | PILOT-VERDICT | `studies/rfc-143379-rig/PILOT-VERDICT-20261121.md` | PRESENT | grounded ✓ |
+| 4 | design | `plan/tank/lane-b-phase1-design-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q1 |
+| 5 | lane-A | `plan/tank/lane-a-minimal-demonstrable-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q2 |
+| 6 | lane-C | `plan/tank/lane-c-verification-readiness-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q3 |
+| 7 | lane-BA | `plan/tank/lane-ba-audit-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q4 |
+| 8 | lane-AA | `plan/tank/lane-aa-audit-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q5 |
+| 9 | lane-CA | `plan/tank/lane-ca-audit-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q6 |
+| 10 | AOA-BRIEF | `plan/tank/briefs/AOA-BRIEF-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q7 |
+| 11 | GATHER-BRIEF | `plan/tank/briefs/GATHER-BRIEF-20261121.md` | ABSENT (all local archives scanned) | QUESTION Q8 |
+| 12 | CROSS-AUDIT-BRIEFS | `plan/tank/briefs/CROSS-AUDIT-BRIEFS.md` | ABSENT at cited path; off-study copy only at `/root/workspace/drop/CROSS-AUDIT-BRIEFS.md` | QUESTION Q9 |
+
+**Seam (not this lane's to repair):** 8 of the 9 are recoverable from this repo's git objects — lane-B design `1f0309974b`/`3a7afc066a`, lane-BA `2cc6f1832f`/`7190c0efda`, A+C fold `141649ac15`/`d92eac73a3` — but git-object recovery is outside the mandated read_file method, and the AoA's SW-2 records the fold that removed `plan/tank/` from tracking (others' files; never checkout / rm / stash). No file is materialized; no history is rewritten.
+
+**Measured delta (raw, re-derived):** seal citations resolvable at their cited path — **3/12**; unresolvable — **9/12**. After this append: untagged-unresolvable **9 → 0** (−9); tagged wall-clause questions **0 → 9** (+9). The 8-mark compose-check table above is unchanged (still 8/8 FIRED); no gate value was smoothed or promoted.
