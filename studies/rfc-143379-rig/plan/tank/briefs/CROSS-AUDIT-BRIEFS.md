@@ -4,13 +4,13 @@
 
 ## BRIEF 1 — AUDIT LANE B's DESIGN (lane-BA)
 - The artifact under test: /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/lane-b-phase1-design-20261121.md (the canary's phase-1 skeleton).
-- The ground (read in full first): /root/workspace/master-page/study-archive-20261120/CANARY-CELLS-20261120.json · /root/workspace/master-page/study-archive-20261120/OPUS-NM3-CANARY-20261120.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/audit/PILOT-VERDICT-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/night-20261121/FINAL-LEG-PLAN-20261121.md (arms 3 + 6).
+- The ground (read in full first): /root/workspace/master-page/study-archive-20261120/CANARY-CELLS-20261120.json · /root/workspace/master-page/study-archive-20261120/OPUS-NM3-CANARY-20261120.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/PILOT-VERDICT-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/night-20261121/FINAL-LEG-PLAN-20261121.md (arms 3 + 6).
 - The mission: the phase-1 skeleton must be runnable, measured, revertible, egress-disciplined, judgment-layer-equipped — the gates must be derivable from the cells' ledger; the items named; the revert points real. Verify every claimed gate/number against the ground (re-derive), then EXTEND: continue the artifact's open threads (at least 2 new continuation points of your own).
 - Deliverable: /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/lane-ba-audit-20261121.md — the verdict (SOUND / DEFECTS-NAMED / REJECT) with its receipts + the extensions. Commit + report sha + verdict.
 
 ## BRIEF 2 — AUDIT LANE A's FORM (lane-AA)
 - The artifact under test: /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/lane-a-minimal-demonstrable-20261121.md (the minimal demonstrable form).
-- The ground: /root/workspace/master-page/study-archive-20261120/CANARY-CELLS-20261120.json · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/audit/PILOT-VERDICT-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/audit/LOSS-LADDER-AOA-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/PILOT-KIT-PLAN-20261121.md (sections 1 + 2).
+- The ground: /root/workspace/master-page/study-archive-20261120/CANARY-CELLS-20261120.json · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/PILOT-VERDICT-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/audit/LOSS-LADDER-AOA-20261121.md · /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/PILOT-KIT-PLAN-20261121.md (sections 1 + 2).
 - The mission: the minimal form's one outside-watcher-visible receipt must be complete, honest (no invented fields), re-derivable by an outsider, and revertible; the gates' artifacts must exist or be nameable; the item list must cover the pilot's promise. Verify everything traceable (re-derive), then EXTEND the open threads (at least 2 new).
 - Deliverable: /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/lane-aa-audit-20261121.md — verdict + receipts + extensions. Commit + report sha + verdict.
 
