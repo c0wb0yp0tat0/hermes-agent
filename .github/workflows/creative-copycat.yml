@@ -1,4 +1,6 @@
 name: creative-copycat
+permissions:
+  contents: write
 on:
   workflow_dispatch:
     inputs:
@@ -34,6 +36,9 @@ jobs:
           git fetch origin study/rfc-143379-rig-20261105 >/dev/null 2>&1 || true
           BRIEF="$REPO/$BRIEF_PATH"
           ART="$REPO/$ARTIFACT_PATH"
+          if [ "$ARTIFACT_PATH" = "studies/rfc-143379-rig/tmp-artifacts/creative/creative-output.md" ]; then
+            ART="$REPO/studies/rfc-143379-rig/tmp-artifacts/creative/creative-output-${GITHUB_RUN_ID}.md"
+          fi
           if [ ! -s "$BRIEF" ]; then
             echo "creative-brief absent ($BRIEF) — the arm's quiet is the honest state, no fabrication"
             exit 0
