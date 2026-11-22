@@ -17,7 +17,6 @@ One work — the operator and the machinery reflecting each other; the study's s
 - Disk 90% used, 6.8G free — under the 92-guard.
 - Fork-only; nothing public beyond the PR; RFC QUIET; the operator's word is the only gate.
 - The arms' briefs-cache is stat-checked fresh; nothing armed-unfired; the dispatch is held and nothing is queued for the fleet.
-- The 0240 artifact is ls-verified on disk and the recurring negentropy lane is landed; the pilot-kit phase is active per the handoff.
 
 **Forward targets — what we're building toward:**
 - The kit is innovation-first by design — 3oltan-seo is not the only end game.
