@@ -76,3 +76,24 @@ This pre-registration folds into the master's §7 as the weights-rung fold line:
 ## 10. Landing
 
 The seat-truth probe at fire: the run is the packaging; the verify is the contract; the measured B1/B0/C are the two numbers (self-run battery and field ruler each recorded, separated). Nothing ships without the user's word.
+
+---
+
+## 11 · IMPROVER-LOOP-20261122 — compose-check resolution (append-only; 2026-11-22)
+
+*This section APPENDS. Nothing above is rewritten — history is never rewritten. Two-way door: delete this section to revert; §4's bars and §6's original cells are untouched.*
+
+Re-read of §6's eight cells against this file's own bytes. Prior state was the literal `FIRED/ABSENT` placeholder in every row (0 determinate states).
+
+| # | Prior state | Resolved state | One-line evidence (this file / landed record) | Revert |
+|---|---|---|---|---|
+| 1 | FIRED/ABSENT | **FIRED** | §0 names the A3 near-limit fact (logit lever at measured limit; three voices INCONCLUSIVE) | delete row |
+| 2 | FIRED/ABSENT | **FIRED** | §1 names the GAP decision→representation and carries it into this rung | delete row |
+| 3 | FIRED/ABSENT | **FIRED** | this file exists at its landing path (`WEIGHTS-RUNG-PRE-REG-20261121.md`) | delete row |
+| 4 | FIRED/ABSENT | **FIRED** | §4 pre-commits B0/B1 ≥ 20pp and B1 ≥ 0.85C, immutable by the probe | delete row |
+| 5 | FIRED/ABSENT | **FIRED** | §5 records the in-run-C clause + two-way door (zero weights = exact rollback) | delete row |
+| 6 | FIRED/ABSENT | **FIRED** | §§4–5 separate shipping from the run (no weight shipped; gate awaits the word) | delete row |
+| 7 | FIRED/ABSENT | **FIRED** | §2 adopts H4/H5 as the evidence ride, not re-derived here | delete row |
+| 8 | FIRED/ABSENT | **HELD-OPEN** | §7 review-loop is OPEN — no verdict until the run is measured raw; `WEIGHTS-RUNG-BATTERY-20261122.md` not landed at this read → wall-clause QUESTION | delete row |
+
+**Measured delta (raw, re-derived — not expected, not smoothed):** FIRED marks 0 → **7** (+7); determinate states 0 → **8** (+8); correctly held-open 0 → **1** (+1). §4's bars are unchanged and immutable. No expected value is presented as a receipt; mark 8 is not promoted to a pass.
