@@ -874,3 +874,11 @@ The §4 bars, applied to THIS run's raw numbers exactly as measured:
   "all_match": true
 }
 ```
+
+## 13. THE SETTLEMENT FIRE (the armed re-fire, 2026-11-22 ~10:47Z) — walled again, the flapping seat named
+
+The settlement's armed re-fire per the FOLD §7-ab instruction ("armed on the seat's return; re-probed at the next ring"): the 05:4x ring's re-probe hit the flagship at ~10:45Z — attempt 1 HTTP 429 upstream-capacity ("The requested model is temporarily at capacity upstream. This is not your API key's rate limit — please retry shortly."), attempt 2 **HTTP 200 with a real generation** (x-ratelimit-remaining 387/400) — the seat's window OPEN, the settlement's gate met → the pre-registered battery fired ONCE (never a retry loop). Ledger `probes/WEIGHTS-RUNG-SETTLEMENT-QWEN4-20261122.json` · ts 2026-11-22T10:47:23Z · seat `qwen/qwen4-max:free` (full-literal pinned, zero paid-route skew; cost_total 7.005 = the paid-equivalent ledger convention, actual $0.00 billed).
+
+- **Walled again:** A 0/5 · B0 0/5 · C 0/5 → every cell a transport void (HTTP 429 upstream-capacity, the reader_last_error named in the ledger); B1 0/5 with the vector applied+logged. judge_control ok=true accuracy 1.0 control_n 20 — the pipeline sound, the wall upstream of generation. f3b_environment window_loss 0.6, band 503-window-high-loss.
+- **THE FLAPPING SEAT (named, receipts):** the flagship's window opened for the probe (200 @ ~10:45Z, x-ratelimit 387/400 remaining) and CLOSED inside the battery window (429 @ 10:47:23Z) — upstream-capacity, not key rate limit (the API's own message). The wall is intermittent, minutes-scale: a 200 probe at fire-time does NOT guarantee a 20-call window. Settling evidence still unmeasured.
+- **Verdict retained: UNKNOWN** (the dry-run ruler: no valid seat-response set at the dry-run scale; the absolute bars unevaluable; the degenerate-ceiling trap named in §4, never a silent pass). The settlement re-arms: the next ring re-probes; the fire rides a freshly-200 probe and may still wall — no rotation, no n20 expansion, no retry loop (the hard line). The two-way door stands verified (zero weights written; the §7-k GGUF sha `afa0567d` re-checked at the fold).
