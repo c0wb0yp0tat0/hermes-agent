@@ -83,6 +83,26 @@ One artifact only: `probes/canary/phase1-receipt-20261121.json`, on the study br
 
 **C.5 Gate states carried OPEN, never smoothed (lane-C §6:264–269; AoA §7 settle 5/6/7).** G1 canary start line PASS; **G2 verification independence OPEN** (bases distinct + blind panel landed); **G3 external-readiness checked OPEN** (C1–C9 done-whens + voice-check gate); **G4 one-run-per-pin OPEN** (registry seeded, enforcement pending). The layer's own verdict is READY / READY-WITH-NAMED-SEAMS / NOT-READY; G2/G3/G4 remain OPEN on the record until their settle-conditions close. No open gate is rendered as a pass.
 
+### C.6 THE ARMOR UPGRADED BY THE STORM SUBSTRATE UPGRADES (2026-11-22 pilot-readiness improver pass — the PLAN is not altered)
+
+The storm's substrate upgrades U3–U5 are applied to the kit's armor as NEW gate rows (append-only, from `STORM-SUBSTRATE-UPGRADES-20261122.md` fe0e663fbe — the file is append-only, no prior artifact bytes rewritten):
+- **U3 — the fold-input decision record** (the storm's upgrade (iii), the consolidation input's decision): `DECISION-CONSOLIDATION-INPUT=FOLIO-HANDLE-BALANCE` — the fold stays programmatic view-selection from existing records; `DECISION-ANCHORS=NOT-ADOPTED` — entity-grounded anchors refused at the fold input; measured non-growth (folding-input anchor fields 0 → 0).
+- **U4 — the tombstone/settlement contract's bank-before-forget guard** (the storm's upgrade (iv)): `GUARD-BANK-BEFORE-FORGET` — before any tombstone / forget / compaction, verify recoverability (retention + resolution + exact read); `GUARD-EXACT-READ-REJECT` — an unrecoverable fact → reject the forget (asymmetric: loss by forgetting is worse than retention).
+- **U5 — the falsifier battery's resolution, the armor's G3 seam CLOSED** (the storm's upgrade (v)): `PROPOSER-SELECTOR-SEPARATION` — proposer ≠ selector, selector frozen/independent (never the proposer grading its own candidates — the "producer never judges its own product" card); `HELD-OUT-G3` — held-out severity tier G3 present; `HELD-OUT-G4` — held-out severity tier G4 present; `BETWEEN-RUN-VARIANCE-COLUMN` — a claimed margin must exceed between-run variance; `NEAR-CHANCE-NULL-49.7` — the 49.7% near-chance null is named as the baseline to beat (field-reported ON-GROUND, NOT re-derived).
+- **Raw delta: +8 gate rows** in the armor's verification layer (U3 +2, U4 +2, U5 +4); the armor's long-OPEN G3 seam CLOSED by U5; the settlement contract now carries the bank-before-forget guard; the fold-input stays handle+balance-only with anchors refused (measured non-growth).
+
+### D.1 THE CARRIERS AS THE ARMOR'S OPEN-SEAMS LEDGER (2026-11-22 pilot-readiness improver pass — the PLAN is not altered)
+
+The carriers O1–O7 are the platformside's named debt, carried into the kit's armor as the open-seams ledger (append-only, receipts from the executor's §5 and the sanity gates — the platformside's list, now named on disk, fold-in, not kit):
+- **O1 — the call shape** (executor §5 O1; sanity §5.1): the memory(action, doc) call shape the branch cannot emit — the read-path restore #141876 is the precondition, not a sibling.
+- **O2 — the agent-path doc-forwarding seam** (executor §5 O2; sanity §5.2): the registry handler forwards doc; the agent's inline `_memory` executor forwards no doc.
+- **O3 — qwen's anchor datum = the 429 receipt** (executor §5 O3; sanity §5.3): the 429 fair-share receipt (retry-after:30) + qwen's 200/12.5s/554 tok served-pin match as the PRIMARY sealed datum.
+- **O4 — the 371KB pull's per-subject validation** (executor §5 O4): per-subject pull + per-subject validation; the 371KB = 378,759 B's KiB-rounding.
+- **O5 — the battery probes' envelope append** (executor §5 O5): the weight probes' envelope appended to the keeper's probes.
+- **O6 — the main mission's order intact** (executor §5 O6; sanity G5): the main mission's order is intact — the special mission is the MAIN LOOP'S INPUT (operator's exact words), hy's APPROVE 38ac8558 sealed the carry.
+- **O7 — the naming seam + the G1 carrier question** (executor §5 O7; sanity §5.4/§5.6): all four subjects independently named the same P1 seam + reproduced the same P3 read-design; the G1 carrier question (named-doc reload: 4/4 name it, 3/4 measured, qwen's the receipt) is the active quest.
+- **Total raw delta: +8 open-seams rows** in the armor's open-seams ledger (O1–O7 + the G1 carrier question); the kit's own fold-inputs (rerun fire timing / kit-folder naming / isolation-envelope measurement) remain fold-side; the verdict line (READY / READY-WITH-NAMED-SEAMS / NOT-READY) unchanged — the named seams are carried, never smoothed.
+
 ### D. THE OPEN-ITEMS LEDGER — none dropped (AoA §8:163–178)
 
 | # | Question | Disposition | Receipt |

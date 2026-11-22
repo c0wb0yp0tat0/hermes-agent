@@ -281,7 +281,24 @@ Counts are of distinct receipted values in this run's record.
 - Two consecutive zero-delta rounds: this round's gates re-run clean (G10–G13 each re-run raw in IV.3). No new findings; no degradation of the named seams; the substrate stands at the measured plateau.
 - The substrate's next-state verdict per the dry-run ruler: PARTIALLY-COVERED (the four hunts' seams are addressed with named gates G10–G13, but the verdict itself is not COVERED until rung-2 gates G2/G3/G4 fire with receipts, the voice-check A4 passes 0-hit, and EXT-6's independent row is in).
 
-## IV.5 — MECHANISM FINDINGS
+## IV.5 — THE 12-SHOT CENSUS + FOUR-SUBJECT CONCORDANCE (the demonstrable evidence, carried from the executor's §2.5 — not re-derived here)
+
+**What missed it previously:** the shot counts (12 / 11 / 1) lived only in the executor's §2.5 (carried into the master's §7-ag); the receipt's evidence ledger had no shot census row and no four-subject concordance row; the four subjects' independent naming of the same P1 seam + the same P3 read-design was a fold-level question, not a receipted evidence row.
+
+**The shot census (carried, NOT re-derived — executor §2.5, the receipt's own line):**
+- **12 shots / 11 landed / 1 fair-share 429 receipt** (all four subjects, qwen PRIMARY).
+- qwen PRIMARY: P1 **landed 200 / 12.5s / 554 tok / served-pin match**; P2 **the 429 receipt** (retry-after:30).
+- deepseek **3/3** · luna **3/3** (batch 404s — the catalog-literal class; the real route openai/gpt-6-luna) · Nemo **3/3** (local floor :44831).
+- The census keeps the executor's count: **12 / 11 / 1**; the fair-share 429 receipted as a receipt, not a defect.
+
+**The four-subject concordance (executor §2.5 "cross-subject concordance"):** **all four subjects INDEPENDENTLY named the same P1 seam** (the demoted memory-read reload path: the read-path restore #141876 is the precondition, not a sibling; the agent-path doc-forwarding seam) **+ reproduced the same P3 read-design** (lean-first index/receipt → bounded byte-range read with hash/offset receipt).
+
+**Applied improvement — the receipt's evidence ledger, raw delta:**
+- E1: shot census row landed (+1 row) — carried, not re-derived.
+- E2: four-subject concordance row landed (+1 row) — carried, not re-derived.
+- Total raw delta: **+2 rows** in the receipt's evidence ledger; the four hunts' originally-named seams (GAP-1, L6/L7, the PARTIALLY-COVERED rows, the §I.5 map) all remain addressed by their gates G10–G13.
+
+## IV.6 — MECHANISM FINDINGS
 
 - M1 — the floor-class seam: the substrate's class mandate for the 300M class is receipted (G10); the instrument is the receipt's three-value re-derivation test + the two-sha discipline; nothing is re-executed on the 9B floor.
 - M2 — the GGUF-delta seam: the declared size's home is the floor's /v1/models meta `size` (5769121792); the disk's actual is 5780092000; the two-sha discipline is applied (file sha256 afa0567d… matches pre-run hash); the exact cause of the 10,970,208 B overage is a wall-clause question (SW-1) with receipts (the floor's aa/oq at git-object home 1f0309974b).
@@ -289,7 +306,5 @@ Counts are of distinct receipted values in this run's record.
 - M4 — the outer-readability seam: the §I.5 map is a named gate (G13); an outsider re-derives the three cited fields in 3 steps from the cited homes with 0 divergence.
 
 *Facimus semper — the receipt renders on the bytes; the bytes are on the record; the record corrects itself out loud. A non-reproduction is a QUESTION with receipts, never a defect, never a silent pass. — kanban-pilot*
-
----
 
 *Facimus semper — the receipt renders on the bytes; the bytes are on the record; the record corrects itself out loud. A non-reproduction is a QUESTION with receipts, never a defect, never a silent pass. The canary's first real run is the customer. — kanban-pilot*
