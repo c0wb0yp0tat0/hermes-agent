@@ -29,6 +29,12 @@ jobs:
           git fetch origin study/rfc-143379-rig-20261105 >/dev/null 2>&1 || true
           BRIEF="$REPO/$BRIEF_PATH"
           ART="$REPO/$ARTIFACT_PATH"
+          # per-ride slot: the shared creative-output.md is the sibling-movement
+          # false-missing class (lane writes get scribe-deduped byte-identical);
+          # stamp the default artifact per run so each ride lands its own bytes.
+          if [ "$ARTIFACT_PATH" = "studies/rfc-143379-rig/tmp-artifacts/creative/creative-output.md" ]; then
+            ART="$REPO/studies/rfc-143379-rig/tmp-artifacts/creative/creative-output-${GITHUB_RUN_ID}.md"
+          fi
           if [ ! -s "$BRIEF" ]; then
             echo "creative-brief absent ($BRIEF) — the arm's quiet is the honest state, no fabrication"
             exit 0
