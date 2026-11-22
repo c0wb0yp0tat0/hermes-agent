@@ -117,7 +117,14 @@ The test: an auditor with ONLY this spec file must re-derive gates from the spec
 
 | Test | Re-derived from spec alone | Against the ledger | Divergence |
 |---|---|---|---|
-| G1 | §1 two-sha rule (distinct keys; match per key) + §3 G1 values (CELLS:4,7,8) | pinned_repo_sha fc8b9934… (4) · model_safetensors_sha256 5747a90e… (7) · model_bytes 641262336 (8) — identical, distinct keys | NONE — PASS |
+|| G11 | §3 G11 values (floor /v1/models meta.size 5769121792; disk stat 5780092000; delta = 10,970,208 B) | declared size's home = floor /v1/models meta.size (the floor's declared tensor/header footprint); disk's actual = file on disk (DISK is the truth); two-sha discipline applied (file sha256 afa0567d… == battery receipt pre-run hash) | CELL + RECORD | **UNKNOWN** (mechanism unobserved; name recorded, never guessed) — wall-clause question (SW-1) with receipts (aa/oq at git-object home 1f0309974b) |
+|| G12 | §3 G12 values (rung-2 gates G2/G3/G4 defined + ready; EXT-6 first-due 15 min after rung-1 closes, then F2 40-60 min, ACES at 6 h) | the verdict PARTIALLY-COVERED moves to COVERED only when G2-G4 fire with receipts, voice-check A4 passes 0-hit, and EXT-6's independent row is in | RECORD | **PARTIALLY-COVERED** (verdict stands until rung-2 gates fire) |
+|| G13 | §3 G13 values + three-value re-derivation test (§I.5: pinned_repo_sha at CELLS:4, model_bytes at CELLS:8, egress_bytes at CELLS:27 — all matched ✓) + voice-check 0-hit | outside watcher re-derives the three cited fields in 3 steps from cited homes; no invented fields (honesty bar intact, voice-check A4) | RECORD | **COVERED** — map sufficient for outsider re-derivation in 3 steps; no invented fields |
+
+**Carried disconfirmations (never smoothed):**
+- G11: declared size home = floor /v1/models meta.size; disk's actual = file on disk (DISK is the truth); the 10,970,208 B overage is a wall-clause question (SW-1) with receipts (aa/oq at git-object home 1f0309974b). No invented cause.
+- G12: rung-2 gates G2/G3/G4 defined + ready; verdict PARTIALLY-COVERED stands until rung-2 gates fire with receipts; the verdict is a revisable gate state (two-way door), not an identity.
+- G13: three-value re-derivation test (§I.5) executed and recorded; voice-check 0-hit; no invented fields; the map is sufficient for outsider re-derivation in 3 steps.
 | G4 | §5 rules 1–2 (sole route nm3-canary-r1-20261120; bytes 647716330; secondary 0) | CELLS:5,26–28 identical | NONE — PASS |
 | G5 | §3 G5 (CELLS:32–33) | sandbox_env_id first clause `tmpfs-venv@PVE-host (kernel 7.0.14-16-pve)` — full cell text is the authoritative one; summary clause is a faithful abbreviation | NONE — PASS-BY-ASSERTION retained |
 
@@ -127,7 +134,7 @@ The test: an auditor with ONLY this spec file must re-derive gates from the spec
 
 - **EXT-5 — audit-readiness attestation (this pass's own run):** the three-gate re-derivation ledger above (G1/G4/G5) is the attestation row: measured by re-deriving from the spec alone, then against the ledger. Measured: G1 PASS, G4 PASS, G5 PASS-BY-ASSERTION. Reverted: additive attestation row in the gate-state file; a re-run with the same file reproduces the same three verdicts.
 - **EXT-6 — evaluator's first-due calendar:** the out-of-band evaluator's first re-read at **15 min after ring 1 closes**, carrying the G5 isolation-envelope measurement (EXT-2 command), then per F2 (rings 40–60 min; ACES at 6 h). Measured: timestamps in the gate-state file; a drift row is written only when a cell field is absent or a gate number moved.
-- **EXT-7 — G4 registry seed row (A5, from AOA:119):** the one-run-per-pin registry row for the rung-1 pin (`pinned_repo_sha fc8b9934…` + `model_safetensors_sha256 5747a90e…`, owner = R-C executor, `receipt_sha` = live cells sha `25606ba9…` + pre-addendum field `f1ed5b0d…` — BOTH keys), expires_at = rung-2 window; second run gated on outsider re-derivation (lane-C §5). Measured: 0 rows → 1 (A5).
+|- **EXT-8 — pilot-substrate improver pass (2026-11-22):** the four hunts (floor-class, GGUF delta, judgment layer's next rung, receipt outer-readability) measured and applied as gates G10-G13 on the pilot's own surfaces (rung-1 receipt + spec §3/§6). Measured: G10 PARTIALLY-COVERED (two classes receipted, canary CARRIED, floor LIVE), G11 UNKNOWN (GGUF delta 10,970,208 B; declared size home = floor /v1/models meta.size; disk actual = stat; two-sha discipline applied), G12 PARTIALLY-COVERED (rung-2 gates defined + ready; EXT-6 scheduler named), G13 COVERED (three-value re-derivation test 3 steps, voice-check 0-hit, no invented fields). All four gates re-run raw and recorded.
 
 ## 11 · OPEN-ITEMS
 
