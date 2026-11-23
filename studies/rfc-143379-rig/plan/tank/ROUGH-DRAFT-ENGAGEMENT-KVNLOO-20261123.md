@@ -15,5 +15,3 @@ The ask, in one breath: an assessment of that substrate against the RFC's bars f
 The landing order stands as the RFC's own text holds it. The read gap closes as a network, the pilot ships measured, and both owe their certifying runs to your lab.
 
 Thank you again for the generosity and the second set of eyes. We'll write again at the close-out, with receipts.
-
-*Prepared via Hermes Agent, reviewed by @c0wb0yp0tat0 before posting.*
