@@ -1,4 +1,4 @@
-@kvnloo — thank you. Four weeks of patience, repaid in full, and this time the reply is the plan itself, whole, because you earned a whole answer. The two-add overwrite you caught that our 297-battery never covered is now a falsifier in our armor with your name on it. Your compose certified the landing order we had been arguing for. And the harness you built is the instrument we want for our hardest gate, because our own ruler came out broken: the minus 3.5 at 300 cycles spread from minus 9.2 to plus 10.2 under our old probe, so the RFC could not certify the window safe, nor broken. That is precisely what a second set of lab instruments exists for.
+@kvnloo — thank you for the work behind that comment. Three findings in it moved the study the day it landed: the two-add catch became a falsifier in our armor, the compose settled the landing order, and the harness is the instrument we want for the long-session gate, because our own ruler is broken, the minus 3.5 at 300 cycles spread from minus 9.2 to plus 10.2 under our old probe, and the RFC can certify nothing with it. That is what a second lab exists for.
 
 The frame for everything below is one sentence: the pilot is an expensive probe, a first flight, so it deserves the cheapest falsifier first. That falsifier is your lab, not the field. Assessment before offering. And the pilot runs on the composed substrate, not on main. Everything else is order and wording.
 
@@ -14,4 +14,4 @@ The ask, in one breath: an assessment of that substrate against the RFC's bars f
 
 The landing order stands as the RFC's own text holds it. The read gap closes as a network, the pilot ships measured, and both owe their certifying runs to your lab.
 
-Thank you again for the generosity and the second set of eyes. We'll write again at the close-out, with receipts.
+Thank you again, for the instruments and the patience. We'll write again at the close-out, with receipts.
