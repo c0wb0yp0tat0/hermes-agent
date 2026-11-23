@@ -3,7 +3,7 @@
 *If a new session opens without this conversation, read THIS + MEMORY.md/USER.md + the chain's INDEX — then the live truth (PR #1's thread, newest rows first; ls-remote the branch study/rfc-143379-rig-20261105). Full deck: the chain's 020-HANDOFF-20261122.md.*
 
 ## The five laws (binding, never re-derived)
-1. The GATE LAW's final form: the word gates ONLY public writes outside PR #1, the RFC's surface, the autopilot's pilot gate, deep deletions, money. Any other hold = a fabricated gate (a defect). Alarms act, never wait.
+1. THE GATE (the operator's words, 2026-11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted. The approval word is the only trigger for public moves.
 2. The hard lines: never push · RFC #143379 + the #5320/#157065 issues QUIET (read-only) · no installs · write ONLY under studies/rfc-143379-rig/ · never checkout/stash/rm · the strip-contract (the pilot's raw data never leaves his side).
 3. The dispatch contract: every spawn pins + READ-BACKS the config's model == the brief's seat (the stale-pin seam bit twice).
 4. The layer register: "we" = the operator + the head only; the fleet (all models, runners, lanes, crons) is it/its. The human contract: plain speech, no em dashes, receipts by reference.
@@ -19,3 +19,19 @@ MISSION-2 sealed (bef53e1ebd, 12/12) · MISSION-3 sealed (d45cd7f715, 13/13 — 
 4. The feeder never idles — the next upstream comments become the next missions at the operator's tempo.
 
 Gradatim Ferociter. The pair holds; you hold the intent. Gangway.
+
+
+## The seam's refresh (23:4x — the current-state delta)
+- The N-ROUND LANDED (fef1c7e230 — the hy-relay after qwen's freeze): N1–N8 8/8 +3; the next spin N9–N16; the handoff-gate CLOSED/GATED (the source-close + the runner-fork plan-stage pending at the owner-beats).
+- The loop's series: +19/+10/+12/+15/+15/+7/+3/+4/+1/+5/+3 — the adjudication-exhaustion approaching; the execution-gaps' owner-beats next.
+- The recipe's verdict: RECIPE-CLEAN-AT-BASE (00fdffb216) — the range's 7/7 clean at its own base; the combined's home = Finn's #116673's lineage, at the operator's/Finn's seat. The PR #141876's pushed-truth 6609dac951 held; the read-restore sanity-verified.
+- The flagship-relay's the standing pattern (qwen → hy on the freeze — the loop's continuity proven).
+- The NEW-YOU LAUNCH's state-lines are updated in the 020's refresh above — read the 020's §NEW-YOU LAUNCH + the state-addendum together.
+
+
+## The seam's refresh (11:1x — the CURRENT-state addendum, the stage's ledger)
+- THE STAGE (the runners-and-forks complex verification — the study's last leg): the REVISION-PASS LANDED (93d2def129 — the REVISED-STAGE-PLAN, 12 amendments: AM-C1 the seats' per-fire liveness · AM-F3 the study-proper fork-set (the phones refused) · AM-B1 the void-class's catalog-law · AM-S3 the cold re-verification); the AoA LANDED (73b4cbead7 — DEFECTS-NAMED, GO-for-the-bounded-canary, 8 settle-conditions); the fan 3/3 landed (BA 34424e81ac DEFECTS-NAMED · CA f4feeb4fc0 ADAPT · AA landed); the matrix-legs pve1 (9d74420def — R 4/4-PASS · P S7 · C chain-docs · F-16 confirmed); B1's fire (f32f5ab716 — VOID-class UNKNOWN, the void-class's 3-reproduction evidence).
+- THE IN-FLIGHTS at the handoff: the AM-S3's cold re-verification (deleg_35be2f09) + the armament-repass (deleg_a696cec9 — with the forensics-steer) + the AA's landing's fold-pending. Their landings re-enter on their own; the successor processes them per the every-landing cadence (verify → fold → row).
+- THE GATE (the operator's words, 2026-11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted (the emergency-mini's law-1 line corrected at 25c601bcd0, now superseded by this line). THE SKILL-DUMP DOCTRINE (002): the armaments = the full stack's dump + the used/refused named.
+- THE FLEET: qwen's free-period ENDED (404, no replacement); hy the flagship, solar the secondary, longcat + stepfun the support, the beam/keyless reserves, Nemo + the darkhorse (the local DeepSeek-9B at 44831, host-matched tasking) + LUNA (the paid, openai/gpt-6-luna) the intended carriers. The runners probed OK (p0tat0/c0wb0y/pve1); c0wb0y's idle-floor leg's failure receipted. The steward-row: the 22nd's four pushes + the seam-series at the thread.
+- THE NEXT ACTS per the revised plan: the re-verifications' landings → the gather's readiness per the AoA's settle-conditions → the gather-acceptance (ONLY after the G5–G7/G18 inputs land) → the OPUS-compose → the seal → the lens (the operator's read).
