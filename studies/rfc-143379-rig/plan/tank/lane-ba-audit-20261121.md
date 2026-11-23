@@ -1,134 +1,172 @@
-# LANE-BA AUDIT — CROSS-AUDIT LANE B (BRIEF 1)
+# LANE-BA AUDIT — CROSS-AUDIT BRIEF 1 (the canary phase-1 skeleton)
 
-**Artifact under test:** `plan/tank/lane-b-phase1-design-20261121.md` (canary phase-1 skeleton, rung 1)
-**Ground (read cold, in order):** `CANARY-CELLS-20261120.json` · `OPUS-NM3-CANARY-20261120.md` · `PILOT-VERDICT-20261121.md` · `night-20261121/FINAL-LEG-PLAN-20261121.md`
-**Audit date:** 2026-11-21 · **Lane:** BA (audit lane B) · **Method:** re-derive every gate/number against the cell ledger (number-seam discipline); wall clause — a non-reproduction is a **QUESTION**, never a defect.
-
----
-
-## VERDICT LINE
-
-**SOUND** — all 15 items and all 8 gates in the artifact are derivable from, or named-and-tagged for later measurement at, the cell ledger; every numeric claim re-derived from `CANARY-CELLS-20261120.json` matches exactly; revert points R1–R10 are named with triggers and mechanisms; the sole-egress discipline is held (cell `egress_route` = sole route, `egress_bytes` byte-counted, `egress_secondary_downloads` = 0); the judgment layer F1–F5 is consistent with `PILOT-VERDICT-20261121.md` and `FINAL-LEG-PLAN-20261121.md`.
-
-Two **seams named** (defects that do not move the verdict; each revertible):
-
-| Seam | Where | What | Fix (revert) |
-|---|---|---|---|
-| S1 citation | G6 receipt anchor | "PILOT-VERDICT-20261121.md §2" — that file has **no numbered §2** (headings are unnumbered). The record-first principle is grounded in the cell's own record-first wall clause + `OPUS-NM3-CANARY-20261120.md` §2(1). | Re-anchor G6 to the cell record-first fields and OPUS §2(1); re-run this pass. Gate G6 stays PASS. |
-| S2 measurement | G5 / item 6 (sandbox envelope) | G5 PASS-by-assertion from cell `sandbox_env_id` annotation (added `2026-11-20T04:45:00Z`) — the boundary is **named, not measured**; the pilot re-measures at run (carry EXT-2). | Pilot ring-1 measurement of the isolation envelope; verdict row rewritten to PARTIAL iff the measurement fails. |
+**Artifact under test:** `studies/rfc-143379-rig/plan/tank/lane-b-phase1-design-20261121.md` — sha256 `5d4015f20de2475845a914b238394ddd9380a7796bfaa8e76f17e7e54ea077d4`, 214 lines, read cold in full.
+**Ground (read cold, in full):** `master-page/study-archive-20261120/CANARY-CELLS-20261120.json` (sha256 `25606ba915710df202e58a48089a17c27c686c899406c830eade8930eebd96a2`; byte-identical to `studies/rfc-143379-rig/probes/CANARY-CELLS-20261120.json`) · `master-page/study-archive-20261120/OPUS-NM3-CANARY-20261120.md` · `studies/rfc-143379-rig/PILOT-VERDICT-20261121.md` · `studies/rfc-143379-rig/night-20261121/FINAL-LEG-PLAN-20261121.md` (arms 3 + 6) · `studies/rfc-143379-rig/KIT-METHOD-CARDS-20261121.md`.
+**Seat:** `meituan/longcat-2.5:free` @ `p0tat0` · **Branch:** `study/rfc-143379-rig-20261105` · **RFC:** quiet · **Hard lines held:** nothing public · no installs · local reads only · write only under the study.
+**Method:** re-derive every claimed gate/number against the cell ledger; the wall clause — a non-reproduction is a **QUESTION**, never a defect.
 
 ---
 
-## SEAMS & RECEIPTS — every claimed gate/number traced to source
+## VERDICT: **DEFECTS-NAMED**
 
-### G1 — model sha == pinned track-1 sha
-- Claim: pin `fc8b9934bfdc04adaa7ff7f3f10f48349c72bf64` (pinned_repo_sha); safetensors `5747a90ecef9ecc349b78247992c59e72d1eb4c2dded6b84a77d473774f35a1c` (model_safetensors_sha256); bytes 641,262,336 (model_bytes).
-- Ground: `CANARY-CELLS-20261120.json` lines 3–4, 7–8. **Exact match** ✓
-- Verdict: PASS (CONFIRMED).
+The skeleton is runnable, measured, revertible, egress-disciplined and judgment-layer-equipped **in substance**: all eight gates' cell-derived numbers re-derive **exactly**; the fifteen items are named; the ten revert points are real, each with a trigger and a mechanism; the judgment layer F1–F5 is consistent with `PILOT-VERDICT-20261121.md` and `FINAL-LEG-PLAN-20261121.md`. **Seven defects are named** — none fatal, all revertible/additive. The two that matter: the egress section asserts a **false byte equality** (D1), and the fail-safe grid names **gates G9–G15 that the brief never defines** (D2).
 
-### G2 — load + minimal forward + determinism
-- Claim: load 0.95s (load_seconds); params 319,028,736 (param_count); logits [1,4,129280] (logits_shape); argmax 49969 (argmax_next_token); max abs diff 0.0 (deterministic_max_abs_diff), tolerance 1e-6 → `deterministic_within_tolerance=true`.
-- Ground: cell lines 12, 13, 17–21, 9–10. **Exact match** ✓ (transformers 5.23.0 / torch 2.15.0+cpu; native `deepseek_v4` config rejected `compress_ratios=48`, repo-own `code/deepseek_v4` used).
-- Verdict: PASS (CONFIRMED).
+---
 
-### G3 — licensing attestation
-- Claim: MIT verified live from HF model card; `license_compatible_private_repo=true`.
-- Ground: cell line 24 (`license` verbatim) + line 25. **Traceable** ✓.
-- Verdict: PASS (CONFIRMED).
+## 1 · RECEIPTS — every claimed gate/number re-derived from the cell ledger
 
-### G4 — LFS egress clearance
-- Claim: sole route `nm3-canary-r1-20261120`; bytes 647,716,330; secondary 0.
-- Ground: cell lines 5, 27–28 (`egress_route` "…sole route"; `egress_bytes`; `egress_secondary_downloads`). **Exact match** ✓.
-- Verdict: PASS (CONFIRMED).
+Command receipts (this host, read-only):
 
-### G5 — sandbox env contract
-- Claim: `tmpfs-venv@PVE-host (kernel 7.0.14-16-pve)`; isolation boundary named; no rig disk state; no prod seat; no HF download in sandbox.
-- Ground: cell line 32 (`sandbox_env_id` verbatim) + line 33 (`sandbox_env_id_added_utc` = 2026-11-20T04:45:00Z).
-- Verdict: PASS — **by assertion**, i.e. the cell stages the envelope annotation but does not measure it; the pilot re-measures the envelope at run (see EXT-2). Seam S2 named here; the run-time measurement is the fix.
+```
+$ sha256sum probes/CANARY-CELLS-20261120.json \
+           /root/workspace/master-page/study-archive-20261120/CANARY-CELLS-20261120.json
+25606ba915710df202e58a48089a17c27c686c899406c830eade8930eebd96a2  probes/CANARY-CELLS-20261120.json
+25606ba915710df202e58a48089a17c27c686c899406c830eade8930eebd96a2  /root/workspace/master-page/.../CANARY-CELLS-20261120.json
+$ sha256sum plan/tank/lane-b-phase1-design-20261121.md
+5d4015f20de2475845a914b238394ddd9380a7796bfaa8e76f17e7e54ea077d4  plan/tank/lane-b-phase1-design-20261121.md
+```
 
-### G6 — record-first five gate fields
-- Claim: field mapping unchanged on a second cold re-read; no invention introduced.
-- Ground: cell record-first wall clause + `OPUS-NM3-CANARY-20261120.md` §2(1) ("record-first: unreadable = 'not confirmed'") + §7 (field-1 closed head-side only after the cell carried the key, at 04:45Z).
-- **Seam S1:** the artifact cites `PILOT-VERDICT-20261121.md §2` — no such section exists (the file's headings are unnumbered: THE VERDICT / THE EVIDENCE TOWER / THE START LINE — LIVE STATE / THE TWO-WAY DOOR). The gate itself stays **PASS**; the anchor is re-mapped to the cell's record-first fields + OPUS §2(1). Reverted: artifact §2 G6 receipt re-written with the re-mapped anchor.
+| Gate | Artifact claim | Cell field (ground) | Cell value | Re-derived | Status |
+|---|---|---|---|---|---|
+| G1 | pin `fc8b9934…`; safetensors `5747a90e…`; bytes `641,262,336` | `pinned_repo_sha`, `model_safetensors_sha256`, `model_bytes` | `fc8b9934bfdc04adaa7ff7f3f10f48349c72bf64` · `5747a90ecef9ecc349b78247992c59e72d1eb4c2dded6b84a77d473774f35a1c` · `641262336` | exact | **PASS** |
+| G2 | load `0.95s`; params `319,028,736`; logits `[1,4,129280]`; argmax `49969`; max diff `0.0` < `1e-6` | `load_seconds`, `param_count`, `logits_shape`, `argmax_next_token`, `deterministic_max_abs_diff`, `determinism_tolerance` | `0.95` · `319028736` · `[1,4,129280]` · `49969` · `0.0` · `1e-06` | exact; `0.0 < 1e-6` → `deterministic_within_tolerance=true` | **PASS** |
+| G3 | MIT verified live; `license_compatible_private_repo=true` | `license`, `license_compatible_private_repo` | `"MIT (verified live from the HF model card: license: mit; …)"` · `true` | exact | **PASS** |
+| G4 | sole route `nm3-canary-r1-20261120`; bytes `647,716,330`; secondary `0` | `egress_route`, `egress_bytes`, `egress_secondary_downloads` | `"private repo release nm3-canary-r1-20261120 (sole route)"` · `647716330` · `0` | exact | **PASS** |
+| G5 | `tmpfs-venv@PVE-host` (kernel `7.0.14-16-pve`); boundary named | `sandbox_env_id` | `"tmpfs-venv@PVE-host (kernel 7.0.14-16-pve); isolation boundary: ephemeral venv in /tmp (RAM-backed, reboot-pruned), model files pulled ONLY via the private-release route; no rig disk state touched; no production seat; no HF download in the sandbox"` | verbatim | **PASS (assertion)** — see Q1 |
+| G6 | record-first five gate fields; mapping unchanged on re-read | cell record-first clause + `OPUS §2(1)` + `OPUS §7` | — | gate substance traceable; **anchor defective** | **PASS / anchor re-mapped** — D3 |
+| G7 | **R1 LANDED** (receipt complete; rung-2 armed) | `OPUS §4` (Verdict) + `OPUS §6` (review-loop) | "Verdict: **R1 LANDED** (receipt complete). Rung-2 conditions ARMED" | traceable | **PASS** (phrase seam D6) |
+| G8 | compose-check 8 marks, all FIRED, mark 2 via proxy | `OPUS §5` | M1–M8 all FIRED; "All 8 marks FIRED (mark 2 via proxy)" | exact | **PASS** |
 
-### G7 — verdict row at the named commit
-- Claim: R1 LANDED (receipt complete); rung-2 conditions ARMED (defined + ready, never promised).
-- Ground: `OPUS-NM3-CANARY-20261120.md` §4 (Verdict) + §6 (Review-loop: no-change re-read ×2, termination satisfied). **Traceable** ✓.
-- Verdict: PASS (CONFIRMED).
+**Items 1–15 traceability.** Items 1–8 trace exactly to the cell fields above. Items 9–12 trace to `KIT-METHOD-CARDS-20261121.md` card first-uses (card 1 → the pilot verdict; card 2 → the ACES trigger; card 3 → the court-verification spine's execution ledger; card 4 → the night-shift plan's gates) — all four named, none invented. Item 13's **receipt anchor is mis-named** (D4). Items 14–15 are OPEN and correctly named as open. Item 15's "five gate fields" is a numbering conflation (D7).
 
-### G8 — compose-check table
-- Claim: all 8 marks FIRED (mark 2 via proxy).
-- Ground: `OPUS-NM3-CANARY-20261120.md` §5 (M1–M8, all FIRED, M2 via proxy). **Exact match** ✓.
-- Verdict: PASS (CONFIRMED).
+**Revert points R1–R10 — re-verified directly against the artifact's own §3 table** (not against any summary):
 
-### Items 1–15 — traceability to cell ledger
-| Item | Claim | Cell field (ground) | Re-derived | Verdict |
+| # | Gate | Trigger (artifact) | Mechanism (artifact) | Real? |
 |---|---|---|---|---|
-| 1 | Rung-1 cell identity + pin | `pinned_repo_sha`, `candidate` | match ✓ | FIRED |
-| 2 | Model sha + bytes | `model_safetensors_sha256`, `model_bytes` | match ✓ | FIRED |
-| 3 | Load + forward + determinism | `load_seconds`, `param_count`, `logits_shape`, `argmax_next_token`, `deterministic_max_abs_diff`, `deterministic_within_tolerance` | match ✓ | FIRED |
-| 4 | Licensing | `license`, `license_compatible_private_repo` | match ✓ | FIRED |
-| 5 | Egress single route | `egress_route`, `egress_bytes`, `egress_secondary_downloads` | match ✓ | FIRED |
-| 6 | Sandbox env contract | `sandbox_env_id`, `sandbox_env_id_added_utc` | verbatim ✓ | FIRED (by assertion; pilot re-measures at run — SEAM S2) |
-| 7 | Record-first wall clause | cell wall clause + OPUS §2(1)/§7 | match ✓ | FIRED |
-| 8 | Two-way door / rollback | OPUS §4 | match ✓ | FIRED |
-| 9 | Method cards (running) | kit tree: `KIT-METHOD-CARDS-20261121.md` + kit contents | named, stands | NAMED |
-| 10 | Improvement-loop honest termination | OPUS §6 + `FINAL-LEG-PLAN-20261121.md` THE ACES-TRIGGER (6h) | consistent ✓ | NAMED |
-| 11 | Capture home for the canary | `KIT-METHOD-CARDS-20261121.md` + kit folder (`RELEASE-CONDITION-20261121.md`, `READ-UX-SHAPE-20261121.md`) | named ✓ | NAMED |
-| 12 | Fail-safe grid + fold-and-anchor | `FINAL-LEG-PLAN-20261121.md` ARM 6 (judgment layer mechanics in kit) | consistent ✓ | NAMED |
-| 13 | Gate-state file (OPEN) | no cell ground — new continuation point | named, not measurable yet | OPEN |
-| 14 | Judge-gate (OPEN) | no cell ground — new continuation point | named, not measurable yet | OPEN |
-| 15 | Candidate sequence, rung 2 armed | none in ledger — forward item | "V3-3.4B-small, sha 415501bd… — defined + ready, never promised" | OPEN |
+| R1 | Cell install | sha mismatch, or load fails | sandbox torn down; install additive, deleted on revert | ✓ |
+| R2 | Model load | `load_seconds` above barrier, or params ≠ `319,028,736` | load is a probe; forward never runs on a bad install | ✓ |
+| R3 | Determinism | max abs diff ≥ `1e-6` | run recorded as probe, never a verdict; never burns rung-2 | ✓ |
+| R4 | License | `license_compatible_private_repo` false | release route untouched | ✓ |
+| R5 | Egress | `egress_secondary_downloads > 0` | one-way store; a second download aborts | ✓ |
+| R6 | Isolation | envelope contract not verifiable | boundary named and checked at run time | ✓ |
+| R7 | Gate-state file | any gate fails | file additive + revisioned; last PASS revision is the rollback | ✓ |
+| R8 | Capture home | the fold lands the file | fold additive | ✓ (naming D4) |
+| R9 | Judge-gate re-reads | a re-read shows drift | evaluator's verdict row carries the independent read | ✓ |
+| R10 | ACES trigger | the loop fires | termination receipted twice over | ✓ |
 
-### Revert points R1–R10 — triggers and mechanisms, re-verified
-R1 no gate-state file → verdict row PARTIAL, re-arm at next ring — matches artifact §3 line 2 ✓.
-R2 run fails the first two gates → PARTIAL verdict row, do not advance to ring 2 — matches artifact §3 line 3 ✓.
-R3 PR status diverges → branch rebased; the gate-state file points at the PR head — matches FINAL-LEG-PLAN ARM 7-style fold rule ✓.
-R4 post lands before run → hold; no execution; release-criteria row in `RELEASE-CONDITION-20261121.md` is the pre-condition, not the signal — consistent ✓.
-R5 reply posted but no measurement → no verdict row; wall clause (field recorded "not confirmed" first) — matches cell record-first clause ✓.
-R6 held run interrupted → sandbox torn down (already done at 04:41:43Z end per cell); verdict row frozen at PARTIAL; re-arm at next ring — matches artifact §3 line 6 ✓.
-R7 gate-state file additive → last PASS revision frozen (committee + operator, per OPUS §4); rewrite rewrites the verdict row — matches artifact §3 line 7 ✓.
-R8 transcript asks a question → question answered by who owns the question (operator → the pilot kit is a gate state, not a commitment) — matches PILOT-VERDICT THE TWO-WAY DOOR ✓.
-R9 born-out gate schema → the schema is additive and revisioned; the last PASS revision is the rollback point — matches artifact §3 line 7 ✓.
-R10 measured plateau (no-change twice) → the improver loop stops and the change is receipted twice over — matches `FINAL-LEG-PLAN-20261121.md` THE ACES-TRIGGER ✓.
-Single egress path rule 1–3: sole route `nm3-canary-r1-20261120` (cell `egress_route`), byte-counted `egress_bytes` with `egress_secondary_downloads` = 0 (cell lines 27–28) ✓; rules 4–6 (no prod seat, no HF download in sandbox, no rig disk state) are the cell `sandbox_env_id` text verbatim ✓.
+All ten are named with a trigger and a mechanism; none is a bare "failed". The revert rule ("a failed gate freezes the run's verdict row at PARTIAL / GAP and re-arms the same item at the next ring — never a silent skip, never a re-run with different values") is a real two-way door.
 
-### Judgment layer F1–F5 — consistent with the pilot verdict artifact
-- F1 pre-committed verdict vocabulary → PILOT-VERDICT THE TWO-WAY DOOR (gate state, not identity). Consistent ✓.
-- F2 out-of-band evaluator's schedule (rings 40–60 min; all landings; before any claim; ACES at 6 h) → `FINAL-LEG-PLAN-20261121.md` ARM 3 + THE ACES-TRIGGER ✓.
-- F3 no-gate doctrine (operator word gates the posting surfaces only) → PILOT-VERDICT THE TWO-WAY DOOR ✓.
-- F4 fail-safe grid (per-gate revert, freeze) → artifact §3 R1–R10 ✓.
-- F5 receipt stamp on every gate row → cell record-first wall clause ✓.
+**Egress disposition §4.** Rules 1, 3, 5 trace to `egress_route` / `sandbox_env_id`; rule 4's reference is the cell; rule 6 is the evaluator schedule. **Rule 2 is defective (D1).** The sole-route discipline itself is held: one store, byte-counted, secondary `0`.
 
-### Egress disposition §4 — sole-route held
-Rules 1–3 trace to cell `egress_route`/`egress_bytes`/`egress_secondary_downloads` ✓; rules 4–6 are the `sandbox_env_id` text ✓.
+**Judgment layer F1–F5.** F1's vocabulary (LANDED/PARTIAL/GAP/QUESTION/REVERTED/CLOSED) is a gate-state vocabulary consistent with `PILOT-VERDICT` ("a GATE STATE, not an identity"). F2's schedule (per-ring re-read, per-landing independent row, before-any-claim receipt, 6 h ACES) is consistent with `FINAL-LEG-PLAN` THE CRONS + THE ACES-TRIGGER. F3's no-gate doctrine matches `PILOT-VERDICT` THE TWO-WAY DOOR. F4's grid is **defective (D2)**. F5's receipt stamp matches card 1.
 
 ---
 
-## EXTENSIONS — new continuation points (named, measured, revertible)
+## 2 · DEFECTS NAMED (each with receipt + fix; all revertible/additive)
 
-**EXT-1 — Gate-state file schema (item 13, OPEN).** Draft the schema so the first landing is nameable: `{kit, version, ring, started_at, ended_at, cells_sha256, cells_env: {env_id, added_utc}, items: [{id, state, measured:{}, receipt:{artifact, sha, cmd}}], verdict_rows:[{ring, state, measured:{}, revision}], drifts:[{gate, field, cell_value, brief_value, delta, ts}], closed:[']}`, with `cells_sha256` = `f1ed5b0db75d8d91fe15780a23ea6529d370bdf9e3ad98b26e57787f0d49b536` (cell line 35) as the version anchor. **Measured:** schema derives verbatim from the gate table §1/§2 row format of the artifact + the cell ledger. **Reverted:** additive; the last PASS revision is frozen per R7 — the draft is written to `plan/tank/gate-state-20261121-schema.md`, never to the verdict row.
+| # | Where | Defect | Receipt | Fix |
+|---|---|---|---|---|
+| **D1** | §4 rule 2 (line 103) | Asserts `egress_bytes` = the model's bytes (`647,716,330`). **False equality**: cell `model_bytes` = `641,262,336`; `egress_bytes` = `647,716,330`; delta = **6,453,994 bytes**. | cell lines 8 + 27 | State `egress_bytes` = the **release's** byte count; record the delta as release-over-model overhead. The cell stays the reference. |
+| **D2** | §5 F4 (lines 156–157) | The fail-safe grid names **G9–G12 (cards)** and **G13–G15 (continuity)**. The brief defines **only G1–G8** (§2). Gates G9–G15 do not exist. | artifact §2 gate table (G1–G8 only) | Map the grid rows to the artifact's **items 9–15**, or define G9–G15 explicitly. Grid rows must reference gates that exist. |
+| **D3** | §2 G6 receipt (line 69) | Anchor `PILOT-VERDICT-20261121.md §2` — that file has **no numbered §2**; its headings are unnumbered (THE VERDICT / THE EVIDENCE TOWER / THE START LINE / THE TWO-WAY DOOR). | `PILOT-VERDICT-20261121.md` headings | Re-anchor G6 to the cell's own record-first wall clause + `OPUS §2(1)` + `OPUS §7`. Gate substance unchanged. |
+| **D4** | §0 line 12 · item 13 · R8 | "the kit folder: the four cards + the audit + the sceptic". The cards + audit + sceptic sit at the **study root** (`KIT-METHOD-CARDS-20261121.md`, `KIT-AUDIT-20261107.md`, `KIT-SKEPTIC-20261107.md`); `kit/` holds only `RELEASE-CONDITION-20261121.md` + `READ-UX-SHAPE-20261121.md`. | `ls kit/` + `ls KIT-*.md` on the branch | Rename to "the study root's kit cards + audit + sceptic"; keep `kit/` as the capture home. Additive rename, no verdict change. |
+| **D5** | item 9 (line 48) | Card 1 marked **RUNNING**, but card 1's first use is the pilot verdict — which **already landed** (`PILOT-VERDICT-20261121.md` exists; card 1 names it "the canonical instance"). | `KIT-METHOD-CARDS-20261121.md` card 1 | Mark card 1 **FIRED** (first use landed); the canary's own first certified use is the RUNNING part. |
+| **D6** | §2 G7 (line 70) | "Verdict row at the named commit" — `OPUS §4`/`§6` name **no commit**. The phrase is borrowed from `FINAL-LEG-PLAN` ARM 1's gate. | `OPUS §4` + `§6` | Drop "at the named commit" or name the commit. Substance (R1 LANDED) unchanged. |
+| **D7** | §5 F2 (line 136) | "the five gate fields (G1–G5)" conflates the **cell's** five fields with the artifact's gate numbers. The cell's field (1) is the sandbox envelope = artifact **G5**; the mapping is a permutation, not an identity. | `OPUS §2` five fields vs artifact §2 G1–G5 | Say "the cell's five gate fields" and give the mapping (cell 2→G1, 3→G2, 4→G3, 5→G4, 1→G5). |
 
-**EXT-2 — Isolation-envelope measurement (item 6 / G5, SEAM S2).** The pilot's first ring gate measures the named boundary mechanically: `[ -f /tmp/venv/bin/python ] && mountpoint -q /tmp && [ "$(stat -f -c %T /tmp)" = "tmpfs" ]` and a probe for any HF/SAFETENSORS pull from the sandbox (`ss -tn` + `ps` audit during load). **Measured:** cell `sandbox_env_id` names the envelope; the pilot re-derives the measurement at ring 1 and writes it into the verdict row (PARTIAL iff the measurement fails). **Reverted:** additive verdict row; no statement is ever closed by a measurement that wasn't run.
-
-**EXT-3 — Judge-gate re-read cadence (item 15 / thread 5).** First re-read 15 min after the pilot ring closes; then every 2 h (re-grounding cron), each re-read appended as a drift row with the measured cell vs the brief value. **Measured:** drift rows never claims; a drift row is written only when a cell field is absent or a gate number moved. **Reverted:** no drift row is ever a silent correction — every re-read is a named row in the revisioned gate-state file.
-
-**EXT-4 — Egress re-receipt at run (thread 6).** The pilot writes its own one-way receipt (command + sha256 of the pulled safetensors + bytes + secondary=0) into the gate-state file at ring end, citing the cell's `egress_route`/`egress_bytes`/`egress_secondary_downloads` as the reference; any mismatch rewrites the verdict row for G4 to PARTIAL and stops the ring. **Measured:** pilot re-derives sha256 and byte count from the pulled file. **Reverted:** additive receipt row; the cell's numbers are the immutable reference.
-
----
-
-## OPEN ITEMS — non-reproductions are QUESTIONS, never defects
-
-- **O1 (rung-2 fire):** timing of rung 2 + the gate that fires it are named ("V3-3.4B-small, sha 415501bd… — defined + ready, never promised", artifact §7/§9.1) but have no cell-ledger ground. **QUESTION** for the rung-2 window plan; answered by the next cell, not by this pass.
-- **O2 (capture-home exact names):** item 13 says "the kit folder: the four cards + the audit + the sceptic, by exact names". The brief's four-file ground doesn't include the kit tree; from the kit tree, `KIT-METHOD-CARDS-20261121.md`, `KIT-AUDIT-20261107.md`, `KIT-SKEPTIC-20261107.md` sit at the branch root, while `kit/` holds `RELEASE-CONDITION-20261121.md` + `READ-UX-SHAPE-20261121.md`. **QUESTION:** the "kit folder" naming in item 13 maps to the root cards/ and the `kit/` files, not a single folder — corrected by renaming the item (additive rewrite, no verdict change).
-- **O3 (EXT-2 result):** the isolation-envelope measurement is not yet run; it is the pilot's first ring gate and is revertible. **OPEN** until the run.
+**No defect found in:** the cell-derived numbers (all exact), the item list's coverage, the revert points' reality, the egress sole-route discipline, or the judgment layer's consistency with the pilot verdict.
 
 ---
 
-## NUMBER-SEAM SUMMARY (verify discipline)
+## 3 · EXTENSIONS — new continuation points (each named, measured, revertible)
 
-- All 8 gate numbers re-derived from `CANARY-CELLS-20261120.json` match exactly (G1 G2 G3 G4 G5 cells) — no claim failed re-derivation.
-- The only non-matching citation in the artifact is **G6's anchor** (S1): `PILOT-VERDICT-20261121.md §2` does not exist as a numbered section; the gate itself passes on the cell record-first clause + OPUS §2(1) + §7. Re-anchored, no verdict change.
-- S2 (measurement) and EXT-2–EXT-4 are the pilot-side continuations: named, measured at run, always additive + revisioned.
+**EXT-1 · Gate-state file schema (items 13/14, OPEN).** Draft the operator's read surface so the first landing is nameable. The schema must carry a **dual sha anchor**, because the cell's internal `cells_sha256` (`f1ed5b0db75d8d91…`) is the **pre-addendum** hash the lane read, while the post-addendum file's actual sha is `25606ba915710df2…` (`OPUS §7`):
 
-**END OF DELIVERABLE — `plan/tank/lane-ba-audit-20261121.md`**
+```json
+{ "kit": "canary-phase1", "version": 1, "ring": 1,
+  "started_at": "…", "ended_at": "…",
+  "cells": { "internal_cells_sha256": "f1ed5b0db75d8d91…",
+             "file_sha256": "25606ba915710df2…",
+             "env": { "sandbox_env_id": "tmpfs-venv@PVE-host (kernel 7.0.14-16-pve)",
+                      "added_utc": "2026-11-20T04:45:00Z" } },
+  "items": [ { "id": 1, "state": "FIRED", "measured": {}, "receipt": { "artifact": "…", "sha": "…", "cmd": "…" } } ],
+  "verdict_rows": [ { "ring": 1, "state": "LANDED", "measured": {}, "revision": 1 } ],
+  "drifts": [ { "gate": "G1", "field": "model_bytes", "cell_value": 641262336, "brief_value": 641262336, "delta": 0, "ts": "…" } ],
+  "closed": [] }
+```
+
+**Measured:** the row shape derives from the artifact's §1/§2 tables + the cell ledger; the dual anchor is the `OPUS §7` receipt. **Reverted:** additive; the last PASS revision is frozen per R7; the draft lives in this audit, never in the verdict row.
+
+**EXT-2 · Egress equality repair + run-time re-receipt (§4 rule 2 / thread 6).** The pilot's egress receipt must record **both** counts and their delta, and must never assert the false equality:
+
+```
+model_bytes   == cell model_bytes            (641,262,336)
+egress_bytes  == cell egress_bytes           (647,716,330)
+delta         = egress_bytes - model_bytes   (6,453,994)   # release-over-model overhead
+egress_secondary_downloads == 0
+```
+
+**Measured:** the pilot re-derives sha256 + byte counts from the pulled file; the cell is the immutable reference. **Reverted:** additive receipt row; a mismatch rewrites G4 to PARTIAL and stops the ring (R5).
+
+**EXT-3 · Fail-safe grid renumbering (F4 / D2).** Corrected grid, referencing gates that exist:
+
+| Gate | Fate pre-named | If the fold breaks |
+|---|---|---|
+| G1–G5 (cell battery) | continue → hold-safe → need-the-chair | item re-arms at next ring; verdict row freezes at PARTIAL/GAP |
+| G6–G8 (record) | continue → hold-safe | record rewritten from bytes, never narration |
+| items 9–12 (cards) | continue → hold-safe → need-the-chair | the card's first use is a probe; its receipt shape is re-measured |
+| items 13–15 (continuity) | continue → need-the-chair | capture home folds additively; the open thread is named, not hidden |
+
+**Measured:** the rows map 1:1 onto the artifact's §1 items. **Reverted:** additive; the grid is a draft row, not a gate.
+
+**EXT-4 · Isolation-envelope measurement (G5 / item 6 / thread 2).** The cell's `sandbox_env_id` was added at `2026-11-20T04:45:00Z` — **after** the run ended (`finish_utc` 04:41:43Z). It is a named assertion, not a run-time measurement. The pilot's first ring measures it mechanically:
+
+```
+[ -f /tmp/venv/bin/python ] && mountpoint -q /tmp && [ "$(stat -f -c %T /tmp)" = "tmpfs" ]
+# + a pull audit during load: ss -tn + ps, asserting no HF/safetensors fetch
+```
+
+**Measured:** the probe is the measurement; the verdict row is rewritten to PARTIAL iff it fails. **Reverted:** additive verdict row; no statement is closed by a measurement that was not run.
+
+**EXT-5 · Kit-home exact-name map (item 13 / D4).** The capture home, by exact name and location:
+
+- study root: `KIT-METHOD-CARDS-20261121.md` (the four cards) · `KIT-AUDIT-20261107.md` · `KIT-SKEPTIC-20261107.md`
+- `kit/`: `RELEASE-CONDITION-20261121.md` · `READ-UX-SHAPE-20261121.md`
+
+**Measured:** `ls` on the branch. **Reverted:** additive rename; no file moves, no verdict change.
+
+---
+
+## 4 · WALL-CLAUSE QUESTIONS (non-reproductions — QUESTIONS, never defects)
+
+- **Q1 (G5 / item 6):** the sandbox envelope is a **cell annotation added post-run** (04:45:00Z > 04:41:43Z), not a measurement. QUESTION for the pilot's first ring; answered by EXT-4's probe, not by this pass.
+- **Q2 (rung 2):** `V3-3.4B-small` (sha `415501bd…`) is armed but has **no cell-ledger ground**. QUESTION for the rung-2 window plan; answered by the next cell.
+- **Q3 (dispatch path):** the brief's ground path `audit/PILOT-VERDICT-20261121.md` **does not exist**; the file is at the study root. Read there. A dispatch-path defect, not an artifact defect.
+- **Q4 (ring cadence):** "rings 40–60 min" traces to the cross-audit plan (`STAGE-PLAN-CROSSAUDIT-20261123.md` §E1/§G), not to the named `FINAL-LEG-PLAN` ground (which names the 2 h / 1 h / 6 h crons). Grounding note; the cadence is real.
+
+---
+
+## 5 · UNVERIFIABLE LIST (what only `pve1`'s on-disk state can confirm)
+
+- The **actual sandbox envelope** at run time (EXT-4) — the cell is an annotation.
+- The **run-time egress receipt** (EXT-2) — the pilot must produce it.
+- The **rung-2 cell** (Q2) — no ledger entry yet.
+- The **live PR #1 status** and the **kit folder's exact contents at the compose host** — verified here on `p0tat0`'s tree, not on `pve1`.
+
+---
+
+## 6 · PRIOR-PASS NOTE (append-only honesty)
+
+The previously committed version of this deliverable (`7190c0efda`, 2026-11-21) was written against a different draft: its "Revert points R1–R10" section describes R1 as "no gate-state file → verdict row PARTIAL…", which **does not correspond** to the current artifact's §3 table (R1 = Cell install / sha mismatch / sandbox torn down). This pass re-derives R1–R10 directly from the artifact's own table (§1 above). The prior pass is superseded by this file; no lane text outside this deliverable is rewritten.
+
+---
+
+## 7 · NUMBER-SEAM SUMMARY
+
+- All **8 gates'** cell-derived numbers re-derived **exactly**; no claim failed re-derivation.
+- The **one false numeric identity** is D1 (`egress_bytes` = the model's bytes) — delta 6,453,994 bytes.
+- The **one undefined-gate set** is D2 (G9–G15).
+- The **one bad citation** is D3 (`PILOT-VERDICT §2`).
+- D4–D7 are naming/state seams; all revertible.
+
+**END OF DELIVERABLE — `plan/tank/lane-ba-audit-20261121.md` · verdict DEFECTS-NAMED · wall clause held (Q1–Q4 are QUESTIONS, not stops).**
