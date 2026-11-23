@@ -1,6 +1,6 @@
 # DRAFT — ENGAGEMENT REPLY TO @kvnloo (RFC #143379, comment 7087999804)
 
-**DRAFT V2 — written for the pair's review. NOT posted: the RFC surface opens only on the operator's word. Pre-enrichment: the [TEAMS-ENRICH] markers name the rig receipts the gathering pass will supply so the final text is measured, never surface. The human-in-the-loop register holds throughout: this is the operator's document, drafted by the head, owned by the operator.**
+**DRAFT V2.2 — written for the pair's review, crossed with the last 48 hours of the study's thread (the receipt-map appended). NOT posted: the RFC surface opens only on the operator's word. Pre-enrichment: the teams' larger cross-check with the rig assets follows at the operator's word, so the final text is measured, never surface. The human-in-the-loop register holds throughout: this is the operator's document, drafted by the head, owned by the operator.**
 
 ---
 
