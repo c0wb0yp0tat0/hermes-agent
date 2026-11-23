@@ -1,22 +1,22 @@
 # DRAFT — ENGAGEMENT REPLY TO @kvnloo (RFC #143379, comment 7087999804)
 
-**ROUGH DRAFT V1 — written by the head for the pair's review. NOT posted (the RFC surface waits on the operator's word). Pre-enrichment: the [TEAMS-ENRICH] markers name the rig receipts the gathering teams will supply before this goes further.**
+**DRAFT V2 — written for the pair's review. NOT posted: the RFC surface opens only on the operator's word. Pre-enrichment: the [TEAMS-ENRICH] markers name the rig receipts the gathering pass will supply so the final text is measured, never surface. The human-in-the-loop register holds throughout: this is the operator's document, drafted by the head, owned by the operator.**
 
 ---
 
-@kvnloo — thank you again. Four weeks of patience, repaid twice: once in the substance of your comment, and once in what it surfaced on our side of the record. The check-in's promise holds: this is the engagement, and the close-out's verification is running in parallel, so the numbers below carry our standing receipts now and the final version's full set at the close-out.
+@kvnloo — thank you again. Four weeks of patience, repaid twice: once in the substance of your comment, and once in what it surfaced on our side of the record. The check-in's promise holds: the close-out's verification is running in parallel, this is the engagement in substance, and the final numbers ride the close-out's receipts.
 
 ## On your probe table
 
 Every row measured, and matched against ours:
 
-- MAIN's `read` → `Unknown action 'read'` is the same seam our own instrumentation measured independently (our FINDING-1, rows on the study's thread). Two instruments, one wound.
-- Your composed tree, 443 pass and the dispatch contract 64/64 at ec649ad9, is the strongest confirmation that the restore is the right precondition. Our runners are now re-deriving both at the combined head a9c65dc4 against our pins, and the result will carry our signature next to yours. [TEAMS-ENRICH: the matrix legs' exact receipts — fork rows, digests, run rows from MATRIX-LEGRUNS + REVERIFY-AMS3 + the fold ledger]
-- Your race probe reading RED on our round2-gate where our 297 battery reads GREEN is exactly the class our battery existed to catch and missed. That is our lesson, receipted.
+- MAIN's `read` → `Unknown action 'read'` is the same seam our own instrumentation measured independently (our FINDING-1, receipted on the study's thread). Two instruments, one wound; our side's reading of main's state does not differ from yours by a single line.
+- Your composed tree, 443 pass and the dispatch contract 64/64 at ec649ad9, is the strongest confirmation that the restore is the right precondition. Our runners re-derive both at the combined head a9c65dc4 against our own pins; the result carries our signature next to yours. [TEAMS-ENRICH: the matrix legs' exact receipts — fork rows, digests, the run rows from MATRIX-LEGRUNS + REVERIFY-AMS3 + the fold ledger]
+- Your race probe reading RED on our round2-gate where our 297 battery reads GREEN is exactly the class our battery existed to catch and missed. That is our lesson, receipted; a green battery is only as good as the probe that produced it.
 
 ## Finding 1 — "the fix already in ours"
 
-Confirmed at our tree: the restored read carries the lock and the no-cache-write pair your run defines as load-bearing (remove either, still green; remove both, red — your exact arithmetic). Your definition of the class stands in our record even though the compose supersedes the need for the commit itself. The chain-doc read race is now a named arm of our battery, your probe as its instrument. [TEAMS-ENRICH: our tree's read-path receipts — the bias/read-suite legs at 6609dac951, the 4/4 rows]
+Confirmed at our tree: the restored read carries the lock and the no-cache-write pair your run defines as load-bearing (remove either, still green; remove both, red — your exact arithmetic). Your definition of the class stands in our record even though the compose supersedes the need for the commit itself. The chain-doc read race is now a named arm of our battery, your probe as its instrument. [TEAMS-ENRICH: our tree's read-path receipts — the read-suite legs at 6609dac951, the 4/4 rows]
 
 ## Finding 2 — the two-add overwrite
 
@@ -28,7 +28,17 @@ Accepted, and the gap is ours: the suite tested the method, not the seam. Your h
 
 ## The recipe
 
-Honored as a reference, not executed raw. Our adjudication reads the cherry-pick range as a cross-lineage graft with high conflict likelihood, so the composed tree is treated as the candidate landing resource and re-derived at our pins on our runners rather than cherry-picked wholesale. Same goal your recipe serves: one composed, tested substrate, with the restore first and the bounded read re-cut on top of it. [TEAMS-ENRICH: the recipe-verdict (00fdffb216) and the VET's conditions, cited as receipts]
+Honored as a reference, not executed raw. Our adjudication reads the cherry-pick range as a cross-lineage graft with high conflict likelihood, so the composed tree is treated as the candidate landing resource and re-derived at our pins on our runners rather than cherry-picked wholesale. Same goal your recipe serves: one composed, tested substrate. [TEAMS-ENRICH: the recipe-verdict (00fdffb216) and the VET's conditions, cited as receipts]
+
+## The PR-side movements
+
+The engagement on the PRs, stated plainly so nothing moves by implication:
+
+- The landing order stands as the record already holds it: the restore first (#141876), the bounded read re-cut on top of it (#116673), the governed compaction behind its own staged issue.
+- Before #141876 advances: your handler-level dispatch test rides in, your authorship kept; the two-add repair lands in the fork's next gate iteration, and the restored read's own suite stays at full strength with the dispatch seam covered.
+- #116673 remains in Finn763's seat, as its scope's owner. Nothing on that PR's public surface moves without Finn's involvement and your thoughts; the issue's authorship on our side does not extend to the PR's scope.
+- No raw cherry-picks into any public PR. The compose is re-derived, receipted, then proposed.
+- The upstream merge is the public track and proceeds in parallel; the kit's measured state does not wait on the queue's mechanics.
 
 ## Your three answers
 
@@ -38,7 +48,7 @@ Honored as a reference, not executed raw. Our adjudication reads the cherry-pick
 
 ## The logs
 
-Yes to the redaction pass: you write it, we run it, you review the output, and the raw logs stay with the study. That is the contract. The long-session record becomes the field curve the acceptance gate keeps asking for. [TEAMS-ENRICH: the sanitization-leg's status and the session-record's inventory]
+Yes to the redaction pass: you write it, we run it, you review the output, and the raw logs stay with the study. That is the contract, non-negotiable on our side and exactly as you shaped it. The long-session record becomes the field curve the acceptance gate keeps asking for. [TEAMS-ENRICH: the sanitization leg's status and the session record's inventory]
 
 ## A second pair of eyes
 
@@ -47,10 +57,12 @@ Yes to the redaction pass: you write it, we run it, you review the output, and t
 
 ## What's next in our fork, and the ask
 
-Once the close-out's verification lands, the readiness loop closes with a measured verdict, and the study's true state goes to your lab first. We propose: an assessment of the composed substrate — restore, bounded read, the two-add repair — against the RFC's acceptance bars, with your harness as the long-session instrument. The assessment's verdict precedes any field-pilot offer; and the pilot itself will run on the composed substrate, not main — measured and receipted, not "as if." The specific questions for your lab, shaped by the results, follow the close-out, as the check-in promised.
+Once the close-out's verification lands, the readiness loop closes with a measured verdict, and the study's true state goes to your lab first. The proposal: an assessment of the composed substrate — restore, bounded read, the two-add repair — against the RFC's acceptance bars: the battery RED-to-GREEN flip, the stress floors (200/200 write-then-read, 800/800 concurrency, 100/100 re-read idempotence, 20/20 over-budget refusals), the K-recency falsifier at 4x/8x/16x, and the long-session gate at 300+ cycles with your harness as the instrument.
 
-The landing order stands as you know it: the restore first, the bounded read re-cut on top of it, the compaction governed behind its own staged issue.
+The assessment's verdict precedes any field-pilot offer. And on the question of waiting for the restore's merge versus running on the substrate now: the read already exists on the composed fork head, measured by our runners (the read-suite 4/4 legs at the restore pin) and by your own compose rows. The pilot does not wait on main's merge; it runs on the composed substrate where the read is real — measured and receipted, never "as if." The upstream landing proceeds in parallel as the public track. The pilot's offer, when it comes, names the head it runs on, the three-level comparison with the restored substrate as level two, and the redaction contract.
 
-Genuinely — thank you. The RFC is better for your instruments.
+The specific questions for your lab, shaped by the results, follow the close-out, as the check-in promised. The landing order stands. The RFC is better for your instruments.
 
-*Rough draft prepared via Hermes Agent, staged for the pair's review and the enrichment pass; not posted.*
+Genuinely — thank you.
+
+*Draft prepared via Hermes Agent, staged for the pair's review and the enrichment pass; not posted.*
