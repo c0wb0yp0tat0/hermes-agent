@@ -1,150 +1,148 @@
-# MAIN-LOOP-ROUND-20261122 — the main pilot-readiness improver loop's ROUND SIX (C1c–C6c)
+# MAIN-LOOP-ROUND-20261122 — the primary pilot-readiness improver loop's NEXT round
 
-> **Seat:** `tencent/hy4-flash:free` — PIN-READ-BACK VERIFIED at the fire (the flagship's judgment for the scarce rung — the main loop's focus). **Contract:** `plan/tank/briefs/BRIEF-MAIN-LOOP-ROUND-20261122.md` (read in full — the contract; no improvisation beyond it). **Branch:** `study/rfc-143379-rig-20261105`; HEAD at round start `90552a7237` (the master fold §7-au — the round-five record: +7, cumulative +59, the FIRST zero-delta candidate C6b, the next spin C1c–C6c named).
->
-> **Armament (the line):** think-tank (the spine) + agent-work-review (consistency matrix, arithmetic re-derivation, explicit unverifiable list) + investigation-documentation (faithful trail + Limitations/Reproducibility). Named-and-refused for this rung: two-model-reasoning, source-criticism, web-storm, frame-reconstruction, defect-forensics, blind-agent-panels, supervisor-delegation, external-readiness-review, storm/full-dive rigs, and any install-bearing surface — a bounded improver round over an arc already proven at the tree, not a new panel. An unarmed lane is a finding; an over-armed one is scope drift.
->
-> **Anchor (one pass):** `/root/.hermes/memories/MEMORY.md` + `/root/.hermes/memories/USER.md` read — the register + the **GATE LAW's final form** (`MEMORY.md:19`): *the word gates ONLY public writes outside PR #1 + deep deletions/money; any other hold = a FABRICATED gate (defect); alarms ACT, never wait.* Applied: every door in this round is internal — it ACTS (deliverable first, commit second); no fabricated gate was waited on; no public write made.
->
-> **Frame:** 0 public writes · RFC #143379 + #5320 + #157065 QUIET · NO installs of any kind · writes ONLY under `studies/rfc-143379-rig/` · all LOCAL paths via read_file · NEVER push · never checkout/stash/rm.
->
-> **PLAN GUARD (held):** the plan, the sealed artifacts, the crons, and the anchors are NEVER altered by this round. The C1c–C6c landings land ONLY as this record's measured rows / design-rows — no config, no anchor, no cron, no sealed artifact, no substrate file written. The canary-spec's count-check correction is a plan-owner append-only action, named not applied; the pre-reg's §11 and the refire record's H1 are untouched; the spec's bytes stay as they are.
->
-> **Emission contract (the day's law):** exit 0 = the deliverable with the per-checkpoint adjudications + the delta + the verdict inside. A parse-fragment-only response has NOT landed — this file is written FIRST, then committed, then its sha reported. The termination check: two consecutive rounds with zero total delta → PARK with the record; the loop never parks itself while improvements exist.
->
-> ---
->
-> ## 0 · THE INPUT READ (in full, in order — all committed in the current tree)
->
-> 1. **The five predecessor rounds** — read at the bytes; the loop's delta series, cumulative **+59**:
->    - `bd8c59df95` (+10) — the queue's six eats (G16 ledger · FB-1 falsifier · G19/G20 gates · Mandate rulebook · headroom-sweep alarm · settlement evidence-classes), the first zero-delta candidate is NOT recorded;
->    - `1135dbfa55` (+12) — the six continuations C1–C6 (the Kaizen's perpetuity proven);
->    - `41016459d9` (+15) — the C1a–C6a checkpoints (the loop's deltas +10/+12/+15);
->    - `9d863939f0` (+15) — the C1b–C6b checkpoints (the next spin C1b–C6b armed);
->    - `6662169297` (+7) — the C1b–C6b closure-targets (the mid-round §7-at folded in), **the FIRST zero-delta candidate C6b recorded**, the next spin **C1c–C6c named**.
-> 2. **The master's folds §7-ai → §7-au** (`MISSION-BRIEF-MASTER-20261119.md`, read in full, append-only): §7-ai (the enriched round +19: G14 read-path-restore gate HOLD, P1-seam ×4, armor's G3-closure, carriers' ledger) · §7-aj (MISSION-2's first field case) · §7-ak (MISSION-3's falsifier/gap audit) · §7-al (settlement re-fire #4: reasoning-exhaustion void, UNKNOWN holds) · §7-am (MISSION-4's sizing/silent-compression arc) · §7-an (MISSION-5's Mandate consideration: 4 defects named, the approval-wire's fabricated-gate inversion caught) · §7-ao (settlement re-fire #5: 1/14 content, 13 nulls + 1 incorrect truncated-prefix + 6 fair-share 429s; the certification stays OPEN/UNKNOWN) · §7-ap (the main loop's round +10: the readiness PARTIALLY-COVERED with six continuations) · §7-aq (the continuation round +12, the Kaizen's perpetuity proven) · §7-ar (the round four +15) · §7-at (**kvnloo's response; the read-gap field-confirmed; the landing-material; the TWO-ADD-OVERWRITE's new class FB-2; the recipe**) · §7-au (the round five +7; C6b = 0 recorded; the next spin C1c–C6c named).
-> 3. **The targets' sources** (read in full): the canary-spec's §0/§3/§6/§9 (`canary-phase1-spec-20261122.md` — the §0 count-check at :18, the §3 heading at :91, the §3 body at :117, the §6 header at :159, the §6 count at :161, the fail-safe grid at :119/:169, the F6/G12 at :173, the settle-conditions crosswalk at :212, the G4 rule-with-no-rows row at §3); the read-path regression artifact (`READ-PATH-TESTS-20261119.md`); the weights pre-reg (`WEIGHTS-RUNG-PRE-REG-20261121.md` — §6 self-measure 7 FIRED + 1 HELD-OPEN, §11) + the settlement re-fire (`WEIGHTS-RUNG-BATTERY-REFIRE-20261122.md`, fire #5 `b00e4a45e4`, seq 11 B1 ep0, reasoning 22/24 < 24 budget, visible 4-byte "fact", correct=false, stale_confident=1); the falsifier audit (`FALSIFIER-AUDIT-20261122.md` — FB-1 the batch read-back, FB-2 the two-add probe) + its gate (`HY-GATE-MISSION3-20261122.md`); the headroom-sweep script (`substrate/monitors/headroom-sweep.sh`, `rm -rf "$d"` on line 19, 48h age gate, 6G threshold, `/root/.lmstudio` exclusion) + the cron register (`/root/.hermes/cron/jobs.json`, entry `868b63dd850f`, 360m, model upstage/solar-mini4:free) + the recurring sweep (`NEGENTROPY-SWEEP-20261122-2250.md`, orphan sentinel, "Still unmonitored", NEEDS-THE-CHAIR); the lane-C verification-readiness (`lane-c-verification-readiness-20261121.md`, G2/G3/G4 OPEN, C1–C9 done-whens, the pin-registry schema, one-run-per-pin) + the AoA; the enriched round (`PILOT-READINESS-IMPROVER-ENRICHED-20261122.md`, +19); and the kvnloo-receipt §7-at's recipe (the fetch + cherry-pick of `memory-chain-doc-read-combined` @ `a9c65dc4`, authors kept) + FB-2's design (the two-add probe: a second chain-doc `add` overwrites the first because `_add_doc` writes content as the whole file; the 297-battery does NOT cover it).
-> 4. **The anchors** (one pass): `/root/.hermes/memories/MEMORY.md` (the register: the board mirror flags STALE — truth = the card's runs; the dispatcher counts lie; the workers' worktree can be an unrelated repo (phantom class); the fleet = 4 runners; the beam = KENARI free reserve; the study repo's branch is shared with a sibling's archiver; the GATE LAW final form) + `/root/.hermes/memories/USER.md` (the actionability bar; never guess — verify from actual output; the trust circle; the approved public moves fire on the CTO's word). Internal doors act, never wait.
->
-> ---
->
-> ## 1 · THE ROUND'S MISSION — the six checkpoints C1c–C6c
->
-> The six checkpoints C1c–C6c of the round-five record are the targets. Each is adjudicated **target → change → raw delta** at the bytes; every improvement names its live target; the **not-for-its-sake gate is held** (a row lands only if it moves a measured property); a checkpoint whose state is unchanged and whose row already stands is recorded as a **zero-delta candidate**, never closed by decree and never re-landed for movement's sake.
->
-> ### C1c — the count-consistency repair's landing-state (the stale-sites + the phantom G15's correction)
->
-> - **Target:** the count-consistency repair's landing-state — the spec's corrected §0 count-check ("Measured gates = 14 (G1–G14)"; "Fixtures = 6 (F1–F6)"; the fail-safe grid's "G13–G15"/15-gate-identities over-reach corrected to G13–G14, the G15 phantom removed).
-> - **Measured state at HEAD (re-derived):** the spec's §0 count-check is still stale (`canary-phase1-spec-20261122.md:18` "Measured gates = 9 (§3)"; ":91" §3's heading "9 — per-key table, re-derived from the ledger"); the spec's own §3 (:117 "Count = 14 measured gates (G1–G14)") and §6 (:161 "Count = 5") carry the true counts; the fail-safe grid names "G13–G15" and "15 gate identities" (:119/:169) against the 14-gate count; the 4 stale sites: §0:18, §3:91 (NEWLY DERIVED this round, not cited by rounds 3/4), §6:159/:161, and the fail-safe grid :119/:169. The spec's bytes are untouched — the repair is a plan-owner append-only action (the plan guard forbids a spec rewrite; the correction is named, not applied).
-> - **Change (measured):** **+1 design-row** — the landing-state row: the corrected §0 count-check as the repair's landing-form ("Measured gates = 14 (G1–G14)"; "Fixtures = 6 (F1–F6)"; the fail-safe grid's range corrected "G13–G15" → "G13–G14", the "15 gate identities" phrase corrected to reflect G1–G14, G15 phantom removed). The repair's landing-state is now fully specified: the count-consistency audit's 4/4 stale-site enumeration (R1, round 4) + the phantom-range adjudication (R2, round 4, also carried here as the reason the landing-form removes G15) are consolidated into the landing-state row. Measured from the spec's bytes.
-> - **Raw delta:** **+1 design-row.** Not a zero-delta: the repair's landing-state row is new — the destination of the count-check correction is now fully written, beyond the C1b measurement (4/4 site-coverage + phantom-named).
->
-> ### C2c — the RED-before-GREEN pin's landing via the memory-chain-doc-read-combined recipe (the recipe's design-rows: the fetch + cherry-pick's landing requirement — the read-path suite's materialization at HEAD)
->
-> - **Target:** the read-path suite's materialization at HEAD via the kvnloo-receipt's recipe (`memory-chain-doc-read-combined` @ `a9c65dc4`).
-> - **Measured state at HEAD (re-derived):** `git merge-base --is-ancestor af16e3ab16 HEAD` → **NO** (the pin is not an ancestor); `git ls-tree HEAD -- tests/tools/test_memory_read.py` → **ABSENT** (the bench door's suite is not materialized at HEAD); the study's own packet is present (`tests/test_memory_read.py`, blob `debdd068`, added at `c57a316fe6` — the study's design/lift-ready packet, not the bench's materialization). The recipe (§7-at): branch `memory-chain-doc-read-combined` @ `a9c65dc4` (authors kept) — the fetch + cherry-pick command recorded; the platform-side's combined fix proven green (MAIN + #116673 + #141876 `ec649ad9`: 443 pass + the dispatch contract 64/64; #141876's read() with @jfugalde's hardening already contains the fix — removing the lock or the no-cache-write alone stays green; both → red).
-> - **Change (measured):** **+1 design-row** — the recipe's landing steps as design rows: the fetch of `memory-chain-doc-read-combined` @ `a9c65dc4` + the cherry-pick onto the study HEAD (authors kept) + the post-landing verification commands (`git ls-tree HEAD -- tests/tools/test_memory_read.py` → expected to resolve; `git merge-base --is-ancestor af16e3ab16 HEAD` → expected TRUE) + the materialization requirement (the bench's suite materializes at HEAD from the study packet, the RED-before-GREEN pin lands, the read-path regression suite goes GREEN at HEAD, the G14 HOLD closes). The recipe's fetch + cherry-pick + the file-state expectation are written out as design rows — beyond the C2b R6 naming of the recipe (which named the branch + the proven-green material but did not write the landing steps).
-> - **Raw delta:** **+1 design-row.** Not a zero-delta: the recipe's landing steps are new design rows.
->
-> ### C3c — the settlement's next content-fire with the metric repair (the truncation-metric's carrier + the fire-condition's readiness)
->
-> - **Target:** the settlement's next content-fire at a content-bearing window, with the metric-calibration repair.
-> - **Measured state at HEAD (re-derived):** the next fire has **NOT been executed** — it is an execution closure whose content question "rides the execution (the canary's run + the arms), not more lab passes" (§7-ac). The metric carrier (R3, round 4) stands: the recurring sweep's metric-calibration gap — a wrong 4-byte truncation scores `f1=f2=f3b=1` (full partial-credit) → `stale_confident=1`, the metric rewards a wrong answer. The fire-condition closure stands (round 4, C3b R4): fire #5 (2026-11-22 20:00Z, `b00e4a45e4`) SATISFIES the condition — seq 11, B1 ep0, `reasoning_tokens` 22/24 < the 24 budget, a visible 4-byte `\"fact\"` (sha256 `1e7dc6d6`, byte-verified); the window's census 14/20 HTTP 200 + 6/20 fair-share 429; **13/14 null-200 reasoning-exhaustion**; the one visible cell is **INCORRECT** (a truncated prefix of the gold `fact-5feceb66ffc8`; `correct=false`, `stale_confident=1`); verdict **UNKNOWN** per the dry-run ruler, bars immutable (B0=B1=C=0.0, nothing smoothed). The pre-reg's §11 mark 8 = UNKNOWN (the HELD-OPEN's blocking condition — "pre-reg's `WEIGHTS-RUNG-BATTERY-20261122.md` not landed" — was re-measured FALSE in round 4).
-> - **Change (measured):** **+0 — zero-delta candidate #2.** Recorded honestly: no new measured row against this live target at HEAD; the landing-state awaits the next fire's run. The truncation-metric's carrier and the fire-condition's readiness are measured and named; the certification stays OPEN with the carrier, never forced to a bar clearance. This round is not that spin — the fire-condition's readiness is CLOSED as a measured condition (a visible-content fire reached within the 24-token budget, the visible-content cell unreliable) and the metric carrier is carried; the next fire's pre-reg question rides as a named continuation (the logger's content-receipt shape + the harness-vs-seat hint).
-> - **Raw delta:** **0 — zero-delta candidate #2.** (Recorded honestly, not closed by decree.)
->
-> ### C4c — verify_post_write into the batch branch + FB-2 (the wiring's design-rows + the two-add-probe's falsifier-design's state)
->
-> - **Target:** the wiring's design-rows (verify_post_write into the batch branch at the single production site) + the FB-2 two-add-probe's falsifier-design's state.
-> - **Measured state at HEAD (re-derived):** `git grep -n verify_post_write HEAD -- '*.py'` → **0 hits**; `tools/write_gate.py` ABSENT at HEAD; the battery branch carries the definition (`tools/write_gate.py:557`) + tests but **0 production call sites in tools/**; the **single production site** is `pr-139606:tools/memory_tool.py:366-367` (the single-op path); the batch branch returns `apply_batch` directly — `HEAD:tools/memory_tool.py:270`, `battery-ext:tools/memory_tool.py:337` — with no read-back; the armor battery's next test is FB-1 + FB-2 (the two-add probe: two `add` ops on one chain-doc, assert the second does not erase the first / a disk-attestation — designed, not executed); the 297-battery does not cover the two-add class.
-> - **Change (measured):** **+0 — zero-delta candidate #3.** Recorded honestly: the wiring into the batch branch and the FB-2 two-add probe are a battery-lane code action (the harness lives on the battery branch — no installs; outside this loop's write surface). At HEAD the state is unchanged from the round-five record: verify_post_write still 0 production call sites, the batch branch still unwired, FB-2's falsifier-design stands designed (not executed). The design-rows stand; the landing-state (the batch branch wired with the read-back attestation, FB-2's two-add probe as the battery's next test) is named and receipted but un-realized at HEAD. This round adds no measured row; the battery-lane's execution rides the next spin.
-> - **Raw delta:** **0 — zero-delta candidate #3.** (Recorded honestly, not closed by decree.)
->
-> ### C5c — the headroom alarm's integration (the operator's word — the integration-rows' state)
->
-> - **Target:** the headroom alarm's integration-state — the watch design-row + the integration-rows' state with the operator's word.
-> - **Measured state at HEAD (re-derived):** the watch = the violation-alarm, never a gate (round 4, C5b): on observation of a destructive pre-run pattern the watch raises a NEW alarm row + fail-closed block (it ACTS); it does not wait on the word; the word-gate stays exactly where the GATE LAW's final form puts it — public writes outside PR #1 + a deep deletion/money move *the rig itself* would perform; this watch performs no deletion. The integration evidence = the two-source receipt (round 5, C5b R5: the main loop's design-row + the recurring sweep's independent "Still unmonitored / NEEDS-THE-CHAIR" disposition — the recurring sweep `NEGENTROPY-SWEEP-20261122-2250.md` §2/§3, blob `de2f54fb`, measures the headroom-sweep as an "orphan sentinel … Still unmonitored", disposed NEEDS-THE-CHAIR). The instruments the integration requires: the policy-sha256 checkpoint and the violation-alarm carrier are measured **both absent** (no `sha256` in `/root/.hermes/scripts/`; the manifests' tree bearer is absent). The unattended-surface question — whether a 360m pre-run-gate destructive script counts as an unattended surface — is dispositioned by the operator's word = **NEEDS-THE-CHAIR** (master fold §7-au; the chair decides, internal doors act, never wait).
-> - **Change (measured):** **+1 design-row** — the integration-rows' state with the operator's disposition: the watch design-row (violation-alarm, never a gate) + the two-source evidence (main loop design-row + the recurring sweep's independent "Still unmonitored / NEEDS-THE-CHAIR") + the policy-sha256 checkpoint measured absent + the violation-alarm carrier measured absent + the unattended-surface question dispositioned NEEDS-THE-CHAIR by the operator's word (the master fold §7-au landed at HEAD). The integration-rows' state is now named with the chair's disposition, not left as an open carried question. The word-gate stays exactly where the GATE LAW's final form puts it — the operator's word gates a deep deletion the rig itself would perform; this watch performs none.
-> - **Raw delta:** **+1 design-row.** Not a zero-delta: the operator's word is a new, named, receipted input (the master fold §7-au landed at HEAD) that dispositiones the integration-rows' state; the measured property (the alarm-integration's evidence completeness) moves single-source → two-source-with-the-chair's-disposition, both instruments measured absent.
->
-> ### C6c — the pin-registry file + verify_pin.py's landing (the rule-with-no-rows' closure — the previous zero-delta candidate's next state)
->
-> - **Target:** the pin-registry file + `verify_pin.py`'s landing at the bench path — the G4 (one-run-per-pin stewardship) closure: rule-with-no-rows → rule-with-one-measured-row.
-> - **Measured state at HEAD (re-derived):** the pin-registry file is ABSENT (the whole-tree search for `verify_pin`/`pin_registry`/`pins.json` → 0 hits) and `verify_pin.py` is ABSENT; the G4 (one-run-per-pin stewardship) + G2 (verification independence) + G3 (external-readiness C1–C9) remain OPEN by construction (lane-C §6: G1 PASS; G2/G3/G4 OPEN); the pin-registry schema lives as a design (pin_id, owner, base/heap, budget, receipt_sha, expires_at + the seed values: rung-1 canary pin `fc8b9934…`/`5747a90e…`, owner = the rotation receipt's R-C executor, receipt_sha = BOTH keys `25606ba9…` + `f1ed5b0d…`, `expires_at` = the rung-2 window) + the `verify_pin.py` re-derivation gate (E2); the spec's §9 settle-conditions crosswalk names "pin registry seeded (A5) + one-run-per-pin; second run gated on outsider re-derivation" (AOA:145,119) but the registry file is not landed; the ladder's SPEC-INHERITANCE (§7-t) carries the pin-registry row as a plan-side design.
-> - **Change (measured):** **+0 — zero-delta candidate #4 (the previous zero-delta candidate's next state).** Recorded honestly: this is the first zero-delta candidate in THIS round's adjudication — wait, that is not the right way to read the round. The round's termination check is two consecutive rounds with zero **total** delta: round five was +7, so this round is not a candidate for PARK; C6c is a zero-delta target measured at HEAD (the pin-registry file + verify_pin.py do not exist at HEAD; the landing-form is a kit-file landing gated by the plan guard as design-only). The state is unchanged from the round-four record (the C6b closure +0 recorded the same state); the landing of the pin-registry file + verify_pin.py is the kit file's execution (the bench path's action), not a lab pass — its closure rides the execution, not more lab passes.
-> - **Raw delta:** **0 — zero-delta candidate #4.** (Recorded honestly, never forced closed; the PARK-candidate class is named, recorded, not dismissed.)
->
-> ---
->
-> ## 2 · THE DELTA TALLY + THE CONVERGENCE STATE
->
-> | Checkpoint | Target | Change landed | Raw delta |
-> |---|---|---|---|
-> | **C1c** | the count-consistency repair's landing-state (the stale-sites + the phantom G15's correction) | the landing-state row: corrected §0 count-check + the fail-safe grid's G15 removal | **+1** |
-> | **C2c** | the RED-before-GREEN pin's landing via the memory-chain-doc-read-combined recipe | the recipe's fetch + cherry-pick landing steps + the materialization-at-HEAD requirement | **+1** |
-> | **C3c** | the settlement's next content-fire with the metric repair | none measured at HEAD — the next fire is unexecuted; the carrier + the fire-condition closure stand | **0 (zero-delta candidate #2)** |
-> | **C4c** | verify_post_write into the batch branch + FB-2 | none measured at HEAD — the wiring is a battery-lane code action; FB-2 stands designed | **0 (zero-delta candidate #3)** |
-> | **C5c** | the headroom alarm's integration (the operator's word) | the integration-rows' state with the operator's disposition (the watch design-row + two-source evidence + both instruments measured absent + the unattended-surface question NEEDS-THE-CHAIR) | **+1** |
-> | **C6c** | the pin-registry file + verify_pin.py's landing (the rule-with-no-rows' closure) | none measured at HEAD — the pin-registry file + verify_pin.py do not exist; the landing-form is kit-side | **0 (zero-delta candidate #4)** |
-> | **TOTAL (6 checkpoints)** | | **+3 measured rows** (C1c +1, C2c +1, C5c +1) | **+3** |
->
-> - **Not-for-its-sake gate: HELD.** Every one of the +3 rows names its measured property (the count-consistency repair's landing-form; the recipe's fetch + cherry-pick + materialization steps; the headroom alarm's integration with the chair's disposition). The three zero-delta candidates (C3c the settlement's next fire, C4c the wiring + FB-2, C6c the pin-registry file + verify_pin.py) are recorded honestly — an adjudication without a measured change = a zero-delta candidate, **never a forced close**, never re-landed as a restatement. The zero-delta candidates are the exhaustion-apex's first whisper carried forward: the settlement's next fire, the read-back's real wiring, and the pin-registry file are **execution/kit closures**, not more lab passes.
->
-> **The loop's delta series:** +10 (`bd8c59df95`) · +12 (`1135dbfa55`) · +15 (`41016459d9`) · +15 (`9d863939f0`) · +7 (`6662169297`) · **+3 (this round)** = **cumulative +61**.
->
-> **Convergence evidence (the two-zero-delta test):** the loop's termination rule: **two consecutive rounds with zero measurable total delta → PARK with the record**.
->
-> | Round | Measured total delta | Zero-delta? |
-> |---|---|---|
-> | Enriched round (`69f165f79f`, §7-ai) | +19 | NO |
-> | Round 1 (`bd8c59df95`) | +10 | NO |
-> | Round 2 (`1135dbfa55`) | +12 | NO |
-> | Round 3 (`41016459d9`) | +15 | NO |
-> | Round 4 (`9d863939f0`) | +15 | NO |
-> | Round 5 (`6662169297`) | +7 (R1–R7) | NO |
-> | **Round 6 (this round)** | **+3** (C1c, C2c, C5c) | **NO** |
->
-> **Consecutive zero-delta rounds = 0. → PARK is NOT triggered this round.** The round is not a restatement spin: three genuinely new measured design-rows exist against live targets (the landing-state row, the recipe's fetch + cherry-pick steps, the headroom alarm's integration with the chair's disposition). The three zero-delta candidates are named and carried — the settlement's next content-fire at a content-bearing window with the metric calibration repair, the read-back's real wiring into the batch branch with FB-2's two-add probe, and the pin-registry file + verify_pin.py's landing — each with its receipt.
->
-> **Honest read of the convergence:** the loop's measured progress at the design/row layer continues (+10/+12/+15/+15/+7/+3 — deceleration is expected as the remaining targets become execution/kit closures); the read-back's real wiring, the settlement's next fire, and the pin-registry file are the exhaustion-apex's remaining climbs, recorded as zero-delta candidates and never forced. The termination condition is unmet and is recorded, not forced.
->
-> ---
->
-> ## 3 · THE READINESS'S NEW-STATE LINE
->
-> **Verdict: PARTIALLY-COVERED.**
->
-> The six checkpoints C1c–C6c are adjudicated (3 measured rows + 3 zero-delta candidates recorded honestly). The readiness now carries the full landing-state of the C1c–C6c ladder as measured rows and design-rows:
->
-> - **C1c** — the count-consistency repair's landing-state: the spec's §0 corrected to 14 gates (G1–G14) + 6 fixtures (F1–F6), the fail-safe grid's G15 phantom removed, the four stale sites enumerated 4/4 (the §3 heading at :91 newly derived) — the repair is a plan-owner append-only action, named not applied.
-> - **C2c** — the RED-before-GREEN pin's landing via the recipe: the fetch + cherry-pick of `memory-chain-doc-read-combined` @ `a9c65dc4` (authors kept) are written as landing steps; the materialization at HEAD + the pin's ancestry are the post-landing checks; the platform-side's combined fix is proven green (443 pass + 64/64 dispatch) — the C2b landing material is the landing-state's receipt.
-> - **C3c** — the settlement's next content-fire with the metric repair: the truncation-metric's carrier is carried (the metric rewards a wrong answer), the fire-condition's readiness is CLOSED as measured (a visible-content fire reached within the 24-token budget, the visible-content cell unreliable), the certification stays OPEN/UNKNOWN with the evidence-classes map — the next fire's pre-reg question (the logger's content-receipt shape + the harness-vs-seat hint) rides as a named continuation.
-> - **C4c** — verify_post_write into the batch branch + FB-2: the wiring's design-rows + the two-add-probe's falsifier-design's state are named and receipted (the batch branch unwired at HEAD, FB-2 designed not executed) — the landing rides the battery lane's execution, not this loop's write surface.
-> - **C5c** — the headroom alarm's integration: the watch design-row (violation-alarm, never a gate) + the two-source evidence (main loop design-row + the recurring sweep's independent "Still unmonitored / NEEDS-THE-CHAIR") + the operator's disposition of the unattended-surface question = NEEDS-THE-CHAIR — the integration-rows' state is named with the chair's word.
-> - **C6c** — the pin-registry file + verify_pin.py's landing: the rule-with-no-rows' next state is recorded honestly — the pin-registry file and `verify_pin.py` do not exist at HEAD; the landing-form (schema + seed values + the re-derivation gate) stands as design; the closure rides the kit file's execution, not more lab passes.
->
-> **Named continuations (each with a receipt, none guessed):**
->
-> 1. **C1c-landing** — the count-check correction lands (the spec owner's append-only action: the four stale sites corrected) → the count-check CLOSED.
-> 2. **C2c-landing** — the recipe's cherry-pick of `memory-chain-doc-read-combined` @ `a9c65dc4` onto the study HEAD + the bench suite materialization → the read-path suite materializes at HEAD / the G14 HOLD closes.
-> 3. **C3c-landing** — the settlement's next content-fire at a content-bearing window with the metric calibration repair → the certification's verdict.
-> 4. **C4c-landing** — verify_post_write wired into the batch branch at the single production site + FB-2's two-add probe executed in the battery → FB-1's falsifier executes; FB-2 rides the battery's next test.
-> 5. **C5c-landing** — the headroom watch's integration completes (the policy-sha256 checkpoint + the violation-alarm carrier built) — the operator's word (NEEDS-THE-CHAIR) holds the chair's call.
-> 6. **C6c-landing** — the pin-registry file + verify_pin.py land (the kit-file landing) → G4 moves rule-with-no-rows → rule-with-one-measured-row; the G2/G3/G4 closure completes.
->
-> **PARK state:** not reached (0 consecutive zero-delta rounds). The loop continues; its next spin is the first zero-delta candidate's landing spin (this round is +3, not zero).
->
-> ---
->
-> ## 4 · THE FRAME LINE + PLAN GUARD + SEAL
->
-> - **0 public writes** — this round writes ONE `studies/rfc-143379-rig/` path only (this deliverable); no push; unrelated working-tree changes left untouched.
-> - **RFC #143379 + #5320 + #157065 QUIET** — internal only; no pilot contact.
-> - **NO installs** of any kind. **Writes ONLY** under `studies/rfc-143379-rig/`. All local artifact paths read via read_file/terminal — never web_extract. **NEVER push; never checkout/stash/rm.**
-> - **PLAN GUARD held:** the plan, the sealed artifacts, the crons, and the anchors are unaltered. The C1c–C6c landings land ONLY as this record's measured rows / design-rows. The spec's bytes, the pre-reg §11, and the refire record's H1 are untouched.
-> - **GATE LAW (final form, `MEMORY.md:19`):** the word gates ONLY public writes outside PR #1 + deep deletions/money; any other hold = a FABRICATED gate (defect); alarms ACT, never wait. Every door here was internal and acted.
-> - **Wall clause:** a non-reproduction is a QUESTION with receipts — the three zero-delta candidates (C3c the settlement's next fire, C4c the read-back's real wiring + FB-2, C6c the pin-registry file + verify_pin.py) are recorded honestly as execution/kit closures awaiting their runs, never forced closed; the landing-state rows (C1c, C2c, C5c) are the measured rows this round moved.
->
-> **Seal:** 6 checkpoints adjudicated (C1c–C6c), **+3 measured rows** landed (C1c the count-consistency repair's landing-state, C2c the recipe's fetch + cherry-pick landing steps, C5c the headroom alarm's integration with the operator's disposition), **3 zero-delta candidates recorded honestly** (C3c the settlement's next content-fire with the metric repair, C4c the read-back's real wiring + FB-2, C6c the pin-registry file + verify_pin.py), convergence = **0 consecutive zero-delta rounds → PARK not triggered**, the readiness = **PARTIALLY-COVERED** with the six named continuations. Cumulative series +10/+12/+15/+15/+7/+3 = **cumulative +61**. Deliverable: this file, committed as kanban-pilot (this file only; study paths; never pushed).
->
-> *Facimus semper — the loop reads the record, the record answers to the bytes, the bytes hold. A non-reproduction is a QUESTION with receipts. — kanban-pilot*
+*The queue's eats adjudicated as measured improvements + the PARK-round's convergence assessment.*
+
+**Seat:** `tencent/hy4-flash:free` — PIN-READ-BACK VERIFIED at the fire (the flagship's judgment for the scarce rung — the main loop's focus). **Contract:** `plan/tank/briefs/BRIEF-MAIN-LOOP-ROUND-20261122.md` (read in full — the contract; no improvisation beyond it). **Branch:** `study/rfc-143379-rig-20261105`, head at round start `3623db786d`.
+
+**The operator's word (the brief):** *"That only closed the special missions feeding the self-perpetual loop — now the MAIN LOOP is the focus."* The special missions (MISSION-2/3/4/5 + the settlement) were the FEEDERS; their verdicts are THIS loop's INPUT. This round is the loop itself: eats adjudicated as measured improvements against named targets, converging to PARK.
+
+**Armament (the line):** think-tank (the spine) + agent-work-review + investigation-documentation — loaded and used. Named and refused for this rung: two-model-reasoning, source-criticism, web-storm, frame-reconstruction, defect-forensics, blind-agent-panels, supervisor-delegation, external-readiness-review, storm/full-dive rigs, and any install-bearing surface — a bounded improver round over an arc already proven at the tree, not a new panel. An unarmed lane is a finding; an over-armed one is scope drift.
+
+**Anchor (one pass):** `/root/.hermes/memories/MEMORY.md` + `USER.md` read; the register + **GATE LAW's final form** (`MEMORY.md:19`): *the word gates ONLY public writes outside PR #1 + deep deletions/money; any other hold = a FABRICATED gate (defect); alarms ACT, never wait.* Applied: every door in this round is internal — it ACTS (deliverable first, commit second); no fabricated gate was waited on; no public write made.
+
+**Frame:** 0 public writes · RFC #143379 + #5320 + #157065 QUIET · NO installs of any kind · writes ONLY under `studies/rfc-143379-rig/` · all local paths via `read_file` · NEVER push · never checkout/stash/rm.
+
+**PLAN GUARD (held):** the plan, the sealed artifacts, the crons, and the anchors are NEVER altered by this round. Every eat lands ONLY as a readiness measured row / design-row in this record — no config, no anchor, no cron, no sealed artifact was written.
+
+---
+
+## 0. THE INPUT READ (in full, in order — all committed in the current tree)
+
+1. **The readiness's current state:** the enriched round's record `PILOT-READINESS-IMPROVER-ENRICHED-20261122.md` (`69f165f79f`, read in full) — the **+19 measured rows**: I-A **G14 the read-path-restore gate (HOLD)** — 13→14 gates, +1; I-B the shot census + four-subject concordance, +2; I-C U3/U4/U5 woven into the armor (G3-closure by U5, bank-before-forget guard, fold-input decision record), +8; I-D the carriers into the armor's open-seams ledger, +8. Verdict: **PARTIALLY-COVERED** (G2/G3/G4 carried, never smoothed). The loop's own word: *"the loop's NEXT spin is the PARK round."*
+2. **The master's folds §7-ai → §7-ao** (`MISSION-BRIEF-MASTER-20261119.md`, read in full): the enriched round (§7-ai) · MISSION-2 (§7-aj) · MISSION-3 (§7-ak) · MISSION-5's settlement-related ARC (§7-al/§7-an) · MISSION-4 (§7-am) · §7-ao the settlement re-fire #5's close.
+3. **The queue's eats' sources (read in full):** MISSION-2's sanity `CASE-STUDY-1-SANITY-20261122.md` + its gate `HY-GATE-MISSION2-20261122.md` · MISSION-3's `FALSIFIER-AUDIT-20261122.md` + its gate `HY-GATE-MISSION3-20261122.md` · MISSION-4's `MISSION-4-EXECUTION-20261122.md` + its gate `HY-GATE-MISSION4-20261122.md` · MISSION-5's `MISSION-5-CONSIDERATION-20261122.md` + `MISSION-5-SANITY-20261122.md` + its gate `HY-GATE-MISSION5-20261122.md` · the settlement's fold §7-ao carriers.
+
+**The four feeds sealed APPROVE at their gates** (12/12, 13/13, 11/11, 7/7 crosswalks, 0 dropped, 0 blurred) — each routed its design/carrier forward to *this* main loop, never relooped. This round consumes them.
+
+---
+
+## 1. THE EATS' ADJUDICATION — target → change → raw delta
+
+Six eats (G16 · FB-1 · G19/G20 paired · Mandate · headroom-sweep · settlement). Each names its target; each is applied as a MEASURED improvement; the **not-for-its-sake gate held** (no idle additions — every delta below is a real row/change with a receipt, not movement for its own sake). No gate or design was inflated into a closure; no open seam was smoothed into a PASS.
+
+### E1 — G16, the consolidation-ledger ask (from MISSION-2's sanity)
+- **Target:** the case-study's measurement-map in the readiness's G14–G18 gate set (the field case's first measurement).
+- **Source receipt:** `CASE-STUDY-1-SANITY` §1/G16 + §3: the walk "3,844 → 2,930, entry-by-entry (stays / moves)" is receipted in the raw row, **but the ledger rows are not** — *"THE LEDGER IS THE FIRST MEASUREMENT THE CASE MUST PRODUCE."* Classified PASS-WITH-QUESTION (a wall-clause question with receipts, 0 FAIL, 0 DEFECT); the MISSION-2 gate APPROVE routes it as a next-pass ask, not a fold-gap.
+- **Change (the measured improvement):** designed into the case-study's measurement-map the **entry-by-entry stays/moves ledger form** of the 3,844 → 2,930 walk, extended to the 3,376 now — the exact form the pilot will produce, with the absence-of-rows carried as an open measurement, never fabricated into present evidence.
+- **Raw delta:** **+1 design-row** (case-study measurement-map: G16 ledger form).
+
+### E2 — FB-1, the lost-write falsifier (from MISSION-3) — the STRONGEST EAT
+- **Target:** the armor's falsifier-battery (its next test-DESIGN).
+- **Source receipt:** `FALSIFIER-AUDIT` §1/G1 + §2/strongest catch + §3/FB-1: the headline *"the bypass class does not reproduce here"* **does not reproduce** — a 1-item `operations=[patch]` lost-write false-success reproduces at the battery branch AND the study HEAD (`success: true`, disk unchanged); `verify_post_write` is defined but called from **ZERO production sites**; the battery's own `nugget1` falsifier tests the orthogonal empty-ops guard, so it never exercises the gap. The MISSION-3 gate put FB-1 **FIRST** in the fix-brief priority order.
+- **Change (the measured improvement):** designed the battery's next test — **inject a silent `_write_file` loss; assert `operations=[{patch}]` returns a non-success or a disk-attestation** (the exact probe promoted to a test); guard's shape: after `apply_batch` re-read the target from disk and assert each op's effect, **or wire `verify_post_write` into the batch branch** mirroring `pr-139606:memory_tool.py:366-367` — the **read-back's real wiring's requirement**; landing-site `tools/memory_tool.py` batch branch (`:337` battery / `:270` study HEAD) or `MemoryStore._batch`. Design only — no patch applied.
+- **Raw delta:** **+1 design-row** (armor battery: FB-1 test-shape + real-wiring requirement).
+- *Why strongest:* it converts the study's own most uncomfortable tree-refutation into a permanent receipt-producing instrument — the falsifier applied to the study itself, with the injection and the wiring requirement both named.
+
+### E3 — G19 the surface-pressure gate + G20 the compact-notation guidance (from MISSION-4, paired eat)
+- **Target:** the readiness's gate table (G19/G20 rows with their contracts).
+- **Source receipt:** `MISSION-4-EXECUTION` §2/Q3/Q4 + §4 + `HY-GATE-MISSION4` §3: the measurement ran on US — 163 calls / 23 sessions / 106 successes / 29 cap-rejections (27.4%); **102/106 = 96.2% of our writes cross the 90% line**; current anchor 2,112/2,200 = 96.0%, USER.md 1,346/1,375 = 97.9%; density 211.2 chars/entry (2,112/10); axes orthogonal; both designs single-row; G19/G20 were free (the armor carried G1–G14, MISSION-2's G15–G18 queued).
+- **Adjudication (the designs ACCEPTED, measured, not blindly copied):**
+  - **G19's threshold FIT:** 90% of 2,200 = **1,980/2,200** (leave 220 chars headroom; USER 90% = 1,237/1,375). It sits *below* our steady state, so it arms on ~96.2% of successful writes — a near-constant high-water marker, not a rare alarm; that is the correct shape for a **pre-cap** warning whose job is to fire before the rejection (a rarer 95% → 86.8%, 97% → 84.9% would miss the steady state). **FIT CONFIRMED.** Contract: the row carries current usage %, chars free, and drop candidates (oldest/least-recent); **user-choose-not-model-shorten** — the model presents 2–3 one-line candidates, the user chooses, the default path is no model shortening at all; kills the no-record-no-prompt class at its source.
+  - **G20's guidance LOSSLESSNESS:** per #157065, **BMP→PNG, not JPG** — compact machine-readable notation (`key=value`, semicolon-separated, no subjects/connectors/parentheticals), nothing lost semantically, ~1/3 the characters; baseline the anchor's measured 211.2 chars/entry (USER 103.5). Scope: guidance text at `agent/prompt_builder.py` ~L227 only — no config, schema, anchor, or GATE LAW change. **LOSSLESSNESS CONFIRMED** (densify orthogonal to raise/scale; G19 the third axis).
+- **Change (the measured improvement):** landed as **the readiness's gate-rows G19 and G20 with their full contracts** (threshold + warning shape + user-choice contract; BMP→PNG guidance + baseline), as DESIGNS — plan-guard held, nothing written to the armor's live table or config.
+- **Raw delta:** **+2 gate-rows** (G19 surface-pressure gate · G20 compact-notation guidance).
+
+### E4 — the Mandate's re-wired rulebook (from MISSION-5)
+- **Target:** the readiness's design-rows for the unattended jobs' rulebook (per-job manifests + the approval-wire).
+- **Source receipt:** `MISSION-5-CONSIDERATION` §2/§4/§5 + `MISSION-5-SANITY` §1–§3 + `HY-GATE-MISSION5` (APPROVE, 7/7): 21 jobs / 10 no-agent script-crons exact; 8/10 surface rows exact, row-6 (write paths) and row-9 (network) falsified; the **CROWN** — lines 83/166 gate "the PR #1 comment thread," the exact surface the GATE LAW's final form EXEMPTS (the fabricated-gate class, caught on the consideration's own deliverable). The sanity's corrections held 4/4 at the tree.
+- **Change (the measured improvement):** designed in the readiness's rulebook rows — (a) the **10+1 corrected inventory's per-job manifests**: 10 no-agent crons with row-6's write-surface widened to the three `/tmp` removals and row-9's network widened to `inference-api.nousresearch.com` (+ local scribe + `bash -lc`), plus the headroom-sweep as the opened 11th; (b) the **approval-wire's PR-exemption named correctly** — the operator's word gates **public writes OUTSIDE PR #1** (the only public surface), PR #1 is the ungated homebase, every other hold self-fires by the rig's alarms; the violation-alarm fails closed; the policy-sha256 checkpoint is named as to-be-built (NOT the anchor-rot-watcher, which has no sha256). Manifests are data with no tree bearer — carried as designs, never presented as wired.
+- **Raw delta:** **+2 design-rows** (11-job manifest boundaries · approval-wire PR-exemption corrected).
+
+### E5 — the headroom-sweep's alarm-DESIGN (from MISSION-5's sanity)
+- **Target:** the readiness's alarm-design ledger (the deep-deletion-class's watch).
+- **Source receipt:** `MISSION-5-SANITY` §1 QUESTION + `MISSION-5-CONSIDERATION` draft #9 + `HY-GATE-MISSION5` carrier #3: `headroom-sweep.sh` is an 11th script-bearing job (`no_agent=null`, `model=upstage/solar-mini4:free`) whose destructive pre-run `rm -rf "$d"` (script `:19`) fires **every 360m** as a wake-gate (`cron/scheduler.py:2291-2295`) — the deep-deletion class's proximity. The gate carried it as an opened question, not a fold-gap.
+- **Change (the measured improvement):** designed the watch as a **violation-alarm, never a gate**: on observation of a destructive pre-run pattern the watch raises a NEW alarm row + fail-closed block (it ACTS), it does not wait on the word. The word-gate stays exactly where the GATE LAW's final form puts it — public writes outside PR #1 + a deep deletion/money move *the rig itself* would perform; this watch performs no deletion. The question of whether a pre-run-gate script counts as an unattended surface is carried with receipts, never guessed.
+- **Raw delta:** **+1 design-row** (headroom-sweep 360m destructive-rm violation-alarm/watch).
+
+### E6 — the settlement's evidence-classes (from the fold §7-ao)
+- **Target:** the certification's open-state rows (the weights-rung's readiness).
+- **Source receipt:** master fold §7-ao (settlement re-fire #5, `b00e4a45e4`): 14 valid HTTP-200 seat responses with real generation — **13 null-content reasoning exhaustions + ONE visible-content cell (incorrect — a truncated prefix of the gold fact) + 6 fair-share 429s**; raw B1 = B0 = C = 0.0, nothing smoothed; verdict **UNKNOWN** per the dry-run ruler, bars immutable; two-way door byte-verified TWICE (GGUF `afa0567d` unchanged, zero weight files). Five fires now: 4 transport/content-voids + the 5th's stochastic-content.
+- **Change (the measured improvement):** landed the seat's **evidence-classes as the certification's open-state rows** — (i) fair-share 429s (upstream capacity), (ii) reasoning-exhaustion nulls (content-void stochastic, not total), (iii) truncated-prefix 1/14 (the one visible cell, incorrect) — with the honest state *"the seat CAN emit content (1/14) but its visible-content cells are not reliable"* carried, never forced to a bar clearance or smoothed to a PASS. The content-question is ANSWERED; the certification stays OPEN with the map; the next fire's pre-reg question (logger's content-receipt + harness-vs-seat hint) rides as a named continuation.
+- **Raw delta:** **+3 open-state rows** (429s · nulls · truncated-prefix 1/14).
+
+### Tally
+
+| Eat | Target | Raw delta |
+|---|---|---|
+| E1 G16 ledger ask | case-study measurement-map | +1 |
+| E2 FB-1 lost-write falsifier | armor falsifier-battery | +1 |
+| E3 G19 + G20 | readiness gate table | +2 |
+| E4 Mandate rulebook | rulebook design-rows | +2 |
+| E5 headroom-sweep alarm | alarm-design ledger | +1 |
+| E6 settlement evidence-classes | certification open-state | +3 |
+| **TOTAL (6 eats)** | | **+10 measured rows** |
+
+**Not-for-its-sake gate: HELD.** Every one of the +10 rows is a named surface→change with a receipt; none was added to manufacture movement, none inflates a design into an implementation or an open seam into a closure. G14 remains HOLD, G2/G3/G4 remain carried, the weights-rung remains OPEN/UNKNOWN.
+
+---
+
+## 2. THE NEW GATES' ROWS (landed in the readiness — designs, plan-guard held)
+
+- **G19 — the surface-pressure gate** (new gate-row, contract): threshold 1,980/2,200 (USER 1,237/1,375); warning = current usage % + chars free + drop candidates (oldest/least-recent); contract = **user-choose-not-model-shorten**, model presents 2–3 one-line candidates, user chooses, default = no model shortening; fires before the hard cap; measured fit = arms on 102/106 (96.2%) of our writes, current anchor 96.0% above it. Kills the no-record-no-prompt class at its source. Orthogonal to raise/scale/densify (third axis). **Design row only — armor table untouched.**
+- **G20 — the compact-notation guidance** (new gate-row, contract): guidance text at `agent/prompt_builder.py` ~L227; default compact machine-readable notation, **BMP→PNG not JPG** (lossless, ~1/3 chars); baseline 211.2 chars/entry (USER 103.5) from `wc -m`; guidance-only — no config/schema/anchor/GATE-LAW change. **Design row only.**
+- **G16 (design-row):** entry-by-entry stays/moves ledger form (3,844→2,930, extended to 3,376) in the case-study measurement-map; ledger rows absent → first measurement the case must produce.
+- **FB-1 (design-row):** the lost-write injection + `verify_post_write`'s real batch wiring requirement, promoted from the reproduced probe.
+- **Mandate (2 design-rows):** 11-job manifest boundaries · approval-wire PR-exemption corrected (word gates public writes OUTSIDE PR #1; PR #1 ungated homebase; other holds self-fire).
+- **Headroom-sweep (design-row):** 360m destructive-rm watch = violation-alarm + fail-closed, never a word-gate; the unattended-surface question carried with receipts.
+- **Settlement (3 open-state rows):** fair-share 429s · reasoning-exhaustion nulls · truncated-prefix 1/14 — weights-rung certification OPEN/UNKNOWN, bars immutable.
+
+**Total new/changed rows this round: +10 (2 gates + 8 design/open-state rows).** The armor's live gate table, the config, the crons, and the anchors were NOT written (PLAN GUARD held).
+
+---
+
+## 3. THE PARK-ROUND'S CONVERGENCE EVIDENCE (the two-zero-delta test)
+
+The loop's termination rule: **two consecutive rounds with zero measurable total delta → PARK with the record.**
+
+| Round | Measured total delta | Zero-delta? |
+|---|---|---|
+| Enriched round (`69f165f79f`, §7-ai) | **+19 rows** (I-A +1 · I-B +2 · I-C +8 · I-D +8) | NO |
+| **This round (MAIN-LOOP-ROUND-20261122)** | **+10 rows** (E1 +1 · E2 +1 · E3 +2 · E4 +2 · E5 +1 · E6 +3) | NO |
+
+**Consecutive zero-delta rounds = 0. → PARK is NOT triggered this round.** Both the prior spin and this one produced measurable improvements to their named targets; the eats were not idle bookkeeping (they closed nothing by decree, but each added a real measured row). The termination condition is unmet and is recorded, not forced.
+
+**Convergence assessment (the honest read):** the loop is *still making measured progress at the design/row layer* — the six feeder verdicts had genuinely not been landed as readiness rows before this round, so landing them is a real +10, not a manufactured one. What has converged is the **substrate's certification evidence**, not the loop: five settlement fires have exhausted the seat's content question (the seat emits content stochastically, 1/14, unreliably) and the falsifier/battery surface has reached its measured limit at the dry-run class (§7-n/§7-p). Those are field/execution closures, not more lab passes — "their closure rides the execution (the canary's run + the arms), not more lab passes" (§7-ac). A further lab spin that only re-lands the same rows would be the first zero-delta round; a second would PARK. This round is not that spin.
+
+**Next-spin termination condition (named, not gated):** if the next spin lands no new measured row against a live target (zero delta), it is recorded as zero-delta #1; a second consecutive zero-delta spin → PARK with this record. The loop self-fires; it never waits on the word (GATE LAW final — internal doors act, never wait).
+
+---
+
+## 4. THE READINESS'S NEW-STATE LINE
+
+**Verdict: PARTIALLY-COVERED.**
+
+The eats landed all six feeder verdicts as measured gates/designs/open-state rows (+10), so readiness now *carries* every special-mission verdict — but carrying a design is not closing a field seam. G14 stays HOLD (the read-path-restore #141876 remains the kit's PRECONDITION, one layer upstream, not landed); G2/G3/G4 stay carried; the armor's G19/G20 are designs, not written gates; the falsifier battery's FB-1 is a test-DESIGN, not a run; the rulebook manifests are data with no tree bearer; the headroom-sweep's destructive-rm is a watch-design with an opened question; the weights-rung certification is OPEN/UNKNOWN. No seam was smoothed into COVERED; nothing was inflated into a DEFECT.
+
+**Named continuations (each with a receipt, none guessed):**
+1. **C1 — the canary's field-facing certification run** (the substrate's actual evidence, per the phase-1 spec + rung-1 receipt §7-ae/§7-af): execution, not a lab pass; the PARTIALLY-COVERED state's substantive close.
+2. **C2 — the read-path-restore #141876** (G14 HOLD): the kit's demonstrable precondition, one layer upstream — the call shape the plan's §VI.1 receipt verifies but the branch cannot emit; plus the agent-path doc-forwarding seam (§7-ag, O1/O2).
+3. **C3 — the weights-rung's settlement** (OPEN/UNKNOWN, §7-al/§7-ao): next fire's pre-reg question = the logger's content-receipt shape + the harness-vs-seat hint; bars immutable, never forced.
+4. **C4 — the falsifier-battery's fix-briefs** (FB-1…FB-8, designs only): FB-1 first (the read-back's real wiring); the divergent local battery copy's provenance rides as a named question (§7-ak).
+5. **C5 — the headroom-sweep's unattended-surface question** (with receipts): whether a 360m pre-run-gate destructive script counts as an unattended surface — the deep-deletion class's proximity, carried not guessed.
+6. **C6 — G2/G3/G4 carried seams** (the enriched round): dangling-pointer/bank/compressor classes, carried open from §7-ak/§7-ai.
+
+**PARK state:** not reached (0 consecutive zero-delta rounds). The loop continues; its next spin is the first zero-delta candidate.
+
+---
+
+## 5. FRAME LINE + PLAN GUARD + SEAL
+
+- **0 public writes** — this rung writes ONE `studies/rfc-143379-rig/` path only (this deliverable); no push; unrelated working-tree changes left untouched.
+- **RFC #143379 + #5320 + #157065 QUIET** — internal only; no pilot contact.
+- **NO installs** of any kind. **Writes ONLY** under `studies/rfc-143379-rig/`. All local artifact paths read via `read_file`/local terminal — never `web_extract`. **NEVER push; never checkout/stash/rm.**
+- **PLAN GUARD held:** the plan, the sealed artifacts, the crons, and the anchors are unaltered. The eats land ONLY as this record's measured rows / design-rows.
+- **GATE LAW (final form, `MEMORY.md:19`):** the word gates ONLY public writes outside PR #1 + deep deletions/money; any other hold = a FABRICATED gate (defect); alarms ACT, never wait. Every door here was internal and acted.
+
+**Seal:** 6 eats adjudicated (E1–E6), +10 measured rows landed (2 gate-rows + 8 design/open-state rows), convergence = 0 consecutive zero-delta rounds → PARK not triggered, readiness = PARTIALLY-COVERED with six named continuations. Deliverable: this file, committed as kanban-pilot (this file only; study paths; never pushed).
+
+*Facimus semper — the loop reads the record, the record answers to the bytes, the bytes hold. A non-reproduction is a QUESTION with receipts. — kanban-pilot*
