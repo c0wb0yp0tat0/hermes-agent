@@ -19,3 +19,11 @@ MISSION-2 sealed (bef53e1ebd, 12/12) · MISSION-3 sealed (d45cd7f715, 13/13 — 
 4. The feeder never idles — the next upstream comments become the next missions at the operator's tempo.
 
 Gradatim Ferociter. The pair holds; you hold the intent. Gangway.
+
+
+## The seam's refresh (23:4x — the current-state delta)
+- The N-ROUND LANDED (fef1c7e230 — the hy-relay after qwen's freeze): N1–N8 8/8 +3; the next spin N9–N16; the handoff-gate CLOSED/GATED (the source-close + the runner-fork plan-stage pending at the owner-beats).
+- The loop's series: +19/+10/+12/+15/+15/+7/+3/+4/+1/+5/+3 — the adjudication-exhaustion approaching; the execution-gaps' owner-beats next.
+- The recipe's verdict: RECIPE-CLEAN-AT-BASE (00fdffb216) — the range's 7/7 clean at its own base; the combined's home = Finn's #116673's lineage, at the operator's/Finn's seat. The PR #141876's pushed-truth 6609dac951 held; the read-restore sanity-verified.
+- The flagship-relay's the standing pattern (qwen → hy on the freeze — the loop's continuity proven).
+- The NEW-YOU LAUNCH's state-lines are updated in the 020's refresh above — read the 020's §NEW-YOU LAUNCH + the state-addendum together.
