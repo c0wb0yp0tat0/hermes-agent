@@ -56,6 +56,16 @@ The salvage of 137650 on main for 158289: a real compatibility question against 
 
 The study's true state goes to your lab first, against the RFC's bars, the two checked bars re-derived so the flip carries both signatures, the two open judged on the protocol, your harness as the instrument, the questions shaped by the results, exactly as the check-in promised. The improver series on our side kept compounding through the nights, plus 81, plus 87 with an F-18 defect repaired in that round, plus 90, plus 93 with the knee reached, and the settlement's fire-5 landed at a content-bearing window: the field's own evidence that the memory path works when the read is present.
 
+## Your latest: the field data and the /pin slice
+
+Your follow-up arrived while this reply was being written, so it is accounted for here. The field data is the strongest independent picture the gate's class has: owner messages surviving the summaries at about 95, 60, 40, and 20 to 50 percent across four compactions, the verbatim block on main covering only the region compacted this time, the opening ask gone from the verbatim block in 13 of 16 later summaries in one sample, and a standing privacy instruction restated as its opposite without leaking. That is the recency-eviction tail the long-session gate guards, measured on real sessions, and it matches the compounding shape our protocol expects.
+
+What held in your data is our thesis, stated plainly: a durable record outside the summary, with a pointer in it, that the agent re-reads. Your per-project ask list survived days and carried the flipped instruction; your goal file and append-only log survived every compaction; one search back into history was worth 20 to 33 points in the published scorecard. That is the network we have been building, independently confirmed before the close-out.
+
+The /pin slice fits as a first piece of governed compaction. User-scoped, off unless used, carried mechanically in a pinned block of every summary, never re-summarized, never evicted, capped with refusal like memory, stored as a pin entry in the decision ledger 113309 rather than a second store, tested at 4x with 100 percent survival and a removal control. That is the archive-before-stub and hard-window family in its simplest form, and we agree with the principle underneath it: add onto what exists, never open anything parallel. The ledger as its home and KoNit-K's add-on offer are both the right shape, and the related issues, 136535, 136541, 154023, and 154177, are receipted with the steer-gap and replay-frame findings.
+
+The timing is yours and it is received: no reply needed before the close-out. The close-out answers with the shaped questions, and /pin is on the table as the first piece of the governed-compaction leg.
+
 The read gap closes as a network, the pilot ships measured, and both owe their certifying runs to your lab.
 
 Thank you again, for the instruments and the patience. We'll write again at the close-out, with receipts.
