@@ -1,4 +1,4 @@
-# YOUR SEAT: lens) — read this brief's seat-assignment section and run only YOUR checks to YOUR artifact.
+# YOUR SEAT: STEPFUN (eye lens) — run ONLY the stepfun/eye checks in the SEAT ASSIGNMENTS section, writing to RW-P3-EYE-20261124.md.
 
 # FLEET-BRIEF — RW-P3: VERIFY LENSES ON THE COMPOSED REPLY
 

@@ -1,4 +1,4 @@
-# YOUR SEAT: lens) — read this brief's seat-assignment section and run only YOUR checks to YOUR artifact.
+# YOUR SEAT: SOLAR (sanity lens) — run ONLY the solar/sanity checks in the SEAT ASSIGNMENTS section, writing to RW-P3-SANITY-20261124.md.
 
 # FLEET-BRIEF — RW-P3: VERIFY LENSES ON THE COMPOSED REPLY
 
