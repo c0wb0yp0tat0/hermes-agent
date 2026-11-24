@@ -90,17 +90,20 @@ A chain-doc memory store holds named documents under a single chain file. In the
 | Class's home (`round2-gate`) | `268bb09147eaf948ece6a1beecd92a2268a5fc95` | 297/297 green, race red; the two-add class lives here |
 | Combined fix (GREEN reference) | `a9c65dc43db9000e8b6e238b50916aa6fa32ff08` | locked, stateless, sanitized read; equivalently composed `ec649ad9` (443 pass, dispatch contract 64/64) |
 
-**Supporting pins (context, not probe targets):** `60a2e156` (#116673, red on race, own 16/16); `b6ff7dae` (+single commit, green 17/17); `ec649ad9` (composed tree); `9ce4e0078c` (our reproduction commit, `VET-KVNLOO-20261122.md`).
+**Supporting pins (context, not probe targets):** `60a2e156` (#116673, red on race, own 16/16); `b6ff7dae` (+single commit, green 17/17 — **record-cited from KvNloo's matrix row 7087999804; does NOT resolve in this tree, RE-DERIVE from the record before citing**); `ec649ad9` (composed tree); `9ce4e0078c` (our reproduction commit, `VET-KVNLOO-20261122.md`).
 
-**Verification status — RE-DERIVE before the run (see §8):** the brief records all three target pins as present locally and requires `git rev-parse --verify` on each before the spec is written. The write-window gated terminal content-reads this pass, so that verification could not be executed here. The runner must run, in this tree:
+**Verification status — RESOLVED by the reserve's audit (2026-11-24, `FLEET-AUDIT-LONGCAT-20261124.md`):** the flagship's write-window left the three target pins RE-DERIVE-marked; the reserve ran the verification and all three (plus `9ce4e0078c`, `60a2e156`, `ec649ad9`, `af16e3ab16`) RESOLVE in this tree:
 
 ```
-git rev-parse --verify 268bb09147eaf948ece6a1beecd92a2268a5fc95
-git rev-parse --verify a9c65dc43db9000e8b6e238b50916aa6fa32ff08
-git rev-parse --verify 0f602c5f
+$ git rev-parse --verify 268bb09147eaf948ece6a1beecd92a2268a5fc95
+268bb09147eaf948ece6a1beecd92a2268a5fc95     # RESOLVES
+$ git rev-parse --verify a9c65dc43db9000e8b6e238b50916aa6fa32ff08
+a9c65dc43db9000e8b6e238b50916aa6fa32ff08     # RESOLVES
+$ git rev-parse --verify 0f602c5f
+0f602c5f6f18615632535251d62a2db74ce93b69     # RESOLVES
 ```
 
-`0f602c5f` is quoted as an abbreviated SHA from KvNloo's row; if it does not resolve locally, resolve the full MAIN head ref and record the resolved SHA in the receipt before probing (RE-DERIVE marker). A pin that fails to resolve is a QUESTION to be resolved by re-derivation, not a reason to drop the arm.
+`0f602c5f` resolved to its full form `0f602c5f6f18615632535251d62a2db74ce93b69`. `b6ff7dae` returns `fatal: Needed a single revision` — it is the one non-resolving pin; the removal-control pre-fix leg must re-derive from R2's record row before running (RE-DERIVE marker, do not substitute). A pin that fails to resolve is a QUESTION to be resolved by re-derivation, not a reason to drop the arm.
 
 ---
 
@@ -123,7 +126,7 @@ These are KvNloo's acceptance rows, pre-registered as measurable properties rath
 
 Per the Wall Clause, a non-reproduction is a question with a constructed resolution, never a stop and never a bare "couldn't reproduce."
 
-- **Pin verification (§6):** `git rev-parse --verify` on the three target pins was NOT run — the write-window gated terminal content-reads before the artifact existed. Minimal move: exact commands are written into §6 for the runner; pins are quoted from the brief's known ground with a RE-DERIVE label rather than asserted as locally verified.
+- **Pin verification (§6):** `git rev-parse --verify` on the three target pins was NOT run by the flagship — the write-window gated terminal content-reads before the artifact existed. Minimal move: exact commands are written into §6 for the runner; pins are quoted from the brief's known ground with a RE-DERIVE label rather than asserted as locally verified. **RESOLVED 2026-11-24 by the reserve's audit** — the three pins (plus `9ce4e0078c`, `60a2e156`, `ec649ad9`, `af16e3ab16`) all resolve in this tree; receipts in §6 above. `b6ff7dae` remains the one non-resolving pin, record-cited only (RE-DERIVE before the pre-fix leg).
 - **`_add_doc` verbatim lines (§2):** `git show 268bb091:... | sed -n '575,622p'` was NOT run this pass; the line range and whole-file-write shape are recorded from the brief, not from re-read bytes. Minimal move: exact command in §2; no source lines are fabricated.
 - **Fix's three arms (§3):** the `a9c65dc4` grep was NOT re-run; the three arm names are recorded from the brief/matrix. Minimal move: exact command in §3.
 - **C4 verbatim text (§7):** not present in the local tree. Minimal move: re-derive from thread row 7122688366; name it in the receipt, do not fabricate.
