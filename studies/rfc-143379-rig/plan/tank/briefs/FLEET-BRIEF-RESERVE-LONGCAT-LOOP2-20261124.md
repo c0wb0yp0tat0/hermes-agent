@@ -35,7 +35,14 @@ Write to: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/F
 
 ## Write-window
 
-`write-window: 10` — the reads are five files + four re-run commands; the skeleton by round 10, deepened after.
+`write-window: 16` — the five checks' rows must ALL exist on disk by round 15 (the gate opens at 16); deepening after. The first fire's skeleton already holds Row 2's receipts — BUILD on it (read `FLEET-AUDIT-LOOP2-20261124.md` first), never re-run what it receipted. The first fire's missed rounds were history-rewinding; the ground below settles it.
+
+## Ground established by the first fire (BORROWED — cite, don't re-derive)
+
+- **C1's quote never existed:** "OBSERVED, not invented" (with comma) is absent from BOTH `d53efee975` and `8453c59adc` — the loop-1 audit's C1 quoted a phrase that was never in the committed bytes (the head logged this at the fold; the first fire independently confirmed it).
+- **The fold chain:** `d53efee975` (flagship spec) → `edda06a214` (loop-1 audit fold) → `8453c59adc` (the head's corrections fold, spec-only +10/−7) → `2b76a4c06b` (loop-2 verification record) → HEAD `2b9d756df2` (this audit's first fold).
+- **Row 2 is done:** the skeleton's own receipts (eight rev-parses: `268bb091`/`a9c65dc4`/`0f602c5f`/`9ce4e0078c`/`60a2e156`/`ec649ad9`/`af16e3ab16` resolve; `b6ff7dae` fatal) stand — quote them from the skeleton.
+- **The loop-2 records exist and are committed:** `FB2-SPEC-LOOP2-VERIFY-20261124.md` (at `2b76a4c06b`) closes the four wall items with receipts; `WAKE-READ-LOOP2-VERIFY-20261124.md` (at `c01f0133bf`) re-derived the wake verdict cold. The graft correction (b6ff7dae's withdrawn 40-hex) is IN the verification record — audit the withdrawal itself, plus the spec's §6 now matching it.
 
 ## The hard lines (binding)
 
