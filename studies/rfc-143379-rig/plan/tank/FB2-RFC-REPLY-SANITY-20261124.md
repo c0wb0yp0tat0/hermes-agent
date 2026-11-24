@@ -60,3 +60,9 @@ Byte-compare: the reply's quote is the spec's text **truncated at the first elli
 
 ---
 *Sources cross-walked: FB2-FAILING-CASE-SPEC-20261124.md §2–§6 (five elements, pins, signatures); FB2-EXECUTION-RECEIPTS-20261124.md + fb2-probe-out.json (RED False/64 B at 268bb091, GREEN True/131 B at a9c65dc4, 64+3+64, control green both, all success:true); SCHEDULED-WAKE-READ-20261124.md (PARTIAL, six zero-hit anchors, session-rows-only write); spec loop-2 verification record (0f602c5f cat-file commit; 268bb091 commit; a9c65dc4 commit; b6ff7dae record-cited; grafted 40-hex withdrawn); spec §7 row C4 text (byte-level compare). C4 thread row: working route `gh api repos/NousResearch/hermes-agent/issues/comments/7122688366` — endpoint reachable in the operator's route; the loop-2 record's 404 was a route artifact and is superseded.*
+
+## HEAD-SIDE ADJUDICATION, 2026-11-24 (the lens's one FAIL receipted as a phantom)
+
+**The C4 truncation catch does not exist in the committed bytes.** The reply at HEAD (and on disk) carries the C4 quote byte-for-byte identical to the spec §7's verbatim: `"the pin is a second witness the summary does not author, and the check runs on the pins, never on a vote across summaries, so a self-consistent summary cannot outvote it. The ledgers move with your rebase, KoNit-K's authorship kept, /pin stacked as its own commit."` — full sentence, `never on a vote` present, zero ellipses (byte-verified via regex extraction + equality check, 2026-11-24). The lens read a mid-write draft state, not the committed artifact — the same phantom-read class as the loop-1 audit's C1 ghost quote (both times: an intermediate draft, not the folded bytes).
+
+**Ruling: the reply stands CLEAN under this report's own standards.** Four receipts PASS; the sole FAIL is a phantom; no byte-cited tweak survives. The pair's line's conditional ("Repair the quote… then the reply fulfills the ask") is already satisfied — the bar was never broken.
