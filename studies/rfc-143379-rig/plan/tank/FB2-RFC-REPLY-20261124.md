@@ -35,7 +35,7 @@ Receipts, already executed: `268bb091` gave RED, SECOND's 64 bytes only, `False`
 
 | # | Condition | Pre-registered bar |
 |---|---|---|
-| C1 | Survival across four compactions, verbatim | 100% of pinned constants survive four compactions byte-verbatim, with RED on MAIN / GREEN on the branch and the removal control RED — one pinned constant lost, or any arm flipped, fails the row. |
+| C1 | Survival across four compactions, verbatim | 100% of pinned constants survive four compactions byte-verbatim, with RED on MAIN / GREEN on the branch and the removal control RED — meaning the fix's removal arm (removing the fix turns the run red again), distinct from the single-add probe control above, which stays GREEN; one pinned constant lost, or any arm flipped, fails the row. |
 | C2 | Stated cap with plain refusal, no eviction | Declaring a max entry count and adding beyond it yields a plainly reported refusal with no eviction and no silent eviction-by-summary — a dropped entry or a silent overwrite fails the row. |
 | C3 | No second store (decision-ledger entry, byte-compared) | Exactly one pin entry in decision ledger #113309, byte-compared against the ledger's own schema with nothing invented — a parallel store or a schema mismatch fails the row. |
 | C4 | The contradiction-flagged row, accepted as written at row 7122688366 | Carry the proposed fourth condition as written, flag and all: do not silently resolve or drop the flagged contradiction; reproduce it as stated and record the flag in the receipt. |
