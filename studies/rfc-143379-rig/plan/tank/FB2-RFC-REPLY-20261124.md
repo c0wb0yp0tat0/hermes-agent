@@ -29,7 +29,7 @@ GREEN arm — the fix at `a9c65dc4`. Same two adds, same markers, same byte comp
 
 Control — on each of the three pins, one chain-doc add with a unique marker-bearing body, then re-read and byte-compare. Expected: green on all three. A RED on any control arm invalidates the probe, never the finding — re-run the control before drawing anything from the failure arms.
 
-Receipts, already executed on our side: `268bb091` gave RED — SECOND's 64 bytes only, `False`; `a9c65dc4` gave GREEN — 131 bytes, both present, `True`; the control was green on both. Your run is a confirm.
+Receipts, already executed: `268bb091` gave RED, SECOND's 64 bytes only, `False`. `a9c65dc4` gave GREEN, 131 bytes, both present, `True`. The control was green on both. Your run is a confirm.
 
 **the acceptance rows**
 
