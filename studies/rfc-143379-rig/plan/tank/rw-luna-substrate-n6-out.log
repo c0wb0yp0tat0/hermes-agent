@@ -1,0 +1,324 @@
+/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/probes/BATTERY-LUNA-LEDGER-20261119.json
+{
+  "verdict": "INCONCLUSIVE",
+  "arms": {
+    "A": {
+      "correct": 0,
+      "accuracy": 0.0,
+      "tokens": 36,
+      "cache_hit_rate": 0.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 6,
+        "A": 0
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 6
+        },
+        "A": {
+          "correct": 0,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 6,
+        "HEDGE": 0,
+        "CONFIDENT": 0
+      },
+      "classes": {
+        "C5a": 6
+      },
+      "by_reason": {
+        "seat": 6,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 1.0,
+      "empty_data_quality": 6,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 2.802,
+      "reader_calls": 6,
+      "reader_last_error": null,
+      "applied_delta_log": []
+    },
+    "B0": {
+      "correct": 3,
+      "accuracy": 0.5,
+      "tokens": 42,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 1,
+        "A": 5
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 1
+        },
+        "A": {
+          "correct": 3,
+          "incorrect": 2
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 1,
+        "HEDGE": 0,
+        "CONFIDENT": 5
+      },
+      "classes": {
+        "C5a": 1,
+        "ANSWERED": 5
+      },
+      "by_reason": {
+        "seat": 1,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.167,
+      "empty_data_quality": 1,
+      "stale_confident": 2,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 2.802,
+      "reader_calls": 6,
+      "reader_last_error": null,
+      "applied_delta_log": []
+    },
+    "B1": {
+      "correct": 2,
+      "accuracy": 0.333,
+      "tokens": 42,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 4,
+        "A": 2
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 4
+        },
+        "A": {
+          "correct": 2,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 4,
+        "HEDGE": 0,
+        "CONFIDENT": 2
+      },
+      "classes": {
+        "C5a": 4,
+        "ANSWERED": 2
+      },
+      "by_reason": {
+        "seat": 3,
+        "harness": 1,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.667,
+      "empty_data_quality": 4,
+      "stale_confident": 0,
+      "bridge_compliance": 0.833,
+      "mean_f3b": 0.833,
+      "f3b_reasons": [
+        "harness"
+      ],
+      "cost": 2.802,
+      "reader_calls": 6,
+      "reader_last_error": "HTTP 503: {\"status\":503,\"message\":\"The requested model is currently unavailable.\"}",
+      "applied_delta_log": [
+        {
+          "call": 1,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 2,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 3,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 4,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 5,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 6,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        }
+      ]
+    },
+    "C": {
+      "correct": 3,
+      "accuracy": 0.5,
+      "tokens": 6,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 3,
+        "A": 3
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 3
+        },
+        "A": {
+          "correct": 3,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 3,
+        "HEDGE": 0,
+        "CONFIDENT": 3
+      },
+      "classes": {
+        "C5a": 3,
+        "ANSWERED": 3
+      },
+      "by_reason": {
+        "seat": 1,
+        "harness": 2,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.5,
+      "empty_data_quality": 3,
+      "stale_confident": 0,
+      "bridge_compliance": null,
+      "mean_f3b": null,
+      "f3b_reasons": [],
+      "cost": 0.0,
+      "reader_calls": 6,
+      "reader_last_error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>",
+      "applied_delta_log": []
+    }
+  },
+  "decision_rule": {
+    "B_minus_A": -0.167,
+    "B_over_0.85C": false,
+    "C_minus_A": 0.0,
+    "pre_committed": "CERTIFY iff B-A>=20 AND B>=0.85C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A); INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
+    "note": "the leg's full-run verdict"
+  },
+  "cost_total": 8.406
+}

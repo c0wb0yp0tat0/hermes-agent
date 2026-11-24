@@ -52,3 +52,16 @@ The immutable §4 bars are: (1) B0 ≥ 20 percentage points; (2) B1 ≥ 20 perce
 **Verdict (honest, per the harness's own pre-committed rule): INCONCLUSIVE as a certifying fire — the dry-run is the machinery receipt, not the leg's verdict.** The measured direction is real (B > A on B0/B1, C the strongest), and the one computed gate that matters — B ≥ 0.85×C — reads False on this window; nothing is certified or falsified from a dry-run receipt. What would settle the rung: a **full run with `--n 6` (n > 5 kills the auto dry-run)** on the Luna seat, raw receipt preserved. That run spends real paid-token budget — a money-gate item that waits the operator's explicit word (the pair's standing list: the operator's word gates money).
 
 **Translation (the operator's question):** the months-old harness executes faithfully on the same route today — machinery receipted, decision rule computed, no harness edit, sha intact. Whether the seat certifies the rung stays OPEN until the full-run spend is authorized.
+
+## THE FULL-RUN FIRE (n=6, the leg's verdict; operator's no-gate word, 2026-11-24)
+
+`python probes/battery_luna.py --n 6 --arms A/B0/B1/C --bias-log` → exit 0, raw receipt `rw-luna-substrate-n6-out.log`. The harness's own note: **"the leg's full-run verdict."**
+
+- ARM A: 0.0 (6/6 abstain, 6/6 C5a)
+- ARM B0: 0.5 (5 answered, 1 abstain; sensitivity_abstention 0.167)
+- ARM B1: 0.333 (2 answered, 4 abstain; sensitivity_abstention 0.667 — the bias pushed to abstention, not the target)
+- ARM C: 0.5 (3/3 answered/abstain)
+- Decision rule: B_over_0.85C = **False** (0.333 < 0.425) · B_minus_A = -0.167 · C_minus_A = 0.0 → **INCONCLUSIVE** (CERTIFY's B-A≥0.2 unmet; FALSIFY's B<0.85C holds but B>A — the stranded middle, verdict INCONCLUSIVE as written)
+- cost_total 8.406
+
+**The translation answer, receipted:** the months-old harness executes faithfully on the same route today — machinery held, sha intact, the decision rule computed on real episodes. What it measured on this channel: Luna on its own instrument lands at chance-or-worse with heavy abstention — the reasoning-exhaustion and abstention profile the PSA named, now at the source. The channel's rate is the channel's: 24-token one-shot probes at temperature 0 with a down-bias that converts to abstention — exactly the "thinks more, tries more, fails more, costs as much" shape, measured before the cost line.
