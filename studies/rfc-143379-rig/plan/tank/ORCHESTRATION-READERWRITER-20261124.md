@@ -27,3 +27,7 @@ Kvnloo answered our seek-to-understand: the "both removed turns red" shape is **
 - THE WITNESS RULE: every quoted phrase byte-verified against the staged pull or the pin's bytes; a phantom is a fail (the rig's known class).
 - git add/commit locally, NEVER push (the fold waits the all-clear).
 - The wall clause rides everywhere.
+
+## THE OPERATOR'S GATE (2026-11-24, explicit): PREVIEW ONLY
+
+"The preview only" — the operator's word on this mission. The orchestration's output is a staged preview gist for the pair's eyes only; NOTHING posts to the RFC surface or any public channel from this mission without a separate, explicit posting word. The two-part check-in's posting required its own explicit "post it" — this mission has no such word, and none is implied. PR #1 remains the only other allowed surface (the machinery's cadence), and even there, no content from this orchestration is posted by this head without the operator's word.
