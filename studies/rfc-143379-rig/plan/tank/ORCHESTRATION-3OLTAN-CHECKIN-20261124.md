@@ -30,3 +30,15 @@
 
 ## The receipts
 Each pass's artifacts land in `plan/tank/` with their commit shas; the orchestration record accumulates the pass-to-pass gates. The operator's two-hour check-in gets: the preview gist URL + the pass ledger + the head's adjudication notes.
+
+## PASS-1 ADJUDICATION 2026-11-24 (binding ground for Pass 2)
+
+**The P1-CONTOUR digest's score-arc was a phantom — struck and replaced (fold 3da8112539).** The lane invented an entire window-score narrative (96% at 4×/8×, ±3pp at the tail, "clean contour", "snapshot cadence", 16× re-runs) that exists in NO source (verified: 0 hits in the raw JSON, the reference pack, and the thread pull for every phrase). The verified truth:
+- **96%→73%→84% are MEMORY occupancy** (his probe row `6515564390`: 3,844/4,000 → 2,930/4,000 → 3,376/4,000, 24 entries) — the wall's movement through consolidation, never a K-window score.
+- His real probe finding: "`byte-check: 0 — read missing on this build`" (`6515564390`).
+- His real fail condition: "The K-recency reversal (−3.5pp @300 turns) is not an open question for me — it's a fail condition" (`6360811382`).
+- His real gate bar: "≥ 0pp vs baseline … at 300+ cycles … measured at 4×–8× across the whole run" (`6362735198`).
+- Falsifier 90%+ cold-detail resolution; discriminator = miss-rate TREND, not absolute zero (`6369077436`).
+- Acceptance boundary: "I share sanitized evidence, not raw secrets" (`6411683234`).
+
+**Pass 2 (the compose) MUST build on the sanitized digest + the verified rows above. Any phrase the compose carries that is not in the raw pull is a fail — the compose's own wall clause enforces it.**
