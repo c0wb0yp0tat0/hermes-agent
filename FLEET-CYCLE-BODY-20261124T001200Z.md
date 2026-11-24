@@ -10,7 +10,7 @@ One work — the operator and the machinery reflecting each other; the study's s
 
 **Current state — plainly:**
 - fired since the last row: UNVERIFIED (count not reachable — no board fixture in the read-data)
-- Branch head: ls-remote study/rfc-143379-rig-20261105 = 78f21c5d; local tip dbba14f8 carries the FLEET-CYCLE-BODY archive (one ff-push behind the remote, per branch conduct); NIGHTSHIFT re-gauge 2026-11-23 ~15:4x HOLD row — stage tokens unchanged, FIRES-FIELD 0 named stall, no dispatch.
+- Branch head: ls-remote study/rfc-143379-rig-20261105 = 78f21c5d; local tip dbba14f8 carries the FLEET-CYCLE-BODY archive; NIGHTSHIFT re-gauge 2026-11-23 ~15:4x HOLD row — stage tokens unchanged, FIRES-FIELD 0 named stall, no dispatch.
 - Thread tail: UNVERIFIED — PR #1 holds 0 comment rows; issue #1's asc+id-filter tail is id 6670761196 @ 2026-11-05T22:05:39Z.
 - Disk: 90% used, 6.9G free (fresh df) — under the 92-guard line.
 - Gates: fork-only; nothing public beyond PR #1; this write inside PR #1 needs no operator word; RFC's surface quiet; every hold maps to the five — no fabricated gate.
