@@ -53,8 +53,8 @@ PARTIAL at `8ba4b344766e50c2e3eeaba84f4349276a1be021`. The scheduled wake reads 
 Your run confirms base-red at `268bb091`, combined-green at `a9c65dc4`, and the single-add removal control green on all three pins. Divergences are data — log them in the receipt and leave the bars as written.
 
 For your lab's record, the docs:
-- The full failing-case spec (the pre-registration with its receipts): https://gist.github.com/c0wb0yp0tat0/e7fdcdf77a53f4e2ec92414be195c1e7
-- The execution receipts (the probe's runs at both pins): https://gist.github.com/c0wb0yp0tat0/ec65a0a10ce6b26682a9d01d028ae1c4
+- The full failing-case spec (the pre-registration with its receipts): [the spec](https://gist.github.com/c0wb0yp0tat0/e7fdcdf77a53f4e2ec92414be195c1e7)
+- The execution receipts (the probe's runs at both pins): [the receipts](https://gist.github.com/c0wb0yp0tat0/ec65a0a10ce6b26682a9d01d028ae1c4)
 
 If any of this is off on your side of the run, say so — the door's open for discussion.
 
