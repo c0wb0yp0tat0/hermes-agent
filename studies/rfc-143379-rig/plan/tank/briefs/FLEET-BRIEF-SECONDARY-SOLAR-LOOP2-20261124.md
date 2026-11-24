@@ -25,7 +25,7 @@ Write to: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/W
 
 ## Write-window
 
-`write-window: 8` — the commands are five; the record's skeleton by round 8, deepened after.
+`write-window: 12` — the five moves are reads; run them FIRST (M1–M5 in rounds 1–10), then write the record's skeleton no later than round 11 (the gate opens at 12; a written skeleton reopens reads for deepening). The loop-1 failure class is the gated-read trap: once the window opens, terminal reads are blocked until the artifact exists — never let the clock close on unrun moves; write early, deepen after.
 
 ## The hard lines (binding)
 
