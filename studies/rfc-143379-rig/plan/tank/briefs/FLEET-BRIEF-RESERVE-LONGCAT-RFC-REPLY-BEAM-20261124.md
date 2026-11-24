@@ -2,6 +2,11 @@
 
 *Seat (pin): `meituan/longcat-2.5:free` — the RESERVE, the beam lens. The operator: the follow-up should read "as a rfc reply that's actually useful to them and their lab by fulfilling the ask and that its max value add." The beam's final gate: the reply's REGISTER — useful to their lab, no pair-metadata, no narrative arc, the five elements scannable. Branch: `study/rfc-143379-rig-20261105`. Fire: AFTER the composer + the sanity lens land (gated — you read the final draft).*
 
+## Ground established since this brief was written (BORROWED — the C1 fix is sanctioned)
+
+- **The C1 disambiguation (fold `d3e6742b2d`, the stepfun catch):** the reply's C1 row now carries "meaning the fix's removal arm (removing the fix turns the run red again), distinct from the single-add probe control above, which stays GREEN". This RESOLVES the contradiction the support seat named — kvnloo's row 7122500729's "removal control RED" is the fix-removal sense; the reply's own control section is the single-add GREEN control. It is a sanctioned fold; verify its wording against the spec's §4 parenthetical and the thread row's sense, not against §7's terse cell. Two names for one control would have been the trip; the fix removes the trip.
+- The reply otherwise stands as the beam-folded version at `afccef571f` + the C1 fix.
+
 ## The checks (each mechanical, each receipted)
 
 1. **The lab reads it, not the pair.** Grep the reply for pair-metadata that must NOT survive: `the pair` · `our loops` · `kaizen` · `flip-flop` · `the fleet` · `study landing` · `NOT posted` · `staging` · `more to come` — zero hits is the pass; each hit a note with the line. The reply is written FOR @kvnloo / their lab: an opening that addresses them, a close that asks the run back.

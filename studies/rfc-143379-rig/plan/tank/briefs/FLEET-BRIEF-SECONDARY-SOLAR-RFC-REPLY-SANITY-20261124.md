@@ -2,6 +2,11 @@
 
 *Seat (pin): `upstage/solar-mini4:free` — the SECONDARY, the sanity lens. The operator: the follow-up must read as an RFC reply "actually useful to them and their lab by fulfilling the ask and that its max value add." Your role: verify the composer's reply draft against the study's records — every bar, pin, number, and quote — and return a verdict. You never re-compose it. Branch: `study/rfc-143379-rig-20261105`. Fire: AFTER the reply composer's landing folds (gated).*
 
+## Ground established since this brief was written (BORROWED — verify against it, don't re-litigate)
+
+- **The C1 disambiguation (fold `d3e6742b2d`, the stepfun catch):** the reply's C1 row now reads: "with RED on MAIN / GREEN on the branch and the removal control RED — meaning the fix's removal arm (removing the fix turns the run red again), distinct from the single-add probe control above, which stays GREEN; one pinned constant lost, or any arm flipped, fails the row." This is a SANCTIONED fold — it resolves the contradiction the support seat named: kvnloo's own row 7122500729 pre-registers "removal control RED" in the fix-removal sense, while the reply's signatures beat defines the single-add probe control as GREEN. The disambiguation aligns the reply with BOTH the thread row and the spec's §4 parenthetical ("Distinct from this control: the lock/no-cache-write single-removal arms in §3, which are expected to stay green"). When cross-checking C1 against the spec §7, the comparison target is the spec's §4 parenthetical + the thread row's sense — NOT a byte-equality with §7's terse C1 cell.
+- The reply otherwise stands as the beam-folded version at `afccef571f` + the C1 fix.
+
 ## The checks (each receipted)
 
 1. **The five elements ride, runnable.** The reply must carry, in runnable form: the expected failure signature for the ungated add on main · the same case on the fix · the removal control · the hold-back class (clause only) · the pinned SHAs. Cross-check against `FB2-FAILING-CASE-SPEC-20261124.md` §2–§6: any element missing, any bar softened, any pin altered = the catch.
