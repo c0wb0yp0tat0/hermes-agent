@@ -68,7 +68,7 @@
 **Post-pull boundary — the study-side landings that complete the delta** (receipts are the files themselves; their thread-row ids are a QUESTION until the reply post is traced):
 - `FB2-FAILING-CASE-SPEC-20261124.md` — the pre-registration's spec artifact.
 - `FB2-EXECUTION-RECEIPTS-20261124.md` — the receipts.
-- `FB2-RFC-REPLY-20261124.md` — the reply's posting (row id: question).
+- `FB2-RFC-REPLY-20261124.md` — the reply's posting: **row `7135900146`** (2026-11-24T15:21:54Z, c0wb0yp0tat0), body byte-identical to the committed reply; silent edits kept the same row id. Verified head-side.
 - `SCHEDULED-WAKE-READ-20261124.md` — the wake read promised in `7122688366`.
 
 ---
@@ -102,6 +102,6 @@ The delta since his 10-30 row has moved the RFC from "the read is missing and th
 ## Receipts & open questions (wall clause)
 
 - **QUESTION — `6411683234` bytes not reproduced.** Minimal move: re-read the row / `3OLTAN-SEO-REFERENCE-PACK.md`; all attributions above are via citing rows (`6454631687`, `6508650848`, `6460533751`).
-- **QUESTION — the four 20261124 study artifacts' thread-row ids.** The pull boundary is `7122688366` (2026-11-24T05:10:05Z); anything posted after is cited by artifact name, not row id, until traced.
+- **RESOLVED — the 20261124 artifacts' thread-row ids (head-side, 2026-11-24).** The pull boundary was `7122688366` (05:10Z); the posting came after it: row **`7135900146`** (15:21:54Z). Anything posted after is cited by artifact name, not row id, until traced.
 - **QUESTION — the FB-2 verdict hash.** Promised on landing (`7122051629`); not yet on the page.
 - Confirmed and byte-quoted: `6515564390` (his arc, byte-check, discipline), and every delta row's id/substance from the scratch pull.
