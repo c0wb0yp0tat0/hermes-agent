@@ -8,16 +8,18 @@ The check-in's `## THE CHECK-IN` block must read as the pilot receiving it — h
 
 ## The checks (each mechanical)
 
+**RUN THE GREPS FIRST — the receipts ARE the report.** The first fire's mistake: skeleton-before-greps, then the round budget died mid-verification (the door scan refused the stub-laden landing). This fire: execute the six checks' commands FIRST (rounds 1–8), then write the report with their outputs embedded. The greps' ground is the STAGED study pull (`studies/rfc-143379-rig/plan/tank/rfc-comments-full.json` — committed 2026-11-24, the tooling gap closed) and the check-in file. All commands are plain `git grep` / `grep` on study-tree paths — no echo, no variables, no `&&` chains beyond the brief's own examples.
+
 1. **Pair-metadata absent:** grep the check-in block for `the fleet` | `the loops` | `kaizen` | `Pass ` | `orchestration` | `recon` | `digest` — zero hits.
-2. **The pilot's cadence honored:** quoted phrases retain his byte cadence (grep three of his quotes in the check-in against the raw pull — the `≥ 0pp`, the `−3.5pp`, the `Restore the read action` phrases).
-3. **The gate reads as a gate:** the block contains no sentence that flips the ≥0pp bar to passed; the words `tick`/`cleared`/`certified` do not appear as a pass claim.
-4. **Occupancy reads as his measure:** the 96/73/84 numbers appear with the /4,000 scale, not as standalone percentages that could read as a score.
-5. **The ear's kindness:** one em-dash per sentence max; each full row id once, short names after; sentences short declaratives; the check-in's final line a warm, forward-leaning close (the actual last line: "Your gate is open, your words are the standard, and the pilot moves at your pace." — verify it is the close).
-6. **The one-document shape:** one check-in block, receipts below it, no branching structure, no parallel docs to open.
+2. **The pilot's cadence honored:** the three quotes (`≥ 0pp`, `−3.5pp`, `Restore the read action`) present in BOTH the check-in and the staged raw pull (`rfc-comments-full.json`).
+3. **The gate reads as a gate:** the tokens `tick`/`cleared`/`certified` do NOT appear in the check-in block as a pass claim.
+4. **Occupancy reads as his measure:** `3 844 / 4 000`, `2 930 / 4 000`, `3 376 / 4 000` present (the /4,000 scale rides with 96/73/84).
+5. **The ear's kindness:** count the em-dashes (max one per sentence); each full row id once; the close line `Your gate is open, your words are the standard, and the pilot moves at your pace.` present as the final line.
+6. **The one-document shape:** one check-in block, receipts below, no branching.
 
 ## The artifact
 
-Write to: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/P3-BEAM-CHECKIN-20261124.md` — verdict line, six rows with malloc-countable receipts, notes (byte-cited), the pair's one-liner.
+Write to: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/P3-BEAM-CHECKIN-20261124.md` — verdict line, six rows with the grep outputs, notes (byte-cited), the pair's one-liner. NO stub markers — a placeholder row is a refused landing.
 
 ## Write-window
 
