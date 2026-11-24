@@ -34,3 +34,21 @@ The immutable §4 bars are: (1) B0 ≥ 20 percentage points; (2) B1 ≥ 20 perce
 **Translation:** this attempt establishes no evidence about the months-old harness carrying the Luna seat on the same route today; that question remains open until a SHA-256-verified, authorized harness run produces its raw receipts.
 
 **Gate:** PREVIEW ONLY; nothing posted; RFC surface remains quiet.
+
+## HEAD-SIDE FIRE COMPLETION (2026-11-24, after the lane's BLOCKED)
+
+**The wall closed head-side:** sha256 verified — `sha256sum probes/battery_luna.py` = `0f08b06936db875376869e168ae3f30398bc46da6bfba2caa38b78f0f556ecfd`, byte-matching the ACT4/B1 pin. The operator's word authorized the fire (twice-repeated: "Think tank skill Luna on its substrate harness").
+
+**The fire ran:** `python probes/battery_luna.py --n 5 --arms A/B0/B1/C --bias-log` → exit 0, 308-line raw receipt (`rw-luna-substrate-fire-out.log`). Per the harness's own rule (`dry_run = n <= 5`), this is an **auto dry-run machinery receipt** — the harness's note says so verbatim: *"dry-run machinery receipt, NOT the leg's verdict."* It is a TRUE receipt of the machinery (the harness executed, the reader called 5× per arm, costs registered), not a certifying run.
+
+**The dry-run's measured numbers (the machinery's own):**
+- ARM A: correct 0/5, accuracy 0.0, tokens 30, cache 0.0, E:5
+- ARM B0: correct 1/5, accuracy 0.2, tokens 35, cache 1.0
+- ARM B1: correct 2/5, accuracy 0.4, tokens 35, cache 1.0
+- ARM C: correct 4/5, accuracy 0.8, tokens 5, cache 1.0
+- Decision rule computed: B_minus_A = 0.2 · B_over_0.85C = **False** (0.4 < 0.68) · C_minus_A = 0.6
+- cost_total = 7.005
+
+**Verdict (honest, per the harness's own pre-committed rule): INCONCLUSIVE as a certifying fire — the dry-run is the machinery receipt, not the leg's verdict.** The measured direction is real (B > A on B0/B1, C the strongest), and the one computed gate that matters — B ≥ 0.85×C — reads False on this window; nothing is certified or falsified from a dry-run receipt. What would settle the rung: a **full run with `--n 6` (n > 5 kills the auto dry-run)** on the Luna seat, raw receipt preserved. That run spends real paid-token budget — a money-gate item that waits the operator's explicit word (the pair's standing list: the operator's word gates money).
+
+**Translation (the operator's question):** the months-old harness executes faithfully on the same route today — machinery receipted, decision rule computed, no harness edit, sha intact. Whether the seat certifies the rung stays OPEN until the full-run spend is authorized.
