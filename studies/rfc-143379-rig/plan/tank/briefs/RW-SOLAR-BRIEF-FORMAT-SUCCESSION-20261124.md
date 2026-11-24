@@ -12,10 +12,11 @@ The interim note has been posted to RFC #143379 by Nemo (row id in `RW-INTERIM-N
 2. **Formatting audit** on the live body:
    - Mentions render: `@kvnloo` un-backticked (pings).
    - One em-dash per sentence max (audit the note's lines: line 1 (the open) has none, line 3 has one, line 5 has none — count and confirm ≤1 each).
-   - The footer is the LAST line, italic (`*Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*`), nothing after it.
+   - **The footer names NEMO specifically — the attribution must carry the prior day's convention.** The precedent (11-11, RFC #143379): *"the honest footer — Nemo named, Hermes Agent named, on the operator's behalf."* The posted note's current footer reads `*Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*` — if Nemo's name is absent from the footer, the SUCCESSOR silently PATCHes the same comment so the footer becomes `*Prepared with Hermes and Nemo, reviewed by c0wb0yp0tat0 before posting.*` (Nemo named exactly as the precedent names it — a seat, a machine, an instrument — no "her", no humanizing).
+   - The footer is the LAST line, italic, nothing after it.
    - No stray markdown (stray `**`, broken emphasis, accidental code spans): scan the body for unbalanced markers.
    - No raw URLs if none were intended (the note has none — confirm zero).
-3. **If any defect:** PATCH the same comment with the corrected body (the committed note's bytes whatever the defect), fetch back, byte-verify. If clean: state CLEAN.
+3. **If any defect:** PATCH the same comment with the corrected body, fetch back, byte-verify. If clean: state CLEAN. The Nemo-attribution footer is a REQUIRED element — its absence is a defect to patch, not a note.
 4. **The record:** the audit result, the receipts, the final byte-identical verification.
 
 ## The required artifact
