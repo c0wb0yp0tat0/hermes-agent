@@ -56,4 +56,6 @@ For your lab's record, the docs:
 - The full failing-case spec (the pre-registration with its receipts): https://gist.github.com/c0wb0yp0tat0/e7fdcdf77a53f4e2ec92414be195c1e7
 - The execution receipts (the probe's runs at both pins): https://gist.github.com/c0wb0yp0tat0/ec65a0a10ce6b26682a9d01d028ae1c4
 
+If any of this is off on your side of the run, say so — the door's open for discussion.
+
 *Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*
