@@ -1,0 +1,1 @@
+The reply is already sound, and the weakest clause is the one where the reply claims that removing both turns it red. The fix is to make sure that the claim is properly sourced and verified.
