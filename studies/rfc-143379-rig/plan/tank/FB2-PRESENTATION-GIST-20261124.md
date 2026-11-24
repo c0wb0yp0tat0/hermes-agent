@@ -22,7 +22,7 @@ The promised test runs on our side. `FB2-EXECUTION-RECEIPTS-20261124.md` carries
 
 **the closures**
 
-Two standing doors close the same day. C4's verbatim is recovered — the lane's 404 was a route and token artifact, and the head-side read works. `b6ff7dae` resolves to its real form `b6ff7dae98d19f565764e773e0da96aaee18fbf2`, "fix(memory): serialize chain-doc reads with writes", parent `60a2e156`, on the fork's `salvage/pr116673-hoss2`. The record is run-cold in full. The RE-DERIVE markers are retired. The fold is `aced3e1cf7`.
+Two standing doors close the same day. C4's verbatim is recovered — the lane's 404 was a route artifact (the direct comment endpoint works), and the head-side read is banked. `b6ff7dae` resolves to its real form `b6ff7dae98d19f565764e773e0da96aaee18fbf2`, "fix(memory): serialize chain-doc reads with writes", parent `60a2e156`, on the fork's `salvage/pr116673-hoss2`. The record is run-cold in full. The RE-DERIVE markers are retired. The fold is `aced3e1cf7`.
 
 **the doors**
 

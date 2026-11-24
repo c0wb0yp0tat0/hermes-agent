@@ -51,3 +51,12 @@ The spec's five promised elements are now run-cold in full: the failing case, bo
 - Lane log: `/root/.hermes/cache/scratch/copycat-mission/fleet-hy-loop2-verify-r2-20261124.log` (quotes above).
 - Head probes: `cat-file -t` on `0f602c5f6f18…` (commit) · `268bb09147eaf9…` (commit) · `a9c65dc43db90…` (commit) · `b6ff7dae6f18…` (absent) — 2026-11-24.
 - Fork `ls-remote` of `memory-chain-doc-read-combined` / `memory-probe-harness-kgate`: fetched; neither contains b6ff7dae.
+
+## SUPERSEDED 2026-11-24 (the closures fold `aced3e1cf7`)
+
+The two REFUSED/RE-DERIVE dispositions above were both RESOLVED the same day, after this record's fold:
+
+1. **C4's verbatim — RESOLVED.** The lane's 404 was a ROUTE artifact (this record's command used the issue-list route `issues/143379/comments/<id>`, which 404s for a comment-id query). The working route — `gh api repos/NousResearch/hermes-agent/issues/comments/7122688366` — returns the row's full body; the verbatim is quoted in the spec's §7 (`FB2-FAILING-CASE-SPEC-20261124.md`, fold `aced3e1cf7`). The RE-DERIVE marker is retired.
+2. **`b6ff7dae` — RESOLVED.** The real full form is `b6ff7dae98d19f565764e773e0da96aaee18fbf2` ("fix(memory): serialize chain-doc reads with writes", parent `60a2e156` verified), **advertised by the fork** at `refs/heads/salvage/pr116673-hoss2` (live ls-remote) — the loop-2 record's "no such ref advertised" line predates the fetch; `cat-file -t <full>` → commit. The RE-DERIVE marker is retired; note the GRAFTED 40-hex `b6ff7dae6f18…` remains withdrawn — the real object is a different full form.
+
+*This supersedure note rides the append-only record; the pre-closure dispositions stay visible as history, with their resolutions beside them.*
