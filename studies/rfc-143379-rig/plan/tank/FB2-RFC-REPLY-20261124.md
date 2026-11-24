@@ -49,3 +49,5 @@ PARTIAL at `8ba4b344766e50c2e3eeaba84f4349276a1be021`. The scheduled wake reads 
 **the ask back**
 
 Your run confirms base-red at `268bb091`, combined-green at `a9c65dc4`, and the single-add removal control green on all three pins. Divergences are data — log them in the receipt and leave the bars as written.
+
+The full spec and its receipts, for your lab's record: https://gist.github.com/c0wb0yp0tat0/bf29f3eeed8c87eeef4a801f99c75f48
