@@ -7,7 +7,7 @@
 | Arm | Pin | Two adds | `FIRST_SURVIVED_SECOND_ADD` | Bar | Verdict |
 |---|---|---|---|---|---|
 | A · ungated | `268bb09147ea…` | FIRST, then SECOND | **False** — the doc holds SECOND's 64 bytes only; FIRST's bytes gone | RED expected | **RED** — the clobber is REAL under execution |
-| B · the fix | `a9c65dc43db9…` | FIRST, then SECOND | **True** — the doc holds both (131 bytes; FIRST's bytes present) | GREEN expected | **GREEN** — the fix preserves the first |
+| B · the fix (`A-fix-two-add` in the raw json) | `a9c65dc43db9…` | FIRST, then SECOND | **True** — the doc holds both (131 bytes; FIRST's bytes present) | GREEN expected | **GREEN** — the fix preserves the first |
 | C · removal control | both pins | FIRST only | True on both (64 bytes, FIRST's bytes) | green on both | **GREEN** — the probe is not a false positive |
 
 ## The mechanism, at the executed seam

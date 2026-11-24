@@ -55,7 +55,13 @@ def make_sandbox_modules(mem_dir: Path):
     # tools.memory_tool — the store's monkeypatch seam: get_memory_dir -> sandbox dir.
     mt_mod = importlib.util.module_from_spec(importlib.util.spec_from_loader("tools.memory_tool", None))
     mt_mod.get_memory_dir = lambda: mem_dir
-    mt_mod.fcntl = None  # both pins' _file_lock tolerate fcntl=None (yield-only path)? see below
+    mt_mod.fcntl = None  # RESOLVED 2026-11-24 (loop-3 audit): both pins' _file_lock
+    # define the fcntl=None,mmsvcrt=None branch as an explicit yield-only path
+    # (`if fcntl is None and msvcrt is None: yield; return`) — the stub is faithful
+    # to the store's own code; a lock is unnecessary because the probe is a
+    # single-process temp-dir run (no concurrent writer can race it). Both verdicts
+    # are deterministic with or without the lock (RED = whole-file replace;
+    # GREEN = append + join).
     mt_mod.msvcrt = None
     # hermes_constants
     hc_mod = importlib.util.module_from_spec(importlib.util.spec_from_loader("hermes_constants", None))
