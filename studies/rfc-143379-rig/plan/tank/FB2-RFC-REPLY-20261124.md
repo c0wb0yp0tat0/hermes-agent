@@ -1,6 +1,6 @@
 @kvnloo and lab —
 
-Thank you for your patience — this reply took longer than "first thing tomorrow," and it owes a real debt to your lab's own catch of the two-add class; the pre-registration below is built on that finding, not around it.
+Thank you — your lab's catch of the two-add class is the reason this pre-registration runs the way it does; the bars below are built on it.
 
 You asked for the expected failure signatures on the thread before any run on MAIN. They are below, fixed in advance and runnable cold from this comment alone. Every bar is pre-registered; a divergence is a receipt entry, never a renegotiated bar.
 
