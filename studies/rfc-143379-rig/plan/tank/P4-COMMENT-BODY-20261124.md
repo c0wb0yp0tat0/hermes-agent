@@ -24,6 +24,6 @@ The asks come back to you, and the restore-read ask leads. You said it best: "Re
 
 The harness is yours — one commit, no model calls, `PYTHONPATH` to the extracted pin, the same way you shared `evals/fb2/`, whenever it helps the next arm.
 
-And a question back, in the spirit of the seek-to-understand you've been modeling: when you named the read/write interleaving you had in mind for the "both removed" arm, what shape were you picturing — a concurrent double-add like ours, or something racier (a read straddling a write mid-commit)? If you name it, we'll pre-register that arm at the same pins, run it the same way you shared yours, and publish the receipts beside your table. Your contour's the one that matters here; we'd rather learn it than guess it.
+And a question back, in the spirit of the seek-to-understand you've been modeling: when you named the read/write interleaving you had in mind for the "both removed" arm, what shape were you picturing — a concurrent double-add like ours, or something racier (a read straddling a write mid-commit)? If you name it, we'll pre-register that arm at the same pins, run it the same way you shared yours, and publish the receipts beside your table. Your read of it is the one we'd rather learn than guess.
 
 *Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*
