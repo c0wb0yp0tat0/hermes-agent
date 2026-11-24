@@ -6,6 +6,18 @@
 
 The interim note posts on the thread — but the posting lane's verification was FALSE: the live body contains literal JSON escape sequences (`\u2014` and `\n` as text) instead of real em-dashes and line breaks. The pair will not let a broken-rendering comment stand. YOUR job — the successor's: audit the live comment's formatting, PATCH the same comment (id 7147011435) with the CORRECTED body — the committed note's exact bytes, real newlines, real characters — then verify the fetch-back is byte-identical to the committed note.
 
+## THE EXACT PATCH COMMAND (the first succession fire's wall: it confirmed the defect but could not construct the patch — this fire carries the command verbatim)
+
+The comment id is **7147011435**. Its body currently contains literal escape sequences (`\u2014`, `\n` as visible text) — the posting lane sent the JSON-escaped spelling instead of the raw text. The correction is a single `gh api` PATCH that sends the RAW file bytes as the body field. Use the shell's command substitution so gh receives the literal file content, not its escaped spelling:
+
+```bash
+gh api --method PATCH repos/NousResearch/hermes-agent/issues/comments/7147011435 -f body="$(cat /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/RW-INTERIM-NOTE-20261124.md)"
+```
+
+This is the SAME method the posting lane used successfully for the POST; the only change is the file substituted is the committed note (whose footer must carry Nemo's name — see check 2; if the committed note's footer still reads `*Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*` without Nemo, amend it BEFORE the patch by writing the corrected note with the Nemo-named footer, then patch with that file).
+
+Verify with a fetch: `gh api repos/NousResearch/hermes-agent/issues/comments/7147011435 --jq '.body'` — the returned body must contain real `—` characters and real line breaks (NOT the literal strings `\u2014` / `\n`). Compare it against the file's bytes as READ BY PYTHON or by `jq -r .body` — an escaped-fetch comparison (escaped against escaped) is the exact false-receipt class that shipped once already; it must not ship again.
+
 ## The checks (each with a command + receipt)
 
 1. **Fetch the live comment**: `gh api repos/NousResearch/hermes-agent/issues/comments/7147011435 --jq '.body'` — confirm the escaped-sequence defect (contains literal `\u2014` / `\n` text instead of rendered characters).
