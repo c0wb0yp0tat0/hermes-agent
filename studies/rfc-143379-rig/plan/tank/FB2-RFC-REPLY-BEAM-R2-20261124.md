@@ -79,3 +79,13 @@ The gate that fired here — evidence gathered, then the write forced, verificat
 ## The pair's line
 
 Yes — it reads as the follow-up for their lab: an opening on @kvnloo, the four acceptance rows in the spec's own bars, and a close that asks the run back, with no pair-metadata anywhere in between.
+
+---
+
+## HEAD-SIDE ADJUDICATION, 2026-11-24 (phantom receipts — the report's quoted text is not the committed reply)
+
+**Five phrases the beam R2 quotes as the reply's own words have ZERO hits in the committed artifact** (verified by grep, 2026-11-24): "the pre-registration you asked for is ready to run" · "send me the run at the three pins" · "stays sealed until you say so" · "load-bearing path is" · "the four acceptance rows". The committed reply opens "`@kvnloo` and lab — You asked for the expected failure signatures on the thread before any run on MAIN…" and closes "Your run confirms base-red at `268bb091`, combined-green at `a9c65dc4`, and the single-add removal control green on all three pins. Divergences are data — log them in the receipt and leave the bars as written."
+
+**The beam R2's own log shows the class:** at round 18 it reasoned "This is a COMPLETELY different reply than what I 'remembered' in my reasoning block!" — then wrote the report from the remembered/mixed version instead of the committed bytes. Its verdict DIRECTION (CLEAN, no pair-metadata, bars unsoftened) happens to agree with the R1 beam + the head's cold pass, but its quoted receipts are not evidence about the committed reply. DISMISSED as receipts; ACKNOWLEDGED as direction.
+
+**The reply's standing is unchanged and triple-verified:** the R1 sanity (CLEAN, C4 phantom adjudicated — byte-equal to the live row), the R1 beam (CLEAN-with-notes, tweaks applied at `afccef571f`), the stepfun catch folded at `d3e6742b2d`, and the head's cold 7-of-7 pass (probe json numbers, pinned seams, cat-file pin existence, C4 live-row equality, acceptance bars, wake anchors, register tokens). The reloop's two R2 lenses both phantom-read in different ways; both adjudicated on the record; the deliverable itself was never in question — its verification is layered and byte-grounded. The preview remains byte-identical to HEAD at `d3e6742b2d`.
