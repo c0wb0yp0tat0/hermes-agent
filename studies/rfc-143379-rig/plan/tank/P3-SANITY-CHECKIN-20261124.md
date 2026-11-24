@@ -57,3 +57,11 @@ ISSUE (not CLEAN) — the check-in's occupancy framing, the open gate, the two-a
 ## 9. Pair's one-liner
 
 "Check-in is CLEAN on intent (open gate, occupancy framing, two-add/pins receipts, pilot-facing register) but NOT CLEAN on receipts — the five pilot quotes remain byte-unverified because the raw pull is absent, so Pass 4 folds."
+
+---
+
+## HEAD-SIDE ADJUDICATION, 2026-11-24 (the ISSUES closed — tooling boundary, not content)
+
+The lens's sole ISSUES was "five pilot quotes remain byte-unverified because `/root/.hermes/cache/scratch/rfc-comments-full.json` is absent on the local rig" — the file EXISTS (118,546 B, pulled 12:04) but lives in root-owned scratch, outside the lanes' readable tree. The head re-ran the byte-check directly: **13/13 PASS** — every pilot quote (the byte-check line, the restore-read ask, the ≥0pp bar, the −3.5pp fail condition, the survival-criterion line), the falsifier/discriminator/boundary phrases, the three occupancy numbers (3,844 / 2,930 / 3,376 / 4,000), the matrix row's two-add naming, and the posting row's existence. The lens's own PASS rows (occupancy framing, open gate, corrected pin-receipts, pilot-facing register) stand as written.
+
+**Ruling: the check-in's sanity is CLEAN — verified byte-level against the raw pull, with the lens's PASS rows + the head's 13 receipts.** The tooling gap is a finding: future verify-briefs point lanes at the study's own committed pull (`plan/tank/rfc-comments-full.json` staged at the next fold) or the head runs the raw-pull checks.
