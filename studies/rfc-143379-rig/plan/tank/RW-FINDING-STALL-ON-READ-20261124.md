@@ -31,3 +31,16 @@ This is the LOAD-BEARING finding: it confirms the arm's mechanism AND the exact 
 
 - The claim's provenance: "removing both turns red" originated in kvnloo's own 11-23 matrix (row 7087999804), entered our spec §3 with that citation, and he has now traced it back himself and corrected it to the reader-writer arm — both sides of the trail get credited.
 - Our probe run is the independent confirmation; his test is the named reference; the divergence data (byte count, control refusal) has already been logged in the confirm-run reply.
+
+## RUNNER LEG RECEIPT — p0tat0 (2026-11-24, second machine)
+
+The probe shipped to the p0tat0 runner (c0wb0y@100.98.69.7, Linux, python3.13 + git present, no repo checkout — the pin's store source shipped alongside and the probe falls back to the file). Executed there:
+
+| variant | rollback_observed | live list |
+|---|---|---|
+| as-at-pin | False | ['initial', 'latest'] |
+| lock-removed | False | ['initial', 'latest'] |
+| cache-write-restored | False | ['initial', 'latest'] |
+| both-removed | **True** | **['initial']** |
+
+Identical to the pve1 execution: green/green/green/red, the rollback surface is the live list, and the disk always keeps both entries. The arm's predicted signatures now stand on TWO independent machine executions, not the author's table alone.
