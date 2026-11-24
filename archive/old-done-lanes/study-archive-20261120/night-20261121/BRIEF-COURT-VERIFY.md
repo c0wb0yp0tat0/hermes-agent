@@ -1,0 +1,7 @@
+BRIEF — the court-verification spine (ARM C) — seat meituan/longcat-2.5:free
+FORM-ORDERS (binding): seek-to-understand rule 9 — the staged court drafts' load-bearing claims get reproduced FIRST-HAND before they ride the tower. The claims to verify (from COURT-DRAFTS-20261121.md + record-hermes-rlm.md):
+1. R2 (hermes-rlm #61): the frozen study summary (z0evals, rlm-paper-replication-v1/data/summary.json at 19f53a37) renders the claimed score points; the 48-task / 8-length sweep claim's inputs (the tokenizer JSON + the sweep generator in kvnloo/hermes-rlm bench/).
+2. R3 (hermes-rlm #62): the prompt/validator contradiction — the REPL tool advertises an uncited FINAL example the host rejects — reproduce by running the registration/validator regression (the issue's own command lines) on a fresh checkout.
+MECHANICS: gh clone kvnloo/hermes-rlm + kvnloo/z0evals into the scratch; run the issues' OWN command lines (the unit-test commands quoted in the record); receipt every result (exit codes, counts, the failed-run evidence). NO provider calls beyond the repo's own tests; no network beyond github.
+THE DELIVERABLE: court/VERIFICATION-SPINE-20261121.md — the two reproductions' ledgers (requested==executed sha-pinned), the FAIL/UNVERIFIED rows named honestly (the wall clause: a non-reproduction is a QUESTION).
+DOORS: read-only against the family's repos; nothing posted, nothing public; the drafts stay staged. REGISTER: receipts; no expected values; never smooth.
