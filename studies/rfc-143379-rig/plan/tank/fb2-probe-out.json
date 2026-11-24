@@ -1,0 +1,78 @@
+{
+  "A-pre-fix-two-add": {
+    "arm": "pre-fix",
+    "pin": "268bb09147ea",
+    "twice": true,
+    "add_results": [
+      {
+        "add": 1,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      },
+      {
+        "add": 2,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      }
+    ],
+    "doc_bytes": 64,
+    "FIRST_SURVIVED_SECOND_ADD": false,
+    "doc_head": "SECOND marker note: the fleet's two-add probe, byte unique b"
+  },
+  "C-pre-fix-single-add": {
+    "arm": "pre-fix",
+    "pin": "268bb09147ea",
+    "twice": false,
+    "add_results": [
+      {
+        "add": 1,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      }
+    ],
+    "doc_bytes": 64,
+    "FIRST_SURVIVED_SECOND_ADD": true,
+    "doc_head": "FIRST marker note: the fleet's two-add probe, byte unique al"
+  },
+  "A-fix-two-add": {
+    "arm": "fix",
+    "pin": "a9c65dc43db9",
+    "twice": true,
+    "add_results": [
+      {
+        "add": 1,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      },
+      {
+        "add": 2,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      }
+    ],
+    "doc_bytes": 131,
+    "FIRST_SURVIVED_SECOND_ADD": true,
+    "doc_head": "FIRST marker note: the fleet's two-add probe, byte unique al"
+  },
+  "C-fix-single-add": {
+    "arm": "fix",
+    "pin": "a9c65dc43db9",
+    "twice": false,
+    "add_results": [
+      {
+        "add": 1,
+        "success": true,
+        "failure_class": null,
+        "error": ""
+      }
+    ],
+    "doc_bytes": 64,
+    "FIRST_SURVIVED_SECOND_ADD": true,
+    "doc_head": "FIRST marker note: the fleet's two-add probe, byte unique al"
+  }
+}
