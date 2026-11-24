@@ -1,0 +1,27 @@
+PASS | probe A-pre 64/False
+PASS | probe A-fix 131/True
+PASS | probe C-pre 64/True
+PASS | probe C-fix 64/True
+PASS | reply carries 64/False/131/True
+PASS | 268bb091:615 whole-file write
+PASS | a9c65dc4:911 delimiter join
+PASS | pin 0f602c5f6f18 exists (commit)
+PASS | pin 268bb09147ea exists (commit)
+PASS | pin a9c65dc43db9 exists (commit)
+PASS | C1 fix-removal gloss
+PASS | C1 distinct-from note
+PASS | spec §4 parenthetical
+PASS | wake anchors (reply)
+PASS | wake anchors (record)
+PASS | register forbidden tokens
+PASS | hold-back clause-only
+PASS | C4 in live row
+PASS | C4 in reply
+PASS | C4 in spec §7
+PASS | bar C1 named divergence
+PASS | bar C2 bold-stripped identical
+PASS | bar C3 bold-stripped identical
+PASS | bar C4 named divergence
+PASS | preview == committed reply
+
+EXECUTED RELOOP: 25/25 PASS; NOTHING FAILED
