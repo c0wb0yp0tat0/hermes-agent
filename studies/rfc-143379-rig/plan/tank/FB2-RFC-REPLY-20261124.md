@@ -1,4 +1,4 @@
-`@kvnloo` and lab —
+@kvnloo and lab —
 
 You asked for the expected failure signatures on the thread before any run on MAIN. They are below, fixed in advance and runnable cold from this comment alone. Every bar is pre-registered; a divergence is a receipt entry, never a renegotiated bar.
 
