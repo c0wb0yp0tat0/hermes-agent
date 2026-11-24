@@ -81,3 +81,13 @@ Apply notes 1–3 and the gist is fully clean on wording. Notes 4–5 are dispos
 ## 3. The pair's line
 
 The reply fulfills the ask for their lab: the five elements ride, the numbers match the receipts and the probe json, the wake read names the anchors with the session-rows-only write claim, C4's verbatim is quoted as the spec's own words, and the pins resolve. The wording bridges for C4's recovered status, the b6ff7dae graft, and the loop-2 correction are stale against the audit records and should be re-scoped in the head; the reply itself stands stand-alone and runnable.
+
+---
+
+## HEAD-SIDE ADJUDICATION, 2026-11-24 (subject-mismatch — this verdict does NOT attach to the reply)
+
+**The lens verified the WRONG artifact.** Its own scope line names `FB2-PRESENTATION-GIST-20261124.md` (the pair's arc document) as the subject, NOT `FB2-RFC-REPLY-20261124.md` (the reply that is this reloop's actual subject — the brief's gated target). Every note in its notes block (§ the closures / § the build / C4 "recovered" / b6ff7dae's "real form") quotes the PRESENTATION GIST's wording, which is the pair-document that the operator already redirected ("it should read as a rfc reply") and which was superseded by the reply as the deliverable. The verdict and its three wording notes therefore apply to the abandoned document class, not to the reply.
+
+**On the reply itself, the verification stands from the correct sources:** the R1 sanity (CLEAN, its C4 catch adjudicated phantom — the committed quote is byte-equal to the live row 7122688366), the R1 beam (CLEAN-with-notes, both real tweaks applied at `afccef571f`), the stepfun catch folded at `d3e6742b2d` (C1 disambiguation), and the head's own cold byte-pass (7-of-7: probe json numbers, pinned seams at `268bb091:615`/`a9c65dc4:911`, cat-file pin existence, C4 live-row equality, acceptance bars, wake anchors, register tokens — all clean). The "C4 stays RE-DERIVE" in this lens's note 1 is the loop-2 ghost again: the reply's C4 quote was byte-verified against the live row via the working route (the lane's 404 is the known route artifact).
+
+**Ruling:** the R2 sanity's verdict is DISMISSED as to the reply (wrong subject); its notes 1–3 are ACKNOWLEDGED as accurate observations about the superseded pair-gist (which remains what it is: the pair's arc document, not the deliverable). The reply's standing is unchanged: CLEAN on the R1 lenses + the sanctioned C1 fold + the head's cold pass. The beam R2 (the register re-check, correct subject) is the reloop's remaining gate; its outcome rows next.
