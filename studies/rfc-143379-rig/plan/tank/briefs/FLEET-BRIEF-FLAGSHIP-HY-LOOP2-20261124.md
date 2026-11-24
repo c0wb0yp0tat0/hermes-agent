@@ -6,6 +6,8 @@
 
 The pair (the operator + the head) judges readiness on convergence, not on the first pass's word. Loop 1's reserve audit (`FLEET-AUDIT-LONGCAT-20261124.md`) found the spec's load-bearing ground sound but left four wall items RE-DERIVE-marked. THIS lap resolves them; the next lap re-reads what you resolve. The four items, each with its move:
 
+**Ground already established (the first fire's log + the head's re-checks — BORROWED, re-verify before citing):** (a) item 1's fetch was REFUSED by the fork (`fatal: remote error: upload-pack: not our ref b6ff7dae6f18…`) and the head's own `ls-remote` of `memory-chain-doc-read-combined` / `memory-probe-harness-kgate` did not surface `b6ff7dae` — the pin is REFUSED-with-receipt, confirm once and write the receipt; (b) the fix's joining write is at **`a9c65dc4:911`** (not `:945` — that line number belongs to the `268bb091` commit; the first fire caught this divergence and the audit's §3 table quoted `:945` from the loop-1 spec) — re-quote the :911 line and flip the audit's mechanism row: the catch IS the record; (c) the `_add_doc` verbatim lines at `268bb091` :580-619 were established by the loop-1 reserve (grep receipts in `FLEET-AUDIT-LONGCAT-20261124.md` Row 3) — re-run the sed to confirm, quote into the record.
+
 ## The four wall items and their minimal moves (the wall clause: construct, don't stop)
 
 1. **`b6ff7dae` (the removal control's pre-fix leg pin).** Record-cited from KvNloo's matrix row 7087999804 (`+b6ff7dae` → green 17/17). Does not resolve locally (`git rev-parse --verify b6ff7dae` → `fatal: Needed a single revision`; the full form `b6ff7dae6f18615632535251d62a2db74ce93b69` is NOT in the object store — the short-SHA echo test is not proof; only `--verify` is). **Minimal move:** `git fetch https://github.com/kvnloo/hermes-agent.git b6ff7dae6f18615632535251d62a2db74ce93b69` — if the fork serves it, `git rev-parse --verify b6ff7dae6f18615632535251d62a2db74ce93b69` MUST then resolve; record the fetch's output and the resolved check. If the fork refuses (unreachable / dumb server), the pin stays a record-cited RE-DERIVE marker and you RECEIPT that state — a refusal is a finding, never a hole.
@@ -24,7 +26,7 @@ Write to: `/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/F
 
 ## Write-window
 
-`write-window: 10` — four commands, one record; the skeleton by round 10, deepened after.
+`write-window: 16` — run the moves FIRST, write the skeleton no later than round 15, deepen after (the gate opens at 16; a written skeleton reopens reads). The loop's lesson: the gated-read trap — never let the clock close on unrun moves.
 
 ## The hard lines (binding)
 
