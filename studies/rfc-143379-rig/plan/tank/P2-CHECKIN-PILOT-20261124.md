@@ -30,7 +30,7 @@ Your gate is open, your words are the standard, and the pilot moves at your pace
 - Gratitude, field reads: rows 6360811382, 6362735198, 6369077436 — P1-CONTOUR-PILOT-20261124.
 - Restore-read ask leads, byte-check honored: rows 6360811382, 6515564390 — P1-EYE-PILOT-20261124, P1-DELTA-PILOT-20261124.
 - Occupancy 96 / 73 / 84 (his numbers, never a score): row 6515564390 — P1-CONTOUR-PILOT-20261124, ORCHESTRATION-3OLTAN-CHECKIN-20261124.
-- FB-2 two-add class at pinned SHAs: rows 7122051629, 6630249660, 6651356150 — P1-DELTA-PILOT-20261124.
+- FB-2 two-add class at pinned SHAs: named in the matrix row 7087999804 ("a second chain-doc `add` overwrites the first"); pre-registered at the pinned SHAs in our reply row 7135900146 — P1-DELTA-PILOT-20261124. (Line corrected head-side: the previous citation of 6630249660/6651356150 mislabeled xngg1021's exchange rows as pin rows — struck 2026-11-24.)
 - Wake read and reply posting: rows 7122051629, 7135900146 — P1-DELTA-PILOT-20261124.
 - Hard gate open, −3.5pp fail condition, ≥0pp bar: rows 6362735198, 6360811382, 7122051629 — P1-CONTOUR-PILOT-20261124, P1-EYE-PILOT-20261124.
 - Falsifier / discriminator / sanitized boundary: rows 6369077436, 6411683234 — P1-CONTOUR-PILOT-20261124, P1-FIELD-PILOT-20261124.
