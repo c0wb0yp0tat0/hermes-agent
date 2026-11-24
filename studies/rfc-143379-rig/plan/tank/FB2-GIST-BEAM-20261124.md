@@ -58,8 +58,10 @@ Zero matches on all six = pass. No process notes, no staging talk, no "fires on 
 
 ## Notes
 
-1. **Line 23 — `**the closures**`.** The standard's fifth beat is `**the reshape**`. Fix: rename the header to `**the reshape**` (the beat's own first sentence already says "kaizen reshape" is loop three's business; the closures content stays in the paragraph under it).
-2. **Line 5 — "KvNloo's acceptance is row 7122500729: nothing runs on MAIN until the spec is on the thread."** If the row's line is carried, the standard wants it quoted and attributed to the row. Fix: set the row's words in quotes attributed to row 7122500729 (or drop the name and leave "the acceptance row").
+1. **Line 23 — `**the closures**`.** The beam's NOTE 1 proposed renaming the fifth beat to `**the reshape**`; **REJECTED at the head-side fold with a receipt**: the beam's own reasoning contradicts it — it conceded the reshape is loop three's business (already told in `the loops` beat) and that the closures content stays under the header. Renaming the header would mislabel the paragraph the beam itself verified. The beat stays `**the closures**`; the reshape's story rides in the loops beat where it belongs.
+2. **Line 5 — the acceptance row's bar.** APPLIED at the fold: the row's standing bar is now attributed to row 7122500729 without the colon-claim ("The acceptance row 7122500729 holds the standing bar: nothing runs on MAIN until the spec is on the thread"), per the beam's quote-and-attribute fix.
+
+With note 2 applied and note 1 receipted, the gist stands CLEAN under the beam's own standard.
 
 ## The pair's line
 

@@ -2,7 +2,7 @@
 
 **the promise**
 
-Thread row 7122688366 is the acceptance row, recovered verbatim. It promises the FB-2 failing-case spec in full, before anything runs: the expected failure signature on the ungated add, the same case on the fix, the removal control, and one hold-back class, all at pinned SHAs. The companion read is a scheduled wake. KvNloo's acceptance is row 7122500729: nothing runs on MAIN until the spec is on the thread. The full spec is `FB2-FAILING-CASE-SPEC-20261124.md`. The pins are `268bb09147eaf948ece6a1beecd92a2268a5fc95` for the class's home, `a9c65dc43db9000e8b6e238b50916aa6fa32ff08` for the fix, and `0f602c5f` for the read-less MAIN baseline.
+Thread row 7122688366 is the acceptance row, recovered verbatim. It promises the FB-2 failing-case spec in full, before anything runs: the expected failure signature on the ungated add, the same case on the fix, the removal control, and one hold-back class, all at pinned SHAs. The companion read is a scheduled wake. The acceptance row 7122500729 holds the standing bar: nothing runs on MAIN until the spec is on the thread. The full spec is `FB2-FAILING-CASE-SPEC-20261124.md`. The pins are `268bb09147eaf948ece6a1beecd92a2268a5fc95` for the class's home, `a9c65dc43db9000e8b6e238b50916aa6fa32ff08` for the fix, and `0f602c5f` for the read-less MAIN baseline.
 
 **the build**
 
