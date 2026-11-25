@@ -8,11 +8,11 @@ We register the pause at snapshot-then-block, not inside the writer's commit. Th
 
 **the bars, unchanged**
 
-Nothing in the four classes below moves the pre-registration at row 7135900146. The failing case stays FB-2, a second chain-doc `add` overwriting the first because `_add_doc` writes the note's `content` as the whole file rather than appending a record, with the ungated signature `FIRST_SURVIVED_SECOND_ADD = False` and the fix signature `FIRST_SURVIVED_SECOND_ADD = True`. The three pins stand: the read-less MAIN baseline `0f602c5f6f18615632535251d62a2db74ce93b69`, the class's home `268bb09147eaf948ece6a1beecd92a2268a5fc95`, and the combined GREEN reference `a9c65dc43db9000e8b6e238b50916aa6fa32ff08`, equivalently composed `ec649ad9`. The single-add removal control stays green on all three pins; a RED there invalidates the probe, never the finding. Divergences are receipt entries, never renegotiated bars.
+Nothing in the four classes below moves the pre-registration at row 7135900146. The failing case stays FB-2, a second chain-doc `add` overwriting the first because `_add_doc` writes the note's `content` as the whole file rather than appending a record, with the ungated signature `FIRST_SURVIVED_SECOND_ADD = False` and the fix signature `FIRST_SURVIVED_SECOND_ADD = True`. The three pins stand: the read-less MAIN baseline `0f602c5f6f18615632535251d62a2db74ce93b69`, the class's home `268bb09147eaf948ece6a1beecd92a2268a5fc95`, and the combined GREEN reference `a9c65dc43db9000e8b6e238b50916aa6fa32ff08`, equivalently composed `ec649ad9`. The single-add removal control stays green on the two pins that accept the chain target (`268bb091` and `a9c65dc4`), and refused-by-pin on `0f602c5f`, a refused arm, not a pass or a fail (row 7141681989). A RED there invalidates the probe, never the finding. Divergences are receipt entries, never renegotiated bars.
 
 **the record, straight**
 
-One correction to the record before anything else. Our confirm-run reply is row 7141681989, posted 2026-11-24 19:09Z, where we logged the byte-count and control-refusal divergences. Row 7140129275 is your confirm run, not ours, and the earlier beat that attributed it to us was wrong. The channel finding from the same week, 0/40 then 26/40 then 31/40 then 29/40 at about 70%, and the battery's INCONCLUSIVE verdict, sit on the substrate thread at row 7141681989 and are noted here only as that same-week finding, never as the center of this reply.
+One correction to the record before anything else. Our confirm-run reply is row 7141681989, posted 2026-11-24 19:09Z, where we logged the byte-count and control-refusal divergences. Row 7140129275 is your confirm run, not ours, and the earlier beat that attributed it to us was wrong. The channel finding from the same week, 0/40 then 26/40 then 31/40 then 29/40 at about 70%, and the battery's INCONCLUSIVE verdict, sit on the substrate thread at row 7141681989 and are noted here only as that same-week finding, never as the center of this reply. Your test, your name, your sha, your receipts — credited as yours.
 
 **the open threads**
 
@@ -34,8 +34,10 @@ One class remains held by clause. The pre-registration at row 7135900146 withhel
 
 **the ask back**
 
-Your run confirms base-red, combined-green at the fix, the single-add removal control green on all three pins, and now the stall arm at the snapshot boundary. Divergences are data, so log them in the receipt and leave the bars as written. The door stays open for the second stall arm and for the two follow-ups above.
+Your run confirms base-red, combined-green at the fix, the removal control green on the two pins that accept the chain target and refused-by-pin on `0f602c5f` (row 7141681989), and now the stall arm at the snapshot boundary. Divergences are data, so log them in the receipt and leave the bars as written. The door stays open for the second stall arm and for the two follow-ups above.
 
 A finding from the same night, no blame. It took twenty minutes for the fresh session that inherited this reply to listen enough to properly skill — to read the standing instructions back, verbatim, rather than work from commentary about them. Same root as the stall above: the read holding a stale view while the writes land. The fix was cheap and it is on the record: the original ask is the anchor.
 
-*Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*
+If the pause point should move once you look at it, I'm glad to hear it; a question back is welcome, but the answer above is the decision, not a shrug.
+
+*Prepared with Hermes and Nemo, reviewed by c0wb0yp0tat0 before posting.*
