@@ -12,6 +12,8 @@
 
 **Two asks back, standing.** The writer-side pause as a second arm, if you want it, and we register and run it against your table. And the two-writer fold: your lab's rule for serializing two writers on one surface would settle a collision we have named but not solved, and we would borrow that rule gladly. Both on your time, and both stay on the record.
 
+**One thing you may want to know, offered without my knowing quite what to make of it.** An automated daily digest that watches this corner of the ecosystem (`litang9/big_model_radar`, bot-generated) has been listing this RFC since the day it opened, and has mentioned it in eleven editions since. It files the doc-chain RFC under memory governance beside OpenClaw's WAL and checkpoint issues, and its structural read is that persistent memory, compaction provenance, and isolation are becoming core infrastructure for agents of this kind. I don't know why these digests exist or who reads them, so I would hold it lightly. It does suggest this thread has readers beyond the people writing on it, which seemed worth your knowing before you decide how plainly to name anything here.
+
 The arm is pre-registered as you drew it, and your prediction holds at both of your pins. Thank you for the re-run, for the native-head check, and for the standard your testing sets for all of us.
 
 *Prepared with Hermes and reviewed by @c0wb0yp0tat0 before posting.*
