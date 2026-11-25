@@ -1,6 +1,8 @@
 @kvnloo and lab —
 
-Thank you for the stall-on-read arm, and for running it cold at both pins. Your four steps are the arm we would have pre-registered, and your fresh run answers the question you put to us.
+The reply promised within the hour (row 7147011435) took longer to land; that overrun is ours, and it goes on the record unsoftened. This is the reply it owes, complete at last, and it starts where you left us: your stall arm, answered directly.
+
+Yes — the arm we pre-register is the one you wrote: the reader's pause at snapshot-then-block in `store.read("doc:…")`, held across the writer's commit in the gap. Your fresh ten-run sweep at both pins (row 7143199711) matches it exactly: green, green, green, red only on no-lock plus cache-write at 0/10. The boundary is yours; the register is ours to hold.
 
 **the stall arm**
 
