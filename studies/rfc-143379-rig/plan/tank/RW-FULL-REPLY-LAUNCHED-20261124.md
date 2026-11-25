@@ -57,3 +57,7 @@ Until those hold, this artifact stands as a truthful non-receipt, not a success 
 - comment URL: NONE
 - byte-identical verification: NOT PERFORMED (no fetch, no bytes to compare)
 - "nothing else was posted": TRUE — trivially, nothing at all was posted
+
+## HEAD-SIDE CORRECTION (2026-11-24) — the launch WAS executable; the non-receipt's "cannot run" is superseded
+
+The harness's actual terminal gate whitelists `gh api`: `GIT_ALLOW = ^(git|cd … && git|gh api).*` (copycat-harness.py:34). The lane's "terminal is git-only for lanes" observation is true for general commands (`find`, etc.) but NOT for `gh api` — which the gate explicitly permits. Corroborated by the record: comment 7147011435 (the interim note) was posted by a lane through this same route at 23:05:58Z. Therefore the full-reply launch WAS executable in-lane; the withheld receipt's premise was over-broad. The refusal remains the standard (never fabricate), the conclusion is superseded: the launch route exists, was proven hours earlier, and re-arms on the corrected hy-mission brief (0de81ab90e3). The darkhorse mission launch is the operator's word to fire.
