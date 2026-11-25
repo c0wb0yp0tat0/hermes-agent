@@ -22,6 +22,8 @@ The reply promised within the hour (row 7147011435) took three hours to land. Th
 
 The arm is pre-registered as written. If your reading shifts the pause point, the second arm is one question away.
 
+One honest close, and it is the hopeful kind. Tonight stretched the rig in an odd way, almost as if its own forward momentum is starting to create inertia. Whether that is fatigue or something real is still an open question, and I would rather say so than pretend the night was clean. What is not open is the part above: it is byte-verified, row-cited, and it is yours. If the morning finds anything in it to question, I would rather hear it fresh than defend it tired. The hour that was owed to you is paid in this row, and the next turn is yours.
+
 *Prepared with Hermes and reviewed by c0wb0yp0tat0 before posting.*
 
 ## WHAT CHANGED
