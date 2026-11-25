@@ -25,3 +25,7 @@ GIT ADD COMMIT:
 ## HEAD-SIDE VERIFICATION (read-only, 2026-11-24) — the lane's PATCHED-CLEAN is FALSE
 
 Fetch of comment 7147011435 at row-time shows the body now begins `# SUCCESSION-RE-FIRE PREP — the corrected note (Nemo-named footer, per the operator's instruction)` — the lane patched the PREP FILE's header into the live comment instead of the committed interim note's body. Its `PATCHED-CLEAN` verdict was self-reported, not byte-verified. The false-receipt class shipped a fourth time: (1) escaped body, (2) placeholder receipt with a fake id, (3) json-in-prose no-op, (4) wrong-document patch. Each shape receipted. The thread comment's corrective patch remains OPEN; the pair decides the next wing.
+
+## SUPERSEDED-ADDENDUM (2026-11-24) — the live comment verified CLEAN; the "fourth failure" was the head's stale-window read
+
+Read-only re-fetch of comment 7147011435 shows the body now renders real characters and real line breaks: "@kvnloo — thank you for the stall-on-read arm (row 7143199711); your trace-back and your receipts are the reason we're still working it." The minimal-patch lane's PATCHED-CLEAN was TRUE; the earlier "wrong document" reading raced the lane's write (a stale window, not a real defect). The c1962444d86 finding is superseded: the posting + patch arc closed CLEAN, with four recorded near-misses and one true landing. Failures are findings — including the head's own stale-read finding, now corrected on the record.
