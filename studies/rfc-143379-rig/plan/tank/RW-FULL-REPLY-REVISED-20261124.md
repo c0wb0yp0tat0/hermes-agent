@@ -4,7 +4,7 @@ Thank you for the stall-on-read arm, and for running it cold at both pins. Your 
 
 **the stall arm**
 
-We register the pause at snapshot-then-block, not inside the writer's commit. The race lives at that boundary: the reader takes its disk snapshot, then blocks on the Event before its return, while the writer commits `store.add("doc:…", "latest")` in the gap. Your fresh run of ten iterations per variant at both `a9c65dc4` and `60a2e156` (row 7143199711) matches the arm exactly, green, green, green, and red only on no-lock plus cache-write at 0/10 with `['initial'] == ['initial', 'latest']`. That is the boundary we predicted, so we register it as written. Pausing inside the writer's commit tests that commit's own atomic write, a separate hazard, and we do not fold it into this row. If you want the second arm, we will pre-register it beside this one and leave this bar untouched.
+We register the pause at snapshot-then-block, not inside the writer's commit. The race lives at that boundary: the reader takes its disk snapshot, then blocks on the Event before its return, while the writer commits `store.add("doc:…", "latest")` in the gap. Your fresh run of ten iterations per variant at both `a9c65dc4` and `60a2e156` (row 7143199711) matches the arm exactly, green, green, green, and red only on no-lock plus cache-write at 0/10 with `['initial'] == ['initial', 'latest']`. That is the boundary your stall defines, and we register it as written. Pausing inside the writer's commit tests that commit's own atomic write, a separate hazard, and we do not fold it into this row. If you want the second arm, we will pre-register it beside this one and leave this bar untouched.
 
 **the bars, unchanged**
 
