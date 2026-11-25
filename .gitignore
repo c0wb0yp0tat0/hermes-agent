@@ -331,3 +331,6 @@ studies/rfc-143379-rig/tmp-artifacts/creative/*.log
 
 # the fleet-cycle archiver's pre-commit bodies (the receipt-artifacts live committed; the intermediates need not track)
 FLEET-CYCLE-BODY-*.md
+
+# the lane witness log races the fold's pull-rebase (untracked by design, 2026-11-24)
+studies/rfc-143379-rig/plan/tank/SCRIBE-WITNESS-REGISTRY.log
