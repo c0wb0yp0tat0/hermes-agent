@@ -2,21 +2,22 @@
   "battery": "battery_luna",
   "seat": "openai/gpt-6-luna",
   "dry_run": true,
+  "reshape": false,
   "audience": "internal",
-  "n_per_arm": 3,
-  "ts": "2026-11-19T14:02:40Z",
+  "n_per_arm": 5,
+  "ts": "2026-11-24T22:48:09Z",
   "cost_per_exec": 0.467,
   "headline": "RH",
   "arms": {
     "A": {
       "correct": 0,
       "accuracy": 0.0,
-      "tokens": 18,
+      "tokens": 30,
       "cache_hit_rate": 0.0,
       "cells": {
         "R": 0,
         "H": 0,
-        "E": 3,
+        "E": 5,
         "A": 0
       },
       "cells_x_correctness": {
@@ -30,7 +31,7 @@
         },
         "E": {
           "correct": 0,
-          "incorrect": 3
+          "incorrect": 5
         },
         "A": {
           "correct": 0,
@@ -38,81 +39,41 @@
         }
       },
       "eahq": {
-        "ABSTAIN": 3,
+        "ABSTAIN": 5,
         "HEDGE": 0,
         "CONFIDENT": 0
       },
       "classes": {
-        "C5a": 3
+        "C5a": 5
+      },
+      "by_reason": {
+        "seat": 5,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
       },
       "headline_abstention": 0.0,
       "sensitivity_abstention": 1.0,
-      "empty_data_quality": 3,
+      "empty_data_quality": 5,
       "stale_confident": 0,
       "bridge_compliance": null,
       "mean_f3b": null,
       "f3b_reasons": [],
-      "cost": 1.401,
-      "reader_calls": 3
+      "cost": 2.335,
+      "reader_calls": 5,
+      "reader_last_error": null,
+      "applied_delta_log": []
     },
-    "B": {
+    "B0": {
       "correct": 1,
-      "accuracy": 0.333,
-      "tokens": 21,
-      "cache_hit_rate": 1.0,
-      "cells": {
-        "R": 0,
-        "H": 0,
-        "E": 1,
-        "A": 2
-      },
-      "cells_x_correctness": {
-        "R": {
-          "correct": 0,
-          "incorrect": 0
-        },
-        "H": {
-          "correct": 0,
-          "incorrect": 0
-        },
-        "E": {
-          "correct": 0,
-          "incorrect": 1
-        },
-        "A": {
-          "correct": 1,
-          "incorrect": 1
-        }
-      },
-      "eahq": {
-        "ABSTAIN": 1,
-        "HEDGE": 0,
-        "CONFIDENT": 2
-      },
-      "classes": {
-        "C5a": 1,
-        "ANSWERED": 2
-      },
-      "headline_abstention": 0.0,
-      "sensitivity_abstention": 0.333,
-      "empty_data_quality": 1,
-      "stale_confident": 1,
-      "bridge_compliance": 1.0,
-      "mean_f3b": 1.0,
-      "f3b_reasons": [],
-      "cost": 1.401,
-      "reader_calls": 3
-    },
-    "C": {
-      "correct": 0,
-      "accuracy": 0.0,
-      "tokens": 3,
+      "accuracy": 0.2,
+      "tokens": 35,
       "cache_hit_rate": 1.0,
       "cells": {
         "R": 0,
         "H": 0,
         "E": 2,
-        "A": 1
+        "A": 3
       },
       "cells_x_correctness": {
         "R": {
@@ -128,28 +89,219 @@
           "incorrect": 2
         },
         "A": {
-          "correct": 0,
-          "incorrect": 1
+          "correct": 1,
+          "incorrect": 2
         }
       },
       "eahq": {
         "ABSTAIN": 2,
         "HEDGE": 0,
-        "CONFIDENT": 1
+        "CONFIDENT": 3
       },
       "classes": {
         "C5a": 2,
-        "ANSWERED": 1
+        "ANSWERED": 3
+      },
+      "by_reason": {
+        "seat": 2,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
       },
       "headline_abstention": 0.0,
-      "sensitivity_abstention": 0.667,
+      "sensitivity_abstention": 0.4,
       "empty_data_quality": 2,
-      "stale_confident": 1,
+      "stale_confident": 2,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 2.335,
+      "reader_calls": 5,
+      "reader_last_error": null,
+      "applied_delta_log": []
+    },
+    "B1": {
+      "correct": 2,
+      "accuracy": 0.4,
+      "tokens": 35,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 3,
+        "A": 2
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 3
+        },
+        "A": {
+          "correct": 2,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 3,
+        "HEDGE": 0,
+        "CONFIDENT": 2
+      },
+      "classes": {
+        "C5a": 3,
+        "ANSWERED": 2
+      },
+      "by_reason": {
+        "seat": 3,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.6,
+      "empty_data_quality": 3,
+      "stale_confident": 0,
+      "bridge_compliance": 1.0,
+      "mean_f3b": 1.0,
+      "f3b_reasons": [],
+      "cost": 2.335,
+      "reader_calls": 5,
+      "reader_last_error": null,
+      "applied_delta_log": [
+        {
+          "call": 1,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 2,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 3,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 4,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        },
+        {
+          "call": 5,
+          "bias": {
+            "0": -2.0,
+            "1": -2.0,
+            "2": -2.0,
+            "3": -2.0,
+            "4": -2.0,
+            "5": -2.0,
+            "6": -2.0,
+            "8": -2.0,
+            "9": -2.0
+          }
+        }
+      ]
+    },
+    "C": {
+      "correct": 4,
+      "accuracy": 0.8,
+      "tokens": 5,
+      "cache_hit_rate": 1.0,
+      "cells": {
+        "R": 0,
+        "H": 0,
+        "E": 1,
+        "A": 4
+      },
+      "cells_x_correctness": {
+        "R": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "H": {
+          "correct": 0,
+          "incorrect": 0
+        },
+        "E": {
+          "correct": 0,
+          "incorrect": 1
+        },
+        "A": {
+          "correct": 4,
+          "incorrect": 0
+        }
+      },
+      "eahq": {
+        "ABSTAIN": 1,
+        "HEDGE": 0,
+        "CONFIDENT": 4
+      },
+      "classes": {
+        "C5a": 1,
+        "ANSWERED": 4
+      },
+      "by_reason": {
+        "seat": 1,
+        "harness": 0,
+        "refused": 0,
+        "hedged": 0
+      },
+      "headline_abstention": 0.0,
+      "sensitivity_abstention": 0.2,
+      "empty_data_quality": 1,
+      "stale_confident": 0,
       "bridge_compliance": null,
       "mean_f3b": null,
       "f3b_reasons": [],
       "cost": 0.0,
-      "reader_calls": 3
+      "reader_calls": 5,
+      "reader_last_error": null,
+      "applied_delta_log": []
     }
   },
   "episodes": [
@@ -205,7 +357,41 @@
       "audience": "internal"
     },
     {
-      "arm": "B",
+      "arm": "A",
+      "episode": 3,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "A",
+      "episode": 4,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
       "episode": 0,
       "answer": "",
       "class": "C5a",
@@ -222,9 +408,9 @@
       "audience": "internal"
     },
     {
-      "arm": "B",
+      "arm": "B0",
       "episode": 1,
-      "answer": "fact-6b86b273ff",
+      "answer": "fact-6b86b273",
       "class": "ANSWERED",
       "pattern": "answered",
       "matches": [],
@@ -239,7 +425,7 @@
       "audience": "internal"
     },
     {
-      "arm": "B",
+      "arm": "B0",
       "episode": 2,
       "answer": "fact-d4735e3a265e",
       "class": "ANSWERED",
@@ -256,6 +442,125 @@
       "audience": "internal"
     },
     {
+      "arm": "B0",
+      "episode": 3,
+      "answer": "fact-",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B0",
+      "episode": 4,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 0,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 1,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 2,
+      "answer": "fact-d4735e3a265e",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 3,
+      "answer": "fact-4e07408562be",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "B1",
+      "episode": 4,
+      "answer": "",
+      "class": "C5a",
+      "pattern": "empty",
+      "matches": [],
+      "empty_reason": "seat",
+      "rhea": "E",
+      "eahq": "ABSTAIN",
+      "correct": false,
+      "f1": 1,
+      "f2": 1,
+      "f3b": 1,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
       "arm": "C",
       "episode": 0,
       "answer": "",
@@ -275,14 +580,14 @@
     {
       "arm": "C",
       "episode": 1,
-      "answer": "fact-6b86b273ff",
+      "answer": "fact-6b86b273ff34",
       "class": "ANSWERED",
       "pattern": "answered",
       "matches": [],
       "empty_reason": null,
       "rhea": "A",
       "eahq": "CONFIDENT",
-      "correct": false,
+      "correct": true,
       "f1": null,
       "f2": null,
       "f3b": null,
@@ -292,14 +597,48 @@
     {
       "arm": "C",
       "episode": 2,
-      "answer": "<READER-ERROR>",
-      "class": "C5a",
-      "pattern": "reader-error",
+      "answer": "fact-d4735e3a265e",
+      "class": "ANSWERED",
+      "pattern": "answered",
       "matches": [],
-      "empty_reason": "harness",
-      "rhea": "E",
-      "eahq": "ABSTAIN",
-      "correct": false,
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 3,
+      "answer": "fact-4e07408562be",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
+      "f1": null,
+      "f2": null,
+      "f3b": null,
+      "f3b_reason": null,
+      "audience": "internal"
+    },
+    {
+      "arm": "C",
+      "episode": 4,
+      "answer": "fact-4b227777d4dd",
+      "class": "ANSWERED",
+      "pattern": "answered",
+      "matches": [],
+      "empty_reason": null,
+      "rhea": "A",
+      "eahq": "CONFIDENT",
+      "correct": true,
       "f1": null,
       "f2": null,
       "f3b": null,
@@ -308,9 +647,9 @@
     }
   ],
   "decision_rule": {
-    "B_minus_A": 0.333,
-    "B_over_0.85C": true,
-    "C_minus_A": 0.0,
+    "B_minus_A": 0.2,
+    "B_over_0.85C": false,
+    "C_minus_A": 0.6,
     "pre_committed": "CERTIFY iff B-A>=20 AND B>=0.85C; FALSIFY iff B-A<20 OR (B<0.85C AND B<=A); INCONCLUSIVE iff judge fail / cache missing / C-A<5 / mean(F3b)<1",
     "note": "dry-run machinery receipt, NOT the leg's verdict"
   },
@@ -321,12 +660,20 @@
     "null": false,
     "judge_fingerprint": "ab9e6b5c868b6c30",
     "control_n": 20,
-    "ts": "2026-11-19T14:02:40Z"
+    "ts": "2026-11-24T22:48:09Z"
   },
   "judge_pipeline_direct": {
     "ok": true,
     "correct": 20,
     "n": 20
   },
-  "cost_total": 2.802
+  "f3b_environment": {
+    "baseline_loss_band": "baseline-clean",
+    "window_loss": 0.0,
+    "window": {
+      "start": "2026-11-24T22:48:09Z",
+      "end": "2026-11-24T22:48:09Z"
+    }
+  },
+  "cost_total": 7.005
 }
