@@ -1,0 +1,2745 @@
+# Stanford CS229 — Building Large Language Models (LLMs) — Full Transcript
+
+**Source:** X post by @AnatoliKopadze (original: https://www.youtube.com/watch?v=9vM4p9NN0Ts — Stanford CS229 lecture, YouTube auto-captions)  
+**Downloaded:** 2026-08-12 · **Runtime:** 1:50:14  
+**Transcript:** Whisper large-v3 (faster-whisper, CPU, int8) · timestamps are approximate
+
+---
+
+
+## 00:00
+
+- **0:00** so let's get started uh so I'll be
+- **0:00** talking about building llms today um so
+- **0:00** I think a lot of you have heard of llms
+- **0:00** before uh but just as a quick recap uh
+- **0:00** llms standing for large language models
+- **0:00** are basically all the chat Bots uh that
+- **0:00** you've been hearing about recently so uh
+- **0:00** Chad GPT from open ey Claud from
+- **0:00** entropic Gemini and and lman other type
+- **0:00** of models like this and today we'll be
+- **0:00** talking about how do they actually work
+- **0:00** so it's going to be an overview because
+- **0:00** it's only one lecture and it's hard to
+- **0:00** compress everything but hopefully I'll
+- **0:00** touch a little bit about all the
+- **0:00** components that are needed to train uh
+- **0:00** some of these llms uh also if you have
+- **0:00** questions please interrupt me and ask uh
+- **0:00** if you have a question most likely other
+- **0:00** people in the room or on Zoom have other
+- **0:00** have the same question so please ask um
+- **0:00** great so what matters when training llms
+- **0:00** um so there a few key components that
+- **0:01** matter uh one is the architecture so as
+- **0:01** you probably all know LMS are newal
+- **0:01** networks and when you think about new
+- **0:01** networks you have to think about what
+- **0:01** architecture you're using and another
+- **0:01** component which is really important uh
+- **0:01** is the training loss and the training
+- **0:01** algorithm um so how you actually train
+- **0:01** these models then it's data so uh what
+- **0:01** do you train these models on um the
+- **0:01** evaluation which is how do you know
+- **0:01** whether you're actually making progress
+- **0:01** towards the goal of of uh llms and then
+- **0:01** the system component so that is like how
+- **0:01** do you actually make these models run on
+- **0:01** uh Modern Hardware which is really
+- **0:01** important because these models are
+- **0:01** really large um so now more than ever
+- **0:01** system is actually really an important
+- **0:01** topic um for
+- **0:01** llms so those five components um You
+- **0:01** probably all know that llms and if you
+- **0:01** don't know LMS are all based on
+- **0:01** Transformers or at least some version of
+- **0:01** Transformers uh I'm actually not going
+- **0:01** to talk about the AR lecture today uh
+- **0:02** one because I gave a SE lecture on um
+- **0:02** Transformers a few weeks ago and two
+- **0:02** because you can find so much information
+- **0:02** online on uh Transformers but I think
+- **0:02** you can it's there's much less
+- **0:02** information about the other four topics
+- **0:02** so I really want to talk about those um
+- **0:02** another thing to say is that most of
+- **0:02** Academia actually focuses on
+- **0:02** architecture and training algorithm and
+- **0:02** losses um as academics and I've done
+- **0:02** that for a lot big part of my career is
+- **0:02** simply we like thinking that this is uh
+- **0:02** like we make new architectures new
+- **0:02** models and it it seems like it's very
+- **0:02** important but in reality honestly what
+- **0:02** matters in practice is mostly the three
+- **0:02** other topics so data evaluation and
+- **0:02** systems uh which is what of most of
+- **0:02** Industry actually focuses on um so
+- **0:02** that's also one of the reason why I
+- **0:02** don't want to talk too much about the
+- **0:02** architecture uh because really the rest
+- **0:02** is super
+- **0:02** important um great so overview of the
+- **0:02** lecture I'll be talking about
+- **0:02** pre-training so pre-training uh you
+- **0:02** probably heard that word this is the
+- **0:03** general word this is kind of the
+- **0:03** classical language modeling uh Paradigm
+- **0:03** uh where you basically train your
+- **0:03** language model to essentially model all
+- **0:03** of internet and then there's a post
+- **0:03** training which is a more recent Paradigm
+- **0:03** which is taking these large language
+- **0:03** models and making them essentially AI
+- **0:03** assistants um so this is more of a
+- **0:03** recent Trend since Chad GPT uh so if you
+- **0:03** ever heard of gpt3 or gpt2 that's really
+- **0:03** pre-training land uh if you heard of
+- **0:03** chat GPT which you probably have this is
+- **0:03** really posttraining land uh so I'll be
+- **0:03** talking about both but I'll start with
+- **0:03** pre-training and uh specifically I'll
+- **0:03** talk about what is the task of
+- **0:03** pre-training llms and what is the laws
+- **0:03** that people actually
+- **0:03** use so language modeling this is a quick
+- **0:03** recap uh language models at a high level
+- **0:03** are simply models of probability
+- **0:03** distribution over sequences of tokens or
+- **0:03** of words so it's basically some uh model
+- **0:03** of P of X1 to XL where X1 is basically
+- **0:03** word one and Excel is the last one in
+- **0:04** the sequence or in the sentence um so
+- **0:04** very concretely if you have a sentence
+- **0:04** like the mouse ate the cheese what the
+- **0:04** language model gives you is simply a
+- **0:04** probability of this sentence being
+- **0:04** uttered by a human or being found on on
+- **0:04** online uh so if you have another
+- **0:04** sentence like the the mouse at cheese uh
+- **0:04** here there's grammatical mistakes so the
+- **0:04** model should know that this uh should
+- **0:04** have some syntactic knowledge so it
+- **0:04** should know that this has less
+- **0:04** likelihood of appearing
+- **0:04** online uh if you have another sentence
+- **0:04** like the cheese ate the mouse uh then
+- **0:04** the model should hopefully know about
+- **0:04** the fact that usually cheese don't eat
+- **0:04** Mouse um so there's some semantic
+- **0:04** knowledge and this is less likely than
+- **0:04** the first sentence so this is basically
+- **0:04** at a high level what language models are
+- **0:04** um one word that you probably have been
+- **0:04** hearing a lot in the news are generative
+- **0:04** models uh so this is just something that
+- **0:04** can generate models that can generate
+- **0:04** sentences or can generate some data uh
+- **0:04** the reason why we say language models
+- **0:05** are generative models is that once you
+- **0:05** have a model of a distribution you can
+- **0:05** simply sample from this model and now we
+- **0:05** can generate data uh so you can generate
+- **0:05** sentences uh using a language
+- **0:05** model so the type of models that uh
+- **0:05** people are all currently using are what
+- **0:05** we call Auto regressive language models
+- **0:05** and the key idea of autor regressive
+- **0:05** language models is that you take this
+- **0:05** distribution over words and you
+- **0:05** basically decompose it into the into the
+- **0:05** distribution of the first word multiply
+- **0:05** the by the distribution of or the
+- **0:05** likelihood of the distribution of the
+- **0:05** second word given the first word uh
+- **0:05** multiply by P of the third word given
+- **0:05** the first two words um so there's no
+- **0:05** approximation here this is just the
+- **0:05** chain rule of probability which you
+- **0:05** hopefully all know about uh really no
+- **0:05** approximation this is just one way of
+- **0:05** modeling a
+- **0:05** distribution uh so slightly more
+- **0:05** concisely you can write it as a product
+- **0:05** of U of PS of the next word given
+- **0:05** everything which happened in the past so
+- **0:05** of the context and uh so this this is
+- **0:06** what we call Auto regressive language
+- **0:06** models again this is really not the only
+- **0:06** way of modeling distribution this is
+- **0:06** just one way uh it has some benefits and
+- **0:06** some downsides one downside of
+- **0:06** autoaggressive language models is that
+- **0:06** when you actually sample from this
+- **0:06** autoaggressive language model you
+- **0:06** basically have a for Loop which
+- **0:06** generates the next word then conditions
+- **0:06** on that next word and then regenerate an
+- **0:06** other word so basically if you have a
+- **0:06** longer sentence that you want to
+- **0:06** generate you it takes more time to
+- **0:06** generate it uh so there are some
+- **0:06** downsides of this current Paradigm but
+- **0:06** that's what we currently have so I'm
+- **0:06** going to talk about this
+- **0:06** one uh great so Auto regressive language
+- **0:06** models at a high level um what the task
+- **0:06** of autoregressive language model is is
+- **0:06** simply predicting the next word as I
+- **0:06** just said so if you have a sentence like
+- **0:06** she likely prefers uh one potential next
+- **0:06** word might be dogs and the the way we do
+- **0:06** it is that we first tokenize so you take
+- **0:06** these words or subwords you tokenize
+- **0:06** them um and then you give an IDE for
+- **0:07** each token so here you have 1 2 three uh
+- **0:07** then you pass it through this black box
+- **0:07** as I already said we're not going to
+- **0:07** talk about the architecture you just
+- **0:07** pass it pass it through a model and you
+- **0:07** then get a distribution a probability
+- **0:07** distribution over the next word over the
+- **0:07** next token and then you sample uh from
+- **0:07** this distribution you get a new token
+- **0:07** and then you DET tokenize so you get a
+- **0:07** new ID you then DET toonize and that's
+- **0:07** how you basically sample from a language
+- **0:07** model uh one thing which is important to
+- **0:07** not is that the last two TS uh two steps
+- **0:07** are actually only need needed during
+- **0:07** inference uh when you do training you
+- **0:07** just need to predict uh the most likely
+- **0:07** token and you can just compare to the
+- **0:07** real token which happen in practice and
+- **0:07** then you basically change the weights of
+- **0:07** your model to increase the probability
+- **0:07** of generating that
+- **0:07** token um great so autoaggressive neural
+- **0:07** language models so to be slightly more
+- **0:07** specific still without talking about the
+- **0:07** architecture uh the first thing we do is
+- **0:07** that we have all of these oh sorry yes
+- **0:07** on the previous slide when you're
+- **0:08** predicting the probability of the next
+- **0:08** tokens does this mean that your final
+- **0:08** like output VOR has to be the same
+- **0:08** dimensionality as the number of tokens
+- **0:08** that you have yes how do you deal with
+- **0:08** like if you have more to like if you're
+- **0:08** adding more tokens to your cor something
+- **0:08** yeah so we're going to talk about
+- **0:08** tokenization actually later uh so you
+- **0:08** will get some sense of this you
+- **0:08** basically can deal with adding new
+- **0:08** tokens I am I'm kind of exaggerating
+- **0:08** there are methods for doing it but
+- **0:08** essentially people don't do it um so
+- **0:08** it's really important to think about how
+- **0:08** you tokenize your text and that's why
+- **0:08** we'll talk about that later but it's a
+- **0:08** very good point to notice that you
+- **0:08** basically the vocabulary size so the
+- **0:08** number of tokens that you have is
+- **0:08** essentially the output of your uh
+- **0:08** language model so it's actually pretty
+- **0:08** pretty
+- **0:08** large okay so autoaggressive new
+- **0:08** language models first thing you do is
+- **0:08** that you take every word or every token
+- **0:08** you embed them so you get a um some
+- **0:08** Vector representation for each of these
+- **0:08** tokens um you pass them through some ual
+- **0:08** Network as we said it's a Transformer
+- **0:09** then you get a representation for all
+- **0:09** the word in all the words in the context
+- **0:09** so it's basically representation of the
+- **0:09** entire sentence uh you pass it through a
+- **0:09** linear layer as you just said to
+- **0:09** basically map it to the number so that
+- **0:09** the output the number of outputs is the
+- **0:09** number of tokens uh you then pass it
+- **0:09** through some soft Max and you basically
+- **0:09** get uh probity distribution over the
+- **0:09** next words given every word in the
+- **0:09** context
+- **0:09** and the law that you use is basically
+- **0:09** it's essentially a task of classifying
+- **0:09** the next token so it's a very simple
+- **0:09** kind of machine learning task so you use
+- **0:09** the cross entry P loss where you
+- **0:09** basically you look at the actual Target
+- **0:09** that happened which is a target
+- **0:09** distribution which is a one hot encoding
+- **0:09** which here in this in this case says I
+- **0:09** saw uh the real word that happened is
+- **0:09** cat so that's a one hot um distribution
+- **0:09** over cat and here this is the actual uh
+- **0:09** do you see my mouse oh yeah this is the
+- **0:09** distribtion that you generated and
+
+## 10:00
+
+- **0:10** basically you do cross entropy which
+- **0:10** really just increases the probability of
+- **0:10** generating cat and decreases all the the
+- **0:10** probility of generating all the other
+- **0:10** tokens one thing to notice is that as
+- **0:10** you all know again uh this is just
+- **0:10** equivalent to maximizing the text log
+- **0:10** like the text log likelihood because you
+- **0:10** can just rewrite the the max over the
+- **0:10** probability of um this autoregressive
+- **0:10** language moding task as just being this
+- **0:10** minimum over I just added the log here
+- **0:10** and minus which is just the minimum of
+- **0:10** the loss which is the cross enty loss so
+- **0:10** basically minimizing the loss is the
+- **0:10** same thing as maximizing the likelihood
+- **0:10** of your text any question
+- **0:10** questions
+- **0:10** okay
+- **0:10** tokenizer um so this is one thing that
+- **0:10** people usually don't talk that much
+- **0:10** about tokenizers are extremely important
+- **0:10** uh so it's really important that you
+- **0:10** kind of understand at least uh what they
+- **0:10** do at a high level so why do we need
+- **0:10** token in the first place uh first it's
+- **0:11** more General than words so one simple
+- **0:11** thing that you might think is oh we're
+- **0:11** just going to take every word that we
+- **0:11** will have you just say every word is a
+- **0:11** new is a token in its own um but then
+- **0:11** what happens is if there's a typo in
+- **0:11** your word then you might not have any
+- **0:11** token associated with this this word
+- **0:11** with a typo and then you don't know how
+- **0:11** to actually pass this word with a typo
+- **0:11** into a large language model so what do
+- **0:11** you do next and also even if you think
+- **0:11** about words words is a very like words
+- **0:11** are fine with like Latin based languages
+- **0:11** uh but if you think about a language
+- **0:11** like taii you won't have a simple way of
+- **0:11** tokenizing by spaces because there are
+- **0:11** no spaces between words um so really uh
+- **0:11** tokens are much more General Than Words
+- **0:11** first thing second thing that you might
+- **0:11** think is that you might tokenize every
+- **0:11** sentence character by character you
+- **0:11** might say a is one token b is another
+- **0:11** token uh that would actually work and
+- **0:11** probably very well the issue is that
+- **0:11** then your sequence becomes super long
+- **0:11** and as you probably remember from the
+- **0:12** lecture on on Transformers uh the
+- **0:12** complexity uh grows quadratically with
+- **0:12** the length of sequences so you really
+- **0:12** don't want to have a super long sequence
+- **0:12** um so tokenizers basically try to deal
+- **0:12** with those two problems and give common
+- **0:12** subsequences a certain token and usually
+- **0:12** how you should be think about is around
+- **0:12** uh an average every token is around
+- **0:12** three four letters
+- **0:12** um and there are many algorithm for
+- **0:12** tokenization I'll just talk about one of
+- **0:12** them to give you a high level which is
+- **0:12** what we call bite P en coding which is
+- **0:12** actually pretty common one of the two
+- **0:12** most common tokenizers and the way that
+- **0:12** you train a tokenizer is that first you
+- **0:12** start with a very large Corpus of text
+- **0:12** and here I'm really not talking about
+- **0:12** training a large language model yet this
+- **0:12** is purely for the tokenization step uh
+- **0:12** so this is my large Corpus of text with
+- **0:12** these five words um then you associate
+- **0:12** every character in this Corpus of text a
+- **0:12** different token uh so here I just split
+- **0:12** up every character with a different
+- **0:13** token uh and I just color coded all of
+- **0:13** those tokens and then what you do is
+- **0:13** that you go through your text and every
+- **0:13** time you see pairs of tokens that are
+- **0:13** very common the most common pair of
+- **0:13** token you just merge them so here you
+- **0:13** see three times the the the tokens T and
+- **0:13** O next to each other so you're just
+- **0:13** going to say this is a new token and
+- **0:13** then you continue you repeat that so now
+- **0:13** you have to talk which happens three
+- **0:13** times to with an E that happens sorry
+- **0:13** two times and an token which happens
+- **0:13** twice and then ex which also happen
+- **0:13** twice so this is that if you were to
+- **0:13** train a tokenizer on this Corpus of text
+- **0:13** which is very small that's how you would
+- **0:13** uh finish with a token with a pre like a
+- **0:13** trained tokenizer uh in reality you do
+- **0:13** it on on much larger corpuses of text um
+- **0:13** and this is the real tokenizer of uh
+- **0:13** actually I think this is gpt3 or chat
+- **0:13** GPT uh and here you see how it would
+- **0:13** actually separate these words so
+- **0:14** basically you see the same thing as what
+- **0:14** we gave in the previous example token
+- **0:14** becomes its own token so tokenizer is
+- **0:14** actually split up into two tokens token
+- **0:14** and iser um so yeah that's all about
+- **0:14** tokenizers any questions on that yeah
+- **0:14** how do you deal with spes and how do you
+- **0:14** deal
+- **0:14** with yeah so actually there's a a step
+- **0:14** before tokenizers which is what we call
+- **0:14** pre- tokenizers which is exactly what
+- **0:14** you just said uh so this is mostly
+- **0:14** in theory there's no reason to deal with
+- **0:14** spaces and punctuation separately you
+- **0:14** could just say every space gets its own
+- **0:14** token every um uh punctuation get its
+- **0:14** own token and you can just do all the
+- **0:14** merging the problem is that so there's
+- **0:14** an efficiency question actually training
+- **0:14** these tokenizes takes a long time uh so
+- **0:14** you better off because you have to
+- **0:14** consider every pair of token so what you
+- **0:14** end up doing is saying if there's a
+- **0:14** space this is very like pre- tokenizes
+- **0:14** are very English specific you say if
+- **0:14** there's a space we're not going to start
+- **0:14** looking at the the token that came
+- **0:15** before and the token that came
+- **0:15** afterwards so you're not merging in
+- **0:15** between spaces but this is just like a
+- **0:15** optimiz like a computation optimization
+- **0:15** you could theoretically just deal with
+- **0:15** it um the same way as you deal with any
+- **0:15** other character and yeah when you merge
+- **0:15** tokens do you delete the tokens that you
+- **0:15** merged away or do you keep the the
+- **0:15** smaller tokens that merge um you
+- **0:15** actually keep the smaller tokens I mean
+- **0:15** in reality it doesn't matter much
+- **0:15** because um usually on large Corpus of
+- **0:15** text you will have actually everything
+- **0:15** uh but you usually keep the small ones
+- **0:15** and the reason why you want to do that
+- **0:15** is because if in case there's as we said
+- **0:15** before you have some um some grammatical
+- **0:15** mistakes so some typos you still want to
+- **0:15** be able to represent these words by
+- **0:15** character um so yeah yes are the tokens
+- **0:15** unique so I mean say in this case T Ken
+- **0:15** is there only one occurrence or could do
+- **0:15** you need to leave multiple occurr so
+- **0:15** they could have take on different
+- **0:16** meanings or something oh oh I see what
+- **0:16** you say no no it's every token has its
+- **0:16** own uh unique ID um so a usual this is a
+- **0:16** great question for example if you think
+- **0:16** about a bank which could be bank for
+- **0:16** like money or bank like water um it will
+- **0:16** have the same token but the model will
+- **0:16** learn the Transformer will learn that
+- **0:16** based on the words that are around it it
+- **0:16** should associate that I'm saying I'm
+- **0:16** being very high wavy here but associate
+- **0:16** that with the with a with a
+- **0:16** representation that is either more like
+- **0:16** the bank money side or the Bank water
+- **0:16** side um but that's a Transformer that
+- **0:16** does that it's not a
+- **0:16** tokenizer yes yeah so you mentioned
+- **0:16** during tokenization keep the smaller
+- **0:16** tokens you started with right like if
+- **0:16** you start with a t you keep the T and
+- **0:16** then you build your tokenizer to the
+- **0:16** that you can now in token so let's say
+- **0:16** maybe you didn't train on token but like
+- **0:16** in your data you are trying to encode
+- **0:16** token so how does the tokenizer know to
+- **0:16** encode it with token or
+- **0:17** a great question you basically when you
+- **0:17** so when you tokenize so that's after
+- **0:17** training of the tokenizer when you
+- **0:17** actually apply the tokenizer you
+- **0:17** basically always choose the largest uh
+- **0:17** token that you can apply uh so if you
+- **0:17** can do token you will never do T you
+- **0:17** will always do token um but there's
+- **0:17** actually so people don't usually talk
+- **0:17** that much about tokenizers but uh
+- **0:17** there's a lot of of computational
+- **0:17** benefits uh or computational tricks that
+- **0:17** you can do for making these things
+- **0:17** faster uh so I really don't think we and
+- **0:17** honestly I think a lot of people think
+- **0:17** that we should just get away from
+- **0:17** tokenizers um and just kind of tokenize
+- **0:17** character by character or bites by bites
+- **0:17** uh but as I said right now there's this
+- **0:17** issue of like length uh but maybe one
+- **0:17** day like in five or 10 years we will
+- **0:17** have different architectures that don't
+- **0:17** scale quadratically with the length of
+- **0:17** the sequence and uh maybe we'll um yeah
+- **0:17** move away from tokenizes so can you
+- **0:17** share with us the drawback why do people
+- **0:17** want to move away from the tokenizer oh
+- **0:17** um yeah so think
+- **0:18** one good example is uh math if you think
+- **0:18** about math actually numbers right now
+- **0:18** are not tokenized so for example 327
+- **0:18** might have its own token which means
+- **0:18** that models when they see numbers they
+- **0:18** don't see them the same way as we do and
+- **0:18** this is very annoying because what I
+- **0:18** mean the reason why we can kind of
+- **0:18** generalize with math is because we can
+- **0:18** deal with every every letter separately
+- **0:18** and we can then do composition where you
+- **0:18** know that basically if you add stuff
+- **0:18** it's just the same thing as adding every
+- **0:18** one separately plus like whatever the
+- **0:18** unit that you add so they can do that um
+- **0:18** so then you have to do like special
+- **0:18** tokenization and like one of the big
+- **0:18** changes that GPT 4 did uh is changing
+- **0:18** the way that they tokenize uh code so
+- **0:18** for example uh if you have code you know
+- **0:18** you have like often in Python these four
+- **0:18** spaces at the beginning those were dealt
+- **0:18** with uh kind of strangely before um and
+- **0:18** as a result like the model couldn't
+- **0:18** really understand uh how to deal with
+- **0:18** code uh so so toiz actually a lot um
+- **0:19** okay so I'll move on right now but we
+- **0:19** can come back later on token Isis great
+- **0:19** so we talked about the task the L the
+- **0:19** tokenizer let's talk a little bit about
+- **0:19** evaluation uh so the way that LMS are
+- **0:19** usually evaluated is what we call is
+- **0:19** using what we call perplexity um at a
+- **0:19** high level it's basically just your
+- **0:19** validation loss uh the slight difference
+- **0:19** with perplexity is that we use something
+- **0:19** that is slightly more interpretable
+- **0:19** which is that we use the average per
+- **0:19** token loss and then you expon entiate it
+- **0:19** and the reason why you exponentiate it
+- **0:19** is because you want I mean the loss has
+- **0:19** a log inside and you like one humans are
+- **0:19** actually pretty bad at thinking in log
+- **0:19** space but two logs depend on the base of
+- **0:19** the log uh while when you exponentiate
+- **0:19** you basically have everything in the uh
+- **0:19** kind of the vocabulary size uh unit um
+- **0:19** and the average proten is just so that
+- **0:19** your your complexity is independent of
+- **0:19** the length of your sequence um so
+- **0:19** perplexity is just two to the power uh
+- **0:19** average of the loss of the sequence
+- **0:19** um so perplexity is between one and the
+
+## 20:00
+
+- **0:20** length of the vocabulary of your
+- **0:20** tokenizer uh one it's simply well if you
+- **0:20** predict perfectly the thing which uh
+- **0:20** every word then every word will have
+- **0:20** basically product of ones uh so the best
+- **0:20** perplexity you can have is one if you
+- **0:20** really have no idea you basically
+- **0:20** predict with one divided by uh size of
+- **0:20** vocabulary um and then you do simple
+- **0:20** math and you basically get perplexity of
+- **0:20** size of vocabulary uh so the intuition
+- **0:20** of perplexity is that basically the
+- **0:20** number of tokens that your model is kind
+- **0:20** of hesitating between uh so if you if
+- **0:20** your model is perfect it doesn't
+- **0:20** hesitate it know exactly the word if it
+- **0:20** really has no idea then it hesitates
+- **0:20** between uh all of the
+- **0:20** vocabulary uh so perplexity really
+- **0:20** improved that's perplexity on a standard
+- **0:20** data set between 2017 and 2023 it it
+- **0:20** went from kind of 70 tokens to less than
+- **0:20** 10 tokens over these five six years so
+- **0:20** that means that the models were
+- **0:20** previously as dating between 70 words
+- **0:21** every time it was generating a word and
+- **0:21** now it's as dating between like less
+- **0:21** than 10 words so that's much better
+- **0:21** perplexity is actually not used anymore
+- **0:21** in academic benchmarking mostly because
+- **0:21** it depends on the tokenizers that you
+- **0:21** use uh it depends on the actual data
+- **0:21** that people are evaluating on but it's
+- **0:21** still very important for development of
+- **0:21** llms so when you when you actually train
+- **0:21** your own llm people will still really
+- **0:21** look at the
+- **0:21** perplexity uh one common other way and
+- **0:21** now more common in Academia of
+- **0:21** evaluating these llms is just by taking
+- **0:21** all the classical NLP benchmarks and
+- **0:21** I'll give you a few examples later and
+- **0:21** just kind of aggregating everything um
+- **0:21** so collect as many automatically
+- **0:21** evaluatable benchmarks and just evaluate
+- **0:21** across all of them um so one such if uh
+- **0:21** or actually two such uh benchmarks of
+- **0:21** what we call uh Helm which is from
+- **0:21** Stanford and another one is the hugging
+- **0:21** face open LM leader board which are the
+- **0:21** probably two two most common ones right
+- **0:21** now um so just to give you an idea in
+- **0:22** Helm there are all of these type of
+- **0:22** tasks which are mostly things that can
+- **0:22** be easily evaluated uh like question
+- **0:22** answering so think about many different
+- **0:22** question answering uh tasks um and the
+- **0:22** benefit with question answering is that
+- **0:22** you usually know what is the real answer
+- **0:22** um so you can the way that you evaluate
+- **0:22** these models and I'll give you a
+- **0:22** concrete example in one second um is
+- **0:22** that you can just look at How likely the
+- **0:22** language model is to generate the real
+- **0:22** answer compared to some other answers
+- **0:22** and that's essentially at a high level
+- **0:22** how you evaluate these models um so to
+- **0:22** give you a specific example mlu is
+- **0:22** probably the most common um academic
+- **0:22** Benchmark for
+- **0:22** llms uh and this is just a collection of
+- **0:22** many question and answers in all of
+- **0:22** those domains for example College
+- **0:22** medicine College physics astronomy and
+- **0:22** these type of topics and the questions
+- **0:22** are things like so this in astronomy
+- **0:22** what is true for type 1 a supernova then
+- **0:22** you give uh four different potential
+- **0:23** answers and you just ask the model which
+- **0:23** one is more likely so there are many
+- **0:23** different ways of doing it either you
+- **0:23** can look at the likelihood of generating
+- **0:23** all these answers uh or you can ask the
+- **0:23** model which one is the most likely uh so
+- **0:23** there are different ways that you can
+- **0:23** promp the model but at a high level you
+- **0:23** know which one is correct and there are
+- **0:23** three other mistakes um yes kind
+- **0:23** creating is like unconstrained text as
+- **0:23** the output yeah how do you evaluate a
+- **0:23** model if it give something that's you
+- **0:23** know semantically completely identical
+- **0:23** but is not the exact token list that
+- **0:23** expect yeah so that's a great question
+- **0:23** I'll talk more about that later here in
+- **0:23** this case we don't do unconstrained so
+- **0:23** the way you would evaluate MML is
+- **0:23** basically either you you ask the first
+- **0:23** question and then you look at the
+- **0:23** likelihood of the model generating a the
+- **0:23** likelihood of the model generating b c
+- **0:23** and d and you look at which one is the
+- **0:23** most likely or you can as the model out
+- **0:23** of ABC d which one is the most likely
+- **0:23** and you look at whe the to the most
+- **0:24** likely next token is A B C or D so uh
+- **0:24** you can strain the model to say it can
+- **0:24** only answer these four things you say
+- **0:24** you constraint the model you mean you
+- **0:24** constraint The Prompt or do you mean of
+- **0:24** its whole probability distribution
+- **0:24** outputs you only comparing the outputs
+- **0:24** like you're only comparing the
+- **0:24** a so uh in the second case I gave you
+- **0:24** you would do exactly the I actually you
+- **0:24** would do both you would prompt the model
+- **0:24** saying ABC or D plus you would constrain
+- **0:24** to only uh look at these two these four
+- **0:24** tokens in the first case you don't even
+- **0:24** need to generate anything so in the
+- **0:24** first case you literally just look given
+- **0:24** that it's a language model it can give a
+- **0:24** distribution over sentences you just
+- **0:24** look at what is the likelihood of
+- **0:24** generating all of these words what is
+- **0:24** the likelihood of generating the second
+- **0:24** choice and you just look at whether the
+- **0:24** most likely sentence is actually the
+- **0:24** real answer so you don't actually sample
+- **0:24** from it you really just use P of x one
+- **0:24** to excel does that make sense uh that
+- **0:25** being said evaluation of open-ended
+- **0:25** questions is something we're going to
+- **0:25** talk about later and is actually really
+- **0:25** important and really challenging yes
+- **0:25** earlier you mentioned that um like um
+- **0:25** metrics like flexity are not are not
+- **0:25** like usually used because it depends on
+- **0:25** like how you do your terization some
+- **0:25** design choices I was wondering if you
+- **0:25** could speak more to that oh um yeah so
+- **0:25** think about perplexity I told you
+- **0:25** perplexity is between one and vocabulary
+- **0:25** size so now imagine that Chad GPT uses a
+- **0:25** tokenizer that has like 10,000 tokens
+- **0:25** but Gemini from Google uses a tokenizer
+- **0:25** that had 100,000 uh potential tokens
+- **0:25** then actually the Gemini one will will
+- **0:25** have like the upper bound of the the
+- **0:25** perplexity that you can get is actually
+- **0:25** worse for Gemini than for Chad GPT does
+- **0:25** that make sense so that's just an idea
+- **0:25** it's actually a little bit more
+- **0:25** complicated than that but that's just
+- **0:25** like one uh first or the bit of you can
+- **0:25** see that the tokenizer actually
+- **0:26** matters um
+- **0:26** great okay so evaluation challenges
+- **0:26** there are many I'll just talk about two
+- **0:26** really briefly uh one as I told you
+- **0:26** there are two ways of doing evaluation
+- **0:26** for these mlu actually there are many
+- **0:26** more than two but I give you two
+- **0:26** examples um and it happens that for a
+- **0:26** long time even though that was a very
+- **0:26** classical Benchmark that everyone used
+- **0:26** uh actually different uh different
+- **0:26** companies and different um different uh
+- **0:26** uh different organization were actually
+- **0:26** using different ways of evaluating mlu
+- **0:26** and as a result you could you get
+- **0:26** completely different results for example
+- **0:26** Lama
+- **0:26** 65b uh which was the first model of meta
+- **0:26** in the Lama series uh had on Helm 63.7
+- **0:26** accuracy but on this other um Benchmark
+- **0:26** had like
+- **0:26** 48.8 um so really the way that you
+- **0:26** evaluate and this is not even talking
+- **0:26** about prompting this is really just kind
+- **0:26** of the the way that you evaluate the uh
+- **0:27** the models prompting is another issue so
+- **0:27** really there are a lot of
+- **0:27** inconsistencies it's not as easy as it
+- **0:27** looks uh first thing yeah sorry how can
+- **0:27** we make sure that all these models AR
+- **0:27** trained on The Benchmark okay second
+- **0:27** thing this is a great question uh chain
+- **0:27** test contamination uh this is something
+- **0:27** which I would say is really important in
+- **0:27** Academia in uh given that the talk is
+- **0:27** mostly about training large language
+- **0:27** models uh for companies it's maybe not
+- **0:27** that important CU they know what they
+- **0:27** trained on uh for us we have no idea so
+- **0:27** for us it's a real problem uh so there
+- **0:27** are many different ways of trying to
+- **0:27** test whether uh the test set sorry
+- **0:27** whether the test set was actually in the
+- **0:27** training Set uh one kind of cute trick
+- **0:27** um that people uh in in the lab on T lab
+- **0:27** have found is that what you can do is
+- **0:27** that given that most of the data set
+- **0:27** online are not randomized
+- **0:27** you can just look at and in that
+- **0:28** language models what they do is just
+- **0:28** predict the next word um you can just
+- **0:28** look at the entire test Set uh what if
+- **0:28** you generate all the examples in order
+- **0:28** versus all the examples in a different
+- **0:28** order and if it's more likely to
+- **0:28** generate a thing in order given that
+- **0:28** there's no real order there then it
+- **0:28** means that probably was in a training
+- **0:28** set does that make sense um so there are
+- **0:28** many that's like one of them there are
+- **0:28** many other ways of doing it train test
+- **0:28** contamination again not that important
+- **0:28** for development really important for
+- **0:28** academic
+- **0:28** benchmarking great so there are many
+- **0:28** other challenges but uh I'll move on for
+- **0:28** now great data um so data is another
+- **0:28** really big topic um at a high level
+- **0:28** people just say oh you basically train
+- **0:28** large language models on all of Internet
+- **0:28** what does that even mean um so or people
+- **0:28** sometimes say all of clean internet
+- **0:28** which is even less defined um so
+- **0:28** internet is very dirty and really not
+- **0:28** representative of what we want in
+- **0:29** practice if I download a random website
+- **0:29** right now you would be shocked at what
+- **0:29** is in there it's definitely not your
+- **0:29** Wikipedia um so I'll go really briefly
+- **0:29** on like what people do um I can answer
+- **0:29** some questions but I mean data is on its
+- **0:29** own is a huge topic uh basically first
+- **0:29** what you do is download all of Internet
+- **0:29** what that means is that you use uh web
+- **0:29** crowlers that will go on every web page
+- **0:29** on Internet or every web page that is um
+- **0:29** on Google uh and that is around 250
+- **0:29** billion pages right now um and that's
+- **0:29** around one petabyte of of data so this
+- **0:29** is actually a common common C is one web
+- **0:29** crowler so people will usually write
+- **0:29** their own web crowlers what they do is
+- **0:29** that they use standard web crowlers and
+- **0:29** we common crawl is one of them uh that
+- **0:29** basically every month adds all the new
+- **0:29** websites that were added on uh internet
+- **0:29** that are found by by Google and they put
+- **0:29** it in a big uh basically a big data set
+
+## 30:00
+
+- **0:30** um so that's on common call you have
+- **0:30** around 250 billion pages right now so 1
+- **0:30** E6 gigabytes of data once you have this
+- **0:30** uh so this is a random web page like
+- **0:30** literally random uh from this common
+- **0:30** craw and what you see is that one it
+- **0:30** really doesn't look at type of things
+- **0:30** that you would usually see but actually
+- **0:30** so this is an HTML page uh it's hard to
+- **0:30** see but if you look through you will see
+- **0:30** some content for example here here uh
+- **0:30** tesing world is your ultimate source for
+- **0:30** the system X high performance server and
+- **0:30** then you have three dots so you don't
+- **0:30** even the sentence is not even finished
+- **0:30** that's how a random internet looks like
+- **0:30** uh so of course it's not that useful if
+- **0:30** you just train a like large language
+- **0:30** model to generate things like this so
+- **0:30** what are some of the steps that are
+- **0:30** needed first one you extract the text
+- **0:30** from the HTML so that's what I just try
+- **0:30** to do by looking at uh basically the
+- **0:30** correct text uh there are a lot of
+- **0:30** challenges by through this for example
+- **0:30** extracting math is actually very
+- **0:31** complicated but pretty important for
+- **0:31** training large language models um or for
+- **0:31** example boiler plates a lot of your
+- **0:31** forums will have the same type of
+- **0:31** headers the same type of Footers uh you
+- **0:31** don't want to repeat all of this in your
+- **0:31** data um then you will filter undesirable
+- **0:31** content uh so not safe for work harmful
+- **0:31** content pii uh so usually every company
+- **0:31** has basically a a black list of websites
+- **0:31** that they don't want to train the models
+- **0:31** on that Black List is very long and you
+- **0:31** basically say if it comes from there we
+- **0:31** don't train on this there are other ways
+- **0:31** of doing these things is that you can
+- **0:31** train a small model for classifying what
+- **0:31** is pii removing these things um it's
+- **0:31** hard every Point here that I'm going to
+- **0:31** show you is like a hard amount of work
+- **0:31** uh but I'm going to go go quickly
+- **0:31** through it so filter undesirable content
+- **0:31** second or fourth is the dup D
+- **0:31** duplication as I said um you might have
+- **0:31** things like headers and Footers in
+- **0:31** forums that are always the same you want
+- **0:32** to remove that another thing that you
+- **0:32** might have is a lot of URLs that are
+- **0:32** different but actually show the same
+- **0:32** website um and you might also have a lot
+- **0:32** of like U um paragraphs that come from
+- **0:32** like common books that are basically
+- **0:32** duplicated a thousand times or 10,000
+- **0:32** times on internet so you have to
+- **0:32** duplicate also very challenging uh
+- **0:32** because you have to do that at scale
+- **0:32** once you do duplication you will do some
+- **0:32** heuristic filtering you will try to
+- **0:32** remove low quality documents uh the way
+- **0:32** you do that are things like rules-based
+- **0:32** um filtering for example if you see that
+- **0:32** there are some outlier tokens if the
+- **0:32** distribution of tokens in the website is
+- **0:32** very different than the usual
+- **0:32** distribution of tokens then it's
+- **0:32** probably some outlier if you see that
+- **0:32** the length of the words in this website
+- **0:32** is super long there's something strange
+- **0:32** going on on that website if you see that
+- **0:32** the the website has only three words
+- **0:32** maybe is it worth training on it maybe
+- **0:32** not if it has like 10 million words
+- **0:32** maybe there's something also
+- **0:32** wrong going on that page um so a lot of
+- **0:33** rules like this yes why we filter out
+- **0:33** undesirable content from our dat set
+- **0:33** instead of kind
+- **0:33** of putting it in is like a supervised
+- **0:33** loss right like can we not just say like
+- **0:33** you know here's this like hate speech
+- **0:33** website let's actively try to Let's
+- **0:33** actively penalize the for generating
+- **0:33** we'll do exactly that but not at this
+- **0:33** step that's where the posttraining will
+- **0:33** come from uh pre-training um the idea is
+- **0:33** just to say I want to model kind of how
+- **0:33** humans speak essentially um and I want
+- **0:33** to remove all these like headers photos
+- **0:33** and and menus and things like this but
+- **0:33** it's a very good uh like idea that you
+- **0:33** just had and that's exactly what we'll
+- **0:33** do
+- **0:33** later Next Step modelbased filtering so
+- **0:33** once you filtered a lot of data what you
+- **0:33** will do uh that's actually a very cute
+- **0:33** trick uh you will take all of Wikipedia
+- **0:33** and you will look at all the links that
+- **0:33** are linked through Wikipedia p
+- **0:33** because probably if something is
+- **0:33** referenced by Wikipedia it's probably
+- **0:34** some high quality website and you will
+- **0:34** train a classifier to predict whether
+- **0:34** something comes from whether a document
+- **0:34** comes from one of these references uh
+- **0:34** from Wikipedia or whether it's from the
+- **0:34** random web and you will try to basically
+- **0:34** say I want more of the things that come
+- **0:34** from Wikipedia references does that make
+- **0:34** sense so yeah so you will train a a
+- **0:34** machine learning uh model usually also
+- **0:34** very simp simple models because you need
+- **0:34** to do that really at scale I mean just
+- **0:34** think about the 250 billion
+- **0:34** Pages uh next one you will try to
+- **0:34** classify your data into different
+- **0:34** different um domains you will say okay
+- **0:34** this is entertainment this is books this
+- **0:34** is code this is like these type of
+- **0:34** domains and then you will try to either
+- **0:34** um up or down weight some of the domains
+- **0:34** uh for example you might say uh you
+- **0:34** might see that actually if you train
+- **0:34** more on code then actually your model
+- **0:34** becomes bettered on reasoning so that's
+- **0:34** something that people usually say in a
+- **0:35** very handwavy way if you train your
+- **0:35** model more code actually it helps
+- **0:35** reasoning so you want to upweight the
+- **0:35** coding uh distribution because that
+- **0:35** helps for General language modeling
+- **0:35** skills uh books is usually also another
+- **0:35** one that people usually um upweight
+- **0:35** entertainment they usually downweight uh
+- **0:35** so things like this of course you want
+- **0:35** to do it so people used to do it maybe
+- **0:35** uh kind of theistically now there's
+- **0:35** entire pipelines that we'll talk about
+- **0:35** of how to do these things uh slightly
+- **0:35** more um
+- **0:35** automatically and then at the end of
+- **0:35** training uh usually train um after
+- **0:35** training on all of this data that we saw
+- **0:35** usually train on very high quality data
+- **0:35** at the end of of training your large
+- **0:35** language model where you decrease your
+- **0:35** learning rate uh and that basically
+- **0:35** means that you're kind of overfitting
+- **0:35** your model on a very high quality data
+- **0:35** so usually what you do there is like
+- **0:35** Wikipedia you basically overfit on
+- **0:35** Wikipedia yeah and you overfit on like
+- **0:36** human uh data that was collected um the
+- **0:36** other things like continual pre-training
+- **0:36** for getting longer context I'm I'm going
+- **0:36** to skip over all of these things uh but
+- **0:36** I just to give you a sense of how hard
+- **0:36** it is when people just say oh I'm going
+- **0:36** to train on internet that's a lot of
+- **0:36** work um and really we haven't figured it
+- **0:36** out yet so collecting World data is a
+- **0:36** huge part of practical large language
+- **0:36** model uh some might say it's actually
+- **0:36** the key yes
+- **0:36** about data so basic question so usually
+- **0:36** when you start with like the terabyte of
+- **0:36** data after I go through all that steps
+- **0:36** the typical amount of data you have in
+- **0:36** and then like how how large a team does
+- **0:36** it typically think to go through all the
+- **0:36** steps you talk about so how is the
+- **0:36** question how large is the data after you
+- **0:36** filter yeah after you filter and then to
+- **0:36** go through all the step how large a team
+- **0:36** do you need to go through like the the
+- **0:36** other fation sttion uh how slow is it or
+- **0:36** how like how how many people would you
+- **0:36** need to be able to do this uh okay
+- **0:37** that's a great question I'm going to
+- **0:37** somewhat answer about the data uh how
+- **0:37** large is the data set uh at the end of
+- **0:37** this slide uh for number of people that
+- **0:37** work on
+- **0:37** it um that's a good question I'm
+- **0:37** actually not quite sure but I would
+- **0:37** say yeah I actually don't quite no but I
+- **0:37** would say it's probably even bigger than
+- **0:37** the number of people that work on kind
+- **0:37** of the two tuning of the pre-training of
+- **0:37** the model uh so the data is bigger than
+- **0:37** kind of the modeling aspect um yeah I I
+- **0:37** don't think I have a good sense I would
+- **0:37** say probably in Lama's team which have
+- **0:37** like 70 years people I would say maybe
+- **0:37** 15 work on data uh I yeah all these
+- **0:37** things you don't need that many people
+- **0:37** you need a lot of computer so because
+- **0:37** for data you need a lot of CPUs um so
+- **0:37** yeah and I'll answer the second question
+- **0:37** at the end of this slide so as I just
+- **0:37** kind of alluded to really we haven't
+- **0:38** solved data at all for pre-training so
+- **0:38** there's a lot of research that that has
+- **0:38** to be done first how do you process
+- **0:38** these things super efficiently uh second
+- **0:38** how do you balance kind of like all of
+- **0:38** these different domains uh can you do
+- **0:38** synthetic data generation that's
+- **0:38** actually a big one right now uh and
+- **0:38** because we don't have uh we'll talk
+- **0:38** about that later we don't have enough
+- **0:38** data on the internet um can you use
+- **0:38** multimodal data instead of just text
+- **0:38** data and how does that improve even your
+- **0:38** text performance um
+- **0:38** there's a lot of seccy because really
+- **0:38** this is the key of most of the pre-train
+- **0:38** pre-trained large language models so for
+- **0:38** competitive Dynamics uh usually these
+- **0:38** these um these companies don't talk
+- **0:38** about how they do the data collection
+- **0:38** and also there's a copyright liability
+- **0:38** issue they definitely don't want to tell
+- **0:38** you that they've trained on books even
+- **0:38** though they did um because if not you
+- **0:38** can uh sue them uh common academic
+- **0:38** benchmarks uh so that will kind of
+- **0:38** answer what you asked um it started so
+- **0:38** those are the smaller ones it's the
+- **0:38** names are not that important but it
+- **0:38** started from around 150 billion tokens
+- **0:39** which around uh 800 GB of data now it's
+- **0:39** around 15 trillion of to 15 trillion
+- **0:39** tokens which is also uh the size of the
+- **0:39** models that are right now the best
+- **0:39** models are probably trained on that
+- **0:39** amount of data so 15 trillion tokens uh
+- **0:39** which is probably I guess two order of
+- **0:39** manage bigger than that so 80 uh E3 gab
+- **0:39** so that would be
+- **0:39** around 100 to thousand times uh
+- **0:39** filtering of the common crawl if I'm not
+- **0:39** mistaken um so yeah one very one very uh
+- **0:39** famous one is the pile so this is
+- **0:39** academic Benchmark of the pile and we
+- **0:39** can just look at what distribution of
+- **0:39** data they have it's things like um
+- **0:39** archive PBM Central uh which is all the
+- **0:39** the biology stuff uh here it's Wikipedia
+- **0:39** you see stack exchange um some GitHub
+- **0:39** and some books and things like this um
+- **0:39** again this is on the smaller side so
+
+## 40:00
+
+- **0:40** this is if we look at here this is on
+- **0:40** 280b so in reality it's like 100 times
+- **0:40** bigger so you cannot have that much of
+- **0:40** GitHub and and of
+- **0:40** Wikipedia um in terms of close Source
+- **0:40** models just to give you an idea uh Lama
+- **0:40** 2 um it was trained on 20 two trillion
+- **0:40** tokens lamb 3 15 trillion tokens which
+- **0:40** is currently the best model that we know
+- **0:40** on how much it was trained on which is
+- **0:40** the same thing as this the the the best
+- **0:40** academic or the biggest academic
+- **0:40** Benchmark which is 15 trillion tokens
+- **0:40** GPD 4 we don't really know but it's
+- **0:40** probably in the same water of magnitude
+- **0:40** or it's probably around that actually
+- **0:40** it's probably around 13 um from leaks if
+- **0:40** the leaks are true
+- **0:40** um great so scaling laws um any other
+- **0:40** questions on Data before you go to
+- **0:40** scaling
+- **0:40** laws sorry I know I'm giving you a lot
+- **0:40** of information but uh there's a lot into
+- **0:40** training at large language models great
+- **0:40** scaling laws so so the idea is that what
+- **0:40** people saw um around 2020 or at least
+- **0:41** from a long time but they've been able
+- **0:41** to kind of theoretically show it or
+- **0:41** impurely show it since 2020 is that the
+- **0:41** more data you train your models on and
+- **0:41** the larger the models the better the
+- **0:41** performance this is actually pretty
+- **0:41** different than what you've seen in this
+- **0:41** class in this class we teach you about
+- **0:41** overfitting overfitting doesn't happen
+- **0:41** with large language models uh larger
+- **0:41** models better performance um it's
+- **0:41** something that really took a long time
+- **0:41** for the community who took this type of
+- **0:41** class to realize um but for the exam
+- **0:41** overfitting
+- **0:41** exists so okay the idea of scaling laws
+- **0:41** is that if given that you know that more
+- **0:41** data and larger models will always give
+- **0:41** you better performance can we predict
+- **0:41** how much better your performance will be
+- **0:41** if you increase the amount of data and
+- **0:41** the size of your model and surprisingly
+- **0:41** it works uh so here you see three plots
+- **0:41** from a very famous paper called scaling
+- **0:41** loss from openi um here you see on the
+- **0:41** x-axis compute so how much did you train
+- **0:42** like how much compute did you did you
+- **0:42** spend for training and here you see test
+- **0:42** loss so this is essentially I mean it's
+- **0:42** not perplexity but it's your validation
+- **0:42** loss um so it's a log of the perplexity
+- **0:42** and if you put these two on uh log scale
+- **0:42** uh then you see that uh the the
+- **0:42** performance or like the this the sorry
+- **0:42** the the scaling law is linear uh that
+- **0:42** means that if you increase your compute
+- **0:42** by a certain amount you can you can say
+- **0:42** by how much your test loss will actually
+- **0:42** decrease same thing with data and same
+- **0:42** thing for parameters if you increase the
+- **0:42** data set size your loss will will
+- **0:42** decrease by an amount that is somewhat
+- **0:42** predictable if you increase the number
+- **0:42** of parameters it will decre the loss
+- **0:42** will decrease by amount which is
+- **0:42** somewhat predictable this is really
+- **0:42** amazing um very surprising I mean it
+- **0:42** looks in nocuous when you look at these
+- **0:42** type of plots but that's crazy because
+- **0:42** it means that you can predict uh how
+- **0:42** well we're going to perform in 2 3 years
+- **0:42** depending on how much compute we will
+- **0:42** add assuming that these things will hold
+- **0:43** there's nothing theoretical about it um
+- **0:43** yes two things one what is the loss that
+- **0:43** they're using here is this perplexity or
+- **0:43** so it's it's you know I said perplexity
+- **0:43** was like two to the power of the LW so
+- **0:43** this is the the the power of the
+- **0:43** perplexity and then the second thing is
+- **0:43** when you like increase the number of
+- **0:43** parameters or you increase the total
+- **0:43** data set size going dat times doesn't
+- **0:43** that just inherently increase your
+- **0:43** compute like do all this work to
+- **0:43** just specific no this is a great
+- **0:43** question so the compute here is actually
+- **0:43** a factor of two things the data and the
+- **0:43** parameter what I'm showing here is that
+- **0:43** you can um well actually we're going to
+- **0:43** talk about that in details but basically
+- **0:43** if you increase the number of parameters
+- **0:43** you should increase the number of data
+- **0:43** that you have um so you actually don't
+- **0:43** go multiple times through the same data
+- **0:43** set no one does EPO in a lar at least
+- **0:43** not yet uh because we have still kind of
+- **0:43** enough data um so yeah this is all the
+- **0:44** same Trend which is increase compute
+- **0:44** decrease
+- **0:44** loss yes have we seen the numbers for
+- **0:44** the last two years or is it still
+- **0:44** holding it is still holding I I don't
+- **0:44** have like good numbers to show you uh
+- **0:44** but it is still holding
+- **0:44** surprisingly yes is there no evidence
+- **0:44** like empirical evidence that you
+- **0:44** plateau expected PL
+- **0:44** no empirical evidence of plateauing
+- **0:44** anytime soon um why we don't know um
+- **0:44** will it happen probably I mean it
+- **0:44** doesn't need to because it's actually in
+- **0:44** log scale so it's not like as if it had
+- **0:44** to go it had to Plateau like
+- **0:44** mathematically it could continue
+- **0:44** decreasing like this I mean most people
+- **0:44** think that it will probably Plateau at
+- **0:44** some point we don't know
+- **0:44** when um okay so that's I'll talk more
+- **0:44** about scaling laws now
+- **0:44** so why are scaling laws really cool
+- **0:45** imagine that I give you um you're very
+- **0:45** fortunate I gave you 10,000 gpus for
+- **0:45** this month what model will you train how
+- **0:45** do you even go about answering that
+- **0:45** question and I mean this is a a
+- **0:45** hypothetical but that's exactly what
+- **0:45** these companies are faced with uh the
+- **0:45** old pipeline um which was basically you
+- **0:45** tune High parameters on the big models
+- **0:45** so let's say I have 30 days I will train
+- **0:45** 30 models for one day each I will pick
+- **0:45** the best one uh and that will be the
+- **0:45** final model that I will use in
+- **0:45** production um that means that the model
+- **0:45** that I actually used was only trained
+- **0:45** for one day the new pipeline is that you
+- **0:45** first find a scaling recipe so you find
+- **0:45** something that tells you for example oh
+- **0:45** like one common thing is that if you
+- **0:45** increase the size of your model you
+- **0:45** should decrease your learning rate so
+- **0:45** you find a scaling recipe such that you
+- **0:45** know if I increase the the the the size
+- **0:45** of my model here's what I should do with
+- **0:45** some high parameters then you tune your
+- **0:45** high parameter
+- **0:45** on smaller models of different sizes
+- **0:46** let's say I will say for 3 Days of my 30
+- **0:46** days I will train many different models
+- **0:46** and I would do highper parameter tuning
+- **0:46** on these small models each of different
+- **0:46** sizes then I will fit a scaling law and
+- **0:46** try to extrapolate from these smaller
+- **0:46** models which one will be the best if I
+- **0:46** if I train it for much longer or sorry
+- **0:46** if I train it for a larger model and
+- **0:46** then I will train the final huge model
+- **0:46** for 27 days instead of just one day
+- **0:46** um so the new pipeline is not train
+- **0:46** things or do high prity tuning on the
+- **0:46** real scale of the model that you're
+- **0:46** going to use in practice but do things
+- **0:46** on smaller ones at different scales try
+- **0:46** to predict how well they will perform
+- **0:46** once you make them bigger I will give I
+- **0:46** will give you a very concrete example
+- **0:46** right now uh let's say Transformers
+- **0:46** versus lstms let's say you you have
+- **0:46** these 10,000 gpus you will not sure
+- **0:46** which one you should be using should I
+- **0:46** be using Transformer based model or LCM
+- **0:46** based model what I will do is I will
+- **0:46** train Transformers at different skills
+- **0:47** so here you see different parameters on
+- **0:47** the x-axis Y axis is my test loss I will
+- **0:47** then train different different lstms at
+- **0:47** different scales once I have these
+- **0:47** points I will see oh it kind of fits a
+- **0:47** scaling law I will fit my scaling law
+- **0:47** and then I will be able to predict oh if
+- **0:47** I had 10 times more compute here's how
+- **0:47** well I would perform for the LM it's
+- **0:47** actually slightly less linear for the
+- **0:47** lstm but like you could probably try to
+- **0:47** predict where you would end up and
+- **0:47** clearly from this plot you would see
+- **0:47** that Transformers are better um one
+- **0:47** thing to notice when you read these type
+- **0:47** of scaling laws is that are two things
+- **0:47** that are important uh one is really your
+- **0:47** scaling rate uh which is kind of the uh
+- **0:47** the slope of the the slope of the
+- **0:47** scaling law the other thing is your um
+- **0:47** your intercept like you could start
+- **0:47** worse but actually become better over
+- **0:47** time it just happens that lstms are
+- **0:47** worse for both uh but I could show you
+- **0:47** another one where things you can predict
+- **0:47** that actually after a certain scale
+- **0:48** you're better off using that type of
+- **0:48** model than others uh so that's why
+- **0:48** scaling laws are actually really
+- **0:48** useful any questions on
+- **0:48** that yeah so these are all kind of very
+- **0:48** how how sensitive are these to like
+- **0:48** small differences in the architecture
+- **0:48** like one one like Transformer
+- **0:48** architecture versus another Transformer
+- **0:48** architecture you basically have to like
+- **0:48** fit your own curve and make basically
+- **0:48** say like oh scaling law has tell me
+- **0:48** there should be some like logarithmic
+- **0:48** function let me extrapolate that for my
+- **0:48** own yeah so uh usually for example if
+- **0:48** you're an academic and you want to now
+- **0:48** at least that's like pretty recent and
+- **0:48** you want to propose a new like
+- **0:48** activation uh that's exactly what you
+- **0:48** will do you will fit a scaling law show
+- **0:48** another scaling law with the standard
+- **0:48** like I don't know G and you will say
+- **0:48** that it's better in reality once you
+- **0:48** start thinking about it in scaling loss
+- **0:48** terms you really realize that actually
+- **0:48** all the architecture differences that we
+- **0:48** can make like the small minor ones all
+- **0:48** they do is maybe change a little bit the
+- **0:49** The
+- **0:49** Intercept but really that doesn't matter
+- **0:49** uh cuz just train it for 10 hours longer
+- **0:49** or like wait for the next uh for the
+- **0:49** next Compu gpus and these things are
+- **0:49** really secondary which is exactly why I
+- **0:49** was telling you originally people spend
+- **0:49** too much time on the architecture and
+- **0:49** losses um in reality these things don't
+- **0:49** matter as much data though if you use
+- **0:49** good data you will have much better
+- **0:49** scaling loss than if use bad data so
+- **0:49** that really matters
+- **0:49** uh another really cool thing you can do
+- **0:49** with scaling laws is that you can ask
+- **0:49** yourself uh how to optimally allocate
+- **0:49** training resources should I train larger
+- **0:49** models because we saw that it's better
+- **0:49** when you train larger models but we saw
+- **0:49** that it's also better when you use more
+- **0:49** data so which one should I do should I
+- **0:49** just train on more data a smaller model
+- **0:49** or should I train a larger model on less
+- **0:49** data um so chinchilla is a very famous
+- **0:49** paper that first showed this uh the way
+- **0:49** they did it I want to give you a little
+- **0:49** bit of a sense of what these plots are
+- **0:49** uh here you see training loss again on
+
+## 50:00
+
+- **0:50** the x-axis you see parameter parameter
+- **0:50** differences uh sorry parameter size uh
+- **0:50** number of parameters so the size of the
+- **0:50** model and here all these curves are what
+- **0:50** we call isof flops which is that all the
+- **0:50** models on this curve H have been trained
+- **0:50** with the same amount of
+- **0:50** compute um the way that you do that is
+- **0:50** that you train you change sorry you vary
+- **0:50** the number of tokens that we trained on
+- **0:50** and the size of the models but you vary
+- **0:50** in such a way that the total compute is
+- **0:50** constant
+- **0:50** okay so all these curves that you see
+- **0:50** with different colors have different
+- **0:50** amount of computers that were trained on
+- **0:50** then you take the best one for each of
+- **0:50** those curves once you have the best one
+- **0:50** for each of those curves um you can ask
+- **0:50** you can plot um how much flops it was
+- **0:50** and which curve were you on and how much
+- **0:50** parameters did you actually use for
+- **0:50** training that specific point you put
+- **0:50** that on the on the log log uh scale
+- **0:50** again and now you fit a scaling law
+- **0:50** again so now I have something which
+- **0:50** tells me if I want to train a model of
+- **0:51** 10^ 23 flops here's exactly the number
+- **0:51** of parameters that I should be using 100
+- **0:51** 100b and you can do the same thing with
+- **0:51** flops and
+- **0:51** tokens so now you can predict if if I
+- **0:51** tell you exactly I have one month of
+- **0:51** compute what size of model should I be
+- **0:51** training F your scaling law and I tell
+- **0:51** you um of course that all looks
+- **0:51** beautiful in reality like there's like
+- **0:51** there's a lot of like small things of
+- **0:51** like should you be counting like
+- **0:51** embedding parameters like there's
+- **0:51** there's a lot of complexities but if you
+- **0:51** do things well these things actually do
+- **0:51** hold um so the optimal number of
+- **0:51** parameters that that chinchilla Pap have
+- **0:51** found is to use 20 tokens for every
+- **0:51** parameter that you train uh so if you
+- **0:51** add one more parameter you should add
+- **0:51** you should train your thing on your
+- **0:51** model on 20 more tokens so one caveat
+- **0:51** here is that this is optimal training
+- **0:51** resources so that is telling me if you
+- **0:51** have 10^ 23 FL
+- **0:51** or if you have like 100 I don't know how
+- **0:51** much that is100 million or 10 no that's
+- **0:52** much less actually let's say I have $5
+- **0:52** million to to train my best model that
+- **0:52** gets the lowest loss how how what would
+- **0:52** I train on in reality these companies
+- **0:52** need to think about inference also if
+- **0:52** you have a smaller model they will spend
+- **0:52** less over time um so actually if you
+- **0:52** consider the inference cost you have
+- **0:52** other papers that Tred to show that um
+- **0:52** it's around
+- **0:52** 150 uh parameters per sorry tokens per
+- **0:52** parameters because you prefer having a
+- **0:52** smaller model cuz over time you're going
+- **0:52** to you're going to actually um spend
+- **0:52** less money on inference of these models
+- **0:52** so 150 to one that's around what the
+- **0:52** best models are trained on right now at
+- **0:52** least the ones that are that are used um
+- **0:52** in practice for in
+- **0:52** production
+- **0:52** great any question on
+- **0:52** chin great oh sorry in practice how
+- **0:52** expensive is inference for these models
+- **0:53** rela to
+- **0:53** train actually very expensive uh I will
+- **0:53** not talk about inference because that
+- **0:53** would be another entire lecture but just
+- **0:53** think about Chad GPT where they have I
+- **0:53** don't know how much it is now like 600
+- **0:53** million people that used it um like
+- **0:53** that's a lot
+- **0:53** um yeah so it's actually very expensive
+- **0:53** there's a lot of optimization you can do
+- **0:53** for in though um and that's an entire
+- **0:53** other lecture so I'm going to skip that
+- **0:53** uh this time but it's very
+- **0:53** interesting okay tuning um as I said
+- **0:53** there are many things that you can uh
+- **0:53** answer with scaling laws I just try to
+- **0:53** give you two examples uh but really
+- **0:53** there are many things what data do you
+- **0:53** use what mixture what data mixing
+- **0:53** waiting you use data mixtures that's
+- **0:53** what we talked about before uh what
+- **0:53** architecture you use whether you should
+- **0:53** make your models uh wider or deeper um
+- **0:53** should you be paying for more gpus or
+- **0:53** actually collecting more data um all
+- **0:53** these things are things you can try to
+- **0:54** answer with scaling
+- **0:54** laws one thing I want to say is the bit
+- **0:54** lesson if you ever heard of Richard
+- **0:54** sudden a very famous blog post in 2019
+- **0:54** um what he realized uh which I think not
+- **0:54** enough people realize I didn't
+- **0:54** definitely did not realize at that time
+- **0:54** um is that once you see these type of
+- **0:54** scaling laws you know that the more
+- **0:54** compute you have the better models you
+- **0:54** will get so with skill you will get
+- **0:54** better model and you also know by Mo law
+- **0:54** or these type of variant of Mo law that
+- **0:54** you will always have better compute then
+- **0:54** the only thing that matters is just to
+- **0:54** have architectures that can leverage
+- **0:54** computation so what matters is basically
+- **0:54** systems data and less so the
+- **0:54** architecture like the small architecture
+- **0:54** differences like your your your
+- **0:54** activation and things like this uh so I
+- **0:54** think that's like one of the reasons why
+- **0:54** most of research focuses on um some
+- **0:54** things that for industry matters less
+- **0:54** and I was one of those researchers for a
+- **0:54** large part of my my career um so don't
+- **0:55** spend time over complicating do the
+- **0:55** simple things do it well seal them
+- **0:55** that's really what openi taught us with
+- **0:55** um with chat gpg and with all the gpts
+- **0:55** before okay I want to give you some
+- **0:55** backup the envelope computation so I
+- **0:55** might be off by a few factors here but I
+- **0:55** just want to give you a sense of how
+- **0:55** costly it is to train some of these
+- **0:55** models I'll give as an example
+- **0:55** Lama 3 400b which is currently the best
+- **0:55** open source model that you can get uh it
+- **0:55** was trained on 15.6 tokens it has 45
+- **0:55** billion parameters so just now that you
+- **0:55** know what is like this uh optimal tokens
+- **0:55** per parameter that's around 40 so that's
+- **0:55** a little bit more than chinchilla but
+- **0:55** less than this like inference uh optimal
+- **0:55** um model so they went for training
+- **0:55** optimality uh flops for this model so
+- **0:55** one simple uh way to compute flops is
+- **0:55** six uh times the number of parameters
+- **0:56** times the number of data you train on uh
+- **0:56** so if you do the simple calculation here
+- **0:56** it's 3.8 e25 flops the reason why this
+- **0:56** is important is that if you follow the
+- **0:56** little bit the news there's an executive
+- **0:56** order from Biden that basically says
+- **0:56** that once you have uh 1 e26 parameters
+- **0:56** uh sorry flops uh then you have special
+- **0:56** scrutiny on your models so they went 2x
+- **0:56** less than that so they really went right
+- **0:56** below this to not have special scrutiny
+- **0:56** so 38 uh I might be off by a little bit
+- **0:56** but it's definitely under the 1
+- **0:56** 26 oh um so paramet p is parameters n is
+- **0:56** data number of tokens this is a uh this
+- **0:56** is just an
+- **0:56** approximation we
+- **0:56** yeah okay uh compute and we know that
+- **0:56** they trained on 16,000
+- **0:56** h100s um and we know the throughput but
+- **0:56** they they said it too uh so if you do
+- **0:56** the computation it takes around 70 days
+- **0:57** um or 26 million GPU hours at least
+- **0:57** that's with my uh back of the envelope
+- **0:57** computation they actually said that they
+- **0:57** use 30 million instead of 26 million GPU
+- **0:57** hours um so maybe they had like some uh
+- **0:57** some challenges I don't really know but
+- **0:57** if you follow the simple computation
+- **0:57** it's around 70 days um cost uh I mean
+- **0:57** this it's hard to to approximate but I'm
+- **0:57** just going to say it's kind of the rent
+- **0:57** like what if I were to rent h100s that
+- **0:57** many h100s for that many days how much
+- **0:57** will I pay uh h100 a lower bound on the
+- **0:57** on the renting uh cost of h100 is around
+- **0:57** 2 hours uh $2 per hour so if you
+- **0:57** multiply this by 26 million uh hours uh
+- **0:57** you get 52 million uh dollars so they
+- **0:57** probably pay less than that but not
+- **0:57** actually much less because all these um
+- **0:57** all these services that actually rent
+- **0:57** gpus they don't make that much money so
+- **0:58** it's it's probably slightly less but not
+- **0:58** that much less um now salary I said 50
+- **0:58** employees 500k per
+- **0:58** year say yeah it's probably the right
+- **0:58** ballpark 25 million uh so if you put all
+- **0:58** together around 75 million um dollars
+- **0:58** for
+- **0:58** training uh this Slammer model I'm
+- **0:58** probably off by like 10 million but but
+- **0:58** that's kind of right uh bpk
+- **0:58** carbon emitted um a lot of people might
+- **0:58** ask like also the cost is not the only
+- **0:58** thing that is important so I did the
+- **0:58** computation um it's around 4 uh 4,000 um
+- **0:58** tons of CO2 equivalent that is actually
+- **0:58** only 2,000 return tickets from JFK to uh
+- **0:58** London so right now uh carbon emitted is
+- **0:58** actually not uh I mean it's huge but
+- **0:58** it's not like um meaningful yeah yet I
+- **0:58** think in maybe GPT 6 gpt7 once you
+- **0:59** multiply this by 100 that might become a
+- **0:59** real issue right now it's still not uh I
+- **0:59** think um an issue in the grand scheme of
+- **0:59** things next model the way you should be
+- **0:59** thinking about these models is that
+- **0:59** every new generation the number of flops
+- **0:59** essentially uh multiplies 10x or at
+- **0:59** least that's what they try uh if they
+- **0:59** have enough energy and if they can buy
+- **0:59** enough
+- **0:59** gpus uh great any question on these back
+- **0:59** of the envelope math
+- **0:59** no
+- **0:59** okay so now we talked about pre-training
+- **0:59** I wanted to also chat about systems
+- **0:59** because now we know computer is really
+- **0:59** important so there's a question of how
+- **0:59** do you optimize the how do you optimize
+- **0:59** your computer I will leave that for the
+- **0:59** end because I'm not sure how much time
+- **0:59** we will have I think it's important but
+- **0:59** hopefully I I'll be able to to talk
+- **0:59** about it later it's slightly different
+- **0:59** than what we've been talking about right
+- **0:59** now so I'll move on to post training for
+- **0:59** now
+- **0:59** so the task of post training ER the
+- **0:59** reason why we need to do Post training
+
+## 60:00
+
+- **1:00** is as I told you before um it's to make
+- **1:00** AI assistants so language modeling is
+- **1:00** not uh really the thing that you want
+- **1:00** when you have an AI assistant uh for
+- **1:00** example if you ask to gbd3 which is a
+- **1:00** purely language Model A pure language
+- **1:00** model not a um not an aligned one if you
+- **1:00** ask a question like explain the moon
+- **1:00** landing to a
+- **1:00** six-year-old the completion that you
+- **1:00** would get is something like explain the
+- **1:00** theory of gravity to a six-year-old
+- **1:00** because what it learned is that on on on
+- **1:00** internet if you have one question you
+- **1:00** usually have maybe another bullet point
+- **1:00** of other similar questions you don't
+- **1:00** usually have question and then answer
+- **1:00** later uh this is not what you want from
+- **1:00** an AI assistant so how do we uh do this
+- **1:00** alignment which is this post training
+- **1:00** and making these models
+- **1:00** assistance um so the goal of this
+- **1:00** alignment is to basically get LMS follow
+- **1:00** the instructions that are given um by
+- **1:00** users and and maybe some designers kind
+- **1:01** of desires um so think about moderation
+- **1:01** you don't want the model like open ey
+- **1:01** definitely doesn't want the model to say
+- **1:01** stuff that is very
+- **1:01** toxic um so here you see on the left
+- **1:01** hand side uh that when you ask a
+- **1:01** question it actually provides a a real
+- **1:01** answer so it's not like uh before the
+- **1:01** llm and on the right hand side you see
+- **1:01** that it would if you ask to write a
+- **1:01** tweet describing how a certain part of
+- **1:01** the population are evil it will say that
+- **1:01** it cannot do that um so that's kind of
+- **1:01** this
+- **1:01** alignment uh the background here is that
+- **1:01** uh basically the data that you want for
+- **1:01** training some of these models um is like
+- **1:01** we know what we want which is just
+- **1:01** asking humans this is a question this is
+- **1:01** the answer that you want uh but the
+- **1:01** thing is that it's very expensive to
+- **1:01** collect that data and it's hard to find
+- **1:01** it online uh in contrast pre-training
+- **1:01** data is not what you want but there's a
+- **1:01** lot of it um so what what we will do a
+- **1:01** the main idea is simply take a pre-train
+- **1:02** large language model pre-train all of
+- **1:02** internet and then you just fine tune so
+- **1:02** you just change a little bit of weights
+- **1:02** on the type of data that you actually
+- **1:02** want and hopefully given it you already
+- **1:02** pre-train it on all of Internet it
+- **1:02** basically learns or knows how to speak
+- **1:02** in English and and knows a standard um
+- **1:02** language syntax uh then you can really
+- **1:02** find tune in with very little
+- **1:02** data okay sft so supervis fine tuning is
+- **1:02** really exactly what I just said which is
+- **1:02** the idea of fine-tuning the large
+- **1:02** language model on uh basically the
+- **1:02** desired answers that are collected from
+- **1:02** humans um so why is it called supervis
+- **1:02** fine tuning because you basically want
+- **1:02** to do language modeling on the real
+- **1:02** ansers so language modeling is this like
+- **1:02** next word prediction and and that's the
+- **1:02** fine-tuning part and then you want to do
+- **1:02** it on desired answers given by humans so
+- **1:02** that's why we call it
+- **1:02** supervis so how do we collect this data
+- **1:02** well we I just said it you just ask
+- **1:02** humans uh to to tell you this is the
+- **1:02** this is a question this is the answer
+- **1:02** that you uh you would want from some of
+- **1:03** these models so this is an example um
+- **1:03** sorry I can't read very well on my
+- **1:03** computer but uh my kid uh needs to do a
+- **1:03** science um no let's read this one can
+- **1:03** you write a short introduction about the
+- **1:03** relevance of the term monopsony and then
+- **1:03** it says monopsony refers to a market
+- **1:03** structure blah blah blah and that's a
+- **1:03** human that wrote that um so actually
+- **1:03** this is open Assistant which was a a way
+- **1:03** to collect um uh data online by
+- **1:03** humans so this type of supervised fine
+- **1:03** tuning or alignment is really the key of
+- **1:03** Chad GPT this is what made uh the big
+- **1:03** jump from gpt3 which was mostly
+- **1:03** something that was known by AI
+- **1:03** researchers to Chad GPT which became
+- **1:03** known by basically
+- **1:03** everyone
+- **1:03** um so the problem with uh human data is
+- **1:03** that it's uh very slow to collect and
+- **1:03** very expensive um so
+- **1:03** one possible simple idea is to use llms
+- **1:04** to scale data collection uh so that's
+- **1:04** exactly what we did with alpaca uh one
+- **1:04** year ago what we did is that we asked uh
+- **1:04** humans or we use a data set of human uh
+- **1:04** question answers so there were 175 uh
+- **1:04** question answers here and we asked the
+- **1:04** best mod at the time so text3 to
+- **1:04** basically generate many more of these
+- **1:04** question and answers so all we did is
+- **1:04** like this is what humans would write now
+- **1:04** write similar answers and similar
+- **1:04** questions and we collected 52,000 LM
+- **1:04** generated question answers and then what
+- **1:04** we did is simply we took Lama 7B which
+- **1:04** was the best pre-train model at the time
+- **1:04** and we just fine- tuned this with
+- **1:04** supervised fine tuning as I told you and
+- **1:04** that's how we got um the Alpac s7b
+- **1:04** model uh and this is the type of data
+- **1:04** that we collected so things like what
+- **1:04** does algorithm mean an algorithm is a
+- **1:04** step by a stepbystep uh set of
+- **1:04** instruction used to solve a problem or
+- **1:04** achieve a goal blah blah blah blah so
+- **1:04** the data is not actually it's actually
+- **1:04** pretty good given it was LM generated by
+- **1:05** LMS from essentially two generations ago
+- **1:05** um so that really started at least for
+- **1:05** us kind of as an academic replication of
+- **1:05** chat GPT uh now it really there's a big
+- **1:05** field of like synthetic data generation
+- **1:05** of how to use llms to basically make
+- **1:05** development of llms faster um and by
+- **1:05** basically by decreasing the amount of of
+- **1:05** human hours that you need
+- **1:05** quantity of data so we talked about what
+- **1:05** type of data and how we collect it um
+- **1:05** one thing which is surprising with sft
+- **1:05** is that you don't need that much data uh
+- **1:05** so what this paper showed this is called
+- **1:05** Lima is that if you have if you scale
+- **1:05** the amount of data that use from uh
+- **1:05** supervised fine training from 2,000 to
+- **1:05** 32,000 it really doesn't help much so
+- **1:05** here scaling laws definitely don't help
+- **1:05** um so the the intuition here is that all
+- **1:05** you learn um is is you learn how to
+- **1:05** format your desired answers another way
+- **1:05** of saying it is that your pre-trained
+- **1:06** models they essentially model the
+- **1:06** distribution of every user on internet
+- **1:06** one that might write bullet points
+- **1:06** another one that might answer qu answer
+- **1:06** question with an answer so all you tell
+- **1:06** your model is like wait you should
+- **1:06** actually be optimizing more for this
+- **1:06** type of user than another one so you're
+- **1:06** not actually teaching it and you're not
+- **1:06** teaching anything through this um sft uh
+- **1:06** so supervis fine tuning all you do is
+- **1:06** you tell the model to kind of optimize
+- **1:06** for one type of user that it saw already
+- **1:06** in a pre-train data set so the knowledge
+- **1:06** is already in the pre-train llm uh and
+- **1:06** you basically just specialize to one
+- **1:06** type of
+- **1:06** user great any question on
+- **1:06** sft yes so I know it's a big issue with
+- **1:06** synthetic data where uh if you keep
+- **1:06** generating data from the same
+- **1:06** distribution eventually you're not
+- **1:06** learning a new distribution you're
+- **1:06** essentially playing with it it just
+- **1:06** bootstrapping that yeah surely
+- **1:06** you can't scale that forever right you
+- **1:06** can't keep going on and generating from
+- **1:06** the same distribution you hope to learn
+- **1:07** something new yeah uh so are there it's
+- **1:07** an active area of research but any
+- **1:07** thoughts that you have around how people
+- **1:07** are maybe thinking around this and uh
+- **1:07** better ways to bootstrap or to give up
+- **1:07** on this idea and and realize that the
+- **1:07** chart shows you don't need that many so
+- **1:07** just get humans to generate 2,000 really
+- **1:07** good uh yeah so that's a very good
+- **1:07** question uh so for the data stuff so I'm
+- **1:07** saying it's not that important for sft
+- **1:07** but there will be another thing we'll
+- **1:07** talk about right after where actually
+- **1:07** data does
+- **1:07** matter my intuition based on not that
+- **1:07** much empirical results is that you can
+- **1:07** still get um even though you use your
+- **1:07** LMS if you use purely LM generated text
+- **1:07** and you do that for like three four
+- **1:07** generations of llms I agree with you
+- **1:07** that probably you won't improve much but
+- **1:07** for me what is important is how do you
+- **1:07** use like human in the loop with llms not
+- **1:07** purely LMS not purely uh humans but
+- **1:07** maybe what you can do is just have the
+- **1:07** model generate some new text and just uh
+- **1:07** humans write a few Edits edits are much
+- **1:07** faster than writing the entire text and
+- **1:08** I think that if you have that type of
+- **1:08** collaboration then from like kind of an
+- **1:08** information theoretical point of view
+- **1:08** you still get additional information but
+- **1:08** you still much faster than if you use
+- **1:08** humans and I think that as a field we'll
+- **1:08** probably move towards these type of
+- **1:08** things uh which is um really just
+- **1:08** finding the examples that are important
+- **1:08** and and asking humans it's kind of
+- **1:08** active learning just asking humans
+- **1:08** exactly when uh you need to to get
+- **1:08** inputs yes do we train with like the
+- **1:08** same loss function the same like General
+- **1:08** training algorithm for the supervis
+- **1:08** tuning bit as we do for the for the
+- **1:08** pre-training right because like the
+- **1:08** examples you showed I think the the
+- **1:08** important thing of the good examples is
+- **1:08** they're like supera accurate there's
+- **1:08** these more complex still just like chain
+- **1:08** same so that's why here I yeah I didn't
+- **1:08** maybe didn't emphasize enough this is
+- **1:08** just language modeling fine tun the LM
+- **1:08** with language model on the desired
+- **1:08** answers so this is literally the same
+- **1:08** loss um it will be different in two
+- **1:09** seconds but the first step of sft is
+- **1:09** literally the same loss where you just
+- **1:09** say Okay I want to actually specialize
+- **1:09** on that type of data so there's even a
+- **1:09** question of like what is pre-training
+- **1:09** what is post-training because in reality
+- **1:09** it's just like a different data that you
+- **1:09** use the reason why we usually call it
+- **1:09** post training is that the way we collect
+- **1:09** that data is very
+- **1:09** different great great questions uh yes
+- **1:09** maybe it's the same question but why
+- **1:09** would these 2,000 examples have such an
+- **1:09** overweighted
+- **1:09** influence you tun so that's why we uh
+- **1:09** also that's another reason why we call
+- **1:09** it post training is that we use
+- **1:09** different type of hyper parameters so
+- **1:09** you know I told you basically at the end
+- **1:09** of pre training you essentially end up
+- **1:09** with a learning rate of zero and here
+- **1:09** you're going to increase your learning
+- **1:09** rate so like 1 eus 5 one E Yeah and and
+- **1:09** so um the weight that you give to them
+- **1:09** is actually
+- **1:09** different
+- **1:09** um okay uh Second Step or second part of
+- **1:09** this post training um is what we call
+- **1:09** reinforcement learning from Human
+
+## 70:00
+
+- **1:10** feedback or rhf uh some of you might
+- **1:10** have heard of that um the idea is that
+- **1:10** sft has a problem namely that uh you do
+- **1:10** behavioral cloning which means that you
+- **1:10** just try to clone what the humans would
+- **1:10** say and that had that has many issues
+- **1:10** one of them is that you're bound by
+- **1:10** human abilities so if um like humans
+- **1:10** actually humans won't generate the
+- **1:10** things that they think is actually the
+- **1:10** best thing to generate so if you ask me
+- **1:10** to write a book I mean I can definitely
+- **1:10** enjoy a book I can probably say one book
+- **1:10** is better than another but I'm
+- **1:10** definitely not going to be as good as
+- **1:10** writing the book that I want to read uh
+- **1:10** so you're going to be bound by the human
+- **1:10** ability to generate things even though
+- **1:10** the humans might be better at
+- **1:10** distinguishing between things that's one
+- **1:10** issue issue number two uh I find that
+- **1:10** actually pretty interesting is that it
+- **1:10** might if you ever heard of the word
+- **1:10** hallucination so this is llms generating
+- **1:10** F like false information
+- **1:10** hallucination might these people have um
+- **1:10** hypothesized that that can come from the
+- **1:11** supervised fine tuning even if you do
+- **1:11** supervised fine tuning on data that is
+- **1:11** correct and the reason why that is is
+- **1:11** that if uh given I told you that
+- **1:11** basically sftt is with very little data
+- **1:11** and it's with data that doesn't the
+- **1:11** model doesn't learn anything new so what
+- **1:11** if the human gives an answer that the
+- **1:11** model didn't know was true from the
+- **1:11** model perspective you the human
+- **1:11** basically is telling the the model uh
+- **1:11** generate this thing that seems plausible
+- **1:11** but actually have no idea if it's true
+- **1:11** or not um so just to give you a very
+- **1:11** concrete example if we go back to this
+- **1:11** uh monopsony example can you write blah
+- **1:11** blah blah about monopsony uh imagine
+- **1:11** that a human uh wrote a reference on
+- **1:11** this type of book um and that book might
+- **1:11** exist that might be a correct reference
+- **1:11** but what if the llm never saw this
+- **1:11** reference during pre-training then it
+- **1:11** doesn't know that it's a correct
+- **1:11** reference so really what you tell the
+- **1:11** model is to generate or make up some
+- **1:11** plausibly sounding reference um rather
+- **1:12** than actually tell the real reference
+- **1:12** that it saw during pre-training uh so
+- **1:12** hallucination might be um uh a re like
+- **1:12** might be caused by this sft that's
+- **1:12** problem number two does that all make
+- **1:12** sense great problem number three price
+- **1:12** generating the ideal answers is very
+- **1:12** pricey and that comes back to your
+- **1:12** question um of like humans writing
+- **1:12** answer is actually pretty
+- **1:12** expensive um so that's where rhf comes
+- **1:12** in the idea is that instead of cloning
+- **1:12** the behaviors of humans we're going to
+- **1:12** maximize human preference um and the way
+- **1:12** we're going to do that so the pipeline
+- **1:12** is that for a certain for every
+- **1:12** instruction you're going to ask a model
+- **1:12** to generate two answers um and usually
+- **1:12** use a pretty good model so you usually
+- **1:12** don't use an LM here you use a sft uh
+- **1:12** fine tune you use a fine tuned llm
+- **1:12** already to give like pretty good answers
+- **1:12** and then you ask labelers which of these
+- **1:12** two answers was better so select the
+- **1:13** preferred one and then with different
+- **1:13** type of algorithms we're going to talk
+- **1:13** about the algorithms um you just
+- **1:13** fine-tune the model to generate more of
+- **1:13** the green thing than the red thing so
+- **1:13** more of the good stuff uh so now the
+- **1:13** question is how and we're going to talk
+- **1:13** about that right
+- **1:13** now so there are two ways that we're
+- **1:13** going to talk about and two that are
+- **1:13** mainly used in the community um the
+- **1:13** first one is simply the idea of of using
+- **1:13** reinforcement learning so hopefully you
+- **1:13** all know what reinforcement learning is
+- **1:13** now um so when you think about using
+- **1:13** reinforcement learning one important
+- **1:13** question is like what is the reward that
+- **1:13** we're optimizing uh so in this case
+- **1:13** there are really two options that I
+- **1:13** could think about the first one you
+- **1:13** could just say I'm going to compare the
+- **1:13** output generated by some baseline the
+- **1:13** output generated by my model U and I'm
+- **1:13** just going to ask the human to say which
+- **1:13** one is better and I'm going to use this
+- **1:13** as a reward so if I'm better than the
+- **1:13** Baseline this is a plus one if not it's
+- **1:13** a minus one one uh so now it's binary
+- **1:13** reward the problem with binary reward is
+- **1:13** that it's very sparse and you don't get
+- **1:14** much information out of it uh like maybe
+- **1:14** your answer was slightly better maybe it
+- **1:14** was like way better and you don't really
+- **1:14** know from this um how much better it was
+- **1:14** so option two is that you can train what
+- **1:14** we call a reward model which is simply a
+- **1:14** classifier uh so you use machine
+- **1:14** learning to to classify how much better
+- **1:14** uh two outputs are from the preference
+- **1:14** from the perspective of the human um so
+- **1:14** this is a little bit meta but what you
+- **1:14** basically do is that you train uh you
+- **1:14** take um a reward model R which is a uh
+- **1:14** just a large also a large um a large
+- **1:14** classifier and you basically ask this
+- **1:14** reward model you give it the input and
+- **1:14** the actual output that you have one of
+- **1:14** the two outputs uh and you just um
+- **1:14** exponentiate that so that's the soft Max
+- **1:14** law that you all know about and now you
+- **1:14** divide by um the the exponential
+- **1:14** reward uh on the first example sorry on
+- **1:14** the first output and this is on the
+- **1:15** second output and you basically train so
+- **1:15** the reason why you do that is that you
+- **1:15** train your your model you train this
+- **1:15** reward model to be able to classify um
+- **1:15** how much better one output is to another
+- **1:15** one so another uh slightly less
+- **1:15** convoluted way of saying it is that your
+- **1:15** reward model will output some reward
+- **1:15** that will be used as the logits of your
+- **1:15** soft Max so now if you have high logic
+- **1:15** in your softmax it means that you highly
+- **1:15** likely this um output is
+- **1:15** better uh so that's what we call Bradley
+- **1:15** ter model yes is this reward model going
+- **1:15** over the entire output or is it
+- **1:15** going um so this takes the
+- **1:15** entire uh yeah this takes the entire
+- **1:15** output at once so it takes all the input
+- **1:15** and all the output and it gives one
+- **1:15** number
+- **1:15** yes would human be sorry with the reward
+- **1:15** model where would a human be like oh I
+- **1:15** see okay sorry maybe I wasn't clear um
+- **1:16** you train this reward model to fit this
+- **1:16** green and and red preference from humans
+- **1:16** so basically you train a classifier to
+- **1:16** say whether the humans prefer red or
+- **1:16** green uh but instead of using the binary
+- **1:16** reward which is what the human would
+- **1:16** tell you you basically use the logits of
+- **1:16** the soft Max and the thing with the
+- **1:16** logits is that that logits are
+- **1:16** continuous so now you know that if your
+- **1:16** reward model said it has high logits
+- **1:16** then in some ways the human highly
+- **1:16** prefer this answer to some other
+- **1:16** answer great um so as I just said
+- **1:16** continuous information so it's better so
+- **1:16** that's what people uh use in practice or
+- **1:16** at least used to use in practice I'll
+- **1:16** tell you about uh the other algorithm
+- **1:16** later uh so what you do at the end is
+- **1:16** that you basically try to just use
+- **1:16** reinforcement learning that you know
+- **1:16** about now we know we have reward what
+- **1:16** you sample through is the generation
+- **1:16** from your large language model um and
+- **1:17** then you just use some regularization
+- **1:17** term so the reason why you do this
+- **1:17** regularization term is for avoiding what
+- **1:17** we call over optimization so this reward
+- **1:17** model might not be really represent like
+- **1:17** might not perfectly model human
+- **1:17** preferences so you don't want to
+- **1:17** maximize this thing to essentially
+- **1:17** Infinity um and you do it using uh po
+- **1:17** which is a common uh reinforcement
+- **1:17** learning algorithm um one thing to note
+- **1:17** here because it will be important for
+- **1:17** later is that when we use maximum
+- **1:17** likelihood
+- **1:17** um sorry now the large language models
+- **1:17** are actually a policy for your
+- **1:17** reinforcement learning it's not
+- **1:17** maximizing maximum likelihood anymore
+- **1:17** which means that you're not modeling any
+- **1:17** distribution anymore and the reason why
+- **1:17** this is important is that models that
+- **1:17** went through this type of Po actually
+- **1:17** don't give you likelihoods of text that
+- **1:17** are meaningful cuz what you optimize
+- **1:17** them to do is B basically just optimized
+- **1:17** for generating the most likely thing not
+- **1:17** optimize for modeling like all the
+- **1:18** answers that humans might say another
+- **1:18** way of saying that is that there's
+- **1:18** nothing that incentivizes here the model
+- **1:18** to not give a like a um a single
+- **1:18** possible generation nothing here says
+- **1:18** it's good if you have some distribution
+- **1:18** with some
+- **1:18** entropy um okay if you haven't followed
+- **1:18** it's not that important but just good to
+- **1:18** knowe great so PO is exact what chat GPT
+- **1:18** did originally so here's the on the blog
+- **1:18** post or what they have is step one do
+- **1:18** supervise fine training which now you
+- **1:18** all know about step two train a reward
+- **1:18** model on human preferences step three do
+- **1:18** po multiple steps which is where you see
+- **1:18** this this blue arrow so you continue you
+- **1:18** train the model once with po you collect
+- **1:18** new data you continue uh and that's why
+- **1:18** and that's exactly what Chad GPT did uh
+- **1:18** that was a big breakthrough between gpt3
+- **1:18** and Chad GPT
+- **1:18** one thing to note is that uh P has many
+- **1:18** challenges reinforcement learning is
+- **1:19** something that's super nice
+- **1:19** theoretically in practice anyone who
+- **1:19** ever worked with reinforcement learning
+- **1:19** knows it's such a mess uh there's a lot
+- **1:19** of things like roll outs out of Loops
+- **1:19** clipping so many complications um so
+- **1:19** it's messy this is the idealized PO used
+- **1:19** for LM settings so that's already much
+- **1:19** more complicated than this expectation
+- **1:19** we saw before and in practice it's
+- **1:19** actually much more complicated so we
+- **1:19** have one implementation of it that we
+- **1:19** had to do and I'm not going to go
+- **1:19** through it but basically you have like
+- **1:19** so much stuff that you have to think
+- **1:19** about when you implement that type of of
+- **1:19** uh po algorithm so you have clipping
+- **1:19** everywhere you have a lot of
+- **1:19** complexities and things are not well
+- **1:19** documented all this to say um that we're
+- **1:19** going to there was a new method that was
+- **1:19** proposed uh also from Sanford one year
+- **1:19** ago called DPO which is essentially a
+- **1:19** simplification of Po um and the way uh
+- **1:19** what they did or the idea that they have
+- **1:19** is that instead of using reinforcement
+- **1:19** learning you can just maximize the
+- **1:19** probability of generating the stuff that
+- **1:19** you like and minimizing the probability
+
+## 80:00
+
+- **1:20** of the stuff that you don't like uh so
+- **1:20** if you think about the human preference
+- **1:20** the red and green maximize uh green
+- **1:20** minimize red um so the loss is actually
+- **1:20** this one uh where what you see this is
+- **1:20** simply um some log of the model so this
+- **1:20** is the likelihood of a model generating
+- **1:20** the things that the human preferred
+- **1:20** given the the inputs um and what you try
+- **1:20** to do is basically
+- **1:20** maximize uh the likelihood of generating
+- **1:20** the things that you like minimize the
+- **1:20** likelihood of the things that you don't
+- **1:20** like um all the rest of the terms here
+- **1:20** it's not too important it's actually
+- **1:20** really not that complicated to
+- **1:20** understand but at a high level it's
+- **1:20** really just maximizing the things you
+- **1:20** like minimizing the the rest um and one
+- **1:20** thing to note uh which I was going to
+- **1:20** say just here is that actually all the
+- **1:20** rest is chosen such that um the global
+- **1:20** Minima of of Po and a global Minima of
+- **1:20** like this DPO under some assumptions are
+- **1:20** essentially equivalent so this is the
+- **1:21** right thing to do mathematically I'm not
+- **1:21** going to go through the derivations but
+- **1:21** that's the right thing to do uh it's
+- **1:21** pretty different with Po in the sense
+- **1:21** that now and with P what you had to do
+- **1:21** is collect the human preferences then
+- **1:21** train a uh reward model with maximum
+- **1:21** likelihood then use reinforcement
+- **1:21** learning now all you do is basically
+- **1:21** maximum likelihood much simpler yes I
+- **1:21** mean yeah so it seems like this is a
+- **1:21** much simpler and B like what you just
+- **1:21** intuitively do if this why did they
+- **1:21** start with this reward model like what
+- **1:21** what led them doing that I think it's a
+- **1:21** great question uh I don't really know
+- **1:21** what I can tell you is that at open ey
+- **1:21** the people who did the um uh who did
+- **1:21** basically this PP uh sorry who did Chad
+- **1:21** GPT initially are the ones who actually
+- **1:21** wrote Po and I think they were just like
+- **1:21** there are a lot of reinforcement
+- **1:21** learning people and I think that for
+- **1:21** them it was very intuitive um so there's
+- **1:21** also some additional like potential
+- **1:21** benefits for example I don't want to
+- **1:22** yeah for example if you use the reward
+- **1:22** model uh the cool thing here with
+- **1:22** reinforcement learning is that you can
+- **1:22** use unlabeled data with the reward model
+- **1:22** so here you can only use the label data
+- **1:22** for doing DPO um for PP for po you first
+- **1:22** train your reward model and then you can
+- **1:22** use unlabeled data uh where the reward
+- **1:22** model will basically label this
+- **1:22** unlabeled data so there there's
+- **1:22** additional kind of potential uh
+- **1:22** there could be potential improvements in
+- **1:22** practice it happens at down and on and I
+- **1:22** think just that a lot of people in this
+- **1:22** team were reinforcement learning experts
+- **1:22** including uh the main author of Po John
+- **1:22** hman um so much simpler in poo and is
+- **1:22** basically performs as well uh so now
+- **1:22** this is the standard uh thing that
+- **1:22** people use at least in the open source
+- **1:22** Community I believe it's actually the
+- **1:22** standard also in in Industry so that's
+- **1:22** called DPO gains
+- **1:22** um so those are all the papers on the
+- **1:22** left here this is on a summarization
+- **1:22** task you see all I want to show you is
+- **1:23** that basically the pre-train models uh
+- **1:23** were okay and they improve with scale if
+- **1:23** you do supervised fine tuning you
+- **1:23** improve them a little bit more if you do
+- **1:23** po or something with all HF with human
+- **1:23** feedback you get performance that are as
+- **1:23** often times depending on a benchmark
+- **1:23** even better than uh humans so this is
+- **1:23** the human uh reference summaries same
+- **1:23** thing this is on a uh on a paper that we
+- **1:23** have Alpaca Farm
+- **1:23** where we see uh the evaluation here is
+- **1:23** not too important but basically you see
+- **1:23** pre-train model you jump to sft and then
+- **1:23** you jump to PPO and popo have the exact
+- **1:23** same
+- **1:23** performance so basically all HF helps
+- **1:23** that's kind of the conclusion and DPO is
+- **1:23** simple uh data uh the way that you
+- **1:23** collect that type of data um first idea
+- **1:23** is just use humans as we already talked
+- **1:23** about uh guidelines are very complicated
+- **1:23** for what humans should be labeling and
+- **1:23** and it's really not that easy and
+- **1:23** actually if you ever do some of the
+- **1:23** labeling you will see that it's
+- **1:24** extremely complicated like if I zoom in
+- **1:24** to this uh here I have a question tell
+- **1:24** tell me about self-driving cars and you
+- **1:24** read both self-driving cars are vehicles
+- **1:24** that are capable of detecting their
+- **1:24** surroundings blah blah blah self-driving
+- **1:24** cars are cars that are equipped with
+- **1:24** sensors blah blah blah to navigate
+- **1:24** without the need for a driver I mean
+- **1:24** both seem okay like which one is better
+- **1:24** it's actually hard to say at a glance um
+- **1:24** and as a result uh the problem with
+- **1:24** humans is that you will start optimizing
+- **1:24** a lot of like high level features for
+- **1:24** example the second one is longer I can
+- **1:24** guarantee you that most humans will
+- **1:24** choose second one even though I mean
+- **1:24** maybe the first one is better I don't
+- **1:24** know I haven't read it carefully so
+- **1:24** challenges with humans first slow and
+- **1:24** expensive uh second as I just mentioned
+- **1:24** it's hard to focus on things that matter
+- **1:24** like correctness and people uh usually
+- **1:24** look at things that don't matter as much
+- **1:24** like the form like length uh and as a
+- **1:24** result so what I show here is that uh
+- **1:24** when you do lhf the more you do of lhf
+- **1:24** the longer the output of the of the
+- **1:25** models become so if you've ever been
+- **1:25** annoyed at chat GPT answering you super
+- **1:25** long sentences this is because of all
+- **1:25** rhf um annotator distribution shift uh
+- **1:25** like the distribution of annotators that
+- **1:25** you use matters a lot and you have to
+- **1:25** think like what is what is even the
+- **1:25** humans that we want to represent in
+- **1:25** these models uh now the question is like
+- **1:25** crowdsourcing ethics uh like usually
+- **1:25** these basically a lot of the the
+- **1:25** labeling that is done um like the people
+- **1:25** who do them are not paid well and they
+- **1:25** have to go through a lot of toxic data
+- **1:25** uh because you basically want the model
+- **1:25** to avoid saying the toxic data um so
+- **1:25** crowdsourcing ethics
+- **1:25** too so many challenges with human data
+- **1:25** um so what we did also last year is
+- **1:25** again the same thing as alpaca just the
+- **1:25** idea of like oh well they're challenges
+- **1:25** with humans maybe we can just replace
+- **1:25** them with llms uh so what we did is
+- **1:25** simply replace
+- **1:25** um oh I see that I'm just realizing that
+- **1:25** the slides are not sented anyways uh you
+- **1:26** replace a human preference with LM
+- **1:26** preferences uh so here on this uh figure
+- **1:26** you see on the xaxis the price that we
+- **1:26** paid uh for collecting human data it's
+- **1:26** around
+- **1:26** $300 for 1,000 examples and this is on
+- **1:26** mechanical turkers which are usually
+- **1:26** like cheaper than than maybe some of the
+- **1:26** other um companies that you could go
+- **1:26** through and on the Y AIS it's basically
+- **1:26** the agreement with uh other humans with
+- **1:26** the mode of other humans and what you
+- **1:26** see is that actually as I told you
+- **1:26** before labeling is really complicated
+- **1:26** humans agree with themselves only around
+- **1:26** 66% of the time on a binary Tas and it's
+- **1:26** not that the humans are not good here
+- **1:26** because uh we were five main authors on
+- **1:26** this paper we tried to label this data
+- **1:26** ourselves and we only had like say 67 or
+- **1:26** 68% accuracy even though we talk like we
+- **1:26** talk for like 3 hours of how we should
+- **1:26** be doing labeling really it's
+- **1:26** complicated it's not an easy task um and
+- **1:26** here I just showed many different models
+- **1:26** and um basically you see that models are
+- **1:26** much cheaper and they can actually get
+- **1:27** higher agreement with the mode of humans
+- **1:27** than human humans themselves and the
+- **1:27** reason why is because humans have a lot
+- **1:27** of varant models have no varant so they
+- **1:27** might be a little bit more biased but
+- **1:27** have less virence uh so it works
+- **1:27** surprisingly well and now it's kind of
+- **1:27** the standard in open uh Source Community
+- **1:27** I think even in Industry a lot of people
+- **1:27** use both humans and llms for improving
+- **1:27** uh the colle collection of allf data
+- **1:27** um and this is like this is the paper
+- **1:27** from last year but honestly now it's
+- **1:27** more like that llms would be around this
+- **1:27** agreement and this cost so around I
+- **1:27** would say 50x cheaper than humans and
+- **1:27** better agreement with human than humans
+- **1:27** themselves okay so that gets us to
+- **1:27** evaluation of post
+- **1:27** training um that goes back to your
+- **1:27** initial question at the beginning of the
+- **1:27** lecture how do you evaluate something
+- **1:27** like chpt uh the answers that chpt could
+- **1:27** give are basically unbounded and it's
+- **1:27** not that there one right answer there
+- **1:27** are many answers that are just as good
+- **1:27** um so there are many challenges one you
+- **1:28** can't use validation loss because one
+- **1:28** method might use po the other one might
+- **1:28** use DPO validation loss is not
+- **1:28** comparable second you can't use Cal uh
+- **1:28** sorry perplexity that's the thing I told
+- **1:28** you before these models uh are not
+- **1:28** calibrated they don't give distributions
+- **1:28** they they just optimize for one thing so
+- **1:28** you can't use perplexity for actually
+- **1:28** evaluating uh these type of models once
+- **1:28** they're aligned sorry one Z lined third
+- **1:28** uh there's a large diversity of
+- **1:28** questions that human might ask to these
+- **1:28** models generation open QA like some
+- **1:28** question answering some summarization
+- **1:28** and all of these things so there's so
+- **1:28** many things you have to cover um then
+- **1:28** the tasks are really open-ended so it's
+- **1:28** very hard to automate so that's what you
+- **1:28** were alluding to before so the idea uh
+- **1:28** is that instead of trying to come up
+- **1:28** with really easily automated uh
+- **1:28** benchmarks uh it's just we're going to
+- **1:28** ask questions that that users actually
+- **1:28** ask to these models in practice and
+- **1:28** we're just going to ask annotators to
+- **1:28** say between these two models which one
+- **1:29** is better like what's the what's the
+- **1:29** better output so basically do exact same
+- **1:29** thing as um basically the data from rhf
+- **1:29** but you use it now for evaluation yes
+- **1:29** I'm not sure I understand what you mean
+- **1:29** by like can't use perplexity and not
+- **1:29** calibrated right like LM is still doing
+- **1:29** like next token
+- **1:29** prediction so I can't so think about um
+- **1:29** the optim solution after doing PO is
+- **1:29** basically one model that gives you uh
+- **1:29** essentially a Delta um like basically
+- **1:29** says that there's only one sentence that
+- **1:29** is that could be generated for that
+- **1:29** question so now if you use it on
+- **1:29** something that is slightly semantically
+- **1:29** differently different it would actually
+- **1:29** give a likelihood of zero for that
+- **1:29** answer so in reality it's not that
+- **1:29** extreme because as you say it's still a
+- **1:29** distribution but I just shows you that
+- **1:29** there's a there's a fundamental issue
+- **1:29** with perplexity once these models are
+- **1:29** not llms anymore they were not trained
+- **1:29** at least with P they were not trained to
+- **1:29** to do maximum likelihood anymore they
+- **1:29** were trained to be
+
+## 90:00
+
+- **1:30** policies okay um so probably the most
+- **1:30** common or like the most um yeah the most
+- **1:30** common Benchmark or the most trusted one
+- **1:30** is what we call Chad uh sorry chatbot
+- **1:30** Arena uh which is basically go on
+- **1:30** internet have random users on the
+- **1:30** internet blindly talk with two chat Bots
+- **1:30** just ask many questions see the two
+- **1:30** answers and rate which one is better and
+- **1:30** and you do that over hundred of
+- **1:30** thousands of users and then you get uh
+- **1:30** the actual preferences and you get
+- **1:30** rankings of models uh so you can go
+- **1:30** right now on chatbot Arena and actually
+- **1:30** interact with these models um one
+- **1:30** potential issue just to highlight is
+- **1:30** that while people who want to do these
+- **1:30** type of things are usually more like
+- **1:30** Tech driven um or like techsavvy uh so a
+- **1:30** lot of the questions that you will ask
+- **1:30** are more like Tech stuff discussing
+- **1:30** software errors inquiries about AI tools
+- **1:30** and all these things um so another issue
+- **1:30** is cost and speed if you really want to
+- **1:30** use something like this for development
+- **1:30** process um it will be too costly because
+- **1:30** you would need to basically pay a lot of
+- **1:31** humans to do that so one simple idea is
+- **1:31** again as we said many times just use LM
+- **1:31** instead of humans uh you probably know
+- **1:31** the drill at this point uh steps for
+- **1:31** every instruction generate outputs by
+- **1:31** some baseline and the model that you
+- **1:31** want to evaluate um so here you imagine
+- **1:31** that I I'm comparing an answer from Chad
+- **1:31** GPT and from
+- **1:31** I'm just asking a model uh another model
+- **1:31** uh which one is better and I just
+- **1:31** basically average that out uh yeah I
+- **1:31** asked gp4 which one is better I average
+- **1:31** that out over my entire distribution
+- **1:31** over my entire Benchmark or data set and
+- **1:31** that gives me a RN rate so RN
+- **1:31** probability for one model compared to
+- **1:31** another one and now you can rank models
+- **1:31** uh and this is the Alpa eval uh
+- **1:31** leaderboard so the benefits of this is
+- **1:31** that actually we show we get 98%
+- **1:31** correlation with Chad B Arena so very
+- **1:31** high correlation with humans um so this
+- **1:31** is yeah comparison with correlation with
+- **1:32** other benchmarks and it takes less than
+- **1:32** three minutes and less than $10 to run
+- **1:32** so it's pretty cheap um there are
+- **1:32** downsides though uh one of them is purus
+- **1:32** correlation um so as we already saw
+- **1:32** before LMS prefer this is one SP
+- **1:32** correlation not many I'll just talk
+- **1:32** about one LMS prefer longer outputs
+- **1:32** actually humans also prefer longer
+- **1:32** outputs but the problem or the issue
+- **1:32** once you use llms is that once there
+- **1:32** bias you will continue optimizing that
+- **1:32** humans at some point I can guarantee you
+- **1:32** if I ask a simple question and you give
+- **1:32** me five pages of answers I'll be like no
+- **1:32** I don't like that answer but LMS if they
+- **1:32** have this bius and they were trained for
+- **1:32** that they will continue preferring
+- **1:32** longer outputs so uh here we see um the
+- **1:32** the preference just showing that like
+- **1:32** humans and models prefer longer outputs
+- **1:32** um and here is another view of the
+- **1:32** initial apaka eval data uh Benchmark
+- **1:32** where when we asked um when we we rank
+- **1:32** gp4 when we look at the Run rate of gp4
+- **1:32** versus actually uh gp4 itself if we com
+- **1:33** if we use the standard GPT 4 it gets 50%
+- **1:33** kind of by definition because we're
+- **1:33** comparing GPT 4 versus gp4 but if we ask
+- **1:33** a gbd4 to be slightly more verose so we
+- **1:33** just say in the prompt be Vos in your
+- **1:33** answers then it gets a r rate of
+- **1:33** 64.4% so really there's a huge variance
+- **1:33** and if we ask it to be concise it gets
+- **1:33** 20% so there's a huge variance depending
+- **1:33** on um whether you ask it to be concise
+- **1:33** of
+- **1:33** that's very annoying um so one possible
+- **1:33** solution which is what we did is uh just
+- **1:33** use some regression analysis I'm not
+- **1:33** going to go into details but basically
+- **1:33** use Cal inference tools to control for
+- **1:33** length and right now uh actually length
+- **1:33** matters much less so if you ask it to be
+- **1:33** veros we still get some gains but much
+- **1:33** less great so that's all about post
+- **1:33** training and now for the next eight
+- **1:33** minutes I might talk about systems or
+- **1:33** just answer questions yes can you um go
+- **1:33** back to your post training in terms of
+- **1:33** post training how did we tune those
+- **1:33** parameters using the small body of
+- **1:34** fine-tuning data and have such big
+- **1:34** effect on the model you mentioned
+- **1:34** earlier that there's a different set of
+- **1:34** hyperparameters are we changing just
+- **1:34** some of the weights the later weights or
+- **1:34** all the weights what's actually
+- **1:34** happening yeah uh yeah I I kind of
+- **1:34** skimmed through all of this you change
+- **1:34** all the weights actually um industry
+- **1:34** would change all the weights in open
+- **1:34** source land you might have heard of
+- **1:34** Laura which is going to change basically
+- **1:34** only some of the weights or it actually
+- **1:34** to be more specific it's going to add
+- **1:34** some differences to the output of every
+- **1:34** of every layer but but in Industry
+- **1:34** you're going to just fine tune all the
+- **1:34** weights um and also to say something
+- **1:34** else about the data actually the SL St
+- **1:34** all HF you usually going to collect uh a
+- **1:34** lot more data than with sft so if fft is
+- **1:34** like 5,000 10,000 maybe 50,000 with rhf
+- **1:34** I think you're going to be more around
+- **1:34** like the 1 million
+- **1:34** uh order of magnitude it's still much
+- **1:34** less than pre-training though yeah
+- **1:34** because pre-training is 15 trillion
+- **1:34** tokens I mean this is like that's not
+- **1:35** even a drop and yet you influence the
+- **1:35** weight a lot so because you do it I mean
+- **1:35** you have to think that how you do it is
+- **1:35** you use um I mean as I said the learning
+- **1:35** rate that you're going to use is going
+- **1:35** to be different but also you only do
+- **1:35** that so just imagine if I train even if
+- **1:35** I train on one sentence but over and
+- **1:35** over again all at some point my model
+- **1:35** will only that sentence even if uh it
+- **1:35** was just one sentence instead of the 15
+- **1:35** trillion tokens so if you use a large
+- **1:35** enough learning rate and for enough time
+- **1:35** you will basically overfit that sentence
+- **1:35** so the the the key thing to to remember
+- **1:35** is that um the data is not I it's not as
+- **1:35** if you mix some posttraining data and
+- **1:35** some pre-training data you do
+- **1:35** pre-training and then you just start
+- **1:35** fine-tuning only on the post trining so
+- **1:35** another way maybe another perspective is
+- **1:35** that the post the pre-training is just
+- **1:35** the initialization of your model
+- **1:35** and once you view it that way that this
+- **1:35** is just initialization of Weights then
+- **1:35** there's nothing special like you don't
+- **1:36** need to remember that you train a lot of
+- **1:36** data before the only thing that matters
+- **1:36** is that you had an initialization and
+- **1:36** now I actually train a model so maybe
+- **1:36** think about it that way like there's a
+- **1:36** there's a mark of property in some way
+- **1:36** just like you had your weights this is
+- **1:36** my initialization now I'm training that
+- **1:36** one does that kind of answer your
+- **1:36** question kind of but you said something
+- **1:36** just now about it's almost the
+- **1:36** equivalence of just rerunning the find
+- **1:36** tuning data many times is it actually is
+- **1:36** that what actually happens in order to
+- **1:36** give so much more preference
+- **1:36** um you might I actually don't know right
+- **1:36** now how they do it in Industry when we
+- **1:36** did alpaca we had to do three box so you
+- **1:36** did run it three times to it
+- **1:36** um but I mean even the number of times
+- **1:36** that you run it through it's actually
+- **1:36** not important the only thing like the
+- **1:36** only thing is the is kind of the
+- **1:36** effective learning rate that what
+- **1:36** matters
+- **1:36** um so
+- **1:36** yeah
+- **1:36** great so I think I have five minutes
+- **1:37** [Music]
+- **1:37** right okay I might try to give a high
+- **1:37** level Overview at least from one of the
+- **1:37** systems trick systems as we said uh for
+- **1:37** everyone Bott neck is a sorry compute is
+- **1:37** the huge bottleneck uh one question you
+- **1:37** might ask is why not buy more gpus uh
+- **1:37** gpus are expensive but also are scarce
+- **1:37** even if you have $10 million right now
+- **1:37** you cannot buy the best gpus um
+- **1:37** there's oh yeah there's also some
+- **1:37** physical limitations when you have when
+- **1:37** you have multiple gpus you have to
+- **1:37** communicate between them that takes time
+- **1:37** um so just buying more gpus is not that
+- **1:37** easy um so it's really important to
+- **1:37** think about how do you allocate
+- **1:37** resources and how do you optimize your
+- **1:37** pipeline so system 101 on gpus I'm sorry
+- **1:37** I'm going slightly faster I hope for
+- **1:37** that some of you at least can follow uh
+- **1:37** gpus are basically optimized for
+- **1:37** throughput CPUs are optimized uh for
+- **1:38** latency so gpus the way you have to
+- **1:38** think about it is that there's one Comm
+- **1:38** there's one command that is run on many
+- **1:38** many Calles at the same time on
+- **1:38** different type of data um so this is how
+- **1:38** you see a GPU you see there are many
+- **1:38** different CES we call them streaming
+- **1:38** multiprocessors which is very different
+- **1:38** than the usual CPU architecture so just
+- **1:38** think High throughput paralyzation for
+- **1:38** gpus uh gpus are optimized for fast
+- **1:38** matrix multiplication so every time you
+- **1:38** will do uh you will do something on GPU
+- **1:38** if you can do it with a a matrix
+- **1:38** multiplication it's going to be 10 times
+- **1:38** faster than with anything else uh that
+- **1:38** is a little bit annoying because it
+- **1:38** means that we're kind of uh bottlenecked
+- **1:38** to doing anything with Matrix
+- **1:38** multiplications um another thing to note
+- **1:38** with gpus is that compute has been
+- **1:38** improving faster than memory and
+- **1:38** communication so right now gpus usually
+- **1:38** are hard to keep uh like the data that
+- **1:38** you send that send to gpus is actually
+- **1:38** hard to keep up with the processess so
+- **1:39** most of your gpus are actually going to
+- **1:39** be idle if you just run normal code if
+- **1:39** you don't optimize your code so
+- **1:39** communication and this will continue
+- **1:39** over time another thing to know about
+- **1:39** gpus is that there's a memory hierarchy
+- **1:39** this is the same thing actually with
+- **1:39** CPUs but basically the closer you are to
+- **1:39** your cuse the less memory there is but
+- **1:39** the faster things run if you're further
+- **1:39** more memory slower
+- **1:39** um okay I'm going to skip that okay
+- **1:39** actually I'm going to say it I told you
+- **1:39** about this uh the fact of communication
+- **1:39** uh the metric that people usually look
+- **1:39** at is model flop utilization so what is
+- **1:39** the theoretical maximum that GPU could
+- **1:39** run at no more flops that you could use
+- **1:39** per second divide sorry the number of OB
+- **1:39** observed through put divided by this
+- **1:39** theoretical um maximum and in general if
+- **1:39** you reach 50% you're very happy like
+- **1:39** Facebook I looked at Lama was at 45 or
+- **1:39** something like this so that that means
+- **1:39** that data doesn't come fast enough even
+- **1:39** for these big
+- **1:39** companies so one simple trick and that
+
+## 100:00
+
+- **1:40** might be the only one I'm going to tell
+- **1:40** you about is low Precision one simple
+- **1:40** idea is that well if I'm going to put my
+- **1:40** floats in lower Precision then there's
+- **1:40** going to be fewer bits that I have to
+- **1:40** send to my gpus if there's fewer bits
+- **1:40** it's faster communication lower memory
+- **1:40** consumption things are going to go
+- **1:40** faster uh and for deep learning it just
+- **1:40** happens that de decimal is not that
+- **1:40** important uh so so when you do matrix
+- **1:40** multiplication when you do like for
+- **1:40** example SGD there's already so much
+- **1:40** noise that if you update something by
+- **1:40** 0.01 or
+- **1:40** 0.015 who cares uh so basically instead
+- **1:40** of using uh 32 bits per float which is
+- **1:40** um what people used to use or 64 for
+- **1:40** example which is what you would use in
+- **1:40** other domains you use 16 bits uh for
+- **1:40** matrix multiplication so for every float
+- **1:40** you use 16 bits um and for training you
+- **1:40** have this type of like uh what we call
+- **1:40** aut atic mix Precision which is that uh
+- **1:40** some of the things are in 32 bits others
+- **1:40** are in 60 bit in 16 bits um generally
+- **1:41** the way you should be thinking about it
+- **1:41** is that your weights are stored of your
+- **1:41** model are stored in 32 bits um but just
+- **1:41** before the computation you put
+- **1:41** everything in 16 16 bits like this you
+- **1:41** do computation super fast and at the end
+- **1:41** you update your weights in 32 Bits And
+- **1:41** the reason why you do all the updates in
+- **1:41** 32 bits it's just think that if your
+- **1:41** learning rate for example is very small
+- **1:41** you still want to be able to like make a
+- **1:41** difference in your weights uh so all the
+- **1:41** computation is done in 16 bits but the
+- **1:41** weights are actually stored in 32 bits
+- **1:41** so that's like the standard way that
+- **1:41** people are doing it um okay I'll
+- **1:41** actually talk just about this and then
+- **1:41** I'll skip all the rest operator Fusion
+- **1:41** because I think this is actually pretty
+- **1:41** cool as I just said communication is
+- **1:41** very slow and actually every time you
+- **1:41** use a pie torch line it basically moves
+- **1:41** variable to Global memory of your GPU so
+- **1:41** when you have something like this x do
+- **1:41** cosine uh equal X1 and then you do X1 do
+- **1:41** cosine what is happening behind the
+- **1:41** scenes is that you take the X which is
+- **1:41** data you ship it to your um to your
+- **1:42** actual processes of your gpus you apply
+- **1:42** the coign you ship it back to the main
+- **1:42** memory of your GPU and then you see the
+- **1:42** next sign you ship it back to the
+- **1:42** computer to the GPU processor you apply
+- **1:42** another cosign and you ship it back
+- **1:42** again um so another way to see that is
+- **1:42** that you go from your Dam which is your
+- **1:42** Global memory in your GPU and you ship
+- **1:42** it to compute you ship it back for every
+- **1:42** line This is a naive way of doing it
+- **1:42** this seems very wasteful um so the idea
+- **1:42** simple idea of operative Fusion is just
+- **1:42** communicate do all the computation ship
+- **1:42** it back once and this is exactly what
+- **1:42** fuse kernels are um so if you ever want
+- **1:42** to make your comp your computations in
+- **1:42** pytorch much faster just apply torch.
+- **1:42** compile on your model this is going to
+- **1:42** make your model around two times faster
+- **1:42** and what it does is simply that it
+- **1:42** rewrites your code uh your P like your
+- **1:42** py torch code basically in C++ in Cuda
+- **1:43** uh to to do the communication only once
+- **1:43** then do all the operations then uh ship
+- **1:43** it back okay I'm not going to have time
+- **1:43** to talk about tiling tiling is important
+- **1:43** paration paration is important um and
+- **1:43** mixture of experts mixture of experts is
+- **1:43** important Outlook there are many things
+- **1:43** we haven't T talked about we haven't
+- **1:43** talked about architectures we definitely
+- **1:43** haven't talked about inference um there
+- **1:43** are many other things that are important
+- **1:43** with LMS what is the UI that you use I
+- **1:43** mean arguably chat jpt the big novelty
+- **1:43** was just have a simple UI to use it
+- **1:43** multimodality what are all the misuses
+- **1:43** you could have uh the fact that there
+- **1:43** might not be enough data on the internet
+- **1:43** to train all these models legality of
+- **1:43** data collection so many other things if
+- **1:43** you are interested in all these topics
+- **1:43** uh I would suggest three classes cs224n
+- **1:43** is probably the one that touches the
+- **1:43** least on uh LMS uh but it gives some
+- **1:43** background and historical context um of
+- **1:43** all the LMS and gives kind of some
+- **1:44** adjacent material CS 324 I think it's
+- **1:44** called Uh I think it's just called large
+- **1:44** language models uh more in-depth reading
+- **1:44** and lectures on everything I talked
+- **1:44** about CS 336 which is large language
+- **1:44** model from scratch you actually build
+- **1:44** your own llm uh it's an amazing class
+- **1:44** also given by my two supervisors very
+- **1:44** heavy workload so be careful and um
+- **1:44** great

@@ -1,0 +1,5 @@
+goto_url("https://example.com")
+wait_for_load()
+info = page_info()
+print("TITLE:", info.get("title"))
+print("URL:", info.get("url"))

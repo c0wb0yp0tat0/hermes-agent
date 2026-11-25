@@ -1,0 +1,20 @@
+# OPUS-NM4-ROTATION-20261119-brief.md — the fleet rotation receipt (NM-4), the fire's next arm
+
+**Seat (named rotation):** tencent/hy4-flash:free (R-D primary, the 1M carrier — the powerhouse dispatch order's second seat; hy4 executes R-D, never verifies its own bytes) · **Branch:** study/rfc-143379-rig-20261105 (ls-remote first; the archiver composes — commit-own, ff-only, never a stash) · **RFC:** quiet · **The gate (verbatim):** "the gate: nothing public without the user's word."
+
+**READ FIRST (the anchor — ground before any work):** `OPUS-2-PLAN-F-20261119.md` §M4 (the rotation's operative compose, Conflict-1's corrected pairs) · `OPUS-2-PLAN-D-20261119.md` (the rotation schedule, rings, kenari pool) · `OPUS-2-SWAP-D-20261119.md` (the enrichments E1–E7) · `MISSION-MAP-20261118.md` AMENDMENT-2/3 (the terminal law + the all-runners/all-forks law) · `NM-2-RECEIPTS-PACK-20261120.md` (the pack, landed) · the live survey staged in this brief's §5 (verified at dispatch-time by the head).
+
+**YOUR JOB (the rotation receipt — pair wired, every seat counted, cadence metered):**
+1. Read the plan's M4 + D + the survey COLD. Reconcile the named pairs by evidence — never self-certify: the per-leg blind pairs from Conflict-1 (NM-1 → longcat+hy4 · NM-2 → longcat+stepfun · NM-3 → longcat+solar-mini4 · **NM-4 → longcat+beam** — hy4's own bytes verified by the non-author pair).
+2. Produce `OPUS-NM4-ROTATION-20261120.md` (≤6,000 chars, chars not bytes): (a) the verifier-pair wiring declared (who verifies what, byte-presence + placeholder-scan, never the exit code); (b) the rotation counts EVERY seat — the five free seats (longcat, hy4, solar-mini4, step-3.7-flash, qwen4-max) + Nemo (paid, benched by default per STEER-9) + deepseek (head's seat only) + the kenari reserve (beam, select legs only, probe-before-use) + the FOUR runners whole (p0tat0 avrea · pve1-avrea-parallel systemd-restored · c0wb0y privileged · the cloud-hosted ubuntu-latest) + the fork fleet (28/31 alight, three platform-disabled named: agent-governance-toolkit, craft-anything, hermes-official-plugins); (c) the fork cadence meter's live reading (the AMENDMENT-3 abstract all-fork experiment's receipt state); (d) the pair's seat as a slot (the canary's R-C executor = the kenari reserve beam per the sanctioned slotting, verifier pair longcat+solar-mini4); (e) the kenari 00:00Z pool depletion bands relative to T0; (f) the COMPOSE-CHECK TABLE (8 marks, FIRED/ABSENT, one evidence line each); (g) the review-loop record (your adversarial pass; termination = no-change re-read ×2).
+3. Commit → push (the study branch; ls-remote first; on rejection pull --rebase, never a stash). The artifact's existence + commit = your success signal. No external lanes; no public posts.
+
+**CONTRACT:** record-first ("not confirmed" where unreadable — never a guess) · the wall clause verbatim: "a non-reproduction is a QUESTION, not a stop — simplify the experiment until the seam is exercised" · the stack-order clause (the compose-check table mandatory) · commit-before-exit · the gate verbatim · the two-way door: every choice names its reversibility + rollback.
+
+**§5 THE LIVE SURVEY (head-verified at dispatch, 2026-11-20 ~04:3xZ):**
+- Seats probed live: longcat 200 · hy4 200 · solar-mini4 200 · stepfun 200 · qwen4-max 200 · beam (reflection/beam-1.0-501b-a23b) 200. All live.
+- Runners: p0tat0 online (avrea-ubuntu-latest + loom) · pve1-avrea-parallel online (systemd-restored) · c0wb0y online (Windows, privileged) · cloud-hosted ubuntu-latest (the matrix's carrier) — FOUR whole.
+- Fork fleet: 28/31 alight; three platform-disabled named (agent-governance-toolkit, craft-anything, hermes-official-plugins).
+- Branch: local 976a93ee95 + NM-2 pack aec8da9ec9 unpushed at fold (remote 7383602b2f); archiver composes — durable = chain + rows + served archive.
+- Disk 91% (6.6G free, the 92-guard under). Scriba cells LIVE (get_memory OK).
+- The amended plan's arms in flight: NM-2 pack LANDED · improver rungs LANDED (qw4 7952f135b3 + longcat fold 976a93ee95) · next: NM-3 canary (waits on this receipt per C1) → LENS-E compose.

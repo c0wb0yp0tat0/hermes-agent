@@ -1,0 +1,2318 @@
+# AI Agents in LangGraph — Full Transcript
+
+**Source:** X post by @mahaximus_ (original: https://www.youtube.com/watch?v=58n-n-3oRic — DeepLearning.AI course)  
+**Downloaded:** 2026-08-12 · **Runtime:** 1:50:14  
+**Transcript:** Whisper large-v3 (faster-whisper, CPU, int8) · timestamps are approximate
+
+---
+
+
+## 00:00
+
+- **0:00** agentic workflows in AI, or sometimes we call them AI agents.
+- **0:00** So it turns out when most people use a large language model like ChatGPT or Cloud or Gemini,
+- **0:00** we type a prompt and we ask it to write an output for us.
+- **0:00** That's a bit like asking someone, could you please type out an essay for me
+- **0:00** by writing from the first word to the last word in one go without ever using backspace?
+- **0:00** In contrast, an agentic workflow asks AI to use a much more iterative workflow,
+- **0:00** where you can ask the AI, please write a draft outline for this essay
+- **0:00** and then do you need to do any word research?
+- **0:00** And if so, let the AI go onto the internet,
+- **0:00** read some articles and bring them back into context of the prompt.
+- **0:00** And then after that, write a first draft.
+- **0:00** And then read your own first draft and critique it, and then use a critique to improve it.
+- **0:00** So with agentic workflows, we ended up taking a much more iterative approach
+- **0:00** to deriving results.
+- **0:00** And I've seen in many applications, this iterative agentic workflow
+- **0:00** does much better than forcing AI to write from start to finish.
+- **0:00** A key part of training foundation models has been the data
+- **0:00** you're going to be using.
+- **0:00** You're going to be using the data you're going to be using.
+- **0:00** You're going to be using the data you're going to be using.
+- **0:00** You're going to be using the data you're going to be using to train them.
+- **0:01** And interestingly, agentic workflows are actually contributing to that.
+- **0:01** So I find that when you use a large language model and let it reflect and think,
+- **0:01** you can generate output with, you know, fair amount of computation
+- **0:01** that you can then use to train the next generation of language model
+- **0:01** to try to generate using a small amount of computation.
+- **0:01** So I know that the idea of using an OEM to train another OEM has been controversial.
+- **0:01** If you do it in the simple way of generate text and train directly on that text,
+- **0:01** then it doesn't,
+- **0:01** really work to train many generations of models like that.
+- **0:01** But it turns out if you insert an agentic workflow in the middle
+- **0:01** to generate high quality data,
+- **0:01** that actually does become useful for training the next generation of models.
+- **0:01** People have sometimes spoken of a chat GPT moment.
+- **0:01** The first time they use it and go, wow, this is amazing.
+- **0:01** I want to share with you an agentic AI moment that I had.
+- **0:01** So I called up a demo on my laptop to have AI do some web research
+- **0:01** and then write an essay.
+- **0:01** I was actually speaking at Stanford.
+- **0:01** And doing a live demo.
+- **0:02** And that time was in front of a bunch of people.
+- **0:02** And I started to have my AI give a prompt.
+- **0:02** I knew I was going to go do web research and then gather information from online
+- **0:02** and write an essay for me.
+- **0:02** To my surprise, for some reason, the API to do the web search failed.
+- **0:02** So there I was in front of everyone saying, oh, shoot,
+- **0:02** my demo is about to fail in a very public way.
+- **0:02** To my surprise, I'd actually completely forgotten that I'd also given the agent
+- **0:02** a Wikipedia search option.
+- **0:02** This agent pivoted from saying,
+- **0:02** web search isn't working, let me do a Wikipedia search instead.
+- **0:02** And it executed that successfully, gathered information from Wikipedia
+- **0:02** rather than from a web search engine, and then used the information to write the essay.
+- **0:02** And so my demo still completed successfully by the agent autonomously doing something
+- **0:02** that I actually had forgotten had the capability to do.
+- **0:02** So I think that for a lot of people in the coming months or years,
+- **0:02** many people experience this agentic AI moment, similar to maybe what a chat GPT moment was,
+- **0:02** where we had a chat GPT moment.
+- **0:02** Where we increasingly have software able to take complex sequence of actions to do things for us.
+- **0:03** And I think it will be beautiful.
+- **0:03** Welcome to AI Agents in Langdraft,
+- **0:03** built in partnership with Langchain and Tivoli,
+- **0:03** taught by Harrison Chase, co-founder and CEO of Langchain,
+- **0:03** as well as Drotam Weiss, who is co-founder and CEO of Tivoli.
+- **0:03** Harrison, it was not quite a year ago that we're working on our first course on LLM frameworks.
+- **0:03** And back then we had an agent example.
+- **0:03** But yeah, it was a little bit of a struggle to get it to work.
+- **0:03** Since then, I've seen many teams successfully built AI agents.
+- **0:03** What's your view on that?
+- **0:03** Yeah, that's exactly right, Andrew.
+- **0:03** We've seen many people successfully building agentic applications now.
+- **0:03** And I think there were a couple of key improvements over the last year.
+- **0:03** First, function calling LLMs have made tool use much more predictable and stable.
+- **0:03** And also, specific tools like search have been adapted for agentic use.
+- **0:03** Yes, if you think about it, when you do a query on a search engine,
+- **0:04** it will return multiple links that you can then follow to find answers.
+- **0:04** However, what an agent really wants are answers that you can then reference to the link.
+- **0:04** Also, the agent needs predictable format for its results.
+- **0:04** This is exactly what agentic search provides.
+- **0:04** That makes sense.
+- **0:04** And by the way, I'm personally a user of Langchain and Langsworth
+- **0:04** and Tivoli, so I'm particularly excited to have both of you here.
+- **0:04** And let me start.
+- **0:04** By describing agents and agentic workflows,
+- **0:04** let's say that the three of us are going to write a paper together.
+- **0:04** Maybe I would start with some planning and try to put together an initial outline of the paper.
+- **0:04** Yeah, and I can take it from there and do some research, maybe run some queries
+- **0:04** and compile documents related to our topic.
+- **0:04** Okay, I guess that leaves me to write the first draft.
+- **0:04** I hope it's not a long paper.
+- **0:04** Yeah, short paper, hopefully.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** Yeah.
+- **0:04** And I might read over the paper, try to make some constructive suggestions,
+- **0:05** and hand it back to Harrison to see if he wants to make some changes,
+- **0:05** or the realtor to see if he wants to do some more search, and so on.
+- **0:05** And this would be an example of an agentic or an agent-like workflow
+- **0:05** in which we iterate to produce the word product.
+- **0:05** And in contrast to how people often use LLMs to write essays today,
+- **0:05** which is to write a prompt and have the LLM write the essay for the first word,
+- **0:05** to the last word in one shot.
+- **0:05** This type of iterative workflow gives a much better word product.
+- **0:05** In fact, as a person, I don't write that well if you force me to just
+- **0:05** write from start to finish with no backspacing allowed.
+- **0:05** So concretely, you can similarly prompt an LLM to tell it to write an outline,
+- **0:05** prompt an LLM to write a draft or revise it, prompt an LLM to do search, and so on.
+- **0:05** But to dive a bit deeper, let me share what I think are some of the key design
+- **0:05** patterns of agentic workflows.
+- **0:06** First, I think there's planning, which is thinking through the steps to take,
+- **0:06** like the outline and what to do after that.
+- **0:06** Then to use, knowing what tools are available and how to use them, like our search tool.
+- **0:06** Reflection, which refers to iteratively improving a result, possibly with multiple LLMs
+- **0:06** critiquing and making useful suggestions to drive that type of editing cycle.
+- **0:06** Multi-agent communication, so you can think of each of us as,
+- **0:06** playing a role akin to an LLM with a unique prompt to play a unique role in this process.
+- **0:06** And then memory, that is tracking the progress and results over the multiple steps.
+- **0:06** Now, some of these capabilities are related to the LLM itself, like function calling for true use,
+- **0:06** but many of these capabilities are actually implemented outside the LLM
+- **0:06** by the framework that they operate in.
+- **0:06** Exactly. And the linkchain framework has had many of these elements for some time.
+- **0:06** Memory is available in multiple forms.
+- **0:06** Supporting function calling, LLMs, and tool execution are available.
+- **0:07** And we talked about this in the last deep learning class we did, functions,
+- **0:07** tools, and agents course.
+- **0:07** But linkchain has recently updated its support for agentic workflows.
+- **0:07** Here are some examples of agents that we now better support.
+- **0:07** So React agents was an early paradigm for building agents, and React stands for reasoning and action.
+- **0:07** Another example that we recently added support for is the example presented in the self-reviewed,
+- **0:07** self-refine paper, where it does the iterative refinement that you were talking about.
+- **0:07** And most recently, you can see the alpha codium example,
+- **0:07** which creates a coding agent using flow engineering.
+- **0:07** And from all these diagrams, you can see that these agents and their behavior
+- **0:07** is defined by a cyclical graph.
+- **0:07** And so to support directly building agents like this, linkchain has extended to support lane graph.
+- **0:07** In this course, you will start by building an agent from scratch.
+- **0:07** With just an LLM and Python.
+- **0:08** Then you'll learn about the components of lane graph
+- **0:08** by rebuilding that same agent using the lane graph components directly.
+- **0:08** Since search tools are such an important part of many agent applications,
+- **0:08** you will learn the capabilities of agentic search and how to use it.
+- **0:08** There are two additional capabilities that are helpful when building agents.
+- **0:08** First is being able to receive human input.
+- **0:08** This allows you to guide an agent at critical points.
+- **0:08** Second is persistence.
+- **0:08** This is the ability to store the current state of information so that you can return to it later.
+- **0:08** This is great for both debugging agents and for productionalizing them.
+- **0:08** We will build a project using lane graph,
+- **0:08** but you'll have to reach the last lesson to figure out what it is.
+- **0:08** And at the end, I'll describe some of the cool applications and future directions I see
+- **0:08** for this technology.
+- **0:08** Many people have worked to create this course.
+- **0:08** From linkchain, I'd like to thank Lance Martin
+- **0:08** Campos, from Tivoli, Asaf Elovik, and from deeplearning.ai, Jeff Ladswig.
+- **0:09** All right, we don't want to keep those agents waiting.
+- **0:09** Let's go on to the next video to get started.
+- **0:09** In the last lesson, you built an agent from scratch.
+- **0:09** Now, let's implement the agent using lane graph
+- **0:09** and along the way introduce some of its components and features.
+- **0:09** All right, let's get coding.
+- **0:09** All right, so let's break down what
+- **0:09** exactly we did in the last lesson.
+- **0:09** We had this user message that came in.
+- **0:09** We then had the system prompt, and this was this very long one.
+- **0:09** We then called an LLM with that.
+- **0:09** This outputted something like what's right there, a thought and an action.
+- **0:09** Based on that, we then made a decision.
+- **0:09** We would either return or we would call a tool.
+- **0:09** And we put this all in a big loop, this query function.
+- **0:09** And we had these two tools that we would call,
+- **0:09** calculate and average.
+- **0:09** And if we called a tool, we would get back an observation.
+
+## 10:00
+
+- **0:10** And then we'd loop back in to the prompt and would put that observation as a new message.
+- **0:10** So let's break this down into langchain components.
+- **0:10** First, let's talk about prompts.
+- **0:10** So prompt templates allow reusable prompts.
+- **0:10** And what this basically means is that we can create something like this right here.
+- **0:10** A little string with some formatted variables that we can replace.
+- **0:10** And so those formatted variables can come from user content.
+- **0:10** So we can have this prompt template that we format in different ways depending on the user content.
+- **0:10** If you want to see a bunch of examples of these prompt templates,
+- **0:10** you can actually see them in the langchain hub.
+- **0:10** So here is one that's very similar to the agent prompt that we just used.
+- **0:10** So you can see here it says answer the following questions as best you can.
+- **0:10** You have access to the following tools.
+- **0:10** And here we don't hard code the tools themselves, but we have this little variable.
+- **0:10** And same with tool names down here.
+- **0:11** And then we have the input here and this is the user question and then the agent scratch pad.
+- **0:11** And these are all the actions it takes and the observations.
+- **0:11** If you want to see more prompts, you can go to the hub here and you can see a bunch of prompts that people in the community have contributed.
+- **0:11** The next component in langchain that we have is tools.
+- **0:11** So here's a Tivoli tool and this is the search that we will be using from here on out.
+- **0:11** You can see that we import it from the langchain community package.
+- **0:11** Which contains hundreds of other tools.
+- **0:11** Maybe the biggest part of this application, the most code that we wrote,
+- **0:11** was this function that would loop.
+- **0:11** And that's represented by all these arrows here.
+- **0:11** And that's one way to think about Langraph.
+- **0:11** Langraph helps you describe and orchestrate that control flow.
+- **0:11** Specifically, it allows you to create cyclic graphs, which is exactly what we have here.
+- **0:11** It also comes with built-in persistence.
+- **0:11** And this is really nice.
+- **0:11** For having multiple conversations at the same time.
+- **0:12** Or remembering previous iterations and actions.
+- **0:12** This persistence also enables really cool human in the loop features.
+- **0:12** If you look at these diagrams here.
+- **0:12** And these are all diagrams of agents from academic papers.
+- **0:12** These are all represented as graphs.
+- **0:12** And that realization was what led us to create Langraph.
+- **0:12** An extension of langchain.
+- **0:12** Specifically aimed at agent and multi-agent flows.
+- **0:12** It allows for very controlled flows.
+- **0:12** In these diagrams, there are really specific arrows leading from one
+- **0:12** box to the next.
+- **0:12** We've seen that this controllability is crucial for creating agents
+- **0:12** that perform well.
+- **0:12** Three of the core concepts of Langraph are Nodes, Edges and Conditional Edges.
+- **0:12** Nodes are agents, or functions.
+- **0:12** Edges connect these nodes and then conditional edges connect to them.
+- **0:12** Nodes are objects or functions.
+- **0:12** And then they change.
+- **0:12** edges are used when you need to make decisions about which node you should go to next.
+- **0:13** So let's take a look at an example of a lane graph you can create that is equivalent to
+- **0:13** the function that we wrote in the lesson before. We can have an agent node, this is the LLM.
+- **0:13** We can then have a conditional edge, which takes the result of that LLM call and decides
+- **0:13** what to do next. One of those edges can be an action edge, which calls a function node,
+- **0:13** and that automatically loops back to the agent node. There's an entry point, which
+- **0:13** is where you start, and then there's the end node, which is the other action available
+- **0:13** to take after the agent. One of the most important things to understand
+- **0:13** when working with lane graph is the state that is tracked over time. This is often called
+- **0:13** the agent state. This is accessible at all parts of the graph, at each node in each edge.
+- **0:13** It is local to the graph, and it can be stored in a persistence layer.
+- **0:13** Meaning that you can resume with that state at any point in time later on.
+- **0:14** Looking at two examples, we first have a simple state where we just have this list of messages.
+- **0:14** Taking a closer look, we can see that this message variable is a sequence of base message.
+- **0:14** Base message is a lane chain type. It's annotated with operator dot add. This means that when
+- **0:14** the state is updated with new messages, it doesn't
+- **0:14** override the existing messages, but rather it adds them to that state.
+- **0:14** Let's take a look at a more complex state.
+- **0:14** Here we have input, chat history, agent outcome, and intermediate steps. They all have their
+- **0:14** own different type. Three of them are not annotated in any way. This means that when
+- **0:14** a new update is pushed to that variable, it overrides the existing value there. However,
+- **0:14** intermediate steps is annotated.
+- **0:14** It's annotated with operator dot add, which means that when a new update is pushed there,
+- **0:15** it adds to it.
+- **0:15** This makes sense because intermediate steps is what is tracked as the agent action and
+- **0:15** agent observation throughout the graph as it executes. And so we want to continuously
+- **0:15** add to that as more and more actions are taken.
+- **0:15** Getting really specific about the previous agent that we created and how that would map
+- **0:15** to a lane graph object.
+- **0:15** We can see that we will have one node.
+- **0:15** We'll call this call open AI, and this will call the LLM. We'll then have a conditional
+- **0:15** edge, which will check for the existence of an action to take. And so we'll call this
+- **0:15** exists action. And then we'll have another node which actually executes that action.
+- **0:15** We'll call that take action.
+- **0:15** And the state that we'll track is pretty simple. It's just this list of messages to which we
+- **0:15** add over time.
+- **0:15** With that high level overview, let's dive into the code.
+- **0:15** Let's first load in any environment variables that we're going to need to use.
+- **0:15** This is our open AI API key.
+- **0:16** We're now going to import a bunch of things that we need to create these tools, agent
+- **0:16** state, and the lane graph itself.
+- **0:16** First, let's import state graph and this end node from lane graph.
+- **0:16** We'll see how we'll use those later on.
+- **0:16** These typing imports and operator are used to construct the agent state.
+- **0:16** We then have all these different message types.
+- **0:16** These are lane chain message types that we'll use to represent the human and AI and system
+- **0:16** messages.
+- **0:16** From lane chain open AI, we're going to import chat open AI.
+- **0:16** This is a lane chain wrapper around the open AI API.
+- **0:16** This exposes a standard interface for all language models, meaning that even though
+- **0:16** we're going to use chat open AI for this lesson, we can actually switch it out for
+- **0:16** any of the language model providers that lane chain supports without having to change
+- **0:16** any other lines of code.
+- **0:16** Finally, we're going to import to Vili, the search engine that we're going to start using
+- **0:16** as the tool in this example.
+- **0:17** Let's first take a look at the tool.
+- **0:17** We'll create the tool by initializing to Vili search results with max results equals two.
+- **0:17** This means that we'll only get back two responses from the search API.
+- **0:17** We can see that it's of this type, and it's got a specific name, to Vili underscore search
+- **0:17** underscore results underscore JSON.
+- **0:17** This is the name that the language model will use to call this tool.
+- **0:17** Let's now create the agent state.
+- **0:17** This is exactly what was in the presentation.
+- **0:17** It's just an annotated list of messages that we will add to over time.
+- **0:17** Let's now create our agent.
+- **0:17** As discussed, we're going to need three functions.
+- **0:17** We're going to need one function to call open AI, one function to check whether there's
+- **0:17** an action present, and another function to take that action.
+- **0:17** These will all be different methods on this agent class.
+- **0:17** So let's create those first, and we can then see how they interact with each other.
+- **0:18** Let's now create the agent class.
+- **0:18** We're going to want this agent to be parametrized by three different things, a model to use,
+- **0:18** the tools to call, and the system message.
+- **0:18** As before, let's save the system message as an attribute.
+- **0:18** We're now going to start creating the graph.
+- **0:18** First, let's initialize state graph with the agent state.
+- **0:18** Right now this graph is pretty bare.
+- **0:18** It doesn't have any nodes or edges attached to it.
+- **0:18** We know that we're going to want to create those three functions before and use them,
+- **0:18** two as nodes and one as nodes.
+- **0:18** One as edges.
+- **0:18** So let's sketch it out, and then we'll implement those functions as methods on the class.
+- **0:18** So first we know that we're going to want to create a node called LLM, which will execute
+- **0:18** the LLM.
+- **0:18** And we can do that by doing graph, add node, LLM, and then we're going to need to come
+- **0:18** back here and we're going to need to pass in the function that we want to represent
+- **0:19** this node.
+- **0:19** We'll add another node, the action node.
+- **0:19** We'll do the same thing here.
+- **0:19** Now we're going to add that conditional edge.
+- **0:19** This goes after the LLM is called.
+- **0:19** It checks whether there's an action present.
+- **0:19** If there is, then it goes to the action node.
+- **0:19** If there isn't, then it goes to the end node and it finishes.
+- **0:19** So let's add this.
+- **0:19** Again, we'll have to add the specific functions later on.
+- **0:19** The first argument we pass in is the node where the edge starts.
+- **0:19** This is from LLM.
+- **0:19** The second argument we pass in is the function.
+- **0:19** That'll determine where to go after that.
+- **0:19** We're going to implement this later on, so we'll leave this blank.
+- **0:19** The third and final argument that we're going to pass in is a dictionary representing how
+- **0:19** to map the response of the function to the next node to go to.
+
+## 20:00
+
+- **0:20** So if the function returns true, then we're going to go to the action node.
+- **0:20** If it returns false, then we're going to go to the end node.
+- **0:20** We're now going to add a regular edge.
+- **0:20** This is going to go from the action node to the LLM node.
+- **0:20** So we can do this.
+- **0:20** We can do this by calling add edge.
+- **0:20** The first argument is the start of the edge.
+- **0:20** The second argument is the end of the edge.
+- **0:20** We're then going to set an entry point for the graph.
+- **0:20** This is at the LLM node.
+- **0:20** With that done, we can compile the graph.
+- **0:20** Graph.compile is just what we need to call after we've done all the setups and we'll
+- **0:20** turn it into a lane chain runnable.
+- **0:20** A lane chain runnable exposes the standard interface for calling and invoking this graph.
+- **0:20** Well, we'll see more about that later on.
+- **0:20** We'll save this as an attribute on the class.
+- **0:21** We'll also save the tools and the model that we passed in.
+- **0:21** For the tools, we'll create a dictionary, mapping the name of the tool to the tool itself.
+- **0:21** For the model, we'll actually call bind tools on the model, passing in the list of tools
+- **0:21** that we passed into the agent.
+- **0:21** What this is doing is this is letting the model know that it has these tools available
+- **0:21** to call.
+- **0:21** All right, so we've created this graph, but we still need to create three things.
+- **0:21** We need to create the function representing the LLM node, we need to create another function
+- **0:21** representing the action node, and we need to create a third function representing this
+- **0:21** conditional edge.
+- **0:21** We'll add all of these as methods on this agent class.
+- **0:21** For the LLM node, we're just going to create a function called callOpenAI.
+- **0:21** It's going to take in this state, this agent state.
+- **0:22** All of the nodes and the edges.
+- **0:22** We'll take this in.
+- **0:22** What we'll do is we'll get the list of messages from the state.
+- **0:22** We'll then add in this system message, and we'll then call the model.
+- **0:22** We'll then return this dictionary with a list of messages, but there's only one message
+- **0:22** in it.
+- **0:22** It's the message that's returned from the model.
+- **0:22** Again, remember because we had annotated the messages attribute on the agent state with
+- **0:22** the operator.add, this isn't overwriting this.
+- **0:22** It's adding to that state.
+- **0:22** We can then go back to the graph.add node and change that to pass in this method.
+- **0:22** Let's now do the same for the action node.
+- **0:22** The action node will also take in this agent state.
+- **0:22** We'll get the last message from the list of messages.
+- **0:22** We know that if we've gotten to this state, the language model must have wanted to call
+- **0:22** some tools.
+- **0:22** That means that there will be this tool calls attribute present on the last message in
+- **0:23** the agent state.
+- **0:23** Crucially.
+- **0:23** This can actually be a list of tool calls.
+- **0:23** So a lot of the more modern models support parallel tool or parallel function calling.
+- **0:23** What we can now do is we can loop over these tool calls.
+- **0:23** We can find the relevant tool by looking up tool name in the dictionary of tools that
+- **0:23** we created.
+- **0:23** We can then call invoke on it, passing in the arguments that we have from this tool
+- **0:23** call.
+- **0:23** We can then append this as a tool message to this results list.
+- **0:23** Then we're returning this messages mapping to this results thing.
+- **0:23** Again, this is just the new messages that we need to add.
+- **0:23** What's happening under the hood is that lane graph is adding that to the state in between
+- **0:23** iterations.
+- **0:23** Let's go back up and let's put this here in the action node.
+- **0:23** Finally, we need to define our conditional edge.
+- **0:23** So this is what's going to take in the result after the LLM is called and return a Boolean,
+- **0:24** either true or false.
+- **0:24** This is going to determine whether we should take an action or whether we shouldn't.
+- **0:24** In order to do that, we're just going to get the last message from the state, which is
+- **0:24** the most recent call from the language model.
+- **0:24** And we're going to return length of that message dot tool calls greater than zero.
+- **0:24** So basically, if there's any tool calls, we're going to return true.
+- **0:24** If there's none, then we're going to return false.
+- **0:24** Let's set this as the conditional edge.
+- **0:24** And with that, we have our agent.
+- **0:24** So let's start to use it.
+- **0:24** We create a nice little system prompt here.
+- **0:24** We initialize chat open AI.
+- **0:24** So this is the language model we're going to use.
+- **0:24** And for our list of tools that we're passing in, we're just passing in our one, our Tivoli
+- **0:24** search tool.
+- **0:24** One of the cool things we can do is we can actually visualize this graph we just created.
+- **0:24** So if we get the graph and then call docket graph and then dot draw PNG, we actually get
+- **0:25** an amazing visualization of the graph itself.
+- **0:25** This is all done automatically.
+- **0:25** So let's now call this agent.
+- **0:25** So let's first call it with this what is the weather in SF question.
+- **0:25** In order to do this, we're going to create this human message representing a user message.
+- **0:25** We're then going to put it in this list of messages.
+- **0:25** And note that we have to do this because the state that the agent expects to work with
+- **0:25** has this messages attribute, which is a list of messages.
+- **0:25** So we need to make it conform with that state.
+- **0:25** Once we have this input, we can call the agent dot graph.
+- **0:25** Dot invoke with this, and we can get back a result.
+- **0:25** So we added some print statements in the agent, and so we can see that it printed out what
+- **0:25** it was calling and it was calling Tivoli search results, Jason, and it was calling it with
+- **0:25** current weather in SF in San Francisco.
+- **0:25** And then it prints out back to the model.
+- **0:25** This means we're going back to the model.
+- **0:26** If we look at result, if we look at result, we can see that it's a list of messages.
+- **0:26** So result is the final state.
+- **0:26** That the agent ended up in.
+- **0:26** If we just want to get the final message in this list of messages, we can go into the
+- **0:26** messages attribute, get the last one and look at the content attribute and we can see
+- **0:26** that the current weather in San Francisco is partly cloudy, blah, blah, blah.
+- **0:26** Let's now try this with a more complicated question.
+- **0:26** So what is the weather in SF and LA?
+- **0:26** We can see that it first calls Tivoli search results, Jason, with the current weather in
+- **0:26** San Francisco.
+- **0:26** Then before even going back to the model, it calls Tivoli search results, Jason, again
+- **0:26** with current weather in Los Angeles.
+- **0:26** This is an example of parallel function or tool calling.
+- **0:26** Finally it goes back to the model and after that it has all the information it needs.
+- **0:26** So it responds.
+- **0:26** And if we look at the final message, we can see that we get back a response for both San
+- **0:27** Francisco and Los Angeles.
+- **0:27** Let's try an even more complicated question.
+- **0:27** Who won the Superbowl in 2024?
+- **0:27** What is the GDP of that state?
+- **0:27** We can see first it calls Tivoli with the query 2024 Superbowl winner.
+- **0:27** It then goes back to the model.
+- **0:27** It then calls Tivoli again, this time with the query GDP of Missouri 2023, then goes
+- **0:27** back to the model.
+- **0:27** And finally it's done.
+- **0:27** And if we look at the final response, we can see that we get the Kansas City Chiefs won
+- **0:27** the Superbowl in 2024, the GDP of Missouri, where the Kansas City Chiefs are.
+- **0:27** So the difference here is that in order to make the second query, it actually had to
+- **0:27** know the result of the first query.
+- **0:27** So it calls one tool, then goes back to the model in order to enable it to call the second
+- **0:28** tool.
+- **0:28** This is a little bit different from parallel function calling.
+- **0:28** It's not happening in parallel, it's happening sequentially.
+- **0:28** And the reason it's happening sequentially is it actually needs the result of the first
+- **0:28** query.
+- **0:28** In order to make the second query at all.
+- **0:28** With this, we've seen how we can take that raw LLM and raw Python example with some fake
+- **0:28** tools and turn it into a real agent that can answer complex questions.
+- **0:28** Under the hood, it's using the Tivoli search API.
+- **0:28** In the next lesson, we'll learn a lot more about that.
+- **0:28** There are many occasions when you would like to put a human in the loop to keep tabs on
+- **0:28** what an agent is doing.
+- **0:28** This is pretty easy to do with line graph.
+- **0:28** Let's see how this works.
+- **0:28** We're going to resume from where we left off in the last lesson.
+- **0:28** So let's start by setting up our environment variables.
+- **0:28** From there, we can make all the relevant imports and set up our check pointer.
+- **0:29** We're now going to set up our agent state and we're going to make one small modification.
+- **0:29** In the previous example, we annotated the messages list with the operator dot add.
+- **0:29** That added messages to the existing messages array.
+- **0:29** However, for these human in the loop interactions, we may want to actually replace existing messages.
+- **0:29** In order to do that, we're going to write a custom reduce messages function that basically
+- **0:29** looks for messages with the same ID and if it sees that you're inserting one with the
+- **0:29** same ID as one that already exists, it's just going to replace that.
+- **0:29** Otherwise, it will append them.
+- **0:29** After that, we can create our same Tivoli tool that we've been using and we can create
+- **0:29** our same agent.
+- **0:29** We're actually going to make one small modification.
+- **0:29** So when we compile the graph, in addition to passing in the check pointer, we're also
+
+## 30:00
+
+- **0:30** going to pass this interrupts before equals action parameter.
+- **0:30** What this is going to do is it's going to add an interrupt before we call the action
+- **0:30** node.
+- **0:30** So the action node is where we call the tools.
+- **0:30** And so the reason that we're going to do this is we're going to add something that requires
+- **0:30** manual approval before we run any tools.
+- **0:30** This is useful when you want to make sure that tools are executed correctly.
+- **0:30** This interrupt happens before we call the action node where all tools are called.
+- **0:30** Sometimes you may only want to interrupt if a certain tool is called.
+- **0:30** That's covered in other parts of the documentation and I encourage you to check that out later.
+- **0:30** Let's initialize the agent with the same system prompt and model and check pointer
+- **0:30** that we've been using.
+- **0:30** We now call it and we'll pass in this thread config using the thread ID of one.
+- **0:30** Because this is a separate notebook, it'll start from fresh.
+- **0:31** We stream back responses and we stop after this AI message.
+- **0:31** This is because this AI message is saying that we should call a tool, but we have that
+- **0:31** interrupt before parameter, which stops it there.
+- **0:31** One thing we can do from here is get the current state of the graph for this thread.
+- **0:31** So in order to do that, we'll pass in this thread config.
+- **0:31** We'll get back this configuration objects.
+- **0:31** We can see that the largest ones are this list of messages here.
+- **0:31** This is the state of the graph at this point in time.
+- **0:31** We can also see that it has a next parameter.
+- **0:31** This is the node that is to be called next.
+- **0:31** We can see here that it's action.
+- **0:31** This means that we're about to call the action node.
+- **0:31** In order to continue, we can call stream again with the same thread config and just pass
+- **0:31** in none as the input.
+- **0:32** This will stream back results.
+- **0:32** And we will see that we have the same thread.
+- **0:32** We will see that we get the tool message from calling the tool.
+- **0:32** And then we also get the final AI message.
+- **0:32** Notice that there was no break in between the action node and the LLM node because we
+- **0:32** didn't add any interrupts there.
+- **0:32** If we now get the state, we can see that the messages list contains the full list of messages.
+- **0:32** And if we get the next parameter, we can see that it's empty.
+- **0:32** There's nothing left to be done.
+- **0:32** For fun, we can write some code that runs this in a little loop.
+- **0:32** It prompts us for input about whether to continue or not.
+- **0:32** We'll pass in a new thread ID so we start afresh.
+- **0:32** We get this little input box here asking us whether we want to proceed.
+- **0:32** We can hit yes, and then the agent continues on its way.
+- **0:32** This is a good time to stop and try it out with other inputs.
+- **0:33** Try adding different places to interrupts before and see what happens.
+- **0:33** Before we get to the next section, let's talk a little bit more about state memory.
+- **0:33** As a graph is executing, a snapshot of each state is stored in memory.
+- **0:33** What's in that snapshot?
+- **0:33** Well, there's the agent state, which you've already defined.
+- **0:33** And then there's some other useful things.
+- **0:33** For example, there's the thread and a unique identifier for each of the snapshots.
+- **0:33** That's the thread TS right there.
+- **0:33** You can use that to access the snapshots.
+- **0:33** There's some commands to access memory.
+- **0:33** There's get state.
+- **0:33** Which you've already seen.
+- **0:33** If you provide the thread without the unique identifier and just return that thread ID,
+- **0:33** it will return the current state.
+- **0:33** There's also get state history, which returns an iterator over all of the state snapshots.
+- **0:34** You can use the iterator to get access to all of the unique identifiers for each of
+- **0:34** the states.
+- **0:34** What can you do with that?
+- **0:34** Well, here's an example.
+- **0:34** Given the thread identifier.
+- **0:34** Or rather that thread TS.
+- **0:34** The unique identifier.
+- **0:34** You could, for example, access that first state, state one, and use that in an invoke
+- **0:34** command.
+- **0:34** That'll use state one as the current state or the starting point for the rest of the
+- **0:34** graph.
+- **0:34** This is effectively time travel.
+- **0:34** Conversely, without that thread TS, if you just pass in the thread ID, it will use the
+- **0:34** current state of the thread as the starting point.
+- **0:34** You can also use that unique identifier to access a particular state.
+- **0:34** You can then modify that state.
+- **0:34** And then you can use update state to update the state and store it back into memory in
+- **0:34** the location of the current state.
+- **0:34** From there, if you run stream or invoke, it'll use the new state, the modified state as its
+- **0:35** starting point.
+- **0:35** All right.
+- **0:35** You'll be seeing some examples of these in the upcoming section.
+- **0:35** So let's get back to it.
+- **0:35** Now let's show an example of modifying the state.
+- **0:35** So let's start a new thread and let's ask it, what's the weather in LA?
+- **0:35** At this point in the thread, we have two messages, the human message, and then the AI message,
+- **0:35** which is saying to search to Vili for current weather in Los Angeles.
+- **0:35** But let's modify this.
+- **0:35** Let's pretend we were instead asking about the weather in Louisiana, not Los Angeles.
+- **0:35** So how would we modify this to correct the agent action?
+- **0:35** First, let's save the current state of the graph to a variable called current value.
+- **0:35** So let's save the current state of the graph to a variable called current value.
+- **0:35** So let's save the current state of the graph to a variable called current value.
+- **0:35** So let's save the current state of the graph to a variable called current value.
+- **0:35** So let's save the current state of the graph to a variable called current value.
+- **0:35** So let's save the current state of the graph to a variable called current value.
+- **0:35** The last message we have in this state is this AI message, which is saying to search
+- **0:35** for a particular search term.
+- **0:35** In this case, current weather in Los Angeles.
+- **0:36** We can drill in even further and to see the list of tool calls associated with this message.
+- **0:36** Let's now update these tool calls.
+- **0:36** In order to do that, we can first get the ID associated with the tool call.
+- **0:36** We'll then update the tool calls property to be a list.
+- **0:36** This list will have one element.
+- **0:36** It's a dictionary.
+- **0:36** It's got one tool call.
+- **0:36** It's calling the Tivoli search results JSON.
+- **0:36** That's the same as before.
+- **0:36** But the arguments are different.
+- **0:36** This time we have query with current weather in Louisiana.
+- **0:36** This doesn't actually do anything until we call update state on the graph.
+- **0:36** We're going to pass in the thread config.
+- **0:36** And this is so we know which thread we're operating on.
+- **0:36** And we're going to pass in the new values that we want to override with.
+- **0:36** If we get the current state of the graph.
+- **0:36** Now we can see that we have this search term here.
+- **0:37** Current weather in Louisiana.
+- **0:37** If we continue from here, we can see that it calls Tivoli with the current weather in
+- **0:37** Louisiana and gets back some response and then responds accordingly.
+- **0:37** The current weather in Louisiana shows sunny conditions.
+- **0:37** We've now shown how we can modify the state of the graph in order to control what the
+- **0:37** agent does.
+- **0:37** One important thing to note is that we're actually keeping a running list of all these
+- **0:37** states.
+- **0:37** So.
+- **0:37** If we go back to the state, we actually created a new state and that became the new state.
+- **0:37** And then every time we update it with results from the nodes, it's actually creating a new
+- **0:37** state one after the other.
+- **0:37** This is really nice because it actually allows us to go back and visit previous states in
+- **0:37** something we're calling time travel.
+- **0:37** So in order to do this, we can call get state history on the graph, passing in again the
+- **0:37** thread ID.
+- **0:38** We'll then start building up this list of states over time.
+- **0:38** If we get the last state in this list, we can see that it's actually the earliest one.
+- **0:38** And so this is the one where it was looking up the current weather in Los Angeles.
+- **0:38** This was the original state update that was made based on the first language model call.
+- **0:38** If we wanted to go back in time and resume from this checkpoint where it was looking
+- **0:38** for Los Angeles, we easily can.
+- **0:38** In order to do that, all we have to do is call graph dot stream again, pass in none,
+- **0:38** and now notice that we're passing in to replay dot config.
+- **0:38** So to replay is the state where we want to resume from, and config is just the configuration
+- **0:38** parameters that tell us that we're resuming from this state.
+- **0:38** So if we run this, we'll start to see that it's searching for the current weather in
+- **0:38** Los Angeles.
+- **0:38** It's getting a result back from Tivoli, and then it's generating a response.
+- **0:39** And that's our final answer.
+- **0:39** One thing we can also do is go back in time.
+- **0:39** And then edit it from there.
+- **0:39** So here, we have this to replay config, and this is where it's the current weather in
+- **0:39** Los Angeles.
+- **0:39** So we can do the same thing that we did before, where we modify this state.
+- **0:39** And so we'll modify this to do current weather in LA, AccuWeather, presuming that we want
+- **0:39** a response from AccuWeather.
+- **0:39** And the reason this is different than before is that here, we're going back in time, and
+- **0:39** then editing, as opposed to before where we were editing from the most recent state.
+- **0:39** And so we're going back in time, and then editing, as opposed to before where we were
+- **0:39** editing from the most recent state.
+- **0:39** We can update the state of this to replay, and we'll get back this branch state, where
+- **0:39** we've branched off with this modification.
+- **0:39** If we now call graph.stream with none on this branch state, we can see that we're looking
+
+## 40:00
+
+- **0:40** up AccuWeather and getting a result from there, and we're getting back a new answer, and then
+- **0:40** we're responding from the AI.
+- **0:40** Another thing we can do is add messages to a state at any given point in time.
+- **0:40** So here, we have this to replay config.
+- **0:40** Which we've modified to have the current weather in LA, AccuWeather.
+- **0:40** Now let's presume that instead of actually calling to Tivilli, we wanted to mock out
+- **0:40** a response.
+- **0:40** We can do that by appending a new message into the state.
+- **0:40** We're going to grab the ID of the tool call that we're supposed to be making, and we're
+- **0:40** going to create this state update, which is a list of messages, and it's a new message
+- **0:40** this time.
+- **0:40** It's got a tool call ID of this.
+- **0:40** It's got a name of Tivilli search.
+- **0:40** And it's got a content of 54 degrees Celsius.
+- **0:40** So here, this is a new message.
+- **0:40** So when we update the state in the graph, it's not going to replace an existing message.
+- **0:41** It's going to append it to the list of messages.
+- **0:41** We're now going to update the state of the graph.
+- **0:41** But because we are actually adding and pretending that an action has taken place, as opposed
+- **0:41** to modifying the existing state, we need to do an additional thing.
+- **0:41** We need to add this as node equals action parameter here.
+- **0:41** What this is basically doing is it's saying that the state update that we're making isn't
+- **0:41** just a modification.
+- **0:41** We're actually making this update as if we were the action node.
+- **0:41** The reason that this is relevant is because before we add this message, the current state
+- **0:41** of the graph is about to go into the action node.
+- **0:41** But after we add this message, we don't want it to go into the action mode anymore.
+- **0:41** So we're basically saying that when we update the state, we're acting as if we were the
+- **0:41** action node.
+- **0:41** So if we now call stream on this new configuration, we can see that it doesn't take an action
+- **0:41** anymore.
+- **0:41** Rather, it just calls the model and responds with this AI message.
+- **0:42** The current weather in Los Angeles is 54 degrees Celsius.
+- **0:42** This is what we pretended that the tool had responded with.
+- **0:42** This has shown off a lot of really advanced and complicated human-in-the-loop interaction
+- **0:42** patterns.
+- **0:42** So you've learned how to add a break before a node takes place.
+- **0:42** This allows for humans to approve or deny.
+- **0:42** You've also shown how you can go back in time and how you can modify the state, either
+- **0:42** the current state or the past state.
+- **0:42** Additionally, you've also shown how you can update the state manually.
+- **0:42** This allows you to manually give the agent the result of calling a tool rather than actually
+- **0:42** calling a tool itself.
+- **0:42** All of these human-in-the-loop patterns better serve to facilitate how you interact with
+- **0:42** agents.
+- **0:42** They give you more control over what it's doing.
+- **0:42** It allows you to go back to a previous point in time, and by editing, it allows you to
+- **0:42** correct what it has done.
+- **0:42** So far we've been working with a pretty simple agent.
+- **0:43** It's got one LLM call, one prompt, and it's got a pretty simple state, just a list of
+- **0:43** messages.
+- **0:43** In the next and final example in this course, we're going to create a much more complicated
+- **0:43** agent made up of multiple LLM calls that has a pretty complex state.
+- **0:43** See you there.
+- **0:43** In this lesson, we'll build an agent from scratch.
+- **0:43** You'll see that while agents can do fairly complex tasks, a basic agent is actually not
+- **0:43** that hard to build.
+- **0:43** As we're building this agent, it will be useful to notice what jobs fall to the LLM and which
+- **0:43** are managed by the code around the LLM, what we call the runtime.
+- **0:43** Let's dive in.
+- **0:43** The agent we're going to build from scratch is based on the REACT pattern.
+- **0:43** REACT stands for reasoning plus acting.
+- **0:43** So in this pattern, an LLM first thinks about what to do, it then decides an action to take.
+- **0:43** That action is then executed in an environment and an observation is returned.
+- **0:44** With that observation, the LLM then repeats.
+- **0:44** So it then thinks about what to do again, decides another action to take, and continues
+- **0:44** until it decides that it is done.
+- **0:44** The code that we will be using to start with is based on this blog post.
+- **0:44** From Simon Wilson, it's a great introduction to implementing the REACT pattern in Python.
+- **0:44** To get started, let's import everything we need.
+- **0:44** We can then initialize the language model.
+- **0:44** For this, we will use OpenAI.
+- **0:44** Let's try it out once just to make sure that it's working.
+- **0:44** We can see that we pass in hello world and get back, hello, how can I assist you today?
+- **0:44** Great.
+- **0:45** We're set up and running with our language model.
+- **0:45** Let's now create the agent.
+- **0:45** We'll start by creating a class for the agent.
+- **0:45** We'll want this agent to be parameterized by a system message.
+- **0:45** So we'll allow the user to pass that in.
+- **0:45** We'll then save that as an attribute.
+- **0:45** We'll also keep track of a list of messages over time.
+- **0:45** This is where we will append everything that happens in that REACT loop.
+- **0:45** And to start it off, if there is a system message, we're going to append a system message
+- **0:45** list of messages.
+- **0:45** Okay, great.
+- **0:45** So our agent can now be initialized, but what exactly is it going to do?
+- **0:45** Let's implement the call method for this agent.
+- **0:45** What we want this method to do at a high level is to take a message that comes in that is
+- **0:45** a string and then append that message to the existing array of messages.
+- **0:46** We'll then execute a function.
+- **0:46** We'll implement that right down below, and we'll then take the result of that and add
+- **0:46** a new message into the array.
+- **0:46** This time coming from the assistant.
+- **0:46** So let's implement that execute method.
+- **0:46** In the execute method, this is where we call the OpenAI client that we initialized above.
+- **0:46** So we'll be using this GPT-4 model.
+- **0:46** We'll be setting temperature equals to zero.
+- **0:46** This will make it very deterministic.
+- **0:46** And we'll pass in this list of messages that will accumulate.
+- **0:46** We'll then have this method return the content or the string of the message that it gets
+- **0:46** back from the model.
+- **0:46** So this is our agent.
+- **0:46** Awesome.
+- **0:46** Now let's get started with creating the React agent.
+- **0:46** The React agent is going to require a very specific system message.
+- **0:46** So let's go ahead and write that out, and we can take a look at that in detail to see
+- **0:46** exactly what we're doing.
+- **0:46** Let's take a look at this prompt in more detail.
+- **0:46** So we're asking it to run through this loop of thought, action, pause, and observation.
+- **0:47** It can then output an answer when it's finished with that loop.
+- **0:47** It will use thought to describe its thoughts about the question that's been asked.
+- **0:47** It will then use action to run one of the actions available to it, and it will then
+- **0:47** return pause.
+- **0:47** After that, observation will be used to signal the result of running those actions.
+- **0:47** We then tell it what the available actions are.
+- **0:47** So we give it access to calculate and average dog weight, and we'll implement those down
+- **0:47** below.
+- **0:47** Finally, we then provide an example of this inaction.
+- **0:47** This example is really helpful for helping the language model understand and a little
+- **0:47** bit more specific detail how exactly it should be doing things.
+- **0:47** And we can see here an example trace.
+- **0:47** Incoming question, and then a thought, and then an action, then pause, and then it gets
+- **0:47** back an observation, and then we'll tell it to output answer.
+- **0:48** We now need to provide the two tools that we mentioned above.
+- **0:48** So we have a calculate function, and this just takes in a string, and it will eval that
+- **0:48** string.
+- **0:48** And then we have this average dog weight function, and we're going to mock it.
+- **0:48** With some returns for Scottish terrier, border collie, toy poodle.
+- **0:48** And then we'll create this little dictionary that maps the name of the function to the
+- **0:48** function itself, and we'll see how we'll use this down below.
+- **0:48** Note that these functions are just a toy example, and in your real use case, these are going
+- **0:48** to be more specific to the problem that you're trying to solve.
+- **0:48** Let's now try it out.
+- **0:48** Let's initialize the agent with the prompt that we created above.
+- **0:48** Let's then call it once.
+- **0:48** With this initial question, how much does a toy poodle weigh?
+- **0:48** We look at the result, and we can see that there's a thought, action, and pause.
+- **0:48** So the thought is, I should look up the dog's weight using average dog weight for a toy
+- **0:48** poodle.
+- **0:48** It then outputs an action, and this is all one string, but the second part is outputting
+- **0:49** this action, average dog weight, toy poodle, and then it says pause.
+- **0:49** What this means we should do is that we should look up, using average dog weight, how much
+- **0:49** a toy poodle weighs.
+- **0:49** And so let's do that.
+- **0:49** We get back this string, and this is just what we mocked out above.
+- **0:49** We can now format that into the next prompt to pass to the language model.
+- **0:49** And then we can call the agent with that next prompt.
+- **0:49** Doing that, we see that we get back, answer, a toy poodle weighs seven pounds.
+- **0:49** If we want to see more details about what exactly has been going on, we can take a look
+- **0:49** at the message attribute on the agent.
+- **0:49** Okay.
+- **0:49** So let's say that we first have this system message, and this is the long prompt that
+- **0:49** we wrote out above.
+- **0:49** We then have our first question, how much does a toy poodle weigh?
+
+## 50:00
+
+- **0:50** We then have this response from the language model, which tells us to take this action.
+- **0:50** We then have our user message representing this observation, saying how much a toy poodle
+- **0:50** weighs.
+- **0:50** And then we have the final assistant response, which says our final answer, that a toy poodle
+- **0:50** weighs seven pounds.
+- **0:50** Let's try this again with a different example.
+- **0:50** In order to do that.
+- **0:50** We're going to need to reinitialize the agent in order to clear all the messages that have
+- **0:50** already accumulated.
+- **0:50** We're going to ask it a more complicated question this time.
+- **0:50** I have two dogs, a Border Collie and a Scottish Terrier.
+- **0:50** What is their combined weight?
+- **0:50** We can see that its first thought is a really good plan.
+- **0:50** It realizes that it first needs to find the average weight of each breed and then add
+- **0:50** those weights together.
+- **0:50** And so the first action that it takes is calling average dog weight with Border Collie.
+- **0:50** Let's execute that action and create the next prompt.
+- **0:51** I can now call the agent on this next prompt.
+- **0:51** I can see that it responds that we now need to take a different action.
+- **0:51** We need to call average dog weight with Scottish Terrier.
+- **0:51** So let's do that.
+- **0:51** We do that and create another prompt, which we can again pass to the agent.
+- **0:51** This time it tells us to use the calculate method with 37 plus 20.
+- **0:51** Okay, great.
+- **0:51** Let's run that action.
+- **0:51** We run that action and we get back another prompt, which we can pass yet again into the
+- **0:51** agent.
+- **0:51** Doing that, we get back a final answer.
+- **0:51** The combined weight of a Border Collie and a Scottish Terrier is 57 pounds.
+- **0:51** Now that it's output the answer string, we know that it's finished.
+- **0:51** So this is great.
+- **0:51** We have a tool calling agent, but it's still a little bit manual.
+- **0:51** Let's automate it.
+- **0:51** Let's put it in a loop.
+- **0:51** The first thing I'm going to do is create this regex.
+- **0:52** This is going to let us parse the LLMs response and determine whether we want to be taking
+- **0:52** an action or whether it's the final answer.
+- **0:52** Let's now create this query function.
+- **0:52** This is going to take in a question and run the same process that we just ran manually.
+- **0:52** I'll add this max turns parameter so we can control how long this runs for.
+- **0:52** We can then start a counter to keep track of how many iterations we've done.
+- **0:52** We can initialize an agent.
+- **0:52** With the default system prompt.
+- **0:52** We can then define a query function, which we'll use to run this loop.
+- **0:52** It'll take in a question, and we'll also let it take in this max turns parameter, which
+- **0:52** will control how many iterations the agent can run for.
+- **0:52** We'll start a counter, and we'll set this to zero.
+- **0:53** We'll create a new agent by initializing the agent class with the default system prompt.
+- **0:53** We'll also create this next prompt variable to keep track of what we should be passing
+- **0:53** to the agent.
+- **0:53** And set this equal to the original question in order to do that.
+- **0:53** We'll also create this next prompt variable to keep track of what we should be passing
+- **0:53** to the agent in order to start.
+- **0:53** Let's now start our loop.
+- **0:53** So while our counter is less than max turns, we'll first increment the counter.
+- **0:53** And then we'll call the agent and get a result back.
+- **0:53** Let's add a print statement just to see what that result is.
+- **0:53** We'll then use the regex that we created above in order to parse the response from
+- **0:53** the agent.
+- **0:53** And we'll get back a list of actions.
+- **0:53** Here's where we will decide what to do.
+- **0:53** based on the response.
+- **0:53** So if there are any actions, we're
+- **0:53** going to add some logic to take those actions
+- **0:54** and get back a response.
+- **0:54** If there aren't any actions, and this
+- **0:54** happens when the agent outputs answer,
+- **0:54** then we're going to return and end the function there.
+- **0:54** So what exactly are we going to do
+- **0:54** if there are actions to take?
+- **0:54** First, we're going to get the action and the action input.
+- **0:54** So the action is the function to call,
+- **0:54** and the action input is the input to that function.
+- **0:54** So we'll get those two things.
+- **0:54** And then if we see an action that's not
+- **0:54** in our list of known actions, we're
+- **0:54** going to raise an exception.
+- **0:54** This should never happen, but we'll do this check
+- **0:54** and raise this exception just in case.
+- **0:54** And let's print out what exactly we're
+- **0:54** going to be running here.
+- **0:54** We'll now get the observation.
+- **0:54** And so we'll do this by first looking up
+- **0:54** in the action dictionary the action that we should take.
+- **0:54** And so this action is a string.
+- **0:54** Right here, we're looking it up in this dictionary,
+- **0:54** and we're going to get back a function.
+- **0:54** We're then calling that function on the action input.
+- **0:55** And the result of that is what we're saving as observation.
+- **0:55** Let's print out the observation just for some debugging.
+- **0:55** And then let's also create the next prompt, what
+- **0:55** we'll send to the language model the next time.
+- **0:55** And this is just a string with observation
+- **0:55** and formatted with the observation
+- **0:55** that we got back from the agent.
+- **0:55** All right, let's call this on the complex question
+- **0:55** that we had above and see what happens.
+- **0:55** We can see that it first thinks about what to do,
+- **0:55** outputs an action, calls it, gets back an observation,
+- **0:55** thinks about what to do again, gets another action,
+- **0:55** thinks about what to do again, gets another action,
+- **0:55** and then finally it comes up with this answer.
+- **0:55** That was a lot easier than running it by hand.
+- **0:55** That shows how we can create an agent using nothing
+- **0:55** but the raw LLM API and some Python code.
+- **0:55** In the next lesson, we'll take this same agent
+- **0:55** and show how to implement it using Langrath.
+- **0:55** See you there.
+- **0:56** A frequently used tool in agent is search.
+- **0:56** This lesson is going to dive into how agentic search is
+- **0:56** different from standard search and how to use it.
+- **0:56** Let's try it out.
+- **0:56** All right, so before diving into what an agentic search does,
+- **0:56** let's understand how an agent might use it.
+- **0:56** In a zero-shot learning, an agent would receive a prompt
+- **0:56** and will produce an answer based on its static weights
+- **0:56** of the model.
+- **0:56** As powerful as it's proven to be,
+- **0:56** there are many limitations to this process.
+- **0:56** First, the data around us is dynamic,
+- **0:56** so we couldn't, for instance, ask about the scores
+- **0:56** from the game last night.
+- **0:56** Secondly, in many use cases, we would want to know
+- **0:56** the sources of the information provided in the result.
+- **0:56** This can reduce hallucinations and smooth the friction
+- **0:56** of this human-computer interaction.
+- **0:56** Looking at the slide, we can see the prompt is received
+- **0:56** by the agent, which then decides to call the search tool.
+- **0:56** Then the information found is returned to the agent.
+- **0:57** Now, let me show you what happens inside.
+- **0:57** This is an example of a very basic search tool implementation.
+- **0:57** Let's go over it step by step.
+- **0:57** If the agent decides, it will send a query to the search tool.
+- **0:57** The first step would work on understanding the question
+- **0:57** and divide it to sub-questions if needed.
+- **0:57** This is an important step because it can handle complex queries.
+- **0:57** Then, for each sub-query, the search tool will have to find
+- **0:57** the best source.
+- **0:57** Choosing from multiple integrations.
+- **0:57** For example, if an agent would ask, how is the weather in San Francisco?
+- **0:57** The search tool should use a weather API for best results.
+- **0:57** The job doesn't end with finding the correct source.
+- **0:57** The search tool would then have to extract only the relevant information
+- **0:57** to the sub-query.
+- **0:57** A basic implementation of this can be achieved through a process
+- **0:57** of chunking the source and run a quick vector search
+- **0:57** to retrieve the top k chunks.
+- **0:57** After retrieving the data,
+- **0:58** from each source, the search tool would then score the results
+- **0:58** and filter out the less relevant information.
+- **0:58** Okay, so let's test it out.
+- **0:58** Okay, so first let's import some libraries
+- **0:58** and do the initial connection to the search tool.
+- **0:58** Here, we loaded the Tavili API key from the environment variable.
+- **0:58** And then we created the Tavili client,
+- **0:58** which we imported from the Tavili library.
+- **0:58** Alright, so after creating the initial connection,
+- **0:58** let's test it out.
+- **0:58** Here, I'm gonna run a search,
+- **0:58** asking about NVIDIA's new Black Hole GPU.
+- **0:58** And let's see what's the answer.
+- **0:58** Alright, so as you can see, there's a pretty simple answer,
+- **0:58** but very accurate.
+- **0:58** Okay, so let's do a simple example
+- **0:58** to see the difference between a regular search tool
+- **0:58** and an agentic search tool.
+- **0:58** I'm gonna create a simple query
+- **0:58** about the weather in a certain location.
+- **0:58** Feel free to change the location to your location.
+- **0:59** I'm gonna do it with San Francisco.
+- **0:59** So the query is, what is the current weather in San Francisco?
+- **0:59** Should I travel there today?
+- **0:59** Now let's try to attempt it with regular search.
+- **0:59** Here, I'm gonna import the DuckDuckGo search.
+- **0:59** I'll try to run a regular search and get the links,
+- **0:59** the links that might lead me to the answer.
+- **0:59** Okay, so as you can see, we did get the results,
+- **0:59** but it's not what the agent need.
+- **0:59** Now we're gonna have to get some answers from these results.
+- **0:59** Let's do that.
+- **0:59** Okay, so now we're gonna create a function
+- **0:59** that's gonna scrape the data from the first URL.
+- **0:59** We're gonna use beautiful soup to extract the HTML.
+- **0:59** As you can see, that's a beautiful output.
+- **0:59** And if you want, you can keep scrolling down.
+
+## 60:00
+
+- **1:00** But let's try to clear it up.
+- **1:00** Okay, to clear it out, I'm gonna use some parsing.
+- **1:00** I'm gonna extract the headers and some content.
+- **1:00** I'm gonna strip it down and use join to get the text.
+- **1:00** As you can see, the output is much, much better,
+- **1:00** but still not concise enough.
+- **1:00** Okay, after seeing this, let's try to run it using the agentic search tool.
+- **1:00** We're gonna do the same query and call Tavili to get us the results.
+- **1:00** As you can see, we got a simple JSON
+- **1:00** with a lot of information about the weather in San Francisco.
+- **1:00** Let's clear it out so we can see a formatted JSON.
+- **1:00** Okay, now we'll parse it and highlight the JSON
+- **1:00** just so we can see it clearly.
+- **1:00** As you can see, this is not the answer I would want to see as a human,
+- **1:00** but this is the exact answer an agent would want,
+- **1:00** a structured data.
+- **1:00** Okay, I'm going to load the sample from Google search
+- **1:01** so you can see the difference.
+- **1:01** Here, I get exactly what I want as a human,
+- **1:01** a nice image showing me the temperature, the humidity, the wind,
+- **1:01** but not unnecessary data.
+- **1:01** That's exactly the difference between what a human needs
+- **1:01** and what an agent needs.
+- **1:01** Okay, that was an introduction to agentic search.
+- **1:01** In the next lesson, Harrison will discuss persistence and streaming.
+- **1:01** When building agents, they're often working on longer-running tasks.
+- **1:01** For these types of tasks, there are two really important concepts,
+- **1:01** persistence and streaming.
+- **1:01** Persistence lets you keep around the state of an agent.
+- **1:01** At a particular point in time, this can let you go back to that state
+- **1:01** and resume in that state in future interactions.
+- **1:01** This is really important for long-running applications.
+- **1:01** Likewise, with streaming, you can emit a list of signals
+- **1:02** of what's going on at that exact moment.
+- **1:02** So for long-running applications, you know exactly what the agent is doing.
+- **1:02** Let's see these concepts in action.
+- **1:02** So to get started, let's create our agent as we did before.
+- **1:02** We'll load in the appropriate environment variables.
+- **1:02** We'll make the necessary imports.
+- **1:02** We'll create our Tivoli search tool again.
+- **1:02** We'll create our agent state.
+- **1:02** And finally, we'll create our agent again.
+- **1:02** Now we're going to add in persistence.
+- **1:02** In order to deal with persistence,
+- **1:02** we've added the concept of a checkpointer into Langraph.
+- **1:02** A checkpointer basically checkpoints the state
+- **1:02** after and between every node.
+- **1:02** To add in persistence for this agent,
+- **1:02** what we'll do is we'll use a SQLite saver.
+- **1:03** So this is a really simple checkpointer that we've added
+- **1:03** that uses SQLite, a built-in database under the hood.
+- **1:03** And we'll just use the in-memory database.
+- **1:03** So if we refresh this notebook, it'll disappear.
+- **1:03** But you can easily connect this to an external database,
+- **1:03** or we also have other checkpointers that use Redis and Postgres
+- **1:03** and other more persistent databases like that.
+- **1:03** Once we initialize this checkpointer,
+- **1:03** the way that we can use it is we're going to pass it in to graph.compile.
+- **1:03** So in order to make this easy,
+- **1:03** let's add another parameter to agent that is checkpointer.
+- **1:03** And then we're just going to pass checkpointer equals checkpointer right here.
+- **1:03** And we've modified our agent.
+- **1:03** This is all we're going to need to do.
+- **1:03** We can now create our agent.
+- **1:03** And we're going to pass in checkpointer equals memory.
+- **1:03** And remember, memories,
+- **1:03** the object that we initialized above.
+- **1:04** When we use our agent now,
+- **1:04** we're also going to add the concept of streaming.
+- **1:04** And there's two things that we might care about streaming.
+- **1:04** First, we might care about streaming the individual messages.
+- **1:04** So this would be the AI message that determines what action to take
+- **1:04** and then the observation message that represents the result of taking that action.
+- **1:04** The second thing we might care about streaming is tokens.
+- **1:04** So for each token of the LLM call,
+- **1:04** we might want to stream the output.
+- **1:04** To begin, we're just going to start by streaming only the messages.
+- **1:04** We'll do the tokens later on in the lesson.
+- **1:04** So we're going to create our human message.
+- **1:04** What is the weather in SF?
+- **1:04** This is the one we ran before.
+- **1:04** We're now going to add this concept of a thread config.
+- **1:04** So this will be used to keep track of different threads
+- **1:04** inside the persistent checkpointer.
+- **1:04** This will allow us to have multiple conversations
+- **1:04** going on at the same time.
+- **1:04** This is really needed for production applications
+- **1:05** where you generally have many users.
+- **1:05** This thread config is simply a dictionary
+- **1:05** with a configurable key.
+- **1:05** And as part of that, we have a thread ID
+- **1:05** and we can set that equal to any string.
+- **1:05** Here we're going to set that equal to one.
+- **1:05** We're now going to call the graph not with invoke but with stream.
+- **1:05** We're going to pass in the same messages dictionary
+- **1:05** and we're also going to pass in this thread config
+- **1:05** as a second parameter there.
+- **1:05** We're then going to get back a stream of events.
+- **1:05** These events represent updates to that state over time.
+- **1:05** Because we know our state only has one key,
+- **1:05** the messages key,
+- **1:05** we're just going to loop through it and print that out.
+- **1:05** So let's run this and see what happens.
+- **1:05** We can see that we get back a stream of results.
+- **1:05** First, we get back an AI message.
+- **1:05** This is the first result from the language model
+- **1:05** and it's telling us to call to Vili.
+- **1:05** Next, we get back a tool message.
+- **1:06** This is the result of calling to Vili
+- **1:06** and it has the results from the search.
+- **1:06** And finally, we get back a third AI message.
+- **1:06** This is the final result from the LLM answering our question.
+- **1:06** With this stream method,
+- **1:06** we get back all of these intermediate results
+- **1:06** and we have really good visibility into what exactly is going on.
+- **1:06** Let's now call it with another message.
+- **1:06** This time we're going to say,
+- **1:06** what about in LA?
+- **1:06** So this is continuing the same conversation that we had before.
+- **1:06** It's asking a follow-up question.
+- **1:06** We don't say anything explicitly about the weather,
+- **1:06** but based on it being a conversation,
+- **1:06** we would expect it to realize
+- **1:06** that we're asking about the weather here.
+- **1:06** In order to make sure that we're continuing from that same point,
+- **1:06** we're passing in the same thread ID here.
+- **1:06** If we run this,
+- **1:06** we can see that it returns
+- **1:06** first a function call
+- **1:06** where it's looking for current weather in Los Angeles.
+- **1:07** Again, it's knowing that we asked about weather
+- **1:07** because it has this persistence from the check pointer.
+- **1:07** We can then see that it's getting back results from to Vili.
+- **1:07** And finally,
+- **1:07** that it's responding with an AI message
+- **1:07** that says the current weather in Los Angeles is blah, blah, blah.
+- **1:07** We can call this yet again using the same thread ID
+- **1:07** with the message, which is warmer.
+- **1:07** Here it has access to the full history.
+- **1:07** So it can accurately respond,
+- **1:07** Los Angeles is currently warmer than San Francisco.
+- **1:07** Just to demonstrate the importance of this thread ID,
+- **1:07** let's change this to be two.
+- **1:07** If we run this now,
+- **1:07** we can see that the language model is really confused.
+- **1:07** Can you please specify the two or more items
+- **1:07** you are comparing to determine which is warmer?
+- **1:07** That's because it doesn't have access to any history.
+- **1:08** And that's because we're using a separate thread ID.
+- **1:08** So we've covered the importance of persistence
+- **1:08** and we've showed how you can stream events.
+- **1:08** But what about streaming tokens themselves?
+- **1:08** For that,
+- **1:08** we're going to want to use the AStreamEvents method
+- **1:08** that comes on all langchain and langgraph objects.
+- **1:08** AStreamEvents is an asynchronous method,
+- **1:08** which means that we're going to need to use an async check pointer.
+- **1:08** In order to do this,
+- **1:08** we can import async SQL lightsaber
+- **1:08** and pass that to the agent.
+- **1:08** This is very similar to before.
+- **1:08** It's just swapping out a synchronous SQL lightsaber
+- **1:08** with an async SQL lightsaber.
+- **1:08** This allows us to use async methods on the graph.
+- **1:08** We'll use a new thread ID.
+- **1:08** So this will start the conversation from fresh.
+- **1:08** We're also going to be iterating over a different type of event.
+- **1:09** These events represent updates from the underlying stream.
+- **1:09** What we want to do is we want to look for events
+- **1:09** that correspond to new tokens.
+- **1:09** These kind of events are called onChatModelStream.
+- **1:09** When we see these events happening,
+- **1:09** we want to get the content and print it out.
+- **1:09** And we'll print it out with this pipe delimiter.
+- **1:09** When we run this,
+- **1:09** we should see it streaming real time into the screen.
+- **1:09** So we can see a few things here.
+- **1:09** First, we can see that it called the function under the hood.
+- **1:09** The reason it didn't stream out anything there
+- **1:09** is there actually was no content to stream.
+- **1:09** It was just a function call.
+- **1:09** But then we can see that when it did get to the final response
+- **1:09** and it is returning a final answer,
+- **1:09** we stream out those tokens one at a time.
+- **1:09** We can see that we've got this little funny pipe delimiter here.
+
+## 70:00
+
+- **1:10** But we could easily remove that in our production application
+- **1:10** if we wanted to.
+- **1:10** So that's it for persistence and streaming.
+- **1:10** Pretty simple to get started with,
+- **1:10** but really powerful for building production applications.
+- **1:10** You're going to want your agents
+- **1:10** to be able to have multiple conversations at the same time
+- **1:10** and have a concept of memory
+- **1:10** so they can resume those conversations.
+- **1:10** And you're also going to want them to be able to stream
+- **1:10** both the final tokens,
+- **1:10** but also all of the messages that came before.
+- **1:10** Persistence is also really important
+- **1:10** for enabling human in the loop type interactions.
+- **1:10** And that's exactly what we're going to cover in the next lesson.
+- **1:10** There are many occasions
+- **1:10** when you would like to put a human in the loop
+- **1:10** to keep tabs on what an agent is doing.
+- **1:10** This is pretty easy to do with line graph.
+- **1:10** Let's see how this works.
+- **1:10** We're going to resume from where we left off in the last lesson.
+- **1:10** So let's start by setting up our environment variables.
+- **1:11** From there, we can make all the relevant imports
+- **1:11** and set up our check pointer.
+- **1:11** We're now going to set up our agent state.
+- **1:11** And we're going to make one small modification.
+- **1:11** In the previous example,
+- **1:11** we annotated the messages list with the operator dot add.
+- **1:11** That added messages to the existing messages array.
+- **1:11** However, for these human in the loop interactions,
+- **1:11** we may want to actually replace existing messages.
+- **1:11** In order to do that,
+- **1:11** we're going to write a custom reduce messages function
+- **1:11** that basically looks for messages with the same ID.
+- **1:11** And if it sees that you're inserting one with the same ID
+- **1:11** as one that already exists,
+- **1:11** it's just going to replace that.
+- **1:11** Otherwise, it will append them.
+- **1:11** After that,
+- **1:11** we can create our same Tivoli tool that we've been using
+- **1:11** and we can create our same agent.
+- **1:11** We're actually going to make one small modification.
+- **1:12** So when we compile the graph,
+- **1:12** in addition to passing in the check pointer,
+- **1:12** we're also going to pass this interrupt before equals action parameter.
+- **1:12** What this is going to do is it's going to add an interrupt
+- **1:12** before we call the action node.
+- **1:12** So the action node is where we call the tools.
+- **1:12** And so the reason that we're going to do this
+- **1:12** is we're going to add something that requires manual approval
+- **1:12** before we run any tools.
+- **1:12** This is useful when you want to make sure
+- **1:12** that tools are executed correctly.
+- **1:12** This interrupt happens before we call the action node
+- **1:12** where all tools are called.
+- **1:12** Sometimes you may only want to interrupt
+- **1:12** if a certain tool is called.
+- **1:12** That's covered in other parts of the documentation.
+- **1:12** And I encourage you to check that out later.
+- **1:12** Let's initialize the agent with the same system prompt
+- **1:12** and model and check pointer that we've been using.
+- **1:12** We now call it and we'll pass in this thread config
+- **1:13** using the thread ID of one.
+- **1:13** Because this is a separate notebook,
+- **1:13** it'll start from fresh.
+- **1:13** We stream back responses and we stop after this AI message.
+- **1:13** This is because this AI message is saying that we should call a tool.
+- **1:13** But we have that interrupt before parameter,
+- **1:13** which stops it there.
+- **1:13** One thing we can do from here
+- **1:13** is get the current state of the graph for this thread.
+- **1:13** So in order to do that,
+- **1:13** we'll pass in this thread config.
+- **1:13** We'll get back this configuration object,
+- **1:13** which has a few parameters.
+- **1:13** We can see that the largest ones
+- **1:13** are this list of messages here.
+- **1:13** This is the state of the graph at this point in time.
+- **1:13** We can also see that it has a next parameter.
+- **1:13** This is the node that is to be called next.
+- **1:13** We can see here that it's action.
+- **1:13** This means that we're about to call the action node.
+- **1:13** In order to continue,
+- **1:13** we can call stream again with the same thread config
+- **1:14** and just pass in none as the input.
+- **1:14** This will stream back results.
+- **1:14** And we will see that we get the tool message
+- **1:14** from calling the tool.
+- **1:14** And then we also get the final AI message.
+- **1:14** Notice that there was no break
+- **1:14** in between the action node and the LLM node
+- **1:14** because we didn't add any interrupts there.
+- **1:14** If we now get the state,
+- **1:14** we can see that the messages list
+- **1:14** contains the full list of messages.
+- **1:14** And if we get the next parameter,
+- **1:14** we can see that it's empty.
+- **1:14** There's nothing left to be done.
+- **1:14** For fun, we can write some code
+- **1:14** that runs this in a little loop
+- **1:14** and prompts us for input
+- **1:14** about whether to continue or not.
+- **1:14** We'll pass in a new thread ID,
+- **1:14** so we start afresh.
+- **1:14** We get this little input box here
+- **1:14** asking us whether we want to proceed.
+- **1:15** We can hit yes,
+- **1:15** and then the agent continues on its way.
+- **1:15** This is a good time to stop
+- **1:15** and try it out with other inputs.
+- **1:15** Try adding different places to interrupt before
+- **1:15** and see what happens.
+- **1:15** Before we get to the next section,
+- **1:15** let's talk a little bit more about state memory.
+- **1:15** As a graph is executing,
+- **1:15** a snapshot of each state is stored in memory.
+- **1:15** What's in that snapshot?
+- **1:15** Well, there's the agent state,
+- **1:15** which you've already defined.
+- **1:15** And then there's some other useful things.
+- **1:15** For example, there's the thread
+- **1:15** and a unique identifier for each of the snapshots.
+- **1:15** That's the thread TS right there.
+- **1:15** You can use that to access the snapshots.
+- **1:15** There's some commands to access memory.
+- **1:15** There's getState, which you've already seen.
+- **1:15** If you provide the thread
+- **1:15** without the unique identifier
+- **1:15** and just return that thread ID,
+- **1:15** it will return the current state.
+- **1:15** There's also getStateHistory,
+- **1:16** which returns an iterator
+- **1:16** over all of the state snapshots.
+- **1:16** You can use the iterator
+- **1:16** to get access to all of the unique identifiers
+- **1:16** for each of the states.
+- **1:16** What can you do with that?
+- **1:16** Well, here's an example.
+- **1:16** Given the thread identifier,
+- **1:16** or rather that thread TS,
+- **1:16** the unique identifier,
+- **1:16** you could, for example,
+- **1:16** access that first state, state1,
+- **1:16** and use that in an invoke command.
+- **1:16** That'll use state1 as the current state
+- **1:16** or the starting point for the rest of the graph.
+- **1:16** This is effectively time travel.
+- **1:16** Conversely, without that thread TS,
+- **1:16** if you just pass in the thread ID,
+- **1:16** it will use the current state of the thread
+- **1:16** as the starting point.
+- **1:16** You can also use that unique identifier
+- **1:16** to access a particular state.
+- **1:16** You can then modify that state,
+- **1:16** and then you can use updateState
+- **1:16** to update the state
+- **1:16** and store it back into memory
+- **1:16** in the location of the current state.
+- **1:16** From there, if you run stream or invoke,
+- **1:17** it'll use the new state
+- **1:17** the modified state as its starting point.
+- **1:17** All right.
+- **1:17** You'll be seeing some examples of these
+- **1:17** in the upcoming section,
+- **1:17** so let's get back to it.
+- **1:17** Now let's show an example
+- **1:17** of modifying the state.
+- **1:17** So let's start a new thread,
+- **1:17** and let's ask it,
+- **1:17** what's the weather in LA?
+- **1:17** At this point in the thread,
+- **1:17** we have two messages,
+- **1:17** the human message
+- **1:17** and then the AI message,
+- **1:17** which is saying to search to Vili
+- **1:17** for current weather in Los Angeles.
+- **1:17** But let's modify this.
+- **1:17** Let's pretend we were instead asked
+- **1:17** about the weather in Louisiana,
+- **1:17** not Los Angeles.
+- **1:17** So how would we modify this
+- **1:17** to correct the agent action?
+- **1:17** First, let's save the current state
+- **1:17** of the graph to a variable
+- **1:17** called current values.
+- **1:17** The last message we have
+- **1:17** in this state is this AI message,
+- **1:18** which is saying to search
+- **1:18** for a particular search term.
+- **1:18** In this case,
+- **1:18** current weather in Los Angeles.
+- **1:18** We can drill in even further
+- **1:18** and to see the list of tool calls
+- **1:18** associated with this message.
+- **1:18** Let's now update these tool calls.
+- **1:18** In order to do that,
+- **1:18** we can first get the ID
+- **1:18** associated with the tool call.
+- **1:18** We'll then update the tool calls property
+- **1:18** to be a list.
+- **1:18** This list will have one element.
+- **1:18** It's a dictionary.
+- **1:18** It's got one tool call.
+- **1:18** It's calling the to Vili search results JSON.
+- **1:18** That's the same as before.
+- **1:18** But the arguments are different.
+- **1:18** This time we have query
+- **1:18** with current weather in Louisiana.
+- **1:18** This doesn't actually do anything.
+- **1:18** Until we call update state on the graph.
+- **1:18** We're going to pass in the thread config.
+- **1:18** And this is so we know
+- **1:18** which thread we're operating on.
+- **1:18** And we're going to pass in the new values
+- **1:18** that we want to override with.
+- **1:18** If we get the current state of the graph now,
+- **1:19** we can see that we have this search term here.
+- **1:19** Current weather in Louisiana.
+- **1:19** If we continue from here,
+- **1:19** we can see that it calls to Vili
+- **1:19** with the current weather in Louisiana
+- **1:19** and gets back some response
+- **1:19** and then responds accordingly.
+- **1:19** The current weather in Louisiana shows
+- **1:19** the current weather in Louisiana.
+- **1:19** We've now shown how we can modify
+- **1:19** the state of the graph
+- **1:19** in order to control what the agent does.
+- **1:19** One important thing to note
+- **1:19** is that we're actually keeping a running list
+- **1:19** of all these states.
+- **1:19** So when we modified the state,
+- **1:19** we actually created a new state
+- **1:19** and that became the new state.
+- **1:19** And then every time we update it
+- **1:19** with results from the nodes,
+- **1:19** it's actually creating a new state one after the other.
+- **1:19** This is really nice
+- **1:19** because it actually allows us to go back
+- **1:19** to previous states
+- **1:19** in something we're calling time travel.
+
+## 80:00
+
+- **1:20** So in order to do this,
+- **1:20** we can call getStateHistory on the graph
+- **1:20** passing in again the thread ID.
+- **1:20** We'll then start building up
+- **1:20** this list of states over time.
+- **1:20** If we get the last
+- **1:20** state in this list,
+- **1:20** we can see that it's actually the earliest one.
+- **1:20** And so this is the one
+- **1:20** where it was looking up the current weather
+- **1:20** in Los Angeles. This was the original
+- **1:20** state update that was made
+- **1:20** based on the first language model call.
+- **1:20** If we wanted to go back in time
+- **1:20** and resume from this checkpoint
+- **1:20** where it was looking for Los Angeles,
+- **1:20** we easily can.
+- **1:20** In order to do that, all we have
+- **1:20** to do is call graph.stream
+- **1:20** again, pass in none,
+- **1:20** and now notice that we're passing
+- **1:20** in toReplay.config.
+- **1:20** So toReplay
+- **1:20** is the state where we want to resume from
+- **1:20** and config is just the configuration
+- **1:20** parameters that tell us that we're
+- **1:20** resuming from this state.
+- **1:20** So if we run this, we'll start to see
+- **1:21** that it's searching for the current
+- **1:21** weather in Los Angeles. It's getting
+- **1:21** a result back from Tivoli
+- **1:21** and then it's generating a response.
+- **1:21** And that's our final answer.
+- **1:21** One thing we can also do
+- **1:21** is go back in time and then
+- **1:21** edit it from there.
+- **1:21** So here, we have this toReplay
+- **1:21** config and this is where it's the current
+- **1:21** weather in Los Angeles.
+- **1:21** So we can do the same thing that
+- **1:21** we did before where we modify this
+- **1:21** state. And so we'll modify
+- **1:21** this to do current weather in LA
+- **1:21** AccuWeather, presuming that we
+- **1:21** want a response from AccuWeather.
+- **1:21** And the reason this is different than before
+- **1:21** is that here, we're going back in time
+- **1:21** and then editing.
+- **1:21** As opposed to before where we were editing from the
+- **1:21** most recent state.
+- **1:21** We can update the state of this toReplay
+- **1:21** and we'll get back this branch
+- **1:21** state where we've branched
+- **1:21** off with this modification.
+- **1:21** If we now call graph.stream
+- **1:22** with none on this branch state,
+- **1:22** we can see that we're looking up
+- **1:22** AccuWeather and getting a result from there
+- **1:22** and we're getting back a new answer
+- **1:22** and then we're responding from the AI.
+- **1:22** Another thing we can do
+- **1:22** is add messages to a state
+- **1:22** at any given point in time.
+- **1:22** So here we have this toReplay
+- **1:22** config which we've modified to have
+- **1:22** the current weather in LA, AccuWeather.
+- **1:22** Now let's presume that
+- **1:22** instead of actually calling to Vili,
+- **1:22** we wanted to mock out a response.
+- **1:22** We can do that by appending
+- **1:22** a new message into the state.
+- **1:22** We're going to grab
+- **1:22** the ID of the
+- **1:22** tool call that we're supposed to be making
+- **1:22** and we're going to create this state
+- **1:22** update which is a list of messages
+- **1:22** and it's a new message this time.
+- **1:22** It's got a tool call ID of
+- **1:22** this, it's got a name of toViliSearch,
+- **1:22** and it's got a content of 54 degrees
+- **1:22** Celsius. So here this is a new
+- **1:23** message. So when we update
+- **1:23** the state in the graph, it's not
+- **1:23** going to replace an existing message,
+- **1:23** it's going to append it to the list of
+- **1:23** messages.
+- **1:23** We're now going to update the state of the graph.
+- **1:23** But because we are actually
+- **1:23** adding and pretending that an action has
+- **1:23** taken place, as opposed to modifying
+- **1:23** the existing state,
+- **1:23** we need to do an additional thing.
+- **1:23** We need to add this asNode
+- **1:23** equals action parameter here.
+- **1:23** What this is basically doing
+- **1:23** is it's saying that the state update
+- **1:23** that we're making isn't just
+- **1:23** a modification. We're actually making
+- **1:23** this update as if we were
+- **1:23** the action node. The reason that this is
+- **1:23** relevant is because before we
+- **1:23** add this message, the current state of the
+- **1:23** graph is about to go into the
+- **1:23** action node. But after we add this
+- **1:23** message, we don't want it to go into the
+- **1:23** action node anymore. So we're basically
+- **1:23** saying that when we update this state,
+- **1:23** we're acting as if we were
+- **1:23** the action node. If we
+- **1:23** now call stream on this new
+- **1:23** configuration, we can see
+- **1:24** that it doesn't take an action anymore.
+- **1:24** Rather, it just calls the
+- **1:24** model and responds with this AI
+- **1:24** message. The current weather in Los Angeles is
+- **1:24** 54 degrees Celsius. This is what we
+- **1:24** pretended that the tool had responded
+- **1:24** with. This has shown off a lot
+- **1:24** of really advanced and complicated
+- **1:24** human-in-the-loop interaction
+- **1:24** patterns. So you've learned how to add
+- **1:24** a break before a node takes
+- **1:24** place. This allows for humans
+- **1:24** to approve or deny
+- **1:24** specific actions.
+- **1:24** You've also shown how you can go back in
+- **1:24** time and how you can
+- **1:24** modify the state, either the current
+- **1:24** state or the past state.
+- **1:24** Additionally, you've also
+- **1:24** shown how you can update the state
+- **1:24** manually. This allows you to
+- **1:24** manually give the agent
+- **1:24** the result of calling a tool rather
+- **1:24** than actually calling a tool itself.
+- **1:24** All of these human-in-the-loop patterns
+- **1:24** better serve to facilitate
+- **1:24** how you interact with agents.
+- **1:24** They give you more control over
+- **1:24** what it's doing. It allows you to go back to
+- **1:24** a previous point in time, and
+- **1:25** by editing, it allows you to correct
+- **1:25** what it has done.
+- **1:25** So far, we've been working with a pretty
+- **1:25** simple agent. It's got one LLM
+- **1:25** call, one prompt, and it's got a pretty
+- **1:25** simple state, just a list of messages.
+- **1:25** In the next and final example,
+- **1:25** in this course, we're going to create
+- **1:25** a much more complicated agent, made up
+- **1:25** of multiple LLM calls that
+- **1:25** has a pretty complex state.
+- **1:25** See you there.
+- **1:25** In this lesson, you'll
+- **1:25** build a project with a bit more scope.
+- **1:25** We'll build a compact
+- **1:25** version of an AI researcher.
+- **1:25** In this case, an essay
+- **1:25** writer. Let's get to it.
+- **1:25** So we're going to
+- **1:25** create an essay writer.
+- **1:25** This is going to be broken down into
+- **1:25** a few different sub-steps.
+- **1:25** So first, we're going to generate a plan
+- **1:25** for the essay. This is going to happen
+- **1:25** once up front. Then based
+- **1:25** on that plan, we're going to do some research.
+- **1:25** This involves calling to
+- **1:25** Vili and getting back some documents.
+- **1:25** From there, we're going to go into
+- **1:25** generate. And in generate,
+- **1:26** we're going to follow the plan
+- **1:26** using the documents that we researched
+- **1:26** and we're going to write the essay.
+- **1:26** From there, we're either going to finish
+- **1:26** or we're going to continue.
+- **1:26** If we continue, we're going to go into our
+- **1:26** reflect node, where we're going to generate
+- **1:26** a critique of the current essay.
+- **1:26** Then based on that critique,
+- **1:26** we're going to do another research step
+- **1:26** with to Vili and get another
+- **1:26** set of documents. We're going
+- **1:26** to append those to the existing
+- **1:26** set of documents and go all
+- **1:26** the way back to the generate step.
+- **1:26** Where we're going to once again
+- **1:26** try to write this essay.
+- **1:26** And we're going to continue this until
+- **1:26** some criteria is met and we exit.
+- **1:26** Let's see this in code.
+- **1:26** We're going to start with again
+- **1:26** importing all our environment variables
+- **1:26** We're then going to make some standard
+- **1:26** imports and set up our in-memory
+- **1:26** SQLite check pointer.
+- **1:26** Now we're going to create the agent state
+- **1:26** and it's going to be a little bit more
+- **1:27** complicated than before.
+- **1:27** So we're going to want to keep
+- **1:27** track of a bunch of different things.
+- **1:27** First, we're going to keep track of
+- **1:27** the task. This is the human input.
+- **1:27** This is what we're trying to write an essay about.
+- **1:27** Then we're going to have a key to keep
+- **1:27** track of the plan. This is the
+- **1:27** plan that planning agent will generate.
+- **1:27** Then we've got a key for
+- **1:27** the draft. This is a draft of the essay.
+- **1:27** And then we've got a key for
+- **1:27** the critique part. So the critique
+- **1:27** agent will populate this key.
+- **1:27** We're also going to add in content.
+- **1:27** This is a key to keep track of the list
+- **1:27** of documents that Tavilli has
+- **1:27** researched and come back with.
+- **1:27** And then we're going to have two arguments
+- **1:27** that keep track of how many times we've
+- **1:27** gone through this. So revision number,
+- **1:27** which is going to keep track of the number
+- **1:27** of revisions we've made, and max
+- **1:27** revisions, which is keeping track
+- **1:27** of the maximum revisions
+- **1:27** that we want to make.
+- **1:27** We're going to use those last two things
+- **1:27** and the criteria to decide whether
+- **1:27** to stop or not. Let's create
+- **1:28** our model. We're going to be using OpenAI.
+- **1:28** And now let's write some prompts
+- **1:28** for our agents.
+- **1:28** First, we have
+- **1:28** this planning prompt. This is the
+- **1:28** prompt for the LLM that's going to write out
+- **1:28** a plan for our essay.
+- **1:28** Next we have the writer prompt.
+- **1:28** This is the one who's writing the essay
+- **1:28** given all the content
+- **1:28** that was researched. We
+- **1:28** now have the reflection prompt.
+- **1:28** This is the prompt that's going to control how
+- **1:28** we're critiquing the draft of the essay.
+- **1:28** We now have a prompt that
+- **1:28** we're going to use for the agents that's
+- **1:28** doing research after the planning step.
+- **1:28** So given a plan, we're going
+- **1:28** to generate a bunch of queries
+- **1:28** and pass these to Tavilli. So this is the
+- **1:28** prompt that does that.
+- **1:28** And then we also have this research
+- **1:28** critique prompt. So after we've made the critique,
+- **1:28** we're going to generate a list of queries
+- **1:28** to pass to Tavilli.
+- **1:28** So this is slightly different than the planning prompt,
+- **1:29** just because it's working on a critique
+- **1:29** versus a plan, but it serves a similar
+- **1:29** purpose. For generating
+- **1:29** these lists of queries to pass to Tavilli,
+- **1:29** we're going to use function calling
+- **1:29** to ensure that we get back a list
+- **1:29** of strings from the language model.
+- **1:29** In order to do that, we're
+- **1:29** going to set up this pydantic model
+- **1:29** that just represents the result that we
+- **1:29** want to get back from the language model,
+- **1:29** which in this case is a list
+- **1:29** of strings. We're going to import
+- **1:29** the Tavilli client instead of the
+- **1:29** tool, because we're working with it in a
+- **1:29** slightly unconventional way.
+- **1:29** Now we can start to create
+- **1:29** all our different agents, all our
+- **1:29** different nodes. Let's go in order.
+- **1:29** So first we're going to start with the node,
+- **1:29** or agent, that does the planning.
+- **1:29** What this node is going to do
+- **1:29** is it's going to take in the state,
+- **1:29** it's then going to create a list of messages.
+- **1:29** One of them is going to be the planning prompt.
+- **1:29** That's going to be the system message.
+- **1:29** We're then going to create a human message
+- **1:29** that is the task that we want to do.
+
+## 90:00
+
+- **1:30** We're going to pass that to the model,
+- **1:30** we're going to get back a message, and then we're going to take
+- **1:30** the content of that message and set that
+- **1:30** equal to plan. And so this is going
+- **1:30** to update the plan key
+- **1:30** to be this response.
+- **1:30** The next node that we're going to want
+- **1:30** to do is the agent that
+- **1:30** takes in the plan and does
+- **1:30** some research. So for
+- **1:30** this we're going to create the research plan node.
+- **1:30** This is going to take in the agent state
+- **1:30** and we're first going to generate some queries.
+- **1:30** So we're going to do model, and
+- **1:30** this is the OpenAI model, and then we're going to
+- **1:30** say with structured output and
+- **1:30** put queries right there. And so this is basically
+- **1:30** saying that the response of what
+- **1:30** we're going to invoke this with is
+- **1:30** going to be that Pydantic object
+- **1:30** that we had, which has that list
+- **1:30** of queries. So we're going to call invoke
+- **1:30** and we're going to call invoke on a list of messages.
+- **1:30** We've got this research planning
+- **1:30** prompt, and then we pass in
+- **1:30** this human message, this task. And so
+- **1:30** for this part, we're generating the queries
+- **1:30** based on the task.
+- **1:30** We're then going to get our list of
+- **1:30** current documents, the content documents
+- **1:31** that we're going to use to
+- **1:31** write this essay. So we're going to
+- **1:31** look in the state for content if it
+- **1:31** exists or if it doesn't exist,
+- **1:31** we're just going to create an empty list of documents.
+- **1:31** We're then going to loop over
+- **1:31** the queries that we generated and
+- **1:31** search for them in Tivoli. We're going to get
+- **1:31** back the results and we're going to append
+- **1:31** them to the content. We're
+- **1:31** then going to return this content
+- **1:31** key equal to the content
+- **1:31** that is the result of the original content
+- **1:31** plus the accumulated content.
+- **1:31** Okay, so we've made a plan and we've
+- **1:31** done some initial research. Now it's
+- **1:31** time to write the first draft.
+- **1:31** So for the generation
+- **1:31** node, the first thing we're going to do is
+- **1:31** prepare the content. So we're going to take this list
+- **1:31** of strings and join them
+- **1:31** into one big one.
+- **1:31** We're then going to create the user message
+- **1:31** where we're going to combine the task
+- **1:31** and the plan. So we create a user
+- **1:31** message that's basically like
+- **1:31** this is my task and then
+- **1:31** here is my plan. The plan,
+- **1:31** remember, this is what we generated two
+- **1:32** steps before. The task is
+- **1:32** the original user input.
+- **1:32** We're then going to create a list of messages.
+- **1:32** This is a system message
+- **1:32** with the writer prompt where we format
+- **1:32** in this content. We format in the
+- **1:32** documents that we fetched and then we're
+- **1:32** going to pass in this user message which is
+- **1:32** a combination of the task and the plan.
+- **1:32** We're going to pass this to the
+- **1:32** model and get back a response. We're then
+- **1:32** going to update two things in the state.
+- **1:32** First, we're going to update the draft.
+- **1:32** So we're going to take the response from the model
+- **1:32** and use that as the new draft
+- **1:32** version. Then we're going to update the revision
+- **1:32** number. So this keeps track of how many
+- **1:32** revisions we've made.
+- **1:32** And so here, we're going to add one
+- **1:32** to the current revision
+- **1:32** number in the state.
+- **1:32** After generating, we now need
+- **1:32** a reflection node.
+- **1:32** This reflection node
+- **1:32** is going to take the reflection prompt
+- **1:32** as a system prompt and
+- **1:32** then it's going to take the draft. This is what we just
+- **1:32** generated. We're going to have these two messages
+- **1:32** and we're going to pass them into the model and get back
+- **1:32** a response and this is going to generate
+- **1:33** the critique that we're going to update the
+- **1:33** state with. The last agent
+- **1:33** we need is the agent that's
+- **1:33** going to take the critique and do some
+- **1:33** research. So we're going to do a very similar
+- **1:33** thing that we did with the research plan
+- **1:33** node. We're going to take this model.
+- **1:33** We're going to do with structured output with
+- **1:33** queries, so that's returning queries.
+- **1:33** We're going to invoke it. This time we're passing in
+- **1:33** the research critique prompt and we're
+- **1:33** also passing in the critique
+- **1:33** from before. Based on that,
+- **1:33** we're going to get the current content list
+- **1:33** and we're going to start appending to it the results
+- **1:33** of our Tivoli searches. We're then going to
+- **1:33** return this updated content key.
+- **1:33** The final thing we need is
+- **1:33** this should continue condition. This is
+- **1:33** going to look at the revision number and
+- **1:33** if it's greater than the number of max revisions,
+- **1:33** we're going to end. If
+- **1:33** not, we're going to go on to reflect.
+- **1:33** Remember, this is getting run after the
+- **1:33** generation step. So after the
+- **1:33** generation step, we're either going to finish
+- **1:33** or we're going to go into this critique
+- **1:33** loop. Okay, we
+- **1:34** made all our agents, all our little
+- **1:34** nodes. We made our
+- **1:34** conditional edge. Now let's put it together
+- **1:34** into one big graph.
+- **1:34** First, let's initialize the graph
+- **1:34** with the agent state. Let's
+- **1:34** then add in all the nodes
+- **1:34** that we created.
+- **1:34** We then need to set an entry point. So the
+- **1:34** entry point here is going to be the planning node.
+- **1:34** Let's then add in our conditional
+- **1:34** edge. So after generate,
+- **1:34** we're going to call the should continue function
+- **1:34** and we're either going to end or we're going to reflect.
+- **1:34** And so here, if the should
+- **1:34** continue condition returns end, we're going to end.
+- **1:34** If it returns reflect, we're going to go to the reflect
+- **1:34** node. We now
+- **1:34** need to add in the basic edges.
+- **1:34** So after planning, we're going to go to
+- **1:34** the research plan node. After research
+- **1:34** plan, we're going to go to generate. Generate
+- **1:34** is already covered above. So then after
+- **1:34** reflect, we're going to go to research critique.
+- **1:34** And after research critique, we're
+- **1:34** going to go back to generate.
+- **1:35** Let's now compile it and we'll pass in
+- **1:35** the check pointer that we created before.
+- **1:35** We can visualize
+- **1:35** this same as before. It's
+- **1:35** a much more complex graph.
+- **1:35** Alright, so let's use
+- **1:35** this writing agent. Let's call
+- **1:35** graph.stream so we can see all
+- **1:35** the steps that are happening because this is going to take a while
+- **1:35** and we really want that visibility.
+- **1:35** Let's pass in a task. Let's ask it
+- **1:35** what is the difference between Lang Chain
+- **1:35** and Lang Smith? I don't think
+- **1:35** GPT 3.5 knows about any of these.
+- **1:35** And then let's pass in max revisions
+- **1:35** equals 2 and let's pass
+- **1:35** in revision number equals 1. So
+- **1:35** it's starting on the first revision and we want it to
+- **1:35** make two revisions of what it's going to do.
+- **1:35** Let's call this
+- **1:35** and it's going to start getting
+- **1:35** to work. So we can see that it
+- **1:35** generates a plan first.
+- **1:35** It then does
+- **1:35** some research. It gets back a bunch of
+- **1:35** documents.
+- **1:35** It's now got a first draft.
+- **1:35** So we can see that it generated a title
+- **1:36** unveiling the distinctions. Lang Chain
+- **1:36** versus Lang Smith. And it started writing.
+- **1:36** Here we can see
+- **1:36** the critiquing that the agent did.
+- **1:36** The essay provides a clear overview
+- **1:36** blah blah blah. But here's some
+- **1:36** recommendations. It would benefit from
+- **1:36** a deeper analysis of the strengths and weaknesses.
+- **1:36** Okay, great. Now we can go
+- **1:36** to planning. So here we have the research critique
+- **1:36** node. This has done research
+- **1:36** based on the critique of the agent.
+- **1:36** Here we get to generate
+- **1:36** again. This is the second draft and
+- **1:36** we've only told it to do two drafts. So this is the final
+- **1:36** one. It ends after this. And we can
+- **1:36** see the final essay that we get.
+- **1:36** Lang Chain versus Lang Smith.
+- **1:36** We can see some more details on what
+- **1:36** Lang Chain is, what Lang Smith is,
+- **1:36** some talk about scalability,
+- **1:36** interoperability,
+- **1:36** performance.
+- **1:36** We've now created this writer agent.
+- **1:36** This is a great time to go back
+- **1:36** and try it out with different questions.
+- **1:36** Maybe have it write a few different revisions.
+- **1:36** See how it performs.
+- **1:36** Mess around with the prompts. There's a lot
+- **1:37** that you can change here to see
+- **1:37** how this overall writing agent
+- **1:37** responds.
+- **1:37** We built a little GUI
+- **1:37** that you can use to try out
+- **1:37** the essay generator.
+- **1:37** Here's how it works.
+- **1:37** You can put in a topic
+- **1:37** here and then you can hit
+- **1:37** this button, generate essay.
+- **1:37** That will invoke
+- **1:37** your graph
+- **1:37** and it will go and it will run off
+- **1:37** and it will start the generation process.
+- **1:37** And as you can see,
+- **1:37** we stopped. We stopped at the planner node.
+- **1:37** Last node was
+- **1:37** planner. Next node
+- **1:37** was research. We're end thread
+- **1:37** zero. We're doing our
+- **1:37** first draft with a count of one.
+- **1:37** We've taken one step in our graph.
+- **1:37** So why do we stop?
+- **1:37** Well, if you look in manage agent
+- **1:37** we have this interrupt after
+- **1:37** state set. So you may recall
+- **1:37** from code what that looks like.
+- **1:37** So when we're compiling
+- **1:37** the graph, we
+- **1:38** have interrupt after set
+- **1:38** for each of the
+- **1:38** states. So after each state
+- **1:38** it'll stop. And what it will
+- **1:38** do is in the GUI logic
+- **1:38** it'll come back and it'll look to see
+- **1:38** if that state is checked.
+- **1:38** And if it is, it will stop.
+- **1:38** And if it's
+- **1:38** not, then it will continue. And so you can
+- **1:38** uncheck these and continue all the way
+- **1:38** through the process.
+- **1:38** Now we stopped the planner. So we should have a plan
+- **1:38** at this point. Let's take a look.
+- **1:38** Sure enough, there's our introduction.
+- **1:38** But if we look at our research content
+- **1:38** for example, we don't have any. And same
+- **1:38** for draft and for critique.
+- **1:38** There's also this tab.
+- **1:38** The state snapshots. And this is giving
+- **1:38** us a view into
+- **1:38** current memory. This just lists
+- **1:38** all the things in memory.
+- **1:38** We can see that there were
+- **1:38** two initial states inserted by the
+- **1:38** graph logic. And then there was this
+- **1:38** state that we just inserted.
+- **1:38** It was the tasks, the pizza shop,
+- **1:38** the last node we're in,
+- **1:38** and the values of the agent
+- **1:39** state at this point in time.
+- **1:39** The last node is planner.
+- **1:39** Our plan was to briefly introduce
+- **1:39** the topic of pizza shops and their popularity
+- **1:39** and so on. We don't have any
+- **1:39** drafts, etc.
+- **1:39** So that's our current state.
+- **1:39** Now, you may want to do
+- **1:39** something a little bit different than this introduction.
+- **1:39** Let's say
+- **1:39** what you really wanted to talk about
+- **1:39** was
+- **1:39** discuss the
+- **1:39** importance of
+- **1:39** jelly donuts
+- **1:39** in pizza making.
+- **1:39** Now this is a bit nonsensical,
+- **1:39** but you can now update the state.
+- **1:39** If you hit this modify button,
+- **1:39** that will run the update state
+- **1:39** command that we had seen earlier.
+- **1:39** And we can go in and
+- **1:39** take a look and see what happened.
+- **1:39** So we can refresh our state snapshots.
+- **1:39** And here's the state we were in
+- **1:39** previously. And now we have a new
+- **1:39** state. The current state.
+- **1:39** And here we have
+- **1:39** our plan is
+- **1:39** discuss the importance of
+
+## 100:00
+
+- **1:40** jelly donuts in pizza making.
+- **1:40** And so we can continue from here.
+- **1:40** If we go back to the front end,
+- **1:40** and if we hit continue essay
+- **1:40** as opposed to generate,
+- **1:40** then we continue on the path of the thread
+- **1:40** that we've already started.
+- **1:40** Okay. So now we're at the research plan.
+- **1:40** The next node is generate.
+- **1:40** Let's go ahead and click continue
+- **1:40** and we'll generate a draft.
+- **1:40** Let's take a look at the draft.
+- **1:40** And if we refresh, we can
+- **1:40** see the last node was
+- **1:40** generate, the thread ID is zero, the
+- **1:40** version one, step four.
+- **1:40** And so if we read this, we can see
+- **1:40** jelly donuts, a beloved treat in many
+- **1:40** cultures, hold a surprising
+- **1:40** significance in the world of pizza making.
+- **1:40** What a surprise.
+- **1:40** Let's go back to our agents.
+- **1:40** Well, we could continue
+- **1:40** this, but you may have had
+- **1:40** second thoughts about
+- **1:40** this whole pizza making and
+- **1:41** jelly donuts connection.
+- **1:41** So maybe we want to go back to the beginning.
+- **1:41** So with this update
+- **1:41** state from tab,
+- **1:41** you can go back to the original
+- **1:41** planner state.
+- **1:41** And that just didn't update the state.
+- **1:41** So if we go take a look at our state snapshot,
+- **1:41** that pushes
+- **1:41** onto the memory
+- **1:41** the state that we had selected.
+- **1:41** And that's back to our
+- **1:41** original
+- **1:41** plan, the briefly introduced the topic
+- **1:41** of pizza shops and their popularity.
+- **1:41** So we can go back to there
+- **1:41** and then we can then run from there.
+- **1:41** And so let's unclick those
+- **1:41** two things and run all the way to
+- **1:41** generate, click continue essay
+- **1:41** and see what happens.
+- **1:41** So the last note is generate.
+- **1:41** So now we can look at a draft. Let's refresh.
+- **1:41** Pizza shops have become a staple in the food
+- **1:41** industry, offering a wide variety
+- **1:42** of options, blah blah blah.
+- **1:42** And so we don't have any more references to jelly donuts
+- **1:42** in pizza making.
+- **1:42** If you decide to do a different topic,
+- **1:42** for example,
+- **1:42** let's say you want to do a topic
+- **1:42** on New England IPAs.
+- **1:42** So you can change that value
+- **1:42** and then hit generate essay.
+- **1:42** Now you're starting a new topic.
+- **1:42** So you start a new essay.
+- **1:42** What happens
+- **1:42** here is we get
+- **1:42** the live agent output down
+- **1:42** here and we're going to go
+- **1:42** all the way to generate because
+- **1:42** we didn't have those two interrupt after
+- **1:42** states selected. Now you'll notice
+- **1:42** that we have two different threads
+- **1:42** to choose from. We have thread zero
+- **1:42** which is the pizza shop and then one
+- **1:42** which is the New England IPA
+- **1:42** topic. And our New England
+- **1:42** IPA only has a couple of states
+- **1:42** here.
+- **1:42** So you can explore essay making
+- **1:42** with this GUI.
+- **1:42** More importantly is to understand
+- **1:43** what's happening to memory state and how
+- **1:43** the graph is being run.
+- **1:43** If you want the details, you can
+- **1:43** go into the helper.py file
+- **1:43** and all the code is there.
+- **1:43** It's a little long
+- **1:43** but you can use that as a basis.
+- **1:43** For your own project.
+- **1:43** We've covered a lot
+- **1:43** in these past six lessons.
+- **1:43** But it's honestly just the start
+- **1:43** of building agents. In the next
+- **1:43** section, we'll do a quick overview
+- **1:43** of some resources that you can
+- **1:43** peruse in your own time after the course
+- **1:43** to get an even deeper understanding.
+- **1:43** Look, we have only covered
+- **1:43** some of the basics here today.
+- **1:43** I want to point out where you can find some more
+- **1:43** information to continue your agent
+- **1:43** journey.
+- **1:43** We've covered a lot of info.
+- **1:43** Here are some of my favorite resources
+- **1:43** for diving deeper into all that
+- **1:43** we just talked about.
+- **1:43** The Langchain documentation
+- **1:43** is a great place to start.
+- **1:43** Specifically, it provides a great high level
+- **1:43** overview of all the packages
+- **1:44** and services in the Langchain ecosystem.
+- **1:44** So we break down
+- **1:44** the different Langchain core
+- **1:44** packages as well as all the
+- **1:44** Langchain community packages.
+- **1:44** So we use Tivoli as part of Langchain community
+- **1:44** and then we also use Langchain OpenAI
+- **1:44** which is a separate partner package.
+- **1:44** But we have a ton of other integrations
+- **1:44** and you can explore those here.
+- **1:44** Langchain itself is more high level
+- **1:44** and covers agents and other chains
+- **1:44** and different retrieval strategies
+- **1:44** that are good high level entry points
+- **1:44** if you just want to get started.
+- **1:44** We also have a bunch of templates that can be
+- **1:44** deployed easily with LangServe.
+- **1:44** LangServe is just a really easy way
+- **1:44** to turn your Langchain application
+- **1:44** into a web server.
+- **1:44** Helping out with all of this is Langsmith.
+- **1:44** From the beginning, Langsmith can help with
+- **1:44** debugging and then it can also help
+- **1:44** with monitoring and production
+- **1:44** and it also has a playground which we saw earlier.
+- **1:44** Looking at a few other sites,
+- **1:44** the Langchain GitHub repo
+- **1:44** has a lot of good resources, a lot of good
+- **1:44** cookbooks and a lot of templates
+- **1:44** for getting started.
+- **1:45** The Langgraph repo, of course,
+- **1:45** has in-depth documentation
+- **1:45** on Langgraph, everything that we just covered.
+- **1:45** So great reference docs, great tutorials
+- **1:45** and great how-to guides.
+- **1:45** We've also done
+- **1:45** previous courses on Langchain
+- **1:45** with deep learning that had highly
+- **1:45** important to recommend checking out.
+- **1:45** In particular, functions, tools and agents
+- **1:45** with Langchain is a really good precursor
+- **1:45** to this lesson.
+- **1:45** We already saw the Prompt Hub
+- **1:45** once, but just to reiterate,
+- **1:45** this is a great place to go
+- **1:45** to get inspiration and see what other
+- **1:45** expert prompters are doing.
+- **1:45** Congratulations!
+- **1:45** You now have a good hand on how to build
+- **1:45** your own agents.
+- **1:45** With what you have learned today,
+- **1:45** you can build simple or quite complex agents.
+- **1:45** But before we go,
+- **1:45** I wanted to cover some of the agent flows
+- **1:45** that we couldn't build today,
+- **1:45** but I think you should know about.
+- **1:45** The first architecture I want to talk about
+- **1:45** is a multi-agent architecture.
+- **1:45** And we covered this a little bit
+- **1:46** with the writing agent,
+- **1:46** but just to make it a little bit more concrete,
+- **1:46** a multi-agent architecture
+- **1:46** is when multiple different agents
+- **1:46** work on the same shared state.
+- **1:46** And so these agents
+- **1:46** could be just a prompt
+- **1:46** and a language model, as they were in the writer.
+- **1:46** They could also have different
+- **1:46** tools that they could call those.
+- **1:46** So they could be a prompt, a language model,
+- **1:46** and tools. And they could actually have
+- **1:46** their own loops inside them.
+- **1:46** The crucial thing here,
+- **1:46** and the differentiator between the next thing that we'll see,
+- **1:46** is that they all work on the same
+- **1:46** shared state.
+- **1:46** So they're passing that around from one agent
+- **1:46** to the next.
+- **1:46** Let's contrast that with a supervisor agent.
+- **1:46** So here we have a supervisor
+- **1:46** which is calling
+- **1:46** into some sub-agents.
+- **1:46** And here the supervisor will actually determine
+- **1:46** what the input to that agent is.
+- **1:46** And those agents themselves
+- **1:46** could have different states inside them.
+- **1:46** They're a graph.
+- **1:46** And so there's not necessarily
+- **1:46** the same concept of a shared state.
+- **1:47** Other than that, this is pretty similar
+- **1:47** to the multi-agent framework.
+- **1:47** It just really emphasizes
+- **1:47** that there's this one supervisor
+- **1:47** that's in charge of routing
+- **1:47** and coordinating these other agents.
+- **1:47** This is often good when you can use
+- **1:47** a really powerful language model
+- **1:47** as the supervisor.
+- **1:47** And so,
+- **1:47** it's really important to understand
+- **1:47** that there's a lot of different ways
+- **1:47** that you can do this.
+- **1:47** So,
+- **1:47** let's take a look at some of the things
+- **1:47** that we can do here.
+- **1:47** So,
+- **1:47** the first thing we're going to do
+- **1:47** is we're going to look at
+- **1:47** some of the things
+- **1:47** that we can do
+- **1:47** when we're working with our sub-agents.
+- **1:47** So,
+- **1:47** there's an initial code solution,
+- **1:47** there's loops when you iterate on public tests,
+- **1:47** and there's loops when you iterate on AI tests.
+- **1:47** And so this is an interesting graph
+- **1:47** because you have
+- **1:47** this very directed flow
+- **1:47** up until a certain point,
+- **1:48** and then you have these iterations.
+- **1:48** This is a really bespoke
+- **1:48** architecture
+- **1:48** for a particular coding problem.
+- **1:48** But the concept of flow engineering
+- **1:48** extends more broadly.
+- **1:48** And it generally refers to thinking of
+- **1:48** what is the right information flow
+- **1:48** for your agents to take action
+- **1:48** and think.
+- **1:48** In that vein,
+- **1:48** a common paradigm
+- **1:48** is to have a plan and execute
+- **1:48** style flow
+- **1:48** where first you do an explicit
+- **1:48** planning step up front
+- **1:48** and then you start to execute on that plan.
+- **1:48** So you may come up with a few
+- **1:48** steps that a sub-agent
+- **1:48** should go do.
+- **1:48** It can then go do one, come back,
+- **1:48** maybe you update the plan, maybe you don't.
+- **1:48** This is where there are some different variants.
+- **1:48** It goes on to the next thing
+- **1:48** and it does that and it comes back
+- **1:48** until it finishes the plan.
+- **1:48** Then you maybe check to see if
+- **1:48** the plan is successfully accomplished
+- **1:48** or whether you need to re-plan.
+- **1:48** And then if all is good you return to the user.
+- **1:49** The final one I want to touch on
+- **1:49** is a really interesting paper
+- **1:49** called Language Agent Tree Search.
+- **1:49** So this basically does a tree search
+- **1:49** over the state of possible actions.
+- **1:49** And so it first generates an action
+- **1:49** it then reflects
+- **1:49** and then goes down based on that action
+- **1:49** and then generates some other sub-actions
+- **1:49** reflects on that.
+- **1:49** And throughout all these reflections
+- **1:49** it can basically reflect on where
+- **1:49** in the tree of action states
+- **1:49** it wants to jump back to.
+- **1:49** So it can back propagate
+- **1:49** and update parent nodes to have more information
+- **1:49** which may inform future directions
+- **1:49** from that previous state.
+- **1:49** For this in particular you can really see
+- **1:49** why persistence is really important
+- **1:49** because you need to be able
+- **1:49** to go back in time
+- **1:49** to previous states.
+- **1:49** These are just some of the emerging paradigms
+- **1:49** for creating more complex
+- **1:49** agentic flows.
+- **1:49** Lingraph is really aimed at being highly
+- **1:49** controllable and allowing you
+- **1:49** to create these cyclical
+- **1:49** or non-cyclical flows.
+
+## 110:00
+
+- **1:50** This degree of controllability
+- **1:50** is really what differentiates it
+- **1:50** from other frameworks
+- **1:50** and it's what we're really excited about
+- **1:50** going forward as we view this to be
+- **1:50** crucial to creating agents
+- **1:50** that actually work.

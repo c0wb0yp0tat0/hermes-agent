@@ -1,0 +1,1177 @@
+0:00 On November 17th, 2023, Sam Altman,
+0:02 wildly successful CEO of OpenAI, was
+0:05 fired.
+0:05 >> The godfather of ChatGPT kicked out of
+0:08 the company he founded.
+0:10 >> Employees were revolting, investors were
+0:12 freaking out. Nobody seems to understand
+0:13 why this guy was fired. And then,
+0:15 >> [music]
+0:15 >> four days later, Sam Altman is
+0:17 apparently back as OpenAI CEO.
+0:20 >> I want to tell you the full story.
+0:22 [music] Some of it we only know now,
+0:23 thanks to unsealed court testimony
+0:25 that's come out just this year. I think
+0:26 you need to understand what happened
+0:28 [music] those five days if you want to
+0:30 understand this strange moment we're
+0:32 living in. [music]
+0:32 >> AI is a technology for taking away your
+0:34 job and maybe eventually displacing
+0:37 human sovereignty over our own future.
+0:39 >> Where, frankly, a handful of unelected
+0:41 tech CEOs have more power over the
+0:44 future than most heads of state. [music]
+0:46 >> You've said AI could wipe out half of
+0:48 all entry-level white-collar jobs and
+0:50 spike unemployment to 10 to 20% in the
+0:52 next 1 to 5 years.
+0:54 >> Yes.
+0:54 >> And the most powerful of all those
+0:56 people might be Sam Altman, the CEO of
+0:59 OpenAI, a company founded on the idea
+1:01 that no one person should control
+1:03 artificial intelligence.
+1:04 >> AI will probably, like most likely sort
+1:07 of lead to the end of the world, but in
+1:08 the meantime,
+1:10 uh there will be great companies
+1:11 created.
+1:12 >> So, why was Sam Altman fired? And what
+1:14 does that tell us about who gets to
+1:16 decide our future?
+1:25 Friday, November 17th, 2023.
+1:28 Sam Altman is in a hotel room in Las
+1:30 Vegas. He's in town for the Formula 1
+1:33 race. It is a well-earned break. He's
+1:35 been spending the better part of a year
+1:37 doing press, traveling the world meeting
+1:39 global leaders ever since his company,
+1:41 OpenAI, released a chatbot, which
+1:44 you know what? I'm just going to go
+1:45 ahead and assume you've heard of.
+1:46 >> ChatGPT.
+1:48 >> ChatGPT is on pace to pass 100 million
+1:51 active monthly users after just 2
+1:53 months.
+1:53 >> Things are, by any reasonable measure,
+1:56 going extremely well for Sam. His
+1:58 company is about to be valued at $86
+2:00 billion.
+2:02 People are calling him the Oppenheimer
+2:04 of his generation, which he doesn't seem
+2:06 to mind. He sometimes mentions that he
+2:07 and Oppenheimer share a birthday,
+2:09 [music] fun fact. At noon, Sam opens his
+2:11 laptop for a quick video call. On the
+2:13 other side is OpenAI's board. Let me
+2:15 introduce them. We've got Adam D'Angelo,
+2:18 CEO and founder of Quora, you know, that
+2:20 the website with the
+2:22 questions, you know the one.
+2:24 Helen Toner, AI policy researcher, day
+2:26 job at a Georgetown think tank. We've
+2:28 got Tasha McCauley, robotics
+2:30 entrepreneur. And Ilya Sutskever,
+2:33 OpenAI's chief scientist. Widely
+2:35 regarded as one of the most brilliant AI
+2:37 researchers around. Also a co-founder of
+2:40 the company, also Sam's friend. Sam was
+2:43 expecting a routine call.
+2:45 It is not a routine call.
+2:47 Sutskever reads from a prepared
+2:49 statement.
+2:51 "The board has," he says, "lost
+2:53 confidence in Sam's ability to lead the
+2:55 company. They are terminating his
+2:57 employment effective immediately. There
+2:59 will be a public announcement shortly."
+3:02 Sam is too stunned to speak. He feels
+3:05 like he's in a bad dream.
+3:07 After the call, Sam is locked out of his
+3:09 laptop.
+3:10 20 minutes ago, he was CEO of the most
+3:12 famous AI company on Earth.
+3:15 And now he can't get into his own Gmail.
+3:19 Now, minutes later, the board puts out a
+3:21 public statement. It reads,
+3:23 "Mr. Altman's departure follows a
+3:24 deliberative review process by the
+3:26 board, which concluded that he was not
+3:29 consistently candid in his
+3:30 communications with the board, hindering
+3:33 its ability to exercise its
+3:34 responsibilities." The board also names
+3:36 an interim CEO in the announcement, Mira
+3:39 Murati, OpenAI's chief technology
+3:41 officer.
+3:42 Within minutes, this firing is one of
+3:44 the biggest news stories in the world.
+3:47 Sam's phone is getting so many texts per
+3:49 second his iMessage app crashes.
+3:51 300 miles away at OpenAI's San Francisco
+3:54 offices,
+3:55 hundreds of people are standing around
+3:57 staring at their phones refreshing the
+3:59 same four tabs. Nobody is working.
+4:01 Nobody can work. Their CEO was just
+4:03 fired 20 minutes ago and nobody will
+4:05 tell them why. Also caught off guard is
+4:08 Microsoft, OpenAI's most important
+4:10 investor. Murati had called them mere
+4:12 minutes before the public announcement
+4:14 went out. Satya Nadella, the CEO of
+4:16 Microsoft, [music] is to use the
+4:18 technical term,
+4:19 pissed.
+4:20 Sutskever and Murati [music] hold a
+4:22 company-wide meeting to try to explain
+4:24 what's happened.
+4:26 Someone asks if there was a specific
+4:28 incident or something and Sutskever
+4:30 replies, "I wish I could go into
+4:31 details, but I can't."
+4:33 Someone asks if they'll ever find out
+4:35 more. Sutskever says, "Keep your
+4:37 expectations low."
+4:39 Then, someone asks about the tender
+4:41 offer.
+4:42 Now, this wasn't mentioned much in
+4:43 reporting at the time, but in just a few
+4:45 days OpenAI was due to close a deal that
+4:47 would let employees sell their own
+4:49 shares at that $86 billion valuation.
+4:52 For a lot of employees, that meant
+4:54 millions of dollars. Some people had
+4:56 already put down deposits on houses.
+4:59 So, Brad Lightcap, the COO, has to take
+5:01 this question.
+5:03 And he says,
+5:04 "The tender, we're um we're going to
+5:06 see."
+5:08 None of this, it turns out, is
+5:09 particularly reassuring.
+5:11 >> That whole weekend was one of the most
+5:12 stressful uh periods in my life, I would
+5:14 say. It was like a civil war within the
+5:16 company.
+5:16 >> Around 2:00 p.m., Sam puts out a tweet
+5:19 in his trademark all lowercase. He says,
+5:23 "I loved my time at OpenAI. It was
+5:25 transformative for me personally and
+5:27 hopefully the world a little bit. Most
+5:28 of all, I loved working with such
+5:30 talented people."
+5:32 Greg Brockman, who is OpenAI's
+5:34 president, also a co-founder, also a
+5:36 board member until the same four people
+5:38 removed him that same day, has been told
+5:41 that he can stay on as OpenAI's
+5:42 president.
+5:44 Instead, he retweets Sam and announces
+5:46 that he's quitting in solidarity.
+5:48 Three more senior researchers quit as
+5:50 well. Employees feel like the sky is
+5:53 falling.
+5:54 Sam, for his part, gets on a flight back
+5:56 to San Francisco.
+5:57 Late Friday evening, the board takes a
+6:00 meeting with OpenAI's senior executive
+6:02 team. So, not the whole company this
+6:03 time, just the 15 or so most senior
+6:05 employees.
+6:07 The board keeps citing confidentiality
+6:09 and just continues to avoid answering
+6:11 any questions in detail. [music] And the
+6:12 execs are furious. They say the board
+6:15 has no choice but to reinstate Altman,
+6:17 otherwise they'd be letting the company
+6:18 die. Helen Toner replies, "That could in
+6:21 fact be consistent with the mission."
+6:25 At first glance, that sounds completely
+6:26 insane.
+6:27 Why would a board fire a wildly
+6:29 successful CEO and call it consistent
+6:32 with the mission?
+6:38 OpenAI was founded in 2015, not as a
+6:41 normal tech company, as a nonprofit
+6:44 research lab. It was funded by donations
+6:46 from the likes of Elon Musk, also a
+6:48 co-founder, Peter Thiel, and Sam Altman
+6:50 himself.
+6:51 Ilya Sutskever was there from day one.
+6:54 And the mission was not to make money.
+6:56 It was very explicitly to save the
+6:59 world. [music]
+7:00 Easy to roll your eyes at, but here's
+7:02 what these people at least claimed to
+7:03 believe. That within their lifetimes,
+7:06 possibly within the next decade or two,
+7:08 humans would build machines smarter than
+7:10 themselves. Machines that could do new
+7:12 scientific research, could run a
+7:14 military strategy, just do any cognitive
+7:16 work that humans can do.
+7:18 They had a name for this.
+7:20 AGI.
+7:20 >> AGI, artificial general intelligence.
+7:24 >> And they believed that whoever built AGI
+7:26 first would have in their hands the most
+7:28 powerful technology to have ever existed
+7:31 on Earth.
+7:32 And they did not think that this was a
+7:34 safe enterprise.
+7:36 This is Sam Altman writing on his
+7:37 personal blog back in 2015.
+7:40 Development of superhuman machine
+7:41 intelligence is probably the greatest
+7:43 threat to the continued existence of
+7:46 humanity. In that blog post, Sam
+7:48 recommends this book, Superintelligence.
+7:52 And the book's argument is basically
+7:53 this. Humans run this planet not because
+7:56 we are the strongest species, but
+7:57 because we're the smartest. You build
+7:59 something smarter than humans, then the
+8:01 same cold logic applies.
+8:03 >> It's smarter than us, right? There's no
+8:04 way we're going to prevent it getting
+8:05 rid of us if it wants to. If you want to
+8:07 know what life's like when you're not
+8:09 the apex intelligence,
+8:11 ask a chicken.
+8:12 >> That's the position that OpenAI's
+8:14 founders thought humanity was about to
+8:16 be in. So, they set up this research lab
+8:18 to build AGI themselves and build it
+8:21 safely before someone less careful
+8:23 builds it first. They specifically do
+8:24 not trust Google DeepMind.
+8:26 >> The reason I wanted to create OpenAI was
+8:28 to serve as a counterweight to Google.
+8:29 The furthest thing from Google would be
+8:31 like a nonprofit that is fully open cuz
+8:34 Google was closed, for-profit. We don't
+8:36 want this to be a sort of profit
+8:38 maximizing
+8:39 >> a behemoth from hell, you know?
+8:41 >> [laughter]
+8:41 >> That just never stops.
+8:43 >> OpenAI's original mission, and you can
+8:44 still read this online, was to advance
+8:46 digital intelligence in the way most
+8:48 likely to benefit humanity as a whole,
+8:50 unconstrained by the need to generate
+8:52 [music] financial returns. These are not
+8:54 normal startup commitments. But, here's
+8:56 the problem.
+8:57 Training cutting-edge AI turns out to
+8:59 cost an astronomical amount of money.
+9:01 >> Like, I think one thing that no one
+9:03 knows yet is just how much money you
+9:04 need, you know, billions for sure, tens
+9:06 of billions, maybe hundreds of billions,
+9:07 I sure hope not.
+9:08 >> So, in 2019, Sam Altman comes up with a
+9:12 fix, one that happens to land him as CEO
+9:14 of the company.
+9:16 The idea is this.
+9:17 A nonprofit board of directors that owns
+9:20 and controls a for-profit subsidiary.
+9:23 So, the for-profit can take investment,
+9:26 it can pay [music] competitive salaries
+9:27 including startup equity, it can build
+9:29 data centers, it can compete with
+9:31 Google. But,
+9:33 it answers to the [music] nonprofit, and
+9:35 the nonprofit answers to the mission.
+9:38 There are two guardrails built into this
+9:40 structure.
+9:41 Guardrail number one, investor profits
+9:44 are capped at 100x.
+9:46 Beyond that point, everything flows back
+9:48 to the nonprofit [music] to be used for
+9:50 the benefit of humanity for something
+9:52 like universal basic income.
+9:54 The idea was simple. Investors can get
+9:56 rich, but not infinitely rich.
+9:58 Past a point, the upside belongs to
+10:00 everyone.
+10:00 >> If you wanted to just make money, that
+10:02 would not be a good way to do that,
+10:03 right? Like having a nonprofit have that
+10:05 level of control over your company. They
+10:07 could have just started over and started
+10:09 a for-profit company, right? And they
+10:10 chose not to do that.
+10:12 >> Guardrail number two, the nonprofit
+10:14 board can fire the for-profit's CEO.
+10:16 This is the kill switch.
+10:18 The idea is you put people on the board
+10:21 who care about not ending the world. You
+10:23 let the capitalist machine run
+10:25 underneath them. It's the only way to
+10:26 compete. But, if it starts racing
+10:28 somewhere dangerous, the people upstairs
+10:30 can pull the plug.
+10:32 On paper, this board puts humanity above
+10:35 the company. If the two come into
+10:37 conflict, humanity is supposed to win.
+10:40 Sam Altman talks about this constantly.
+10:42 >> Like no one person should be trusted
+10:44 here. I don't have super voting shares.
+10:47 Um,
+10:48 like I don't want them. The board can
+10:50 fire me. I think that's important.
+10:52 >> Now,
+10:53 this is what OpenAI looked like as of
+10:55 November 2023 after the release of
+10:57 ChatGPT, the fastest growing tech
+10:59 product in history, and $13 worth of
+11:02 investment from Microsoft.
+11:04 In theory, the nonprofit is in charge.
+11:06 In practice, you have a handful of
+11:09 volunteers overseeing an $86 billion
+11:11 tech company.
+11:18 Saturday morning, November 18th, Sam
+11:20 wakes up in his home in San Francisco.
+11:23 So,
+11:24 what do you need if you've just been
+11:26 fired by one of the most important
+11:27 companies in tech and you'd ideally like
+11:29 your job back?
+11:30 This, to be clear, is not career advice.
+11:34 Step one, open a line of communication.
+11:36 On Saturday morning, Sam gets a call
+11:38 from the board that just fired him.
+11:41 They want to talk after the disastrous
+11:43 reaction the previous day from employees
+11:45 and senior executives. They're right to
+11:47 be worried, by the way. In a few hours,
+11:49 the executives are going to give the
+11:50 board a 5:00 p.m. deadline to reinstate
+11:52 Sam and then resign.
+11:55 Step two, assemble your allies. Sam
+11:57 starts turning his home into a war room,
+12:00 or to use his words, a government in
+12:02 exile.
+12:03 Within hours, dozens of people are
+12:05 lining up in Sam's home, including
+12:07 OpenAI employees and senior executives.
+12:10 Lawyers set up an office outside his
+12:12 bedroom. Mira Murati is there, which is
+12:14 pretty weird considering she's just
+12:16 replaced him as CEO. Sam, for his part,
+12:19 works the phones. According to his phone
+12:21 records, he's on calls for 12 hours a
+12:23 day.
+12:24 Step three,
+12:25 stay relaxed.
+12:27 6:00 p.m. rolls around. The 5:00 p.m.
+12:28 deadline has come and gone. The board
+12:30 has neither reinstated Sam nor resigned.
+12:32 Sam walks out to his living room and
+12:34 starts handing out a round of Negronis.
+12:36 "You need to relax," he tells people.
+12:38 "Whatever's going to happen is going to
+12:39 happen." Step four, make a show of
+12:42 strength.
+12:43 On Saturday night, Sam sends out a
+12:45 single tweet. "I love the OpenAI team so
+12:48 much."
+12:49 Within minutes, dozens of OpenAI
+12:51 employees are retweeting it with heart
+12:52 emojis.
+12:55 Step five, set the terms of the fight.
+12:58 Now, Sam has this guy Chris Lehane on
+13:00 the line. He's a political operative
+13:02 whose personal motto is apparently
+13:04 "Everyone has a plan until you punch
+13:06 them in the mouth."
+13:08 Lehane, maybe unsurprisingly, wants Sam
+13:10 to go scorched earth on the board. Drag
+13:13 them in the press, destroy them.
+13:15 Sam, though, plays it differently. He
+13:18 steps back and lets his supporters and
+13:20 allies build his case for him.
+13:22 They start feeding sympathetic
+13:24 journalists just enough to shape the
+13:26 narrative in the press. The board
+13:27 doesn't know what they're doing. The
+13:29 board is in over their heads. The board
+13:30 won't even say why they did it. Within
+13:32 24 hours, the narrative isn't Sam Altman
+13:35 was fired. The narrative is, what the
+13:37 hell was the board thinking?
+13:39 Which
+13:40 actually is a good question.
+13:42 What was the board thinking?
+13:51 In 2003, a teenager shows up at the
+13:54 University of Toronto and knocks on the
+13:56 door of Professor Geoffrey Hinton, a
+13:58 future godfather of AI.
+14:00 That teenager's name is Ilya Sutskever.
+14:03 And he's interested in Hinton's work on
+14:05 artificial neural networks, an out of
+14:07 fashion approach to AI that's [music]
+14:09 loosely inspired by biological brains.
+14:11 So, Hinton gives Ilya an old paper. A
+14:14 few days later, the teenage Ilya comes
+14:16 back with an insight it had taken the
+14:17 field years to produce.
+14:20 For most of his life, Ilya Sutskever has
+14:22 seen things in AI before other people
+14:24 see them.
+14:26 Fast forward to 2012.
+14:27 >> [music]
+14:28 >> Ilya, Hinton, and a colleague have been
+14:29 researching deep learning, basically
+14:31 just making neural networks way bigger
+14:33 than had been tried before.
+14:35 At the time, mainstream AI researchers
+14:37 have been struggling for years [music]
+14:38 to get computers to correctly label
+14:40 images. The best in class programs are
+14:42 wrong about 25% of the time.
+14:44 Ilya and Hinton debut a network that
+14:47 demolishes that world record.
+14:50 In 2013, a young startup called DeepMind
+14:53 uses the same type of deep neural
+14:55 network and unveils an AI system that
+14:57 can top human experts at multiple
+14:59 different classic video games. In 2015,
+15:02 Elon Musk and a charismatic guy named
+15:04 Sam Altman take Ilya out to dinner.
+15:07 They don't trust DeepMind.
+15:09 They want to start a new AI lab. They
+15:10 want to save the world. They want Ilya
+15:13 to be a part of it.
+15:15 Ilya turns down a $6 million a year,
+15:17 "Please don't leave us" counter offer
+15:19 from his employer Google
+15:21 and joins them.
+15:23 In 2016, DeepMind shocks the world with
+15:26 an AI system that beats one of the
+15:28 greatest human masters of the board game
+15:30 Go.
+15:31 Next year, they try using 100 times more
+15:34 computer chips, and instead of teaching
+15:36 this AI system Go with examples, they
+15:38 just let it start playing itself. In 8
+15:40 hours, it is better at the game of Go
+15:42 than any person or program that has ever
+15:44 played. By this time, Ilya is convinced
+15:47 that the path to AGI might be as simple
+15:49 as finding the right neural network
+15:50 design and then scaling it up.
+15:53 And in 2017, 18 months into leading
+15:55 research at OpenAI,
+15:57 he reads a paper from Google that makes
+16:00 him jump out of his chair, run down the
+16:02 hall, and tell his colleagues, "Everyone
+16:04 stop what you're doing. This is it."
+16:07 Over the next 5 [music] years, OpenAI is
+16:09 going to make a series of exponentially
+16:11 larger bets that prove Ilya's conviction
+16:14 right.
+16:16 They train GPT-2 and discover that it
+16:18 has abilities they hadn't specifically
+16:20 trained it for, [music]
+16:21 like being able to translate text into
+16:22 new languages.
+16:24 The text output from GPT-3.5
+16:26 is so human-like that they wrap it
+16:28 [music] in a user-friendly interface and
+16:30 try releasing it as a chatbot.
+16:32 It hits 100 million users in 2 months.
+16:37 By this time, Ilya has developed a
+16:38 slogan.
+16:40 He says it around the office. A couple
+16:41 weeks after the ChatGPT [music] release
+16:43 at the company's holiday party, he gets
+16:45 his colleagues to chant it back to him.
+16:48 Feel the AGI.
+16:50 He wants them to take [music] it
+16:51 seriously.
+16:52 To take seriously that the progress
+16:54 might not stop. That this curve they're
+16:57 riding, a curve that started
+16:58 >> [music]
+16:58 >> way back in 1956 with a few researchers
+17:01 in New Hampshire dreaming about thinking
+17:02 machines,
+17:03 might just keep going up.
+17:05 Soon, AI systems might match human
+17:08 intelligence and then surpass it and
+17:10 then vastly surpass it.
+17:12 And then,
+17:14 the person in control of the technology
+17:16 will have their hands on something
+17:18 unprecedentedly powerful.
+17:20 Something they may not be able to
+17:21 control at all.
+17:25 >> Scientists have been accused of playing
+17:27 God for a while.
+17:29 But,
+17:31 there is a real sense in which we are
+17:33 creating something
+17:35 very different from anything you've
+17:37 created so far.
+17:38 >> At the 2022 retreat,
+17:40 Ilya and his colleagues are hanging
+17:42 around a campfire and he's got this
+17:43 wooden effigy in his hand that he
+17:45 commissioned from a local artist.
+17:47 The effigy, he explains, represents an
+17:49 AI that is pretending to be nice, but is
+17:52 actually been lying to them.
+17:54 Ilya douses it in lighter fluid and sets
+17:57 it on fire.
+17:59 Around the same time, Ilya is starting
+18:01 to get very worried about Sam.
+18:09 Sunday morning, November 19th, 2023.
+18:12 Less than 48 hours since Sam Altman was
+18:14 fired,
+18:15 and he's heading into the office.
+18:17 Interim CEO Mira Murati has invited Sam
+18:20 to come by for the day. So, Sam goes to
+18:21 the front desk, gets a visitor's badge,
+18:24 and because he's Sam, immediately posts
+18:26 a selfie with the caption, "First and
+18:28 last time I wear one of these."
+18:30 Negotiations go on for hour after hour
+18:33 with the board. Journalists are camped
+18:35 out outside the OpenAI offices tracking
+18:37 the steady stream of takeout deliveries.
+18:39 No one involved has slept much in the
+18:41 last 48 hours, but Sam feels good. The
+18:44 board is losing in the court of public
+18:46 opinion. They've definitely lost with
+18:47 the employees, [music]
+18:48 and they're even open, it seems, to
+18:50 bringing him back as CEO.
+18:52 There's haggling going on over who would
+18:54 need to resign, who would make what
+18:55 statements.
+18:56 It really seems like the board is out of
+18:58 cards and about ready to fold.
+19:01 Or are they?
+19:03 See, all week at the board has been
+19:05 putting out feelers to anyone in their
+19:06 network who might be willing to come in
+19:08 as interim CEO.
+19:10 At one point, they reach out to Dario
+19:12 Amodei, the CEO of OpenAI's bitter
+19:14 rival, Anthropic, to ask if he wants to
+19:17 be CEO, maybe even combine the
+19:18 companies.
+19:19 He's not interested.
+19:21 But, Sunday evening, late in the night
+19:24 with hundreds of employees at the office
+19:26 expecting an end to the drama, the board
+19:28 makes a sudden announcement.
+19:30 Murati has been replaced.
+19:33 There's a new CEO.
+19:34 Enter
+19:36 Emmett Shear.
+19:38 Co-founder of Twitch, the
+19:40 website with the videos and the the
+19:42 game, you know the one. Sam is shocked.
+19:45 He feels like the board has been
+19:46 negotiating in bad faith all weekend.
+19:48 OpenAI employees flood out of the
+19:50 building. Sam goes [music] home in
+19:52 disgust.
+19:53 But, Sam Altman being Sam Altman, he
+19:56 already has another move lined up.
+19:59 The previous day, Microsoft CEO Satya
+20:02 Nadella had asked Sam if he wanted to
+20:03 join Microsoft.
+20:05 Now, Sam tells him he's [music] in. At 7
+20:08 minutes before midnight on Sunday,
+20:11 Microsoft CEO Satya Nadella tweets that
+20:14 Sam, along with his number two, Greg
+20:16 Brockman, will be joining Microsoft.
+20:19 Word spreads very quickly through
+20:20 employees' signal chats. Anyone who
+20:22 wants to join them will have a
+20:23 guaranteed job at Microsoft. Now, think
+20:27 about how this lands with the employees.
+20:30 They have been banking on this tender
+20:31 offer that now looks dead in the water.
+20:34 The board has just fired their leader,
+20:36 the guy that all the investors love,
+20:38 who's now been immediately snapped up by
+20:40 a much larger company, which they are
+20:41 now being invited to join.
+20:43 And they still have no idea why this is
+20:46 happening.
+20:47 All they've been given is that one
+20:48 phrase, "Not consistently candid."
+20:52 I think it's time to tell you what that
+20:53 means.
+20:58 A few weeks before the firing, a
+21:00 terrified Ilya Sutskever sends a
+21:02 disappearing email to three of his
+21:03 fellow board members, Tasha McCauley,
+21:06 Helen Toner, and Adam D'Angelo. [music]
+21:08 It contains a 70-page two-part memo. The
+21:12 screenshots inside have been compiled
+21:13 covertly over the course of months.
+21:15 There are Slack messages photographed
+21:17 with personal phones to avoid
+21:18 screenshots on company devices.
+21:21 The first line of the memo reads,
+21:23 >> [music]
+21:23 >> "Sam exhibits a consistent pattern of
+21:25 lying, undermining his exacts, and
+21:27 pitting his exacts against [music] one
+21:29 another." This forms the centerpiece of
+21:31 the case that Ilya Sutskever, the man
+21:33 who spent a decade [music] telling the
+21:34 world that superintelligence is coming,
+21:37 is starting to form against his
+21:38 co-founder and CEO, Sam Altman.
+21:41 Let's go through it. Exhibit A,
+21:44 the lying.
+21:45 Many of those screenshots came from one
+21:48 person, Mira Murati,
+21:50 the board's eventual pick as interim
+21:52 CEO. Back in October, on multiple calls
+21:55 with the board, Murati had explained in
+21:57 detail Altman's toxic leadership style,
+21:59 >> [music]
+21:59 >> a pattern of behavior going back years.
+22:02 If someone resisted his decisions, he
+22:03 would tell them whatever he thought they
+22:05 wanted to hear. If that didn't work,
+22:07 then he would undermine their
+22:08 credibility and turn people against each
+22:10 other. So, this is why the board was so
+22:12 cagey during the firing. They'd been
+22:14 told by outside legal counsel that they
+22:16 couldn't reveal this information without
+22:19 revealing Murati as the source and
+22:21 putting themselves at serious legal
+22:23 risk. Exhibit B, the safety lapses.
+22:26 At a board meeting in December 2022, Sam
+22:30 told the directors that three
+22:31 controversial changes to GPT-4 had all
+22:34 been approved by the company's joint
+22:35 safety review board. Helen Toner asked
+22:38 for documentation.
+22:40 It didn't exist. It turns out only one
+22:42 of the changes had been approved.
+22:44 Around the same time, Microsoft [music]
+22:46 started testing the still unreleased
+22:48 GPT-4 in India without any safety
+22:50 approval.
+22:51 The board found out about this by
+22:53 accident from a conversation in a
+22:55 hallway.
+22:57 Later, Sam sends a Slack message to the
+22:59 company.
+23:00 He says that the company's lawyer
+23:02 decided GPT-4 Turbo also doesn't need
+23:05 joint safety review.
+23:08 Mira Murati checks with the lawyer.
+23:11 He says
+23:12 he never said that.
+23:13 >> On multiple occasions, he gave us
+23:15 inaccurate information about the small
+23:17 number of formal safety processes that
+23:19 the company did have in place.
+23:21 >> It really seems like the man who thought
+23:23 he was building super intelligence
+23:26 was lying to the board about how he was
+23:28 keeping it safe.
+23:30 Exhibit C, the fund.
+23:32 Sam Altman had also told the board and
+23:34 the world that he was an independent
+23:36 director of OpenAI with no financial
+23:38 stake in the company. It turned out that
+23:39 the OpenAI Startup Fund, $175 million of
+23:43 venture capital deployed in OpenAI's
+23:44 name, was personally owned by Sam
+23:47 Altman. It does now seem like this was
+23:49 mostly done to make paperwork easier
+23:51 rather than for Sam's personal financial
+23:53 gain.
+23:54 But it took months for the full
+23:55 situation to be clarified to the board
+23:57 after they raised the issue.
+23:59 Exhibit D, the paper.
+24:02 Helen Toner authors an academic paper
+24:04 buried [music] within it some very mild
+24:06 criticism of OpenAI.
+24:08 Altman is furious.
+24:10 He goes to Sutskever personally, says
+24:12 that Tasha McCauley agrees Helen Toner
+24:15 needs to be removed from the board.
+24:17 McCauley had said no such thing.
+24:20 >> Not trusting the word of of the CEO who
+24:23 is your main conduit to the company,
+24:24 your main source of information about
+24:25 the company, it's just like totally
+24:27 totally impossible.
+24:28 >> It turned out that the board had been
+24:29 deadlocked for months over filling
+24:31 multiple vacancies. Sam wanted his
+24:33 picks. Interviews were on the agenda for
+24:35 the November board meeting just [music]
+24:37 days away.
+24:38 If Sam aligned directors joined the
+24:40 board, then these four would lose their
+24:43 majority and they'd never be able to
+24:45 fire him. Their window was closing.
+24:47 They decided they had to act. As Ilya
+24:50 told one board member at the time,
+24:52 "I don't think Sam is the guy who should
+24:54 have his finger on the button.
+25:00 The early hours of Monday, November
+25:02 20th, 2023. 61 hours since Sam Altman
+25:05 was fired.
+25:06 Around 1:00 a.m., a letter starts to
+25:08 circulate on various signal chats. It's
+25:10 never been totally clear who drafted
+25:12 this letter, but it seems likely that it
+25:14 came from senior executives.
+25:16 Recent evidence suggests the original
+25:18 idea came from Sam himself.
+25:21 Let me read you some of it. It's
+25:22 addressed to the board of directors.
+25:25 The process through which you terminated
+25:27 Sam Altman and removed Greg Brockman
+25:29 from the board has jeopardized all of
+25:31 this work and undermined our mission and
+25:33 company.
+25:34 Your conduct has made it clear you did
+25:36 not have the competence to oversee
+25:38 OpenAI. Despite many requests for
+25:40 specific facts for your allegations, you
+25:42 have never provided any written
+25:44 evidence.
+25:45 You also informed the leadership team
+25:47 that allowing the company to be
+25:48 destroyed, quote, would be consistent
+25:50 with the mission.
+25:52 That mission, if you recall from
+25:54 earlier, being to ensure that AGI
+25:56 benefits all of humanity.
+25:59 The letter demands that OpenAI reinstate
+26:01 both Sam Altman and Greg Brockman.
+26:04 The first signature
+26:06 is Mira Murati's.
+26:08 This is one of those moments that we can
+26:10 only fully appreciate now that we know
+26:11 the full details of why the board fired
+26:14 Sam. Murati is essentially accusing the
+26:16 board of not having evidence when she
+26:19 herself provided many of the screenshots
+26:20 that formed the basis for their case.
+26:23 Of course, no one else knew that at the
+26:25 time. The letter spreads around it
+26:26 quickly, and within a few hours most of
+26:28 OpenAI's employees have signed. Along
+26:31 with the letter, many employees start
+26:32 posting the same phrase on X.
+26:35 OpenAI is nothing without its people.
+26:38 Now, there are a few possible readings
+26:39 for why so many employees signed this
+26:41 letter so quickly. One is that they were
+26:44 genuinely shocked and unhappy about
+26:46 Altman's firing.
+26:47 Another is that they were worried about
+26:48 the value of their shares. For a lot of
+26:50 them, the majority of their net worth.
+26:53 As one employee who chose to remain
+26:54 anonymous told a journalist a few weeks
+26:56 later, Sam Altman is not the best CEO,
+26:59 but millions and millions of dollars and
+27:01 equity are at stake.
+27:04 Another reading backed up by some
+27:06 reporting at the time is that once the
+27:08 letter started to snowball, people felt
+27:10 pressure to jump on the bandwagon,
+27:11 whether for fear of Altman's retribution
+27:13 or simple peer pressure.
+27:14 >> I think there was a lot of like phone
+27:16 banks and like people like getting
+27:18 really organized to try to like really
+27:19 get everyone to sign this thing.
+27:20 >> In the wee hours of Monday morning,
+27:22 another name appears on the growing list
+27:24 of signatures.
+27:26 Ilya Sutskever.
+27:37 There's this great line from season 1 of
+27:39 The Wire.
+27:41 If you come at the king, you best not
+27:43 miss.
+27:45 It's pretty timeless advice, whether
+27:46 you're talking about drug lords or
+27:48 ancient emperors. [music]
+27:50 If you challenge someone extremely
+27:51 powerful,
+27:52 you have to succeed immediately and
+27:54 totally,
+27:55 or you're screwed. Turns out that OpenAI
+27:58 was not the first time Sam Altman had
+27:59 faced this kind [music] of challenge.
+28:02 First, Loopt, Sam Altman's first
+28:04 company.
+28:05 >> Loopt is about connecting with people on
+28:06 the go, which is after all the main
+28:08 reason you have a phone.
+28:09 >> It's a location-sharing app, raises
+28:11 something like 30 million, doesn't
+28:13 really [music] ever take off, sells
+28:15 several years later for 43 million.
+28:17 Fine.
+28:18 But it ends badly.
+28:20 Senior executives twice tried to get Sam
+28:22 fired for deceptive and chaotic
+28:24 behavior. Still, he moves on to his next
+28:26 job, becoming president of Y Combinator
+28:28 age 28.
+28:30 He's really good at this. Incredible
+28:33 fundraiser, brilliant at building
+28:34 relationships. This is where his star
+28:36 really starts to rise in Silicon [music]
+28:37 Valley.
+28:38 But YC's partners and executives grow
+28:42 increasingly frustrated at Sam's
+28:44 distractibility, at the attention that
+28:46 he's paying to his own personal
+28:47 projects, including the newly founded
+28:49 OpenAI, and to his own funds.
+28:51 Eventually, YC's beloved founder Paul
+28:54 Graham and his wife Jessica Livingston
+28:56 had to intervene to get Sam removed.
+28:58 Graham has this incredible quote about
+29:01 Sam, written when Sam was just 23
+29:02 [music] and intended to be
+29:04 complimentary.
+29:06 You could parachute him into an island
+29:07 full of cannibals,
+29:08 >> [music]
+29:08 >> come back in 5 years, and he'd be the
+29:10 king.
+29:11 Murati, Sutskever,
+29:14 the board, they know this is who they're
+29:15 going up against.
+29:16 His experience, his network, his allies
+29:19 in the press. The board knows their only
+29:21 hope is to act quickly and without
+29:23 warning. This is why they couldn't risk
+29:25 getting more senior execs involved, why
+29:27 the firing comes out of the blue, why
+29:29 they couldn't warn Microsoft in advance.
+29:31 But this strategy also ultimately proved
+29:34 their undoing. Within the first day,
+29:36 Murati had seen enough to know that
+29:38 things weren't going to go the board's
+29:39 way.
+29:40 >> [music]
+29:40 >> When I realized that their decision was
+29:43 like potentially catastrophic for the
+29:45 company, I felt like I had to act very
+29:48 quickly.
+29:49 >> In her deposition in the Musk v. Open
+29:51 trial this May,
+29:52 Helen Toner said this about Murati.
+29:55 She was waiting to see which way the
+29:56 wind would blow, and she didn't realize
+29:59 that she was the wind.
+30:01 And as for Ilya Sutskever,
+30:04 he thought he would be greeted as a
+30:05 hero, that he was freeing people from
+30:07 what he saw as Sam Altman's gaslighting.
+30:10 Instead, people were blaming him for
+30:12 destroying the company.
+30:14 On that Sunday night, in the office
+30:16 lobby as employees were streaming out,
+30:19 Anna Brockman, wife of OpenAI's
+30:21 president Greg Brockman, confronts Ilya.
+30:24 They were old friends. Ilya had
+30:26 officiated the Brockmans' wedding.
+30:28 In tears, she pleads with Ilya to change
+30:30 his mind.
+30:33 Ultimately,
+30:35 he blinked.
+30:42 By Tuesday morning, it's all over. More
+30:44 than 700 of OpenAI's 770 employees have
+30:47 signed the letter. With over 90% of the
+30:50 company threatening to walk, the board
+30:52 know they've lost.
+30:54 A deal is reached.
+30:55 Sutskever, Toner, and McCauley are out.
+30:58 Bret Taylor, CEO of Salesforce and
+31:01 someone that McCauley had previously
+31:02 been worried would be too deferential to
+31:04 Sam, and also Larry Summers, former
+31:07 Treasury Secretary, president of
+31:08 Harvard, agree to join the board.
+31:11 D'Angelo stays. He's actually still on
+31:13 the board to this day.
+31:15 By holding out for as long as they did,
+31:17 the board do win a few concessions.
+31:18 [music]
+31:19 Brockman and Altman won't get their
+31:20 board seats back, not right away, and
+31:23 there'll be an investigation by an
+31:24 outside law firm into what happened.
+31:27 But, it's not much, really.
+31:29 At 10:00 p.m. Pacific, the announcement
+31:32 goes out.
+31:33 Sam Altman will return as CEO of OpenAI.
+31:37 There's an impromptu party at the
+31:39 office. Everyone's celebrating. Greg
+31:41 Brockman posts a selfie with the
+31:43 caption, "We are so back."
+31:46 There's a great detail from the
+31:48 reporting.
+31:50 At some point, someone turned on a smoke
+31:52 machine. It set off the fire alarm.
+31:55 Everyone kept partying.
+32:03 About 2 and 1/2 years have passed since
+32:05 that weekend in November. Many experts
+32:07 now think that AGI could arrive in as
+32:10 little as 5 years. Even skeptics these
+32:12 days rarely give it more than 20.
+32:15 Earlier this year, Claude 3 Opus,
+32:17 an AI system capable of finding
+32:19 vulnerabilities in software that experts
+32:21 had missed for years or even decades.
+32:23 Enough of a jump up in capabilities that
+32:25 its makers decided not to release it to
+32:27 the general [music] public. Over the
+32:29 last couple of years, a lot of changes
+32:30 have happened at OpenAI as well.
+32:32 Remember that structure, nonprofit on
+32:34 top, profit caps for investors, the
+32:37 board in total control, keeping to the
+32:39 mission, the benefit of humanity. In
+32:41 December 2024, OpenAI tried to
+32:44 restructure the company.
+32:45 Under the new plan, the nonprofit would
+32:47 essentially lose control.
+32:49 The plan didn't go through. After months
+32:51 of pressure, OpenAI backed down.
+32:55 Sort of.
+32:56 Under the new new structure, the
+32:57 nonprofit is on top in name.
+33:00 There's a safety committee that in
+33:01 theory could halt model releases, and it
+33:03 owns about a quarter of the equity in
+33:05 the company.
+33:06 But, the profit caps that were supposed
+33:08 to keep OpenAI focused on its mission
+33:10 and not on investors,
+33:12 those are gone.
+33:13 And in practice, the board's authority
+33:15 is massively weakened.
+33:18 Now, it should be said that OpenAI still
+33:21 gets its models tested by third-party
+33:23 safety evaluators, and they're doing
+33:25 meaningfully important safety work on
+33:27 their current models.
+33:29 But, what's left is functionally much
+33:31 closer to a normal tech company.
+33:34 A normal tech company that was built on
+33:36 purpose by people who thought they might
+33:38 be making a civilization-ending
+33:39 technology not to be a normal tech
+33:42 company.
+33:44 Sam Altman built that structure. He
+33:46 talked publicly about how it was crucial
+33:49 that the board could fire him, how that
+33:50 was part of why OpenAI was responsible.
+33:53 He recruited some of the world's top AI
+33:55 researchers under [music] the idea that
+33:57 AGI should not be built by a
+33:59 mega-corporation.
+34:00 And then,
+34:01 when the mechanism was actually
+34:03 triggered, when the board actually did
+34:04 the thing it was designed to do, within
+34:06 72 hours,
+34:08 Sam had announced plans to go build AGI
+34:10 at Microsoft [music]
+34:11 and refused to come back until two of
+34:13 the board members who had challenged him
+34:14 were gone.
+34:16 There are fewer people left at OpenAI
+34:17 who might challenge Sam these days.
+34:20 Within a year of his return, both Ilya
+34:22 Sutskever and Mira Murati had left. A
+34:24 lot of the senior people at OpenAI who
+34:26 were most worried about AI safety have
+34:28 left, too.
+34:29 Just a few months before he was fired,
+34:31 Sam signed a one-sentence open letter
+34:34 that reads,
+34:35 "Mitigating the risk of extinction from
+34:37 AI should be a global priority alongside
+34:40 other societal scale risks such as
+34:42 pandemics and nuclear war."
+34:44 Since the board drama, which is referred
+34:46 to internally as the blip,
+34:48 Sam talks more about a gentle
+34:50 singularity.
+34:51 >> Someday, we will make something that
+34:53 qualifies as an AGI by whatever fuzzy
+34:55 definition you want. The world will have
+34:56 a 2-week freakout, and then people will
+34:58 go on with their lives.
+34:59 >> He recently told the New Yorker, "My
+35:01 vibes don't really match a lot of the
+35:03 traditional AI safety stuff."
+35:06 So,
+35:07 2 and 1/2 years on,
+35:09 AI is more powerful than it was in 2023
+35:12 by a lot.
+35:13 OpenAI is more powerful, too. It is now
+35:16 worth $852 billion.
+35:19 The people that tried to put the brakes
+35:21 on one of the most powerful AI companies
+35:23 in the world are gone.
+35:25 The structure that was supposed to act
+35:27 as a brake is functionally gone, too.
+35:30 So,
+35:31 where does that leave us?
+35:37 I've actually met Sam Altman.
+35:39 In 2022, I was volunteering at a
+35:41 conference. I was the speaker liaison,
+35:43 and he was one of the speakers. So, I
+35:46 showed him to the green room, gave him a
+35:48 bottle of water, made small talk.
+35:51 I get it.
+35:53 I get why so many talented people have
+35:55 wanted to work with him over the years.
+35:57 I get why he's so successful.
+35:59 You talk to the guy, and
+36:01 he makes you feel like the most
+36:02 interesting person in the world.
+36:05 I think Sam Altman is not that
+36:07 mysterious.
+36:08 I think he's a guy who's really good at
+36:10 finding winning moves on whatever game
+36:12 board he happens to find himself on.
+36:15 I think he'll continue to do that.
+36:17 And I think it's
+36:18 sad and more than a little scary that
+36:21 the moves he makes might matter so much
+36:24 to the development of one of the most
+36:25 powerful and dangerous technologies in
+36:27 history.
+36:28 Sam is not the only one playing this
+36:31 game. We're doing things our way
+36:32 >> [music]
+36:33 >> and they're doing things their way.
+36:35 We'll see who wins in the market and
+36:36 we'll see who wins in the court of
+36:38 public opinion.
+36:39 >> It's unbelievably competitive, that
+36:40 whole AI space.
+36:42 >> They all want to win and they all want
+36:43 to beat each other and they all want to
+36:44 go fast.
+36:45 >> Right now, the future of AI basically
+36:47 depends on the moral compass of like
+36:49 five people.
+36:50 That's the situation we're in. Most
+36:52 powerful technology that humanity might
+36:54 ever build and how it goes depends on
+36:56 how a few CEOs are feeling.
+36:58 That is not a stable situation. I don't
+37:01 want to live in that world and I'm
+37:02 pretty sure that you don't, either.
+37:04 AI is going to change all of our lives.
+37:07 I think it's going to change our entire
+37:08 civilization.
+37:10 And we should all have a seat at the
+37:12 table where [music] how that goes gets
+37:14 decided.
+37:15 Because I think what this story really
+37:17 tells us is that self-regulation
+37:20 is not going to work.
+37:22 The OpenAI nonprofit structure was a
+37:24 close to best-case scenario of corporate
+37:26 self-regulation of AI.
+37:29 You had a nonprofit board of volunteers
+37:32 explicitly committed to humanity over
+37:35 profit with the power to fire the CEO.
+37:38 And it was defeated in 72 hours by
+37:41 market pressures, employee revolt, and
+37:43 one very powerful man's network.
+37:45 >> Although the board had the
+37:47 legal
+37:48 ability to fire me, in practice it
+37:50 didn't quite work. And that is its own
+37:53 kind of governance failure. It does make
+37:56 it harder for me to like look you in the
+37:57 eye and say, "Hey, the board can just
+37:58 fire me."
+37:59 >> So,
+38:01 here's the deal.
+38:02 We are not going to fix this from our
+38:03 bedrooms, but none of this is set in
+38:05 stone. People are realizing that these
+38:07 AGI companies are building something
+38:09 extraordinarily powerful and
+38:11 consequential and risky. I'm talking
+38:13 about people like Bernie Sanders and
+38:14 Mitt Romney and the freaking Pope.
+38:17 When OpenAI tried to restructure into a
+38:18 normal tech company without nonprofit
+38:20 governance,
+38:21 former OpenAI employees, Nobel
+38:23 laureates, and elected officials stepped
+38:25 up and made them back down.
+38:28 When OpenAI and other big tech companies
+38:30 lobbied to ban US states [music] from
+38:32 passing laws regulating AI,
+38:34 non-profits went to battle and got the
+38:36 Senate to vote 99 to 1 against the US
+38:40 cannot agree on anything Senate.
+38:42 >> [music]
+38:42 >> And then there's the super pack funded
+38:44 by Greg Brockman, OpenAI's president,
+38:46 with advice from our friend Chris
+38:47 punch-them-in-the-mouth Lehane.
+38:49 As more and more of its bad behavior was
+38:52 exposed, individual researchers inside
+38:54 of OpenAI demanded answers.
+38:57 OpenAI ended up distancing themselves.
+38:59 You really do have more leverage, more
+39:01 opportunities to influence how things go
+39:04 than you think.
+39:06 And more now than you may have in a few
+39:07 years.
+39:08 We've put a link in the description of
+39:10 this video. You can't miss it. If you're
+39:11 a US citizen, they'll tell you how to
+39:13 contact your representative in less than
+39:15 a minute. If you work at one of these AI
+39:17 companies, then please
+39:20 hold your leaders accountable. Ask them
+39:21 questions. We'd love to help you think
+39:23 about how to do that.
+39:24 If you work in policy, you can sign up
+39:26 for one-on-one advising with us. We
+39:27 would love to help you figure out how to
+39:29 pivot into AI governance and regulation.
+39:31 >> We're in a pivotal moment right now.
+39:33 I've got a 2-year-old. You know, I want
+39:35 to be able to tell him when he's grown
+39:36 up what I did and have him be proud of
+39:37 me. Just like make the jump. Redirect
+39:39 all of your focus onto trying to make
+39:42 your career something that you'll be
+39:43 proud of.
+39:44 >> And let's do it. Let's make sure that
+39:46 Sam Altman is not the only person who
+39:48 decides our future.
+39:53 >> [music]
+39:58 [music]

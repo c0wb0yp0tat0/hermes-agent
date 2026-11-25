@@ -1,0 +1,22 @@
+# Phase 3 — Essay Brief, Chunk 1 of 5: Working Title, Premise, Thesis
+
+**Source of truth:** `phase1-registry.md` (status tags), `phase2-synthesis.md`, `worker-C-article-plan.md`, `source-medium-article.md`. **Rule applied:** only ✅ VERIFIED and ⚠️ VERIFIED WITH CAVEAT registry rows are load-bearing; ❌ items are excluded; ⏳ items appear only as flagged placeholders ("pending verification"), never as facts.
+
+## 1. Working title + premise
+
+**Working title (default):** "The Verification Is Missing You" — the sequel's noun-verb echo of the published "The News Is Missing You"; keeps the series' visible continuity.
+**Title option B:** "They Didn't Break In; They Got Hired" — the strongest single line in the new material; carries the Act I twist. Author's call (open decision D4, Chunk 4).
+
+**Premise.** The published essay established one thesis with one mechanism: the reader is under-informed not by accident but by format — single-story, brand-shaped, image-driven, allergic to counting and to framing shifts. The sequel keeps the thesis and moves the mechanism one layer down: from the format of coverage to the layer of checking itself. The verified 2026 record shows verification failing across domains at once — hiring (an FBI-confirmed North Korean remote IT worker inside a U.S. federal agency, hired rather than hacked; the ITRC malicious-insider surge), goods (FAO's ~20% seafood mislabeling; two concurrent grower-traceable produce outbreaks; a 420-recall audit count), systems (a 7× capacity-price spike; data centers sited in drought zones; an AI literature-integrity signal at 90%), and science (an interim vaccine readout with survival data pending; a 509,926-person analysis whose caveats the headlines drop) — and each failure is emitted in an atomizing format that hides the pattern. The essay's stance: the checks are the new firewall, and they are failing in ways the news reports as one-offs.
+
+## 2. The essay's thesis, stated defensibly (Phase 2 chunk 3 applied)
+
+Three-part thesis; each part carries its own confidence, and the essay must present them at different strengths.
+
+**Part 1 — VERIFIED, HIGH confidence (lead with this).** Verification failures are real, recurring, and cross-domain in 2026. Load-bearing (all registry rows): ITRC 21 malicious-insider events in H1 2026 vs 3 in all of 2025, 7× ✅; FBI-confirmed NK remote IT worker inside a U.S. federal agency ✅; FBI IC3 22,364 AI-related complaints / ~$893M losses, first AI section in 25-year history ✅; 1,803 breaches / 471M victim notices H1 2026 ✅; FAO ~20% global seafood mislabeled, up to 30% at restaurants ✅; concurrent 431-case and 55-case produce outbreaks ✅; PJM capacity price $28.92 → $329.17/MW-day ✅; 517 of 809 planned data centers in drought areas, ~73B gal/yr by 2028 ✅; IEA ~60% mining / 91% refined rare-earth output ✅; average U.S. dam 64 years old ✅; Nature's "90% of biomedical papers show signs of AI help" ⚠️ (definitional caveat, Medium confidence).
+
+**Part 2 — MEDIUM confidence, documented, not asserted.** The failures are emitted in formats that atomize them: outbreaks as scattered recall/brand notices (A1/A2), a device-maker cyber incident as a premarket blip (A7), caveat-dropping headlines (A3/A8, where the registry verified the dropped caveats: 1.7% vaccinated group, GSK funding, OS pending). The registry documents this for at least four items; the essay may state it as documented.
+
+**Part 3 — CONDITIONAL; flag it, do not inherit it.** "The news misses it" has never been measured. Nothing in the registry quantifies coverage — no story counts, airtime, or severity-vs-coverage comparison; the compilation selected items already judged under-reported, which is selection by hypothesis, not a test. **The essay must state this explicitly in the thesis landing**: the failures are verified; the coverage claim is the part needing fresh measurement (a coverage audit). The closing must not present "the news misses it" as established fact. This is the single most important integrity decision in the brief, taken directly from Phase 2 chunk 3's bottom line: HIGH confidence on the failures, MEDIUM on the atomization, CONDITIONAL on the coverage claim.
+
+**Exclusions locked in (Phase 1 findings):** "18 of 20 Fortune 500" ❌ NOT VERIFIED — appears nowhere; PIRG "40M items / 12 deaths" ❌ discrepancy — appears nowhere (the 420-recall count is usable with its caveat). "+44% residential bills" and "$165.2B / ~18% high-hazard dams" ⚠️ secondary-carried — attributed as such or omitted.

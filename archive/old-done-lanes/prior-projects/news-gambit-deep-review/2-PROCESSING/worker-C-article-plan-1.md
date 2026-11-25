@@ -1,0 +1,14 @@
+# Worker C — Article Plan, Chunk 1: Concept
+
+## Working title
+**"The Verification Is Missing You"** (provisional; echo of the published title's noun-verb shape). Strong alternative if the author prefers the material's own line: **"They Didn't Break In; They Got Hired."** Both are on the table; the first resembles the published essay on sight, the second carries the strongest single quote in the new material.
+
+## Premise (one paragraph)
+
+The published essay, *The News Is Missing You*, established one thesis with one mechanism: the reader is not under-informed by accident but by format — the news is single-story, brand-shaped, image-driven, allergic to counting and to framing shifts, so patterns only become visible when you hold seven recalls in one hand and read the primary sources yourself. That essay's ending line is the standing offer: "Read the primary sources. The floor holds."
+
+The next piece is a **sequel that deepens on a new axis**. It keeps the thesis — the pattern is the story, the news misses it — but moves the mechanism one layer down. The new compilation's own cross-cutting synthesis states it directly: in 2026, the weakest point is "no longer the machine — it's the human and institutional layer that verifies, secures, and allocates" (Part 1 synthesis). The published essay showed the news missing patterns in *coverage*. The sequel shows the patterns being missed in *the systems themselves*: hiring pipelines that let attackers walk in with legitimate logins (Part 1 #1–2), food that arrives mislabeled and misverified (Part 1 #7–8; Part 2 A1–A2), recalls that are only visible as patterns when counted (Part 1 #12; and the published essay's own "Seven Recalls Are a Pattern" now extended by the 2026 recall wave), science publishing whose integrity signal is a statistical fact the literature itself cannot police (Part 1 #13 + Part 2 B13 update), and a healthcare sector being hit by a wave of attacks reported as stock blips (Part 2 A7).
+
+The unifying claim: **the verification layer is the new attack surface, and the news reports each failure as a one-off, so the collapse of checking never runs as a story.** The essay's closing move resolves it: the reader is not under-informed by accident, and 2026's systems are not failing by accident either — they are failing at the check, and the check is invisible precisely because it has no photograph. The news is missing you; this time, so is the verification underneath it. Read the primary sources. The floor holds — until the checks stop holding it.
+
+Positioning note: this is a deepening, not a repeat. The published essay's water-bankruptcy, deep-seabed, and astrobiology material is **spent** — it must not be recycled (see Chunk 3 for cuts). The sequel's fresh axis gives the author new primary-source ground while reusing the exact craft: facts first, then misconstrue.
