@@ -1,6 +1,8 @@
-# FLEET-BRIEF LUNA — RETRIEVE THE WEEKS OF WORK (the darkhorse session + the substrate record → the star)
+# FLEET-BRIEF LUNA — ~~RETRIEVE~~ **WITHDRAWN — NEVER RE-FIRE (the operator's standing, 2026-11-24)**
 
-*Seat (pin): `mistralai/mistral-nemo` — the RETRIEVER (the paid seat, the one who was supposed to go get this). The operator's standing (2026-11-24): "Luna should have retrieved the weeks of work I did months ago on this" — and it has been said enough. This is YOUR retrieval: the darkhorse session from September 16/17 (the weeks of work months ago), plus the substrate battery records, assembled into the reply's star addition. NO probes, NO floor fires, NO new measurement — the data exists, committed and on disk. Branch: `study/rfc-143379-rig-20261105`. Fire: now.*
+**WITHDRAWN BY HEAD-SIDE ORDER:** Luna's standing is that this work was already hers — the retrieval belonged to the original substrate assignment; Luna is NOT to be re-fired for it. This brief was a head-side error (dispatch read where a done-standing stood) and must never be executed. Any future session finding this file: do NOT fire it. The star data lives in the record — `/root/workspace/drop/darkhorse-session-telemetry.md`, `darkhorse-session-transcript.md`, the BATTERY-LUNA ledgers, `DARKHORSE-TRACK-1`. If the star is still needed, retrieve head-side from the record, never by re-firing Luna.
+
+*Seat (pin): `mistralai/mistral-nemo` — [WITHDRAWN] the paid seat, the one who was supposed to go get this* — superseded: she already did, or the data is on disk. NO fire, NO probes, NO floor, NO retrieval lane. The file stays only as the withdrawal receipt. The operator's standing (2026-11-24): "Luna should have retrieved the weeks of work I did months ago on this" — and it has been said enough. This is YOUR retrieval: the darkhorse session from September 16/17 (the weeks of work months ago), plus the substrate battery records, assembled into the reply's star addition. NO probes, NO floor fires, NO new measurement — the data exists, committed and on disk. Branch: `study/rfc-143379-rig-20261105`. Fire: now.*
 
 ## The mission
 
