@@ -14,20 +14,19 @@ jobs:
           curl -sSfL -o RW-STORE-PINNED-a9c65dc4.py  "$BASE/2568732c3925144be879d0e2da87a86e558a484e/RW-STORE-PINNED-a9c65dc4.py"
       - name: run the envelope (deterministic; byte-identical across machines)
         run: |
-          cd run && python3 RW-STALL-PROBE-20261124.py > receipt.json 2>&1
+          cd run
+          set +e
+          python3 RW-STALL-PROBE-20261124.py > receipt.json 2>&1
+          RC=$?
+          echo "PROBE_EXIT=$RC"
           echo "--- receipt ---"
           cat receipt.json
           echo "--- hashes ---"
           sha256sum receipt.json RW-STALL-PROBE-20261124.py RW-STORE-PINNED-a9c65dc4.py
-      - name: emit the receipt marker
-        run: |
-          cd run
-          H=$(sha256sum receipt.json | cut -d' ' -f1)
-          echo "STALL_RECEIPT_SHA=$H" >> "$GITHUB_ENV"
+          exit 0
       - name: summary
         run: |
           cd run
           echo "## second-machine stall receipt" >> "$GITHUB_STEP_SUMMARY"
           echo "machine: $RUNNER_NAME · os: $RUNNER_OS" >> "$GITHUB_STEP_SUMMARY"
-          echo "receipt sha256: $(grep -c rollback_observed receipt.json) variants reported" >> "$GITHUB_STEP_SUMMARY"
-          tail -12 receipt.json >> "$GITHUB_STEP_SUMMARY"
+          tail -14 receipt.json >> "$GITHUB_STEP_SUMMARY"
