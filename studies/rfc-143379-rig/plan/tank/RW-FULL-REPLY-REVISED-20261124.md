@@ -40,4 +40,6 @@ A finding from the same night, no blame. It took twenty minutes for the fresh se
 
 If the pause point should move once you look at it, I'm glad to hear it; a question back is welcome, but the answer above is the decision, not a shrug.
 
+For the thread's wider shape: this arm is the read-path's own nerve, the seam the network here has been restoring since the #116673 read landed — the wall's side of this same week sits on the earlier row (7141681989), and your receipts and ours now rest on the same boundary. The seam's full set, the acceptance rows, and the ledger all move with the reply above; nothing in this row retires FB-2 or the redaction pass. The thread's next turn is yours.
+
 *Prepared with Hermes and Nemo, reviewed by c0wb0yp0tat0 before posting.*
