@@ -35,7 +35,7 @@ Section-wise fate summary:
 - inventory -> IN (as the reply's structure)
 - receipts -> IN
 - compose notes -> IN
--audit checks -> IN
+- audit checks -> IN
 - sign-off -> IN
 
 ## Findings (severity + citation + suggested fix)
