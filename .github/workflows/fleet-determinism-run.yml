@@ -1,0 +1,41 @@
+name: fleet-determinism-run
+on:
+  workflow_dispatch:
+
+jobs:
+  kit-determinism:
+    strategy:
+      matrix:
+        include:
+          - labels: [self-hosted, Linux, X64]
+          - labels: [self-hosted, Windows]
+    runs-on: ${{ matrix.labels }}
+    steps:
+      - name: fetch the phase-1 kit (from the gist where the pilot gets it)
+        run: |
+          mkdir -p kit && cd kit
+          BASE=https://gist.githubusercontent.com/c0wb0yp0tat0/4b594abbec93a81aa4545b3834d782d6/raw
+          curl -sSfL -o stall_probe.py "$BASE/PILOTKIT-stall_probe.py"
+          curl -sSfL -o memory_tool_store.py "$BASE/PILOTKIT-memory_tool_store.py"
+          curl -sSfL -o README.md "$BASE/PILOTKIT-README.md"
+        shell: bash
+      - name: run the phase-1 envelope
+        run: |
+          cd kit
+          python3 stall_probe.py > receipt.json 2>&1
+          echo "--- envelope ---"
+          python3 - <<'PY'
+          import json,sys
+          r=json.load(open('receipt.json'))
+          for k in ['as-at-pin','lock-removed','cache-write-restored','both-removed']:
+              print(f'{k}: {"RED" if r[k].get("rollback_observed") else "GREEN"}')
+          PY
+          echo "RECEIPT_SHA=$(sha256sum receipt.json | cut -d' ' -f1)" >> "$GITHUB_ENV"
+        shell: bash
+      - name: emit the fleet receipt
+        run: |
+          cd kit
+          echo "## fleet determinism run" >> "$GITHUB_STEP_SUMMARY"
+          echo "machine: $RUNNER_NAME · os: $RUNNER_OS · arch: $RUNNER_ARCH" >> "$GITHUB_STEP_SUMMARY"
+          echo "receipt sha256: $RECEIPT_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "expected (the pilot's reference): 3ff6aee45b16d45b6d8db1084381c6447f549fd01ab72da11c4aedcb5071fba9" >> "$GITHUB_STEP_SUMMARY"
