@@ -11,28 +11,15 @@ jobs:
           - labels: [self-hosted, Windows]
     runs-on: ${{ matrix.labels }}
     steps:
-      - name: fetch the phase-1 kit (from the gist where the pilot gets it; python3-only, platform-agnostic)
-        run: |
-          python3 - <<'PY'
-          import os, urllib.request
-          os.makedirs('kit', exist_ok=True)
-          BASE='https://gist.githubusercontent.com/c0wb0yp0tat0/4b594abbec93a81aa4545b3834d782d6/raw'
-          for fn in ['PILOTKIT-stall_probe.py','PILOTKIT-memory_tool_store.py','PILOTKIT-README.md']:
-              urllib.request.urlretrieve(f'{BASE}/{fn}', os.path.join('kit', fn.replace('PILOTKIT-','')))
-          PY
+      - name: fetch the phase-1 kit (from the gist where the pilot gets it; one-liner, both shells)
+        run: python3 -c "import os,urllib.request; os.makedirs('kit',exist_ok=True); [urllib.request.urlretrieve('https://gist.githubusercontent.com/c0wb0yp0tat0/4b594abbec93a81aa4545b3834d782d6/raw/'+f, os.path.join('kit', f.replace('PILOTKIT-',''))) for f in ['PILOTKIT-stall_probe.py','PILOTKIT-memory_tool_store.py','PILOTKIT-README.md']]"
       - name: run the phase-1 envelope
         run: |
           cd kit
           python3 stall_probe.py > receipt.json 2>&1
-          python3 - <<'PY'
-          import json, hashlib, os
-          r=json.load(open('receipt.json'))
-          for k in ['as-at-pin','lock-removed','cache-write-restored','both-removed']:
-              print(f'{k}: {"RED" if r[k].get("rollback_observed") else "GREEN"}')
-          sha=hashlib.sha256(open('receipt.json','rb').read()).hexdigest()
-          with open(os.environ['GITHUB_ENV'], 'a') as ge:
-              ge.write(f'RECEIPT_SHA={sha}\n')
-          PY
+          python3 -c "import json; r=json.load(open('receipt.json')); [print(f'{k}: ' + ('RED' if r[k].get('rollback_observed') else 'GREEN')) for k in ['as-at-pin','lock-removed','cache-write-restored','both-removed']]
+          python3 -c "import hashlib,os; open(os.environ['GITHUB_ENV'],'a').write('RECEIPT_SHA='+hashlib.sha256(open('receipt.json','rb').read()).hexdigest()+chr(10))"
+
       - name: emit the fleet receipt
         run: |
           cd kit
