@@ -1,0 +1,25 @@
+[round 0] MULTI-CALL TRIMMED to the first call (5 requested) — the transport's all-or-nothing class (G7)
+[round 0] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground/OPERATOR-STEER-20261126.md"}
+[read-substrate] OPERATOR-STEER-20261126.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 1] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground/THREAD-CONTEXT.md"}
+[read-substrate] THREAD-CONTEXT.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 2] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground/REPLY-V3.md"}
+[read-substrate] REPLY-V3.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 3] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground/CHILD-SEPARATED.md"}
+[read-substrate] CHILD-SEPARATED.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 4] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground/USER.md"}
+[round 5] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/solar-ground"}
+[round 6] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig"}
+[round 6] READ-GATED (the write-window)
+[round 7] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank"}
+[round 7] READ-GATED (the write-window)
+[round 8] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan"}
+[round 8] READ-GATED (the write-window)
+[round 9] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig"}
+[round 9] READ-GATED (the write-window)
+[round 10] CALL write_file {"content": "# SOLAR — READ-GAP-SHIFT-20261126 (revision proposal)\n\n## VERDICT\nREWRITE-3OLTAN — the reply is over-built (maxed out rather than max add), the 3oltan-seo move rests on a premise the o
+[scribe-write] SOLAR-READ-GAP-SHIFT-20261126.md: WITNESS-ROW appended
+[round 11] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add SOLAR-READ-GAP-SHIFT-20261126.md && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.nor
+[round 12] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add SOLAR-READ-GAP-SHIFT-20261126.md && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.nor
+[round 13] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && ls -la && cat SOLAR-READ-GAP-SHIFT-20261126.log | head -20"}
+[round 14] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' commit -q -m 
