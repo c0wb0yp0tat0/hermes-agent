@@ -19,3 +19,26 @@ Let me list the directory first and
 [round 5] REASONING: Interesting - there's a gate. Let me read the FINAL-CHILD file too before writing. Actually, the read tools are gated now. Wait — the error says "the write-window is open (the artifact's due within 10
 [round 5] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md"}
 [round 5] READ-GATED (the write-window)
+[round 6] ASSISTANT: The read tools have gated. I have the substrate, draft, and forensics; I still need the child file and storm-harvest to complete the central verification. Per the gate, I'll write the artifact now to unlock reads, then refine with the child/storm verification and commit.
+[round 6] REASONING: The read tools are now gated. I need to write the finding NOW. But I still haven't read the FINAL-CHILD file or the STORM-HARVEST file. Let me think about what I have.
+
+Actually, let me reconsider. I 
+[round 6] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-SUGGESTIONS-20261127.md", "content": "# HY3 — TWIN-SANITY, ROUND 3 (final preview to kvnloo)\n\n*Cold read
+[scribe-write] HY3-SUGGESTIONS-20261127.md: WITNESS-ROW appended
+[round 7] ASSISTANT: The artifact exists. Now let me read the two remaining files to complete the central verification.
+[round 7] REASONING: Now let me read the FINAL-CHILD and STORM-HARVEST files to complete the verification.
+[round 7] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md"}
+[read-substrate] FINAL-CHILD-20261126.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 8] ASSISTANT: The child file confirms the core promise. Now let me read the storm-harvest file for the errno citations.
+[round 8] REASONING: Now I have the FINAL-CHILD. Let me verify the draft's promises against it:
+
+Draft claim: "the child now says it in those words." / "Both are corrected in the child: the fix bullet now names the struct
+[round 8] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/STORM-HARVEST-1-LOCK-FIDELITY-20261127.md"}
+[read-substrate] STORM-HARVEST-1-LOCK-FIDELITY-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 9] ASSISTANT: All five files are now read. The central verification is complete. Let me rewrite the artifact with the full, verified findings.
+[round 9] REASONING: Now I have all five files read. Let me complete my verification.
+
+### STORM-HARVEST check:
+- The child's fix bullet says: "contention errnos: EACCES, EAGAIN, EWOULDBLOCK — per the lock-fidelity harves
+[round 9] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-SUGGESTIONS-20261127.md", "content": "# HY3 — TWIN-SANITY, ROUND 3 (final preview to kvnloo)\n\n*Cold read
+[scribe-write] HY3-SUGGESTIONS-20261127.md: WITNESS-ROW appended

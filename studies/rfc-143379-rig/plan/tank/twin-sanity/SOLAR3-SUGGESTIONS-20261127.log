@@ -16,3 +16,26 @@
 [round 7] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/SOLAR3-SUGGESTIONS-20261127.md", "content": "# HY3 — POST-READY-WITH-NOTES (cold-eye final gate)\n\nRev 2 (sol
 [scribe-write] SOLAR3-SUGGESTIONS-20261127.md: WITNESS-ROW appended
 [round 8] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' c
+[round 9] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity && git status --short && git log --oneline -1"}
+[round 10] ASSISTANT: Artifact written and committed. Here is the deliverable in the required one-line summary form:
+
+**Finding (one line):** POST-READY-WITH-NOTES — the reply's spec (stateless read + structural flock check), the kvnloo rows (1,031/0, 6,127/0), the parked anchor-first leg, and the 100/100 structural run verify against the substrate; the off-by-one claims are the note: the "we ran it ourselves" numbers 
+[round 10] content-only (no tool calls, artifact absent) — continuing
+[round 11] ASSISTANT: The artifact is written and committed locally (`e94e037a8f0`, twin-sanity: hy3 cold-eye final gate). Here is the deliverable in the requested one-line form:
+
+**Finding (one line):** POST-READY-WITH-NOTES — the reply's spec (stateless read + structural flock check), the kvnloo rows (1,031/0, 6,127/0), the parked anchor-first leg, and the 100/100 structural run verify against the substrate, with the
+[round 11] content-only (no tool calls, artifact absent) — continuing
+[round 12] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity"}
+[round 13] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md"}
+[read-substrate] FINAL-CHILD-20261126.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[scribe] cell rig-solar3-suggestions-20261127: byte-identical=True
+[door] placeholder-scan: clean
+[fold-step] On branch study/rfc-143379-rig-20261105
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   studies/rfc-143379-rig/plan/tank/twin-sanity/SOLAR3-SUGGESTIONS-20261127.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ARTIFACT: MISSING (sentinel: True )
+GIT: e94e037a8f0 twin-sanity: hy3 cold-eye final gate (SOLAR3 Sugg.)

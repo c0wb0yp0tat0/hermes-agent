@@ -2,7 +2,7 @@
 
 You're right that the child still said it the old way. Its fix bullet claimed "fails when the lock is removed" — the test you showed can't exist — and its envelope section's "only the lock can order the writer" described a cache-writing reader the child doesn't ship. Both are corrected in the child: the fix bullet now names the structural flock check, and the envelope's bar is the stateless property, with your rows as its receipt — real fcntl, 1,031 reads, 0 off-prefix; lock nulled, 6,127 reads, 0 off-prefix.
 
-And we ran the structural check ourselves while this reply was being sanity-checked — the kit's store at `a9c65dc4`, real fcntl: a non-blocking flock taken while the read held the lock blocked 100/100 in the held-open arm; the unheld control acquired. In the racing read/write loop (2,108 reads, 2,140 writes, 18,766 probes), 15,724 blocked, the balance a measured release-window artifact. The probe is in the kit, runnable cold.
+And we ran the structural check ourselves while this reply was being sanity-checked — the kit's store at `a9c65dc4`, real fcntl: a non-blocking flock taken while the read held the lock blocked 100/100 in the held-open arm; the unheld control acquired. In the racing read/write loop (2,108 reads, 2,140 writes, 18,766 probes), 15,724 blocked, the balance a measured release-window artifact. The probe's own first pass measured nothing — its stub had disabled the lock; the control arm caught it, which is the point of the control. The probe and its receipt are in the kit, runnable cold.
 
 On shape (2): the lock stays — as our own judgment, not the substrate's. The rename is the property that makes the single file whole; the lock is the ordering discipline the store advertises on the write path (the two-writer rule, main's own). Shipping the read without it would make the read's safety someone else's responsibility. Keeping the same `_file_lock` also preserves the discipline the anchored read will later need to extend, not reuse as-is — your row 2 is why.
 
@@ -10,4 +10,4 @@ On the anchor-first gap: agreed, it parks with the substrate. #141876 has no `ch
 
 On "is there a shape you're missing": for the child's single-file read, your two clean ways cover it and (1) is ours; your anchor-first row is a third shape — for the combined store — which is why it's parked, not dismissed. If you see another, name it.
 
-And we were wrong to write that bullet; here's its replacement.
+And we were wrong to write that bullet; the lines above are its replacement.
