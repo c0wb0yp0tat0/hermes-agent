@@ -1,0 +1,18 @@
+[round 0] MULTI-CALL TRIMMED to the first call (5 requested) — the transport's all-or-nothing class (G7)
+[round 0] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/KVNLOO-COMMENT-7210367328.md"}
+[read-substrate] KVNLOO-COMMENT-7210367328.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 1] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/DRAFT-REPLY-KVNLOO-20261127.md"}
+[read-substrate] DRAFT-REPLY-KVNLOO-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 2] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FIVE-WHYS-PROBE-SHAPE-20261127.md"}
+[read-substrate] FIVE-WHYS-PROBE-SHAPE-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 3] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/STORM-HARVEST-1-LOCK-FIDELITY-20261127.md"}
+[read-substrate] STORM-HARVEST-1-LOCK-FIDELITY-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 4] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md"}
+[round 4] READ-GATED (the write-window)
+[round 5] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity"}
+[round 5] READ-GATED (the write-window)
+[round 6] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md"}
+[round 6] READ-GATED (the write-window)
+[round 7] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/SOLAR3-SUGGESTIONS-20261127.md", "content": "# HY3 — POST-READY-WITH-NOTES (cold-eye final gate)\n\nRev 2 (sol
+[scribe-write] SOLAR3-SUGGESTIONS-20261127.md: WITNESS-ROW appended
+[round 8] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' c
