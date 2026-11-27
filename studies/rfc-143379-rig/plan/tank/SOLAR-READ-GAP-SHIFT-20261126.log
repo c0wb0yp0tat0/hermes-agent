@@ -23,3 +23,8 @@
 [round 12] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add SOLAR-READ-GAP-SHIFT-20261126.md && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.nor
 [round 13] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && ls -la && cat SOLAR-READ-GAP-SHIFT-20261126.log | head -20"}
 [round 14] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' commit -q -m 
+[round 15] ASSISTANT: The artifact landed and the pair's lane committed it locally (sha `2f4b526`). Two reads before the pair's reply:
+
+- The draft (`/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/SOLAR-READ-GAP-SHIFT-20261126.md`) answers all four of the operator's questions: (1) overkill pass — six quoted over-built lines, with 11 cut candidates (8 recommended); (2) 3oltan-seo section rebuilt per
+[round 15] content-only (no tool calls, artifact absent) — continuing
+[round 16] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' commit -q -m 
