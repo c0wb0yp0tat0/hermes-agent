@@ -128,7 +128,7 @@ jobs:
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
-        if: always()
+        if: always() && inputs.twin_audit != 'true'
         run: |
           set -euo pipefail
           if [ -f studies/rfc-143379-rig/scripts/s2u-claims-probe.py ]; then
