@@ -4,7 +4,7 @@ head: x
 env: {'GITHUB_WORKSPACE': '?', 'GITHUB_RUN_ID': '?', 'GITHUB_JOB': '?', 'RUNNER_NAME': '?', 'RUNNER_LABELS': '?'}
 
 - [PASS] exists:FINAL-REPLY-20261126.md — studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-REPLY-20261126.md
-- [PASS] sha256:FINAL-REPLY-20261126.md — got f47e9207c7e2 want f47e9207c7e2
+- [PASS] sha256:FINAL-REPLY-20261126.md — got 2146ed90387b want 2146ed90387b
 - [PASS] exists:FINAL-CHILD-20261126.md — studies/rfc-143379-rig/plan/tank/twin-sanity/FINAL-CHILD-20261126.md
 - [PASS] sha256:FINAL-CHILD-20261126.md — got 14b4d3af694a want 14b4d3af694a
 - [PASS] reply:has:3ff6aee4
