@@ -28,3 +28,18 @@
 - The draft (`/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/SOLAR-READ-GAP-SHIFT-20261126.md`) answers all four of the operator's questions: (1) overkill pass — six quoted over-built lines, with 11 cut candidates (8 recommended); (2) 3oltan-seo section rebuilt per
 [round 15] content-only (no tool calls, artifact absent) — continuing
 [round 16] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank && git add -A && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.github.com' commit -q -m 
+[round 17] ASSISTANT: The artifact is written and committed to the pair's local tree (sha `b0ffb89`, working tree clean, `plan/tank/SOLAR-READ-GAP-SHIFT-20261126.md`). Two reads before the pair's reply are done:
+
+- The draft answers all four of the operator's asks: (1) overkill pass — six quoted over-built lines, 11 cut candidates (8 recommended); (2) 3oltan-seo section rebuilt on the real relationship (primary, 243 wo
+[round 17] content-only (no tool calls, artifact absent) — continuing
+[scribe] cell rig-solar-read-gap-shift-20261126: byte-identical=True
+[door] placeholder-scan: clean
+[fold-step] On branch study/rfc-143379-rig-20261105
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   studies/rfc-143379-rig/plan/tank/SOLAR-READ-GAP-SHIFT-20261126.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ARTIFACT: MISSING (sentinel: True )
+GIT: b0ffb89aedc SOLAR: read-gap-shift revision proposal
