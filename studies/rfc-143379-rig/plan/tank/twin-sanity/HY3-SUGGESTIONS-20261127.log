@@ -42,3 +42,25 @@ Draft claim: "the child now says it in those words." / "Both are corrected in th
 - The child's fix bullet says: "contention errnos: EACCES, EAGAIN, EWOULDBLOCK — per the lock-fidelity harves
 [round 9] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-SUGGESTIONS-20261127.md", "content": "# HY3 — TWIN-SANITY, ROUND 3 (final preview to kvnloo)\n\n*Cold read
 [scribe-write] HY3-SUGGESTIONS-20261127.md: WITNESS-ROW appended
+[round 10] ASSISTANT: Now let me commit the artifact locally.
+[round 10] REASONING: Now let me commit the artifact locally. First check git status of the file, then add and commit.
+[round 10] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git add studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-SUGGESTIONS-20261127.md && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@us
+[round 11] ASSISTANT: The commit chain returned exit 1 with an unexpected message about a `.log` file. Let me investigate the actual state.
+[round 11] REASONING: The commit seems to have happened but the final git status shows a modified .log file (not my concern). Wait — the output shows "Changes not staged for commit: modified: HY3-SUGGESTIONS-20261127.log" 
+[round 11] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && echo \"=== LOG ===\" && git log --oneline -3 && echo \"=== STATUS md ===\" && git status --short studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-
+[round 12] REASONING: The terminal is now git-only. Let me use git commands only.
+[round 12] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git log --oneline -3"}
+[round 13] ASSISTANT: My commit didn't land — there's a competing fold/solar commit history and a `.log` file. Let me check the current state of my artifact.
+[round 13] REASONING: My commit didn't land. The log shows e94e037a "twin-sanity: hy3 cold-eye final gate (SOLAR3 Sugg.)" — that's the solar lane's commit. My commit "HY3 twin-sanity round-3 final-preview verdict" is not t
+[round 13] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git status --short studies/rfc-143379-rig/plan/tank/twin-sanity/"}
+[scribe] cell rig-hy3-suggestions-20261127: byte-identical=True
+[door] placeholder-scan: clean
+[fold-step] On branch study/rfc-143379-rig-20261105
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   studies/rfc-143379-rig/plan/tank/twin-sanity/HY3-SUGGESTIONS-20261127.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ARTIFACT: MISSING (sentinel: True )
+GIT: d5d2b4228ab round3 fold: which-run qualifier + kit receipt (solar3 notes)
