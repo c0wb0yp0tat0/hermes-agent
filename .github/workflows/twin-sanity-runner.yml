@@ -1,0 +1,60 @@
+---
+name: twin-sanity-runner
+run-name: twin-sanity-runner @ ${{ inputs.head_sha }}
+on:
+  workflow_dispatch:
+    inputs:
+      head_sha:
+        description: "Full 40-char SHA to check out"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: [self-hosted, Linux, X64, loom]   # p0tat0 — ordinary-run floor; the only unique label set that lands here
+    steps:
+      - name: checkout pinned
+        uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.head_sha }}
+      - name: requested == executed pin assert
+        run: |
+          echo "requested: ${{ inputs.head_sha }}"
+          echo "executed : $GITHUB_SHA"
+          [ "${{ inputs.head_sha }}" = "$GITHUB_SHA" ] && echo "PIN-OK" || { echo "PIN-FAIL"; exit 1; }
+      - name: env snapshot
+        run: |
+          pwd
+          git rev-parse --show-toplevel
+          python3 --version
+          echo "runner: $RUNNER_NAME | labels: $RUNNER_LABELS"
+      - name: run the mechanical sanity audit
+        id: audit
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+        run: |
+          python3 studies/rfc-143379-rig/plan/tank/twin-sanity/runner-audit.py || true
+          echo "audit_exit=$?" >> "$GITHUB_ENV" 2>/dev/null || true
+      - name: land the report on the branch
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "p0tat0-runner"
+          git config user.email "runner@p0tat0.lan"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}"
+          git add "studies/rfc-143379-rig/plan/tank/twin-sanity/RUNNER-SANITY-REPORT-${{ inputs.head_sha }}"*.md
+          git commit -m "runner-sanity: audit report @ ${{ inputs.head_sha }}" || echo "nothing to commit"
+          git push origin HEAD:study/rfc-143379-rig-20261105 || echo "PUSH-NOTED"
+      - name: verdict
+        run: |
+          python3 - <<'PYEOF'
+          import glob, os
+          fs = glob.glob(os.path.join(os.environ["GITHUB_WORKSPACE"], "studies/rfc-143379-rig/plan/tank/twin-sanity", "RUNNER-SANITY-REPORT-*.md"))
+          for f in fs:
+              txt = open(f).read()
+              ok = "ALL PASS" in txt
+              print(("GREEN" if ok else "RED"), os.path.basename(f))
+          PYEOF
