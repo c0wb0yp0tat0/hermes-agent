@@ -28,7 +28,7 @@ The store's read path only:
 
 - `MemoryStore.read` restored — the 12-line method per #141876, as hardened by jfugalde's review (comment 6399028865): the snapshot under the store's own `_file_lock` (main's two-writer rule); stateless — it never writes the live list, so a stale view cannot roll a writer's commit back; sanitized — BLOCKED text is withheld, and `closest_entries` stops echoing it on either path (jfugalde's measured seam, comment 6399028865).
 - A failed read attempt logs a miss — a signal, not a silent absence (3oltan-seo's discriminator, comments 6369077436, 6376772075).
-- One regression test with real fcntl: the correctness envelope below; it fails when the lock is removed.
+- One regression test with real fcntl — the **structural flock check**: a non-blocking flock on `MEMORY.md.lock`, taken while the read holds it, must fail (contention errnos: EACCES, EAGAIN, EWOULDBLOCK — per the lock-fidelity harvest, 2026-11-27). The guarded property is **stateless**: the live list unchanged after a read that races a writer.
 
 One small diff — not a new mechanism. The write-gate's read-back seams (the batch-path bypass, the single-op blind spots, comments 6630249660) stay with the write-gate's own review, per jfugalde's advice: "let the maintainers answer the inventory question instead of settling it in a patch" (comment 6399028865).
 
@@ -42,7 +42,7 @@ The thread's registered promises — the team-up on the `_add_doc` diff, the hol
 
 ## The correctness envelope (the read's bar)
 
-The restored read's concurrency envelope: the reader holds the store's lock across the snapshot and never writes the live list; the harness's waits are gone, so only the lock can order the writer. kvnloo's arm (comment 7187597182), adopted as probe revision 5: three hundred fresh runs per row — rows one to three 0/300, the fourth (both protections removed) 300/300, receipt `fbefb4ac…e16`, prediction `08103259…` committed before the first run, one wording difference on the record (the receipt's bar line carries a phrase from the design document; the results match the prediction exactly). The phase-1 kit receipt: `3ff6aee4…fba9`, three cold confirmations. The run happened on the combined store (`a9c65dc4`); the re-run against #141876 alone is part of the landing, pre-registered in the same envelope.
+The restored read's concurrency envelope: the reader holds the store's lock across the snapshot and never writes the live list; the harness's waits are gone, so contention is the lock's own signature — the structural check (above), not an output-level red. kvnloo's arm (comment 7187597182), adopted as probe revision 5: three hundred fresh runs per row — rows one to three 0/300, the fourth (both protections removed) 300/300, receipt `fbefb4ac…e16`, prediction `08103259…` committed before the first run, one wording difference on the record (the receipt's bar line carries a phrase from the design document; the results match the prediction exactly). The phase-1 kit receipt: `3ff6aee4…fba9`, three cold confirmations. The run happened on the combined store (`a9c65dc4`); the re-run against #141876 alone is part of the landing, pre-registered in the same envelope.
 
 ## The pre-registration
 

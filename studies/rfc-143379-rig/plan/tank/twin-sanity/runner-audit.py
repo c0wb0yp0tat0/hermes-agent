@@ -12,9 +12,9 @@ F_CHILD = os.path.join(REPO, T, "FINAL-CHILD-20261126.md")
 F_NOTES = os.path.join(REPO, T, "NOTES-FINAL-20261126.md")
 
 EXPECT = {
-    "DRAFT-REPLY-KVNLOO-20261127.md": "93180732c4b4",   # hash set below after first run
+    "DRAFT-REPLY-KVNLOO-20261127.md": "61e289c75d3d",   # hash set below after first run
     "FINAL-REPLY-20261126.md": "afb9eaa2bbf7",
-    "FINAL-CHILD-20261126.md": "14b4d3af694a",
+    "FINAL-CHILD-20261126.md": "d14119691bd0",
 }
 DRAFT_REQ = ["stateless", "structural", "flock", "1,031", "6,127", "anchor-first", "parked"]
 REPLY_REQ = ["3ff6aee4", "fbefb4ac", "08103259", "56ee8a5cc6", "eff109fb",
