@@ -12,7 +12,7 @@ F_CHILD = os.path.join(REPO, T, "FINAL-CHILD-20261126.md")
 F_NOTES = os.path.join(REPO, T, "NOTES-FINAL-20261126.md")
 
 EXPECT = {
-    "FINAL-REPLY-20261126.md": "e3e5e35765d1",
+    "FINAL-REPLY-20261126.md": "7ea612796f61",
     "FINAL-CHILD-20261126.md": "14b4d3af694a",
 }
 REPLY_REQ = ["3ff6aee4", "fbefb4ac", "08103259", "56ee8a5cc6", "eff109fb",
