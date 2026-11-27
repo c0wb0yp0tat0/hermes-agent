@@ -16,12 +16,13 @@ EXPECT = {
     "FINAL-CHILD-20261126.md": "14b4d3af694a",
 }
 REPLY_REQ = ["3ff6aee4", "fbefb4ac", "08103259", "56ee8a5cc6", "eff109fb",
-             "SECURITY.md §3.2", "unticked", "a0353d7d364dc1d554a6ebffc02ba322",
+             "SECURITY.md §3.2", "unticked",
              "577535cda874a7fc483ff9c69d5d6c86", "7122051629", "7154275288",
-             "6815556328", "6386263138", "7087999804", "**5 ·"]
+             "**5 ·"]
 CHILD_REQ = ["## The problem, stated", "## SBI", "## The five whys",
              "## The fix", "## The pre-registration", "SECURITY.md",
-             "unticked", "fbefb4ac", "08103259"]
+             "unticked", "fbefb4ac", "08103259", "6815556328", "6386263138",
+             "7087999804"]
 NOSTRINGS = ["TODO", "FIXME", "PLACEHOLDER", "XXX", "lorem"]
 
 rows = []

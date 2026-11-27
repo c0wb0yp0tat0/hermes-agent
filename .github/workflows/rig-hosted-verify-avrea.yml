@@ -12,6 +12,10 @@ on:
         description: "The exact SHA to pin and verify (default: the branch head)"
         required: false
         default: ""
+      twin_audit:
+        description: "true = run only the twin-sanity mechanical audit (post-gated docs; stdlib, no recipe)"
+        required: false
+        default: "false"
 
 permissions:
   contents: read
@@ -47,11 +51,13 @@ jobs:
           test "$actual" = "$requested"
 
       - name: Install uv (the repo's own recipe)
+        if: inputs.twin_audit != 'true'
         uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # 8.2.0
         with:
           python-version: "3.14"
 
       - name: Sync the locked environment
+        if: inputs.twin_audit != 'true'
         shell: bash
         run: |
           uv python install 3.14
@@ -61,6 +67,7 @@ jobs:
             --extra daytona --extra parallel-web
 
       - name: The verification battery (write-gate + memory-tool + falsifier-battery)
+        if: inputs.twin_audit != 'true'
         shell: bash
         run: |
           echo "ENV-SNAPSHOT: pwd=$(pwd | sed 's|/home/runner.*|/home/runner|') | git-root=$(git rev-parse --show-toplevel 2>/dev/null || echo none) | python=$(python3 --version 2>&1) | uid=$(id -u) | CI=${CI:-unset}"
@@ -109,6 +116,15 @@ jobs:
           # The battery's verdict: GREEN = no UNEXPECTED failures; the named set
           # rides the register, never hides a red — the log names it.
           exit $(( RC1 != 0 || RC2 != 0 ? 1 : 0 ))
+
+      - name: The twin-sanity audit arm (post-gated final docs, mechanical, stdlib)
+        if: inputs.twin_audit == 'true'
+        shell: bash
+        run: |
+          echo "ENV-SNAPSHOT: workspace=$GITHUB_WORKSPACE | ref=$GITHUB_REF_NAME | runner=$RUNNER_NAME | labels=$RUNNER_LABELS"
+          python3 studies/rfc-143379-rig/plan/tank/twin-sanity/runner-audit.py; RC=$?
+          echo "TWIN-AUDIT-EXIT: $RC"
+          exit $RC
 
       - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
