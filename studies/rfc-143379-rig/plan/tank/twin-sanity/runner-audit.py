@@ -12,9 +12,11 @@ F_CHILD = os.path.join(REPO, T, "FINAL-CHILD-20261126.md")
 F_NOTES = os.path.join(REPO, T, "NOTES-FINAL-20261126.md")
 
 EXPECT = {
+    "DRAFT-REPLY-KVNLOO-20261127.md": "93180732c4b4",   # hash set below after first run
     "FINAL-REPLY-20261126.md": "afb9eaa2bbf7",
     "FINAL-CHILD-20261126.md": "14b4d3af694a",
 }
+DRAFT_REQ = ["stateless", "structural", "flock", "1,031", "6,127", "anchor-first", "parked"]
 REPLY_REQ = ["3ff6aee4", "fbefb4ac", "08103259", "56ee8a5cc6", "eff109fb",
              "SECURITY.md §3.2", "unticked",
              "577535cda874a7fc483ff9c69d5d6c86", "7122051629", "7154275288",
@@ -41,6 +43,9 @@ for f, want in EXPECT.items():
           f"got {sha12(os.path.join(REPO, T, f))} want {want}")
 
 reply = read(F_REPLY); child = read(F_CHILD)
+draft = read(os.path.join(REPO, T, "DRAFT-REPLY-KVNLOO-20261127.md"))
+for q in DRAFT_REQ:
+    check(f"draft:has:{q}", q in draft)
 for s in REPLY_REQ:
     check(f"reply:has:{s}", s in reply)
 for s in CHILD_REQ:
