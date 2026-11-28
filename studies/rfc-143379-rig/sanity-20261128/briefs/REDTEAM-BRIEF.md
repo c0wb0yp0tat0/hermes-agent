@@ -17,11 +17,26 @@ or unsupported numbers, stale hashes, and the child's scope drift. Test the MAP 
 opposite tree: the read-less main, the spec-2 installed read, the echo sites, the structural
 check, the read-invoked counter.
 
-**Attack Purpose B — the instruments.** Where do the instruments' claims fail an outsider's
-read? The kit's one-command claim vs the store it ships (the a9c65dc4 combined store, not
-#141876's file); the four-row envelope's reference receipt; the candidates (N1/N2/N3) as
-definitions; the eigen keeper's special-use-case framing; the K gate's failed status; the
-bookkeeper's class claim. Find the instrument's own falsifier and whether the reply states it.
+**Attack Purpose B — the instruments, BY USING them as attack tools.** Do not merely describe
+them: use each instrument on the flipped base and report what it surfaced.
+
+- **The MAP matrix** as the attack grid: every reply row re-based on main/installed; find the
+  rows that fail on the opposite tree.
+- **The bookkeeper** as the miss-finder: the affected set the reply names vs the set the
+  opposite tree exposes; what the reply's ledger omits.
+- **The eigen keeper** as the drift-finder: the axes that should stay invariant across the
+  reply's versions; the axis that drifts under the flip.
+- **The two-N window, the retention latch, the tiny-aged-fact axis** as attack lenses on the
+  reply's compaction claims: what each lens would demand the reply say, and where the reply is
+  silent.
+- **The read kit** as the test case: the kit's own claims under the flipped base — the a9c65dc4
+  combined store vs #141876's file, the receipt, the one-command claim.
+- **The K-recency probe** as the protocol attack: the reply's gate statement vs the protocol's
+  steps; what the probe would falsify.
+
+For each instrument: **how it was used | what it surfaced against the flipped base | what
+broke | the falsifier the reply omits or states.** Execution of the kit is head-side; assess it
+from the source and the receipt, and name that as a limit.
 
 ## Deliverable (write to the artifact path the harness names)
 
@@ -30,8 +45,8 @@ bookkeeper's class claim. Find the instrument's own falsifier and whether the re
    tree's evidence | disposition.
 3. **The strongest counter-case:** the single argument that would sink the reply/child if true,
    with its evidence.
-4. **Instrument attacks:** one row per instrument (claim | what breaks | the falsifier the reply
-   omits or states).
+4. **Instrument attacks:** the instruments-used table (instrument | how used | what it surfaced |
+   what broke | the falsifier).
 5. **What would change the verdict:** one line.
 6. **The red team's own limits:** what it could not check.
 
