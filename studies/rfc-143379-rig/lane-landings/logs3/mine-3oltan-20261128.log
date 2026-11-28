@@ -26,3 +26,7 @@
 [round 13] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings && python3 -c \"\nitems = {\n 'A1': ('Sanitize scope... \\u201cBLOCKED withheld, closest_entries stops echoing i
 [round 14] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings && python3 -c \"\nq1='all four echo sites?'\nq2='msvcrt path on real Windows?'\nq3='read-invoked counter?'\nq4='
 [round 15] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings && git add -A && git commit -q -m \"mining wave: 3OLTAN ask set enumerated, staged reply mined, MAP row + OWED +
+[round 16] ASSISTANT: The local commit succeeded. Now I'll write the finding artifact.
+[round 16] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/MORE-3OLTAN-20261128.md", "content": "# MINING WAVE — 3OLTAN-7213322521 ENUMERATION + STAGED-REPLY MINING (2026-11-28)
+[scribe-write] MORE-3OLTAN-20261128.md: WITNESS-ROW appended
+[round 17] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings && git add -A && git commit -q -m \"mining wave: 3OLTAN ask set enumerated, staged reply mined, MAP row + OWED +

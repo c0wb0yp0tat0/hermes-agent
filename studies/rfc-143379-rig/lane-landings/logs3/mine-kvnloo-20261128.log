@@ -34,3 +34,19 @@ Let me read all the relevant files in parallel since they're independent read
 [round 10] REASONING: Let me read a prior artifact for the envelope format — 20261127-hy4.md and maybe the TRINITY artifacts since they mention envelope/MAP/OWED verdict.
 [round 10] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/20261127-hy4.md", "limit": 120}
 [read-substrate] 20261127-hy4.md: cell-backed read (provider-absent mode), 50 lines, byte-verified
+[round 11] ASSISTANT: Let me check the lane log and locate the prediction artifact referenced in the receipts, to ground the sha claim.
+[round 11] REASONING: This gives me the envelope format well. The envelope's five response sections appear to be:
+- Executive Summary
+- Analysis Brief
+- MAP row (asserted → status → basis)
+- Recommendation-Action Plan
+- Ne
+[round 11] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs3/mine-kvnloo-20261128.log"}
+[read-substrate] mine-kvnloo-20261128.log: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 12] ASSISTANT: I haven't actually read DATA-SUMMARY.md yet (the earlier multi-call was trimmed). Let me read it and the steer channel now.
+[round 12] REASONING: I notice I have NOT actually read the DATA-SUMMARY.md yet — my earlier multi-call may have been trimmed. Wait, the log is a recording of my prior rounds (this appears to be a resumed session). Let me 
+[round 12] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/REFS3/DATA-SUMMARY.md"}
+[read-substrate] DATA-SUMMARY.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 13] REASONING: Important: DATA-SUMMARY resolves the C1 contradiction with dual-run provenance: run1 25/52/5, run2 26/25/10, fold re-run 23 — scheduling-dependent. So the "contradiction" from the earlier hy4 artifact
+[round 13] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/steer/mine-kvnloo.md"}
+[read-substrate] mine-kvnloo.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
