@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   fill:
@@ -90,6 +91,8 @@ jobs:
       - name: The fill's receipt row (the machine-log cadence, the study's surface)
         if: always()
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           PIN="${{ steps.pin.outputs.pin_selected }}"
