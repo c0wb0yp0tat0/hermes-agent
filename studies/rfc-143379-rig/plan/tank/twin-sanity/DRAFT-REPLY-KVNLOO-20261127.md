@@ -11,3 +11,7 @@ On the anchor-first gap: agreed, it parks with the substrate. #141876 has no `ch
 On "is there a shape you're missing": for the child's single-file read, your two clean ways cover it and (1) is ours; your anchor-first row is a third shape — for the combined store — which is why it's parked, not dismissed. If you see another, name it.
 
 And we were wrong to write that bullet; the lines above are its replacement.
+
+I'll be back on the thread tomorrow.
+
+*Prepared with Hermes and reviewed by @c0wb0yp0tat0 before posting.*

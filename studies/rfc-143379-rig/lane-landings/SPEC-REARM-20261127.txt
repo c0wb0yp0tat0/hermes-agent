@@ -1,0 +1,3 @@
+/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs/rearm-20261127-solar.md upstage/solar-mini4:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs/rearm-20261127-solar.log
+/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs/rearm-20261127-hy4.md tencent/hy4-flash:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs/rearm-20261127-hy4.log
+/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs/rearm-20261127-stepfun.md stepfun/step-3.7-flash:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs/rearm-20261127-stepfun.log

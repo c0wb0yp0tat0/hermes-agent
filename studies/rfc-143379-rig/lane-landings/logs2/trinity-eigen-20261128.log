@@ -1,0 +1,17 @@
+[round 0] REASONING: Let me break down what I need to do:
+
+1. Read the steering file first: `studies/rfc-143379-rig/lane-landings/steer/trinity-eigen.md`
+2. Read all the kitted context files (REFS)
+3. Read the HEAD pre-re
+[round 0] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/steer/trinity-eigen.md"}
+[read-substrate] trinity-eigen.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 1] REASONING: Now let me read the kitted context files.
+[round 1] MULTI-CALL TRIMMED to the first call (4 requested) — the transport's all-or-nothing class (G7)
+[round 1] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/REFS/VERIFICATION-PILOT-KIT-THREE-CONTOURS-20261127.md"}
+[read-substrate] VERIFICATION-PILOT-KIT-THREE-CONTOURS-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 2] REASONING: Good. Now let me read the next kitted context file.
+[round 2] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/REFS/IMPROVEMENT-MATRIX-20261127.md"}
+[read-substrate] IMPROVEMENT-MATRIX-20261127.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 3] REASONING: Let me read the remaining kitted context files.
+[round 3] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/REFS/BATTERY-README.md"}
+[read-substrate] BATTERY-README.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
