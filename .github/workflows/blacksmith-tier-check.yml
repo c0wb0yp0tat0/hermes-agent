@@ -1,0 +1,12 @@
+name: blacksmith-tier-check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    timeout-minutes: 5
+    steps:
+      - name: The tier's pulse
+        run: echo "blacksmith tier alive $(date -u +%FT%TZ)"
