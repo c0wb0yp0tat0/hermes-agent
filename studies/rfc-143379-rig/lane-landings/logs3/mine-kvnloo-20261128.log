@@ -50,3 +50,57 @@ Let me read all the relevant files in parallel since they're independent read
 [round 13] REASONING: Important: DATA-SUMMARY resolves the C1 contradiction with dual-run provenance: run1 25/52/5, run2 26/25/10, fold re-run 23 — scheduling-dependent. So the "contradiction" from the earlier hy4 artifact
 [round 13] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/steer/mine-kvnloo.md"}
 [read-substrate] mine-kvnloo.md: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 14] ASSISTANT: I have all kitted context. Let me verify whether the referenced prediction file exists in read-root and whether the sha can be grounded (never invented).
+[round 14] REASONING: No steer. Now I have all the material. Let me do the adjudication.
+
+Let me re-read the comment carefully and enumerate every ask, sub-ask, commitment, and open item.
+
+The KVNLOO comment body (RFN 1433
+[round 14] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && echo \"--- find prediction ---\" && find studies -iname '*PREDICTION*KVNLOO*' -o -iname '*6609DAC*' 2>/dev/null && echo \"--- grep sha ---\" && gr
+[round 15] ASSISTANT: Terminal is git-only in this lane, so shell sha verification is gated (OWED). Let me check whether the prediction file is readable via the read tool at plausible paths.
+[round 15] REASONING: Terminal is git-only for lanes. So find/grep are gated. That's an OWED — I can't compute sha256 or verify the prediction file's existence via shell. I can use read_file and list_dir though. Let me che
+[round 15] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/plan/tank/twin-sanity/PREDICTION-KVNLOO-6609DAC-ROWS.md"}
+[round 16] REASONING: Not there. Let me check the read-battery dir and tmp-artifacts. Actually, DATA-SUMMARY says "staged; commit waits the word" — the literal is staged meaning the hash was computed of a document that isn
+[round 16] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/read-battery-20261127"}
+[round 17] REASONING: No prediction file there. It seems the prediction literal is "staged" meaning hash computed on a to-be-committed doc, not present as a file in read-root. So I can't verify the sha (OWED: shell gated +
+[round 17] CALL list_dir {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/REFS2"}
+[round 18] REASONING: No framework doc there. Let me check if there's a "mini-spine" or "six principles" doc in the lane-landings. Let me check the SPEC files I haven't read: SPEC-MINING-20261128.txt was read (in log). Let
+[round 18] CALL read_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/SPEC-MINING-20261128.txt"}
+[read-substrate] SPEC-MINING-20261128.txt: CELL-BYTE-MISMATCH or NO-CELL — falling back to the local read (named, never silent)
+[round 19] ASSISTANT: All kitted context is in hand, steer is empty, and I've confirmed the shell is git-only (sha/file probes are OWED) and the prediction file is not present in read-root. I've completed the adjudication. Writing the artifact now.
+[round 19] REASONING: No framework definition. I'll treat the six principles and the mini-spine as framework labels carried from the brief (BORROWED <brief>) and note the stage sequence I actually executed (deconstruct → s
+[round 19] CALL write_file {"path": "/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/MORE-KVNLOO-20261128.md", "content": "# MORE-KVNLOO-20261128 — MINING WAVE: the KVNLOO ask-set vs receipts vs child\n\
+[scribe-write] MORE-KVNLOO-20261128.md: WITNESS-ROW appended
+[round 20] ASSISTANT: Artifact written. Now committing locally (never pushing).
+[round 20] REASONING: The artifact is written. Now I must commit it locally (git add + commit locally). The lane never pushes. Let me do that.
+[round 20] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git add studies/rfc-143379-rig/lane-landings/MORE-KVNLOO-20261128.md && git -c user.name='c0wb0yp0tat0' -c user.email='c0wb0yp0tat0@users.noreply.
+[round 21] ASSISTANT: Finding: The comment's sole operative ask (commit the prediction + 64-hex sha for the three 6609dac rows) is ANSWERED and already STAGED in DATA-SUMMARY — the only remaining gap is a word-gated public commit, plus two wording fixes (A8/A13 held-open scope) and one resolved contradiction (C1 dual-run provenance, don't re-present 26/25/10 as THE count).
+Next mechanism: The fold's shell (mine/HEAD-RE
+[round 21] REASONING: The commit succeeded. Now the final message: one line from the finding + one line for the next mechanism. Brief says "Your final message after the artifact exists: the finding's one line + the next me
+[round 21] content-only (no tool calls, artifact absent) — continuing
+[round 22] content-only (no tool calls, artifact absent) — continuing
+[round 23] content-only (no tool calls, artifact absent) — continuing
+[round 24] content-only (no tool calls, artifact absent) — continuing
+[round 25] content-only (no tool calls, artifact absent) — continuing
+[round 26] content-only (no tool calls, artifact absent) — continuing
+[round 27] content-only (no tool calls, artifact absent) — continuing
+[round 28] content-only (no tool calls, artifact absent) — continuing
+[round 29] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && echo '=== artifact head ===' && sed -n '1,6p' studies/rfc-143379-rig/lane-landings/MORE-KVNLOO-20261128.md && echo '=== commit ===' && git log -1 
+[round 30] REASONING: The terminal is git-only. My previous compound command with sed/wc/echo worked earlier? Actually the earlier commit command had `echo` and `git log` and it worked. But now `sed`, `wc` are blocked → "t
+[round 30] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git status --porcelain -- studies/rfc-143379-rig/lane-landings/MORE-KVNLOO-20261128.md && git log -1 --format='%H %s' && git show --stat --oneline
+[round 31] ASSISTANT: Verified via git (the only allowed terminal): working tree clean for the artifact, commit `3d120c0c783` shows 74 insertions — the file is committed locally, lane did not push.
+
+Finding: The comment's sole operative ask (commit the prediction + 64-hex sha for the three 6609dac rows) is ANSWERED and already STAGED in DATA-SUMMARY — the only residual is a word-gated public commit, two wording fixes (
+[round 31] REASONING: The artifact is committed locally, clean working tree for that file (no porcelain output before the log line), and the commit shows 74 insertions. Tool call executed and verified. Let me give the fina
+[round 31] content-only (no tool calls, artifact absent) — continuing
+[round 32] ASSISTANT: The artifact is already written and committed locally. Confirming final state via git (the only allowed terminal).
+[round 32] REASONING: I've already written and committed the artifact. The system is prompting again because rounds are low. I should just verify once more with a tool call (git-only terminal) that everything is in place, 
+[round 32] CALL terminal {"command": "cd /root/workspace/repos/hermes-agent && git status --porcelain -- studies/rfc-143379-rig/lane-landings/MORE-KVNLOO-20261128.md && git log -1 --format='%H %s'"}
+[round 33] ASSISTANT: Confirmed: artifact present and committed locally at `3d120c0c783` (74 insertions), clean working tree; lane never pushed.
+
+Finding: The comment's sole operative ask (commit the prediction + 64-hex sha for the three 6609dac rows) is ANSWERED and already STAGED in DATA-SUMMARY — only a word-gated public commit, two wording fixes (A8/A13 held-open scope), and one resolved contradiction (C1 dual-run 
+[round 33] REASONING: Everything is committed, working tree clean for the artifact. Done. Give the final message.
+[round 33] content-only (no tool calls, artifact absent) — continuing
+[round 34] content-only (no tool calls, artifact absent) — continuing
+[round 35] content-only (no tool calls, artifact absent) — continuing
+[round 36] content-only (no tool calls, artifact absent) — continuing

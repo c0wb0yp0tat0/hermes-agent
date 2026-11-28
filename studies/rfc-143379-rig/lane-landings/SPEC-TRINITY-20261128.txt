@@ -1,3 +1,0 @@
-/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs2/trinity-conditional-20261128.md upstage/solar-mini4:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs2/trinity-conditional-20261128.log
-/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs2/trinity-harness-20261128.md tencent/hy4-flash:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs2/trinity-harness-20261128.log
-/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs2/trinity-eigen-20261128.md stepfun/step-3.7-flash:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs2/trinity-eigen-20261128.log

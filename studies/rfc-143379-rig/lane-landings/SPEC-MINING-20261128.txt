@@ -1,2 +1,0 @@
-/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs3/mine-kvnloo-20261128.md tencent/hy4-flash:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs3/mine-kvnloo-20261128.log
-/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs3/mine-3oltan-20261128.md upstage/solar-mini4:free /root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/logs3/mine-3oltan-20261128.log
