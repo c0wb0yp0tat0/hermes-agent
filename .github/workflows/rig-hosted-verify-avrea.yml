@@ -63,54 +63,31 @@ jobs:
       - name: The verification battery (write-gate + memory-tool + falsifier-battery)
         shell: bash
         run: |
-          echo "ENV-SNAPSHOT: pwd=$(pwd | sed 's|/home/runner.*|/home/runner|') | git-root=$(git rev-parse --show-toplevel 2>/dev/null || echo none) | python=$(python3 --version 2>&1) | uid=$(id -u) | CI=${CI:-unset}"
+          # THE ENVIRONMENTAL CONTEXT (earned 11-11, the envdiff-lesson): the local-green/CI-red
+          # class is environmental divergence — the runner's context gets uploaded with the run,
+          # so the wound always names itself; pwd/git-root/python/uid are the snapshot's core.
+          echo "ENV-SNAPSHOT: pwd=$(pwd) | git-root=$(git rev-parse --show-toplevel 2>/dev/null || echo none) | python=$(python3 --version 2>&1) | uid=$(id -u) | CI=${CI:-unset}"
           echo "ENV-SNAPSHOT: workspace=$GITHUB_WORKSPACE | repo=$(basename "${GITHUB_WORKSPACE:-.}") | ref=$GITHUB_REF_NAME"
+          # uv run: the synced venv's interpreter, never the PATH's system
+          # python (which has no pytest and none of the synced deps).
           # Path-tolerance (earned 2026-11-05): the falsifier-battery lives on
           # the battery lineage (fixes/falsifier-battery-20261104), NOT on every
           # pinned head — include it only when present, so pins predating it
           # still get the write-gate + memory-tool battery (exit-4 class: a
           # missing path is a collection error, not an assertion failure).
-          # THE TWO-ROOT SPLIT (earned 2026-11-15, the ImportPathMismatchError class):
-          # the root tests/ and the study's studies/.../tests/ both declare
-          # tests.conftest — pytest cannot run BOTH roots in ONE invocation (the
-          # field's own cure: separate invocations per root; --import-mode=importlib
-          # fails with 'Plugin already registered' — confirmed by the 11-15
-          # gemba split: root 16 passed/77 skipped, study arms separate).
-          # The output is NEVER grep-filtered — a pipefail no-match grep masks
-          # the real error (the 11-15 blind-exit-1 class); each invocation logs
-          # raw, tailed, exit code respected.
+          BASE="tests/tools/test_memory_tool.py"
+          [ -f tests/tools/test_write_gate.py ] && BASE="$BASE tests/tools/test_write_gate.py"
+          [ -d tests/falsifier-battery ] && BASE="$BASE tests/falsifier-battery/"
+          [ -d studies/rfc-143379-rig/tests/s2u_arms ] && BASE="$BASE studies/rfc-143379-rig/tests/s2u_arms/"
+          # the CI receipt-row (earned 11-11): this run IS the fresh-test the criteria-arm
+          # measures — its own existence writes the row the gate reads (the host-drop's
+          # absent in CI). The ledger-path's env-seam lives in the arm (S2U_LEDGER).
           mkdir -p studies/rfc-143379-rig/CYCLES
           echo "{\"t\":$(date +%s),\"req_bytes\":1}" >> studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl
           export S2U_LEDGER="$GITHUB_WORKSPACE/studies/rfc-143379-rig/CYCLES/battery-receipt.jsonl"
-          ROOT_BASE="tests/tools/test_memory_tool.py"
-          [ -f tests/tools/test_write_gate.py ] && ROOT_BASE="$ROOT_BASE tests/tools/test_write_gate.py"
-          [ -d tests/falsifier-battery ] && ROOT_BASE="$ROOT_BASE tests/falsifier-battery/"
-          echo "ROOT-BATTERY: uv run pytest $ROOT_BASE"
-          uv run pytest $ROOT_BASE -rs -q > /tmp/root-battery.log 2>&1; RC1=$?
-          tail -25 /tmp/root-battery.log
-          echo "ROOT-BATTERY-EXIT: $RC1"
-          STUDY_ARM=""
-          [ -d studies/rfc-143379-rig/tests/s2u_arms ] && STUDY_ARM="studies/rfc-143379-rig/tests/s2u_arms/"
-          if [ -n "$STUDY_ARM" ]; then
-            echo "STUDY-ARMS: uv run pytest $STUDY_ARM"
-            uv run pytest $STUDY_ARM -rs -q > /tmp/study-arms.log 2>&1; RC2=$?
-            tail -25 /tmp/study-arms.log
-            echo "STUDY-ARMS-EXIT: $RC2"
-          else
-            RC2=0
-          fi
-          # THE NAMED-RED REGISTER (earned 2026-11-15): the study arms carry STAGED
-          # REDs by design (the write-gate ablation arm names its seam itself: "the
-          # gate's surface is unreachable — RED-for-now"); a named-RED is a receipted
-          # register entry, distinct from a regression. The 11-15 gemba: the frozen-
-          # safety arm (staged-RED, seam named) + the single-layer-ablation arm
-          # (tautology-class: ablates one layer then asserts BOTH remain — can never
-          # pass; its logic is its own finding, the repair is the write-gate leg's).
-          # The battery's verdict: GREEN = no UNEXPECTED failures; the named set
-          # rides the register, never hides a red — the log names it.
-          exit $(( RC1 != 0 || RC2 != 0 ? 1 : 0 ))
+          uv run pytest $BASE -rs -q 2>&1 | grep -E "FAILED|AssertionError|passed|failed|short test" | tail -20
 
-- name: The S2U claims probe (the fresh-test-in-response, independent convergence)
+      - name: The S2U claims probe (the fresh-test-in-response, independent convergence)
         shell: bash
         if: always()
         run: |
