@@ -67,3 +67,43 @@ Lens packet: REFS2-1-CONDITIONAL (member wall, head-distilled) — P(A|B) = P(A�
 
 **Contradictions flagged.**
 - FLAG-C3: M2 states K=10 carry 17.9% as a whole-corpus rate, but the 100% cross-request carry shows the denominator is the full corpus; the number therefore cannot support "K acts as the window filter" without the conditioned base. Status: statistical gating error, flagged before the instrument is implemented. It conflicts with the K-window claim as a conditional unless E1/E2 are adopted.
+
+## ENRICHMENT-BY-hy4 (round B)
+Lens: P2-HARNESS — the model is not the system. Engine (seat capability) and harness (read surface + rotation schedule + fixed store) are distinct, so a "system number" measured here may belong to either. Class-check against the artifact's own M1–M4, FLAG-C1/C2/C3 and solar E1–E4; class-checked, not adopted, nothing silently rewritten.
+
+**H1 — Extension of M1 + contradiction flag: the verbatim eigenvalue is harness-indexed.** M1's basis cites half-lives 0.484/0.573 as the verbatim content class's eigenvalue (~1.0), an engine-side reading. But P2's E×H identity makes any measured composite eigenvalue λ = λ_engine·λ_harness. FLAG-C2/F5 records that this session's surface exposes NO read action, so on that surface H≈0 and the verbatim direction collapses toward 0 whatever the engine; 0.484/0.573 were measured under auto-inject (hot topics, H>0), not the cold H≈0 read. [HEAD-RECON] FLAG-C4: the half-life basis is a hot-topic/harness-enabled composite, not a property of the content class alone. Flag only — M1 text untouched; the H≈0 gate stays OWED.
+
+**H2 — New candidate M5: Seat-Invariance Detector (the model is not the system).** Eigenvalues are invariant under similarity transforms; swapping the model seat (stepfun→hy4→solar) while pinning store a43818a6…1586a and the harness surface is the closest natural experiment to a basis change. Measurement: run the 12-cell battery + verbatim/paraphrase half-life probe under each seat; emit per-class eigenvalue vectors and cross-seat variance. Invariance (var≈0) ⇒ genuine system eigen-axes; drift ⇒ the "eigenvalue" was model-contaminated (a harness artefact mislabeled as a system property) → reclassify to the engine axis. This inverts P2 C1 (same engine, two harnesses): here same harness+store, swapped engine. [BORROWED P2-HARNESS mechanism / HEAD-RECON design]. Scope flag: the 36/36-green three-contour battery is contour-invariance (fcntl/msvcrt backends), NOT seat-invariance — it cannot answer M5; solar E2's anchor-cold failures are almost certainly the longcat seat, which M5 would separate from a true engine λ.
+
+**H3 — Extension of M3: resonance is a harness frequency, not a model capability.** The longcat-2.5:free 404 wave is a routing/surface fact (cf. FLAG-C1 class mismatch, solar E2 anchor-cold), not a model-quality eigenvalue. Under model≠system, M3's resonance belongs to the fleet-rotation operator (harness axis H); the corrective is a harness cadence perturbation, never a model swap for capability. A 404 must not be scored as an engine λ. [HEAD-RECON; BORROWED P2 C4 reclassification].
+
+### xngg MAP (asserted → status → basis)
+| Asserted | Tag | Status | Basis |
+|---|---|---|---|
+| M1 half-life 0.484/0.573 is hot-topic composite, not engine eigen | HEAD-RECON | FLAG-C4 | P2 E×H identity + FLAG-C2/F5 |
+| M5 seat-invariance detector; 36/36 ≠ seat evidence | BORROWED(P2-HARNESS)+HEAD-RECON | NEW/OWED | similarity invariance + 3-contour receipt |
+| M3 resonance on harness axis, 404 = surface not engine λ | HEAD-RECON | EXTENDED | FLAG-C1 + solar E2 + P2 C4 |
+
+### Skill-dump (all six considered; USED/REFUSED with reason; all OWED — no skill_view in seat)
+- USED pin-framework — store hash + harness surface held fixed is what makes M5 a true basis-change test.
+- USED defect-forensics — reclassify the 404 wave (H3) as harness-side; cite live-held counts by run.
+- USED investigation-documentation — tag every claim; log FLAG-C4 as evidence trail.
+- USED agent-work-review — trinity wave = seats running one battery; check seat contamination, no faked reads.
+- REFUSED aces-harness-probes — terminal is git-only, no live probe execution; refuse to claim measured AB arms.
+- REFUSED krecency-instrument — no in-lane K-sweep (parked, retry-dominated); refuse to fabricate carry(K).
+- No skill_view exposed → all six OWED; load attempts impossible in this seat.
+
+### Private-repo frames (candidate frames, class-checked, not adopted)
+- Mini-spine compose order used: deconstruct → sense → choose → calibrate → probe → review → record → compose-check.
+- Envelope's five sections + six principles: candidate frames only; canonical enumeration not in this seat's read set → OWED (not guessed).
+
+### Data-forensics register
+- defect-forensics: gaps to parent harness-quality class measured (404 = surface), never guessed.
+- investigation-documentation: BASIS column + Limitations — counts BORROWED from the pinned read; no re-execution here.
+- agent-work-review: no faked reads; 36/36 scoped to contours, not seats.
+
+### Python note (eigvalsh; no fabricated numbers)
+G = chunk-embedding Gram (symmetric PSD); spectrum = eigvalsh(G)[::-1]; λ_verbatim = Rayleigh quotient of the verbatim subspace; M5 cross-seat variance = var over seats of the per-class spectrum. Hardware gated (git-only terminal) → OWED, numbers not invented.
+
+### OWED (fold closes)
+M5 seat-swap not run (no second seat in-lane); H≈0 verbatim gate not executed; REFS packets absent → BORROWED; skill loads + envelope/six-principle enumeration OWED; shell sha check gated.
