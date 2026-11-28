@@ -55,3 +55,40 @@ C2's ad-hoc K=10 and 17.9% carry on parked corpus obtain a principled upgrade: K
 
 ### Extension-C · New candidate C5 · Read-Restore Eigenvector Projection Error (IN-LANE + BORROWED REFS2-3-EIGEN)
 The read-restore seam is where the memory operator maps content classes into the session surface. If the harness preserves eigenvector structure, projection error per class through the seam should be near-zero for high-eigenvalue classes (verbatim, tables) and bounded for lower ones. **C5 measurement:** extend the three-contour battery (currently 36/36 cells, all green) with per-class projection error measured at the sanitize/echo boundary. Input = same engine (pinned `a43818a6…1586a`) under three surface variants: (a) frozen snapshot baseline, (b) explicit read action if exposed, (c) auto-inject. Output = projection-error vector per content class; flag any class where error > ε. BORROWED REFS2-3-EIGEN eigenvector-bookkeeping hook; IN-LANE three-contour green state as calibration anchor. FLAG-C3 cross-reference: if no read action is exposed (F5), variant (b) is unreachable → the measurement itself fails → record as surface-fault, not engine-fault.
+
+## ENRICHMENT-BY-beam (round B)
+
+Lens packet: beam-1-0 kitted verification eyes — the kitted context's verification kit (36/36 green ×3 contours; structural 50/50 in/out; sanitized view; corrupt-file refusal; twice-read identical; hash unchanged; nulled-arm contrast 45/120 vs 0/120; miss-path counter three states; E7 open echo; C1 run-variance 25/52/5, 26/25/10, 23). Five genuine additions; no silent rewrites; all grounded in verified measurement, not in REFS bodies.
+
+**B1 — Nulled-arm control for C1 (the structural falsifier that the harness is actually doing work).** C1's harness-AB varies surface (read present/absent) but never *nulls* the read action to prove the read action is the thing doing work. The kit's nulled-arm contrast is the canonical template: real lock 45/120 refused vs nulled 0/120 under racing probes; output rows identical both arms; ONLY the structural probe (refusal count) tells a lock from no lock. Add a third arm to C1: "nulled read" — register the read action but make it a no-op returning success without touching the store; measure refusals under racing probes. Expected 0/120 refused (nulled) vs 45/120 (real). If the nulled arm still shows refusals, the arm difference is not harness-driven (scheduling/prompt drift). Output rows must be identical across arms; only the structural counter distinguishes. This is the verification discipline that keeps Ĥ from becoming a fudge factor (C1's own false-positive). [IN-LANE verification kit; BORROWED REFS2-2 harness-AB; HEAD-RECON third arm]
+
+**B2 — Three-state read-invocation counter as C3's measurable reachability cell.** C3's reachability matrix is currently a static assertion (matrix #7 "no read action this session"). The kit's miss-path counter operationalizes reachability as a measured three-state property: invoked>0 + failed=0 → restored/broken axis; invoked=0 → not-called axis. Instrument the read action's invocation counter and classify each probe into NOT-CALLED (invoked=0), CALLED-FAILED (invoked>0, failed>0), CALLED-OK (invoked>0, failed=0). A surface with "no read" is NOT-CALLED on every probe → reachability 0; a surface with read-but-broken is CALLED-FAILED → reachability partial. This converts C3 from a checklist into a measured reachability map and feeds C1's arms (which arm's read was actually invoked). [IN-LANE verification kit; HEAD-RECON]
+
+**B3 — E7 echo: the opposite-direction surface fault (remove quotes raw matched entry text).** THE ONE OPEN ECHO: the remove confirmation quotes the raw matched entry text, so BLOCKED content can reach the surface post-read. This is a near-zero-H failure in the opposite direction — H too high on a destructive path, leaking blocked content. Add to C3's reachability matrix a "post-read echo" cell: a surface that echoes raw matched text on remove has H≈1 on the destructive path (content escapes) even when H≈0 on the read path. Add to stepfun's C5 a "sanitize-on-remove" boundary check: projection error must be measured at the remove seam too, not only the read seam. The E7 child-edit candidate (sanitize the remove confirmation) closes it; until closed, C1's "surface" arm includes an uncontrolled leak channel. [IN-LANE verification kit; BORROWED stepfun C5; HEAD-RECON]
+
+**B4 — Run-variance citation discipline for C1's Ĥ (binary signal, not pooled counts).** C1 provenance: live-held counts vary by run (25/52/5, 26/25/10, 23); the binary signal (probes refused while read() ran) held every run. Therefore Ĥ must NOT be reported as a pooled count across runs — it must be reported as a binary per-run signal (refused-while-read-ran: yes/no) with run ID cited, and the per-run count cited separately as provenance only. Pooling counts (as P2's own contradiction note flags: 26/80 vs 25/80) manufactures false precision the kit explicitly rejects. Status: measurement-discipline rule, not a new candidate. [IN-LANE verification kit]
+
+**B5 — Python-mechanics note (operationalize B1–B4).**
+```python
+# B1 nulled arm: real vs no-op read, racing probes
+for arm in ("real_read", "nulled_read"):
+    refused = sum(probe(arm) == "refused" for _ in range(120))
+    assert (arm == "real_read") == (refused > 0)   # structural probe only
+# B2 three-state counter
+state = ("NOT-CALLED" if invoked == 0
+         else "CALLED-FAILED" if failed > 0
+         else "CALLED-OK")
+reachability = {"NOT-CALLED": 0, "CALLED-FAILED": 0.5, "CALLED-OK": 1.0}[state]
+# B4 per-run binary, never pooled
+H_hat_runs = {run_id: (refused_while_read_ran > 0) for run_id, refused_while_read_ran in runs.items()}
+```
+[IN-LANE verification kit; BORROWED REFS2-1 filter-then-measure for per-run rows]
+
+**Contradiction flags (beam round B).**
+- FLAG-B1 (verification): C1 asserts Ĥ>1 means arms unmatched, but the kit shows the binary signal held every run while counts varied — so an Ĥ computed from counts is run-dependent noise, not a stable harness signal. Status: measurement gating error unless Ĥ is reduced to binary per run (B4). Conflicts with MAP row #5 unless run-citation discipline is adopted.
+- FLAG-B2 (verification): C3's reachability matrix is a static checklist (matrix #7), but the miss-path counter shows reachability is a measured three-state property, not a boolean. Status: the matrix must be re-run per probe, not asserted once. Conflicts with C3's "no cell = H≈0" unless B2 is adopted.
+- FLAG-B3 (verification): stepfun's C5 measures projection error at the read seam only; the E7 echo shows the remove seam leaks blocked content, so the projection-error vector is incomplete without a remove-seam cell. Status: extension required, not a contradiction with C5's method.
+
+**OWED — full stack dump-and-refuse (beam round B).** USED: aces-harness-probes (nulled-arm control is a harness probe), investigation-documentation (run-citation discipline), defect-forensics (surface-fault classification), pin-framework (structural-probe discipline), verification kit (36/36, nulled contrast, counter, E7, run variance), stepfun C5 (projection-error seam). REFUSED: krecency-instrument (would rewrite C2's K, not this seat's addition), agent-work-review (no agent trace in this scope), REFS2-3-EIGEN body (member wall; only verified opening used), adoption of any storm-context mechanism (class-check only), rewrite of C1–C4 (additive only). [IN-LANE / BORROWED as named]
+
+**Class-check (storm-context, corroboration of class, never adoption).** beam's verification facts corroborate the SELD read-side verifier class (read-side evidence plane) and the AskALCF evidence-gated admission class (commit gate on measured signal); C1–C5 remain ours, not copies. [IN-LANE]
