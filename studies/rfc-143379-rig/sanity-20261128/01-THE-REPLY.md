@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B reply copy (2026-11-28 06:31Z); this copy is refreshed to the final 19881 B / sha d214933b (the formatting pass, the cold-look cut, the kit links, the child-handle cascade). -->
+<!-- version note: the lanes graded the 16,970 B reply copy; this copy is refreshed to the final 19961 B / sha f1c01397 (the formatting pass, the cold-look cut, the kit links, the child-handle cascade, the class-count qualifier). -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -161,7 +161,7 @@ The field corroborates the shape: Governance Decay (2606.22528); DSGC (full chai
 
 **the class**
 
-300 open issues scanned; 140 touch the read-gap class. The eight next to the child: 160985, 160991, 160925, 160907, 160844, 160940, 160957, 160945.
+300 open issues scanned in the bookkeeper's sweep; 140 touch the read-gap class (the October drift sample counted 130 of its own 300). The eight next to the child: 160985, 160991, 160925, 160907, 160844, 160940, 160957, 160945.
 
 The bookkeeper tracks the set as a class: each issue a row, its class-fit the axis, its status the eigenvector's evolution, the read gap's presence the invariant until it is fixed. Two independent digests put this RFC first in the project's coverage and name the same axis — data trust — with the four pillars: #143379, #23717, #12238, #145022. Corroboration, not validation.
 
