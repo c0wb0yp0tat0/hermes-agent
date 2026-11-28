@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B reply copy; this copy is refreshed to the final 19961 B / sha f1c01397 (the formatting pass, the cold-look cut, the kit links, the child-handle cascade, the class-count qualifier). -->
+<!-- version note: the lanes graded the 16,970 B reply copy; this copy is refreshed to the final 20006 B / sha 400f6c94 (the formatting pass, the cold-look cut, the kit links, the child-handle cascade, the class-count qualifier, the reviewed-by footer). -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -207,4 +207,4 @@ The third's frame is data trust: the four pillars are one surface at four levels
 
 The work above is the clarification and the response to your replies. Name what is wrong or missing — the spec, the child, the kit, the rows — and the next version follows your read.
 
-*Prepared with Hermes.*
+*Prepared with Hermes and reviewed by @c0wb0yp0tat0 before posting.*
