@@ -5,6 +5,11 @@
 The kit ships instruments, not just claims. Each row: what it tests, the receipt, the status, the
 falsifier. The gate stays failed, not waived; no instrument is a commitment.
 
+**Sources:** the pilot read is `instruments/kit/` (the store's `read()`, RUN.sh, the structural
+check, `hybrid_battery.py`, the receipt); the instruments' docs are `instruments/docs/` (the
+Read-Restore Eigenvector Bookkeeper, the krecency instrument, the bookkeeper ledger, the
+clock-work six, the negentropy adjudication/sweep); the data is `instruments/data/`.
+
 ## A · The read instruments (the work's own)
 
 | # | instrument | tests | receipt | status | falsifier |
