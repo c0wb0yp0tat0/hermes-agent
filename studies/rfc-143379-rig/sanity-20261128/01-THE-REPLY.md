@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B reply copy; this copy is refreshed to the final 20006 B / sha 400f6c94 (the formatting pass, the cold-look cut, the kit links, the child-handle cascade, the class-count qualifier, the reviewed-by footer). -->
+<!-- version note: the lanes graded the 16,970 B reply copy; this copy is refreshed to the final 20160 B / sha 53c9903c (the formatting pass, the cold-look cut, the kit links, the child-handle cascade, the class-count qualifier, the reviewed-by footer, the humble close). -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -205,6 +205,6 @@ The RFC asked for a network: the read restored, the record re-readable, the comp
 
 The third's frame is data trust: the four pillars are one surface at four levels, and the minimum change that closes the store's version of it is the child.
 
-The work above is the clarification and the response to your replies. Name what is wrong or missing — the spec, the child, the kit, the rows — and the next version follows your read.
+The work above is the clarification and the response to your replies. Any kind of feedback is welcome — the spec, the child, the kit, the rows, the tone, all of it. I do my best not to have a lazy eye about this work; the joke's on me, I've only got the one good eye. Name what is wrong or missing, and the next version follows your read.
 
 *Prepared with Hermes and reviewed by @c0wb0yp0tat0 before posting.*
