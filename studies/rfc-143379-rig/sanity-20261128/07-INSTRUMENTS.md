@@ -39,7 +39,7 @@ read from a system's own state, not an external tick.
 
 | # | instrument | tests | receipt | status |
 |---|---|---|---|---|
-| D1 | **the eigen keeper** | pins as explicit eigen-axes; projection error per class | the special-use-case framing (not part of the diff) | CANDIDATE (the eigen lens's fourth) |
+| D1 | **the Read-Restore Eigenvector Bookkeeper** | pins as explicit eigen-axes; projection error per class | the special-use-case framing (not part of the diff) | CANDIDATE (the eigen lens's fourth) |
 | D2 | **the K-recency probe** | the window's gain at 300+ cycles, 4×–8× | the field's −3.5pp; the scope bug | FAILED (probe's bug), not waived |
 | D3 | **the bookkeeper** | the read-gap class across the backlog | 140-issue sweep JSON; 300 scanned | CANDIDATE (a tracker, not a gate) |
 

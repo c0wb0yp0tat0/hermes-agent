@@ -6,10 +6,12 @@ or child edits from the loop.
 
 ## 1 · The deliverable, verified
 
+*Updated after the full-name edit: the shorthand "eigen keeper" is now the Read-Restore Eigenvector Bookkeeper in the reply and the child.*
+
 | item | state | receipt |
 |---|---|---|
-| the staged reply | 18,486 B, sha `e693e41d…`; 8 sections, 6 tables; the ask leads and closes; **unposted** | the drop; the gist raw hash matches |
-| the child | gist raw = `bccc5d51…` = the local MAX file (10,702 B); before `6ed9c2d9…` | raw fetch, this pass |
+| the staged reply | 18,572 B, sha `7da0d288…`; 8 sections, 6 tables; the ask leads and closes; **unposted** | the drop; the gist raw hash matches |
+| the child | gist raw = `d434bc09…` = the local MAX file (10,681 B); before `6ed9c2d9…` | raw fetch, this pass |
 | the read kit | gist `28594f78…`, 10 files (README, RUN.sh, stall_probe, structural check, receipts) | gist API, this pass |
 | the instruments | N1–N3, the eigen keeper, the clock-work six (R&D proposals, offered, not forced); Zach first, kvnloo's bench, anyone | reply §instruments + `07-INSTRUMENTS.md` |
 | the gate | failed, not waived; nothing public without the word | every fold |

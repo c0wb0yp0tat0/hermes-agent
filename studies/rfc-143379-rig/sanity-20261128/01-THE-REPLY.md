@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 18,486 B / sha e693e41d. Delta: the clock-work six, the sources-within context line, the Zach/kvnloo/anyone offer wording. The lanes' reports apply to the graded copy; the final's additions carry the head's own pass. -->
+<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 18,572 B / sha 7da0d288. Delta: the clock-work six, the sources-within context line, the Zach/kvnloo/anyone offer wording, the Read-Restore Eigenvector Bookkeeper's full name. The lanes' reports apply to the graded copy; the final's additions carry the head's own pass. -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -82,7 +82,7 @@ The branch-two science, which is where the failure became the method:
 | retention | 1.00 → 0.00 at 3 reserved literals / 3 tokens (all-or-nothing) |
 | compaction seam | 17/21 lost facts (81%) tiny and old |
 
-Candidates, class-checked, not adopted: N1 the two-N window; N2 the retention latch (18 tokens against the field's 47); N3 the tiny-aged-fact axis; and the eigen keeper — the read-restore bookkeeper, pins as explicit eigen-axes, projection error per class through the sanitize seam (a special-use-case instrument for the pilot's tracking, not part of the diff; the eigen lens's fourth candidate).
+Candidates, class-checked, not adopted: N1 the two-N window; N2 the retention latch (18 tokens against the field's 47); N3 the tiny-aged-fact axis; and the Read-Restore Eigenvector Bookkeeper — pins as explicit eigen-axes, projection error per class through the sanitize seam (a special-use-case instrument for the pilot's tracking, not part of the diff; the eigen lens's fourth candidate).
 
 The clock-work lens — the problem-of-time physics (Barontini's cold-atom test under a thin optical barrier; Kiefer & Zych's "Entropy as a Clock"), where time is read from a system's own entropy flow rather than an external tick — adds six R&D proposals, same status, offered and not forced: the internal clock (the record's own aging as the clock, not the wall clock); the drift gauge (the record against its representation, per compaction); the synchronization hierarchy (the anchor as external reference, the chain as internal; the lock order is the sync order); the barrier probe (the anchor/chain wall and what crosses it unaccounted); the tabletop mini-universe (the kit at small scale, the contours as the multi-unit test); the proper-time ledger (each entry's age, order, origin; `/pin` as the second witness the summary does not author). Two of the six already carry a recorded failure: the k-term's kept-rates are flat 0.26–0.42 across the four classes, so the clock's rate does not separate the classes it orders; and the lanes live behind the read-burn barrier daily. Each carries its falsifier; none is adopted; none is asked for. The gate stays failed, not waived, until the probe's scope bug is repaired and the protocol runs: fix the probe first; sweep to and past 300 cycles; per-cycle and per-bin deltas at every ratio in 4×–8× and the headline; name and fix the baseline; real paraphrase; worst case, not mean. One sub-zero point is a fail.
 
@@ -106,11 +106,11 @@ The field corroborates the shape: Governance Decay (2606.22528); DSGC (full chai
 | 12 | Revision-5 envelope at scale | PASS | 300 runs/row; rows 1–3 zero, row 4 300/300; `fbefb4ac…e16`; prediction `08103259…`; bar-line difference disclosed |
 | 13 | The K-recency gate | FAIL | table above; not waived |
 | 14 | The branch-two science | MEASURED | table above; instruments not adopted |
-| 15 | The instrument candidates | CANDIDATES | N1 two-N, N2 retention latch, N3 tiny-aged axis, the eigen keeper, the clock-work six; class-checked |
+| 15 | The instrument candidates | CANDIDATES | N1 two-N, N2 retention latch, N3 tiny-aged axis, the Read-Restore Eigenvector Bookkeeper, the clock-work six; class-checked |
 | 16 | The backlog class | MEASURED | 300 scanned, 140 class, 8 shortlist; all open |
 | 17 | The radars | CORROBORATION | two digests, 11-28; #143379 first; four pillars (#143379, #23717, #12238, #145022) |
 | 18 | The multilevel invariant | MEASURED | single-surface multi-writer; six levels; worktree storm |
-| 19 | The child's state | APPLIED 2026-11-28 | the seven edits; the max-value revision with the child's commitments kept; the eigen keeper as a special-use-case instrument; the read kit linked for participants; child gist before `6ed9c2d9…` → after `bccc5d51…` |
+| 19 | The child's state | APPLIED 2026-11-28 | the seven edits; the max-value revision with the child's commitments kept; the Read-Restore Eigenvector Bookkeeper as a special-use-case instrument; the read kit linked for participants; child gist before `6ed9c2d9…` → after `d434bc09…` |
 | 20 | The asks | OPEN | kvnloo's cold run; 3oltan's field read; xngg/jfugalde's reads; ZacharyThomasStone's decision; the room's triage; the table's access to the experimental instruments |
 
 **the class**
@@ -121,7 +121,7 @@ The mechanism generalizes: a shared surface with multiple writers and no explici
 
 **the child**
 
-The child now carries the seven changes in its max-value revision, applied 2026-11-28: E1 read-invoked; E2 the msvcrt regression; E3 the anchor-first parked line; E4 the narrower first slice, no merged-first; E5 the stateless receipt with the 6609dac rows; E6 the #12831 rationale — entries are already in the prompt, and the frozen snapshot is what a cold topic cannot answer from; E7 the remove echo. The revision is in the child gist now (before `6ed9c2d9…`, after `bccc5d51…`), with the child's own commitments kept — the team-up on the `_add_doc` diff, the hold-back clause, the smallest-diff thesis — and the eigen keeper framed as a special-use-case instrument for the pilot's tracking, not part of the fix. The falsifier and discriminator: cold-detail ≥ 90%; miss-rate trend; read-invoked. The [child](https://gist.github.com/c0wb0yp0tat0/577535cda874a7fc483ff9c69d5d6c86) and the [read kit](https://gist.github.com/c0wb0yp0tat0/28594f78bd9662013eb586d26cffc77e) are the links; the kit is the same one 3oltan-seo ran, one command, runnable on any contour.
+The child now carries the seven changes in its max-value revision, applied 2026-11-28: E1 read-invoked; E2 the msvcrt regression; E3 the anchor-first parked line; E4 the narrower first slice, no merged-first; E5 the stateless receipt with the 6609dac rows; E6 the #12831 rationale — entries are already in the prompt, and the frozen snapshot is what a cold topic cannot answer from; E7 the remove echo. The revision is in the child gist now (before `6ed9c2d9…`, after `d434bc09…`), with the child's own commitments kept — the team-up on the `_add_doc` diff, the hold-back clause, the smallest-diff thesis — and the Read-Restore Eigenvector Bookkeeper framed as a special-use-case instrument for the pilot's tracking, not part of the fix. The falsifier and discriminator: cold-detail ≥ 90%; miss-rate trend; read-invoked. The [child](https://gist.github.com/c0wb0yp0tat0/577535cda874a7fc483ff9c69d5d6c86) and the [read kit](https://gist.github.com/c0wb0yp0tat0/28594f78bd9662013eb586d26cffc77e) are the links; the kit is the same one 3oltan-seo ran, one command, runnable on any contour.
 
 **the asks**
 
@@ -137,7 +137,7 @@ kvnloo — the cold 6609dac re-run. The prediction commits first; you run and po
 
 The room — the filing read stands as 3oltan answered it: regular issue, §3.2, no advisory, narrower first slice, no merged-first. If triage needs a different shape — a different proof, a merged-first experiment, more evidence — name it and it is the next job. The kit is for any contour that wants it; the bench grows by use, not by permission.
 
-The experimental instruments — the two-N window, the retention latch, the tiny-aged-fact axis, the eigen keeper, the clock-work six (the internal clock, the drift gauge, the synchronization hierarchy, the barrier probe, the tabletop mini-universe, the proper-time ledger), the K-recency probe, and the read kit — are open: ZacharyThomasStone first, kvnloo's bench already open, and anyone else who wants them. They are R&D proposals, not commitments and not a forcing function; each carries its receipts and its perturbation line, and interest is the only condition. Try one, or none; no answer is owed either way.
+The experimental instruments — the two-N window, the retention latch, the tiny-aged-fact axis, the Read-Restore Eigenvector Bookkeeper, the clock-work six (the internal clock, the drift gauge, the synchronization hierarchy, the barrier probe, the tabletop mini-universe, the proper-time ledger), the K-recency probe, and the read kit — are open: ZacharyThomasStone first, kvnloo's bench already open, and anyone else who wants them. They are R&D proposals, not commitments and not a forcing function; each carries its receipts and its perturbation line, and interest is the only condition. Try one, or none; no answer is owed either way.
 
 **the limits**
 
