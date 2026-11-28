@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 19881 B / sha ff41738d (the formatting pass, the cold-look cut, the kit links). Delta: the clock-work six, the sources-within context, the offer wording, the full bookkeeper name, the formal-pass line, the control states; the seats/framework line cut; the read-kit + instruments-kit links in @ZacharyThomasStone's paragraph and the instruments paragraph. -->
+<!-- version note: the lanes graded the 16,970 B reply copy (2026-11-28 06:31Z); this copy is refreshed to the final 19881 B / sha d214933b (the formatting pass, the cold-look cut, the kit links, the child-handle cascade). -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -156,7 +156,7 @@ The field corroborates the shape: Governance Decay (2606.22528); DSGC (full chai
 | 16 | The backlog class | MEASURED | 300 scanned, 140 class, 8 shortlist; all open |
 | 17 | The radars | CORROBORATION | two digests, 11-28; #143379 first; four pillars (#143379, #23717, #12238, #145022) |
 | 18 | The multilevel invariant | MEASURED | single-surface multi-writer; six levels; worktree storm |
-| 19 | The child's state | APPLIED 2026-11-28 | the seven edits; the max-value revision with the child's commitments kept; the Read-Restore Eigenvector Bookkeeper as a special-use-case instrument; the read kit linked for participants; child gist before `6ed9c2d9…` → after `d434bc09…` |
+| 19 | The child's state | APPLIED 2026-11-28 | the seven edits; the max-value revision with the child's commitments kept; the Read-Restore Eigenvector Bookkeeper as a special-use-case instrument; the read kit linked for participants; child gist before `6ed9c2d9…` → after `50ec19ef…` |
 | 20 | The asks | OPEN | @kvnloo's cold run; @3oltan-seo's field read; @xngg1021/@jfugalde's reads; @ZacharyThomasStone's decision; the room's triage; the table's access to the experimental instruments |
 
 **the class**
@@ -173,7 +173,7 @@ Our own machinery ran it this week: shared checkout, vanished files, HEAD.lock, 
 
 The child now carries the seven changes in its max-value revision, applied 2026-11-28: E1 read-invoked; E2 the msvcrt regression; E3 the anchor-first parked line; E4 the narrower first slice, no merged-first; E5 the stateless receipt with the 6609dac rows; E6 the #12831 rationale — entries are already in the prompt, and the frozen snapshot is what a cold topic cannot answer from; E7 the remove echo.
 
-The revision is in the child gist now (before `6ed9c2d9…`, after `d434bc09…`), with the child's own commitments kept: the team-up on the `_add_doc` diff, the hold-back clause, the smallest-diff thesis. The Read-Restore Eigenvector Bookkeeper is framed as a special-use-case instrument for the pilot's tracking, not part of the fix.
+The revision is in the child gist now (before `6ed9c2d9…`, after `50ec19ef…`), with the child's own commitments kept: the team-up on the `_add_doc` diff, the hold-back clause, the smallest-diff thesis. The Read-Restore Eigenvector Bookkeeper is framed as a special-use-case instrument for the pilot's tracking, not part of the fix.
 
 The falsifier and discriminator: cold-detail ≥ 90%; miss-rate trend; read-invoked. The [child](https://gist.github.com/c0wb0yp0tat0/577535cda874a7fc483ff9c69d5d6c86) and the [read kit](https://gist.github.com/c0wb0yp0tat0/28594f78bd9662013eb586d26cffc77e) are the links. The kit is the same one @3oltan-seo ran, one command, runnable on any contour.
 
