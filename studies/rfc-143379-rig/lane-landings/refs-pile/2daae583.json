@@ -1,0 +1,26 @@
+{
+  "id": "2daae583",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted;",
+  "origin": "background_review",
+  "created_at": 1795716088.7074451,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "THE GATE (op 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session. 11-26: ONLY gate = the post — stop making gates.",
+        "old_text": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "patch",
+        "content": "Beam = KENARI reserve — select legs only, NEVER main fleet.",
+        "old_text": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b.",
+        "matched_entry": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b."
+      }
+    ]
+  }
+}

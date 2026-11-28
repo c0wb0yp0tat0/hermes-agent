@@ -1,0 +1,30 @@
+{
+  "id": "af147a53",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; gl",
+  "origin": "background_review",
+  "created_at": 1795650210.5626917,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Amazon tank — LP doctrine in envelopes (ch003); ex-Alexa (trained the displacing model), resigned; CTO=kinship; global Kaizen + pilot designed.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Real-work: c0wb0yp0tat0 (zeros not O's).",
+        "old_text": "Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.",
+        "matched_entry": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      },
+      {
+        "action": "add",
+        "content": "We are a pair: no boss-speak; only bias = bias for action."
+      }
+    ]
+  }
+}

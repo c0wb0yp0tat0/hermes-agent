@@ -1,0 +1,52 @@
+{
+  "id": "168b886f",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - remove: FIRST-ENTRY OVERWRITE-1; - remove: SECOND-ENTRY OVERWRITE-2; - patch span 'FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Li",
+  "origin": "background_review",
+  "created_at": 1795529951.6711617,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "remove",
+        "old_text": "FIRST-ENTRY OVERWRITE-1",
+        "matched_entry": "FIRST-ENTRY OVERWRITE-1"
+      },
+      {
+        "action": "remove",
+        "old_text": "SECOND-ENTRY OVERWRITE-2",
+        "matched_entry": "SECOND-ENTRY OVERWRITE-2"
+      },
+      {
+        "action": "patch",
+        "content": "FLEET runners: pve1 = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241.",
+        "old_text": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241.",
+        "matched_entry": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241."
+      },
+      {
+        "action": "patch",
+        "content": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun/longcat).",
+        "old_text": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical)."
+      },
+      {
+        "action": "patch",
+        "content": "The copycat-harness (/root/scripts/copycat-harness.py) carries: sentinel, continuation, write-window gate, emission parser, 8192-cap, 429-backoff.",
+        "old_text": "The copycat-harness (/root/scripts/copycat-harness.py) carries the full transport chain: sentinel-done, content-continuation, write-window read-gate, emission-format parser, 8192-cap, 429-backoff.",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 is the RFC #143379 study's staging-home — every rig-side landing posts to its comment-thread on arrival (the machine-log cadence, NEVER silent — study landings ONLY, envelope-form, handles-only (11-20)); the RFC's upstream issue stays QUIET until the user's word. The copycat-harness (/root/scripts/copycat-harness.py) carries the full transport chain: sentinel-done, content-continuation, write-window read-gate, emission-format parser, 8192-cap, 429-backoff."
+      },
+      {
+        "action": "patch",
+        "content": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — hard-line GATE LAW deleted as skew; docs belong to the operator, never a session.",
+        "old_text": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "add",
+        "content": "PROXY DOCTRINE (11-24): absent the operator's word — two-way doors pursued at least partially; one-way doors parked (prep allowed, posting waits); else proxy judgment (mechanism + think-tank + LP lens)."
+      }
+    ]
+  }
+}

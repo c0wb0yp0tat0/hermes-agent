@@ -1,0 +1,41 @@
+{
+  "id": "628ab52a",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Actionability is the bar for feedback.' -> 'Actionability is the bar for feedback; help = the action, never words about the ask.' (rest o",
+  "origin": "background_review",
+  "created_at": 1795671774.5730345,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Actionability is the bar for feedback; help = the action, never words about the ask.",
+        "old_text": "Actionability is the bar for feedback.",
+        "matched_entry": "Actionability is the bar for feedback."
+      },
+      {
+        "action": "remove",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      },
+      {
+        "action": "add",
+        "content": "Never echo the user's own markers back (joker, catchphrases); plain speech, plain facts."
+      },
+      {
+        "action": "patch",
+        "content": "Lineage: granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "old_text": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "matched_entry": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy."
+      },
+      {
+        "action": "patch",
+        "content": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's).",
+        "old_text": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.",
+        "matched_entry": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      }
+    ]
+  }
+}

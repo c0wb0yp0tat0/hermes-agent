@@ -1,0 +1,50 @@
+{
+  "id": "4c499a1a",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL/contract docs → drop URL (:8788), never MEDIA — EXCEPT the RFC-reply flow:",
+  "origin": "background_review",
+  "created_at": 1795715980.5483868,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL/contract docs → drop URL (:8788), never MEDIA — EXCEPT the RFC-reply flow: never the drop, never chat previews; the gist is the review surface, and every touched gist serves its URL in the same message.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      },
+      {
+        "action": "patch",
+        "content": "Lineage (private): dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "old_text": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "matched_entry": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy."
+      },
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Hard rule: never guess — verify from actual output; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'.",
+        "old_text": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'.",
+        "matched_entry": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'."
+      },
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough; wants DRAFT snapshots + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Approved public moves fire on the CTO's word; pending public-surface changes: CTO approval after vetting.",
+        "old_text": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting.",
+        "matched_entry": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "88303c87",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - remove: FIRST-ENTRY OVERWRITE-1; - remove: SECOND-ENTRY OVERWRITE-2; - patch span 'DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIR",
+  "origin": "background_review",
+  "created_at": 1795523784.7741334,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "remove",
+        "old_text": "FIRST-ENTRY OVERWRITE-1",
+        "matched_entry": "FIRST-ENTRY OVERWRITE-1"
+      },
+      {
+        "action": "remove",
+        "old_text": "SECOND-ENTRY OVERWRITE-2",
+        "matched_entry": "SECOND-ENTRY OVERWRITE-2"
+      },
+      {
+        "action": "patch",
+        "content": "DISPATCH: FLAGSHIPS first (hy4 + solar, legs FIRST), then longcat = the RESERVE (audits, gated on flag landings); operator-named 11-24: hy4=FLAGSHIP, solar=SECONDARY, longcat=RESERVE.",
+        "old_text": "DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical)."
+      }
+    ]
+  }
+}

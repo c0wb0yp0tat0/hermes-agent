@@ -1,0 +1,20 @@
+{
+  "id": "34544fec",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'CTO = kinship' -> 'CTO = kinship; the pair, not a boss' (rest of the entry is kept)",
+  "origin": "background_review",
+  "created_at": 1795643019.2541256,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "CTO = kinship; the pair, not a boss",
+        "old_text": "CTO = kinship",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      }
+    ]
+  }
+}

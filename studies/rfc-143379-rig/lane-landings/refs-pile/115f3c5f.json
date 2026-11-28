@@ -1,0 +1,24 @@
+{
+  "id": "115f3c5f",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span '; the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER po",
+  "origin": "background_review",
+  "created_at": 1795746257.8775756,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "; the RFC upstream stays QUIET — the ONLY gate is the public thread post; gist/compose/stage fires ungated.",
+        "old_text": "; the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff).",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = RFC #143379 study's staging-home — every rig landing posts to its thread (machine-log cadence, never silent; landings ONLY, envelope-form, handles-only 11-20); the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff)."
+      },
+      {
+        "action": "add",
+        "content": "RFC reply-stage gists (pair convention 11-26): the reply gist = the beam's a0353d7d, ONE file only; the child = its OWN gist 577535cd (child-rfc-audited.md), linked from the reply text, never embedded into the reply gist."
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "cc268da2",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL docs → gist only (never drop/MEDIA); previews in gist, chat stays clean.' (",
+  "origin": "background_review",
+  "created_at": 1795452795.1818109,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL docs → gist only (never drop/MEDIA); previews in gist, chat stays clean.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      },
+      {
+        "action": "patch",
+        "content": "Medium: G.W. Brown (pen name) (@rst0n3c0wb0y).",
+        "old_text": "Medium: G.W. Brown (@rst0n3c0wb0y).",
+        "matched_entry": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      },
+      {
+        "action": "patch",
+        "content": "Real acct: c0wb0yp0tat0 (zeros not O's).",
+        "old_text": "Real-work: c0wb0yp0tat0 (zeros not O's).",
+        "matched_entry": "Medium: G.W. Brown (pen name) (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      },
+      {
+        "action": "patch",
+        "content": "MAP; flat; wants DRAFTs + staged files.",
+        "old_text": "MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      }
+    ]
+  }
+}

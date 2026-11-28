@@ -1,0 +1,20 @@
+{
+  "id": "09ed0a31",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs FIRST), then SUPPORT (solar/stepfun/longcat: audits, batteries, mechan",
+  "origin": "background_review",
+  "created_at": 1795441303.6001108,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (longcat/stepfun: audits, batteries, mechanical).",
+        "old_text": "DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs FIRST), then SUPPORT (solar/stepfun/longcat: audits, batteries, mechanical).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs FIRST), then SUPPORT (solar/stepfun/longcat: audits, batteries, mechanical)."
+      }
+    ]
+  }
+}

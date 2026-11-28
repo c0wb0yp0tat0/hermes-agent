@@ -1,0 +1,20 @@
+{
+  "id": "4fa8d3c6",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; gl",
+  "origin": "background_review",
+  "created_at": 1795651218.0703511,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa, resigned; CTO = kinship; pair, not boss (11-25); global Kaizen + pilot designed.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "7efb98c9",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY t",
+  "origin": "background_review",
+  "created_at": 1795651218.0787144,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public/bragged; PR #1 sees ordinary work freely; ONLY the kindness substance stays internal, word-gated. The loom runner-label = its machinery codename (11-25) — never for ordinary runs.",
+        "old_text": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "matched_entry": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated."
+      }
+    ]
+  }
+}

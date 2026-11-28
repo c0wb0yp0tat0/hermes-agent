@@ -1,0 +1,42 @@
+{
+  "id": "d250861f",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - add: RFC staging (11-26): comment gist 6ecf51dc (RFC-COMMENT 2f63557e) · archive 4b594abb (38 files) · recall gist 66889d66; posting word-gated.; -",
+  "origin": "background_review",
+  "created_at": 1795675545.7695107,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "add",
+        "content": "RFC staging (11-26): comment gist 6ecf51dc (RFC-COMMENT 2f63557e) · archive 4b594abb (38 files) · recall gist 66889d66; posting word-gated."
+      },
+      {
+        "action": "patch",
+        "content": "Facimus semper — the fleet's motto (user-gifted): the only bias is for action.",
+        "old_text": "Facimus semper — the fleet's motto (user-gifted 11-11): the only intentional bias is a bias for action.",
+        "matched_entry": "Facimus semper — the fleet's motto (user-gifted 11-11): the only intentional bias is a bias for action."
+      },
+      {
+        "action": "patch",
+        "content": "kvnloo z0 = partner lab; 'boundary' in zer0.repo.yaml = INTENDED contract, never a blocker; skill: kvnloo-z0-ecosystem.",
+        "old_text": "kvnloo z0 ecosystem = partner lab (forked); 'boundary' in zer0.repo.yaml = INTENDED owns/not_here contract, never a blocker; skill: kvnloo-z0-ecosystem.",
+        "matched_entry": "kvnloo z0 ecosystem = partner lab (forked); 'boundary' in zer0.repo.yaml = INTENDED owns/not_here contract, never a blocker; skill: kvnloo-z0-ecosystem."
+      },
+      {
+        "action": "patch",
+        "content": "FLEET = 4: pve1 · p0tat0 = Linux241 · c0wb0y = Win241 · cloud; local-lm = 241.",
+        "old_text": "FLEET = 4: pve1 (THIS host) · p0tat0 = Linux241 (c0wb0yp0tat0) · c0wb0y = Win241 · cloud (matrix); local-lm=241.",
+        "matched_entry": "FLEET = 4: pve1 (THIS host) · p0tat0 = Linux241 (c0wb0yp0tat0) · c0wb0y = Win241 · cloud (matrix); local-lm=241."
+      },
+      {
+        "action": "patch",
+        "content": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS (hy4 + solar), then SUPPORT.",
+        "old_text": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25)."
+      }
+    ]
+  }
+}

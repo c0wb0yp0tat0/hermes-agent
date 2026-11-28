@@ -1,0 +1,44 @@
+{
+  "id": "e3a6eb6c",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted;",
+  "origin": "background_review",
+  "created_at": 1795671774.5847433,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "THE GATE (operator 11-23, sharpened 11-26): if there's a gate, the operator says so — never invent gates; the ONLY gate = the public write outside a secret gist or PR #1; documentation belongs to the operator, never a session.",
+        "old_text": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "patch",
+        "content": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = the honesty surface (machine-cadence rows only, envelope-form). RFC upstream: OUR postings wait the operator's word; 3oltan's phase-1 receipt IS live (comment 7183339657 — GREEN-GREEN-GREEN-RED, sha 3ff6aee4 matched; his 2 kit notes landed in the bundle). THE ROW = RFC-REPLY-WHOLE-ARC-20261126.md sha ec337c501c61 (assembled; b654fc0a = pre-assembly pin identity). ONE GIST 4b594abb (15 files, secret); engagement gist 144b451df; stale HITL/preview gists deleted. copycat-harness = /root/scripts/copycat-harness.py",
+        "old_text": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = RFC #143379 study's staging-home — every rig landing posts to its thread (machine-log cadence, never silent; landings ONLY, envelope-form, handles-only 11-20); the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff).",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = RFC #143379 study's staging-home — every rig landing posts to its thread (machine-log cadence, never silent; landings ONLY, envelope-form, handles-only 11-20); the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff)."
+      },
+      {
+        "action": "patch",
+        "content": "Kindness doctrine: random acts stay UNFLOWN — never public, never bragged; PR #1 sees ordinary work freely; only the kindness substance stays internal, word-gated.",
+        "old_text": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "matched_entry": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated."
+      },
+      {
+        "action": "patch",
+        "content": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun).",
+        "old_text": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25)."
+      },
+      {
+        "action": "patch",
+        "content": "Facimus semper (fleet motto, 11-11): the only intentional bias is a bias for action.",
+        "old_text": "Facimus semper — the fleet's motto (user-gifted 11-11): the only intentional bias is a bias for action.",
+        "matched_entry": "Facimus semper — the fleet's motto (user-gifted 11-11): the only intentional bias is a bias for action."
+      }
+    ]
+  }
+}

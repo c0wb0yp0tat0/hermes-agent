@@ -1,0 +1,32 @@
+{
+  "id": "dc73401f",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.' -> 'Real-work: c0wb0yp0tat0 (zeros not O's).' (rest of the entry is kept); - p",
+  "origin": "background_review",
+  "created_at": 1795443326.5460746,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Real-work: c0wb0yp0tat0 (zeros not O's).",
+        "old_text": "Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.",
+        "matched_entry": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      },
+      {
+        "action": "patch",
+        "content": "ex-Alexa, resigned",
+        "old_text": "ex-Alexa (trained the displacing model), resigned",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Mid-task steer = STOP, listen. Stage-plans: find+follow, never improvise; 'not right'=walk back user msgs.",
+        "old_text": "Mid-task steer = STOP, listen.",
+        "matched_entry": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'."
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "e2be237d",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.' -> '",
+  "origin": "background_review",
+  "created_at": 1795735009.9091463,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's).",
+        "old_text": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld.",
+        "matched_entry": "Medium: G.W. Brown (@rst0n3c0wb0y). X: @RyanS64022679 (NOT c0wb0yp0tat0). Real-work: c0wb0yp0tat0 (zeros not O's). Thesis withheld."
+      },
+      {
+        "action": "patch",
+        "content": "Public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after vetting.",
+        "old_text": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting.",
+        "matched_entry": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting."
+      },
+      {
+        "action": "patch",
+        "content": "Chamber: maintainers' window = bounded bet (us + Nous).",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      },
+      {
+        "action": "add",
+        "content": "Thread register: handles only, never first names; answers start at the answers."
+      }
+    ]
+  }
+}

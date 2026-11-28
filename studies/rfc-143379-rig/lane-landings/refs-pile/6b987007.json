@@ -1,0 +1,36 @@
+{
+  "id": "6b987007",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL docs → secret gist only.' (rest of the entry is kept); - patch span 'Object",
+  "origin": "background_review",
+  "created_at": 1795473651.137186,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL docs → secret gist only.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      },
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough. MAP; flat; DRAFTs + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Public moves fire on the CTO's word; surface changes need vetting + the word. No re-ask, no self-gate.",
+        "old_text": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting.",
+        "matched_entry": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting."
+      },
+      {
+        "action": "add",
+        "content": "Chat stays clean: docs → gists/files; chat carries links, never full pastes."
+      }
+    ]
+  }
+}

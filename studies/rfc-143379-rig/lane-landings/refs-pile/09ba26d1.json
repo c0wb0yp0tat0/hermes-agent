@@ -1,0 +1,30 @@
+{
+  "id": "09ba26d1",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - remove: FIRST-ENTRY OVERWRITE-1; - remove: SECOND-ENTRY OVERWRITE-2; - patch span 'DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs",
+  "origin": "background_review",
+  "created_at": 1795443313.128636,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "remove",
+        "old_text": "FIRST-ENTRY OVERWRITE-1",
+        "matched_entry": "FIRST-ENTRY OVERWRITE-1"
+      },
+      {
+        "action": "remove",
+        "old_text": "SECOND-ENTRY OVERWRITE-2",
+        "matched_entry": "SECOND-ENTRY OVERWRITE-2"
+      },
+      {
+        "action": "patch",
+        "content": "DISPATCH: HY4 leads as flagship (qwen4's free-tier ENDED 11-23; a 404 = end, never a wait), solar secondary, longcat/stepfun support, Kenari/keyless reserves more.",
+        "old_text": "DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs FIRST), then SUPPORT (solar/stepfun/longcat: audits, batteries, mechanical).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (qwen4-max + hy4 — short windows; legs FIRST), then SUPPORT (solar/stepfun/longcat: audits, batteries, mechanical)."
+      }
+    ]
+  }
+}

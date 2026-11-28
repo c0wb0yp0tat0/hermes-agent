@@ -1,0 +1,36 @@
+{
+  "id": "f1a50817",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b.' -> 'Beam = KENARI reserve — select legs",
+  "origin": "background_review",
+  "created_at": 1795735001.3106096,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Beam = KENARI reserve — select legs only, NEVER main fleet.",
+        "old_text": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b.",
+        "matched_entry": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b."
+      },
+      {
+        "action": "patch",
+        "content": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged; the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "old_text": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "matched_entry": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated."
+      },
+      {
+        "action": "patch",
+        "content": "The documentation belongs to the operator, never to a session. Only the post is a gate (11-26); invented gates = repeat failure.",
+        "old_text": "the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "add",
+        "content": "The 🃏✓ sign-off RETIRED (11-26) — never sign with it."
+      }
+    ]
+  }
+}

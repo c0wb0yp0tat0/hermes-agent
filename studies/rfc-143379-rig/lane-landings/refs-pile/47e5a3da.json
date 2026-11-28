@@ -1,0 +1,68 @@
+{
+  "id": "47e5a3da",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER post",
+  "origin": "background_review",
+  "created_at": 1795660293.4261327,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "the RFC: all-hands fired 11-26 02:03Z (c7180410794 — the giant's live upstream; the RFC is the thread, PR#1 never linked from public comments); the six invites + further postings wait the pair's word. Instruments: secret gist 4b594abb… + drop/PILOT-KIT-PHASE1 (phase-1 run, receipt 3ff6aee4, byte-deterministic).",
+        "old_text": "the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word).",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = RFC #143379 study's staging-home — every rig landing posts to its thread (machine-log cadence, never silent; landings ONLY, envelope-form, handles-only 11-20); the RFC's upstream issue stays QUIET until the operator's word (the word came 11-24 15:21Z — the FB-2 reply is live on it; FURTHER postings still wait the word). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff)."
+      },
+      {
+        "action": "patch",
+        "content": "copycat-harness (/root/scripts/copycat-harness.py) = the transport (sentinel, continuation, read-gate, 8192-cap, 429-backoff).",
+        "old_text": "copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff).",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = RFC #143379 study's staging-home — every rig landing posts to its thread (machine-log cadence, never silent; landings ONLY, envelope-form, handles-only 11-20); the RFC: all-hands fired 11-26 02:03Z (c7180410794 — the giant's live upstream; the RFC is the thread, PR#1 never linked from public comments); the six invites + further postings wait the pair's word. Instruments: secret gist 4b594abb… + drop/PILOT-KIT-PHASE1 (phase-1 run, receipt 3ff6aee4, byte-deterministic). copycat-harness (/root/scripts/copycat-harness.py) = the transport chain (sentinel-done, continuation, read-gate, emission-parser, 8192-cap, 429-backoff)."
+      },
+      {
+        "action": "patch",
+        "content": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance stays internal, word-gated. loom = the kindness runs' code name — tending flagged; never for ordinary runs.",
+        "old_text": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "matched_entry": "Kindness doctrine (grandfather-taught): random acts stay UNFLOWN — never public, never bragged. PR #1 sees ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated."
+      },
+      {
+        "action": "patch",
+        "content": "kvnloo z0 ecosystem = partner lab; zer0.repo.yaml 'boundary' = INTENDED contract, not a blocker (skill: kvnloo-z0-ecosystem).",
+        "old_text": "kvnloo z0 ecosystem = partner lab (forked); 'boundary' in zer0.repo.yaml = INTENDED owns/not_here contract, never a blocker; skill: kvnloo-z0-ecosystem.",
+        "matched_entry": "kvnloo z0 ecosystem = partner lab (forked); 'boundary' in zer0.repo.yaml = INTENDED owns/not_here contract, never a blocker; skill: kvnloo-z0-ecosystem."
+      },
+      {
+        "action": "patch",
+        "content": "Board STALE — truth = cards' runs; revived lanes carry DEAD pins; counts lie; workers' worktree can be an unrelated repo (phantom).",
+        "old_text": "Board mirror STALE — truth = cards' runs; revived lanes carry DEAD pins; dispatcher counts lie; workers' worktree can be an unrelated repo (phantom).",
+        "matched_entry": "Board mirror STALE — truth = cards' runs; revived lanes carry DEAD pins; dispatcher counts lie; workers' worktree can be an unrelated repo (phantom)."
+      },
+      {
+        "action": "patch",
+        "content": "FLEET = 4: pve1 (this host) · p0tat0 (Linux241) · c0wb0y (Win241) · cloud; local-lm=241.",
+        "old_text": "FLEET = 4: pve1 (THIS host) · p0tat0 = Linux241 (c0wb0yp0tat0) · c0wb0y = Win241 · cloud (matrix); local-lm=241.",
+        "matched_entry": "FLEET = 4: pve1 (THIS host) · p0tat0 = Linux241 (c0wb0yp0tat0) · c0wb0y = Win241 · cloud (matrix); local-lm=241."
+      },
+      {
+        "action": "patch",
+        "content": "Cold-start: 015 → 016 → INDEX → 021 (THE READ-RESTORE PLAN) — originals NOT on host disk; PR#1 = HOMEBASE (newest rows first); DISPATCH: flagships (hy4+solar) first.",
+        "old_text": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (originals NOT on host disk); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar), then SUPPORT (stepfun longcat-gone-11-25)."
+      },
+      {
+        "action": "patch",
+        "content": "THE GATE (11-23): if there's a gate, the operator says so — the GATE LAW skew is deleted; the docs belong to the operator.",
+        "old_text": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "patch",
+        "content": "The study branch's shared with a sibling's archiver — stale pushes revert/stack the head; the tracking ref can lie; per fold: ls-remote first.",
+        "old_text": "The study-repo's branch is shared with a sibling's archiver — stale pushes revert/stack the head; the tracking ref can lie (refspec main-only); per fold: ls-remote first.",
+        "matched_entry": "The study-repo's branch is shared with a sibling's archiver — stale pushes revert/stack the head; the tracking ref can lie (refspec main-only); per fold: ls-remote first."
+      }
+    ]
+  }
+}

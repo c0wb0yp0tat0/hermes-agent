@@ -1,0 +1,30 @@
+{
+  "id": "bae4c4bd",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - remove: FIRST-ENTRY OVERWRITE-1; - remove: SECOND-ENTRY OVERWRITE-2; - patch span 'FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Li",
+  "origin": "background_review",
+  "created_at": 1795445134.110868,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "remove",
+        "old_text": "FIRST-ENTRY OVERWRITE-1",
+        "matched_entry": "FIRST-ENTRY OVERWRITE-1"
+      },
+      {
+        "action": "remove",
+        "old_text": "SECOND-ENTRY OVERWRITE-2",
+        "matched_entry": "SECOND-ENTRY OVERWRITE-2"
+      },
+      {
+        "action": "patch",
+        "content": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241 (DARKHORSE = the 44831 local GGUF, host-limited) · LUNA = PAID gpt-6-luna — never conflate.",
+        "old_text": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241.",
+        "matched_entry": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241."
+      }
+    ]
+  }
+}

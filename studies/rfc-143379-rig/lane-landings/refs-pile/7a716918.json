@@ -1,0 +1,42 @@
+{
+  "id": "7a716918",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.' -> 'Objective research",
+  "origin": "background_review",
+  "created_at": 1795659546.3313103,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough. Wants DRAFT snapshots + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa, resigned; CTO = kinship.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Chamber: maintainers' window = bounded bet (us = wider community + Nous).",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      },
+      {
+        "action": "patch",
+        "content": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen.",
+        "old_text": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'.",
+        "matched_entry": "Hard rule: never guess — verify from actual output; cross-checks; own tools. Mid-task steer = STOP, listen. Never relabel thesis as 'correction'."
+      },
+      {
+        "action": "add",
+        "content": "Give, don't offer — the offering IS the package; repetition only where the reframing earns it; compliance ≠ true help."
+      }
+    ]
+  }
+}

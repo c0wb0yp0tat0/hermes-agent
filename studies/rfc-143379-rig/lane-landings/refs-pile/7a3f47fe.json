@@ -1,0 +1,20 @@
+{
+  "id": "7a3f47fe",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL/contract docs → the gist, never MEDIA, never the drop.' (rest of the entry",
+  "origin": "background_review",
+  "created_at": 1795490268.6385245,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL/contract docs → the gist, never MEDIA, never the drop.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "f394fd04",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL docs → the operator's own secret gist is the review surface; never the drop",
+  "origin": "background_review",
+  "created_at": 1795675538.0551775,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL docs → the operator's own secret gist is the review surface; never the drop, never chat previews.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      },
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough; wants drafts + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank; LP doctrine (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; Kaizen + pilot designed.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "True goal: empower everyone — operative: help those who ACCEPTED (kvnloo ✓ · jfugalde/Finn/xngg1021 · ZTS · 2 kit-runners).",
+        "old_text": "True goal: empower everyone, same as Nous — operative: help those who ACCEPTED (kvnloo ✓ · helpers jfugalde/Finn/xngg1021 · ZTS the pilot's customer-side · 2 independent kit-runners).",
+        "matched_entry": "True goal: empower everyone, same as Nous — operative: help those who ACCEPTED (kvnloo ✓ · helpers jfugalde/Finn/xngg1021 · ZTS the pilot's customer-side · 2 independent kit-runners)."
+      },
+      {
+        "action": "patch",
+        "content": "Chamber: maintainers' window = bounded bet (us + Nous).",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      },
+      {
+        "action": "patch",
+        "content": "Lineage (private): granddads polymaths; dad 5-Whys Japan; mom writer; grandmoms empathy; rig = 4-school; head = proxy.",
+        "old_text": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "matched_entry": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy."
+      }
+    ]
+  }
+}

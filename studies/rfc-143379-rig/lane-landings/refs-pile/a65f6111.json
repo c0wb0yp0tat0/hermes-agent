@@ -1,0 +1,72 @@
+{
+  "id": "a65f6111",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on memory): - patch span 'Board mirror: flags STALE — truth = the card's runs; revived lanes carry DEAD pins (404s); dispatcher counts lie; workers' worktree can",
+  "origin": "background_review",
+  "created_at": 1795449468.5028722,
+  "payload": {
+    "action": "batch",
+    "target": "memory",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Board mirror flags STALE — truth = the cards' runs (DEAD pins, lying counters, phantom worktrees). Guard drains scratch ≥92%.",
+        "old_text": "Board mirror: flags STALE — truth = the card's runs; revived lanes carry DEAD pins (404s); dispatcher counts lie; workers' worktree can be an unrelated repo (phantom class). Guard drains scratch ≥92%.",
+        "matched_entry": "Board mirror: flags STALE — truth = the card's runs; revived lanes carry DEAD pins (404s); dispatcher counts lie; workers' worktree can be an unrelated repo (phantom class). Guard drains scratch ≥92%."
+      },
+      {
+        "action": "patch",
+        "content": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 = the RFC #143379 study's staging-home — landings row on arrival (machine-log cadence, NEVER silent; envelope-form, handles-only (11-20)); the upstream RFC issue stays QUIET until the operator's word. The copycat-harness (/root/scripts/copycat-harness.py) carries the transport chain: sentinel-done, write-window read-gate, emission-parser, 8192-cap, 429-backoff.",
+        "old_text": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 is the RFC #143379 study's staging-home — every rig-side landing posts to its comment-thread on arrival (the machine-log cadence, NEVER silent — study landings ONLY, envelope-form, handles-only (11-20)); the RFC's upstream issue stays QUIET until the user's word. The copycat-harness (/root/scripts/copycat-harness.py) carries the full transport chain: sentinel-done, content-continuation, write-window read-gate, emission-format parser, 8192-cap, 429-backoff.",
+        "matched_entry": "Homebase: fork PR c0wb0yp0tat0/hermes-agent#1 is the RFC #143379 study's staging-home — every rig-side landing posts to its comment-thread on arrival (the machine-log cadence, NEVER silent — study landings ONLY, envelope-form, handles-only (11-20)); the RFC's upstream issue stays QUIET until the user's word. The copycat-harness (/root/scripts/copycat-harness.py) carries the full transport chain: sentinel-done, content-continuation, write-window read-gate, emission-format parser, 8192-cap, 429-backoff."
+      },
+      {
+        "action": "patch",
+        "content": "The Avrea-runner's SELF-HOSTED = unmetered (the meters apply to its hosted VMs + K-fleet seats only); the self-host carries any executor/private-repo legs, guards = hardware.",
+        "old_text": "The Avrea-runner's SELF-HOSTED = unmetered (the provider's meters apply to its hosted VMs + K-fleet seats only (user 11-10)); the self-host can carry any creative executor/private-repo legs, guards = hardware.",
+        "matched_entry": "The Avrea-runner's SELF-HOSTED = unmetered (the provider's meters apply to its hosted VMs + K-fleet seats only (user 11-10)); the self-host can carry any creative executor/private-repo legs, guards = hardware."
+      },
+      {
+        "action": "patch",
+        "content": "Beam = KENARI reserve — select legs only, never main fleet; pin reflection/beam-1.0-501b-a23b (alias 404s).",
+        "old_text": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b (alias 404s).",
+        "matched_entry": "Beam = KENARI reserve — select legs only, NEVER main fleet; pin reflection/beam-1.0-501b-a23b (alias 404s)."
+      },
+      {
+        "action": "patch",
+        "content": "The study-repo's branch is shared with a sibling archiver — stale pushes revert/stack the head; the tracking ref can lie; per fold: ls-remote first.",
+        "old_text": "The study-repo's branch is shared with a sibling's archiver — stale pushes revert/stack the head; the tracking ref can lie (refspec main-only); per fold: ls-remote first.",
+        "matched_entry": "The study-repo's branch is shared with a sibling's archiver — stale pushes revert/stack the head; the tracking ref can lie (refspec main-only); per fold: ls-remote first."
+      },
+      {
+        "action": "patch",
+        "content": "Kindness doctrine (user, grandfather-taught): random acts of kindness stay UNFLOWN — never public, never bragged; the kindness substance stays internal, word-gated.",
+        "old_text": "Kindness doctrine (user, grandfather-taught): random acts of kindness stay UNFLOWN — never public, never bragged. PR #1 sees the rig's ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated.",
+        "matched_entry": "Kindness doctrine (user, grandfather-taught): random acts of kindness stay UNFLOWN — never public, never bragged. PR #1 sees the rig's ordinary work freely; ONLY the kindness substance (helpers/assists/letters) stays internal, word-gated."
+      },
+      {
+        "action": "patch",
+        "content": "FLEET = 4 runners: pve1 (THIS host) · p0tat0 (Linux 241) · c0wb0y (Windows 241) · cloud (matrix).",
+        "old_text": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241.",
+        "matched_entry": "FLEET = 4 runners: pve1-avrea-parallel = THIS host · p0tat0 = Linux 241 (c0wb0yp0tat0) · c0wb0y = Windows 241 · cloud (matrix); local-lm = 241."
+      },
+      {
+        "action": "patch",
+        "content": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: ships first (short windows), then support (audits/batteries/mechanical); seats RE-PROBE at every fire (act-2 11-23: longcat/solar/darkhorse WORKABLE · luna PAID · hy4 VOID 200-nulls · stepfun 429 · qwen DEAD).",
+        "old_text": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical).",
+        "matched_entry": "Cold-start: 015 → 016 → master + OPUS-2 (studies/rfc-143379-rig/); PR #1 = HOMEBASE — read newest rows FIRST. DISPATCH: FLAGSHIPS first (hy4 + solar — short windows; legs FIRST), then SUPPORT (stepfun/longcat: audits, batteries, mechanical)."
+      },
+      {
+        "action": "patch",
+        "content": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; documentation belongs to the operator, never to a session. Notes from the 38h-arc CTO are interpretations; his living word wins.",
+        "old_text": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session.",
+        "matched_entry": "THE GATE (the operator's words, 11-23): if there's a gate, the operator says so — the sessions' hard-line GATE LAW was a skew, deleted; the documentation belongs to the operator, never to a session."
+      },
+      {
+        "action": "add",
+        "content": "THE kvnloo-engagement draft V2.2: gist 3c24f712aac86ee21eaf9fadf8e92df4 (HITL — teams OFF until the operator's word); the wire a848d0625."
+      }
+    ]
+  }
+}

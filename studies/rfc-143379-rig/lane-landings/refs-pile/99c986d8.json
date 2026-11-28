@@ -1,0 +1,26 @@
+{
+  "id": "99c986d8",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Objective researcher; family audience → thorough.' -> 'Objective researcher; family audience → thorough; quality over rushing (stated).'",
+  "origin": "background_review",
+  "created_at": 1795557947.1035497,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough; quality over rushing (stated).",
+        "old_text": "Objective researcher; family audience → thorough.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Lineage (private): polymath granddads; dad's 5 Whys in Japan; writer mom; empathetic grandmothers; rig = 4-school synthesis; head = proxy.",
+        "old_text": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "matched_entry": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy."
+      }
+    ]
+  }
+}

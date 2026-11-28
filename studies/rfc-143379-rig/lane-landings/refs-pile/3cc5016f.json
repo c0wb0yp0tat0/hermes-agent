@@ -1,0 +1,50 @@
+{
+  "id": "3cc5016f",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'HITL/contract docs → drop URL (:8788), never MEDIA.' -> 'HITL/contract docs: only the surface the operator names (the gist for drafts, no",
+  "origin": "background_review",
+  "created_at": 1795449468.4896748,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "HITL/contract docs: only the surface the operator names (the gist for drafts, not the drop); never MEDIA; no invented surfaces.",
+        "old_text": "HITL/contract docs → drop URL (:8788), never MEDIA.",
+        "matched_entry": "HITL/contract docs → drop URL (:8788), never MEDIA."
+      },
+      {
+        "action": "patch",
+        "content": "Objective researcher; family audience → thorough. MAP matrix; wants DRAFT snapshots + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; Kaizen + pilot designed.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Lineage: granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "old_text": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy.",
+        "matched_entry": "Lineage (private): granddads polymaths; dad taught 5 Whys in Japan; mom writer; grandmothers empathy; rig = 4-school synthesis; head = proxy."
+      },
+      {
+        "action": "patch",
+        "content": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); public-surface changes wait for his vetting.",
+        "old_text": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting.",
+        "matched_entry": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting."
+      },
+      {
+        "action": "patch",
+        "content": "Chamber: maintainers' window = bounded bet (us + Nous); us = wider community.",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      }
+    ]
+  }
+}

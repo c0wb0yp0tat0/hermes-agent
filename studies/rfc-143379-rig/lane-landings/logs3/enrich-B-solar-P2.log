@@ -1,0 +1,11 @@
+
+HARNESS-CRASH:
+Traceback (most recent call last):
+  File "/root/scripts/copycat-harness.py", line 784, in <module>
+    main()
+    ~~~~^^
+  File "/root/scripts/copycat-harness.py", line 433, in main
+    brief = open(a.brief).read()
+            ~~~~^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/workspace/repos/hermes-agent/studies/rfc-143379-rig/lane-landings/briefs2/enrich-B-solar-P2-20261128.md'
+

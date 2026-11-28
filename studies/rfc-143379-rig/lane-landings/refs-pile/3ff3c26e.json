@@ -1,0 +1,42 @@
+{
+  "id": "3ff3c26e",
+  "subsystem": "memory",
+  "action": "batch",
+  "summary": "background review consolidation (batch on user): - patch span 'Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; gl",
+  "origin": "background_review",
+  "created_at": 1795649589.9515243,
+  "payload": {
+    "action": "batch",
+    "target": "user",
+    "operations": [
+      {
+        "action": "patch",
+        "content": "Old-school Amazon tank — LP doctrine in envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; Kaizen + pilot designed.",
+        "old_text": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed.",
+        "matched_entry": "Old-school Amazon tank — LP doctrine in agent envelopes (chain 003); ex-Alexa (trained the displacing model), resigned; CTO = kinship; global Kaizen + pilot designed."
+      },
+      {
+        "action": "patch",
+        "content": "Objective researcher; thorough; MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "old_text": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files.",
+        "matched_entry": "Objective researcher; family audience → thorough. MAP matrix; flat neutral; wants DRAFT snapshots + staged files."
+      },
+      {
+        "action": "patch",
+        "content": "Approved public moves fire on the CTO's word; pending public-surface changes: CTO approval after vetting.",
+        "old_text": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting.",
+        "matched_entry": "Approved public moves fire on the CTO's word (no re-ask, no self-gate); pending public-surface changes: CTO approval after thorough vetting."
+      },
+      {
+        "action": "patch",
+        "content": "Chamber: maintainers' window = bounded bet (us + Nous).",
+        "old_text": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community.",
+        "matched_entry": "Chamber: maintainers' window = bounded bet (us + Nous); 'us' = wider community."
+      },
+      {
+        "action": "add",
+        "content": "Pair register: we are a pair — no boss-speak; the word = the pair's protocol for public surfaces, not hierarchy."
+      }
+    ]
+  }
+}
