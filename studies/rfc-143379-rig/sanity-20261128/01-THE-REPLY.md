@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 19955 B / sha d952fdc3 (the formatting pass). Delta: the clock-work six, the sources-within context, the offer wording, the full bookkeeper name, the formal-pass line, the control states, the seats/think-tank limits, the formatted register (short version, bold lead-ins, full handles). The lanes' reports apply to the graded copy. -->
+<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 19575 B / sha b49f490c (the formatting pass + the cold-look cut). Delta: the clock-work six, the sources-within context, the offer wording, the full bookkeeper name, the formal-pass line, the control states; the internal seats/framework line cut at the cold look. The lanes' reports apply to the graded copy. -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -200,8 +200,6 @@ They are R&D proposals, not commitments and not a forcing function. Each carries
 The WSL2 and native-Windows runs are the PC's, not re-run from this host. The live-held counts are scheduling-dependent; the structural rows are deterministic. The 17.9% K=10 carry is conditioned, not whole-corpus (the denominator is the corpus re-mentions; the corpus is retry-dominated). The honest long-session stream is still owed.
 
 The gate is failed, not waived. No certifying run on the old probe. The read-invoked zero is the surface's schema. The child's revision landed 2026-11-28; the seven edits are in the child gist. N1–N3 and the clock-work six are candidates. The hold-back class stays held by clause.
-
-The loop's seats: solar's sanity and red passes landed; the hy seat stubbed both legs; the stepfun seat stalled and its sanity and red passes were completed here. The reports and the triage are in the kit. The framework pass — mechanism-of-mechanisms, the research kernel, the 14 LPs, the audit-of-audit, the pin discipline — holds; its disagreements are triaged in the kit.
 
 The RFC asked for a network: the read restored, the record re-readable, the compaction governed. Four days settled the first — a cross-machine, cross-backend bar with one open echo named and fixed. They failed the second honestly, and the science that came out of the failure is the first instrument family that fits the seam.
 
