@@ -23,7 +23,7 @@ or child edits from the loop.
 | **SANITY-SOLAR** (12.8 KB) | WORK READY-WITH-CORRECTIONS · INSTRUMENTS HOLD | graded the kit's 16,970 B reply copy and the 11-27 `06-MATRIX`; several "reply does not state" items are stated in the current reply (the four echo sites, the anchor row) | kit-quality fixes; no reply change |
 | **REDTEAM-SOLAR** (9.2 KB) | "rejected on base" | **base-category error:** the flipped tree (main `7c57dbf`, installed spec-2) is read-less by construction; the reply's claims are the fix tree's (`6609dac`), and its own §5 reopens the verdicts once the claims are tied to the fix tree — they are | noted as a cheap-seat artifact with named limits; no reply change |
 | **SANITY-HY** (133 B) | stub — "analysis incomplete; reads gated until artifact exists" | the 60-round cap hit while reading through the git-only terminal | re-fire with 120 rounds after the sequence; if it stubs again, the seat's limit is named |
-| **REDTEAM-HY** | running | likely the same flip-base limit if it uses the same base | triage on landing |
+| **REDTEAM-HY** | **61 B stub** — landed at the sequence's end | the hy seat returned stubs on both legs (sanity 133 B, red 61 B); the solar seat carried the loop | **the seat's limit, named.** The loop is 2/4 real reports; stepfun/step-3.7-flash:free is the available substitute if a second independent pass is wanted |
 
 ## 3 · The kit defects found (and fixed)
 
