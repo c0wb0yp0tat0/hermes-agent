@@ -1,0 +1,21 @@
+{
+  "pin": "a9c65dc43db9000e8b6e238b50916aa6fa32ff08",
+  "store": "a9c65dc4",
+  "date": "2026-11-27",
+  "natural_observation": {
+    "inside_attempts": 18766,
+    "blocked_inside": 15724,
+    "success_inside": 3042,
+    "reads": 2108,
+    "writes": 2140,
+    "note": "the success-inside balance is the measured release-window artifact: the store unlocks inside its `with fd:` before the harness flag clears. The deterministic arm is the assertion."
+  },
+  "held_open_100": {
+    "blocked": 100
+  },
+  "outside_control": "ACQUIRED",
+  "assertions": {
+    "held_open_all_block": true,
+    "control_not_blocked_when_unheld": true
+  }
+}
