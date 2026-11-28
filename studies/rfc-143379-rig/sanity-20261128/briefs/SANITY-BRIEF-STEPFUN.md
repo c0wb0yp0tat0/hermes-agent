@@ -1,5 +1,10 @@
 # SANITY BRIEF — STEPFUN SEAT (the armed pass)
 
+**Your kit is `studies/rfc-143379-rig/sanity-20261128/`** (the repo root is the working
+directory). Every path in this brief is relative to that kit — prefix every read with it.
+Your FIRST action: write the artifact skeleton at `studies/rfc-143379-rig/sanity-20261128/SANITY-STEPFUN.md` — the write opens the kit.
+Do not explore the repo; the kit is the whole world of this pass.
+
 You are the think-tank sanity reviewer for this pass. A prior reviewer stubbed: it read past the
 write-window and left placeholders. You are armed differently — succeed on the first pass.
 

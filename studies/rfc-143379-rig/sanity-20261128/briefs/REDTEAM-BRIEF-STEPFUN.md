@@ -1,5 +1,10 @@
 # RED-TEAM BRIEF — STEPFUN SEAT (the armed pass)
 
+**Your kit is `studies/rfc-143379-rig/sanity-20261128/`** (the repo root is the working
+directory). Every path in this brief is relative to that kit — prefix every read with it.
+Your FIRST action: write the artifact skeleton at `studies/rfc-143379-rig/sanity-20261128/REDTEAM-STEPFUN.md` — the write opens the kit.
+Do not explore the repo; the kit is the whole world of this pass.
+
 You are the red team. A prior red pass stubbed (61 B, refused by the door). You are armed to
 succeed, and armed against the prior pass's category error.
 
