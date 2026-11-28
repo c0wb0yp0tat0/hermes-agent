@@ -1,5 +1,9 @@
 # IMPROVEMENT CYCLE — matrix + rulers (2026-11-27, closed)
 
+> **Note (2026-11-28):** this matrix is the 11-27 cycle's record. Where it differs from the
+> current reply (`01-THE-REPLY.md`, the 11-28 staged version), the reply is the source of truth.
+
+
 Cycle run per the private-repo framework (mechanism-of-mechanisms: the ACES loop + the mini-spine
 deconstruct → sense → choose → calibrate → probe → review → record → compose-check) with the
 matrix shape from xngg1021's academic-research-kernel (asserted → status → basis) and the
