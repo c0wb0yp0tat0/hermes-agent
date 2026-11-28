@@ -59,7 +59,7 @@ harnesses: the delta is the guardrail. [IN-LANE]
 **A3 — python-mechanics note (operationalize C4).**
 ```python
 df["layer"] = df["change_kind"].map(lambda k: k if k in {"MODEL","HARNESS","CHANNEL"} else "UNCLASSIFIED")
-for L in ("MODEL","HARNESS","CHANNEL"):
+for L in ("MODEL", "HARNESS", "CHANNEL"):
     d = df[df["layer"] == L]                  # filter-then-measure, REFS2-1
     print(L, len(d), d.loc[d.action=="write","outcome"].mean())
 ab = df.groupby(["model_id","harness_id"]).outcome.mean().unstack()
@@ -74,3 +74,47 @@ REFUSED: agent-work-review (no agent trace here), defect-forensics (root-cause c
 the evidence), krecency-instrument (would silently rewrite C1/C2 — flag only), DESIGN-LINT
 (additive only, no edits), REFS2-3-EIGEN (stepfun's lens, not this seat). [IN-LANE / BORROWED as
 named above]
+
+## ENRICHMENT-BY-stepfun (round B)
+
+Lens packet: P3-EIGEN (a system's own numbers) — eigenvalues are scale factors along
+invariant eigenvectors; transfer to memory compaction/decay operators, recency filters,
+pin bookkeeping, and fleet-cadence resonance. Three genuine additions; no silent rewrites.
+
+**E1 — Extend C4: add Fleet Cadence Resonance Detector as harness-AB variant.** C4 currently
+measures harness-level deltas on one model at a single cadence. Extend it to probe at
+shifted cadences (e.g., rotate the provider-rotation schedule by ±N epochs) and detect
+correlation with the longcat-404 rotation pattern [BORROWED P3-EIGEN.md, TRINITY-P3-EIGEN-20261128.md].
+This turns C4 from a static delta ledger into a dynamic resonance detector: if the model's
+outcome variance spikes when the fleet cadence is shifted, the system has a resonance
+vulnerability at its normal cadence. Same model, two harnesses, multiple cadences — still
+an AB, but now with a frequency dimension. [BORROWED P3-EIGEN.md; HEAD-RECON cadence-shift
+protocol from TRINITY-P3-EIGEN-20261128.md]
+
+**E2 — NEW candidate C5: Invariance-Spectrum Report for decay eigenvalues per content class.**
+P3-EIGEN formalizes the pilot gate "cold-detail >= 90%" as the verbatim eigenvalue λ_verbatim ≥ 1.0
+under the read-restored harness [BORROWED P3-EIGEN.md]. C5 adds the instrument: compute the
+decay operator's eigenvalues per content class on the 24h corpus; if verbatim content has
+λ < 1.0, the read-restored harness is losing fidelity on that class even when the read action
+succeeds. This separates "the corpus is hard" (low raw accuracy) from "the harness decays
+verbatim" (eigenvalue < 1). It extends M1 beyond last-touch age to a spectral invariant,
+and it directly grounds the pilot falsifier in the system's own arithmetic rather than a
+tuned threshold. [BORROWED P3-EIGEN.md; IN-LANE mapping to M1 pilot falsifier]
+
+**E3 — CONTRADICTION FLAG: M1's falsifier is gated by tool-surface availability, not by
+cold-detail alone.** M1 asserts "cold-detail ≥ 90% is the pilot falsifier" [IN-LANE M1]. But
+P3-EIGEN shows this falsifier formalizes as λ_verbatim ≥ 1.0, which requires a working
+read-restored harness [BORROWED P3-EIGEN.md]. The target already flags (FLAG-C2 / F5) that
+the session surface exposes no read action while the installed memory_tool.py registers it
+[IN-LANE FLAG-C2]. When the read action is blocked, "read-restored" degenerates to write-only,
+so λ_verbatim is computed on a write-restored operator, not the read-restored one. M1's
+falsifier is therefore silent on whether the harness can actually execute the read action
+it needs to verify the eigenvalue. Status: gating error; M1 must be conditioned on
+read-action availability, or the eigenvalue computation must be rejected when read is
+blocked. [IN-LANE synthesis of M1 + FLAG-C2; BORROWED P3-EIGEN.md for λ formalization]
+
+**Contradictions flagged.**
+- FLAG-C4: M1 quotes cold-detail >= 90% as a falsifier independent of tool surface, but
+P3-EIGEN requires read-restored harness to compute λ_verbatim; FLAG-C2 shows read may be
+blocked. Status: statistical gating error, flagged before instrument implementation. It
+conflicts with M1 unless read-action availability is added as a conditioning event.
