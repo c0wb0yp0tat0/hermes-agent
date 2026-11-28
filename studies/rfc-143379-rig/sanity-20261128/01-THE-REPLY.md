@@ -1,4 +1,4 @@
-<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 19575 B / sha b49f490c (the formatting pass + the cold-look cut). Delta: the clock-work six, the sources-within context, the offer wording, the full bookkeeper name, the formal-pass line, the control states; the internal seats/framework line cut at the cold look. The lanes' reports apply to the graded copy. -->
+<!-- version note: the lanes graded the 16,970 B copy (2026-11-28 06:31Z); this copy is refreshed to the final 19881 B / sha ff41738d (the formatting pass, the cold-look cut, the kit links). Delta: the clock-work six, the sources-within context, the offer wording, the full bookkeeper name, the formal-pass line, the control states; the seats/framework line cut; the read-kit + instruments-kit links in @ZacharyThomasStone's paragraph and the instruments paragraph. -->
 
 @kvnloo @3oltan-seo — and the room.
 
@@ -187,13 +187,13 @@ What we need now is your read — the spec, the child, the kit, the rows — bef
 
 **@xngg1021, @jfugalde — the diff's trip points and the inventory question before it lands.** A correction is worth more than agreement.
 
-**@ZacharyThomasStone — the baseline-first comparison.** You asked for it; the baseline now exists: the restore's rows on three contours, the structural check, and the child as the minimum change. The doc-chain's number is still owed. The kit, the read fix, and the avrea runners are available to you — and the experimental instruments especially, yours to test them on your lab. Would you take them for your instruments and report what they show?
+**@ZacharyThomasStone — the baseline-first comparison.** You asked for it; the baseline now exists: the restore's rows on three contours, the structural check, and the child as the minimum change. The doc-chain's number is still owed. The [read kit](https://gist.github.com/c0wb0yp0tat0/28594f78bd9662013eb586d26cffc77e) and the [instruments kit](https://gist.github.com/c0wb0yp0tat0/ca147f38283f578e0a621ff1891d1ebc) are yours, along with the read fix and the avrea runners — and the experimental instruments especially, yours to test them on your lab. Would you take them for your instruments and report what they show?
 
 **The room.** The filing read stands as @3oltan-seo answered it: regular issue, §3.2, no advisory, narrower first slice, no merged-first. If triage needs a different shape — a different proof, a merged-first experiment, more evidence — name it, and it is the next job. The kit is for any contour that wants it; the bench grows by use, not by permission.
 
 **The experimental instruments.** The two-N window, the retention latch, the tiny-aged-fact axis, the Read-Restore Eigenvector Bookkeeper, the clock-work six (the internal clock, the drift gauge, the synchronization hierarchy, the barrier probe, the tabletop mini-universe, the proper-time ledger), the K-recency probe, and the read kit are open: @ZacharyThomasStone first, @kvnloo's bench already open, and anyone else who wants them.
 
-They are R&D proposals, not commitments and not a forcing function. Each carries its receipts and its perturbation line; interest is the only condition. Try one, or none; no answer is owed either way.
+They are R&D proposals, not commitments and not a forcing function. Each carries its receipts and its perturbation line; [the instruments kit](https://gist.github.com/c0wb0yp0tat0/ca147f38283f578e0a621ff1891d1ebc) lists each one's status and falsifier. Interest is the only condition. Try one, or none; no answer is owed either way.
 
 **the limits**
 
